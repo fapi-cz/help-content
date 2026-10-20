@@ -11,7 +11,7 @@ keywords:
   - Jak vložit prodejní formulář do stránky
 sourceUrl: https://napoveda.fapi.cz/article/157-vlozeni-prodejniho-formulare-do-divi
 order: 105
-updatedAt: 2026-07-13T10:51:28Z
+updatedAt: 2026-10-20T13:58:35Z
 ---
 # Jak vložit prodejní formulář do DIVI
 
@@ -19,6 +19,20 @@ updatedAt: 2026-07-13T10:51:28Z
 
 1.  účet FAPI a vytvořený prodejní formulář
 2.  wordpress web, kde je nahraný DIVI theme
+
+## Divi 5: modul FAPI formulář
+
+Pokud používáte **Divi 5**, můžete s aktivním pluginem **FAPI Member od verze 2.3.0** vložit formulář pomocí samostatného modulu. Nejdříve dokončete [propojení FAPI Memberu s FAPI](/article/97-fapi-member-propojeni-s-fapi).
+
+1. V Divi 5 přidejte modul **FAPI formulář**.
+2. V poli **Prodejní formulář** vyberte formulář z propojeného FAPI účtu. Výběr formulářů vyžaduje oprávnění správce.
+3. Uložte změny modulu i stránky a zkontrolujte formulář na veřejné stránce.
+
+:::note
+V editoru se zobrazuje označení vybraného formuláře, ne samotný vyplnitelný formulář. Výsledek proto kontrolujte mimo editor. Pokud se formuláře nepodaří načíst ze všech účtů, zkontrolujte propojení s FAPI a obnovte editor.
+:::
+
+Níže popsané vložení HTML kódu a odkazujícího tlačítka jsou další způsoby vložení. Následující snímky ukazují původní postup v Divi, nikoli nový modul Divi 5.
 
 ## Jak vložit prodejní formulář do DIVI
 
@@ -42,7 +56,7 @@ Pozor: podobně znějící plugin Popups DIVI nepoužívejte. Zobrazování prod
 1.  Na nově vytvořenou stránku přidáme nový řádek. Výběr stylu řádku je na Vás, pro ukázku jsme zvolili samostatný řádek, takže okolo formuláře nebude žádný prostor navíc.![Vložení prodejního formuláře do DIVI](/assets/articles/848dd5a52fbdbcc0.png)
 2.  Po vybrání nového řádku vybere modul Kód.![Vložení prodejního formuláře do DIVI](/assets/articles/3d4206ca57b26025.png)
 3.  Zkopírujte si HTML kód prodejního formuláře (vizte sekce Vložení prodejního formuláře do zdrojového kódu webové stránky). 
-4.  Otevře se Vám nastavení modulu. Do místa pro kód vložíte zkopírovaný HTML kód. ![Vložení prodejního formuláře do DIVI](/assets/articles/0f9bce596992ea43.png)
+4.  Otevře se Vám nastavení modulu. Do místa pro kód vložíte zkopírovaný HTML kód. ![Vložení prodejního formuláře do DIVI](/assets/articles/divi-code-form-id-redacted-20261020.png)
 5.  Modul uložíte a uložíte také celou stránku. Ta se ukládá pomocí tří teček, které jsou dole uprostřed obrazovky. Rozevře se menu a vpravo je tlačítko Uložit.![Vložení prodejního formuláře do DIVI](/assets/articles/5fb471a40f165539.png)
 
 ##   
@@ -52,5 +66,5 @@ Pozor: podobně znějící plugin Popups DIVI nepoužívejte. Zobrazování prod
 1.  Na nově vytvořenou stránku přidáme nový řádek.![Vložení prodejního formuláře do DIVI](/assets/articles/848dd5a52fbdbcc0.png)
 2.  Po vybrání nového řádku vyberte modul, který bude obsahovat tlačítko. ![Vložení prodejního formuláře do DIVI](/assets/articles/493b0017ee3aa665.png)
 3.  Zkopírujte si odkaz na prodejní formulář (vizte sekce Odkaz na prodejní formulář).
-4.  Text tlačítka si můžete zvolit jaký chcete, důležitější pro Vás v tuto chvíli je Odkaz. Odkaz na prodejní formulář vložíte do Adresa URL. ![Vložení prodejního formuláře do DIVI](/assets/articles/e436d0fa52845029.png)
+4.  Text tlačítka si můžete zvolit jaký chcete, důležitější pro Vás v tuto chvíli je Odkaz. Odkaz na prodejní formulář vložíte do Adresa URL. ![Vložení prodejního formuláře do DIVI](/assets/articles/divi-button-form-id-redacted-20261020.png)
 5.  Modul uložíte a uložíte také celou stránku. Ta se ukládá pomocí tří teček, které jsou dole uprostřed obrazovky. Rozevře se menu a vpravo je tlačítko Uložit.![Vložení prodejního formuláře do DIVI](/assets/articles/5fb471a40f165539.png)
