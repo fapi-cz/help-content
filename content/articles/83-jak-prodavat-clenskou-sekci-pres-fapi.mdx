@@ -1,0 +1,61 @@
+---
+title: Jak prodávat členskou sekci přes FAPI
+url: /article/83-jak-prodavat-clenskou-sekci-pres-fapi
+description: Vedle e-booku je uzavřená členská sekce na webu další velmi oblíbenou formou info-produktu. Členská sekce vám umožňuje zpřístupnit vybrané stránky, články, kome
+category: Začínáme
+categorySlug: 4-zaciname
+categorySlugs:
+  - 4-zaciname
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak prodávat členskou sekci přes FAPI
+  - Začínáme
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/83-jak-prodavat-clenskou-sekci-pres-fapi
+order: 35
+updatedAt: 2026-07-13T09:52:47Z
+---
+Vedle [e-booku](/article/82-jak-prodavat-ebook-pres-fapi) je uzavřená členská sekce na webu další velmi oblíbenou formou info-produktu. Členská sekce vám umožňuje zpřístupnit vybrané stránky, články, komentáře a soubory pouze registrovaným uživatelům. Je proto ideální například pro realizaci on-line vzdělávacích kurzů, nicméně její využití je mnohem širší.
+
+V současné době nejpoužívanější platformou pro vytvoření a správu členských sekcí je redakční systém _WordPress_ a k němu vytvořené pluginy, kterých je několik desítek, nicméně ne všechny jsou stoprocentně spolehlivé.
+
+Jedním z nástrojů, které fungují v prostředí redakčního systému WordPress a které dokáží pracovat s členskými sekcemi, je plugin **FAPI Member**. Jeho výhodou je především to, že je speciálně vytvořený pro potřeby uživatelů FAPI a je pro ně zdarma.
+
+![Jak prodávat členskou sekci přes FAPI](/assets/articles/5aa3d35af2050fc7.png)
+
+## Automatické založení uživatele v členské sekci
+
+Hlavním přínosem FAPI je obecně automatizace celého prodejního procesu. Při prodeji přístupu do členské sekce se to konkrétně projevuje tak, že po zaplacení faktury se v členské sekci automaticky založí nový uživatel na základě údajů vyplněných v objednávce. Ihned po založení nového uživatele se na zadanou e-mailovou adresu zašlou přístupové údaje do členské sekce. Zákazník tedy získává přístup do členské sekce doslova během několika okamžiků po zaplacení.
+
+## Automatické založení uživatele v členské sekci FAPI Member
+
+Založení nového uživatele v členské sekci se technicky realizuje spuštěním akce "přidání člena do členské sekce" po zaplacení objednávky. Pro automatické založení uživatele v členské sekci je potřeba v prodejním formuláři vytvořit akci, která po zaplacení objednávky spustí "přidání člena do členské sekce" potom stačí vybrat členskou sekci a počet dní setrvání v členské sekce
+
+![Jak prodávat členskou sekci přes FAPI](/assets/articles/5983319de6421bc3.png)
+
+**[Jak propojit FAPI a FAPI Member plugin](/article/97-fapi-member-propojeni-s-fapi).**
+
+## Automatické založení uživatele v členské sekci MioWebu
+
+Založení nového uživatele v členské sekci se technicky realizuje spuštěním programového skriptu po zaplacení objednávky. Pro automatické založení uživatele v členské sekci je potřeba v prodejním formuláři vytvořit akci, která po zaplacení objednávky spustí programový skript, jímž se uživatel založí. Potřebné nastavení spočívá ve dvou krocích:
+
+1.  získání adresy programového skriptu z MioWebu,
+2.  nastavení akce ve FAPI.
+
+:::danger
+Skript pro založení uživatele v členské sekci MioWebu je možné spouštět pouze z účtu FAPI, který je s daným MioWebem propojen. Návod na propojení MioWebu s FAPI najdete v článku nápovědy [Propojení s FAPI - nástrojem na online prodej a fakturaci](https://napoveda.mioweb.cz/article/839-propojeni-s-fapi-nastrojem-na-online-prodej-a-fakturaci).
+:::
+
+### 1\. Získání adresy skriptu z MioWebu
+
+Adresu skriptu pro založení nového uživatele v příslušné členské sekci najdete v administračním rozhraní MioWebu v nabídce **Členská sekce - Správa členských sekcí - Notifikace FAPI**.
+
+![Jak prodávat členskou sekci přes FAPI](/assets/articles/4b0304e280ac5eb2.png)
+
+### 2\. Nastavení akce ve FAPI
+
+Akci pro založení uživatele v členské sekci nastavte v prodejním formuláři FAPI na záložce **Akce**. Adresu skriptu z MioWebu vložte do pole pro URL adresu programového skriptu.
+
+![Jak prodávat členskou sekci přes FAPI](/assets/articles/413a6120050563d7.png)

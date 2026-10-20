@@ -1,0 +1,183 @@
+---
+title: Propojení FAPI se službou Zásilkovna
+url: /article/62-propojeni-fapi-se-sluzbou-zasilkovna
+description: "Pro nabídku doručování zboží pomocí služby Zásilkovna stačí FAPI propojit s vaším Zásilkovna účtem. Nastavení se skládá ze dvou kroků: Registrace účtu na www.za"
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI se službou Zásilkovna
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/62-propojeni-fapi-se-sluzbou-zasilkovna
+order: 26
+updatedAt: 2026-07-13T09:39:49Z
+---
+Pro nabídku [doručování zboží](/article/61-doprava) pomocí služby *Zásilkovna* stačí FAPI propojit s vaším Zásilkovna účtem.
+
+Nastavení se skládá ze dvou kroků:
+
+1.  Registrace účtu na [www.zasilkovna.cz](https://client.packeta.com/cs/registration/choose-type)
+2.  Propojení se Zásilkovnou ve FAPI
+
+## Registrace účtu na Zásilkovna.cz
+
+Klientský účet na stránkách Zásilkovny si založíte v nabídce [Registrace – Vytvořit eshop](https://client.packeta.com/cs/registration/?type=standard).
+
+Po vyplnění všech nezbytných údajů a odeslání registrace vám Zásilkovna schválí účet, pomocí kterého můžete provádět všechny operace se zásilkami.
+
+## Propojení se Zásilkovnou ve FAPI
+
+V sekci **Klientská podpora** svého účtu u Zásilkovny najdete přístupové údaje, které je potřeba zadat do FAPI.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/49201f510381b63c.png)
+
+Ve FAPI přejděte do nabídky **Nastavení \> Propojení aplikací**, kde po stisku tlačítka **Upravit** u služby Zásilkovna vyplníte přístupové údaje ze svého účtu Zásilkovny.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/8da1246ca952a780.png)
+
+:::caution
+Povolíte-li import doručených objednávek při platbě dobírkou, tak FAPI bude každou hodinu kontrolovat stav všech zásilek určených pro osobní doručení nebo vyzvednutí na výdejním místě zásilkovny a pokud ověří, že zásilka byla doručena, automaticky vytvoří platbu a označí fakturu za zaplacenou.
+:::
+
+Pokud máte ve svém účtu Zásilkovny vytvořeno více odesílatelů, je třeba do pole **ODESÍLATEL** vyplnit označení odesílatele. Najdete je v účtu Zásilkovny v nabídce **Informace o uživateli -\> Odesílatelé** (údaj **Označení**).
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/07c0fd3c8db0e39a.png)
+
+Pokud máte pouze jednoho, nemusíte pole  **Odesílatel** vyplňovat.
+
+Úspěšné propojení je ve FAPI signalizováno textem „Připojeno” u služby Zásilkovna.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/f2d9a4111bdd3b03.png)
+
+Po nastavení propojení můžete ve FAPI začít využívat [způsoby dopravy](/article/61-doprava) typu **„Zásilkovna"**.
+
+## Proces zpracování/odeslání objednávky
+
+Pokud zákazník zvolil dopravu Zásilkovnou, najdete v detailu vytvořeného dokladu možnost  **„Vytvořit zásilku”**.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/de3ee56415267e90.png)
+
+Při vytváření zásilky vás FAPI vyzve k zadání hmotnosti, což je nezbytná podmínka pro uložení zásilky v Zásilkovně. Abyste nemuseli vyplňovat hmotnost pokaždé jednotlivě, doporučujeme jednotlivým produktům zadat jejich hmotnosti v jejich kartě ([Prodej \> Produkty](/article/43-produkty)). Celková hmotnost zásilky se následně vypočítá automaticky při vytváření zásilky v Zásilkovně.
+
+Po kliknutí na tlačítko  **„Vytvořit zásilku”** dojde k odeslání do rozhraní Zásilkovny. V její administraci pak najdete všechny zásilky v části **Podané zásilky**.
+
+  
+
+Následně na detailu dokladu uvidíte možnost vytisknout štítek. Pokud chcete **tisknout štítky hromadně**, používejte k tomuto úkonu rozhraní Zásilkovny - právě v části **Podané zásilky**.
+
+:::tip
+Používáte-li zálohové faktury, najdete tuto funkci jak na detailu zálohové faktury, tak na finálním dokladu v případě jejího zaplacení.
+:::
+
+### Změna výdejního místa
+
+Pokud potřebujete změnit výdejní místo pro zásilku, ať už z důvodu uzavření pobočky, či jejího zahlcení, otevřete **úpravu faktury** nebo úpravu **šablony pravidelných faktur**. Pod doručovací adresou, těsně před seznamem položek, se nachází sekce **Způsob doručení**. 
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/4c94a9493b807adf.png)
+
+Zde naleznete zvolené výdejní místo. Klikněte na jeho název a vyskočí okno Zásilkovny, kde můžete zvolit jiné výdejní místo.
+
+### Zrušení odeslání podané zásilky
+
+Chcete-li zrušit už jednou odeslanou objednávku Zásilkovny (pokud zároveň ještě nedošlo k fyzickému odeslání zásilky), přihlaste se do [klientské sekce Zásilkovny](https://client.packeta.com/). V sekci **Podané zásilky** najděte podle čísla objednávky zásilku a na konci řádky ve sloupci **Akce** zásilku stornujte.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/89136552be83347b.png)
+
+Také doporučujeme vystavit ve FAPI na objednávku **opravný daňový doklad**.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/04c758661023f9a2.png)
+
+### Zásilkovna jako způsob dopravy doručení na adresu
+
+Pokud chce přes Zásilkovnou doručovat, nejen na výdejní místa, ale i přímo na adresu, pak si ve FAPI založte další způsob dopravy s tímto nastavením:
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/8dbc9ab4d4492469.png)
+
+### Hromadný import objednávek z FAPI do Zásilkovny
+
+Pokud máte větší množství objednávek ke zpracování, může být rychlejším způsobem import CSV souboru s objednávkami do administrace Zásilkovny. Pro hladký průběh budete potřebovat:
+
+-   přístup do administrace client.packeta.com
+-   hotovou [Importní šablonu objednávek z FAPI](/assets/articles/d0ef6dcaf90a6cbc.csv) (kliknutím si stáhnete vzor), která patří do Import zásilek \> [Šablony](https://client.packeta.com/cs/packets-import/template-list)
+-   ![Propojení FAPI se službou Zásilkovna](/assets/articles/38bc0db9d5146c5e.png)
+    
+    export dokladů, které chcete odeslat přes zásilkovnu. Jak si vytvořit export [popisujeme zde](/article/85-export-faktur). Jako formát zvolte možnost **Zásilkovna V6.**
+    
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/3a8019d9a334617e.png)
+
+Při exportu objednávek použijte takové filtry, abyste do exportu zahrnuli jen objednávky, které chcete čerstvě odeslat. Na výběr jsou omezení dle data, dle typu dokladu, způsobu dopravy, podle štítku apod.
+
+  
+
+Hotový export v CSV formátu nahrajte do administrace Zásilkovny. Jděte do Import zásilek \> Importovat soubor zásilek. Vyberte a nahrajte do zásilkovny čerstvě exportovaný CSV soubor z FAPI.
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/fcf30152c766d06f.png)
+
+:::note
+## Zásilky přes slovenskou Packetu
+:::
+
+Propojení Zásilkovny vám bude fungovat i na Slovensku s Packetou. 👍
+
+Musíte však mít však v prodejním formuláři v kroku 3 nastavené vybrané státy, tedy i Slovensko.
+
+:::note
+## Zásilky do Velké Británie (GB)
+:::
+
+#### **1\. Nastavení v Zásilkovně**
+
+Pro odeslání zásilky do Velké Británie si nastavte následující požadavky:
+
+**Registrace EORI**:
+
+-   Musíte mít zaregistrované **EU EORI** (pro všechny zásilky).
+-   Povinné je také **GB EORI** (pro zásilky do Velké Británie).
+-   Zadejte obě čísla EORI do fakturační adresy ve vaší Klientské sekci Zásilkovny.
+    
+    > **Tip:** EU EORI získáte od příslušného úřadu [National customs administrations](https://ec.europa.eu/taxation_customs/eu-customs-contact-points_en). Informace o GB EORI najdete [zde.](https://www.gov.uk/eori)
+    
+    **GB VAT (DPH)**:
+    
+-   U zásilek do 135 GBP je odesílatel povinen odvádět DPH.
+-   Pokud posíláte zásilky přes marketplace (např. Amazon), musíte v Klientské sekci vyplnit **EU EORI** i **GB EORI Marketplace**.
+
+#### **2\. Nastavení ve FAPI**
+
+Ve FAPI je nutné u každého produktu vyplnit údaje pro celní řízení:
+
+![Propojení FAPI se službou Zásilkovna](/assets/articles/38c8af692c2549bf.png)
+
+**Celní nomenklatura (harmonizovaný kód)**:
+
+-   Jedná se o 8 místný kód odpovídající druhu produktu (např. 61091000 pro trička).
+    
+    Pomoci vám s tím může například [https://www.gov.uk/trade-tariff](https://www.gov.uk/trade-tariff)
+    
+
+**Název produktu v angličtině**:
+
+-   Například místo „Tričko“ zadejte „T-shirt“.
+
+**Země původu produktu**:
+
+-   Například `CZ`  (Česká republika).
+
+  
+
+:::caution
+**Rozměry zásilky**
+
+FAPI zatím nepodporuje přímou práci s rozměry zásilek.
+
+Pokud je potřebujete doplnit (například kvůli požadavkům některých zahraničních dopravců), doporučujeme tento postup:
+
+1.  Exportujte si zásilky do CSV.
+2.  Do souboru si ručně přidejte nový sloupec s rozměry (např. délka × šířka × výška).
+
+Tento způsob je aktuálně nejjednodušším prozatímním řešením.
+:::

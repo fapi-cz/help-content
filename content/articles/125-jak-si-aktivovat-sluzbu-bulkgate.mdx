@@ -1,0 +1,47 @@
+---
+title: Jak si aktivovat službu BulkGate
+url: /article/125-jak-si-aktivovat-sluzbu-bulkgate
+description: "BulkGate je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu Posílání SMS zpráv z FAPI). V "
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+keywords:
+  - Jak si aktivovat službu BulkGate
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/125-jak-si-aktivovat-sluzbu-bulkgate
+order: 141
+updatedAt: 2026-07-13T11:00:00Z
+---
+BulkGate je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu [Posílání SMS zpráv z FAPI](/article/49-posilani-sms-zprav-z-fapi)). V tomto článku popíšeme, jak službu BulkGate propojit s FAPI. 
+
+K integraci je nutné si nejprve na stránkách [BulkGate](https://portal.bulkgate.com/join/55302) zřídit účet.
+
+## Registrace do služby BulkGate
+
+1.  ![Jak si aktivovat službu BulkGate](/assets/articles/7228e2d0e9af2c55.png)
+2.  Na stránkách BulkGate klikněte na tlačítko **Vytvořit účet** ([https://portal.bulkgate.com/join/55302](https://portal.bulkgate.com/join/55302)), vyplňte všechny povinné údaje.
+3.  V dalším kroku zadejte **osobní údaje**, **časovou zónu** (Europe/Prague) a **telefonní číslo**.
+4.  Na zadané telefonní číslo vám přijde 6ti místný kód. Ten je potřeba zapsat do registračního formuláře.
+5.  V posledním kroku odsouhlaste obchodní a GDPR podmínky. 
+6.  Po kliknutí na tlačítko **Registrovat** vám přijde ověřovací link na email, který jste zadali v prvním kroku. 
+7.  Kliknutím na tlačítko **Aktivovat** v emailu se vám aktivuje účet ve službě BulkGate. Poté budete automaticky přesměrováni na přihlašovací stránku, kde zadáte svůj email a heslo.  
+    
+
+## Propojení FAPI se službou BulkGate
+
+Máte-li aktivovaný účet služby BulkGate, můžete pokračovat na propojení s FAPI.
+
+V levém menu klikněte na záložku **Modules & APIs**. Dostanete se na stránku integrací. Mezi integracemi vyhledejte ikonku FAPI.  
+![Jak si aktivovat službu BulkGate](/assets/articles/5d71cff149b7004f.png)
+
+Po kliknutí na integraci se vám otevře okno, kde stačí kliknout na tlačítko **CREATE API**.
+
+Tím se vám vytvoří nová integrace ve službě BulkGate. Nyní už je potřeba jen zadat vygenerovaný **Application Token** a **Application ID** do FAPI.  
+![Jak si aktivovat službu BulkGate](/assets/articles/f605c42224ead243.png)
+
+Přihlaste se do svého účtu FAPI a přejděte na stránku **Nastavení -\> Propojení aplikací**. V tabulce vyhledejte možnost **propojení se službou BulkGate** a klikněte na tlačítko **Připojit**. 
+
+Zkopírujte si oba kódy, **Application ID** a **Application Token**, a vložte je do odpovídajících políček. Po kliknutí na tlačítko **Uložit** FAPI oba údaje zkontroluje a propojení s BulkGate se uloží.
+
+![Jak si aktivovat službu BulkGate](/assets/articles/1e8100f13365d2a5.png)

@@ -1,0 +1,52 @@
+---
+title: Jak odebrat slevu na procentuální částku z následné šablony pravidelných faktur?
+url: /article/106-jak-odebrat-slevu-na-procentualni-castku-z-nasledne-sablony-pravidelnych-faktur
+description: V případě založení opakované platby včetně zadané slevy by se tato sleva neustále opakovala i v opakovaných platbách, jelikož dochází k jejímu založení do šablo
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+keywords:
+  - Jak odebrat slevu na procentuální částku z následné šablony pravidelných faktur?
+  - Často kladené dotazy (FAQ)
+sourceUrl: https://napoveda.fapi.cz/article/106-jak-odebrat-slevu-na-procentualni-castku-z-nasledne-sablony-pravidelnych-faktur
+order: 139
+updatedAt: 2026-07-13T10:59:57Z
+---
+V případě založení opakované platby včetně zadané slevy by se tato sleva neustále opakovala i v opakovaných platbách, jelikož dochází k jejímu založení do šablony opakovaných plateb.
+
+Pokud již na další opakované platby dávat slevu nechcete, řešení této situace je závislé na typu slevy.
+
+**Zrušení pevné slevy (Pevná částka) v dalších opakovaných platbách**
+
+Tuto změnu je potřeba udělat ručně. Po zaplacení první zálohové faktury jděte prosím do šablony pravidelných faktur (najdete i na detailu klienta) a zde dejte slevu odebrat. Sleva je na dané šabloně jako samostatná položka, kterou stačí odebrat.
+
+Změnu v šabloně nezapomeňte uložit.
+
+![Jak odebrat slevu na procentuální částku z následné šablony pravidelných faktur?](/assets/articles/99cc1861f0252523.png)
+
+Nebo můžete využít automatizaci v Make, více pak v tomto odkazu: [https://napoveda.fapi.cz/article/201-jak-odebrat-slevu-na-pevnou-castku-z-nasledne-sablony-pravidelnych-faktur](/article/201-jak-odebrat-slevu-na-pevnou-castku-z-nasledne-sablony-pravidelnych-faktur)
+
+  
+
+**Zrušení procentní slevy v dalších opakovaných platbách**
+
+Zde lze využít záměnu položky u 2. a další fakturace na nastavení prodejního formuláře v části  **PRAVIDELNÁ FAKTURACE:**
+
+  
+
+![Jak odebrat slevu na procentuální částku z následné šablony pravidelných faktur?](/assets/articles/9033ba72c30634f8.png)
+
+**Nastavte takto:**
+
+Mějme tedy v prodejním formuláři, položku **kurz**. Na tento **kurz** se dá uplatnit sleva 10%, pomocí slevového kódu, který u formuláře máme nastavený. 
+
+![Jak odebrat slevu na procentuální částku z následné šablony pravidelných faktur?](/assets/articles/28214ab081554428.png)
+
+Abychom zajistili, že se sleva bude vztahovat pouze na první nákup tohoto kurzu, tedy aby na 2. a další pravidelné faktury se již sleva na kurz neuplatňovala, musíme využít funkci "Nahradit položku v 2. a další pravidelné faktuře".
+
+Zde stačí nastavit, aby se nám produkt **kurz** nahradil znova za produkt **kurz**. Tato funkce zajistí to, že při objednávce, kdy se v prodejním formuláři použije slevový kód a uplatní se sleva na **kurz**, tato funkce hned po vystavení první faktury položku **kurz** z faktury smaže i se slevněnou cenou. Namísto ní pak vloží do faktury *"čistou"* položku **kurz** bez slevy, tedy ve výši nastavené v Prodej \> Produkty, před slevou.
+
+  
+
+![Jak odebrat slevu na procentuální částku z následné šablony pravidelných faktur?](/assets/articles/cdcd1bb658d62907.png)

@@ -1,0 +1,79 @@
+---
+title: Co se počítá do limitu objednávek ve FAPI?
+url: /article/307-co-se-pocita-do-limitu-objednavek-ve-fapi
+description: Každý FAPI tarif má stanovený měsíční limit počtu objednávek. V této nápovědě vám vysvětlíme, co se do tohoto limitu započítává a jak zjistíte své zúčtovací obd
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+keywords:
+  - Co se počítá do limitu objednávek ve FAPI?
+  - Nastavení
+  - Fakturace
+  - Platby
+sourceUrl: https://napoveda.fapi.cz/article/307-co-se-pocita-do-limitu-objednavek-ve-fapi
+order: 262
+updatedAt: 2026-07-13T12:42:01Z
+legacyAnchors:
+  - id: -Co-se-zapotv-do-limitu-objednvek--qbaV
+    tag: h2
+    text: Co se započítává do limitu objednávek
+    occurrence: 0
+    headingIndex: 0
+  - id: -Co-se-NEpot-do-limitu-ghcLd
+    tag: h2
+    text: Co se NEpočítá do limitu
+    occurrence: 0
+    headingIndex: 1
+  - id: -Co-rozhoduje-o-zaazen-do-obdob-dfuaU
+    tag: h2
+    text: Co rozhoduje o zařazení do období?
+    occurrence: 0
+    headingIndex: 2
+---
+Každý FAPI tarif má stanovený **měsíční limit počtu objednávek**. V této nápovědě vám vysvětlíme, **co se do tohoto limitu započítává** a jak zjistíte své **zúčtovací období**.
+
+## Co se započítává do limitu objednávek
+
+Do limitu objednávek se počítá **každý vytvořený prvotní doklad** (např. zálohová faktura nebo daňový doklad), a to:
+
+-   bez ohledu na to, zda je nebo není **uhrazený**,
+-   bez ohledu na to, zda byl vytvořen ručně nebo automaticky.
+
+Příkladem započítaných objednávek jsou:
+
+-   zálohové faktury vytvořené po odeslání formuláře,
+-   daňové doklady vytvořené přes platební bránu,
+-   faktury vystavené při pravidelné fakturaci,
+-   splátkové faktury,
+-   ručně vystavené faktury.
+
+## Co se **NEpočítá** do limitu
+
+Do měsíčního limitu **se nezapočítávají**:
+
+-   **stornované** doklady (storno musí proběhnout v rozhodném tarifním období),
+-   testovací faktury (v režimu testovacího prodejního formuláře),
+-   doklady s **nulovou částkou** (např. zdarma objednávky, 0 Kč).
+
+:::danger
+Pozor na **testovací faktury v produkčním režimu**, ty se do tarifu započítávají.
+
+Doporučujeme následně stornovat či smazat, aby vám zbytečně nenavyšovaly limit objednávek.
+:::
+
+## Co rozhoduje o zařazení do období?
+
+Do limitu objednávek se počítají doklady vystavené v rámci vašeho **zúčtovacího období**, nikoli kalendářního měsíce.
+
+Zúčtovací období je vždy **individuální** – najdete ho ve svém účtu:
+
+> [**Můj účet → Tarif a faktury**](https://web.fapi.cz/billing/?projectId=all)
+
+Zde uvidíte:
+
+-   kolik objednávek máte aktuálně zaúčtovaných,
+-   do kdy trvá vaše aktuální období.
+-   [V jakém jsem tarifním období?](/article/275-zmena-tarifu)

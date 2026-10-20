@@ -1,0 +1,142 @@
+---
+title: Import a export členů ve FAPI Member
+url: /article/207-import-a-export-clenu-ve-fapi-member
+description: "Export členů Klikněte na záložku Členové Klikněte na tlačítko Exportovat Následně se vám na disk uloží tabulka ve formátu CSV s výčtem členů a jejich členství. "
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - Import a export členů ve FAPI Member
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/207-import-a-export-clenu-ve-fapi-member
+order: 200
+updatedAt: 2026-07-13T11:40:00Z
+legacyAnchors:
+  - id: Export-len-uKPAQ
+    tag: h2
+    text: Export členů
+    occurrence: 0
+    headingIndex: 0
+  - id: Import-len-K-5Qi
+    tag: h2
+    text: Import členů
+    occurrence: 0
+    headingIndex: 1
+  - id: Ukzka-tabulky-_KeSA
+    tag: h2
+    text: Ukázka tabulky
+    occurrence: 0
+    headingIndex: 2
+  - id: rok-msc-den-hodinyminutysekundy-1QU2G
+    tag: h2
+    text: rok-měsíc-den hodiny:minuty:sekundy
+    occurrence: 0
+    headingIndex: 3
+  - id: 2026-04-30-133100-lZFc_
+    tag: h2
+    text: 2026-04-30 13:31:00
+    occurrence: 0
+    headingIndex: 4
+  - id: Parametry-TtRa2
+    tag: h2
+    text: Parametry
+    occurrence: 0
+    headingIndex: 7
+---
+# Export členů
+
+1.  Klikněte na záložku **Členové**
+2.  Klikněte na tlačítko **Exportovat**
+
+Následně se vám na disk uloží tabulka ve formátu **CSV** s výčtem členů a jejich členství.
+
+:::caution
+-   Pro export členů se bere v potaz aplikovaný filtr (textové vyhledávání, a filtrování podle sekce/úrovně).
+-   Exportováni budou pouze členové, kteří aktualné mají aktivovanou alespoň jednu sekci/úroveň.
+:::
+
+![Import a export členů ve FAPI Member](/assets/articles/70e1220b092beaa5.png)
+
+# Import členů
+
+Členy lze importovat skrze tabulku ve formátu **CSV.**
+
+![Import a export členů ve FAPI Member](/assets/articles/09bad6fd439df91b.png)
+
+## **Ukázka tabulky**
+
+| **email** | **first\_name** | **last\_name** | **level** | **registered** | **until** |
+| --- | --- | --- | --- | --- | --- |
+| [**clen1@fapi.cz**](mailto:clen1@fapi.cz) | Jaroslav | Novák | 2 | 2024-08-29 12:38:00 | 2024-11-25 |
+| [**clen1@fapi.cz**](mailto:clen1@fapi.cz) | Jaroslav | Novák | 3 | 2024-09-03 09:31:00 | 2024-11-25 |
+| [**clen1@fapi.cz**](mailto:clen1@fapi.cz) | Jaroslav | Novák | 9 | 2024-09-05 15:15:00 | <br /> |
+| [**test@fapi.cz**](mailto:test@fapi.cz) | Tereza | Novotná | 2 | 2024-08-29 10:56:00 | <br /> |
+| [**test@fapi.cz**](mailto:test@fapi.cz) | Tereza | Novotná | 3 | 2024-08-29 10:56:00 | 2025-12-31 |
+| [**test@fapi.cz**](mailto:test@fapi.cz) | Tereza | Novotná | 4 | 2024-08-30 13:13:00 | <br /> |
+| [**test@fapi.cz**](mailto:test@fapi.cz) | Tereza | Novotná | 9 | 2024-09-05 15:15:00 | <br /> |
+
+:::caution
+Každý řádek reprezentuje členství v jedné úrovni - pro jednoho člena může tedy být více než jeden řádek.
+:::
+
+:::danger
+Pokud importujete uživatele s emailem, který již existuje a je zařazen do dané sekce, členství bude upraveno.
+
+-   **registered** a **until** \- datum registrace a expirace bude přepsáno na nové hodnoty
+-   **days** - členství bude prodlouženo o zadaný počet dní
+
+  
+
+**Důležité**
+
+Aby vám import správně fungoval je nutné dodržet formát importu, který musí být:
+
+  
+
+**Pro založení = registraci člena**
+
+## **rok-měsíc-den hodiny:minuty:sekundy**
+
+## **2026-04-30 13:31:00**
+
+  
+
+**Pro nastavení expirace člena**
+
+## **rok-měsíc-den**
+
+## **2026-04-30**
+:::
+
+## **Parametry**
+
+-   **email** - email uživatele `povinné`    
+-   **first\_name** - křestní jméno uživatele
+-   **last\_name** - příjmení uživatele
+-   **level** - ID sekce/úrovně `povinné`    
+-   Dobu trvání členství lze zadat dvěmi způsoby
+    -   Datum registrace a expirace
+        -   **registered** - datum registrace člena do sekce/úrovně `povinné`    
+        -   **until** - datum expirace
+            -   pokud je pole prázdné, uživatel dostane neomezený přístup
+            
+        
+    -   Počet dní
+        -   **days** - počet dní trvání členství `povinné`    
+            -   pokud je pole prázdné, uživatel dostane neomezený přístup
+            -   datum registrace je vždy nastaveno na aktuální datum
+            
+        
+    
+-   **send\_email** \- (true/false) - určuje zda bude uživateli zaslán email s přístupovými údaji. Pokud není prametr zadán, email nebude odeslán nikdy. Aby správně fungoval musí být napsán malými písmeny.
+
+:::tip
+📤 **Export členů konkrétní členské sekce**
+
+Pokud provádíte **export konkrétní úrovně (členské sekce)**, do exportu se zahrnou **všichni členové, kteří do této úrovně patří**. Zároveň ale platí, že **pokud jsou tito členové zároveň i v jiných úrovních**, zobrazí se v exportu **také informace o jejich dalších členstvích**.
+
+Export tedy **neobsahuje pouze uživatele výhradně z dané sekce**, ale **i jejich případná další členství**. Pokud si přejete dále pracovat pouze s uživateli dané jedné sekce, doporučujeme si export **dofiltrovat podle ID členské sekce**.
+
+Tímto způsobem získáte přesný přehled pouze těch členů, kteří patří do konkrétní úrovně, kterou potřebujete zpracovat.
+:::

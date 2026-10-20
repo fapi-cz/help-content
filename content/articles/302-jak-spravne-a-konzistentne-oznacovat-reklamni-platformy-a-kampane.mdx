@@ -1,0 +1,291 @@
+---
+title: Jak správně a konzistentně označovat reklamní platformy a kampaně
+url: /article/302-jak-spravne-a-konzistentne-oznacovat-reklamni-platformy-a-kampane
+description: Jak správně a konzistentně označovat reklamní platformy a kampaně Aby bylo možné marketing dlouhodobě vyhodnocovat, je nutné používat jednotný a srozumitelný sy
+category: Měření a Marketing
+categorySlug: 300-mereni-a-marketing
+categorySlugs:
+  - 300-mereni-a-marketing
+keywords:
+  - Jak správně a konzistentně označovat reklamní platformy a kampaně
+  - Měření a Marketing
+sourceUrl: https://napoveda.fapi.cz/article/302-jak-spravne-a-konzistentne-oznacovat-reklamni-platformy-a-kampane
+order: 214
+updatedAt: 2026-07-13T11:51:26Z
+legacyAnchors:
+  - id: Jak-sprvn-a-konzistentn-oznaovat-reklamn-platformy-a-kampan-pro--NrLiE
+    tag: h2
+    text: Jak správně a konzistentně označovat reklamní platformy a kampaně
+    occurrence: 0
+    headingIndex: 0
+  - id: Pro-je-konzistence-v--CrRkx
+    tag: h2
+    text: Proč je konzistence ve správném označení reklamních kanálů a kampaní důležitá
+    occurrence: 0
+    headingIndex: 1
+  - id: Zkladn-princip-oznaovn-mk0Mr
+    tag: h2
+    text: Základní princip označování
+    occurrence: 0
+    headingIndex: 2
+  - id: Jedna-vc--jedna-informace-wfq0P
+    tag: h3
+    text: Jedna věc = jedna informace
+    occurrence: 0
+    headingIndex: 3
+  - id: Doporuen-struktura--8U4_3
+    tag: h2
+    text: Doporučená struktura
+    occurrence: 0
+    headingIndex: 4
+  - id: Zkladn-formt-hdtq_
+    tag: h3
+    text: Základní formát
+    occurrence: 0
+    headingIndex: 5
+  - id: Pklady-tqC_E
+    tag: h3
+    text: Příklady
+    occurrence: 0
+    headingIndex: 6
+  - id: Doporuen-zkratky-reklamnch-platforem-ZdhLx
+    tag: h2
+    text: Doporučené zkratky reklamních platforem
+    occurrence: 0
+    headingIndex: 7
+  - id: Reklamn-platformy-02d5P
+    tag: h3
+    text: Reklamní platformy
+    occurrence: 0
+    headingIndex: 8
+  - id: E-mail-a-vlastn-kanly-0i8Ec
+    tag: h3
+    text: E-mail (SMS) a vlastní kanály
+    occurrence: 0
+    headingIndex: 9
+  - id: Organick-zdroje-6yaHB
+    tag: h3
+    text: Organické zdroje a další
+    occurrence: 0
+    headingIndex: 10
+  - id: Affiliate-a-partnei-iG6_P
+    tag: h3
+    text: Affiliate a partneři
+    occurrence: 0
+    headingIndex: 11
+  - id: Jak-oznaovat-kampan-a-vstupn-nabdky-i6sbB
+    tag: h2
+    text: Jak označovat kampaně a vstupní nabídky
+    occurrence: 0
+    headingIndex: 12
+  - id: Doporuen-prefixy-HPBDf
+    tag: h3
+    text: Doporučené prefixy
+    occurrence: 0
+    headingIndex: 13
+  - id: Pklady-bo0XL
+    tag: h3
+    text: Příklady
+    occurrence: 1
+    headingIndex: 14
+  - id: Co-do--AfdGV
+    tag: h2
+    text: Co do ref_code nepatří
+    occurrence: 0
+    headingIndex: 15
+  - id: Doporuen-zsady-6f1q0
+    tag: h2
+    text: Doporučené zásady
+    occurrence: 0
+    headingIndex: 16
+  - id: Shrnut-DJmDf
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 17
+---
+# **Jak správně a konzistentně označovat reklamní platformy a kampaně**
+
+Aby bylo možné marketing dlouhodobě vyhodnocovat, je nutné používat **jednotný a srozumitelný systém označování**.
+
+Právě k tomu ve FAPI slouží parametr **ref\_code**. Více o ref\_code v článku [Jak zjistit, odkud máte zákazníky a kteří vám dlouhodobě vydělávají](/article/301-jak-zjistit-odkud-mate-zakazniky-kteri-vam-dlouhodobe-vydelavaji).
+
+Tento článek popisuje:
+
+-   jak ref\_code správně strukturovat,
+-   jaké zkratky používat pro reklamní platformy,
+-   a čemu se naopak vyhnout.
+
+## **Proč je konzistence ve správném označení reklamních kanálů a kampaní důležitá**
+
+`ref_code`   se ve FAPI ukládá **k zákazníkovi natrvalo (first-touch)**.
+
+To znamená, že:
+
+-   hodnota se **už nikdy nemění**,
+-   budete s ní pracovat **měsíce i roky**,
+-   podle ní budete vyhodnocovat kvalitu zákazníků.
+
+Pokud každý kód pojmenujete jinak, data:
+
+-   nepůjdou dobře filtrovat,
+-   nepůjdou mezi sebou porovnat,
+-   ztratí analytickou hodnotu.
+
+* * *
+
+## **Základní princip označování**
+
+### **Jedna věc = jedna informace**
+
+`ref_code`   má odpovídat na otázku:
+
+:::tip
+**Odkud tento zákazník přišel poprvé?**
+:::
+
+**Neřeší:**
+
+-   konkrétní reklamu,
+-   konkrétní kreativu,
+-   krátkodobý výkon.
+
+**Řeší:**
+
+-   **hlavní kampaň / vstupní nabídku**
+-   **hlavní marketingový kanál**
+
+* * *
+
+## **Doporučená struktura** 
+
+### **Základní formát**
+
+```text
+<vstup | produkt>-<platforma>
+```
+
+### **Příklady**
+
+-   book-facebook
+-   ws-gads
+-   course-email
+-   ebook-seo
+
+Tento formát je:
+
+-   čitelný,
+-   stabilní,
+-   vhodný pro dlouhodobé analýzy
+
+## **Doporučené zkratky reklamních platforem**
+
+Po několika různých pokusech, zkoušení, testovaní. Se mi osvědčila jedna věc.
+
+Pojmenovávat platformy celým jménem.
+
+Je to jednoduché. Přímočaré a hlavně **nemusíme mít žádný seznam zkratek**.
+
+Každopádně pokud chcete používat zkratky doporučuji tento formát.
+
+### **Reklamní platformy**
+
+-   **fb/ig** – reklamy na Meta (Facebook / Instagram)
+-   **gads** – Google Ads
+-   **tt** – TikTok Ads
+-   **pin** – Pinterest Ads
+-   **li (občas in)** – LinkedIn Ads
+-   **ms** – Microsoft Ads
+-   **yt** - Youtube
+-   **x** – X (Twitter) Ads
+-   **rdt** – Reddit Ads
+-   **sklik** – Sklik (Seznam Ads)
+-   **heureka** – Heureka Ads / biddování
+-   **zbozi** – Zboží.cz
+-   ...
+
+### **E-mail (SMS) a vlastní kanály**
+
+-   **email** – Email marketing kampaně
+-   **sms** – SMS kampaně
+-   **push** – Push notifikace
+-   **nl** – newsletter
+-   **se** – SmartEmailing
+-   **ecm** – Ecomail
+
+### **Organické zdroje a další**
+
+-   **seo** – organické vyhledávání
+-   **blog** – blog
+-   **help** – nápověda
+-   **yt-org** – YouTube (organicky)
+-   **ig-org** – Instagram (organicky)
+
+### **Affiliate a partneři**
+
+-   **aff** – Affiliate obecně
+-   **influ** – Influencer kampaně
+
+Pro měření affiliate tu je [FAPI Rewards](/category/235-fapi-rewards)
+
+* * *
+
+## **Jak označovat kampaně a vstupní nabídky**
+
+Doporučujeme, aby **první část ref\_code vždy označovala vstup**:
+
+### **Doporučené prefixy**
+
+-   **book** – kniha
+-   **ebook** – e-book
+-   **ws** – workshop
+-   **course** – kurz
+-   **trial** – trial / demo
+-   **lead** – lead magnet
+
+### **Příklady**
+
+-   book-fb
+-   ws-fb
+-   trial-gads
+-   lead-email
+
+## **Co do ref\_code nepatří**
+
+Do ref\_code **nepatří**:
+
+-   ID kampaně z reklamního účtu
+-   názvy reklamních sad
+-   varianty kreativ
+-   datum nebo čas
+
+**❌ Špatně:**
+
+-   fb-campaign-123
+-   book-fb-video2
+-   ws-fb-leden
+
+**Tyto informace patří do:**
+
+-   **UTM parametrů,**
+-   nebo do reklamního systému.
+
+Ano, sice i konkrétní reklama může mít vliv na to jak dlouho u vás zákazník vydrží. Ale toto se dá případně dohledat přes UTM a další parametry.
+
+## **Doporučené zásady**
+
+-   používejte **malá písmena**
+-   nepoužívejte mezery
+-   oddělujte části pomlčkou "-"
+-   **neměňte význam kódu v čase**
+-   držte se **jedné konvence napříč firmou**
+
+## **Shrnutí**
+
+Správně nastavený **ref\_code** vám umožní:
+
+-   dlouhodobě vyhodnocovat marketing,
+-   porovnávat kvalitu zákazníků,
+-   rozhodovat se podle reálných dat, ne pocitů.
+
+Pokud má každý **ref\_code** jasný význam a jednotnou strukturu, stává se z něj **jeden z nejcennějších datových bodů pro vaše podnikání**.

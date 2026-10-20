@@ -1,0 +1,104 @@
+---
+title: Zastavení pravidelné fakturace
+url: /article/115-zruseni-automatickych-opakovanych-plateb
+description: Zrušení za zákazníka (v Administraci FAPI) Zastavení pravidelně opakované fakturace je možné přes administraci FAPI. V nabídce Klienti vyhledejte zákazníka, ote
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+  - 5-nastaveni
+  - 6-fakturace
+keywords:
+  - Zastavení pravidelné fakturace
+  - Často kladené dotazy (FAQ)
+  - Nastavení
+  - Fakturace
+sourceUrl: https://napoveda.fapi.cz/article/115-zruseni-automatickych-opakovanych-plateb
+order: 103
+updatedAt: 2026-07-13T10:51:27Z
+legacyAnchors:
+  - id: Zruen-za-zkaznka-v-Administraci-FAPI-M7_JZ
+    tag: h2
+    text: Zrušení za zákazníka (v Administraci FAPI)
+    occurrence: 0
+    headingIndex: 0
+  - id: Zastaven-pravideln-fakturace-si-me-provst-i-konen-zkaznk-sm-qfQaq
+    tag: h2
+    text: Zastavení pravidelné fakturace si může provést i konečný zákazník sám
+    occurrence: 0
+    headingIndex: 1
+  - id: -Co-se-stane-s-automatickm-strhvnm-plateb-pi-zruen-pravideln-HxtVA
+    tag: h3
+    text: 🔁 Co se stane s automatickým strháváním plateb při zrušení pravidelné fakturace?
+    occurrence: 0
+    headingIndex: 2
+---
+1.  ## **Zrušení za zákazníka (v Administraci FAPI)**
+    
+
+Zastavení pravidelně opakované fakturace je možné přes administraci FAPI.
+
+V nabídce Klienti vyhledejte zákazníka, otevřete jeho detail nastavení a v sekci Šablony pravidelných faktur klikněte na nabídku Upravit a Zastavit (dle dalšího postupu), nebo přímo z rozšířené nabídky vyberte Zastavit.
+
+![Zastavení pravidelné fakturace](/assets/articles/bd2ee4904939b748.png)
+
+V nabídce STAV přepněte na možnost "zastavená" a úpravu uložte.
+
+![Zastavení pravidelné fakturace](/assets/articles/44c05615c24c47e7.png)
+
+Šablona se po uložení změní na červeně zvýrazněný stav Zastavená a další doklady z této šablony už nebudou vznikat.
+
+![Zastavení pravidelné fakturace](/assets/articles/9157f47779d16908.png)
+
+:::caution
+**TIP:** Šablony pravidelných faktur můžete také **zastavovat automaticky** při stornování posledního zálohového dokladu, který z této šablony vzniknul. Stačí jen tuto možnost **zapnout v Nastavení \> Nastavení fakturace \> Storno faktur**
+:::
+
+![Zastavení pravidelné fakturace](/assets/articles/c57be3923ad2af06.png)
+
+2.  ## **Zastavení pravidelné fakturace si může provést i konečný zákazník sám**
+    
+
+  
+
+Zákazník si může svou pravidelnou fakturaci i sám z tzv. přehledové stránky objednávky.
+
+Na přehledovou stránku zákazníka "pošlete" skrze emaily z FAPI, kde si vložíte zástupný symbol
+
+![Zastavení pravidelné fakturace](/assets/articles/eefb7dc8a756e960.png)
+
+Následně, jakmile zákazník tento váš odkaz rozklikne uvidí možnosti platby a zastavení pravidelné fakturace.
+
+![Zastavení pravidelné fakturace](/assets/articles/b052aac2d17677e1.png)
+
+:::caution
+**TIP:** Pokud chcete být informování o tom, že si váš klient zastavil předplatné. Můžete si nastavit notifikaci přímo v prodejním formuláři v kroku 4. [Akce](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla).
+:::
+
+:::danger
+### 🔁 Co se stane s automatickým strháváním plateb při zrušení pravidelné fakturace?
+
+Ve chvíli, kdy je **pravidelná fakturace zastavena**, je **automaticky ukončeno i strhávání plateb z karty**.
+
+🔒 Stržení částky je totiž ve FAPI vždy vázáno na **vystavení nové faktury** – pokud žádná nevznikne, není co strhávat.
+
+💳 Důležité ale je, že **napojení platební karty zákazníka zůstává na pozadí zachováno**. Pokud se tedy klient v budoucnu – např. za 3 měsíce – rozhodne do předplatného vrátit a vy **obnovíte jeho šablonu pravidelné fakturace**, **automatické strhávání se opět spustí bez nutnosti zadávat kartu znovu**.
+:::
+
+:::danger
+🛑 **Ukončení předplatného a poslední vystavená faktura**
+
+Pokud zákazník ukončí předplatné, znamená to, že **se již nevystaví žádné další faktury**. Ukončením se však **automaticky nestornuje poslední již vystavená zálohová faktura** – ta zůstává aktivní.
+
+  
+
+Pokud má zákazník stále napojenou platební kartu, **FAPI se pokusí částku z této poslední faktury automaticky strhnout**. To je standardní chování systému.
+
+  
+
+Toto můžete ve FAPI ošetřit novou funkcí přímo v Nastavení \> Nastavení fakturace, sekce Výchozí nastavení "Stornovat poslední fakturu při zastavení pravidelné fakturace"
+
+  
+
+Chcete-li tomu předejít, je možné si v prodejním formuláři nastavit **vlastní akci při zastavení pravidelné fakturace předplatného.** Kdy si tuto informaci necháte poslat např.  na email, a pak můžete tyto faktury ručně stornovat.
+:::

@@ -1,0 +1,521 @@
+---
+title: Lifehack úpravy pro prodejní formulář
+url: /article/184-lifehack-upravy-pro-prodejni-formular
+description: 1.Přejmenování textu platební metody Dobírka Nahraďte text uvnitř uvozovek -> nový název platební metody dobírka -> novým názvem, třeba Doběrečné. Kód pro "dlaž
+category: Rozšíření a doplňky
+categorySlug: 11-rozsireni-a-doplnky
+categorySlugs:
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Lifehack úpravy pro prodejní formulář
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/184-lifehack-upravy-pro-prodejni-formular
+order: 109
+updatedAt: 2026-07-13T10:51:33Z
+legacyAnchors:
+  - id: Pejmenovn-textu-platebn-metody-Dobrka-BU2ym
+    tag: h2
+    text: 1.Přejmenování textu platební metody Dobírka
+    occurrence: 0
+    headingIndex: 0
+  - id: 2-Doplnn-dladice-Bankovn-pevod-o-dal-text-UlFKI
+    tag: h2
+    text: 2.Doplnění dlaždice Bankovní převod o další text
+    occurrence: 0
+    headingIndex: 1
+  - id: Zvten-psma-chybovch-hlek-v-prodejnm-formuli-FM1Mf
+    tag: h2
+    text: 3.Zvětšení písma chybových hlášek v prodejním formuláři
+    occurrence: 0
+    headingIndex: 2
+  - id: Zmna-textu-chybov-hlky-u-nezakrtnutch-obchodnch-podmnek-xhUo0
+    tag: h2
+    text: 4.Změna textu chybové hlášky u nezaškrtnutých obchodních podmínek
+    occurrence: 0
+    headingIndex: 3
+  - id: Zmna-nzv-sekc-prodejnho-formule-bstEE
+    tag: h2
+    text: 5.Změna názvů sekcí prodejního formuláře
+    occurrence: 0
+    headingIndex: 4
+  - id: Skryt-monosti-nakupovat-na-firmu-7-7ZC
+    tag: h2
+    text: 6.Skrytí možnosti nakupovat na firmu
+    occurrence: 0
+    headingIndex: 5
+  - id: Zobrazit-pouze-platebn-metodu-Twisto-a-vechny-ostatn-skrt-XcW-B
+    tag: h2
+    text: 7.Zobrazit pouze platební metodu Twisto a všechny ostatní skrýt
+    occurrence: 0
+    headingIndex: 6
+  - id: Skryt-platebnch-metod-dladice-BU7-P
+    tag: h2
+    text: 8.Skrytí platebních metod (dlaždice)
+    occurrence: 0
+    headingIndex: 7
+  - id: Pedvybrn-platebn-metody-dobrka-FH-fz
+    tag: h2
+    text: 9.Předvybrání platební metody dobírka
+    occurrence: 0
+    headingIndex: 8
+  - id: Zmna-textu-a-ceny-poloky-pro-Balek--1-s9e_C
+    tag: h2
+    text: 10.Změna textu a ceny položky pro “Balíček č. 1”
+    occurrence: 0
+    headingIndex: 9
+  - id: Popis-YTmKb
+    tag: h3
+    text: "Popis:"
+    occurrence: 0
+    headingIndex: 10
+  - id: Pouit-D0A_I
+    tag: h3
+    text: "Použití:"
+    occurrence: 0
+    headingIndex: 11
+  - id: Zmna-textu-Nzev-firmy-na-vlastn-3FLXW
+    tag: h2
+    text: 11.Změna textu "Název firmy" na vlastní
+    occurrence: 0
+    headingIndex: 12
+  - id: Pouit-FHh1r
+    tag: h3
+    text: "Použití:"
+    occurrence: 1
+    headingIndex: 13
+  - id: Pouit-xFTAg
+    tag: h3
+    text: "Použití:"
+    occurrence: 2
+    headingIndex: 15
+  - id: Zmna-textu-Mm-slevov-kd-na-Promo-kd-go_WU
+    tag: h2
+    text: Změna textu "Mám slevový kód" na Promo kód
+    occurrence: 0
+    headingIndex: 20
+---
+## **1.Přejmenování textu platební metody Dobírka**
+
+Nahraďte text uvnitř uvozovek -\> nový název platební metody dobírka -\> novým názvem, třeba Doběrečné.
+
+Kód pro "_**dlaždice**_":
+
+```text
+<script>
+  window.onload = function() {
+    let element = document.querySelector('.f-collect-on-delivery');
+    if (element && element.textContent.includes("Dobírka")) {
+      element.textContent = element.textContent.replace("Dobírka", "nový název platební metody dobírka");
+    }
+  };
+</script>
+```
+
+Skript se vkládá na stránku, ve které je prodejní formulář, u kterého chcete přejmenování Dobírky provést.
+
+Kód pro "**přepínače**":
+
+Ukázka změny názvu platební metody "Twisto" na "Cvičím ihned, platím za 30dní".
+
+```text
+<script>
+    window.onload = function () {
+        let element = document.querySelector('.f-wire-later-twisto');
+        if (element && element.textContent.includes("Twisto")) {
+            let divElement = element.querySelector('div').querySelector('div')
+            divElement.textContent = divElement.textContent.replace("Twisto", "Cvičím ihned, platím za 30dní");
+        }
+    };
+</script>
+```
+
+## **2.Doplnění dlaždice Bankovní převod o další text**
+
+Výchozí text Bankovní převod se nahradí novým textem mezi posledními uvozovkami - "Bankovní převod s QR kódem". Pro zalomení řádku mezi "Bankovní převod" a "s QR kódem" je potřeba použít [nezalomitelné mezery](https://en.wikipedia.org/wiki/Non-breaking_space) a jednotlivá slova ... s+QR+kódem ... oddělit speciálním znakem.
+
+```text
+<script>
+  window.onload = function() {
+    let element = document.querySelector('.f-wire');
+    if (element && element.textContent.includes("Bankovní převod")) {
+      element.textContent = element.textContent.replace("Bankovní převod", "Bankovní převod s QR kódem");
+    }
+  };
+</script>
+```
+
+![Lifehack úpravy pro prodejní formulář](/assets/articles/9959078cb97baab9.png)
+
+  
+
+## 3.Zvětšení písma chybových hlášek v prodejním formuláři
+
+Kód se vkládá do stránky, ve které je prodejní formulář u kterého chcete provést změnu. Upravuje specificky pouze velikost červených textů chybových hlášek.
+
+Hodnotu 1.5em můžete přepsat na jiné číslo, např. 2em nebo 1.2 em.
+
+```text
+<style>
+  .f-text-red-600 {
+  font-size: 1.5em !important;
+}
+</style>
+```
+
+  
+
+## 4.Změna textu chybové hlášky u nezaškrtnutých obchodních podmínek
+
+Text si lze libovolně přepsat na jiný. Script se vkládá na stránku, ve které je prodejní formulář, u kterého chceme docílit změny.
+
+```text
+<script>
+  // Vytvoření instance MutationObserver
+let observer = new MutationObserver((mutationsList, observer) => {
+    // Projděte všechny mutace, které byly zaznamenány
+    for(let mutation of mutationsList) {
+        // Pokud byla přidána nová uzlová hodnota (textContent)
+        if(mutation.type === 'childList') {
+            let spanElement = document.querySelector('.f-text-red-600.f-text-xs.f-mt-1 span');
+
+            // Zkontrolujte, zda existuje element <span> a zda obsahuje v jednoduchých uvozovkách definovaný text, který chceme přepsat
+
+            if(spanElement && spanElement.textContent.trim() === 'Musíte sa oboznámiť s obchodnými podmienkami.') {
+
+//následující text v jednoduchých uvozovkách nahrazuje původní text
+
+                spanElement.textContent = 'Je potrebné oboznámiť sa s obchodnými podmienkami.';
+                // ukončení sledování mutací, jakmile je text aktualizován
+                observer.disconnect();
+            }
+        }
+    }
+});
+
+// Nastavení konfigurace observeru
+let config = { childList: true, subtree: true };
+
+// Spuštění observeru na celém dokumentu
+observer.observe(document, config);
+</script>
+```
+
+  
+  
+
+## **5.Změna názvů sekcí prodejního formuláře**
+
+V proměnné 'names' se nachází nové názvy sekcí, které si můžete upravit dle potřeby.
+
+```text
+<script>
+	window.onload = function() {
+                //Zde změňte názvy sekcí
+		var names = {
+			items: 'Položky a ceny',
+			miniUpsell: 'Speciální nabídka',
+			basicData: 'Fakturační údaje',
+			customFields: 'Doplňující informace',
+			shippingMethods: 'Způsob doručení',
+			paymentMethods: 'Způsob platby',
+			result: 'Shrnutí objednávky',
+		};
+
+		var elements = [];
+		var form = document.getElementsByClassName('fapi-order-form')[0];
+
+		elements['items'] = form.getElementsByClassName('fapi-form-items')[0]?.firstChild.firstChild.firstChild.firstChild;
+		elements['miniUpsell'] = form.getElementsByClassName('order-bump')[0]?.firstChild.firstChild;
+		elements['basicData'] = form.getElementsByClassName('fapi-form-basic-data')[0]?.firstChild.firstChild.firstChild;
+		elements['customFields'] = form.getElementsByClassName('fapi-form-custom-fields')[0]?.firstChild.firstChild.firstChild;
+		elements['shippingMethods'] = form.getElementsByClassName('fapi-form-shipping-methods')[0]?.firstChild.firstChild.firstChild;
+		elements['shippingMethods'] = form.getElementsByClassName('fapi-form-shipping-methods')[0]?.firstChild.firstChild.firstChild;
+		elements['paymentMethods'] = form.getElementsByClassName('fapi-form-payment-methods')[0]?.firstChild.firstChild.firstChild;
+		elements['result'] = form.getElementsByClassName('fapi-form-result')[0]?.firstChild.firstChild.firstChild;
+
+		for (var key in elements) {
+			if (elements[key] !== undefined && names[key] !== undefined) {
+				elements[key].innerHTML = names[key];
+			}
+		}
+	};
+</script>
+```
+
+## **6.Skrytí možnosti nakupovat na firmu**
+
+```text
+<script>
+  const observer = new MutationObserver(() => {
+    const elements = document.querySelectorAll('.fapi-form-show-company-base-checkbox');
+    if (elements.length) {
+      elements.forEach(el => el.style.display = 'none');
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+</script>
+```
+
+Skript se vkládá na stránku, ve které je prodejní formulář, u kterého chcete skrýt možnost nakoupit na firmu.
+
+  
+
+## 7.Zobrazit pouze platební metodu Twisto a všechny ostatní skrýt
+
+Funguje pro prodejní formulář s platebními metodami jako radio buttony.
+
+```text
+<script>
+    window.onload = function () {
+        let elements = document.querySelectorAll('input[name="payment_type"]');
+
+		for (let i = 0; i < elements.length; i++) {
+			if (elements[i].parentNode.classList.contains('f-wire-later-twisto') || elements[i].parentNode.classList.contains('f-wire-part-twisto')) {
+				continue;
+			}
+
+			elements[i].parentNode.parentNode.style.display = "none";
+		}
+    };
+</script>
+```
+
+## **8.Skrytí platebních metod (dlaždice)**
+
+Pomocí toho scriptu můžeme skrýt jakoukoliv platební metodu z prodejního formuláře, v případě že jsou platební metody zobrazený jako dlaždice.
+
+```text
+<script>
+    window.onload = function () {
+       let selectors = ['.f-wire-later-skippay', '.f-wire-platimpak', '.f-wire-part-skippay', '.f-wire-later-twisto', '.f-wire-twisto'];
+
+       for (let i = 0; i < selectors.length; i++) {
+          document.querySelectorAll(selectors[i]).forEach(function (element) {
+             element.parentNode.remove();
+          });
+       }
+    };
+</script>
+```
+
+Popis:
+
+'.f-wire-later-skippay' - je selector, podle kterého se najde platební metoda a smaže se z formuláře.
+
+Selector najdete, tak že kliknete pravým tlačítkem na dlaždici, vyberete možnost prozkoumat/inspect.
+
+A v kódu poté naleznete selector. Tento select doplňte do seznamu. Viz screenshot.
+
+![Lifehack úpravy pro prodejní formulář](/assets/articles/f0e091a3334fd0b6.png)
+
+## 9.Předvybrání platební metody dobírka
+
+Pokud chcete předvybrat platební metodu dobírkou, vložte k prodejnímu formuláři tento script.
+
+```text
+<script>
+    window.onload = function () {
+        let element = document.querySelector('.f-collect-on-delivery');
+        if (element) {
+            element.click();
+        }
+    };
+</script>
+```
+
+## **10.Změna textu a ceny položky pro “Balíček č. 1”**
+
+Pomocí následujícího kódu můžete přejmenovat název a cenu konkrétní položky v prodejním formuláři. Text v uvozovkách můžete libovolně upravit.
+
+```text
+<script>
+    window.onload = function () {
+        // Najde element s názvem balíčku
+        const packageTitle = document.querySelector('.fapi-form-item-group-0 .fapi-form-basic-block-title');
+        console.log(packageTitle); // Debug, zobrazí element v konzoli
+        if (packageTitle) {
+            // Změna textu názvu balíčku
+            packageTitle.textContent = "Balíček č. 1 - Speciální nabídka";
+        }
+    }
+</script>
+```
+
+### **Popis:**
+
+-   **Třída** fapi-form-item-group-0: Identifikuje skupinu položek v prodejním formuláři.
+-   **Třída** fapi-form-basic-block-title: Označí konkrétní element obsahující název balíčku.
+-   textContent: Používá se ke změně obsahu textu daného elementu.
+
+### **Použití:**
+
+1.  Vložte tento skript na stránku, kde je prodejní formulář.
+2.  Ujistěte se, že správně zacílené třídy odpovídají elementům v HTML formuláře.
+3.  Ověřte, zda se text automaticky upraví.
+
+Nebo vložte script do políčka Trakovací kód (HTML).
+
+![Lifehack úpravy pro prodejní formulář](/assets/articles/d9df126d6030754a.png)
+
+:::danger
+**POZOR!** Trakovací kód se nespouští v administraci FAPI, ověření kódu uděláte na stránce, kde máte vložný prodejní formulář nebo na čisté stránce prodejního formuláře.
+:::
+
+## 11.Změna textu "Název firmy" na vlastní
+
+Pro změnu textu Název firmy můžete použít tento script:
+
+```text
+<script>
+        const companyLabels = document.querySelectorAll('label[for$="-company"]');
+
+        companyLabels.forEach(label => {
+            if (label) {
+                label.textContent = "Company / University";
+            }
+        });
+</script>
+```
+
+### **Použití:**
+
+1.  Vložte tento skript na stránku, kde je prodejní formulář.
+2.  Ujistěte se, že správně zacílené třídy odpovídají elementům v HTML formuláře.
+3.  Ověřte zda se text automaticky upraví.
+
+Nebo vložte script do políčka Trakovací kód (HTML).
+
+:::danger
+**POZOR!** Trakovací kód se nespouští v administraci FAPI, ověření kódu uděláte na stránce kde máte vložný prodejní formulář nebo na čisté stránce prodejního formuláře.
+:::
+
+  
+
+## 12.Vždy zobrazovat údaje firmy, ale zachovat je jako nepovinné
+
+Toto zobrazení fakturačních údajů, tedy včetně celého zobrazení firmy
+
+![Lifehack úpravy pro prodejní formulář](/assets/articles/1116b4b00d05b605.png)
+
+  
+
+```text
+<script>
+    const selectors = [
+       '.fapi-form-default-input-company',
+       '.fapi-form-default-input-ico',https://secure.helpscout.net/search/?query=52785
+       '.fapi-form-default-input-dic',
+       '.fapi-form-default-input-icdph',
+    ];
+    selectors.forEach(selector => {
+       const el = document.querySelector(selector);
+       if (el) {
+          el.style.display = 'block';
+       }
+    });
+
+    const checkbox = document.querySelector('.fapi-form-default-show-company');
+    if (checkbox) {
+       checkbox.style.display = 'none';
+    }
+</script>
+```
+
+  
+
+### **Použití:**
+
+1.  Vložte tento skript na stránku, kde je prodejní formulář.
+2.  Ujistěte se, že máte v posledním kroku povoleno vyplnit firmu
+3.  Ujistěte se, že správně zacílené třídy odpovídají elementům v HTML formuláře.
+4.  Ověřte zda se pole automaticky zobrazí.
+
+Nebo vložte výše uvedený script do prodejního formuláře v kroku 5. Děkovací stránka do políčka Trakovací kód (HTML).
+
+## 13.Pro formuláře ve slovenském jazyce změna "zadarmo" na "zdarma"
+
+  
+  
+
+```text
+<script> 
+window.onload = function () {  
+        const priceElements = document.querySelectorAll('.fapi-form-discounted-price.fapi-form-item-price'); 
+priceElements.forEach(el => {  
+        const originalText = el.textContent.trim().toLowerCase();  
+        if (originalText === "zadarmo") {  
+            el.textContent = "zdarma";  
+     } 
+}); 
+}; 
+</script>
+```
+
+Vložit do pole pro trackovací kód u každého formuláře. Změna se neprojeví na detailu formuláře, ale přímo na stránce, kde je formulář vložený.
+
+![Lifehack úpravy pro prodejní formulář](/assets/articles/ed3c6f7ca896b336.png)
+
+## 14.Zvýraznění "Nakupuji na firmu" v prodejním formuláři
+
+-   ## varianta, tučné zvýraznění
+    
+
+  
+
+```text
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new MutationObserver(() => {
+    const label = [...document.querySelectorAll("label")]
+      .find(el => el.textContent.trim().includes("Nakupuji na firmu"));
+    if (label) {
+      label.style.fontWeight = "900";
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+```
+
+  
+
+## varianta, tučné a červené zvýraznění
+
+```text
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const observer = new MutationObserver(() => {
+    const label = [...document.querySelectorAll("label")]
+      .find(el => el.textContent.trim().includes("Nakupuji na firmu"));
+    if (label) {
+      label.style.fontWeight = "900";
+      label.style.color = "red";
+      observer.disconnect();
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+});
+</script>
+```
+
+label.style.color = "red"; tady se nastavuje barva a mohou nastavit i rgb ve formatu\> label.style.color = "rgb(255, 10, 255)";
+
+## Změna textu "Mám slevový kód" na Promo kód
+
+```text
+<script>
+  window.addEventListener('load', function () {
+    var link = document.querySelector('.fapi-form-result-discount-code a');
+
+    if (!link) {
+      return;
+    }
+    if (link.textContent.includes('Mám slevový kód')) {
+      link.textContent =  'Promo kód';
+    } 
+  });
+</script>
+```

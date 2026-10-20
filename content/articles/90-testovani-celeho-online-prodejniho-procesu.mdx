@@ -1,0 +1,330 @@
+---
+title: Testování celého online prodejního procesu
+url: /article/90-testovani-celeho-online-prodejniho-procesu
+description: Nastavili jste ve svém účtu FAPI vše potřebné a chystáte se uvést svůj prodejní automat do ostrého provozu? Ještě před spuštěním prodeje doporučujeme celý prode
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+  - 12-testovani
+keywords:
+  - Testování celého online prodejního procesu
+  - Online prodej
+  - Propojení s jinými systémy
+  - Testování
+sourceUrl: https://napoveda.fapi.cz/article/90-testovani-celeho-online-prodejniho-procesu
+order: 44
+updatedAt: 2026-10-15T15:07:32Z
+legacyAnchors:
+  - id: 1-Nastaven-testovacho-reimu-kkD4d
+    tag: h2
+    text: 1. Nastavení testovacího režimu
+    occurrence: 0
+    headingIndex: 0
+  - id: 2-Kontrola-prodejnho-formule-na-objednvkov-strnce-LQ7q-
+    tag: h2
+    text: 2. Kontrola prodejního formuláře na objednávkové stránce
+    occurrence: 0
+    headingIndex: 1
+  - id: 3-Vytvoen-testovac-objednvky-NSW-r
+    tag: h2
+    text: 3. Vytvoření testovací objednávky
+    occurrence: 0
+    headingIndex: 2
+  - id: 4-Kontrola-dkovac-strnky-VA9pp
+    tag: h2
+    text: 4. Kontrola děkovací stránky
+    occurrence: 0
+    headingIndex: 3
+  - id: 5-Kontrola-vystaven-faktury-NtY0U
+    tag: h2
+    text: 5. Kontrola vystavené faktury
+    occurrence: 0
+    headingIndex: 4
+  - id: 6-Oven-zasln-e-mail-s-doklady-UaKuU
+    tag: h2
+    text: 6. Ověření zaslání e-mailů s doklady
+    occurrence: 0
+    headingIndex: 5
+  - id: 7-Testovn-platby-QPvAN
+    tag: h2
+    text: 7. Testování platby
+    occurrence: 0
+    headingIndex: 6
+  - id: Run-oznaen-faktury-jako-zaplacen-F_TGj
+    tag: h3
+    text: Ruční označení faktury jako zaplacené
+    occurrence: 0
+    headingIndex: 7
+  - id: Run-oznaen-faktury-jako-zaplacen-YlLUZ
+    tag: h3
+    text: Testování přes platební bránu
+    occurrence: 0
+    headingIndex: 8
+  - id: 8-Testovn-akc-6QmxO
+    tag: h2
+    text: 8. Testování automatických akcí
+    occurrence: 0
+    headingIndex: 9
+  - id: 9-Testovn-dodn-produktu-873I4
+    tag: h2
+    text: 9. Testování dodání produktu
+    occurrence: 0
+    headingIndex: 10
+  - id: 10-Testovn-upomnek-vZvcU
+    tag: h2
+    text: 10. Testování upomínek
+    occurrence: 0
+    headingIndex: 11
+---
+Nastavili jste ve svém účtu FAPI vše potřebné a chystáte se uvést svůj prodejní automat do ostrého provozu? Ještě před spuštěním prodeje doporučujeme celý prodejní proces důkladně otestovat.
+
+Testování vám pomůže ověřit, že všechny kroky nákupu fungují správně, a že zákazník projde objednávkou bez problémů. Zároveň si můžete zkontrolovat správnost vystavených dokladů, e-mailů i navazujících automatických akcí.
+
+Prodejní proces ve FAPI je poměrně komplexní a vstupuje do něj mnoho nastavení. **Cílem testování je ověřit, že všechny důležité parametry byly nastaveny správně a že celý proces funguje tak, jak očekáváte.**
+
+Doporučujeme také projít nákup **očima zákazníka** a zkontrolovat, zda jsou všechny kroky srozumitelné a funkční.
+
+:::caution
+Doporučujeme testovat nastavení průběžně, a to v jakékoli fázi používání FAPI. Automatické procesy fungují spolehlivě jen tehdy, pokud jsou správně nastavené.
+:::
+
+Testování celého prodejního procesu se dá shrnout do několika kroků, které postupně v tomto článku probereme. Před spuštěním doporučujeme otestovat zejména:
+
+-   vytvoření objednávky ve formuláři,
+-   vystavení faktury,
+-   odesílání e-mailů,
+-   zaplacení objednávky,
+-   automatické akce,
+-   dodání produktu.
+
+Pečlivé otestování vám pomůže odhalit případné chyby ještě před tím, než začne objednávky vytvářet váš zákazník.
+
+  
+
+## 1\. Nastavení testovacího režimu
+
+Testování nevyžaduje téměř žádnou speciální přípravu. Doporučujeme však přepnout prodejní formulář, na kterém budete test provádět, do **testovacího režimu**.
+
+![Testování celého online prodejního procesu](/assets/articles/07fed72bfcf91cec.png)
+
+Vysvětlení testovací režimu máme zde:
+
+[testovacího režimu u prodejního formuláře](/article/66-testovaci-rezim-prodejniho-formulare)
+
+Po zapnutí testovacího režimu se u formuláře automaticky použije **testovací sada číselných řad**, takže doklady vytvořené při testování budou číselně oddělené od dokladů z ostrého provozu.
+
+:::tip
+Pokud budete t**estovací faktury vystavovat ručně,** nezapomeňte při tom zvolit testovací číselnou řadu.
+
+[https://napoveda.fapi.cz/article/16-ciselne-rady](/article/16-ciselne-rady)
+:::
+
+  
+
+## 2\. Kontrola prodejního formuláře na objednávkové stránce
+
+Stejně jako celý prodejní proces, tak i testování začíná na objednávkové stránce, kde je umístěný prodejní formulář.
+
+Předpokládejme, že jste prodejní formulář již umístili na svůj web.
+
+:::tip
+Pokud ne, postupujte podle této FAPI nápovědy [Vložení prodejního formuláře na web](/article/75-vlozeni-prodejniho-formulare-na-web)
+:::
+
+U prodejního formuláře na objednávkové stránce zkontrolujte zejména:
+
+-   jazyk prodejního formuláře,
+-   celkový vzhled a formátování ,
+-   zobrazení volitelných polí prodejního formuláře (např. Mobil, Firma, IČ, DIČ, Poznámka, Doručovací adresa, souhlas s obchodními podmínkami),
+-   správnost prodejních položek a jejich cen,
+-   zobrazení sazeb a částek DPH (pokud jste plátci DPH),
+-   použitou měnu (v závislosti na nastavení se může měnit podle zvoleného státu zákazníka),
+-   nabízené platební metody.
+
+  
+
+Pokud ve formuláři používáte i další prvky, zkontrolujte také jejich správné zobrazení a funkčnost, například:
+
+-   dopravu,
+-   slevy,
+-   splátky,
+-   miniupselly,
+-   upselly.
+
+  
+
+## 3\. Vytvoření testovací objednávky
+
+Nyní si vyzkoušejte objednávku stejně jako váš zákazník.
+
+Vyplňte objednávkový formulář, vyberte jednu nebo více položek, zvolte platební metodu a odešlete objednávku.
+
+Důležité je zadat **e-mailovou adresu, ke které máte přístup**, abyste mohli následně zkontrolovat doručené e-maily s doklady.
+
+:::note
+Doporučujeme pro testování použít email, který ještě nemáte v databázi. Nebo jej prvně ze všech vašich používaných aplikací odstraňte.
+:::
+
+:::tip
+Pokud nemáte aktivovanou testovací platební bránu, zvolte platbu **bankovním převodem**. Tu lze při testování nejsnadněji simulovat. Tato platební metoda umožňuje nejjednodušším způsobem simulovat platbu i bez provedení skutečné peněžní transakce.
+:::
+
+  
+
+## 4\. Kontrola děkovací stránky
+
+Po odeslání objednávky (popř. po dokončení platby na platební bráně) se zobrazí **děkovací stránka**.
+
+Zkontrolujte:
+
+-   zda se stránka zobrazila správně
+-   zda obsahuje správné informace
+-   zda fungují případné odkazy nebo další instrukce
+
+  
+
+## 5\. Kontrola vystavené faktury
+
+Nyní se vraťte zpět do administrace FAPI a v přehledu faktur na stránce **Faktury → Přehled faktur**
+
+a zkontrolujte, zda byl vystaven doklad podle nastavení prodejního formuláře a zda obsahuje správné údaje:
+
+-   dodavatel a odběratel,
+-   číslo bankovního účtu,
+-   prodejní položky,
+-   ceny a sazby DPH,
+-   jazyk dokladu.
+
+:::caution
+Pokud používáte testovací režim, testovací doklady se **neobjeví na nástěnce ani ve statistikách**.
+:::
+
+  
+
+## 6\. Ověření zaslání e-mailů s doklady
+
+Po vystavení i zaplacení objednávky odesílá FAPI zákazníkovi e-maily podle nastavení **sady šablon zpráv**.
+
+Zkontrolujte tedy, zda:
+
+-   e-mail dorazil správně,
+-   obsahuje správné informace,
+-   jsou přiloženy správné doklady,
+
+:::tip
+Logika a nastavení šablon zpráv jsou podrobně popsány v článku [Šablony zpráv](/article/17-sablony-zprav).
+:::
+
+  
+
+## 7\. Testování platby
+
+Pokud jste při objednávce nepoužili online platbu, bude faktura zatím **neuhrazená**.
+
+Pro otestování procesů po zaplacení máte dvě možnosti:
+
+### Ruční označení fak**tury jako za**placené
+
+Nejjednodušší způsob je použít tlačítko **Označit jako zaplacené** na stránce s detailem faktury.
+
+FAPI nerozlišuje způsob úhrady, takže pro testování akcí po zaplacení je tento postup plně dostačující.
+
+  
+
+![Testování celého online prodejního procesu](/assets/articles/834ca244594a8bfe.png)
+
+:::tip
+Chcete-li otestovat proces platby klasickým bankovním převodem, postupujte podle návodu [Testování importu plateb z banky a jejich párování](/article/89-testovani-importu-plateb-z-banky-a-jejich-parovani).
+:::
+
+  
+
+### Testování přes platební bránu
+
+Platbu můžete otestovat také pomocí **fiktivní platby na platební bráně v testovacím režimu**.
+
+Ne všechny platební brány však testovací režim podporují. Záleží na tom, jakou platební bránu používáte a zda máte založený i její testovací profil.
+
+Návody pro jednotlivé platební brány najdete zde:
+
+-   [Založení a integrace platební brány GoPay](/article/56-zalozeni-a-integrace-platebni-brany-gopay),
+-   [Založení a integrace platební brány ThePay](/article/57-zalozeni-a-integrace-platebni-brany-thepay),
+-   [Založení a integrace platební brány Comgate](/article/58-zalozeni-a-integrace-platebni-brany-comgate),
+-   [Založení a integrace platební brány Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays),
+-   [Založení a integrace platební brány Stripe](/article/60-zalozeni-a-integrace-platebni-brany-stripe).
+
+  
+
+Aby bylo možné platbu přes bránu otestovat, je potřeba mít ji zároveň **nastavenou i v prodejním formuláři**.
+
+:::tip
+Platební brána ThePay jako jediná nabízí veřejnou testovací platební bránu. Můžete ji použít i bez založení účtu u platební brány. Stačí při založení propojení s platební bránou ve FAPI zvolit _testovací režim_.
+:::
+
+  
+
+## 8\. Testování automatických akcí
+
+Akce jsou automatické procesy, které se spouštějí při různých událostech – například při **vystavení objednávky** nebo po jejím **zaplacení**.
+
+Při testování doporučujeme ověřit zejména to, zda se správně provedly všechny navazující kroky, které máte ve formuláři nastavené.
+
+Zkontrolujte především:
+
+-   zda se kontakt z objednávky propsal do **správných seznamů** v e-mailingovém nástroji (např. SmartEmailingu),
+-   zda byl zákazník přidán do **správné členské sekce nebo úrovně**,
+-   zda zákazníkovi dorazil správný **e-mail s přístupy** nebo e-mail o **prodloužení přístupu**,
+-   zda se odeslaly i další navazující e-maily, pokud je máte v akcích nastavené.
+
+  
+
+Například pokud máte u formuláře nastavenou akci **přidat kontakt do SmartEmailingu**, zkontrolujte, že se e-mailová adresa z objednávky opravdu propsala do správného seznamu. Pokud prodáváte členskou sekci, ověřte také, že se zákazníkovi vytvořil nebo prodloužil přístup a že mu přišel odpovídající e-mail.
+
+:::tip
+Více o nastavení akcí se dozvíte v návodu pro Akce: [https://napoveda.fapi.cz/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla)
+:::
+
+:::tip
+Chcete si ověřit, jaké akce se skutečně u dokladu spustily?
+
+[https://napoveda.fapi.cz/article/283-jak-zjistit-jake-akce-probehly-u-dokladu](/article/283-jak-zjistit-jake-akce-probehly-u-dokladu)
+:::
+
+  
+
+## 9\. Testování dodání produktu
+
+Způsob dodání produktu závisí na typu produktu a nastavení prodejního procesu.
+
+Doručení produktu může být ve FAPI realizováno více způsoby. Záleží samozřejmě i na povaze produktu (např. o doručení ebooku pojednává návod [Jak prodávat ebook přes FAPI](/article/82-jak-prodavat-ebook-pres-fapi)).
+
+Nejčastější způsoby dodání jsou například:
+
+-   zaslání produktu e-mailem (např. e-book),
+-   přidání do e-mailingového nástroje, odkud je navázáno spuštění další akcí,
+-   vytvoření přístupu do členské sekce.
+
+  
+
+Podle toho, jak máte doručení nastavené, ověřte, že zákazník po nákupu skutečně obdrží svůj produkt.
+
+  
+
+## 10\. Testování upomínek
+
+Upomínky se odesílají na základě **časové podmínky vůči datu splatnosti faktury**, proto jejich testování vyžaduje určitý časový odstup.
+
+Test můžete urychlit například tím, že:
+
+-   zkrátíte splatnost faktury před vystavením objednávky
+-   nebo ručně upravíte datum splatnosti již vystavené faktury
+
+Nastavení splatnosti najdete v:
+
+**Nastavení → Nastavení fakturace**
+
+:::tip
+Více o nastavení upomínek se dozvíte v návodu [Upomínky](/article/19-upominky).
+:::

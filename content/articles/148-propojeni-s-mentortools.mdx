@@ -1,0 +1,72 @@
+---
+title: Propojení s Mentortools
+url: /article/148-propojeni-s-mentortools
+description: Videonávod k propojení najdete zde. V aplikaci Mentortools otevřete nabídku Nastavení > poskytovatelé plateb. Zde přepněte posuvník u řádku FAPI  doprava a klik
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení s Mentortools
+  - Často kladené dotazy (FAQ)
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/148-propojeni-s-mentortools
+order: 166
+updatedAt: 2026-07-13T11:11:01Z
+---
+Videonávod k [propojení najdete zde.](https://help.mentortools.com/sk/6-automatizacia-platieb/)
+
+V aplikaci Mentortools otevřete nabídku Nastavení \> poskytovatelé plateb.
+
+![Propojení s Mentortools](/assets/articles/2dafec85d1aeacb2.png)
+
+Zde přepněte posuvník u řádku FAPI  doprava a klikněte na **Generovat pověření**. Zobrazí se dvě pole k vyplnění: login a API token.
+
+![Propojení s Mentortools](/assets/articles/04aae7f5ad1a77cc.png) Vraťte se do FAPI, do sekce Můj účet \> API klíče. 
+
+![Propojení s Mentortools](/assets/articles/72feeec388d398bf.png)Zde klikněte na tlačítko NOVÝ API KLÍČ. ![Propojení s Mentortools](/assets/articles/20268da8a291a9b7.png)Kliknutím na ZOBRAZIT si zobrazte a zkopírujte nyní zobrazený API klíč do schránky.
+
+![Propojení s Mentortools](/assets/articles/f3c012bb600380e9.png)
+
+Vraťte se do Mentortools a vložte do pole č. 1 a pole č. 2 údaje vašeho FAPI účtu:
+
+-   přihlašovací @ adresu (najdete ji ve FAPI v Můj účet \> tabulka Fakturační údaje)
+-   ve schránce zkopírovaný API klíč
+
+Údaje po vložení uložte kliknutím na tlačítko ULOŽIT.
+
+URL adresu z pole č. 3 budete potřebovat pro vložení skriptu do prodejního formuláře FAPI, do části 4 akce. URL adresa se nemění, pro všechny potřebné akce (zaplacení objednávky, storno objednávky) má stále stejný tvar.
+
+![Propojení s Mentortools](/assets/articles/37445feef6eb8387.png)Po dokončení tohoto nastavení se Mentortools z FAPI dozví o každé nově dokončené platbě. Nastavení prodejního formuláře už pak probíhá ve FAPI běžným způsobem.
+
+## Jak nastavit akci po zaplacení
+
+Ve FAPI jděte do Prodej \> Prodejní formuláře a na řádku konkrétního prodejního formuláře klikněte na Upravit (třetí tlačítko zprava).
+
+![Propojení s Mentortools](https://lh6.googleusercontent.com/KbHuJ3FBxiwi52svXW-Dbbeu6xz7D-CAppkQ8cMuktbTDDrW_3kIyVni80Kmai-0ezF5SUcbBWA6IvSeseeElpdnlzjH8JZ76uFunpjVLOklORX32ZSFnmQfQ0Gkfz7eghwgYwTwYeyKY556NpoF0doVJgQenc0MHTOtCDGOjP-KOrAe6kWiCmT40w)
+
+V úpravách formuláře přejděte na krok 4 Akce.
+
+![Propojení s Mentortools](https://lh6.googleusercontent.com/_68GM7GnfnHn9UgtWLBxy6n1adwgfSUKWC0rKez-6SztJlYs79qOYQQddHJniJnWOZInMNLg3-wpj9WNvJ-p8cxMPV-RwrMdlmJ0MnQjdysA8R0WE_dti7-LmjXBHImeSt_N-ttSBnF828VD24t7yqpfyhi8NyE-iPW08LxpGDIvwMgCtrmFYBih7g)
+
+V tabulce vespod stránky přidejte postupně dvě nové akce:
+
+-   zakoupení položky
+-   storno položky
+
+Obě budou spouštět programový skript, který si zkopírujete z Mentortool z pravého krajního políčka v nastavení připojení k FAPI.
+
+Pokud v prodejním formuláři prodáváte více než jednu položku, přidejte akce zaplacení a stornování položky pro každou jednotlivou položku, kterou chcete automatizovat přes Mentortools.
+
+![Propojení s Mentortools](https://lh5.googleusercontent.com/wa9KplEORlSKuxdpo68Gacj5fOIuH0KtaoIOaFJJWGjYQ2iOkcj19E0prW-tyJuccfDYTUMO2dlsxT2i0AE0flOEIkB5rnquJVxLcJfDulmNsje4Osgc7ChH3tb0PdxCXmfYgWigkshblUevW7fkB0EHPuNWguD9ddmOoGseJlDKKMzhfLYOJvuRgw)
+
+Posledním krokem správného propojení FAPI a Mentortools je přiřazení položky z FAPI ke konkrétnímu kurzu v Mentortools.
+
+V Mentortools si najděte seznam kurzů. V něm klikněte na kurz, ke kterému jste ve FAPI udělali prodejní formulář, a otevřete si jeho nastavení. V nastavení plateb pak vyberte typ platby "Platené".
+
+![Propojení s Mentortools](https://lh4.googleusercontent.com/em8pDm5ATNzscoztjq87DoJ8cmmwku38-XjrjvDvBZm6L3cZjSxksdd_wYfQo7kqgbeDizu0Nq3iP091Ert8xpFLQEHu1tQquW2Dw5lGXkmjwentMixeMzxyb4ZZkh8XxffeAT9QPLv8tu8iwzjN45TatDevk-qit4iQ-LNo_fMIhFWGB5rBJlb-)
+
+Pokud máte propojení správně nastaveno, tak Mentortools si načte z FAPI všechny produkty a mezi nimi si můžete přepínačem vypnout/zapnout který konkrétní kurz se k danému prodeji vztahuje.  
+
+Při zakoupení položky se odešlou přístupové údaje ke kurzu emailem, při stornu položky se přístup vypne.

@@ -1,0 +1,51 @@
+---
+title: 🔗 Propojení FAPI s rezervačním systémem nebo kalendářem
+url: /article/253-propojeni-fapi-s-rezervacnim-systemem-nebo-kalendarem
+description: Ačkoli FAPI v tuto chvíli nenabízí přímé technické napojení na rezervační systémy nebo kalendáře (např. Calendly, Reservio, Google Kalendář apod.), existuje jed
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - 🔗 Propojení FAPI s rezervačním systémem nebo kalendářem
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/253-propojeni-fapi-s-rezervacnim-systemem-nebo-kalendarem
+order: 218
+updatedAt: 2026-07-13T11:43:43Z
+---
+Ačkoli FAPI v tuto chvíli nenabízí přímé technické napojení na rezervační systémy nebo kalendáře (např. Calendly, Reservio, Google Kalendář apod.), existuje jednoduché a funkční řešení, jak propojit proces objednávky s rezervací konkrétního termínu.
+
+### ✉️ Řešení pomocí odkazu v šabloně zprávy
+
+Většina rezervačních systémů umožňuje vytvořit **odkaz na rezervační formulář**, který lze snadno vložit do šablony e-mailu v rámci FAPI.
+
+#### Postup:
+
+1.  **Vytvořte odkaz na rezervační systém**
+    
+    Ve vašem externím rezervačním systému si vytvořte stránku nebo formulář pro výběr termínu. Např.:
+    
+    -   https://moje-rezervace.calendly.com
+    -   https://klient.reservio.com/moje-sluzby
+    
+2.  **Zkopírujte tento odkaz** a vložte jej do těla e-mailu v sadě šablon zpráv ve FAPI. Např. do šablony „po zaplacení“ nebo „vlastní emailové šablony“.
+3.  **Doporučené znění v e-mailu může být např.:**
+
+```text
+Děkujeme za objednávku!  
+Pro výběr termínu konzultace si prosím rezervujte čas zde:  
+👉 [Rezervovat termín](https://moje-rezervace.calendly.com)
+```
+
+1.  _(Použít můžete i dynamické prvky FAPI, jako je oslovení, číslo objednávky apod.)_
+
+### ✅ Výhody tohoto řešení
+
+-   ✅ Jednoduché nastavení bez nutnosti programování
+-   ✅ Flexibilita – lze využít jakýkoli rezervační systém
+-   ✅ Možnost snadno upravit odkaz pro různé služby nebo jazykové verze
+
+### 📝 Tipy
+
+-   Pokud používáte více služeb s různými termíny, můžete pro každou službu vytvořit vlastní šablonu zprávy s odpovídajícím odkazem.
+-   Využijte **automatické odesílání e-mailů** při vytvoření objednávky – zákazník tak dostane odkaz na rezervaci automaticky ihned po objednání.

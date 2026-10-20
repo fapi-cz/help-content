@@ -1,0 +1,83 @@
+---
+title: Dohledání souhlasů zákazníka při objednávce
+url: /article/168-dohledani-souhlasu-zakaznika-pri-objednavce
+description: V některých situacích může nastat potřeba dohledat, s čím přesně zákazník při objednávání souhlasil. Ve FAPI existuje několik různých způsobů, jak splnit inform
+category: Začínáme
+categorySlug: 4-zaciname
+categorySlugs:
+  - 4-zaciname
+  - 5-nastaveni
+keywords:
+  - Dohledání souhlasů zákazníka při objednávce
+  - Začínáme
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/168-dohledani-souhlasu-zakaznika-pri-objednavce
+order: 150
+updatedAt: 2026-07-13T11:07:25Z
+legacyAnchors:
+  - id: Jak-souhlasy-lze-ve-FAPI-nastavit-Qoefb
+    tag: h3
+    text: Jaké souhlasy lze ve FAPI nastavit
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-zptn-zjistit-jak-souhlas-zkaznk-udlil-8jq6B
+    tag: h3
+    text: Jak zpětně HROMADNĚ zjistit jaký souhlas zákazník udělil?
+    occurrence: 0
+    headingIndex: 1
+---
+V některých situacích může nastat potřeba dohledat, s čím přesně zákazník při objednávání souhlasil. Ve FAPI existuje několik různých způsobů, jak splnit informační povinnosti, které jako podnikatelé máte:
+
+-   seznámení s obchodními podmínkami (jak je vložit do emailu jako [PDF přílohu popisujeme zde)](/article/165-vlozeni-obchodnich-podminek-jako-emailove-prilohy)
+-   [GDPR pravidla](/article/42-vop-gdpr-ve-fapi), práce s osobními údaji
+-   seznámení s pravidly pro reklamace a odstoupení od smlouvy
+
+Pokud používáte ve FAPI pro jednotlivé informační povinnosti zatrhávací checkboxy, tak je možné je z FAPI snadno exportovat a zpětně dohledat kdy a s čím zákazník vyjádřil souhlas. Souhlasy se v prodejním formuláři spravují přes krok 6 Vzhled, sekce "Souhlasy v objednávkovém formuláři".
+
+### Jaké souhlasy lze ve FAPI nastavit
+
+Na výběr jsou 3 typy souhlasů:
+
+1.  souhlas s obchodními podmínkami (je automaticky povinný, bez něj nejde odeslat objednávka)
+2.  volitelné souhlasy (text souhlasu si určíte sami, stejně tak jestli je povinný nebo nepovinný)
+3.  informační povinnost ke zpracování osobních údajů (neobsahuje zatržítko, je automatická)
+
+![Dohledání souhlasů zákazníka při objednávce](/assets/articles/cca526ccc1ec83da.png)
+
+Výše uvedené příklady nastavení se zákazníkům při objednávání zobrazí takto:
+
+![Dohledání souhlasů zákazníka při objednávce](/assets/articles/481cdfcce96ef044.png)
+
+Červený text o povinném souhlasu se zobrazí až po neúspěšném pokusu o odeslání objednávky bez udělení povinného souhlasu.
+
+  
+
+:::info
+Jednotlivé souhlasy jsou pak součástí každé faktury, stačí kliknout na číslo dokladu a pod přehledovou stránkou jsou souhlasy vypsány.
+
+![Dohledání souhlasů zákazníka při objednávce](/assets/articles/8f165347c378fe7c.png)
+:::
+
+  
+
+### Jak zpětně HROMADNĚ zjistit jaký souhlas zákazník udělil?
+
+V administraci FAPI jděte do Faktury \> Export \> nastavte filtry které objednávky vás zajímají.
+
+Jako typ exportu vyberte **CSV - položkový export (Excel).**
+
+  
+
+V exportovaném souboru ve sloupcích BF až BJ jsou uložené hodnoty zatržítek a texty, které zákazník při dané objednávce odsouhlasil.
+
+Hodnota "ano" znamená, že daný checkbox byl zaškrtnutý, hodnota "ne" = souhlas nebyl udělený, zatržítko zákazník nechal nezaškrtnuté.
+
+Sloupec BF je vyhrazený povinnému souhlasu s obchodními podmínkami.
+
+Sloupec BH obsahuje jeden a více vlastních souhlasů (v administraci prodejního formuláře se číslují #1, #2, atd.).
+
+Pokud máte vícero vlastních souhlasů, budou v buňce ve sloupci BH vypsané pod sebou (tedy 1 buňka může mít více samostatných hodnot ano / ne u jednotlivých souhlasů).
+
+Sloupec BI obsahuje texty jednotlivých vlastních souhlasů.
+
+Sloupec BJ obsahuje text informační povinnosti ke zpracování osobních údajů.

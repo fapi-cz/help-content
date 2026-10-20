@@ -1,0 +1,91 @@
+---
+title: Elektronicky poskytované služby a režim MOSS
+url: /article/28-elektronicky-poskytovane-sluzby-a-rezim-moss
+description: "POZOR: Režim MOSS byl od 1. července 2021 nahrazen režimem OSS. Od 1. 1. 2015 se změnila pravidla EU pro stanovení místa plnění u elektronicky poskytovaných slu"
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Elektronicky poskytované služby a režim MOSS
+  - Nastavení
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/28-elektronicky-poskytovane-sluzby-a-rezim-moss
+order: 33
+updatedAt: 2026-07-13T09:52:49Z
+---
+:::danger
+POZOR: Režim MOSS byl od 1. července 2021 nahrazen [režimem OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).
+:::
+
+Od 1. 1. 2015 se změnila pravidla EU pro stanovení místa plnění u elektronicky poskytovaných služeb, telekomunikačních služeb a služeb rozhlasového a televizního vysílání poskytovaných osobám nepovinným k dani (nepodnikajícím fyzickým osobám). Tyto služby jsou nově zdaňovány v místě usazení příjemce služby. To znamená, že služba musí být prodávána se sazbou DPH platnou ve státě daného spotřebitele. Aby se podnikatelé nemuseli registrovat k DPH v každém členském státě, kam svoji službu prodají, mohou využít režim jednoho správního místa (tzv. _Mini One Stop Shop - MOSS_).
+
+## Jakých produktů se tento režim týká?
+
+Daňový režim se týká elektronicky poskytovaných služeb, telekomunikačních služeb a služeb rozhlasového a televizního vysílání poskytovaných osobám nepovinným k dani. V případě elektronicky poskytovaných služeb jde o služby poskytované prostřednictvím datové nebo elektronické sítě, především pak jde o:
+
+-   prezentace na elektronické síti (webhosting),
+-   poskytování software a aplikací,
+-   stahování hudby a filmů,
+-   přístup k online vzdělávání (online kurzy),
+-   přístup k online počítačovým hrám,
+-   elektronické knížky, fotografie a dokumenty
+-   antivirové programy,
+-   online aukce apod.
+
+Více najdete v následujících dokumentech:
+
+[Výklad nového režimu DPH a MOSS](https://www.financnisprava.cz/assets/cs/prilohy/ms-mezinarodni-spoluprace-a-dph/MOSS_info.pdf) (formát PDF, zdroj: Generální finanční ředitelství)  
+[Manuál pro zvláštní režim jednoho správního místa](https://www.financnisprava.cz/assets/cs/prilohy/ms-mezinarodni-spoluprace-a-dph/MOSS_informace_pro_verejnost.pdf) (formát PDF, zdroj: Generální finanční ředitelství)
+
+## Můžete využít režim MOSS
+
+Aby se podnikatelé nemuseli registrovat a odvádět DPH v každém státě zvlášť, byl pro tento účel zaveden zvláštní režim jednoho správního místa (tzv. _Mini One Stop Shop - MOSS_).
+
+Osoba povinná k dani, která tento režim využívá, se nemusí při poskytování uvedených služeb registrovat k DPH v každém jednotlivém členském státě, kam byla daná služba poskytnuta, ale své povinnosti k DPH plní prostřednictvím jednoho členského státu. Daňová správa tohoto členského státu pak provádí výběr, evidenci a odvod vybrané daně do dotčených členských států.
+
+Režim MOSS spadá v Česku pod Finanční úřad pro Jihomoravský kraj. Komunikace s úřadem přitom probíhá elektronicky. Výjimku tvoří předávání plných mocí, které lze ale na úřad zaslat v souladu s Daňovým řádem. Registraci mohou podnikatelé uskutečnit na daňovém portálu finanční správy.
+
+Tento režim je dobrovolný. V případě, že se poskytovatel uvedených služeb k používání režimu MOSS nepřihlásí, je povinen se registrovat k DPH v každém členském státě, kde bude místo plnění těchto služeb (ve státě spotřeby).
+
+## Co je potřeba nastavit ve FAPI?
+
+Aby se faktury s elektronicky poskytovanými službami vystavovaly se správnou sazbou DPH je třeba ve FAPI nastavit, který produkt podléhá tomuto režimu.
+
+V nastavení prodejní položky (nabídka  **PRODEJ - Položky** - tlačítko **Upravit** u příslušné prodejní položky), která splňuje charakteristiku elektronicky poskytované služby, zvolte v poli **TYP PRODUKTU** odpovídající hodnotu:
+
+-   **elektronická publikace/ebook** - pro elektronické publikace se sníženou sazbou DPH,
+-   **jiná elektronicky poskytovaná služba** - pro ostatní elektronicky poskytované služby se standardní sazbou DPH.
+
+![Elektronicky poskytované služby a režim MOSS](/assets/articles/4b1c759bbbd7ef34.png)
+
+### Snížená sazba DPH u elektronických publikací
+
+V některých zemích EU tvoří tzv. _elektronické publikace_ (např. ebooky) samostatnou kategorii, na níž se vztahuje speciální snížená sazba DPH.
+
+U těchto produktů je třeba u prodejní položky v poli  **TYP PRODUKTU** nastavit hodnotu **elektronická publikace/ebook.**
+
+:::caution
+Vymezení pojmu "elektronická publikace" se může v jednotlivých státech EU lišit. Úplné a závazné informace jsou k dispozici v platné právní úpravě jednotlivých členských států. Aktuální i historické sazby DPH, včetně odlišných sazeb pro elektronické publikace, lze dohledat na stránkách Evropské komise: [https://ec.europa.eu/taxation\_customs/tic/public/vatRates/vatrates.html](https://ec.europa.eu/taxation_customs/tic/public/vatRates/vatrates.html)
+:::
+
+## Režimy fakturace elektronicky poskytovaných služeb
+
+Ve FAPI je možné vybírat mezi dvěma režimy fakturace elektronicky poskytovaných služeb. Kromě výchozího režimu MOSS, kdy se elektronicky poskytované služby do EU fakturují se sazbou DPH platnou v zemi příjemce, umožňuje legislativa za určitých okolností použít od 1. 1. 2019 i režim, při kterém je místo plnění v tuzemsku.
+
+Volbu režimu prodeje elektronicky poskytovaných služeb najdete v nabídce **Nastavení - Nastavení fakturace** pod názvem **ELEKTRONICKY POSKYTOVANÉ SLUŽBY**.
+
+![Elektronicky poskytované služby a režim MOSS](/assets/articles/09a70d4d88ad80f4.png)
+
+Režim fakturace s místem plnění v tuzemsku lze uplatnit pouze při současném splnění následujících podmínek:
+
+-   dodavatel má sídlo nebo provozovnu pouze v jednom členském státě EU,
+-   elektronicky poskytovaná služba je dodávána koncovému spotřebiteli nebo neplátci DPH do jiného členského státu EU (tuto podmínku vyhodnocuje FAPI automaticky),
+-   celková hodnota prodeje elektronicky poskytovaných služeb nepřesahuje v kalendářním roce 10000 EUR (popř. ekvivalent v jiné měně) a nepřesáhla tuto hranici ani v roce předcházejícím.
+
+:::caution
+Sazby DPH členských států EU používané při prodeji elektronicky poskytovaných služeb v režimu MOSS můžete zobrazit stiskem tlačítka **Sazby DPH v EU**.
+:::

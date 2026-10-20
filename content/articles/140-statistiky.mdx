@@ -1,0 +1,124 @@
+---
+title: Statistiky
+url: /article/140-statistiky
+description: FAPI Statistiky jsou ve vašem účtu podrobným přehledem nad výkony celého prodeje. Představují podrobný náhled na obraty, které se dále mohou dělit na jednotlivé
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Statistiky
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/140-statistiky
+order: 179
+updatedAt: 2026-07-13T11:11:09Z
+---
+FAPI Statistiky jsou ve vašem účtu podrobným přehledem nad výkony celého prodeje. Představují podrobný náhled na obraty, které se dále mohou dělit na jednotlivé prodejní formuláře, konkrétní produkty a projekty. Pro každou podrobnou statistiku počítáme dílčí součty:
+
+-   objednáno/počet objednávek
+-   stornováno/počet objednávek
+-   zbývá zaplatit/počet objednávek
+-   zaplaceno/počet objednávek
+
+Všechny částky ve statistikách automaticky přepočítáváme do vaší hlavní měny, kterou máte ve FAPI účtu nastavenou. Přepínání cen bez nebo včetně DPH je volitelné.
+
+:::danger
+**Statistika neslouží jako náhled do účetnictví.** Zobrazované výpočty ve Statistikách fungují jinak, než jak je běžné s nimi pracovat v účetnictví / daňové evidenci. Podklady pro účetnictví získáte přes [Exporty faktur](/article/85-export-faktur).
+:::
+
+Údaje vypočítané ve Statistikách se vždy vztahují k **datu vystavení prvního dokladu** v objednávce. Tím může být zálohová faktura, faktura nebo zjednodušený daňový doklad. Do hodnot ve statistice se tak mohou započítávat i platby za objednávky, jejichž první doklad vznikl ve filtrovaném období, ale k jejich úhradě mohlo dojít později, už mimo dané období.
+
+### Základní nastavení výpočtů statistiky
+
+Po vstupu na stránku Statistiky zadejte první nastavení pro výpočet tabulek s přehledy.
+
+![Statistiky](/assets/articles/e3e73c3e40b730b8.png)
+
+1.  Zde přepnete výpočty z ceny bez DPH na ceny včetně DPH
+2.  V tomto poli můžete omezit výpočty jen na jeden konkrétní prodejní formulář
+3.  Tady vyberte, zda přehledy v zadaném časovém rozpětí máme spočítat podle dnů, kdyby byly doklady vystaveny (datum vystavení), nebo podle dnů, kdy byly doklady uhrazeny (datum zaplacení)
+4.  Přes pole **datum od** a **datum do** omezíte výpočty jen na objednávky, které vznikly, resp. byly uhrazeny v zadaném časovém rozpětí
+
+Po spuštění tlačítkem FILTROVAT mohou výpočty na pozadí trvat i několik desítek sekund. Vyčkejte prosím na dokončení všech výpočtů.
+
+### Řazení jednotlivých přehledových tabulek
+
+Po zpracování výpočtů se na stránce zobrazí tabulky s výpočty v tomto pořadí:
+
+#### Nezaplacené objednávky
+
+Tabulka, ve které jsou za dané filtrované období roztřídeny objednávky bez úhrad. Zvlášť jsou kategorie objednávek nezaplacených před datem splatnosti a objednávky po datu
+
+![Statistiky](/assets/articles/b9006da2cf00059d.png)
+
+#### Statistika pro rok
+
+Tabulku s celoročními obraty automaticky třídíme podle kalendářních měsíců. Pokud zvolíte období, které přechází přes více kalendářních roků, je možné statistiku přepínat na jednotlivé roky.
+
+Ve sloupcích Objednáno, Stornováno, Zbývá zaplatit a Zaplaceno se sčítají hodnoty jen z prvních dokladů každé objednávky a to dle data vzniku prvního
+
+![Statistiky](/assets/articles/2f29340574d34bbd.png)
+
+#### Statistika prodejních formulářů
+
+Další tabulka se stejnou logikou výpočtu hodnot ve sloupcích, která ale třídí data ve statistice podle jednotlivých prodejních formulářů. V jednotlivých sloupcích jsou součty za celé filtrované období, které odpovídají danému prodejnímu formuláři.
+
+![Statistiky](/assets/articles/c8e7822b0e3764f9.png)
+
+#### Statistika produktů
+
+Tato tabulka je obdobou předchozí, ale na rozdíl od prodejních formulářů se zde hodnoty počítají za konkrétní produkty, napříč všemi formuláři a celým FAPI účtem.
+
+![Statistiky](/assets/articles/8f92f9dac7dbe2ff.png)
+
+#### Statistika projektů
+
+Tabulka je obdobou statistiky prodejních formulářů, které jsou sečteny podle toho, pod který Projekt ve FAPI je řadíte. Pokud ve FAPI nepoužíváte třídění do [Projektů](/article/132-projekty), bude v tabulce jen jediný řádek Nezařazeno.
+
+![Statistiky](/assets/articles/895be1993e453f84.png)
+
+_Příklady chování Statistiky v různých případech za období 3. měsíce:_  
+
+_A) Vznikne-li první doklad 5.3. (jako zálohová faktura) a je dosud nezaplacený, **bude** jeho hodnota ve sloupcích Objednáno a Zbývá zaplatit. Podle toho, zda už nadešel den splatnosti bude ve sloupcích PŘED splatnosti, nebo Po splatnosti_
+
+_B)  Vznikne-li první doklad 5.3. (jako zálohová faktura) a zaplacený je 8. března (kdy vznikne daňový doklad), **bude** započítaný ve sloupcích Objednáno a Zaplaceno._
+
+_C) Vznikne-li první doklad 28.2. jako zálohová faktura, a zaplacený je 8. března (kdy vznikne daňový doklad), **nebude** ve statistikách, počítaných za 1. až 31. března započítaný v žádném ze sloupců._  
+
+:::danger
+Pozor na některé speciální případy, které mohou ovlivňovat výsledek ve STATISTICE:
+:::
+
+##### a) Vliv cizích měn
+
+Všechny doklady v jiné než „tuzemské" měně se přepočítávají kurzem, který je uložený u daného prvního dokladu v poli "kurz cizí měny".
+
+##### ![Statistiky](/assets/articles/d90564c64d897756.png)b) Jak se projevují opravné daňové doklady (dobropisy)
+
+Vystavené ODD snižují hodnotu prvních dvou kvadrantů - OBJEDNÁNO a ZAPLACENO. Snížení částek o hodnotu dobropisu se projeví ihned při jejich vystavení.
+
+##### c) Jak chápat zaplacení objednávky
+
+Pro výpočet ZAPLACENÝCH objednávek nezáleží na tom, zda byla objednávka jako zaplacená označená automaticky z importu, z platební brány, z API nebo ručně. 
+
+Zobrazenou částku v tabulkách tvoří součet hodnot všech uhrazených faktur. Hodnota se sčítá vždy z hodnoty **daňového dokladu** (faktury).
+
+##### d) Splátkové objednávky
+
+Každá jednotlivá splátka se bere jako jedna objednávka. Ostatní vlastnosti a výpočty u splátkových dokladů jsou stejné, jako u běžných objednávek.
+
+##### e) Stornované a testovací objednávky
+
+Testovací objednávky se do Statistik nezapočítávají.
+
+Stornované objednávky se počítají do hodnot ve sloupcích Stornováno.
+
+**f) Ruční úpravy faktur**  
+
+Hodnoty Statistik se počítají dynamicky nad aktuálními daty ve FAPI. Kdykoliv tedy zpětně provádíte změny, např. dopárovávání nespárovaných úhrad, ruční editace položek, částek nebo datumů vystavení / zaplacení, promítnou se při dalším spuštění Statistik tyto změny i do odpovídajících hodnot řádků a sloupců v tabulkách.
+
+**g) Smazané prodejní formuláře**  
+
+Hodnoty tabulky **Statistika prodejních formulářů** se počítají jen nad aktuálními prodejními formuláři. Jakmile jakýkoliv formulář smažete, z tabulky "Statistika prodejních formulářů" zmizí a hodnota prodejů v tomto formuláři se nebude počítat a zobrazovat.
+
+Statistiky prodejů produktů se smazáním formulářů neovlivní.

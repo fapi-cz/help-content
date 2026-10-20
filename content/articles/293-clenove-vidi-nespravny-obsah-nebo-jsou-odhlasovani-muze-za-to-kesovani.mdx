@@ -1,0 +1,93 @@
+---
+title: Členové vidí nesprávný obsah nebo jsou odhlašováni? Může za to kešování
+url: /article/293-clenove-vidi-nespravny-obsah-nebo-jsou-odhlasovani-muze-za-to-kesovani
+description: "Pokud se vám v členské sekci FAPI Member děje, že: nepřihlášení uživatelé vidí obsah, který by měl být přístupný jen členům, nebo přihlášení uživatelé ztrácí př"
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Členové vidí nesprávný obsah nebo jsou odhlašováni? Může za to kešování
+  - FAPI Member
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/293-clenove-vidi-nespravny-obsah-nebo-jsou-odhlasovani-muze-za-to-kesovani
+order: 259
+updatedAt: 2026-07-13T12:19:57Z
+legacyAnchors:
+  - id: -Nejastj-pina-WP-Rocket-s8xqi
+    tag: h2
+    text: "Nejčastější příčina: WP Rocket"
+    occurrence: 0
+    headingIndex: 0
+  - id: -een-Aktivujte-keovn-podle-uivatele-NwR-7
+    tag: h2
+    text: "✅ Řešení: aktivujte kešování podle uživatele"
+    occurrence: 0
+    headingIndex: 1
+  - id: Postup-sSgiZ
+    tag: h3
+    text: "Postup:"
+    occurrence: 0
+    headingIndex: 2
+  - id: -Dal-doporuen-uXTIv
+    tag: h2
+    text: Další doporučení
+    occurrence: 0
+    headingIndex: 3
+  - id: -Co-dlat-kdy-si-nejste-jisti-HDq7b
+    tag: h2
+    text: Co dělat, když si nejste jisti?
+    occurrence: 0
+    headingIndex: 4
+---
+Pokud se vám v členské sekci FAPI Member děje, že:
+
+-   **nepřihlášení uživatelé vidí obsah**, který by měl být přístupný jen členům,
+-   nebo **přihlášení uživatelé ztrácí přístup**, případně se přesměrovávají zpět na přihlašovací stránku,
+-   nebo se chování stránky liší podle toho, kdo ji otevře (např. na jiném zařízení, prohlížeči, účtu),
+
+pak je velmi pravděpodobné, že je problém způsoben **kešováním (cache)** na vašem webu.
+
+## Nejčastější příčina: WP Rocket
+
+Jedním z nejčastějších pluginů, který způsobuje tyto problémy, je **WP Rocket** – plugin pro optimalizaci rychlosti webu.
+
+Ten totiž **ve výchozím nastavení kešuje všechny stránky**, včetně těch, které by měly být dostupné pouze přihlášeným členům.  A přeskakuje funkcionalitu FAPI zda daný člen k obsahu přístup má či nemá.
+
+## ✅ Řešení: aktivujte kešování podle uživatele
+
+Aby členská sekce fungovala správně, je potřeba WP Rocket nastavit tak, aby:
+
+-   **rozeznával přihlášené a nepřihlášené uživatele**
+-   **nepodával všem stejnou verzi stránky**
+
+### Postup:
+
+1.  V administraci WordPressu přejděte do **Nastavení \> WP Rocket**
+2.  Otevřete záložku **Cache**
+3.  Zaškrtněte volbu:
+
+> ✅ **Enable caching for logged-in WordPress users**
+> 
+> _(Povolit kešování pro přihlášené uživatele)_
+
+  
+
+![Členové vidí nesprávný obsah nebo jsou odhlašováni? Může za to kešování](/assets/articles/08e0351751586a22.png)
+
+Tím zajistíte, že WP Rocket bude pracovat s verzí stránky odpovídající konkrétnímu přihlášenému uživateli.
+
+## Další doporučení
+
+-   Pokud používáte **jiné pluginy na cache**, **optimalizaci nebo zabezpečení**, doporučujeme zkontrolovat, zda nemají podobný vliv.
+-   V některých případech může být cache nastavena **na úrovni hostingu** – doporučujeme kontaktovat technickou podporu vašeho webhostingu.
+-   Po jakékoli úpravě nastavení cache **vymažte starou cache** (v administraci WP Rocket klikněte na „Clear Cache“).
+-   Členské stránky by ideálně měly být **vždy obsluhované dynamicky**, nikoli z cache.
+
+## Co dělat, když si nejste jisti?
+
+-   Kontaktujte **správce vašeho webu**, který se může podívat na konkrétní nastavení.
+-   Pokud potřebujete pomoc s nastavením **členské sekce ve FAPI Member**, obraťte se na naši podporu – rádi vás navedeme správným směrem.

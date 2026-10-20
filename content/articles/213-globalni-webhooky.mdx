@@ -1,0 +1,49 @@
+---
+title: Globální webhooky
+url: /article/213-globalni-webhooky
+description: Globální webhooky umožňují zasílání url notifikací na libovolnou adresu. Na rozdíl od programových scriptů, které fungují pouze v rámci formuláře, platí pro cel
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Globální webhooky
+  - Automatizace
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/213-globalni-webhooky
+order: 108
+updatedAt: 2026-07-13T10:54:56Z
+---
+Globální webhooky umožňují zasílání url notifikací na libovolnou adresu. Na rozdíl od programových scriptů, které fungují pouze v rámci formuláře, platí pro celý účet FAPI.
+
+## 1\. Vytvoření globálního webhooku
+
+Jděte ve FAPI do **Nastavení \> Propojení aplikací \> Webhook** a klikněte na tlačítko **Připojit.**
+
+Objeví se okno se specifikacemi webhooku
+
+![Globální webhooky](/assets/articles/a58aec92c42e05bf.png)
+
+1.  **Událost** \- Událost na základě které bude webhook zaslán (úprava, storno, zaplacení nebo vystavení faktury)
+2.  **Url** - Adresa, na kterou bude webhook zaslán
+
+  
+
+Globální webhook odesílá dotaz ve stejném formátu jako programový script v akcí formuláře neboli:
+
+`id`  - ID faktury
+
+`time`  - čas (timestamp)
+
+`security`  - bezpečnostní hash
+
+-   :::caution
+    Webhook je zaslán při každém výskytu vybrané události u jakékoliv faktury.
+    :::
+    
+-   :::danger
+    Událost "Upravení faktury" zahrnuje jakékoliv úpravy kromě označení faktury za zaplacenou/stornovanou nebo jejího vystavení.
+    :::

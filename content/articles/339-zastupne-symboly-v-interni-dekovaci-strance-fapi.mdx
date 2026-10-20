@@ -1,0 +1,480 @@
+---
+title: Zástupné symboly v děkovací stránce
+url: /article/339-zastupne-symboly-v-interni-dekovaci-strance-fapi
+description: Tato nápověda je pro obsah děkovací stránky FAPI v poli thanks_content      prodejního formuláře a pro vlastní děkovací stránku. Po dokončení objednávky FAPI au
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Zástupné symboly v děkovací stránce
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/339-zastupne-symboly-v-interni-dekovaci-strance-fapi
+order: 256
+updatedAt: 2026-09-22T06:27:45Z
+legacyAnchors:
+  - id: Nejdve-zvolte-kam-chcete-symbol-vloit-I2Jdo
+    tag: h2
+    text: Nejdříve zvolte, kam chcete symbol vložit
+    occurrence: 0
+    headingIndex: 0
+  - id: Intern-dkovac-strnka-FAPI-D3j2F
+    tag: h2
+    text: Interní děkovací stránka FAPI
+    occurrence: 0
+    headingIndex: 1
+  - id: Objednvka-tWxmS
+    tag: h2
+    text: Objednávka
+    occurrence: 0
+    headingIndex: 2
+  - id: Platba--aNUP
+    tag: h2
+    text: Platba
+    occurrence: 0
+    headingIndex: 3
+  - id: Podmnn-bloky-platbu-v-dkovac-strnce-ch1vJ
+    tag: h3
+    text: Podmíněné bloky platbu v děkovací stránce
+    occurrence: 0
+    headingIndex: 4
+  - id: Podmnn-bloky-platbu-v-e-mailech-NKysM
+    tag: h3
+    text: Podmíněné bloky platbu v e-mailech
+    occurrence: 0
+    headingIndex: 5
+  - id: Zkaznk-Lq8rK
+    tag: h2
+    text: Zákazník
+    occurrence: 0
+    headingIndex: 6
+  - id: Produkt-KDbyS
+    tag: h2
+    text: Produkt
+    occurrence: 0
+    headingIndex: 7
+  - id: Podmnn-obsah-pmkRs
+    tag: h3
+    text: Podmíněný obsah
+    occurrence: 0
+    headingIndex: 8
+  - id: Ostatn-Em_dF
+    tag: h2
+    text: Ostatní
+    occurrence: 0
+    headingIndex: 9
+  - id: Podmnn-bloky-na-dkovac-strnce-C_Uxc
+    tag: h3
+    text: Podmíněné bloky na děkovací stránce
+    occurrence: 0
+    headingIndex: 10
+  - id: Vlastn-extern-dkovac-strnka-WNtpu
+    tag: h2
+    text: Vlastní externí děkovací stránka
+    occurrence: 0
+    headingIndex: 11
+  - id: Co-je-poteba-ImaID
+    tag: h2
+    text: Co je potřeba
+    occurrence: 0
+    headingIndex: 12
+  - id: MioWeb-a-Konverzky-oiLeC
+    tag: h2
+    text: MioWeb a Konverzky
+    occurrence: 0
+    headingIndex: 13
+  - id: Nejastj-chyby-ovJAl
+    tag: h2
+    text: Nejčastější chyby
+    occurrence: 0
+    headingIndex: 14
+  - id: Symbol-se-nezobrazil-nebo-se-nenahradil-nZp9E
+    tag: h2
+    text: Symbol se nezobrazil nebo se nenahradil
+    occurrence: 0
+    headingIndex: 15
+  - id: V-e-mailu-se-nezobrazil-symbol-z-dkovac-strnky-unZxG
+    tag: h2
+    text: V e-mailu se nezobrazil symbol z děkovací stránky
+    occurrence: 0
+    headingIndex: 16
+  - id: Na-vlastn-dkovac-strnce-se-data-objednvky-nenaetla-xW2Jx
+    tag: h2
+    text: Na vlastní děkovací stránce se data objednávky nenačetla
+    occurrence: 0
+    headingIndex: 17
+  - id: Shrnut-qHuVe
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 18
+---
+Tato nápověda je pro obsah děkovací stránky FAPI v poli `thanks_content`      prodejního formuláře a pro vlastní děkovací stránku. Po dokončení objednávky FAPI automaticky nahradí symboly údaji právě vytvořené objednávky.
+
+## Nejdříve zvolte, kam chcete symbol vložit
+
+| Kde symbol používáte | Syntaxe | Příklad |
+| --- | --- | --- |
+| Interní děkovací stránka FAPI | dvě dvojice závorek | `{{number}}` |
+| E-mailová šablona nebo upomínka | jedna dvojice závorek | `{invoiceNumber}` |
+
+**Pozor:** Interní děkovací stránka není e-mail. Symboly mezi těmito místy nezaměňujte; e-mailový postup popisuje článek [Zástupné symboly v e-mailových šablonách a upomínkách](/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach).
+
+:::caution
+## Interní děkovací stránka FAPI
+:::
+
+Tato část platí pouze pro obsah interní děkovací stránky FAPI, tedy pro pole `thanks_content`       .
+
+Na interní děkovací stránce FAPI používejte zástupné symboly se dvěma dvojicemi závorek, například:
+
+`{{number}}`       
+
+FAPI zde objednávku zná automaticky. Nepřidávejte proto SDK script ani identifikátor objednávky do URL.
+
+![Zástupné symboly v děkovací stránce](/assets/articles/92b21ad4f6fc34c2.png)
+
+**Na interní děkovací stránce vybírejte symboly z aktuální nabídky podle skupin:**
+
+-   Objednávka,
+-   Platba,
+-   Zákazník,
+-   Produkt,
+-   Podmíněný obsah,
+-   Ostatní.
+
+![Zástupné symboly v děkovací stránce](/assets/articles/10b0596f3eeb5977.png)
+
+## Objednávka
+
+-   `{{number}}`         – číslo objednávky
+-   `{{totalAmount}}`         – celková částka
+-   `{{totalAmountIncVat}}`         – celková částka včetně DPH
+-   `{{totalAmountWithoutShipping}}`         – celková částka bez dopravy
+-   `{{totalAmountWithoutShippingIncVat}}`         – celková částka včetně DPH bez dopravy
+-   `{{vatAmount}}`         – částka DPH
+-   `{{currencyCode}}`         – kód měny
+-   `{{exchangeRate}}`         – směnný kurz
+-   `{{statusTranslated}}`         – lokalizovaný stav faktury
+-   `{{shippingMethod}}`         – zvolený způsob dopravy
+-   `{{discountCode}}`         – použitý slevový kód
+-   `{{clientsNote}}`         – poznámka zákazníka k objednávce
+-   `{{orderStatusPage}}`         – odkaz na přehled objednávky
+-   `{{paid}}`         – informace, zda je faktura zaplacená
+-   `{{cancelled}}`         – informace, zda je objednávka stornovaná
+-   `{{status}}`         – surový stav faktury
+-   `{{createDate}}`         – datum vystavení faktury
+-   `{{paidOn}}`         – datum zaplacení faktury
+
+## Platba
+
+-   `{{paymentMethod}}`         – zvolená platební metoda
+-   `{{bankAccountName}}`         – název bankovního účtu dodavatele
+-   `{{iban}}`         – IBAN dodavatele
+-   `{{swift}}`         – BIC/SWIFT dodavatele
+-   `{{accountNumber}}`         – číslo bankovního účtu dodavatele
+-   `{{qrCodeImage}}`         – obrázek platebního QR kódu
+-   `{{qrCodePath}}`         – identifikátor platebního QR kódu
+-   `{{qrCodeUrl}}`         – URL platebního QR kódu
+
+### Podmíněné bloky platbu v děkovací stránce
+
+-   ### Podmíněné bloky platbu v e-mailech
+    
+-   `{{ifCash}}...` `{{/ifCash}}`         – pouze pro platbu v hotovosti
+-   `{{` `ifWire}}...{/ifWire}}`         – pouze pro platbu bankovním převodem
+-   `{{` `ifCreditCard}}...{/ifCreditCard}}`         – pouze pro platbu kartou
+-   `{{ifCollectOnDelivery}}...{{/ifCollectOnDelivery}}`         – pouze pro dobírku
+-   `{{ifSms}}...{{/ifSms}}`         – pouze pro platbu SMS
+-   `{{ifPaypal}}...{{/ifPaypal}}`         – pouze pro platbu přes PayPal
+-   `{{ifGopay}}...{{/ifGopay}}`         – pouze pro platbu přes GoPay
+-   `{{ifWireGopay}}...{{/ifWireGopay}}`         – pouze pro bankovní převod přes GoPay
+-   `{{ifBitcoin}}...{/ifBitcoin}}`         – pouze pro platbu Bitcoinem
+-   `{{ifGpay}}...{{/ifGpay}}`         – pouze pro platbu přes Google Pay
+-   `{{ifBarter}}...{{/ifBarter}}`         – pouze pro barterovou platbu
+-   `{{ifTwisto}}...{{/ifTwisto}}`         – pouze pro platbu přes Twisto
+-   `{{ifApplePay}}...{{/ifApplePay}}`         – pouze pro platbu přes Apple Pay
+-   `{{ifSkippay}}...{{/ifSkippay}}`         – pouze pro platbu přes Skip Pay
+-   `{{ifQrCode}}...{{/ifQrCode}}`         – pouze pro platbu QR kódem
+-   `{{ifKlarna}}...{{/ifKlarna}}`         – pouze pro platbu přes Klarna
+-   `{{ifNotCollectOnDelivery}}...{{/ifNotCollectOnDelivery}}`         – pouze pro platby jiné než dobírka
+
+## Zákazník
+
+-   `{{customerInvoiceEmail}}`         – e-mail zákazníka
+-   `{{customerInvoicePhone}}`         – telefon zákazníka
+-   `{{customerInvoiceAddressName}}`         – jméno na fakturační adrese
+-   `{{customerInvoiceAddressStreet}}`         – ulice fakturační adresy
+-   `{{customerInvoiceAddressCity}}`         – město fakturační adresy
+-   `{{customerInvoiceAddressZip}}`         – PSČ fakturační adresy
+-   `{{customerInvoiceAddressCountry}}`         – stát fakturační adresy
+-   `{{customerInvoiceAddressIc}}`         – IČ zákazníka
+-   `{{customerInvoiceAddressDic}}`         – DIČ zákazníka
+-   `{{customerInvoiceAddressIcDph}}`         – slovenské IČ DPH zákazníka
+-   `{{customerShippingAddressName}}`         – jméno na doručovací adrese
+-   `{{customerShippingAddressStreet}}`         – ulice doručovací adresy
+-   `{{customerShippingAddressCity}}`         – město doručovací adresy
+-   `{{customerShippingAddressZip}}`         – PSČ doručovací adresy
+-   `{{customerShippingAddressCountry}}`         – stát doručovací adresy
+
+## Produkt
+
+Index je číslovaný od nuly: první položka používá index `0`        , druhá index `1`        .
+
+Místo `<kód_produktu>`         vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte.
+
+Kód produktu najdete ve FAPI v kartě Prodej \> Produkty, levý sloupec kód.
+
+![Zástupné symboly v děkovací stránce](/assets/articles/9b00647553fd1740.png)
+
+Například `{{items.0.name}}`         vypíše název první zakoupené položky.
+
+-   `{{items}}`         – JSON\* pole zakoupených položek
+-   `{{itemList}}`         –  seznam zakoupených položek
+-   `{{items.<index>}}`         – jedna zakoupená položka na daném indexu ve formátu JSON\*
+-   `{{items.<index>.name}}`         – název zakoupené položky
+-   `{{items.<index>.code}}`         – kód zakoupeného produktu
+-   `{{items.<index>.count}}`         – množství zakoupené položky
+-   `{{items.<index>.type}}`         – typ zakoupené položky
+-   `{{items.<index>.vat}}`         – sazba DPH zakoupené položky
+-   `{{items.<index>.unitPrice}}`         – jednotková cena bez DPH
+-   `{{items.<index>.unitPriceIncDph}}`         – jednotková cena včetně DPH
+-   `{{subscriptionId}}`         – ID předplatného
+-   `{{subscriptionQrCode}}`         – QR kód předplatného
+
+### Podmíněný obsah
+
+-   ` {{item-<kód_produktu>}}...{{/item-<kód_produktu>}}  `     – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
+
+  
+
+:::info
+**Příklad:**
+:::
+
+Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK`        . Číslo `123`         v `{file:123}`         nahraďte ID souboru připojeného k e-mailové šabloně.
+
+```text
+{{item-EBOOK}}<p>Děkujeme za nákup. Odkaz ke stažení e-booku najdete zde: <a href="{file:123}">Stáhnout e-book</a>.</p>{{/item-EBOOK}}
+```
+
+## Ostatní
+
+-   `{{formName}}`         – název prodejního formuláře
+-   `{{userName}}`         – jméno dodavatele
+-   `{{customFields}}`         – JSON\* pole vyplněných vlastních polí
+-   `{{customFields.<index>}}`         – jedno vlastní pole na daném indexu ve formátu JSON\*
+-   `{{customFields.<index>.name}}`         – název vlastního pole
+-   `{{customFields.<index>.value}}`         – hodnota vlastního pole
+
+### Podmíněné bloky na děkovací stránce
+
+-   `{{ifPaid}}...{{/ifPaid}}`         – pouze pokud je faktura zaplacená
+-   `{{ifIssued}}...{{/ifIssued}}`         – pouze pokud je faktura vystavená a nezaplacená
+-   `{{ifCancelled}}...{{/ifCancelled}}`         – pouze pokud je objednávka stornovaná
+
+  
+
+Párové bloky vložte na samostatné řádky. Otevírací a zavírací značku ponechte ve stejném formátování. Text mezi nimi vložte do vlastního odstavce.
+
+Bloky nevnořujte.
+
+:::info
+**Praktický příklad pro interní děkovací stránku:**
+:::
+
+```text
+{{ifPaid}}
+<p>Děkujeme, objednávka č. {{number}} je zaplacená.</p>
+{{/ifPaid}}
+
+{{ifIssued}}
+<p>Objednávka č. {{number}} čeká na úhradu. Zaplatit můžete zde: <a href="{{orderStatusPage}}">Přejít na přehled objednávky</a>.</p>
+{{/ifIssued}}
+
+{item-EBOOK}
+<p>Odkaz ke stažení e-booku zobrazte zde.</p>
+{/item-EBOOK}
+```
+
+:::info
+První dva bloky zobrazí odpovídající informaci podle stavu objednávky. Třetí blok se zobrazí jen tehdy, pokud objednávka obsahuje produkt s kódem `EBOOK`        .
+:::
+
+:::note
+**Vysvětlení pro JSON (\*JSON)**
+
+Některé zástupné symboly nevypisují jednu jednoduchou hodnotu, ale více údajů najednou **ve formátu JSON.**
+
+JSON je technický zápis dat, který slouží hlavně pro další zpracování. Pro běžného zákazníka nemusí být čitelný, proto se obvykle nepoužívá přímo jako text na děkovací stránce.
+
+Příklady JSON symbolů:
+
+`{{items}}`       – vypíše zakoupené položky jako JSON pole
+
+`{{customFields}}`       – vypíše vyplněná vlastní pole jako JSON pole
+
+Pokud chcete zákazníkovi zobrazit konkrétní údaj, doporučujeme použít konkrétní zástupný symbol, ne celý JSON výpis.
+
+Například místo:
+
+`{{items}}`      
+
+použijte:
+
+`{{items.0.name}}`      
+
+Tento symbol vypíše název první zakoupené položky.
+
+U položek objednávky se používá číslování od nuly:
+
+`{{items.0.name}}`       – název první položky
+
+`{{items.1.name}}`       – název druhé položky
+
+`{{items.2.name}}`       – název třetí položky
+
+Stejný princip platí i pro vlastní pole:
+
+`{{customFields.0.name}}`       – název prvního vlastního pole
+
+`{{customFields.0.value}}`       – hodnota prvního vlastního pole
+
+JSON symboly využijete hlavně tehdy, pokud s daty dál pracujete technicky, například ve vlastním kódu na děkovací stránce. Pokud chcete zobrazit zákazníkovi běžný text, použijte raději konkrétní symbol s názvem nebo hodnotou.
+:::
+
+  
+
+:::caution
+## Vlastní externí děkovací stránka
+:::
+
+Vlastní externí děkovací stránka není interní děkovací stránka FAPI.
+
+Pokud používáte vlastní děkovací stránku přes `thanks_url`       , musí být splněné podmínky pro načtení dat objednávky. Bez nich se zástupné symboly nenahradí.
+
+## Co je potřeba
+
+Vlastní děkovací stránka musí:
+
+-   používat HTTPS,
+-   mít vložené FAPI SDK,
+-   zachovat parametr `path`        v URL,
+-   mít ve formuláři zapnuté vložení identifikátoru objednávky do URL.
+
+Do patičky vlastní stránky vložte jednou tento script:
+
+```text
+<script src="https://web.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+FAPI k URL přidá parametr `path`       . Podle něj SDK načte data objednávky a zástupné symboly nahradí.
+
+Parametr `path`        nemažte, nepřejmenovávejte, nevytvářejte ručně a odkaz s tímto parametrem nikomu neposílejte.
+
+:::caution
+## MioWeb a Konverzky
+
+Pokud editor platformy nepřijme symbol `{{orderStatusPage}}`        přímo do tlačítka nebo odkazu, vložte HTML/Embed element a použijte celý odkaz:
+:::
+
+```text
+<p style="text-align: center;"><a href="{{orderStatusPage}}">Zaplatit online</a></p>
+```
+
+:::caution
+SDK a parametr `path`        jsou nutné i v tomto případě.
+
+  
+
+Více podrobný postup je zde:
+
+**Mioweb**
+
+Na platformě **MioWeb** fungují zástupné symboly, s výjimkou přímého vložení symbolu `{{orderStatusPage}}`         do odkazu nebo tlačítka. MioWeb kontroluje vkládané odkazy, proto takto zadaný odkaz na přehled objednávky nefunguje:
+
+![Zástupné symboly v děkovací stránce](/assets/articles/a263ab1fea2542ce.png)
+
+Vložte HTML element a do něj tento kód:
+:::
+
+```text
+<p style="text-align: center;"><a href="{{orderStatusPage}}">Zaplatit online</a></p>
+```
+
+:::caution
+![Zástupné symboly v děkovací stránce](/assets/articles/53b942dc56846255.png)
+
+Kód vytvoří funkční odkaz na přehled objednávky.
+
+  
+
+**Konverzky**
+
+Na platformě **Konverzky** nelze symbol `{{orderStatusPage}}`         vložit přímo do odkazu nebo tlačítka ani přímo vložit platební QR kód, protože Konverzky kontrolují vkládané odkazy:
+
+![Zástupné symboly v děkovací stránce](/assets/articles/ad139b88874468e7.png)
+
+Vložte Embed komponentu a do ní tento HTML kód:
+:::
+
+```text
+<p style="text-align: center;"><a href="{{orderStatusPage}}">Zaplatit online</a></p>
+```
+
+:::caution
+![Zástupné symboly v děkovací stránce](/assets/articles/ed9df5f36339729c.png)
+
+Výsledek je kliknutelný odkaz:
+
+![Zástupné symboly v děkovací stránce](/assets/articles/bb08744c01617807.png)
+:::
+
+  
+  
+
+:::danger
+# Nejčastější chyby
+
+## Symbol se nezobrazil nebo se nenahradil
+
+Zkontrolujte, zda:
+
+-   používáte správnou syntaxi pro dané místo,
+-   symbol není rozdělený mezerou, zalomením řádku nebo formátováním,
+-   používáte symbol dostupný pro daný kontext,
+-   u vlastní děkovací stránky funguje SDK a parametr `path`       .
+
+## V e-mailu se nezobrazil symbol z děkovací stránky
+
+E-mailové šablony a děkovací stránka používají odlišnou syntaxi.
+
+Do e-mailu patří například:
+
+`{invoiceNumber}`       
+
+Na děkovací stránku patří například:
+
+`{{number}}`       
+
+## Na vlastní děkovací stránce se data objednávky nenačetla
+
+Zkontrolujte, zda:
+
+-   stránka běží na HTTPS,
+-   je vložený FAPI SDK script,
+-   ve formuláři je zapnuté vložení identifikátoru objednávky do URL,
+-   v URL zůstal zachovaný parametr `path`       .
+:::
+
+## Shrnutí
+
+Zástupné symboly vždy vybírejte podle toho, kde je chcete použít.
+
+Pro e-mailové šablony a upomínky používejte symboly s jednou dvojicí závorek, například `{invoiceNumber}`       .
+
+Pro interní děkovací stránku FAPI používejte symboly se dvěma dvojicemi závorek, například `{{number}}`       .
+
+Pro vlastní externí děkovací stránku je potřeba navíc HTTPS, FAPI SDK script a zachovaný parametr `path`       .
+
+Před ostrým použitím doporučujeme vše otestovat na skutečné objednávce.

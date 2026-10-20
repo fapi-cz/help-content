@@ -1,0 +1,158 @@
+---
+title: Předvyplnění prodejního formuláře
+url: /article/46-predvyplneni-prodejniho-formulare
+description: V určitých případech může být užitečné automaticky předvyplnit vybraná pole prodejního formuláře FAPI na webové stránce konkrétními údaji klienta. Toho můžete s
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Předvyplnění prodejního formuláře
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/46-predvyplneni-prodejniho-formulare
+order: 53
+updatedAt: 2026-07-13T10:12:00Z
+legacyAnchors:
+  - id: Jak-daje-lze-pedvyplnit-AsyKv
+    tag: h2
+    text: Jaké údaje lze předvyplnit?
+    occurrence: 0
+    headingIndex: 0
+  - id: Formt-zpisu-8o5re
+    tag: h2
+    text: Formát zápisu
+    occurrence: 0
+    headingIndex: 1
+  - id: Pklady-pouit-vAikv
+    tag: h2
+    text: Příklady použití
+    occurrence: 0
+    headingIndex: 2
+  - id: Programov-vyplnn-prodejnho-formule-3XsdG
+    tag: h2
+    text: Programové vyplnění prodejního formuláře
+    occurrence: 0
+    headingIndex: 3
+  - id: Zruen-pedvyplnn-prvnho-produktu-hET93
+    tag: h2
+    text: Zrušení předvyplnění prvního produktu
+    occurrence: 0
+    headingIndex: 4
+---
+V určitých případech může být užitečné automaticky předvyplnit vybraná pole prodejního formuláře FAPI na webové stránce konkrétními údaji klienta.
+
+Toho můžete snadno docílit pomocí speciálních parametrů vložených do URL adresy stránky s prodejním formulářem. Předvyplnění formuláře funguje jen při změně URL adresy webu. URL skriptu níže popisovaným způsobem měnit nelze.
+
+  
+
+**Celý videonávod máte k dispozici zde:**
+
+<Video src="https://www.youtube.com/embed/p5E8ct0i9Zc" />
+
+:::caution
+Následující parametry fungují v režimu editace krok **6 Vzhled**
+:::
+
+## Jaké údaje lze předvyplnit?
+
+Pro předvyplnění prodejního formuláře je možné použít následující parametry:
+
+-   **fapi-form-name=** (Jméno)
+-   **fapi-form-surname=** (Příjmení)
+-   **fapi-form-email=** (E-mailová adresa)
+-   **fapi-form-mobil**\= (Mobil)
+-   **fapi-form-street**\= (Ulice)
+-   **fapi-form-city=** (Město)
+-   **fapi-form-postcode=** (PSČ)
+-   **fapi-form-state=** (Stát)
+-   **fapi-form-company**\= (Firma)
+-   **fapi-form-ic**\= (IČ)
+-   **fapi-form-dic=** (DIČ)
+-   **fapi-form-notes=** (Poznámka)
+-   **fapi-form-discountCode=** (Slevový kód)
+-   **fapi-form-customField-\{id\}** (Vlastní pole)
+-   **fapi-form-item-\{product\_code\}=1** (předvybrání /=1/ nebo vypnutí /=0/ označení produktu) 
+-   **fapi-form-item-count-\{product\_code\}=10** (Nastavení počet produktů k zakoupení, pouze v případě že se ve formuláři dá počet zakoupených produktů měnit) 
+-   **fapi-form-repayment=1** (předvybrání /=1/ nebo vypnutí /=0/ splátek)
+
+:::caution
+Předvyplněný slevový kód se automaticky aktivuje, takže v objednávkovém formuláři se zobrazuje cena se započtením slevy.
+
+U předvyplnění produktu se místo  `{product_code}`    vloží kód produktu (který je v přehledu položek v prvním sloupci), pokud chcete i předvyplnit počet kusů  `fapi-form-item-count-{product_code}=5`    (nastavení pro 5ks)
+:::
+
+## Formát zápisu
+
+Parametry se do URL adresy stránky vkládají spolu s hodnotou, která se má předvyplnit do příslušného pole prodejního formuláře.
+
+Obecný formát zápisu je následující:
+
+```text
+?název_parametru_1=hodnota_parametru_1&název_parametru_2=hodnota_parametru_2&...
+```
+
+:::caution
+Parametry se připojují na konec URL adresy pomocí znaku "?". Pokud je v adrese tento znak již obsažen, použije se k připojení parametrů znak "&". Více parametrů se od sebe odděluje rovněž pomocí znaku "&"‘.
+:::
+
+## Příklady použití
+
+Předvyplnění e-mailové adresy, jména a příjmení klienta a poznámky (Jan Malý, jan.maly@seznam.cz, VIP):
+
+```text
+?fapi-form-email=jan.maly@seznam.cz&fapi-form-name=Jan&fapi-form-surname=Malý&fapi-form-notes=VIP
+```
+
+Předvyplnění státu (Dánsko):
+
+```text
+?fapi-form-state=DK
+```
+
+:::caution
+Pro hodnotu státu (parametr **fapi-form-state**) se používá standardizovaný kód _Alpha-2_ (dvoupísmenná zkratka) podle mezinárodní [normy ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).
+:::
+
+Předvyplnění vlastního pole (sobota):
+
+```text
+?fapi-form-customField-20=sobota
+```
+
+:::caution
+Parametr **fapi-form-customField** je potřeba vždy doplnit o ID konkrétního vlastního pole, které získáte z URL adresy.
+:::
+
+## Programové vyplnění prodejního formuláře
+
+Formulář jde do jisté míry vyplnit i programově. Prodejní formulář při každém vložení do stránky publikuje událost "fapiFormMounted", v detailu této události je html element samotného formuláře. S kterým se dá dále pracovat. 
+
+Ukázka, jak se dá vyplnit emailová adresa a zaškrtnout checkbox pro zadání fakturačních údajů.
+
+```text
+<script>
+   // naslouchání na událost, která říká že je formulář vložený do stránky
+   document.addEventListener('fapiFormMounted', function (event) {
+      console.log(event); // vypsání eventu do konzole
+      console.log(event.detail.formWrapper); // vypsání elementu formulář do konzole
+      console.log(event.detail.formWrapper.id) // vypsání ID do konzole, ID je pro každé vykreslení formuláře unikátní
+      var formElement = event.detail.formWrapper;
+
+      // získání inputu pro emailovou adresu, změna hodnoty a vyvolání eventu, která je potřeba pro správné fungování formuláře
+      var emailInput = formElement.querySelector('input[name="email"]');
+      emailInput.value = 'jirka@fapi.cz'
+      emailInput.dispatchEvent(new Event('blur'))
+      console.log(emailInput); // vypsání emailového inputu do konzole
+
+      // získání checkboxu pro zadání fakturačních údajů, změna hodnoty a vyvolání eventu, která je potřeba pro správné fungování formuláře
+      var checkboxInput = formElement.querySelector('input[name*="show_full_form.name"]');
+      checkboxInput.checked = 'checked';
+      checkboxInput.dispatchEvent(new Event('change'))
+      console.log(checkboxInput); // vypsání checkboxu do konzole
+   })
+</script>
+```
+
+## Zrušení předvyplnění prvního produktu
+
+Již lze v nastavení prodejního formuláře -\> 2. položky.

@@ -1,0 +1,291 @@
+---
+title: Platby ve FAPI
+url: /article/71-platby-ve-fapi
+description: Nedílnou součástí každého prodejního procesu je platba za objednaný produkt či službu. FAPI platby za vystavené objednávky přímo neinkasuje, pouze pracuje s inf
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 7-platby
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Platby ve FAPI
+  - Platební brány (platba kartou)
+  - Platby
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/71-platby-ve-fapi
+order: 12
+updatedAt: 2026-10-05T13:20:06Z
+legacyAnchors:
+  - id: Jakm-zpsobem-lze-platit-ve-FAPI-FylL4
+    tag: h2
+    text: Jakým způsobem lze platit ve FAPI
+    occurrence: 0
+    headingIndex: 0
+  - id: Online-platby-Nbd1R
+    tag: h2
+    text: Online platby
+    occurrence: 0
+    headingIndex: 1
+  - id: Platba-platebn-kartou-c2k-u
+    tag: h3
+    text: Platba platební kartou
+    occurrence: 0
+    headingIndex: 2
+  - id: Platba-expresnm-bankovnm-pevodem-XqEWM
+    tag: h3
+    text: Platba expresním bankovním převodem
+    occurrence: 0
+    headingIndex: 3
+  - id: Mobiln-platba-mPlatba-bOkmj
+    tag: h3
+    text: Mobilní platba (mPlatba)
+    occurrence: 0
+    headingIndex: 4
+  - id: PayPal-At8gR
+    tag: h3
+    text: PayPal
+    occurrence: 0
+    headingIndex: 5
+  - id: Bitcoin-lNo_u
+    tag: h3
+    text: Bitcoin
+    occurrence: 0
+    headingIndex: 6
+  - id: Google-Pay-ARIC-
+    tag: h3
+    text: Google Pay
+    occurrence: 0
+    headingIndex: 7
+  - id: Apple-Pay-5JNYr
+    tag: h3
+    text: Apple Pay
+    occurrence: 0
+    headingIndex: 8
+  - id: Click-to-Pay-ehixa
+    tag: h3
+    text: Click to Pay
+    occurrence: 0
+    headingIndex: 9
+  - id: Off-line-platby-Q8_Rh
+    tag: h3
+    text: Off-line platby
+    occurrence: 0
+    headingIndex: 10
+  - id: Klasick-bankovn-pevod-ilf8W
+    tag: h3
+    text: Klasický bankovní převod
+    occurrence: 0
+    headingIndex: 11
+  - id: Dobrka-0tNW3
+    tag: h3
+    text: Dobírka
+    occurrence: 0
+    headingIndex: 12
+  - id: Ostatn-platebn-metody-PFQJV
+    tag: h3
+    text: Ostatní platební metody
+    occurrence: 0
+    headingIndex: 13
+  - id: Pehled-plateb-ve-FAPI-UtT3D
+    tag: h2
+    text: Přehled plateb ve FAPI
+    occurrence: 0
+    headingIndex: 14
+---
+Nedílnou součástí každého prodejního procesu je platba za objednaný produkt či službu. FAPI platby za vystavené objednávky přímo neinkasuje, pouze pracuje s informací o tom, že platba byla přijata.
+
+Informace o zaplacení se do FAPI dostávají - v závislosti na zvolené platební metodě - dvěma zcela nezávislými cestami:
+
+-   z platební brány ([GoPay](https://registration.gopay.com/cs/signup-supplier/fapi), [ThePay](https://registrace.thepay.cz/?d=eyJpYyI6IiIsInRpZCI6IiIsInBpZCI6MTQ3LCJoIjoiYmExMGI1YjI4ZjY0ZGU3MGM2MDY5ZDcxNDI3MTg0MmRlMWMyOTlmNjJjOWViYmY2OWRmZWRjN2RjNmRiNDk4MyJ9), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/), [Stripe](https://stripe.com/), [GP Webpay](https://www.gpwebpay.cz/)), popř. ze služby [Twisto](/article/63-twisto-pay),
+-   z propojeného bankovního účtu (pomocí funkce [Import plateb z banky](/article/30-import-plateb-z-banky)).
+
+:::caution
+Kromě obou výše uvedených automatizovaných procesů lze objednávku ve FAPI vždy uhradit i ručně, což se dá využít např. při úhradě v hotovosti.
+:::
+
+## Jakým způsobem lze platit ve FAPI
+
+Následující tabulka přehledně shrnuje, jaké platební metody, jakým kanálem a v jaké měně můžete ve FAPI svým zákazníkům poskytnout.
+
+| Platební metoda | Online | Offline | CZK | Jiné měny |
+| --- | --- | --- | --- | --- |
+| platební karta | ✔ | \- | ✔ | ✔ |
+| expresní bankovní převod | ✔ | \- | ✔ | ✔ |
+| klasický bankovní převod | \- | ✔ | ✔ | ✔ |
+| mobilní platba (mPlatba) | ✔ | \- | ✔ | \- |
+| PayPal | ✔ | \- | ✔ | ✔ |
+| Bitcoin | ✔ | \- | ✔ | ✔ |
+| Google Pay | ✔ | \- | ✔ | ✔ <br /> |
+| Apple Pay | ✔ | \- | ✔ | ✔ <br /> |
+| Twisto Pay | ✔ | \- | ✔ | \- <br /> |
+| Click to Pay | ✔ | \- | ✔ | ✔ <br /> |
+| dobírka | \- | ✔ | ✔ | ✔ <br /> |
+| hotovost | \- | ✔ | ✔ | ✔ <br /> |
+
+## Online platby
+
+:::danger
+Všechny online platební metody jsou zpracovávány prostřednictvím platební brány (popř. služby Twisto). Pro jejich aktivaci je tedy nutné integrovat do FAPI některou z platebních bran [GoPay](https://registration.gopay.com/cs/signup-supplier/fapi), [ThePay](https://registrace.thepay.cz/?d=eyJpYyI6IiIsInRpZCI6IiIsInBpZCI6MTQ3LCJoIjoiYmExMGI1YjI4ZjY0ZGU3MGM2MDY5ZDcxNDI3MTg0MmRlMWMyOTlmNjJjOWViYmY2OWRmZWRjN2RjNmRiNDk4MyJ9), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/) nebo [Stripe](https://stripe.com/), popř. [propojit FAPI s účtem Twisto](/article/63-twisto-pay). Nabídka konkrétních platebních metod závisí na podpoře a nastavení zvolené platební brány.
+:::
+
+Platební brána umožňuje přijímat platby za zboží a služby okamžitě po vystavení objednávky. Chcete-li svým zákazníkům rozšířit nabídku platebních metod, usnadnit placení a v neposlední řadě také zvýšit pravděpodobnost zaplacení uskutečněných objednávek, integrujte do FAPI platební bránu.
+
+V současné době si můžete vybrat z několika platebních bran – GoPay, ThePay, Comgate, Pays a Stripe. Všechny podstatné informace pro výběr platební brány najdete v našem [srovnání platebních bran](https://fapi.cz/platebni-brany-ktere-lze-vyuzivat-s-fapi-jakou-vybrat/).
+
+Napojení platební brány do FAPI podrobně popisují články:
+
+-   [Založení a integrace platební brány GoPay](/article/56-zalozeni-a-integrace-platebni-brany-gopay),
+-   [Založení a integrace platební brány ThePay](/article/57-zalozeni-a-integrace-platebni-brany-thepay),
+-   [Založení a integrace platební brány Comgate](/article/58-zalozeni-a-integrace-platebni-brany-comgate),
+-   [Založení a integrace platební brány Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays),
+-   [Založení a integrace platební brány Stripe](/article/60-zalozeni-a-integrace-platebni-brany-stripe),
+-   [Založení a integrace platební brány GP Webpay](/article/138-zalozeni-a-integrace-platebni-brany-gpwebpay).
+
+Vlastnosti jednotlivých online platebních metod si nyní popíšeme podrobněji.
+
+### Platba platební kartou
+
+Platba platební kartou přes internet patří dnes mezi nejrozšířenější a nejoblíbenější platební metody. Umožňuje zákazníkovi provést okamžitou platbu, informace o zaplacení se tak k obchodníkovi dostává ihned. Kromě toho jsou platební karty v současné době velmi dobře zabezpečené proti zneužití.
+
+Podporované platební karty se mohou u různých platebních bran lišit. Vždy jsou ale podporovány minimálně karty nejrozšířenějších karetních asociací - VISA a MasterCard.
+
+:::caution
+Do této kategorie patří i platební služby _Google Pay_ a _Apple Pay_. Jejich podpora nicméně závisí na používané platební bráně.
+:::
+
+### Platba expresním bankovním převodem
+
+Jde se o oblíbenou metodu online platby, kdy je platící zákazník přesměrován přímo do svého internetového bankovnictví s předvyplněným platebním příkazem. Po jeho potvrzení jsou peníze převedeny na účet obchodníka okamžitě.
+
+Někdy se tato metoda označuje také jako _platební tlačítko_.
+
+Proti klasickému bankovnímu převodu má platba expresním bankovním převodem několik výhod:
+
+-   pohodlí - údaje platebního příkazu jsou po přesměrování do internetového bankovnictví již předvyplněny, takže je není třeba zdlouhavě opisovat,
+-   eliminace chyb - protože platební údaje nezadává klient ručně, nehrozí jejich chybné opsání,
+-   rychlost - ihned po potvrzení platebního příkazu se částka připíše na účet obchodníka vedený u platební brány (a ve FAPI se faktura označí jako zaplacená).
+
+:::caution
+Platbu expresním bankovním převodem využijí pouze zákazníci, kteří mají svůj bankovní účet u některé z bank podporovaných platební bránou.
+:::
+
+### Mobilní platba (mPlatba)
+
+Mobilní platby umožňují vašim zákazníkům realizovat online platby za zboží a služby prostřednictvím mobilního telefonu. Platby jsou zákazníkům strhávány buď z kreditu předplacené karty, nebo přičteny k vyúčtování u tarifních klientů. Jde o velmi praktickou platební metodu při úhradě menších částek.
+
+Službu _mPlatba_ musí mít platící zákazník povolenou u svého mobilního operátora. U různých mobilních operátorů přitom platí různé limity pro maximální výši platby (v praxi lze obvykle zaplatit částky až do 1200 Kč). Při platbě je klientovi účtován poplatek za odeslání SMS.
+
+:::caution
+Platby pomocí služby mPlatba podporuje pouze platební brána GoPay.
+:::
+
+### PayPal
+
+Platební brány GoPay, Stripe a Pays dokáží zprostředkovat vašim zákazníkům také platby přes nejrozšířenější celosvětově používaný online platební systém - PayPal.
+
+  
+
+Pro aktivaci této metody na straně GoPay je třeba provést několik kroků pro propojení popsaných v návodu [Jak aktivuji platební metodu PayPal?](https://help.gopay.com/cs/tema/caste-dotazy-faqs/dotazy-k-platebni-brane/jak-si-aktivuji-platebni-metodu-paypal) Ve FAPI stačí po ukončené integraci platební brány pouze aktivovat platební metodu (zaškrtnout volbu **PayPal**) v nastavení prodejního formuláře. Více o platební metodě se dozvíte v článku [Základní informace o platební metodě PayPal](https://help.gopay.com/cs/tema/mam-platebni-branu/chci-poznat-platebni-metody/platebni-metody/zakladni-informace-o-platebni-metode-paypal).
+
+  
+
+Bližší informace o platební metodě PayPal v rámci platební brány Pays najdete [zde](https://www.pays.cz/platba-paypalem.asp). Na straně FAPI je třeba pro podporu plateb prostřednictvím PayPal zaškrtnout checkbox **Účet Pays mám propojený s PayPal** v nastavení platební brány (podle nápovědy [Založení a integrace platební brány Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays)) a aktivovat platební metodu v prodejním formuláři.
+
+  
+
+Návod na připojení PayPal ve Stripe pak [najdete tady](/article/60-zalozeni-a-integrace-platebni-brany-stripe).
+
+  
+
+### Bitcoin
+
+_Bitcoin_ je nejrozšířenější a nejpopulárnější kryptoměna. Při platbě pomocí Bitcoinu je zákazník přesměrován na externího zprostředkovatele, kde je platba Bitcoinem zpracována.
+
+:::caution
+Platby Bitcoinem podporují aktuálně pouze platební brány GoPay a ThePay.
+:::
+
+### Google Pay
+
+Služba _Google Pay_ umožňuje platit online pomocí platebních karet uložených v uživatelském účtu Google nebo v prohlížeči Chrome bez nutnosti zadávat platební údaje z karty.
+
+:::caution
+Platební metodu Google Pay podporuje aktuálně pouze platební brána GoPay, Comgate, Pays a thepay.
+:::
+
+Více se dočtete v článku [Google Pay: Revoluce v placení?](https://fapi.cz/google-pay-revoluce-v-placeni/)
+
+Případně [Co je platba Google Pay](https://fapi.cz/blog/co-je-platba-google-pay/).
+
+### Apple Pay
+
+Služba _Apple Pay_ umožňuje platit online pomocí zařízení značky Apple platební kartou uloženou do aplikace Apple Wallet. Odpadá tak nutnost zadávat při každé platbě platební údaje z karty.
+
+:::caution
+Platební metodu Apple Pay podporují aktuálně pouze platební brány GoPay, Comgate, Pays a thepay.
+:::
+
+Více se dočtete v článku [Apple Pay ve FAPI](https://fapi.cz/apple-pay-ve-fapi/).[](https://fapi.cz/google-pay-revoluce-v-placeni/)
+
+### Click to Pay
+
+Obdoba peněženek Apple Pay a Google Pay, která umožňuje zrychlenou plaltbu z karty uložené v uživatelském účtu Click to Pay. Údaje z uložené platební karty se tak nemusí ručně přepisovat, ale vyplní se samy po výběru platby Click to Pay.
+
+Click to Pay je součást platební brány GoPay. Najdete ji jako jednu z platebních metod, v sekci Peněženky.
+
+![Platby ve FAPI](/assets/articles/3c7f6ab096a84c42.png)
+
+  
+
+Více informací najdete v [článku zde](https://www.visa.cz/pay-with-visa/featured-technologies/clicktopay.html).
+
+### Off-line platby
+
+Do kategorie "off-line" platebních metod spadají všechny platby, které nezpracovává platební brána. Řadíme sem klasický bankovní převod, dobírku, platbu hotově, stravenkami, barterem apod.
+
+### Klasický bankovní převod
+
+Běžný bankovní převod je tradiční způsob platby, kdy dochází k převodu peněz mezi bankovním účtem klienta a prodejce. Platbu lze zadat kdykoliv, ale zpracována je obvykle v úředních hodinách banky. Transakce mezi některými bankami může trvat 1-2 dny.
+
+Na rozdíl od platebních metod zprostředkovaných platební bránou, kdy se informace o zaplacení dostává do FAPI okamžitě, se o platbě realizované pomocí klasického bankovního převodu FAPI dozvídá pomocí funkce **Import plateb**. Tato funkce propojí váš bankovní účet s FAPI a údaje o příchozích platbách jsou do FAPI stahovány v pravidelných intervalech. Více se dozvíte v článku [Import plateb z banky](/article/30-import-plateb-z-banky).
+
+### Dobírka
+
+Při platbě dobírkou inkasuje peníze od klienta dopravce (např. pošta nebo kurýrní služba) při doručení objednaného produktu. Proto se platba dobírkou dá použít pouze pro prodej fyzických produktů.
+
+U dobírky můžete nastavit její cenu a omezit dostupnost pouze pro určité státy (nabídka **Nastavení - Způsoby platby**).
+
+### Ostatní platební metody
+
+Objednávku uskutečněnou ve FAPI je možné zaplatit i jinak (např. hotově, stravenkami nebo barterem), v takovém případě se ale nutný přímý kontakt se zákazníkem a ruční zásah v administraci FAPI - objednávku je potřeba označit jako zaplacenou ručně.
+
+## Přehled plateb ve FAPI
+
+Informace o všech přijatých platbách (bez ohledu na to, jakým kanálem se do FAPI dostaly) se zobrazují na záložce **Platby**.
+
+Nabídka **Přehled plateb** zobrazuje všechny platby.
+
+![Platby ve FAPI](/assets/articles/c8847099f891792c.png)
+
+Nabídka **Platby k vyřešení** zobrazuje platby, které vyžadují ruční zásah - nejsou spárovány s žádnou fakturou, popř. představují nedoplatek nebo přeplatek příslušné faktury.
+
+![Platby ve FAPI](/assets/articles/c031c247303af444.png)
+
+Platby stažené do FAPI nelze mazat, ale je možné je v přehledu plateb skrýt (tlačítko **Skrýt**). To se hodí např. u testovacích plateb nebo plateb, které byly staženy z bankovního účtu pomocí funkce [Import plateb](/article/30-import-plateb-z-banky), ale s objednávkami ve FAPI nesouvisí. Skryté platby zobrazíte zaškrtnutím volby **Zobrazit skryté**.
+
+Kliknutím na číslo platby zobrazíte detailní údaje o platbě. Z detailu platby lze mimo jiné provést ruční spárování s fakturou (tlačítko **Spárovat**), resp. vazbu na spárovanou fakturu zrušit.
+
+![Platby ve FAPI](/assets/articles/f510bcca9b5dc142.png)
+
+Tlačítkem **Vyhledat platby podle variabilního symbolu** si zobrazíte všechny platby, jež mají stejný VS.
+
+Tlačítkem **Vyhledat platby z účtu** zobrazíte filtr plateb, které přišly ze stejného čísla účtu v minulosti.
+
+  
+
+Obě tyhle funkce se hodí pro dohledávání chybných plateb, kdy chybí identifikace platby, nebo je chybná.
+
+Pokud zákazník z daného čísla účtu platí pravidelně, ale nebylo možné spárovat platbu automaticky, přes filtr plateb z účtu snadno dohledáte o kterého klienta jde a dopárujete poslední platbu.
+
+![Platby ve FAPI](/assets/articles/52ccd5c65e21d6d9.png)

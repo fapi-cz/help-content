@@ -1,0 +1,57 @@
+---
+title: Jak odebrat slevu na pevnou částku z následné šablony pravidelných faktur?
+url: /article/201-jak-odebrat-slevu-na-pevnou-castku-z-nasledne-sablony-pravidelnych-faktur
+description: Jak snadno a rychle odebrat slevu na pevnou částku, z šablony pravidelných faktur, vám názorně ukážu v 10 minutovém video návodu. Co budeme potřebovat? FAPI a p
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+keywords:
+  - Jak odebrat slevu na pevnou částku z následné šablony pravidelných faktur?
+  - Automatizace
+sourceUrl: https://napoveda.fapi.cz/article/201-jak-odebrat-slevu-na-pevnou-castku-z-nasledne-sablony-pravidelnych-faktur
+order: 192
+updatedAt: 2026-07-13T11:39:50Z
+legacyAnchors:
+  - id: Co-budeme-potebovat-IsMvF
+    tag: h2
+    text: Co budeme potřebovat?
+    occurrence: 0
+    headingIndex: 0
+---
+Jak snadno a rychle odebrat slevu na pevnou částku, z šablony pravidelných faktur, vám názorně ukážu v 10 minutovém video návodu.
+
+## Co budeme potřebovat?
+
+-   FAPI a prodejní formulář s pravidelnou fakturací.
+-   [Registraci v aplikaci Make](https://www.make.com/en/register?pc=fapimake).
+-   [Automatizační scénář "Prodej slevového poukazu"](http://www.make.com/cs/integration/12154-prodej-slevoveho-poukazu?templatePublicId=12154).
+
+## Video návod
+
+<Video src="https://www.youtube.com/embed/a_qTpYKFSGE" />
+
+## Jak na to?
+
+1.  Zaregistrujte se do aplikace [Make](https://www.make.com/en/register?pc=fapimake).
+2.  Použijte šablonu scénáře ["Odebrat slevu pevnou částkou z pravidelné fakturace"](http://www.make.com/cs/integration/12117-odebrat-slevu-pevnou-castkou-z-pravidelne-fakturace?templatePublicId=12117).
+3.  Vytvořte webhook a správně jej pojmenujte, nejlépe: "Odebrat slevu pevnou částkou z pravidelné fakturace".
+4.  [Vytvořte propojení mezi FAPI a Make.](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat)
+5.  Postupujte podle předchystaného nastavení v Make scénáři. Není potřeba nic upravovat nebo měnit.
+6.  Jakmile budete mít vytvořený scénář, přejděte na jeho úpravu.
+7.  Zkopírujte URL adresu 1. modulu (modré bubliny). URL adresa webhooku je vždy unikátní, je tedy potřeba správně zkopírovat celou URL adresu.
+    
+    ![Jak odebrat slevu na pevnou částku z následné šablony pravidelných faktur?](/assets/articles/3fea19301f3b3e9e.png)
+    
+8.  Přejděte do FAPI a úpravy prodejního formuláře - 4. krok Akce.
+9.  Přidejte novou událost při vytvoření objednávky.
+10.  Vyberte akci "spustit programový skript".
+11.  Vložte URL adresu webhooku z Make do URL adresy programového skriptu.
+     
+     ![Jak odebrat slevu na pevnou částku z následné šablony pravidelných faktur?](/assets/articles/df0fb2973721ee6d.png)
+     
+12.  Formulář uložte a máte hotovo.
+
+  
+
+Nyní si můžete celý scénář otestovat, zda funguje přesně podle vašich představ.

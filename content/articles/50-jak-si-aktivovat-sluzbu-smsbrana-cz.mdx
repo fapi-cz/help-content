@@ -1,0 +1,69 @@
+---
+title: Jak si aktivovat službu SMSbrána.cz
+url: /article/50-jak-si-aktivovat-sluzbu-smsbrana-cz
+description: SMSbrána.cz je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu Posílání SMS zpráv z FAPI).
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak si aktivovat službu SMSbrána.cz
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/50-jak-si-aktivovat-sluzbu-smsbrana-cz
+order: 89
+updatedAt: 2026-07-13T10:39:14Z
+---
+_SMSbrána.cz_ je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu [Posílání SMS zpráv z FAPI](/article/49-posilani-sms-zprav-z-fapi)). V tomto článku si popíšeme, jak službu SMSbrána.cz integrovat do FAPI.
+
+Ke zprovoznění služby je nejprve třeba se zaregistrovat na stránkách [SMSbrana.cz](http://www.smsbrana.cz/) a aktivovat si tarif dle svého výběru. Dále je nutné propojit FAPI s účtem služby SMSbrána.cz. Oba kroky si popíšeme podrobněji v následujícím textu.
+
+  
+
+## Registrace do služby SMSbrána.cz
+
+1.  Na stránce SMSbrana.cz klikněte na tlačítko **Registrovat** ([https://www.smsbrana.cz/registration](https://www.smsbrana.cz/registration)) a vyplňte všechny přihlašovací a fakturační údaje. Faktury budou automaticky generovány a doručovány na zvolenou e-mailovou adresu.
+
+  
+
+Přihlášení do portálu pak je z této adresy: [https://portal.smsbrana.cz/login.html?requestId=eg664](https://portal.smsbrana.cz/login.html?requestId=eg664)
+
+2.  Do své e-mailové schránky dostanete e-mail, ve kterém potvrdíte aktivaci kliknutím na uvedený link, a můžete se přihlásit.
+3.  Dobijte si kredit kliknutím na tlačítko **Koupit kredity** ([http://www.smsbrana.cz/dobit-kredit.html](http://www.smsbrana.cz/dobit-kredit.html)). K dispozici je 20 platebních metod včetně platby kartou, zálohové faktury nebo platby převodem.
+
+## Propojení FAPI se službou SMSbrána.cz
+
+Máte-li aktivovaný účet služby SMSbrana.cz s tarifem _SMS_, můžete nastavit propojení API s FAPI.
+
+Jak na to?
+
+API pak po přihlášení najdete v levém panelu
+
+![Jak si aktivovat službu SMSbrána.cz](/assets/articles/ea92bdbcd7e73b71.png)
+
+  
+
+Dále po vás bude vyžadováno Aktivace účtu
+
+![Jak si aktivovat službu SMSbrána.cz](/assets/articles/a3b914fd48ce655a.png)
+
+Dále se dostanete k nastavení SMS Connect
+
+![Jak si aktivovat službu SMSbrána.cz](/assets/articles/cb3b38ef7ccd04ba.png)
+
+Při nastavení SMS connect přes HTTP již získáváte své přihlašovací údaje, tedy jméno a heslo, které následně použijete ve FAPI.
+
+Vyberte Aktivní a uložte.
+
+![Jak si aktivovat službu SMSbrána.cz](/assets/articles/ec554c533363e7d7.png)
+
+  
+
+Ve Fapi nabídce **Nastavení - Propojení aplikací** u služby [SMSbrána.cz](http://xn--smsbrna-lwa.cz/) stiskněte tlačítko **Upravit**. Do zobrazeného formuláře vyplňte uživatelské jméno a heslo ke službě SMSbrána.cz.
+
+![Jak si aktivovat službu SMSbrána.cz](/assets/articles/6e638147821e7a7f.png)
+
+:::danger
+Pro přihlášení ke službě SMSbrána.cz z FAPI se používají jiné přihlašovací údaje než pro přihlášení na webu [www.smsbrana.cz](http://www.smsbrana.cz/). Uživatelské jméno (login) a heslo najdete po přihlášení do účtu na stránce **Nastavení účtu - s API sms connect** ([https://portal.smsbrana.cz/nastaveni-sluzeb/sms-connect.html](https://portal.smsbrana.cz/nastaveni-sluzeb/sms-connect.html)). Zde musí být zaškrtnut parametr **aktivní** a typ přihlášení musí být nastaven na **Pokročilé přihlášení**. Všechna ostatní nastavení na této stránce doporučujeme ponechat na výchozích hodnotách.
+:::

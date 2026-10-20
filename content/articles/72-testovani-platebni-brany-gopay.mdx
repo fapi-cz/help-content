@@ -1,0 +1,182 @@
+---
+title: Testovacího profil u platební brány GoPay
+url: /article/72-testovani-platebni-brany-gopay
+description: Pokud používáte GoPay přes certifikované řešení FAPI (Seznam certifikovaných dodavatelů GoPay), není provádění testovacích plateb povinné. Testovací profil u pl
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 7-platby
+  - 10-propojeni-s-externimi-systemy
+  - 12-testovani
+keywords:
+  - Testovacího profil u platební brány GoPay
+  - Platební brány (platba kartou)
+  - Platby
+  - Propojení s jinými systémy
+  - Testování
+sourceUrl: https://napoveda.fapi.cz/article/72-testovani-platebni-brany-gopay
+order: 7
+updatedAt: 2026-07-13T09:30:17Z
+legacyAnchors:
+  - id: Kdy-m-smysl-testovac-profil-vyut-zrKhi
+    tag: h2
+    text: Kdy má smysl testovací profil využít
+    occurrence: 0
+    headingIndex: 0
+  - id: Vytvoen-testovacho-propojen-s-platebn-brnou-GoPay--PrYSJ
+    tag: h2
+    text: Vytvoření testovacího propojení s platební bránou GoPay
+    occurrence: 0
+    headingIndex: 1
+  - id: Testovac-scn-AqQOC
+    tag: h2
+    text: Možnosti testování
+    occurrence: 0
+    headingIndex: 2
+  - id: Zaplacen-objednvky-CP8DL
+    tag: h3
+    text: Zaplacení objednávky (stav PAID)
+    occurrence: 0
+    headingIndex: 3
+  - id: Zruen-platby-stav-CANCELED-IdeOF
+    tag: h3
+    text: Zrušení platby (stav CANCELED)
+    occurrence: 0
+    headingIndex: 4
+  - id: Vypren-asovho-limitu-platby-stav-TIMEOUTED-5m2Fh
+    tag: h3
+    text: Vypršení časového limitu platby (stav TIMEOUTED)
+    occurrence: 0
+    headingIndex: 5
+---
+Pokud používáte GoPay přes **certifikované řešení FAPI** ([Seznam certifikovaných dodavatelů GoPay](https://help.gopay.com/cs/s/ve)), **není provádění testovacích plateb povinné**. Testovací profil u platební brány GoPay máte *k dispozici vždy a není potřeba si jej samostatně zakládat.*
+
+Provádění testovacích plateb je **povinné** pouze pro ty, kteří GoPay integrují **vlastním řešením mimo FAPI**.
+
+V praxi jde o možnost získat přístup do testovacího režimu GoPay, kde lze provádět platby pomocí **fiktivních platebních údajů.**
+
+Ve FAPI je tedy testovací profil pouze **dobrovolnou možností** pro ty, kteří si chtějí propojení zkoušet v testovacím prostředí.
+
+:::caution
+Testovací platební brána je prostředí, které vypadá stejně jako reálná platební brána, ale pracuje s fiktivními platbami. K reálným finančním tokům zde tedy nedochází.
+
+Testovací prostředí je **simulační a může se v detailech lišit od produkčního provozu**, například v rychlosti odezvy nebo způsobu zobrazení. Není určeno k ověření produkční platby.
+
+GoPay testovací platby podrobně popisuje zde:
+
+[https://help.gopay.com/cs/tema/integrace-platebni-brany/technicky-popis-integrace-platebni-brany/provadeni-plateb-v-testovacim-prostredi](https://help.gopay.com/cs/tema/integrace-platebni-brany/technicky-popis-integrace-platebni-brany/provadeni-plateb-v-testovacim-prostredi)
+:::
+
+## Kdy má smysl testovací profil využít
+
+Testovací prostředí doporučujeme hlavně v těchto situacích:
+
+-   chcete si sami projít celý platební proces před spuštěním prodeje,
+-   chcete ověřit, že se po platbě správně označí faktura jako zaplacená,
+-   chcete zkontrolovat, že se po platbě spouští návazné akce (např. e-mail, skript, přístup do členské sekce).
+
+Pokud testovací profil nepotřebujete, stačí po napojení GoPay provést běžnou zkušebni objednávku v produkčním režimu.
+
+:::tip
+**Proces objednávky je možné otestovat i bez testovací profilu.**
+
+Testovací režim využijete nejen při integraci platební brány. Testovací platby lze provádět kdykoli v průběhu používání FAPI, např. když ověřujete funkčnost prodejního procesu u nového prodejního formuláře. Více se tomuto tématu věnuje článek:
+
+[https://napoveda.fapi.cz/article/90-testovani-celeho-online-prodejniho-procesu](/article/90-testovani-celeho-online-prodejniho-procesu)
+:::
+
+## Vytvoření testovacího propojení s platební bránou GoPay
+
+Ve FAPI v nabídce **Nastavení -\> Propojení aplikací** stiskněte tlačítko **Nové propojení s GoPay**.
+
+![Testovacího profil u platební brány GoPay](/assets/articles/5c39496b570c0bfc.png)
+
+Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení se službou GoPay **v testovacím režimu.**
+
+![Testovacího profil u platební brány GoPay](/assets/articles/8ed9f37548a8b855.png)
+
+Do zobrazeného formuláře vyplňte všechny požadované údaje - doménu, na které budete platební bránu využívat, přístupové údaje (naleznete je v testovacím integračním soupisu zaslaném od společnosti GoPay nebo ve vašem GoPay účtu v sekci Integrace) a režim brány (pro potřeby testování vyberte **testovací režim**).
+
+Vyplněné hodnoty uložte stiskem tlačítka **Uložit nastavení**.
+
+  
+
+## Možnosti testování
+
+V testovací režimu si můžete ověřit zpracování těchto události při:
+
+-   úspěšném zaplacení objednávky (stav PAID),
+-   zrušení platby (stav CANCELED),
+-   vypršení časového limitu platby (stav TIMEOUTED).
+
+  
+
+Samotný postup testování je stejný jako při běžném testování prodejního procesu ve FAPI. Vytvoříte testovací objednávku, projdete platbou a následně zkontrolujete stav faktury a navazující akce.
+
+Podrobný návod najdete zde:
+
+👉 [**Testování celého online prodejního procesu**](/article/90-testovani-celeho-online-prodejniho-procesu?utm_source=chatgpt.com).
+
+:::tip
+Důležité je v prodejním formuláři, u kterého testování provádíte v **3\. kroku Platba, doprava a fakturace** nastavit **testovací režim** a aktivovat alespoň jednu platební metodu zajišťovanou platební bránou GoPay.
+:::
+
+![Testovacího profil u platební brány GoPay](/assets/articles/cc45fce12173a4d3.png)
+
+Po vytvoření objednávky, na které si proces testujete si můžete odzkoušet tyto stavy:
+
+Objednávku tvořte přes prodejní formulář, v kterém jste si nastavili testovací bránu.
+
+  
+
+1.  ### Zaplacení objednávky (stav PAID)
+    
+
+Po přesměrování na testovací platební bránu GoPay dokončete zaplacení - stiskněte tlačítko **Zaplatit** (na testovacím serveru GoPay se používají fiktivní peníze).
+
+:::tip
+Při platbě platební kartou použijte údaje testovacích platebních karet z článku [Provádění plateb v testovacím prostředí](https://help.gopay.com/cs/tema/integrace-platebni-brany/technicky-popis-integrace-platebni-brany/provadeni-plateb-v-testovacim-prostredi) v nápovědě GoPay.
+
+![Testovacího profil u platební brány GoPay](/assets/articles/4cbdd1571ae4e46b.png)
+:::
+
+![Testovacího profil u platební brány GoPay](/assets/articles/048ecd009c49df55.png)
+
+  
+
+2.  ### Zrušení platby (stav CANCELED)
+    
+
+Po potvrzení objednávky, jste přesměrování na okno testovací platební brány GoPay, které pak zrušte křížkem v pravém horním rohu nebo vyplňte neplatné údaje platební karty (podle [nápovědy GoPay](https://help.gopay.com/cs/tema/integrace-platebni-brany/technicky-popis-integrace-platebni-brany/provadeni-plateb-v-testovacim-prostredi)).
+
+![Testovacího profil u platební brány GoPay](/assets/articles/cd0d6d13b16367bb.png)
+
+Správně by se vám pak měla objevit tato hláška:
+
+![Testovacího profil u platební brány GoPay](/assets/articles/7d884323ecdb47e6.png)
+
+**Po nedokončené platbě** se pak zobrazí **přehledová stránka objednávky**, která klienta informuje o vytvořené objednávce a dává mu znovu možnost uhradit.
+
+Více zde: [https://napoveda.fapi.cz/article/102-prehled-objednavky](/article/102-prehled-objednavky)
+
+nebo je klient přesměrován na vaši vlastní chybovou stránku.
+
+  
+
+3.  ### Vypršení časového limitu platby (stav TIMEOUTED)
+    
+
+Po přesměrování na platební bránu GoPay platbu nedokončete a platební okno ponechte bez vyplnění.
+
+Po uplynutí časového limitu platební brány (přibližně 60 minut) GoPay automaticky označí platbu jako **TIMEOUTED** a tento stav se následně propíše i do FAPI.
+
+Pro stav CREATED, tedy vytvoření žádosti pro platbu je defaultní životnost 60 minut.
+
+Objednávka je i tak vytvořená a klient o ní dostává informaci do svého e-mailu.
+
+  
+
+:::tip
+Pokud jste proces testování dokončili, doporučujeme prodejní formulář správně **nastavit na produkční režim platební brány.**
+:::

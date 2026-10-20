@@ -1,0 +1,147 @@
+---
+title: Jak nastavit členskou sekci s postupným uvolňováním obsahu a navazujícím upgradem?
+url: /article/233-postupne-uvolnovani-zaklad-a-vylepsena-cast
+description: Uživatelé získávají lekce postupně podle předem nastaveného harmonogramu. Pokud si koupí upgrade, nové lekce se jim odemknou ve stejném tempu, jak postupují v z
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 129-fapi-member
+keywords:
+  - Jak nastavit členskou sekci s postupným uvolňováním obsahu a navazujícím upgradem?
+  - Automatizace
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/233-postupne-uvolnovani-zaklad-a-vylepsena-cast
+order: 153
+updatedAt: 2026-07-13T11:07:29Z
+---
+Uživatelé získávají lekce postupně podle předem nastaveného harmonogramu. Pokud si koupí **upgrade**, nové lekce se jim odemknou **ve stejném tempu, jak postupují v základním kurzu**.
+
+![Jak nastavit členskou sekci s postupným uvolňováním obsahu a navazujícím upgradem?](/assets/articles/22e8eebafb955cf3.jpg)
+
+Postupné uvolňování s Upgrade částí
+
+**Jinak řečeno:**
+
+1.  **Základní kurz** se zpřístupňuje postupně (např. po lekcích každý týden).
+2.  **Upgrade kurzu** (rozšířená verze) se odemyká až po dokončení odpovídajících částí základního kurzu.
+
+## Co k tomu budete potřebovat?
+
+1.  [FAPI Member plugin](https://wordpress.org/plugins/fapi-member/) (minimální verze pluginu **2.2.15**)
+2.  Aktivní účet [FAPI](https://fapi.cz/registrace/)
+3.  [Aplikaci Make](https://www.make.com/en/register?pc=fapimake) (dříve Integromat)
+4.  [Šablonu scénář](http://www.make.com/cs/integration/13740-fapi-member-postupne-uvolnovani-s-upgrade?templatePublicId=13740)
+
+## Video návod - Jak nastavit členskou sekci s postupným uvolňováním obsahu a navazujícím upgradem
+
+<Video src="https://www.youtube.com/embed/yEkmIwb91i8" />
+
+## **J**ak krok za krokem nastavit členskou sekci s postupným uvolňováním obsahu a upgradem ve **FAPI Member** a **Make**
+
+Tento návod vám ukáže, jak nastavit členskou sekci tak, aby:
+
+✅ **Základní kurz** byl uvolňován postupně (např. lekce každý týden).
+
+✅ **Upgrade kurzu** se otevřel až po dokončení všech částí základního kurzu a pouze těm, kdo si ho zakoupili.
+
+K automatizaci celého procesu potřebujete **FAPI**, **FAPI Member** a **Make**.
+
+  
+
+### **Nastavení členské sekce ve FAPI Member**
+
+Nejprve vytvořte dvě členské sekce:
+
+1️⃣ **Základní členská sekce** – obsah se uvolňuje postupně.
+
+2️⃣ **Upgrade** – zpřístupní se až po dokončení základní sekce.
+
+  
+
+### **ad)** 1️⃣ **Vytvoření základní členské sekce**
+
+1.  Ve **WordPressu** přejděte do **FAPI Member** \> **Členské sekce**.
+2.  Klikněte na **Přidat novou sekci** a pojmenujte ji např. _„Postupné uvolňování – základní“_.
+3.  V sekci **Úrovně členství** nastavte:
+    1.  **Úroveň 1 (Týden 1)** – dostupné **ihned** po registraci.
+    2.  **Úroveň 2 (Týden 2)** – dostupné **7 dní** po registraci.
+    3.  **Úroveň 3 (Týden 3)** – dostupné **14 dní** po registraci.
+    
+4.  Uložte nastavení.
+
+  
+
+### **ad)** 2️⃣ **Vytvoření upgrade členské sekce**
+
+1.  Opět ve **FAPI Member** přejděte do **Členské sekce** a přidejte novou sekci.
+2.  Pojmenujte ji např. _„Postupné uvolňování – upgrade“_.
+3.  Přidejte **jednu úroveň členství (Úroveň 4)**, která se odemkne **21 dní** po registraci.
+4.  Uložte změny.
+
+  
+
+### **Připojení Make pro automatizaci**
+
+Aby upgrade fungoval správně, potřebujete automatizaci přes [**Make (Integromat)**](https://www.make.com/en/register?pc=fapimake).
+
+**Vytvoření scénáře v Make**
+
+1.  Přihlaste se do **Make** a použij tuto [šablonu scénáře](http://www.make.com/cs/integration/13740-fapi-member-postupne-uvolnovani-s-upgrade?templatePublicId=13740).
+2.  Přidejte **Webhook** a vygenerujte **URL adresu**.
+3.  Uložte si tuto URL adresu – budete ji potřebovat ve **FAPI**.
+
+  
+
+### **Propojení s FAPI Member**
+
+1.  Ve **WordPressu** jděte do **FAPI Member \> Propojení \> API Token**.
+2.  Zkopírujte **API token** a vložte ho do Make do sekce **FAPI Member připojení**.
+3.  Vraťte se do **FAPI Member** a najděte **ID základní členské sekce** (např. **556**) a **ID upgrade členské sekce** (např. **557**).
+4.  Vložte je do Make do proměnných **Base Level ID** a **Upgrade Level ID**.
+
+  
+
+### **Nastavení prodejního formuláře ve FAPI**
+
+Dále je potřeba nastavit prodej základní a upgrade členské sekce.
+
+### **Vytvoření prodejního formuláře**
+
+1.  Ve **FAPI** přejděte na **Prodejní formuláře** a vytvořte nový formulář.
+2.  Přidejte produkt **Základní členská sekce** (např. za 1 Kč).
+3.  Přidejte produkt **Upgrade členské sekce** (např. za 1 000 Kč).
+
+  
+
+### **Nastavení automatizací pro přidání do členské sekce**
+
+1.  **Základní sekce:**
+    1.  Po zaplacení **základního kurzu** se přidá uživatel do **Základní členské sekce** ve FAPI Member.
+    
+2.  **Upgrade sekce:**
+    1.  Po zaplacení **upgradu** se spustí **Webhook (Spustit programový script)**, který přidá uživatele do **Upgrade členské sekce**.
+    
+
+  
+
+### **Testování a aktivace**
+
+1.  Uložte a **aktivujte** si **scénář** v **Make**.
+2.  **Vytvořte** si **testovací objednávku** základního kurzu ve FAPI.
+3.  **Počkejte 7 dní** a ověřte, že se odemkne 2. týden kurzu.
+4.  **Dokončete třetí týden** a **nakupte upgrade**.
+5.  Ověřte, že **Upgrade** se odemkne až po 21 dnech.
+6.  Pokud vše funguje, můžete proces spustit pro ostré objednávky!
+
+## **Shrnutí**
+
+✅ **Základní kurz** se uvolňuje každý týden.
+
+✅ **Upgrade se otevře pouze těm, kdo ho zakoupili a zároveň absolvovali celý základní kurz**.
+
+✅ **Všechno je automatizované pomocí Make a FAPI Member**.
+
+  
+
+Pokud narazíte na problém, napište na **podpora@fapi.cz**.

@@ -1,0 +1,139 @@
+---
+title: Jak propojit FAPI s e-shopem v MioWebu
+url: /article/173-jak-propojit-fapi-s-mioweb-e-shopem
+description: Propojením e-shopu v MioWebu s FAPI zajistíte, aby FAPI zpracovávalo objednávky vytvořené v e-shopu a vystavovalo k nim odpovídající doklady. Produkty a e-shopo
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak propojit FAPI s e-shopem v MioWebu
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/173-jak-propojit-fapi-s-mioweb-e-shopem
+order: 160
+updatedAt: 2026-09-08T13:01:51Z
+legacyAnchors:
+  - id: Co-budete-potebovat-OKmZa
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 0
+  - id: Propojen-FAPI-s-Mioweb-e-shopem-FQk8O
+    tag: h2
+    text: Jak propojení funguje
+    occurrence: 0
+    headingIndex: 1
+  - id: Kontrola-Prodejn-modulu-dqpyF
+    tag: h2
+    text: Kontrola prodejní modulu v MioWebu
+    occurrence: 0
+    headingIndex: 2
+  - id: Otevete-nastaven-prodeje-v-MioWebu-nsOgr
+    tag: h2
+    text: Otevřete nastavení prodeje v MioWebu
+    occurrence: 0
+    headingIndex: 3
+  - id: 2-Otevete-nastaven-prodeje-a-fakturace-WeBhx
+    tag: h2
+    text: 2. Otevřete nastavení prodeje a fakturace
+    occurrence: 0
+    headingIndex: 4
+  - id: 3-Vyberte-FAPI-1SxBk
+    tag: h2
+    text: 3. Vyberte FAPI
+    occurrence: 0
+    headingIndex: 5
+  - id: 4-Zkontrolujte-vytvoen-e-shopovho-formule-ve-FAPI-I81p0
+    tag: h2
+    text: 4. Zkontrolujte vytvoření e-shopového formuláře ve FAPI
+    occurrence: 0
+    headingIndex: 6
+---
+Propojením e-shopu v MioWebu s FAPI zajistíte, aby FAPI zpracovávalo objednávky vytvořené v e-shopu a vystavovalo k nim odpovídající doklady.
+
+Produkty a e-shopové stránky budete spravovat v MioWebu. Ve FAPI následně nastavíte fakturaci, platební metody, e-mailovou komunikaci a další automatizace související s objednávkou.
+
+Po dokončení propojení se ve FAPI automaticky vytvoří speciální prodejní formulář určený pro MioWeb e-shop. Produkty se do něj budou předávat z e-shopu, proto je do tohoto formuláře nemusíte ručně přidávat.
+
+Díku tomuto propojení budete mít svou fakturaci z MioWeb e-shopu (funkce PRODEJ) pod kontrolou.
+
+## Co budete potřebovat
+
+Před zahájením si připravte:
+
+-   aktivní účet [FAPI](https://web.fapi.cz/?projectId=all),
+-   web vytvořený v MioWebu,
+-   zakoupený a aktivní modul **Prodej** v MioWebu,
+-   základní propojení MioWebu s účtem FAPI,
+-   oprávnění upravovat nastavení webu a prodeje.
+
+:::danger
+**Důležité:** Pokud v administraci MioWebu nevidíte položku **Prodej**, zkontrolujte, zda máte prodejní modul zakoupený a aktivní. Bez tohoto modulu nelze e-shopové propojení nastavit.
+:::
+
+Pokud jste zatím neprovedli základní propojení účtů, pokračujte nejprve podle nápovědy [Jak propojit FAPI s MioWebem](/article/172-jak-propojit-fapi-a-mioweb). 
+
+  
+
+## Jak propojení funguje
+
+Po propojení spolu oba systémy spolupracují následovně:
+
+1.  Zákazník vytvoří objednávku v MioWeb e-shopu.
+2.  Objednávka se předá do FAPI.
+3.  FAPI podle nastavení e-shopového formuláře vystaví doklad a zpracuje platbu.
+4.  Informace o stavu objednávky a její úhradě se přenesou zpět do MioWebu.
+
+  
+
+1.  ## **Kontrola prodejní modulu v MioWebu**
+    
+
+Nejprve se ujistěte, že máte aktivní, tedy zakoupený Prodejní modul v Miowebu.
+
+Přihlaste se do [Můj účet MioWeb \> Moje licence](https://mujucet.mioweb.cz/licenses/)
+
+![Jak propojit FAPI s e-shopem v MioWebu](/assets/articles/1e5c9fd80c21f95d.png)
+
+2.  ## **Otevřete nastavení prodeje v MioWebu**
+    
+
+Přihlaste se do administrace svého webu v MioWebu.
+
+V horní nabídce přejděte do **Nastavení → Prodej**.
+
+Pokud položku **Prodej** nevidíte, pravděpodobně nemáte aktivovaný prodejní modul.
+
+![Jak propojit FAPI s e-shopem v MioWebu](/assets/articles/1a6f5c88f35eee48.png)
+
+## 2\. Otevřete nastavení prodeje a fakturace
+
+V levém menu vyberte **Nastavení** a následně otevřete záložku **Prodej a fakturace**.
+
+V této části určíte, který systém bude zpracovávat fakturaci a platby objednávek z e-shopu.
+
+![Jak propojit FAPI s e-shopem v MioWebu](/assets/articles/5cc2d1fec5c291b5.png)
+
+## 3\. Vyberte FAPI
+
+V nastavení zpracování faktur a plateb vyberte možnost **FAPI**.
+
+Nastavení následně uložte.
+
+Tím určíte, že doklady a platby objednávek vytvořených v MioWeb e-shopu bude zpracovávat FAPI.
+
+  
+
+## 4\. Zkontrolujte vytvoření e-shopového formuláře ve FAPI
+
+Po uložení se přihlaste do FAPI a přejděte do části [**Prodej → Prodejní formuláře.**](https://web.fapi.cz/forms/?projectId=all)
+
+V seznamu by se měl zobrazit automaticky vytvořený formulář určený pro MioWeb e-shop.
+
+:::danger
+**Důležité:** Tento formulář slouží jako technické spojení mezi MioWeb e-shopem a FAPI. Není určený ke klasickému vložení na web jako běžný prodejní formulář.
+
+  
+
+Jde o řešení provozované MioWebem, proto více informací získáte přímo v MioWebu.
+:::

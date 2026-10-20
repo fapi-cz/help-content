@@ -1,0 +1,76 @@
+---
+title: Miniupsell (Order Bump)
+url: /article/77-miniupsell-order-bump
+description: Miniupsell (ve světě obvykle nazývaný Order Bump) je prodejní technika, kdy dáváte zákazníkovi možnost jedním kliknutím přidat do objednávky související produkt
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Miniupsell (Order Bump)
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/77-miniupsell-order-bump
+order: 39
+updatedAt: 2026-07-13T09:52:53Z
+---
+_Miniupsell_ (ve světě obvykle nazývaný _Order Bump_) je prodejní technika, kdy dáváte zákazníkovi možnost jedním kliknutím přidat do objednávky související produkt, který objednávku vhodným způsobem rozšiřuje nebo doplňuje. Tím se miniupsell v principu nijak neliší od [upsellu](/article/76-upsell).
+
+Co oba nástroje ale odlišuje, je okamžik, kdy k přidání dalšího produktu do objednávky dochází. Zatímco u upsellu se to děje až po odeslání objednávky, s miniupsellem se zákazník setká přímo v prodejním formuláři, ještě před odesláním objednávky.
+
+Další charakteristickou vlastností miniupsellu je oddělení od ostatních produktů v prodejním formuláři, možnost přizpůsobení vzhledu a doplnění textu, který produkt blíže popisuje a vysvětluje výhodnost jeho zakoupení.
+
+Pozor: přidání produktu pomocí miniupsellu zároveň přidá produkt i do šablon pravidelných faktur. Doplněný produkt tak bude součástí i budoucích faktur vystavených zákazníkovi.
+
+![Miniupsell (Order Bump)](/assets/articles/90efd8593aa473c9.png)
+
+## Vložení miniupsellu do prodejního formuláře
+
+Miniupsell aktivujete v nastavení prodejního formuláře na záložce **Položky a ceny** v sekci **MINIUPSELL** zaškrtnutím volby **Nabízet miniupsell**.
+
+![Miniupsell (Order Bump)](/assets/articles/3953e98a764c35da.png)
+
+Následně vyberte produkt, který má sloužit jako miniupsell. Produkt můžete buď vybrat z existujících prodejních položek, nebo jej vytvořit.
+
+Do pole **TEXT MINIUPSELLU** vyplňte text, který se bude zobrazovat u checkboxu pro přidání miniupsellu do objednávky.
+
+Pole **DOPLŇUJÍCÍ TEXT** slouží k zadání volitelného popisku miniupsellu. Zde je vhodné uvést popis produktu a argumenty, které by měly zákazníka přesvědčit k jeho zakoupení.
+
+:::tip
+V polích **TEXT MINIUPSELLU** a **DOPLŇUJÍCÍ TEXT** je možné použít zástupné symboly pro zobrazení názvu produktu a ceny: \{itemName\} a \{price\}.
+:::
+
+## Nastavení vzhledu miniupsellu
+
+Podobně jako jiné části prodejního formuláře, lze i vzhled miniupsellu upravit, a to pomocí voleb na záložce **Vzhled** v sekci **VZHLED FORMULÁŘE**.
+
+![Miniupsell (Order Bump)](/assets/articles/3dfc2761ebd2c22a.png)
+
+:::danger
+Mioweb verze 2.0 nepodporuje korektní zobrazení miniupsellu. Toto omezení však lze účinně obejít tím, že prodejní formulář vložíte do stránky jako element HTML.
+:::
+
+## Jak odeslat Miniupsell?
+
+Pokud je miniupsell e-book, kurz, členská sekce, video, pdf pracovní sešit, ...
+
+Produkty typu miniupsell nebo upsell můžete ve FAPI snadno automatizovat.
+
+Přejděte do úpravy prodejního formuláře - **4\. Akce** - **Akce**.
+
+Přidejte novou událost podle toho, kdy chcete aby daná událost nastala:
+
+-   při vystavení objednávky s produktem
+-   při zaplacení objednávky s produktem
+-   při stornování objednávky s produktem
+
+Nejčastěji tedy **při zaplacení objednávky s produktem** dále vyberte produkt, který máte vložený v miniupsell nebo upsellu.
+
+Následně nastavte, která akce se má spustit po zakoupení konkrétního produktu.
+
+Například přidání kontaktu do SmartEmailingu po zakoupení Mistrovského trénink.
+
+Stejným způsobem můžete nastavit přidání do členské sekce [FAPI Member](/article/98-fapi-member-nastaveni-clenske-sekce), odeslat e-book e-mailem, ...
+
+![Miniupsell (Order Bump)](/assets/articles/4a5e20046438c3b1.png)
+
+Automatizace pro zakoupení miniupsellu - Mistrovský trénink

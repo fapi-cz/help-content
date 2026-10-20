@@ -1,0 +1,56 @@
+---
+title: Jak přesně z pohledu času vystavení fungují opakované platby a co vše může jejich posílání ovlivnit?
+url: /article/124-jak-presne-z-pohledu-casu-vystaveni-funguji-opakovane-platby-a-co-vse-muze-jejich-posilani-ovlivnit
+description: Opakované platby v rámci pravidelné fakturace je velmi mocný nástroj ve FAPI, který umí být velmi dobrý sluha. Jejich nastavení však nemusí být úplně jednoduché
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Jak přesně z pohledu času vystavení fungují opakované platby a co vše může jejich posílání ovlivnit?
+  - Často kladené dotazy (FAQ)
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/124-jak-presne-z-pohledu-casu-vystaveni-funguji-opakovane-platby-a-co-vse-muze-jejich-posilani-ovlivnit
+order: 156
+updatedAt: 2026-10-15T07:48:59Z
+---
+Opakované platby v rámci pravidelné fakturace je velmi mocný nástroj ve FAPI, který umí být velmi dobrý sluha. Jejich nastavení však nemusí být úplně jednoduché. Pojďme si na praktickém příkladu vysvětlit, jak funguje jejich nastavení s ohledem na datum vystavení.
+
+Mějme zákaznici Lídu. Lída poprvé zaplatila za náš produkt poprvé 15.1.2026. 
+
+Protože máme v prodejním formuláři nastaveno toto:
+
+![Jak přesně z pohledu času vystavení fungují opakované platby a co vše může jejich posílání ovlivnit?](/assets/articles/3288dd51d7f46b2b.png)
+
+Budou se faktury vystavovat každý měsíc, tedy v případě Lídy 15.2., 15.3 apod. Navíc toto vystavování nikdy neskončí, resp. do té doby, než tuto pravidelnou fakturaci zneaktivníme nebo smažeme.
+
+Protože ale chceme, aby 15.2 již bylo zaplaceno a my věděli, že může náš produkt pro Lídu fungovat, máme zaškrtnutu tuto volbu:
+
+![Jak přesně z pohledu času vystavení fungují opakované platby a co vše může jejich posílání ovlivnit?](/assets/articles/27876372621da356.png)
+
+Tím pádem bude docházet k vystavení dokladů (my máme navíc výše ještě zaškrtnuto zálohové faktury - aby se nám nevystavovali přímo daňové doklady - prevence proti neplátcům) 7 dní před termínem opakování. Tedy např. 15.2. - 7 dní = 8.2.
+
+:::caution
+Faktury lze vystavovat **s předstihem 1 - 30 dnů.** V případě navázané karty doporučujeme ponechat vystavování 7 dní předem, se splatností 7 dnů.
+:::
+
+  
+
+V případě opakované fakturace při platbě kartou a tedy při automatickým strháváním je pro nás důležitá ještě jedna věc - kdy dojde ke stržení z karty. A toto datum určuje **splatnost faktury.** A toto datum ovlivňuje [**Nastavení -\> Nastavení fakturace**](https://web.fapi.cz/settings/?projectId=all).
+
+Pokud tedy chceme, aby se u Lídy peníze z karty strhnuly vždy v den výročí jejích předplatného, tedy 15.2,15.3 tak při nastavení uvedeného výše musíme mít nastavenu splatnost na 7 dní, protože:
+
+datum vystavení - 8.2.
+
+splatnost +7 dní - 15.2
+
+:::caution
+**Důležité**
+
+Aby se další platby strhávaly automaticky, musí být v prodejním formuláři **automatické strhávání z karty zapnuté už u první kartové platby**. Pokud zákaznice první objednávku zaplatila kartou ještě bez této volby, karta se pro opakované platby neuložila a automatické strhávání se začne používat až ve chvíli, kdy zákaznice znovu zaplatí kartou v době, kdy už je automatické strhávání aktivní. Jak poznáte, že má klient napojenou kartu pro automatické strhávání, najdete zde:
+
+[Jak poznáte, zda má klient napojenou kartu pro automatické strhávání](/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani?utm_source=chatgpt.com)
+:::

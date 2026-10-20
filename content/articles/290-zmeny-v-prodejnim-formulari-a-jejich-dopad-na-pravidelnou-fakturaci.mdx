@@ -1,0 +1,95 @@
+---
+title: Změny v prodejním formuláři a jejich dopad na pravidelnou fakturaci
+url: /article/290-zmeny-v-prodejnim-formulari-a-jejich-dopad-na-pravidelnou-fakturaci
+description: Pokud používáte v prodejním formuláři pravidelnou fakturaci, je důležité vědět, jak se projeví případné změny v nastavení formuláře na nové i stávající zákazník
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+keywords:
+  - Změny v prodejním formuláři a jejich dopad na pravidelnou fakturaci
+  - Nastavení
+  - Fakturace
+sourceUrl: https://napoveda.fapi.cz/article/290-zmeny-v-prodejnim-formulari-a-jejich-dopad-na-pravidelnou-fakturaci
+order: 275
+updatedAt: 2026-10-14T08:34:43Z
+legacyAnchors:
+  - id: -Zmna-ceny-produktu-ldzt_
+    tag: h3
+    text: Změna ceny produktu či samotného produktu
+    occurrence: 0
+    headingIndex: 0
+  - id: -Ostatn-zmny-v-prodejnm-formuli-isBLZ
+    tag: h3
+    text: Ostatní změny v prodejním formuláři
+    occurrence: 0
+    headingIndex: 1
+  - id: Zmna-pedstihu-vystaven-faktury-CKT9B
+    tag: h3
+    text: Změna předstihu vystavené faktury
+    occurrence: 0
+    headingIndex: 2
+  - id: ozor-na-nzvy-poloek-u-akc-pi-vystaven-nebo-zaplacen-2_R_U
+    tag: h3
+    text: Pozor u akcí vázané např. na vystavení nebo zaplacení POLOŽKY
+    occurrence: 0
+    headingIndex: 3
+  - id: Shrnut-xuYUz
+    tag: h3
+    text: "Shrnutí:"
+    occurrence: 0
+    headingIndex: 4
+redirects:
+  - /article/290-jak-zmeny-v-prodejnim-formulari-ovlivni-pravidelne-faktury
+---
+Pokud používáte v prodejním formuláři **pravidelnou fakturaci**, je důležité vědět, jak se projeví případné změny v nastavení formuláře na nové i stávající zákazníky.
+
+  
+
+### Změna ceny produktu či samotného produktu
+
+Pokud upravíte cenu produktu či produkt v nastavení prodejního formuláře:
+
+-   **Nová cena i produkt se použije pouze pro nové objednávky** vytvořené po této změně.
+-   **Už založené šablony pravidelné fakturace (u stávajících zákazníků) se nezmění** – ty dál poběží s původní cenou.
+
+:::danger
+❗Pokud chcete změnit cenu i u aktivních šablon pravidelné fakturace, je nutné:
+
+-   **upravit každou šablonu u klienta ručně**, nebo
+-   nás můžete kontaktovat na [podpora@fapi.cz](mailto:podpora@fapi.cz) a požádat o **placenou hromadnou úpravu**.
+:::
+
+### Ostatní změny v prodejním formuláři
+
+Změny jiných nastavení ve formuláři (např. akce po vystavení faktury, přidání do seznamu, odesílání emailů nebo skriptů) se projeví i u **stávajících šablon pravidelné fakturace**.
+
+✅ To znamená, že pokud změníte např. odesílaný email, nový email bude použit i při příštích fakturacích stávajících zákazníků.
+
+  
+
+### **Změna předstihu vystavené faktury**
+
+Změna předstihu v prodejním formuláři se projeví pouze u nově založených šablon pravidelné fakturace; u stávajících zákazníků je potřeba předstih upravit přímo v jejich již existující šabloně.
+
+:::danger
+### Pozor u akcí vázané např. na vystavení nebo zaplacení POLOŽKY
+
+Pokud máte v prodejním formuláři nastavené **akce vázané na vystavení nebo zaplacení konkrétní položky** (např. přidání do seznamu, odeslání emailu nebo spuštění skriptu), je naprosto zásadní, aby **název položky zůstal beze změny.**
+
+✅ Akce jsou vázané přesně na text názvu položky – tedy i **malá změna v názvu (např. přidané písmeno, mezera, diakritika)** způsobí, že se akce nespustí v již založených šablonách pravidelné fakturace.
+
+To platí i pro položky ve **šablonách pravidelné fakturace u již existujících klientů**. Pokud například změníte název položky v prodejním formuláři, ale klient má ve své šabloně původní název, **akce se na něj již nebudou vztahovat**.
+
+🎯 **Doporučení:** Pokud potřebujete upravit název produktu, zvažte vytvoření nové akce nebo přenastavení stávající tak, aby odpovídala aktuálnímu názvu položky v prodejním formuláři.
+:::
+
+### Shrnutí:
+
+| Co měníte? | Projeví se u nových objednávek | Projeví se u stávajících šablon pravidelné fakturace |
+| --- | --- | --- |
+| **Cena produktu** | ✅ Ano | ❌ Ne (nutno upravit ručně) |
+| **Akce, seznamy, emaily, skripty** | ✅ Ano | ✅ Ano |
+
+Máte-li jakékoli otázky nebo potřebujete pomoci s úpravou většího množství šablon, napište nám – rádi vám pomůžeme.

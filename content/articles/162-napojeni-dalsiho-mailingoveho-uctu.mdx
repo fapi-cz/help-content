@@ -1,0 +1,68 @@
+---
+title: Napojení dalšího Smartemailing nebo Ecomail účtu
+url: /article/162-napojeni-dalsiho-mailingoveho-uctu
+description: Pokud potřebujete v jednom FAPI účtu používat více různých Smartemailing účtů, tak je potřeba využít službu Integromat (Make). Návod funguje i pro Ecomail. Bude
+category: Rozšíření a doplňky
+categorySlug: 11-rozsireni-a-doplnky
+categorySlugs:
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Napojení dalšího Smartemailing nebo Ecomail účtu
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/162-napojeni-dalsiho-mailingoveho-uctu
+order: 155
+updatedAt: 2026-07-13T11:07:28Z
+---
+Pokud potřebujete v jednom FAPI účtu používat více různých Smartemailing účtů, tak je potřeba využít službu Integromat (Make). Návod funguje i pro Ecomail.
+
+Budete potřebovat:
+
+-   funkční [Integromat (Make)](https://eu1.make.com/user/affiliate) účet
+-   funkční prodejní FAPI formulář
+-   funkční Smartemailing nebo [Ecomail](https://ecomail.cz/?fpr=mr0u2) účet
+
+Začneme v Integromatu. Pokud jste v Integromatu poprvé, tak nemáte vytvořená napojení na FAPI a Smartemailing (nebo [Ecomail](https://ecomail.cz/?fpr=mr0u2)).
+
+-   Jak napojit FAPI do Integromatu [popisujeme tady](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat).
+-   Jak napojit Smartemailing [najdete tady](https://napoveda.smartemailing.cz/article/966-integrace-s-integromatem).
+-   Jak napojit Ecomail [najdete tady](https://support.ecomail.cz/cs/articles/3725544-integromat-make).
+
+:::danger
+Přes [Integromat / Make](https://eu1.make.com/user/affiliate) nejde používat přenos podrobností objednávky do Smartemailingu. Tato možnost je dostupná výhradně pro hlavní napojení na Smartemailing přímo z FAPI \> Nastavení \> Propojení aplikací \> Smartemailing.
+:::
+
+V Integromatu jděte do Scénáře \> + Vytvořit nový scénář
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/ba108e349a1d3b63.png)
+
+V novém scénáři klikněte na velkou ikonu plus, do vyhledávání napište FAPI a vyberte modul **Sledovat notifikace**. 
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/a10e4725ed317949.png)
+
+Klikněte na kolečko modulu FAPI, pak na přidat. Hook si pojmenujte a klikněte na ULOŽIT.
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/f93711f4ca52bbbc.png)
+
+Po uložení se vygeneruje dlouhá URL adresa. Tu si zkopírujte do schránky pomocí tlačítka **zkopírovat do schránky.**
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/b7d95b59383b857d.png)
+
+Přejděte do FAPI prodejního formuláře, do režimu úprav (Prodej \> prodejní formuláře \> Upravit). V kroku 4 akce do tabulky ve spodní části stránky založte novou akci. Co přesně bude špouštěčem akce je na vás, na výběr je vystavení, zaplacení nebo storno objednávky, nebo konkrétní položky. V ukázce níže jsme vybrali jako spouštěcí trigger **vystavení objednávky**. Jako AKCI vyberte **spustit programový script** a do řádku pod tím vložte zkopírovanou **URL adresu hooku** z předchozího kroku z Integromatu.
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/1260e687f82e3083.png)
+
+Úpravu FAPI formuláře nezapomeňte uložit zeleným tlačítkem vespod stránky.
+
+**Vraťte se do Integromatu** a za první modul Sledovat notifikace vložte další modul – Získání dat faktury. Klikněte na ikonu plus u prvního modulu, v nové šedé ikonce klikněte na název FAPI.
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/d6c79394484b1f47.png)
+
+Klikněte na řádek Získat data faktury.
+
+![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/0bb2f8d41d9ac7d5.png)
+
+Další část už se bude lišit podle toho, zda používáte Smartemailing nebo Ecomail.
+
+Za druhý modul ZÍSKAT DATA FAKTURY přidejte v Integromatu nový modul Smartemailingu, nebo Ecomailu. Vyberte možnost **Create subscriber** a vyberte podrobnosti o tom, do kterého seznamu má import uživatele proběhnout.
+
+Scénář uložte a vyzkoušejte na zkušební objednávce. Ve SE / ecomailu byste měli vidět nově přidaný kontakt a ve FAPI, v detailu dokladu, novou akci - spuštění webhooku.

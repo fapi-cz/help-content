@@ -1,0 +1,103 @@
+---
+title: Propojení FAPI s Thinkific
+url: /article/289-propojeni-fapi-s-thinkific
+description: Platforma Thinkific slouží k prodeji a správě online kurzů. Přímá integrace mezi FAPI a Thinkific není dostupná, ale je možné propojení pomocí automatizačních n
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Propojení FAPI s Thinkific
+  - Automatizace
+  - Nastavení
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/289-propojeni-fapi-s-thinkific
+order: 281
+updatedAt: 2025-12-10T09:10:19Z
+legacyAnchors:
+  - id: -Co-k-tomu-potebujete-nLjCA
+    tag: h2
+    text: Co k tomu potřebujete
+    occurrence: 0
+    headingIndex: 0
+  - id: -Jak-propojen-funguje-7YuKE
+    tag: h2
+    text: Jak propojení funguje
+    occurrence: 0
+    headingIndex: 1
+  - id: -Jak-nstroj-zvolit--Bhjl
+    tag: h2
+    text: Jaký nástroj zvolit?
+    occurrence: 0
+    headingIndex: 2
+  - id: -Zapier-kRQyE
+    tag: h3
+    text: 🔹 Zapier
+    occurrence: 0
+    headingIndex: 3
+  - id: -Makecom-pO2N-
+    tag: h3
+    text: 🔹 Make.com
+    occurrence: 0
+    headingIndex: 4
+  - id: -Shrnut-3i_HB
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 5
+---
+Platforma **Thinkific** slouží k prodeji a správě online kurzů. Přímá integrace mezi FAPI a Thinkific **není dostupná**, ale je možné propojení **pomocí automatizačních nástrojů**, které umožní například:
+
+-   Po zaplacení přes FAPI **automaticky vytvořit uživatele v Thinkific**
+-   Uživatelům **přidělit přístup** ke konkrétním kurzům
+
+## Co k tomu potřebujete
+
+-   **FAPI** – slouží pro vytvoření objednávky, zaplacení a fakturaci
+    
+    **Thinkific** – platforma, kam chcete přidělit přístup po zaplacení
+    
+    Automatizační nástroj:
+    
+    -   ✅ **Zapier** – má přímé napojení na Thinkific
+    -   ✅ **Make.com (dříve Integromat)** – má oficiální modul pro FAPI
+    
+
+## Jak propojení funguje
+
+1.  **Zákazník objedná kurz přes FAPI formulář**
+    
+    **Po zaplacení** FAPI odešle informaci (webhook)
+    
+    Pomocí **Zapieru nebo Make** se vytvoří scénář, který:
+    
+    -   vytvoří nebo aktivuje **uživatele v Thinkific**
+    -   přidělí mu **přístup ke kurzu**
+    
+
+## Jaký nástroj zvolit?
+
+### 🔹 Zapier
+
+-   Přímá integrace s Thinkific
+-   Snadné nastavení scénářů
+-   FAPI má **neveřejnou integraci** se Zapierem – přístup vám poskytne FAPI podpora
+
+### 🔹 Make.com
+
+-   Oficiální **modul FAPI**
+-   Běžně používaný mezi českými uživateli
+-   Návody a šablony najdete přímo v FAPI nápovědě (např. Zde)
+
+## Shrnutí
+
+| Co potřebujete propojit | Jak to udělat |
+| --- | --- |
+| FAPI → Thinkific | Pomocí Zapieru nebo Make.com po zaplacení vytvořit přístup ke kurzu |
+| Automatický přístup | Vytvořte automatizační scénář (trigger: zaplacení, akce: přidání ke kurzu) |
+| FAPI + Zapier | Požádejte FAPI podporu o přístup k neveřejné integraci |
+| FAPI + Make.com | Využijte oficiální modul a připravené šablony v Make |

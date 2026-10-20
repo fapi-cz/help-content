@@ -1,0 +1,145 @@
+---
+title: Facebook CAPI + Make
+url: /article/153-facebook-capi-make
+description: Nyní již máme lepší způsob a přímou integraci na Facebook Capi, přejděte prosím na tuto nápovědu >>> https://napoveda.fapi.cz/article/226-propojeni-fapi-s-faceb
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Facebook CAPI + Make
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/153-facebook-capi-make
+order: 92
+updatedAt: 2026-07-13T10:39:09Z
+---
+:::danger
+Nyní již máme lepší způsob a přímou integraci na Facebook Capi, přejděte prosím na tuto nápovědu \>\>\> [**https://napoveda.fapi.cz/article/226-propojeni-fapi-s-facebook-conversion-api**](/article/226-propojeni-fapi-s-facebook-conversion-api)
+:::
+
+# Jak propojit FAPI s Facebook CAPI
+
+Facebook CAPI je nástroj Facebooku, díky kterému lze sdílet klíčové informace o transakcích přímo z vašeho webu nebo ze serveru s facebookem.
+
+Tento nástroj, spolu s Facebook pixelem, pomáhá zvyšovat efektivitu a měření reklamních kampaní.
+
+## Jak propojit Facebook CAPI a FAPI?
+
+Budeme potřebovat:
+
+-   Účet FAPI
+-   Business účet Facebooku
+-   Aplikaci [Make / Integromat](https://www.make.com/en/register?pc=fapimake)
+
+## Video návod
+
+<Video src="https://www.youtube.com/embed/XH7jIWBpSy4" />
+
+## Šablona scénáře v MAKE
+
+Díky šablonám nemusíte vytvářet scénář od začátku. Stačí vybrat šablonu, vyplnit několik klíčových údajů a můžete začít posílat konverze do FB CAPI. Použijte scénář [FAPI konverze do CAPI](http://www.make.com/cs/integration/10588-fapi-konverze-do-capi?templatePublicId=10588) a zjednodušte si tak zavedení této funkce.
+
+## Postup
+
+Nejprve je potřeba mít vytvořené účty ve všech výše zmíněných aplikacích.
+
+Poté můžeme přejít do aplikace [Make / Integromat](https://www.make.com/en/register?pc=fapimake) (dále jen Make), kde vytvoříme nový scénář. 
+
+V novém scénáři budeme potřebovat vytvořit a následně v uvedeném pořadí propojit tyto 3 moduly:
+
+1.  Vyhledáme aplikace **FAPI** a modul **Sledovat notifikace**
+2.  Přidáme další modul z **FAPI**, který se jmenuje **Získat data faktury**
+3.  Přidáme aplikaci **Facebook Conversion API** a modul **Send event(s)**
+
+![Facebook CAPI + Make](/assets/articles/b02ef1f2fe73ffcb.png)
+
+Po uložení nám Make vytvoří URL adresu, kterou můžeme poté zadat do FAPI k prodejnímu formuláři jako akci spuštění programového scriptu (v úpravě formuláře je to krok 4 Akce \> tabulka akcí).
+
+Zatím ale tuto URL adresu nepotřebujeme, tak přejdeme k dalšímu modulu **Získat data faktury**.
+
+![Facebook CAPI + Make](/assets/articles/df6c1a991b7af150.png)
+
+Zde, pokud ještě nemáte, bude potřeba vytvořit propojení s FAPI. Kde získat **uživatelské jméno** a **API klíč** se dozvíte v naší nápovědě [Jak získat API klíče](/article/128-jak-ziskat-api-klic).
+
+Pojmenujte si propojení, například podle názvu firmy ve FAPI, vyplňte polížko **username** (uživatelské jméno) a **API token** (api klíč), poté propojení uložte stisknutím tlačítkem **Uložit** následně potvrďte nastavení modulu stisknutím tlačítka **OK**.
+
+![Facebook CAPI + Make](/assets/articles/cdda0382be760586.png)
+
+![Facebook CAPI + Make](/assets/articles/304936078f5d530a.png)
+
+A jdeme na poslední modul, kde se odehrává to nejdůležitější, odeslání dat do **Facebook Conversion API**. 
+
+Jako u FAPI je potřeba **Facebook Conversion API** modul propojit s Facebookem. Postup propojení najdete v nápovědě pro modul [Facebook Conversion API](https://www.make.com/en/help/app/facebook-conversions-api?_ga=2.2782068.531362150.1667976092-1638787407.1655281600). 
+
+Propojení si můžete libovolně pojmenovat, tak abyste v tom měli pořádek. Dále je potřeba vyplnit název spoležnosti, měnu, časovou zónu a nejlépe i External Business ID, tedy identifikátor pro rozpoznání odkud data získáváte.  Tento identifikátor musí být **unikátní** pro každé propojení. Můžete zadat například fapi-\{název-firmy\}.
+
+![Facebook CAPI + Make](/assets/articles/4f8c84db6ce151d5.png)
+
+Dále je do modulu potřeba zadat vaše **Pixel ID**. Jak získat nebo Pixel ID se můžete dočíst v nápovědě Facebooku [Získání ID pixelu](https://www.facebook.com/business/help/171689010314963). Po vyplnění Pixel ID klikněte na tlačítko **Add item**.
+
+![Facebook CAPI + Make](/assets/articles/38cbc626ef2feadf.png)
+
+Po kliknutí na tlačítko **Add item** se nám rozbali další políčka na vyplnění, políčka vyplníme pomocí pilulek následovně:
+
+-   Event ID -\> Variabilní symbol
+-   Event Name -\> Purchase (nákup)
+-   Currency -\> Kod měny
+-   Value -\> Jak nastavit hodnotu najdete kousek níže v této nápovědě
+-   Order ID -\> Variabilní symbol
+-   Event Time -\> now
+-   Action Source -\> Website
+-   Dále vyplníme Userdata
+-   Email -\> Klient: E-mail  
+    
+-   Phone -\> Klient: Telefon
+    
+-   Last name -\> Klient: Přijmení
+    
+-   First name -\> Klient: Jméno
+    
+-   City -\> Klient: Fakturační adresa: Město
+    
+-   State -\> Klient: Fakturační adresa: Kód státu  
+    
+-   Zip -\> Klient: Fakturační adresa: PSČ  
+    
+-   Country -\> Klient: Fakturační adresa: Kód státu  
+    
+
+### Jak nastavnit Value (hodnotu) transakce
+
+Klikněte do políčka **Value**, otevře se vám okénko, v něm se překliknete na 3. záložku **X** a klikněte na funkci **sum**.
+
+![Facebook CAPI + Make](/assets/articles/a9decb5086191adb.png)
+
+Dále klikněte znova do políčka **Value**, tak aby jste měli kurzor ve funkci **sum(** | ) a vložte zde položku **Cena s DPH**.
+
+![Facebook CAPI + Make](/assets/articles/4621e8bebc8af59b.png)
+
+Za položku **Cena s DPH** zapíšeme známenko **mínus** (pomocí matematických funkci v Make) a stejným způsobem vložíme pilulku **Výše DPH**. Tak aby zápis v tomto políčku vypadal takto:
+
+![Facebook CAPI + Make](/assets/articles/c087e46cf17ff32f.png)
+
+Máme tedy nastaveno a zbývá nám pouze toto nastavení potvrdit stiskunutím tlačítkem **OK**.
+
+Nyní je potřeba celý scénář **uložit** a také **aktivovat**.
+
+![Facebook CAPI + Make](/assets/articles/535aac7d9cb92ee2.png)
+
+## Propojení FAPI a Make pro spouštění scénáře
+
+Máme vytvořený scénář a nyní potřebujeme, aby se nám tento scénář spouštěl vždy po zaplacení faktury. 
+
+Jako první potřebujeme získat url adresu webhooku -\> klikneme tedy na 1. modul ve scénáři **Sledovat notifikace** a zkopírujeme url adresu webhooku kliknutím na tlačítko **Copy address to clipboard**.
+
+![Facebook CAPI + Make](/assets/articles/c30fdcad66fa8aee.png)
+
+Pokud máme zkopírovano, přihlásíme se do účtu FAPI \> Prodej \> Prodejní formuláře \> vybereme prodejní formulář u kterého chceme propisovat konverze do CAPI \> klikneme na Upravit \> krok 4 akce.
+
+Zde **přidáme dalši akci**. Jako událost vybereme **zaplacení objednávky**, akci vybereme **spustit programový script** do políčka vložíme url adresu, kterou jsem si zkopírovali z Make.
+
+![Facebook CAPI + Make](/assets/articles/6da7e1d56fef37a7.png)
+
+A následně celý prodejní formulář uložíme.
+
+A máme hotovo, nově se nám každá **zaplacená objednávka** přes tento **prodejní formulář** automaticky propíše přes **Make** do **Facebook Conversion API**.

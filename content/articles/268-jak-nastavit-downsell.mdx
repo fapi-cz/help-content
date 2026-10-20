@@ -1,0 +1,144 @@
+---
+title: Jak nastavit downsell
+url: /article/268-jak-nastavit-downsell
+description: Kompletní video návod Checklist ke stažení >>> Checklist, díky kterému na nic nezapomenete. Textový návod najdete níže na této stránce. Schéma upsell a downsell
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Jak nastavit downsell
+  - Automatizace
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/268-jak-nastavit-downsell
+order: 191
+updatedAt: 2026-07-13T11:43:38Z
+legacyAnchors:
+  - id: 1-Vytvoen-prodejnho-formule-wndxY
+    tag: h2
+    text: 1. Vytvoření prodejního formuláře
+    occurrence: 0
+    headingIndex: 6
+---
+# Kompletní video návod
+
+<Video src="https://www.youtube.com/embed/fJiRKqV8u3o" />
+
+## [Checklist ke stažení](https://drive.google.com/file/d/11cPqWb8KcuL3tqbfBEvZ1_Do7Us2wm2H/view?usp=drive_link) \>\>\> Checklist, díky kterému na nic nezapomenete.
+
+## Textový návod najdete níže na této stránce.
+
+# Schéma upsell a downsell nabídky
+
+![Jak nastavit downsell](/assets/articles/e18d0a77f2744310.jpg)
+
+Schéma upsell a downsell nabídky
+
+# Schéma upsell a downsell nabídky pro vícekrokový upsell
+
+![Jak nastavit downsell](/assets/articles/35b46041df50d241.jpg)
+
+Schéma více krokové upsellové a downsellové nabídky
+
+# Jak nastavit upsell a downsell nabídku ve FAPI
+
+Tento návod vás krok za krokem provede nastavením **upsell** a **downsell** nabídek ve FAPI, včetně propojení formulářů, odkazů a stránek.
+
+## 1\. Vytvoření prodejního formuláře
+
+1.  V administraci FAPI přejděte na **Prodejní formuláře** a klikněte na **Nový prodejní formulář**.
+2.  Přidejte **hlavní produkt**, který budete prodávat.
+    -   Nastavte cenu a typ produktu (např. „Jiná elektronicky poskytovaná služba“ nebo „Služba“).
+    
+3.  Vyplňte základní údaje (název, popis, obchodní podmínky, informační povinnost).
+4.  Uložte formulář.
+
+## 2\. Přidání upsell a downsell produktů
+
+1.  V sekci **Položky a ceny** přidejte první **upsell** produkt (např. službu nebo vyšší balíček).
+2.  Přidejte druhý produkt, který budete používat jako **downsell**.
+    -   Tento produkt bude levnější nebo jednodušší alternativou.
+    
+3.  Každému produktu přiřaďte základní cenu a typ (služba, elektronická služba, PDF atd.).
+4.  Dočasně vložte libovolnou URL adresu pro **upsell stránku** – později ji nahradíte správným odkazem.
+
+## 3\. Vytvoření upsell a downsell stránek
+
+1.  Otevřete **Stránky ve FAPI (nebo stránky na vašem webbuilderu)** a vytvořte novou stránku pro **upsell**:
+    -   Název: `Upsell – název nabídky`
+    -   Přidejte obsah: nadpis, popis produktu, benefity, případně obrázky nebo video.
+    -   Přidejte **dvě tlačítka**:
+        -   Zelené: „Ano, chci tuto nabídku“ (přijetí upsellu).
+        -   Šedé: „Ne, děkuji“ (odmítnutí, povede na downsell stránku).
+            
+            Stránku **duplikujte** a upravte ji na **Downsell**:
+            
+        
+    -   Název: `Downsell – název nabídky`
+    -   Obsah: levnější nebo jednodušší produkt.
+    -   Tlačítka:
+        -   Zelené: „Ano, chci downsell“.
+        -   Šedé: „Ne, děkuji“ (povede na děkovací stránku).
+        
+    
+
+## 4\. Propojení stránek s produkty
+
+1.  Vraťte se do nastavení **Prodejního formuláře** a nahraďte URL upsell stránky správným odkazem.
+    
+    Na **upsell stránce**:
+    
+    -   Nastavte zelenému tlačítku odkaz na **přidání upsell produktu** (1. upsell odkaz viz. obr. níže).
+    -   Nastavte šedému tlačítku odkaz na **downsell stránku**.
+    
+2.  Na **downsell stránce**:
+    -   Nastavte zelenému tlačítku odkaz na **přidání downsell produktu** (2. downsell odkaz viz. obr. níže).
+    -   Nastavte šedému tlačítku odkaz na **Žádný upsell** (odmítnutí všech nabídek, downsell odmítnutí odkaz viz. obr. níže).
+    
+
+![Jak nastavit downsell](/assets/articles/68f6ea8ff6f77682.png)
+
+## 5\. Nasazení technického skriptu
+
+-   Pokud používáte **stránky FAPI**, není potřeba žádná další akce.
+-   Pokud používáte **WordPress, MioWeb nebo jiný web**, vložte na upsell i downsell stránku tento skript:
+
+```text
+<script src="https://web.fapi.cz/js/fapi-upsell.js"></script>
+```
+
+-   Pro WordPress doporučujeme použít [oficiální plugin FAPI](/article/265-jak-nasadit-do-cisteho-wp-fapi-script-pro-trackovani-konverzi-a-affiliate-program), který skript vloží plošně na všechny stránky.
+
+## **6\. Testování**
+
+1.  Proveďte **testovací objednávku**:
+    -   Ověřte chování při **přijetí upsellu**.
+    -   Ověřte chování při **odmítnutí upsellu a přijetí downsellu**.
+    -   Ověřte chování při **odmítnutí všech nabídek**.
+    
+2.  Po zaplacení se na děkovací stránce zobrazí jen ty produkty, které byly skutečně přidány.
+3.  Pokud kontrola ve FAPI u odkazů ukazuje varování, je to v pořádku – odkazy mohou být na jiné stránce než ta, kterou FAPI kontroluje.
+
+## **7\. Shrnutí procesu**
+
+1.  Vytvořte prodejní formulář a produkty (hlavní + upsell + downsell).
+2.  Připravte upsell a downsell stránky s jasnými tlačítky.
+3.  Propojte tlačítka s produkty a stránkami.
+4.  Nasadíte technický skript (mimo FAPI stránky).
+5.  Otestujte všechny kombinace.
+
+:::tip
+## **Tipy**
+
+-   Upsell a downsell technika pomáhá **zvyšovat průměrnou hodnotu objednávky (AOV)**, což je ideální při prodeji levnějších produktů a při reklamních kampaních.
+-   Downsell by měl zákazníkovi nabídnout **levnější, jednodušší nebo jinou alternativu**.
+-   Používejte jasné texty na tlačítkách („Ano, chci…“ / „Ne, děkuji“).
+-   Na stránkách kombinujte text, obrázky a reference pro vyšší konverze.
+:::

@@ -1,0 +1,38 @@
+---
+title: Nastavení Google Analytics
+url: /article/45-nastaveni-google-analytics
+description: Google Analytics je nejpoužívanějším nástrojem pro sledování a vyhodnocování statistických dat o webových stránkách. Jeho propojení s FAPI vám přinese cenné úda
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Nastavení Google Analytics
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/45-nastaveni-google-analytics
+order: 110
+updatedAt: 2026-07-13T10:51:30Z
+---
+_Google Analytics_ je nejpoužívanějším nástrojem pro sledování a vyhodnocování statistických dat o webových stránkách. Jeho propojení s FAPI vám přinese cenné údaje pro vyhodnocení úspěšnosti vašich prodejů.
+
+## Nastavení Google Analytics ve FAPI
+
+Ukládání transakcí z FAPI do Google Analytics je třeba aktivovat v prodejním formuláři. Provedete to zaškrtnutím volby **Přidat trackovací kód Google Analytics** na záložce **Děkovací stránka** v nastavení prodejního formuláře.
+
+![Nastavení Google Analytics](/assets/articles/87d88c6ebc7d1b1e.png)
+
+Do pole **ČÍSLO PRO MĚŘENÍ** zkopírujete kód pro měření (ve tvaru UA-123456789-12), který najdete v nastavení Google Analytics u svého webu.
+
+## Nastavení na straně Google Analytics
+
+Ve službě Google Analytics v sekci **Správce - Nastavení elektronického obchodu** povolte podporu pro elektronický obchod a zaškrtněte přepínač **Aktivovat přehledy vylepšeného elektronického obchodu**. Tím je ukládání transakcí nastavené.
+
+Transakce v Google Analytics pak najdete v sekci **Konverze - Elektronický obchod - Přehled** a statistiky jednotlivých produktů v nabídce **Konverze - Elektronický obchod - Výkon produktu**.
+
+:::caution
+Počet transakcí v Google Analytics obecně nemusí odpovídat počtu objednávek ve FAPI. Je to způsobeno tím, že v případě storna objednávky FAPI zapíše do Google Analytics novou transakci se záporným počtem kusů. V Google Analytics je pak taková objednávka započítána jako dvě transakce (jedna s kladným počtem kusů a jedna se záporným počtem kusů).
+:::

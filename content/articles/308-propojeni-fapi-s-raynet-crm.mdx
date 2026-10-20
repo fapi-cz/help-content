@@ -1,0 +1,123 @@
+---
+title: Propojení FAPI s Raynet CRM
+url: /article/308-propojeni-fapi-s-raynet-crm
+description: "FAPI nemá s CRM systémem Raynet přímou (nativní) integraci. Propojení FAPI s CRM systémem Raynet je však možnédvěma způsoby: 1. Přímé napojení přes API Co budet"
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Propojení FAPI s Raynet CRM
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/308-propojeni-fapi-s-raynet-crm
+order: 292
+updatedAt: 2026-07-27T13:39:54Z
+legacyAnchors:
+  - id: 1-Pm-napojen-pes-API-K4DII
+    tag: h2
+    text: 1. Přímé napojení přes API
+    occurrence: 0
+    headingIndex: 0
+  - id: -Co-budete-potebovat-Gc03d
+    tag: h3
+    text: Co budete potřebovat?
+    occurrence: 0
+    headingIndex: 1
+  - id: 1-API-kl-ve-FAPI-YgP06
+    tag: h4
+    text: API klíč ve FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 2-API-dokumentace-Raynet-CRM-BwMKz
+    tag: h4
+    text: 2. API dokumentace Raynet CRM
+    occurrence: 0
+    headingIndex: 3
+  - id: Propojen-pomoc-Make-dve-Integromat-Ih9b4
+    tag: h2
+    text: 2. Propojení pomocí Make (dříve Integromat)
+    occurrence: 0
+    headingIndex: 4
+  - id: Pklady-vyuit-RQiAp
+    tag: h4
+    text: "Příklady využití:"
+    occurrence: 0
+    headingIndex: 5
+---
+FAPI nemá s CRM systémem **Raynet** přímou (nativní) integraci.
+
+Propojení FAPI s CRM systémem Raynet je však možnédvěma způsoby:
+
+  
+
+## **1\. Přímé napojení přes API**
+
+### Co budete potřebovat?
+
+#### **API klíč ve FAPI**
+
+-   Přihlaste se do FAPI
+-   V pravém horním rohu klikněte na **Můj účet → API klíče**
+-   Zde si vygenerujte svůj **API klíč**
+
+:::tip
+Použijte tuto FAPI nápovědu: [https://napoveda.fapi.cz/article/128-jak-ziskat-api-klic](/article/128-jak-ziskat-api-klic)
+:::
+
+![Propojení FAPI s Raynet CRM](/assets/articles/f5bdef8ca12d1184.png)
+
+:::info
+**📌 FAPI API dokumentace:**
+
+👉 [https://web.fapi.cz/api-doc/](https://web.fapi.cz/api-doc/?utm_source=chatgpt.com)
+:::
+
+  
+
+#### 2\. **API dokumentace Raynet CRM**
+
+Raynet CRM má vlastní podrobné API, které umožňuje obousměrnou komunikaci.
+
+[https://raynet.cz/integrace/](https://raynet.cz/integrace/)
+
+  
+
+**Pomocí API si můžete naprogramovat např.:**
+
+-   přenos kontaktů a zákazníků
+-   automatický zápis faktur nebo objednávek
+-   synchronizaci plateb a dalších dat
+
+  
+
+:::caution
+📌 Pokud nemáte vývojáře, doporučujeme oslovit někoho se zkušeností s API integrací.
+:::
+
+## 2\. Propojení pomocí **Make (dříve Integromat)**
+
+  
+
+Pokud nemáte vývojáře, ale chcete FAPI a Raynet propojit bez programování, můžete využít nástroj [**Make.com**](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat).
+
+Oba nástroje (FAPI i Raynet) mají v Make vlastní moduly. Propojení je tak možné **klikáním bez kódu**.
+
+#### Příklady využití:
+
+-   po vystavení faktury ve FAPI vytvořit nový záznam v Raynetu
+-   přidat nebo aktualizovat kontakt
+-   synchronizovat nové objednávky
+
+👉 Více o Make najdete na [https://www.make.com](https://www.make.com/)
+
+:::danger
+💡 **Chcete propojení přes Make nastavit rychle a bez starostí?**
+
+Rádi vám s automatizací pomůžeme formou jednorázové placené služby.
+
+Za **2 999 Kč vč. DPH** vám vše nastavíme za vás.
+
+Napište nám na [**podpora@fapi.cz**](mailto:podpora@fapi.cz) a domluvíme detaily.
+:::

@@ -1,0 +1,100 @@
+---
+title: Jak funguje měření a nastavení měřícího kódu ve FAPI Rewards
+url: /article/271-jak-funguje-mereni-a-nastaveni-mericiho-kodu-ve-fapi-rewards
+description: 🔧 Nastavení cílové stránky pro měření Jedním z klíčových kroků při nastavování vlastního affiliate programu je zadání URL stránky, kam chcete směřovat své záka
+category: FAPI Rewards
+categorySlug: 235-fapi-rewards
+categorySlugs:
+  - 235-fapi-rewards
+keywords:
+  - Jak funguje měření a nastavení měřícího kódu ve FAPI Rewards
+  - FAPI Rewards
+sourceUrl: https://napoveda.fapi.cz/article/271-jak-funguje-mereni-a-nastaveni-mericiho-kodu-ve-fapi-rewards
+order: 221
+updatedAt: 2026-07-13T11:51:18Z
+---
+### 🔧 Nastavení cílové stránky pro měření
+
+Jedním z klíčových kroků při nastavování vlastního affiliate programu je zadání URL stránky, kam chcete směřovat své zákazníky z affiliate odkazu.
+
+Tuto **cílovou URL adresu** nastavíte ve svém účtu v sekci **Nastavení → Základní nastavení**. Po vyplnění a uložení se tato adresa automaticky propojí s měřicím kódem.
+
+📌 **Co uvidí partner:**
+
+Affiliate partner pak ve svém profilu uvidí tuto adresu doplněnou o **svůj unikátní affiliate kód** – ten zajistí, že se všechny jeho doporučené prodeje správně započítají.
+
+![Jak funguje měření a nastavení měřícího kódu ve FAPI Rewards](/assets/articles/026c490eab85942b.png)
+
+### Jak funguje měření konverzí ve FAPI Rewards
+
+FAPI Rewards umožňuje měřit konverze dvěma způsoby:
+
+#### 1\. **Měření pomocí affiliate odkazu a cookies**
+
+Každý partner má svůj unikátní affiliate odkaz.
+
+:::caution
+👉 Když návštěvník klikne na tento odkaz, uloží se partnerův identifikátor do **cookies** v prohlížeči – a to **na 30 dní**.
+:::
+
+Pokud zákazník během této doby nakoupí, systém automaticky přiřadí provizi danému partnerovi.
+
+  
+
+#### 2\. **Měření podle slevového kódu (promo kódu)**
+
+Každému partnerovi můžeš přiřadit **vlastní slevový kód** (např. _JAN10_).
+
+Zákazník tento kód zadá při objednávce – a provize se přiřadí partnerovi podle použitého kódu.
+
+:::danger
+**Důležité:** Tento způsob měření **přebíjí cookies** – pokud zákazník přišel přes odkaz partnera A, ale v objednávce použije slevový kód partnera B, provizi získá partner B.
+:::
+
+Tento model se často využívá, když partnerům rozdáváte jejich vlastní slevové kódy pro sdílení s publikem (např. na Instagramu, v newsletteru apod.).
+
+![Jak funguje měření a nastavení měřícího kódu ve FAPI Rewards](/assets/articles/cf6b657ee7bb9d8b.png)
+
+### 🧩 Nasazení měřicího (trackovacího) kódu – podmínka pro měření přes cookies
+
+Aby **měření konverzí pomocí cookies** fungovalo správně, je **nezbytné nasadit měřicí skript (trackovací kód)** do vašeho webu.
+
+🔧 **Jak na to:**
+
+-   Trackovací kód najdete ve svém účtu ve FAPI Rewards v sekci **Nastavení**.
+    
+    Tento kód vložte **na všechny veřejné stránky svého webu** – ideálně:
+    
+    -   do **hlavičky** (např. do `<head>` )
+    -   nebo do **patičky** (např. před `</body>` )
+    
+-   Doporučujeme vložit na úrovni celé **domény**, ne jen jedné konkrétní stránky.
+
+✅ Po vložení můžete jednoduše ověřit správnost integrace pomocí tlačítka
+
+**„Ověřit umístění skriptu na stránce“** přímo ve FAPI Rewards.
+
+![Jak funguje měření a nastavení měřícího kódu ve FAPI Rewards](/assets/articles/d24893349d1088ec.png)
+
+:::caution
+⚠️ Bez správně vloženého skriptu **nebude měření přes cookies fungovat** – systém pak nebude schopen zaznamenat příchody návštěvníků přes affiliate odkazy.
+:::
+
+![Jak funguje měření a nastavení měřícího kódu ve FAPI Rewards](/assets/articles/13304bda7bafa0ff.png)
+
+### 🔄 Automatické propojení FAPI a FAPI Rewards
+
+Nemusíte nic ručně propojovat – **FAPI a FAPI Rewards spolu komunikují automaticky**.
+
+FAPI po každé objednávce automaticky předává informace do FAPI Rewards, kde systém následně:
+
+-   **vyhodnocuje**, zda má být konverze započítána (na základě nastavených provizí, slevových kódů a cookies),
+-   nebo ji **zahodí**, pokud nesplňuje žádnou z podmínek.
+
+Díky tomu se můžete soustředit na tvorbu a propagaci – **FAPI Rewards vše hlídá za vás na pozadí.**
+
+## Videonávod
+
+Celý postup, včetně vložení trackovacího kódu do stránky v Miowebu, najdete v krátkém videonávodu (7 minut):
+
+<Video src="https://www.youtube.com/embed/o3T6GZ3hy7Q?list=PL7H7vs-AHqj0r-w0NFs6Ti1zke-RBnWfI" />

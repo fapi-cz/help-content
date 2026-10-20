@@ -1,0 +1,67 @@
+---
+title: Jak zachovat konečné ceny u produktů při přechodu z plátce na neplátce DPH (a zpět)
+url: /article/254-jak-zachovat-konecne-ceny-u-produktu-pri-prechodu-z-platce-na-neplatce-dph-a-zpet
+description: Pokud přecházíte z plátce DPH na neplátce DPH a zároveň chcete zachovat konečné ceny produktů, je třeba postupovat podle následujících kroků. Standardně totiž F
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Jak zachovat konečné ceny u produktů při přechodu z plátce na neplátce DPH (a zpět)
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/254-jak-zachovat-konecne-ceny-u-produktu-pri-prechodu-z-platce-na-neplatce-dph-a-zpet
+order: 241
+updatedAt: 2026-07-13T12:06:50Z
+redirects:
+  - /article/254-jak-zachovat-konecne-ceny-pri-zmene-rezimu-dph
+---
+Pokud přecházíte z **plátce DPH na neplátce DPH** a zároveň chcete zachovat **konečné ceny produktů**, je třeba postupovat podle následujících kroků. Standardně totiž FAPI při změně DPH režimu ponechává ceny v původní hodnotě bez DPH – což může vést ke změně částky, kterou platí váš zákazník.
+
+  
+
+### Cíl:
+
+Prodávat jako **neplátce DPH**, ale **zachovat konečné ceny tak, jak byly „s DPH“**.
+
+  
+
+### Postup:
+
+#### 1\. **Přepněte účet na plátce DPH**
+
+Pokud jste aktuálně jako neplátce, dočasně přepněte FAPI účet na **plátce DPH**:
+
+-   V administraci FAPI jděte do **Nastavení → Nastavení fakturace**
+-   Změňte stav **Režim DPH** na „Plátce DPH“
+-   Uložte změnu.
+
+![Jak zachovat konečné ceny u produktů při přechodu z plátce na neplátce DPH (a zpět)](/assets/articles/b1642fe7004e2ae9.png)
+
+#### 2\. **Zrušte sazby DPH u všech produktů**
+
+-   V sekci **Produkty** otevřete každý produkt/položku, který prodáváte.
+-   U daného produktu zrušte označení "cena je včetně **DPH“**.
+-   DPH nastavte **0 CZK**
+-   Cena produktu tak bude odpovídat původní **konečné ceně** (tedy dříve ceně s DPH), ale již nebude počítána jako základ + DPH.
+
+:::caution
+Tímto krokem „přesunete“ DPH do základní ceny a zachováte tak celkovou částku, kterou zákazník zaplatí.
+:::
+
+![Jak zachovat konečné ceny u produktů při přechodu z plátce na neplátce DPH (a zpět)](/assets/articles/48d232b23599bffa.png)
+
+#### 3\. **Přepněte účet zpět na neplátce DPH**
+
+-   Opět přejděte do **Nastavení → Nastavení fakturace**.
+-   Přepněte stav Režim DPH „Neplátce DPH“.
+-   Uložte.
+
+### Výsledek:
+
+Vaše produkty budou nyní prodávány **jako neplátce DPH** a jejich cena zůstane stejná, jako když jste byli plátcem DPH – zákazník uvidí konečnou částku beze změny.

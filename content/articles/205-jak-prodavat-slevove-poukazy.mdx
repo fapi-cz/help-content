@@ -1,0 +1,75 @@
+---
+title: Jak prodávat slevové poukazy
+url: /article/205-jak-prodavat-slevove-poukazy
+description: Ještě než si povíme o tom, jak prodávat slevové poukazy/slevové kódy, pojďme si vyjasnit, co to vlastně je. Co je slevový poukaz/slevový kód Slevový poukaz nebo
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 9-online-prodej
+keywords:
+  - Jak prodávat slevové poukazy
+  - Automatizace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/205-jak-prodavat-slevove-poukazy
+order: 140
+updatedAt: 2026-07-13T11:00:03Z
+legacyAnchors:
+  - id: Co-budete-potebovat-lMWua
+    tag: h2
+    text: Co budete potřebovat?
+    occurrence: 0
+    headingIndex: 3
+---
+Ještě než si povíme o tom, jak prodávat slevové poukazy/slevové kódy, pojďme si vyjasnit, co to vlastně je.
+
+# Co je slevový poukaz/slevový kód
+
+Slevový poukaz neboli slevový kód, je ve FAPI sleva na nákup produktu či služby. Prakticky to vypadá tak, že pokud dám zákazníkovi slevový kód, může tento slevový kód použít při nákupu vašich produktů či služeb.
+
+Po uplatnění slevového kódu v prodejním formuláři získá zákazník slevu, buď procentuální, nebo na pevnou částku, například 100 Kč.
+
+# Proč byste měli prodávat slevové poukazy?
+
+1.  **Získání nových zákazníků**: Pokud je váš **aktuální zákazník** spokojený s vašimi produkty/službami, chce tuto svou zkušenost sdílet s přáteli či kolegy. Slevový poukaz je skvělým dárkem, pokud si není jistý, která služba/produkt, by se jim líbila více.
+2.  **Zvýšení prodeje**: Slevové poukazy mohou motivovat zákazníky k nákupu více produktů nebo dražších služeb, protože mají pocit, že ušetří.
+3.  **Lepší zákaznická zkušenost**: Obdarovaný získává hodnotný dárek v podobě slevy, díky které si může vaše produkty a služby vyzkoušet a vybrat si, kterou vyzkouší jako první.
+4.  **Podpora loajality**: Zákazníci, kteří obdrží slevový poukaz, mají tendenci se vracet a nakupovat znovu, což zvyšuje jejich loajalitu k vaší značce.
+
+# Jak automatizovaně prodávat slevové kódy/poukazy ve FAPI?
+
+## Co budete potřebovat?
+
+-   FAPI a prodejní formulář
+-   Vytvořené produkty "slevové poukazy"
+-   [Aplikaci Make](https://www.make.com/en/register?pc=fapimake)
+-   [Automatizační scénář "Prodej slevového poukazu"](http://www.make.com/cs/integration/12154-prodej-slevoveho-poukazu?templatePublicId=12154)
+
+## Jak to celé nastavit?
+
+<Video src="https://www.youtube.com/embed/UlApIwzykuk" />
+
+## Rychlý návod:
+
+1.  **Vytvořte prodejní formulář s produkty, které budou vašimi slevovými poukazy.**
+    -   Například produkt s názvem "Slevový poukaz - 100" s cenou 100 Kč.
+    
+2.  **V aplikaci Make vytvořte automatizační scénář "**[**Prodej slevového poukazu**](https://eu1.make.com/templates/12154?templatePublicId=12154)".
+    -   V automatizačním scénáři vytvořte a správně pojmenujte webhook, který později použijete ve FAPI.
+    
+3.  [**Propojte FAPI s Make.**](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat)
+    -   Nastavte správně filtr na produkty podle názvu, pro které se mají slevové kódy generovat. Podmínka funguje tak, že název produktu obsahuje část textu "slevový poukaz". Tuto podmínku si můžete upravit podle svého uvážení.
+    
+4.  **Upravte tvorbu slevového kódu podle potřeby.**
+    -   Nezapomeňte vybrat prodejní formuláře, kde může zákazník slevový kód uplatnit.
+    
+5.  **Nastavte automatizaci odeslání slevového kódu.**
+    -   Může být skrze e-mailový nástroj nebo pomocí e-mailu přímo z Make.
+    
+6.  **Doplňte automatizaci v e-mailovém nástroji.**
+7.  **Z Make zkopírujte webhook a vložte jej do prodejního formuláře, skrze který chcete prodávat slevové poukazy.**
+    -   Událost zvolte při zaplacení a akci spustit programový skript.
+    
+8.  **Celý proces si otestujte sami.**
+
+Slevové poukazy jsou skvělým nástrojem pro zvýšení prodeje, získání nových zákazníků a budování loajality. Správným nastavením a automatizací tohoto procesu ve FAPI můžete snadno a efektivně spravovat jejich prodej.

@@ -1,0 +1,162 @@
+---
+title: Jak propojit FAPI s Balíkovnou
+url: /article/260-jak-propojit-fapi-s-balikovnou
+description: "Propojení s Balíkovnou od České pošty Aby bylo možné propojit FAPI s Balíkovnou, je nejprve nutné mít: uzavřenou smlouvu s Českou poštou, zřízené přístupy do ap"
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Jak propojit FAPI s Balíkovnou
+  - Automatizace
+  - Online prodej
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/260-jak-propojit-fapi-s-balikovnou
+order: 170
+updatedAt: 2026-07-13T11:21:29Z
+legacyAnchors:
+  - id: 1-Zskn-potebnch-daj-7GTLQ
+    tag: h3
+    text: 1. Získání potřebných údajů
+    occurrence: 0
+    headingIndex: 0
+  - id: -API-token-a-heslo-secret-5zmqQ
+    tag: h4
+    text: 🔑 API token a heslo (secret)
+    occurrence: 0
+    headingIndex: 1
+  - id: -Technologick-slo-xCoNb
+    tag: h4
+    text: 🔢 Technologické číslo
+    occurrence: 0
+    headingIndex: 2
+  - id: -Podac-pota-9llQu
+    tag: h4
+    text: 📮 Podací pošta
+    occurrence: 0
+    headingIndex: 3
+  - id: -ID-CK-slo-kontraktu--vUyB
+    tag: h4
+    text: 🆔 ID CČK (číslo kontraktu)
+    occurrence: 0
+    headingIndex: 4
+  - id: 2-Dleit-upozornn-czG52
+    tag: h3
+    text: 2. Důležité upozornění
+    occurrence: 0
+    headingIndex: 5
+  - id: 3-Propojen-FAPI-s-Balkovnou-rhdXt
+    tag: h3
+    text: 3. Propojení FAPI s Balíkovnou
+    occurrence: 0
+    headingIndex: 6
+---
+**Propojení s Balíkovnou od České pošty**
+
+Aby bylo možné propojit FAPI s Balíkovnou, je nejprve nutné mít:
+
+-   uzavřenou smlouvu s Českou poštou,
+-   zřízené přístupy do aplikace Pošta Online.
+
+  
+
+Pokud smlouvu nebo přístupy zatím nemáte, obraťte se na obchodního manažera České pošty:
+
+👉 [Kontakty na](https://www.ceskaposta.cz/o-ceske-poste/kontakty) českou poštu
+
+  
+
+### 1\. Získání potřebných údajů
+
+Z přihlášené aplikace [Pošta Online](https://www.postaonline.cz/) budete potřebovat následující údaje:
+
+#### 🔑 API token a heslo (secret)
+
+Najdete v aplikaci Pošta Online v sekci:
+
+Služby pro firmy → [Správa B2B profilu](https://www.postaonline.cz/sluzby-pro-firmy/sprava-b2b-profilu)
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/6e2be265d0d8b828.png)
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/8bbf57d04b5ed5ef.png)
+
+#### 🔢 Technologické číslo
+
+Najdete v sekci:
+
+Podání Online → [Technologická čísla](https://www.postaonline.cz/pol/nastaveni/techcisla) 👉 [Přímý odkaz](https://www.postaonline.cz/pol/nastaveni/techcisla)
+
+Pokud máte více technologických čísel, zadejte to, které chcete používat pro balíčky vytvořené ve FAPI.
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/8749cc557da0abf8.png)
+
+#### 📮 Podací pošta
+
+Uveďte PSČ pošty, kterou máte nasmlouvanou pro podávání balíčků. Balíčky lze podávat pouze na této poště.
+
+Pokud máte nasmlouvaných více pošt, vyberte jednu, která bude používána pro balíčky vytvořené ve FAPI.
+
+👉 [Nastavení podacích pošt](https://www.postaonline.cz/pol/nastaveni/podaciposty)
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/cc7b562d385503de.png)
+
+#### 🆔 ID CČK (číslo kontraktu)
+
+Najdete vpravo nahoře v aplikaci Pošta Online, vedle názvu vaší organizace (v závorce).
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/234d1b15bca00474.png)
+
+  
+
+### 2\. Důležité upozornění
+
+❗ Před vytvářením balíčků a tiskem štítků přímo ve FAPI doporučujeme zkontrolovat a správně nastavit údaje o odesílateli v aplikaci Pošta Online:
+
+👉 [Nastavení odesílatele](https://www.postaonline.cz/pol/nastaveni/odesilatel)
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/7c7f9508d1e107b2.png)
+
+Ve FAPI se používají údaje o odesílateli s číslem podacího místa 1. Můžete je upravit podle potřeby.
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/024bc4372f6a76b3.png)
+
+Pokud plánujete využívat dobírku, nezapomeňte také zadat informace o bankovním spojení a příjemci dobírkové částky.
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/661e8f37e6af5b45.png)
+
+  
+
+### 3\. Propojení FAPI s Balíkovnou
+
+1.  Ve FAPI přejděte do:
+    
+    Nastavení → Propojení aplikací
+    
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/b00a202b9f09fd98.png)
+
+  
+
+2.  Klikněte na „Přidat“ u propojení s Balíkovnou
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/43ec8a8935943cb2.png)
+
+3.  Vyplňte údaje získané z Pošty Online:
+    -   API token, Heslo (Privátní api klíč), Technologické číslo, PSČ podací pošty, ID CČK
+    
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/0aa60a2de8dee688.png)
+
+Po úspěšném propojení můžete vytvořit dopravu typu Balíkovna, přidat ji do svých formulářů a následně vytvářet balíčky a tisknout štítky přímo z detailu faktur k vašim objednávkám.
+
+  
+
+![Jak propojit FAPI s Balíkovnou](/assets/articles/bf2a3ef80dd99e05.png)
+
+:::caution
+Jak na **vytvoření dopravy** najdete v této FAPI nápovědě: [https://napoveda.fapi.cz/article/61-doprava](/article/61-doprava)
+:::

@@ -1,0 +1,152 @@
+---
+title: SmartEmailing webtracking ve FAPI
+url: /article/333-smartemailing-webtracking-ve-fapi
+description: "SmartEmailing webtracking umožňuje sledovat aktivitu kontaktů na webu. Ve FAPI jej můžete použít u prodejního formuláře: na děkovací stránce FAPI se načte track"
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 300-mereni-a-marketing
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - SmartEmailing webtracking ve FAPI
+  - Automatizace
+  - Měření a Marketing
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/333-smartemailing-webtracking-ve-fapi
+order: 280
+updatedAt: 2026-07-22T06:31:51Z
+legacyAnchors:
+  - id: Dleit-upozornn-qTY4c
+    tag: h2
+    text: Důležité upozornění
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-budete-potebovat-JK9mH
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 1
+  - id: 1-Aktivace-webtrackingu-ve-SmartEmailingu-VHWbC
+    tag: h2
+    text: 1. Aktivace webtrackingu ve SmartEmailingu
+    occurrence: 0
+    headingIndex: 2
+  - id: 2-Zkoprovn-SmartEmailing-webtracking-GUID-z6NyU
+    tag: h2
+    text: 2. Zkopírování SmartEmailing webtracking GUID
+    occurrence: 0
+    headingIndex: 3
+  - id: 3-Vloen-GUID-do-FAPI-V2AD3
+    tag: h2
+    text: 3. Vložení GUID do FAPI
+    occurrence: 0
+    headingIndex: 4
+  - id: Dleit-upozornn-BKyfy
+    tag: h2
+    text: Důležité upozornění
+    occurrence: 1
+    headingIndex: 5
+  - id: 4-Jak-ovit-sprvn-nastaven-VVqrv
+    tag: h2
+    text: 4. Jak ověřit správné nastavení
+    occurrence: 0
+    headingIndex: 6
+  - id: Shrnut-G_RX5
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 7
+---
+SmartEmailing webtracking umožňuje sledovat aktivitu kontaktů na webu. Ve FAPI jej můžete použít u prodejního formuláře: **na děkovací stránce FAPI se načte tracker SmartEmailingu a po úspěšném vytvoření objednávky mu FAPI předá údaje o objednávce.**
+
+:::danger
+## **Důležité upozornění**
+
+Toto nastavení funguje pouze s děkovací stránkou vytvořenou FAPI. Pokud u formuláře používáte volbu **Použít vlastní děkovací stránku**, FAPI na tuto externí stránku nevkládá SmartEmailing tracker ani údaje o objednávce. Webtracking je v takovém případě potřeba nastavit přímo na vašem webu.
+:::
+
+## Co budete potřebovat
+
+-   aktivní webtracking ve SmartEmailingu,
+-   SmartEmailing webtracking GUID,
+-   prodejní formulář ve FAPI s děkovací stránkou FAPI.
+
+Aktuální nápovědu SmartEmailingu k webtrackingu najdete zde:
+
+[https://help.smartemailing.cz/article/1484-webtracking](https://help.smartemailing.cz/article/1484-webtracking)
+
+## 1\. Aktivace webtrackingu ve SmartEmailingu
+
+Přihlaste se do SmartEmailingu a aktivujte webtracking podle jeho aktuální nápovědy. Připravte si hodnotu **GUID webtrackingu** pro vložení do FAPI.
+
+## 2\. Zkopírování SmartEmailing webtracking GUID
+
+Do FAPI nekopírujte celý měřicí kód SmartEmailingu. Zkopírujte pouze samotný **GUID** ze základního kódu pro webtracking.
+
+Po zkopírování kódu se objeví toto okno, kde zvolíme
+
+**Rozumím, zavřít.**
+
+  
+
+![Upozornění SmartEmailingu po zkopírování webtrackingového kódu](/assets/articles/df2870c873a402ea.png)
+
+## 3\. Vložení GUID do FAPI
+
+1.  Ve FAPI otevřete prodejní formulář, u kterého chcete SmartEmailing webtracking používat.
+2.  V **5\. kroku → Děkovací stránka** ověřte, že není zapnutá volba **Použít vlastní děkovací stránku**.
+3.  Do pole **SmartEmailing webtracking GUID** vložte zkopírovaný GUID ze SmartEmailingu.
+
+  
+
+4.  Formulář uložte.
+
+:::danger
+## **Důležité upozornění**
+
+Do pole **SmartEmailing webtracking GUID** vkládejte pouze samotný GUID, nikoli celý webtracking kód ze SmartEmailingu.
+:::
+
+## 4\. Jak ověřit správné nastavení
+
+1.  Vytvořte testovací objednávku.
+2.  Po dokončení objednávky otevřete děkovací stránku FAPI.
+3.  **Po odeslání objednávky** kdekoliv na stránce klikněte pravým tlačítkem myši, úplně dole vyberte **Prozkoumat.**
+
+  
+
+![Volba Prozkoumat v nabídce internetového prohlížeče](/assets/articles/e74b22acbab4076e.png)
+
+4.  Přepněte se do záložky **Konzole**.
+5.  Vyhledejte zprávu:
+    
+    `FAPI Conversion: SmartEmailing order was sent.`  
+    
+
+Tato zpráva potvrzuje, že FAPI předalo údaje o objednávce trackeru SmartEmailingu. Pokud se místo ní zobrazí upozornění, že se tracker nenačetl včas nebo že objednávka nemá položky, objednávka nebyla z FAPI trackeru předána.
+
+  
+
+![SmartEmailing webtracking ve FAPI](/assets/articles/d4f0f161b509ba8c.png)
+
+Samotné zprávy trackeru o jeho inicializaci potvrzují načtení webtrackingu, ale samy o sobě nepotvrzují předání objednávky.
+
+**Výsledek můžete dále ověřit přímo ve SmartEmailingu** \> v Nastavení \> Datové zdroje \> v přehledu Webtrackingu.
+
+![SmartEmailing webtracking ve FAPI](/assets/articles/0b817935d4984dee.png)
+
+  
+
+## Shrnutí
+
+1.  Ve SmartEmailingu aktivujte webtracking a zkopírujte pouze jeho GUID.
+2.  Ve FAPI otevřete prodejní formulář a v **5\. kroku → Děkovací stránka** ponechte děkovací stránku FAPI.
+3.  GUID vložte do pole **SmartEmailing webtracking GUID** a formulář uložte.
+4.  Vytvořte testovací objednávku a na děkovací stránce FAPI ověřte v konzoli zprávu `FAPI Conversion: SmartEmailing order was sent.`  
+
+FAPI potom na své děkovací stránce načte tracker SmartEmailingu a po úspěšném vytvoření objednávky mu předá údaje o objednávce.

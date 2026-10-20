@@ -1,0 +1,319 @@
+---
+title: Opakované platby při pravidelné fakturaci
+url: /article/73-opakovane-platby
+description: "Opakované platby nebo-li automatické strhávání z karty jsou skvělý způsob, jak snížit administrativu a zvýšit úspěšnost u služeb, které se pravidelně opakují – "
+category: Platby
+categorySlug: 7-platby
+categorySlugs:
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Opakované platby při pravidelné fakturaci
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/73-opakovane-platby
+order: 14
+updatedAt: 2026-10-14T08:21:26Z
+legacyAnchors:
+  - id: Nejdleitj-pravidlo-T4zJn
+    tag: h3
+    text: Nejdůležitější pravidlo
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-je-poteba-splnit-aby-opakovan-platby-fungovaly-FJWsH
+    tag: h2
+    text: Co je potřeba splnit, aby opakované platby fungovaly
+    occurrence: 0
+    headingIndex: 1
+  - id: Nastaven-opakovanch-plateb-v-prodejnm-formuli-PgnGT
+    tag: h2
+    text: Nastavení opakovaných plateb v prodejním formuláři
+    occurrence: 0
+    headingIndex: 2
+  - id: Zapnuli-jste-automatick-strhvn-a-po-prvn-platb-Jak-to-zprovozn-YlH4x
+    tag: h2
+    text: Zapomněli jste nastavit automatické strhávání? Jak to řešit dodatečně
+    occurrence: 0
+    headingIndex: 3
+  - id: Souhlas-s-opakovanmi-platbami-r4vmQ
+    tag: h2
+    text: Souhlas s opakovanými platbami
+    occurrence: 0
+    headingIndex: 4
+  - id: Minimln-stka-pro-napojen-karty-mmuhb
+    tag: h2
+    text: Minimální částka pro napojení karty
+    occurrence: 0
+    headingIndex: 5
+  - id: Nastaven-e-mailov-komunikace-akmDk
+    tag: h2
+    text: Nastavení e-mailové komunikace
+    occurrence: 0
+    headingIndex: 6
+  - id: E-mail-pi-vystaven-faktury-ped-automatickm-strenm-F08tw
+    tag: h3
+    text: E-mail při vystavení faktury před automatickým stržením
+    occurrence: 0
+    headingIndex: 7
+  - id: E-mail-pi-pesunut-pokusu-o-stren-na-dal-den-UIa7j
+    tag: h3
+    text: E-mail při přesunutí pokusu o stržení na další den
+    occurrence: 0
+    headingIndex: 8
+  - id: E-mail-pi-spnm-stren-platby-z-karty-ZmCm4
+    tag: h3
+    text: E-mail při úspěšném stržení platby z karty
+    occurrence: 0
+    headingIndex: 9
+  - id: E-mail-pi-nespnm-stren-platby-z-karty-Zfz_p
+    tag: h3
+    text: E-mail při neúspěšném stržení platby z karty
+    occurrence: 0
+    headingIndex: 10
+  - id: Poet-pokus-o-stren-a-pro-mus-sedt-e-maily-K7bTR
+    tag: h2
+    text: Počet pokusů o stržení (a proč musí sedět e-maily)
+    occurrence: 0
+    headingIndex: 11
+  - id: Kdy-zkaznkovi-expiruje-karta-1UDE6
+    tag: h2
+    text: Co když je karta po expiraci
+    occurrence: 0
+    headingIndex: 12
+  - id: -dsnZu
+    tag: h2
+    text: ""
+    occurrence: 0
+    headingIndex: 13
+  - id: Zmna-stky-u-opakovanch-plateb-Ak2Jt
+    tag: h2
+    text: Změna částky u opakovaných plateb
+    occurrence: 0
+    headingIndex: 14
+  - id: Zpracovvn-opakovanch-plateb-X4V8w
+    tag: h2
+    text: Zpracovávání opakovaných plateb
+    occurrence: 0
+    headingIndex: 15
+  - id: Zastaven-opakovanch-plateb-GIsNq
+    tag: h2
+    text: Zastavení opakovaných plateb
+    occurrence: 0
+    headingIndex: 16
+---
+Opakované platby nebo-li **automatické strhávání z karty** jsou skvělý způsob, jak snížit administrativu a zvýšit úspěšnost u služeb, které se pravidelně opakují – typicky předplatné nebo členství.
+
+Princip je jednoduchý: zákazník při první objednávce zaplatí kartou a souhlas s opakovanými platbami se uloží v platební bráně. Další platby se pak strhávají automaticky podle nastavené pravidelné fakturace.
+
+:::tip
+### Nejdůležitější pravidlo
+
+Automatické strhávání z karty musí být zapnuté už ve chvíli, kdy zákazník platí kartou poprvé.
+
+Pokud při první kartové platbě nebylo automatické strhávání zapnuté, nelze zpětně „připojit“ uloženou kartu k opakovaným platbám. V takovém případě se karta pro opakované platby uloží až při další kartové platbě, která proběhne ve chvíli, kdy už je automatické strhávání zapnuté.
+:::
+
+## Co je potřeba splnit, aby opakované platby fungovaly
+
+Opakované platby jsou přímo závislé na platební bráně – brána musí umět tzv. platby na vyžádání (on demand).
+
+-   GoPay, ThePay, Comgate, GP Webpay: je potřeba požádat bránu o povolení plateb na vyžádání (schvalování je individuální).
+-   Stripe: opakované platby jsou dostupné už v základu (žádat není potřeba).
+-   Pays: opakované platby nepodporuje.
+
+## Nastavení opakovaných plateb v prodejním formuláři
+
+Automatické strhávání z karty lze používat pouze společně s pravidelnou fakturací.
+
+V prodejním formuláři se volba „Zapnout automatické strhávání z karty“ zobrazí pouze tehdy, když:
+
+-   je v prodejním formuláři nastavená platební brána
+-   je zapnuté vystavování pravidelných faktur (volba „Vystavovat pravidelné faktury“)
+
+Potom stačí zaškrtnout „Zapnout automatické strhávání z karty“.
+
+Doporučení: v prodejním formuláři ponechte jako způsob platby pouze platbu kartou.
+
+Pokud zákazník první objednávku zaplatí jinak (např. bankovním převodem), automatické strhávání z karty se neaktivuje.
+
+![Opakované platby při pravidelné fakturaci](/assets/articles/6a18d5114d2570e1.png)
+
+:::tip
+Doporučujeme omezit dostupné způsoby platby v prodejním formuláři pouze na platbu kartou. Pokud by byla objednávka zaplacena jiným způsobem (např. klasickým bankovním převodem), automatické strhávání plateb z karty by se neaktivovalo.
+:::
+
+## Zapomněli jste nastavit automatické strhávání? Jak to řešit dodatečně
+
+Pokud první objednávka proběhla kartou ve chvíli, kdy ještě nebylo zapnuté automatické strhávání z karty, karta se k opakovaným platbám neuložila a **nejde to zpětně „připojit“ jen změnou nastavení**.
+
+Aby se karta napojila pro další automatické strhávání, je potřeba toto:
+
+1.  V prodejním formuláři zapněte **automatické strhávání z karty** (a ověřte, že je u formuláře aktivní pravidelná fakturace).
+2.  U klienta musí následně proběhnout **alespoň jedna další úhrada kartou** v okamžiku, kdy už je strhávání zapnuté (typicky úhrada následující faktury kartou přes přehled objednávky).
+3.  Po této kartové úhradě se karta „napojí“ a další platby už mohou být strhávané automaticky.
+
+Jak poznáte, že má klient kartu správně napojenou, najdete zde:
+
+[https://napoveda.fapi.cz/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani](/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani?utm_source=chatgpt.com)
+
+## Souhlas s opakovanými platbami
+
+U opakovaných plateb je klíčové, aby zákazník věděl, že:
+
+-   se jedná o předplatné / opakovanou platbu,
+-   jak často se bude strhávat,
+-   v jaké výši,
+-   jak lze předplatné ukončit.
+
+Souhlas zákazník uděluje v platební bráně a ukládá se k objednávce. Požadavky na informování se mohou lišit podle brány, doporučujeme ověřit konkrétní podmínky u provozovatele brány.
+
+:::danger
+Vyžadovaný způsob informování klientů se u různých platebních bran může lišit. Doporučujeme proto konkrétní podmínky ověřit u dané platební brány.
+:::
+
+:::caution
+## Minimální částka pro napojení karty
+
+První objednávka, která má uložit kartu pro opakované platby, musí mít nenulovou částku (minimálně 1 Kč).
+
+Nulové faktury nelze pro napojení karty použít. U Stripe navíc platí minimální částka pro platbu (běžně 15 Kč).
+:::
+
+## Nastavení e-mailové komunikace
+
+Opakované platby mění proces objednávky, proto je potřeba správně nastavit e-maily pro 2. a další fakturu v sadě šablon zpráv připojené k prodejnímu formuláři.
+
+![Opakované platby při pravidelné fakturaci](/assets/articles/3a233802dddc1181.png)
+
+  
+
+:::note
+Opakované platby doprovázejí 4 následující šablony zpráv:
+
+![Opakované platby při pravidelné fakturaci](/assets/articles/c8900d0017e2d2dd.png)
+
+  
+
+### E-mail při vystavení faktury před automatickým stržením
+
+Kdy se posílá: po vystavení dokladu k dalšímu období (standardně 7 dní před plánovaným stržením).
+
+Co má obsahovat:
+
+-   informaci, že došlo k vystavení dokladu pro další období,
+-   jasnou větu, že klient fakturu nemá hradit ručně (pokud chce pokračovat),
+-   informaci, že platba bude stržena automaticky,
+-   krátké doporučení, jak postupovat při ukončení služby (včas ukončit pravidelnou fakturaci a řešit doklad podle procesu obchodníka).
+
+Povinné: ne (doporučené)
+
+  
+
+### E-mail při přesunutí pokusu o stržení na další den
+
+Kdy se posílá: pokud se stržení nepodaří a systém podle nastavení posune další pokus na další den.
+
+Co má obsahovat:
+
+-   že se platbu nepodařilo strhnout,
+-   že se o to zkusíme znovu následující den,
+-   doporučení zkontrolovat prostředky / platnost karty.
+
+Povinné: ne
+
+**Důležité:** tento e-mail se používá pouze tehdy, když máte nastaveno více než 1 pokus o stržení. Pokud máte nastavené např. 3 pokusy, e-mail o přesunu pokusu se odešle 2×. (V šablonách není zástupný symbol pro číslo pokusu, proto doporučujeme psát text obecně, bez uvádění „pokus č. X“.)
+
+  
+
+### E-mail při úspěšném stržení platby z karty
+
+Kdy se posílá: po úspěšném stržení.
+
+Co má obsahovat:
+
+-   potvrzení úhrady,
+-   případně shrnutí, za jaké období byla platba provedena,
+-   volitelně odkaz na přehled objednávky.
+
+Povinné: ne (doporučené)
+
+  
+
+### E-mail při neúspěšném stržení platby z karty
+
+Kdy se posílá: po neúspěšném stržení (typicky po posledním pokusu, nebo po finálním vyhodnocení neúspěchu podle nastavení).
+
+Co má obsahovat:
+
+-   že automatická platba selhala,
+-   co má klient udělat dál (jasný návod),
+-   možnost uhradit platbu ručně:
+    -   zopakovat platbu kartou přes [přehled objednávky](/article/102-prehled-objednavky) (zástupný symbol `{{orderStatusPage}}`   )
+    -   nebo bankovním převodem (platební údaje / variabilní symbol).
+    
+
+Povinné: ano (bez této šablony nelze uložit nastavení prodejního formuláře)
+
+## Počet pokusů o stržení (a proč musí sedět e-maily)
+
+Počet pokusů o automatické stržení nastavujete v prodejním formuláři.
+
+Důležité pravidlo:
+
+-   pokud nastavíte více než 1 pokus, používejte i e-mail „přesun pokusu na další den“,
+-   počet pokusů musí odpovídat tomu, jaké e-maily máte připravené, aby komunikace dávala smysl.
+
+Praktické doporučení:
+
+-   největší rozdíl v úspěšnosti obvykle přinesou první 2–3 pokusy
+-   vyšší počet pokusů už bývá méně přínosný a prodlužuje dobu neuhrazeného stavu
+:::
+
+:::caution
+## Co když je karta po expiraci
+
+Jediný způsob, jak znovu obnovit automatické strhávání z karty po expiraci karty, je provést novou kartovou platbu.
+
+Jakmile zákazník znovu zaplatí kartou (novou nebo obnovenou), uloží se nová karta pro opakované platby a další stržení mohou opět probíhat automaticky.
+
+[https://napoveda.fapi.cz/article/104-jak-zmenit-kartu](/article/104-jak-zmenit-kartu)
+:::
+
+## Změna částky u opakovaných plateb
+
+Částku lze změnit dvěma způsoby:
+
+1.  Ukončit stávající pravidelnou fakturaci a založit novou objednávku (zákazník znovu odsouhlasí opakované platby s novou částkou).
+2.  Upravit stávající šablonu pravidelné fakturace a případně i dosud neuhrazený doklad.
+
+:::danger
+**Pozor**
+
+Změna částky je změna původně odsouhlasených parametrů platby. Musíte mít nový souhlas zákazníka s novou výší platby (e-mail/písemně/jinou prokazatelnou formou) a doporučujeme jej uchovat.
+:::
+
+## Zpracovávání opakovaných plateb
+
+Opakované strhávání zpracováváme standardně 7 dní od vzniku dokladu, který slouží jako podklad pro opakovanou platbu.
+
+Den plánovaného stržení vidíte přímo na faktuře jako samostatný řádek.
+
+![Opakované platby při pravidelné fakturaci](/assets/articles/d20f5cbdfc870d26.png)
+
+Pokud fakturu upravíte včas (typicky do 8:00 daného dne), bude se strhávat už upravená částka.
+
+:::caution
+Pravidelné strhávání z karty zpracováváme za 7 dní od vzniku dokladu, který slouží jako podklad pro opakovanou platbu.
+
+Každou šablonu pravidelné fakturace u klienta lze samostatně editovat, že se doklad může vystavit až 1 - 30 dnů s předstihem.
+
+Pro platby s automatickým stržením doporučujeme ponechat vystavení 7 dní předem, včetně splatnosti.
+
+![Opakované platby při pravidelné fakturaci](/assets/articles/27557cd083ed78a3.png)
+:::
+
+## Zastavení opakovaných plateb
+
+Opakované platby zastavíte ukončením pravidelné fakturace (zastavením šablony pravidelných faktur).
+
+[https://napoveda.fapi.cz/article/115-zruseni-automatickych-opakovanych-plateb](/article/115-zruseni-automatickych-opakovanych-plateb)

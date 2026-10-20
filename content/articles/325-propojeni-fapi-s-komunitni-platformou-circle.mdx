@@ -1,0 +1,358 @@
+---
+title: Propojení FAPI s komunitní platformou Circle.so
+url: /article/325-propojeni-fapi-s-komunitni-platformou-circle
+description: "Propojení FAPI s platformou Circle umožňuje po objednávce automaticky vytvořit zákazníkovi členský účet v Circle a přiřadit mu vybrané štítky. Díky tomu můžete "
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s komunitní platformou Circle.so
+  - Automatizace
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/325-propojeni-fapi-s-komunitni-platformou-circle
+order: 274
+updatedAt: 2026-10-15T07:27:01Z
+legacyAnchors:
+  - id: Co-budete-potebovat-09pUw
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 0
+  - id: 1-Vytvoen-API-tokenu-v-Circle-0McfW
+    tag: h2
+    text: 1. Vytvoření API tokenu v Circle
+    occurrence: 0
+    headingIndex: 1
+  - id: 2-Propojen-Circle-s-FAPI-FHcL_
+    tag: h2
+    text: 2. Propojení Circle s FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 3-Jak-propojen-funguje-N3x0B
+    tag: h2
+    text: 3. Jak propojení funguje
+    occurrence: 0
+    headingIndex: 3
+  - id: Pidat-lena-a-ttky-do-Circle-ak3GY
+    tag: h3
+    text: Přidat člena a štítky do Circle
+    occurrence: 0
+    headingIndex: 4
+  - id: Odebrat-ttky-lenovi-v-Circle-2Nraj
+    tag: h3
+    text: Odebrat štítky členovi v Circle
+    occurrence: 0
+    headingIndex: 5
+  - id: 4-Nastaven-akce-v-prodejnm-formuli-ifV3h
+    tag: h2
+    text: 4. Nastavení akce v prodejním formuláři
+    occurrence: 0
+    headingIndex: 6
+  - id: 5-Vytvoen-ttku-v-Circle-GeGqr
+    tag: h2
+    text: 5. Vytvoření štítku v Circle
+    occurrence: 0
+    headingIndex: 7
+  - id: 6-Vytvoen-workflow-v-Circle-lJd4F
+    tag: h2
+    text: 6. Vytvoření workflow v Circle
+    occurrence: 0
+    headingIndex: 8
+  - id: 7-Pstup-do-soukromch-prostor-v-Circle-uRUAd
+    tag: h2
+    text: 7. Přístup do soukromých prostorů v Circle
+    occurrence: 0
+    headingIndex: 9
+  - id: 8-Testovn-propojen-w-00A
+    tag: h2
+    text: 8. Testování propojení
+    occurrence: 0
+    headingIndex: 10
+  - id: 9-Co-zkaznk-obdr-R2gE2
+    tag: h2
+    text: 9. Co zákazník obdrží
+    occurrence: 0
+    headingIndex: 11
+  - id: 10-Pokud-pouvte-vce-Circle-komunit-jq3aD
+    tag: h2
+    text: 10. Pokud používáte více Circle komunit
+    occurrence: 0
+    headingIndex: 12
+  - id: Shrnut-dMf4p
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 13
+---
+Propojení FAPI s platformou **Circle** umožňuje po objednávce automaticky vytvořit zákazníkovi členský účet v Circle a přiřadit mu vybrané štítky. Díky tomu můžete ve FAPI prodávat přístup do komunity, členské sekce, kurzu nebo jiného obsahu spravovaného v Circle.
+
+Circle pak může podle přiřazeného štítku spustit vlastní automatizaci, například přidat člena do konkrétního prostoru, poslat mu e-mail, zprávu nebo spustit další workflow.
+
+## Co budete potřebovat
+
+Pro propojení potřebujete:
+
+-   aktivní účet ve FAPI,
+-   účet v Circle,
+-   tarif Circle **Business** nebo vyšší,
+-   API token z Circle typu **Admin V2**.
+
+:::danger
+Propojení využívá Admin API Circle. Nižší tarify Circle nemusí potřebné API podporovat.
+:::
+
+:::tip
+**Videonávod máte k dispozici zde:**
+
+<Video src="https://www.youtube.com/embed/TWvss-Nflyg" />
+:::
+
+  
+
+## 1\. Vytvoření API tokenu v Circle
+
+Nejprve si v Circle vytvořte API token.
+
+V Circle přejděte do části:
+
+**Developers → Tokens**
+
+  
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/d99caaa149fd564f.png)
+
+Poté klikněte na vytvoření nového tokenu.
+
+  
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/c8261abb6b3b0354.png)
+
+Při vytváření tokenu nastavte:
+
+-   **Type:** Admin V2,
+-   **Name:** například FAPI.
+
+Po vytvoření token zkopírujte. Budete ho vkládat do FAPI dle dalšího bodu.
+
+**Sem vložte screenshot vytvoření tokenu v Circle.**
+
+## 2\. Propojení Circle s FAPI
+
+Ve FAPI přejděte do:
+
+**Nastavení → Propojení aplikací**
+
+Najděte propojení **Circle** a klikněte na připojení.
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/d9e44e57df4c17e3.png)
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/a9fc53b16e046bf3.png)
+
+  
+
+Do pole pro API klíč vložte token z Circle a uložte.
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/fc770bde4b75b9c8.png)
+
+Tím je základní propojení FAPI s Circle hotové.
+
+  
+  
+
+## 3\. Jak propojení funguje
+
+Propojení FAPI s Circle funguje hlavně přes **členy** a **štítky**.
+
+Ve FAPI můžete u prodejního formuláře nastavit akci, která se spustí například po zaplacení objednávky.
+
+Dostupné akce jsou:
+
+-   **Přidat člena a štítky do Circle**,
+-   **Odebrat štítky členovi v Circle**.
+
+  
+
+### Přidat člena a štítky do Circle
+
+Tato akce vytvoří nebo aktualizuje člena v Circle.
+
+Pokud zákazník v Circle ještě neexistuje, FAPI mu vytvoří nový účet. Circle mu obvykle pošle e-mail s pozvánkou k registraci nebo dokončení profilu.
+
+Pokud zákazník už v Circle existuje, FAPI nevytváří duplicitního člena. Pouze mu případně aktualizuje jméno a přiřadí vybrané štítky.
+
+Štítky jsou volitelné. Můžete tedy zákazníka pouze přidat do Circle, nebo ho přidat a zároveň mu přiřadit jeden či více štítků.
+
+  
+
+### Odebrat štítky členovi v Circle
+
+Tato akce zákazníkovi odebere vybrané štítky.
+
+Zákazník tím není z komunity odstraněn. Zůstává členem Circle, pouze přijde o daný štítek a případně o přístup nebo automatizaci, která je na tento štítek navázaná.
+
+Tuto akci můžete využít například při stornu, ukončení přístupu nebo změně členství.
+
+## 4\. Nastavení akce v prodejním formuláři
+
+Ve FAPI otevřete prodejní formulář, přes který prodáváte přístup do Circle.
+
+U produktu je potřeba mít nastavený TYP produktu, jako elektronicky poskytovanou službu.
+
+Přejděte do části:
+
+**4\. krok Akce**
+
+Přidejte novou akci například při události:
+
+**Při zaplacení**
+
+Vyberte akci:
+
+**Přidat člena a štítky do Circle**
+
+Poté vyberte štítek nebo štítky, které se mají zákazníkovi v Circle přiřadit.
+
+Nastavení uložte.
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/9d6b008ca7297d31.png)
+
+## 5\. Vytvoření štítku v Circle
+
+Štítky se vytvářejí přímo v Circle.
+
+V Circle přejděte do části:
+
+**Audience → Tags**
+
+Vytvořte nový štítek, například:
+
+**Přístup do komunity**
+
+Po uložení nového štítku je potřeba, aby si ho FAPI načetlo. Pokud jste štítek vytvořili až během nastavování formuláře, může být potřeba formulář uložit a znovu otevřít, aby se nový štítek ve FAPI zobrazil.
+
+**Sem vložte screenshot vytvoření štítku v Circle.**
+
+## 6\. Vytvoření workflow v Circle
+
+Samotné přiřazení štítku ve FAPI ještě nemusí zákazníkovi automaticky zpřístupnit konkrétní obsah.
+
+V Circle je potřeba nastavit workflow, které se spustí ve chvíli, kdy člen získá vybraný štítek.
+
+V Circle přejděte do části:
+
+**Workflows**
+
+Vytvořte nové workflow.
+
+Jako trigger nastavte například:
+
+**Tag Added**
+
+Poté vyberte štítek, který FAPI zákazníkovi přiřazuje, například:
+
+**Přístup do komunity**
+
+Následně nastavte akci, kterou má Circle provést. Například:
+
+-   přidat člena do konkrétního prostoru,
+-   přidat člena do access group,
+-   poslat e-mail,
+-   poslat zprávu,
+-   spustit další automatizaci.
+
+Nakonec workflow aktivujte.
+
+  
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/bf5c2574aaac2953.png)
+
+Po správném vytvoření štítku budete mít na obrazovce tuto notifikaci:
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/6512039e259676fa.png)
+
+## 7\. Přístup do soukromých prostorů v Circle
+
+Pokud má být obsah dostupný pouze platícím členům, nastavte v Circle u daného prostoru odpovídající přístup.
+
+Důležité je zejména nastavení typu přístupu, například **Private** nebo **Access Secret**.
+
+U prostorů s nastavením **Access Secret** budou mít přístup pouze členové, kteří byli přidáni správcem komunity, případně si přístup zakoupili přes platební bránu v Circle.
+
+Pokud prodáváte přístup přes FAPI, obvykle využijete workflow v Circle, které po přiřazení štítku přidá zákazníka do správného prostoru nebo skupiny.
+
+  
+
+![Propojení FAPI s komunitní platformou Circle.so](/assets/articles/4cd6999634b0d063.png)
+
+  
+
+## 8\. Testování propojení
+
+Po nastavení doporučujeme provést testovací objednávku.
+
+Postup:
+
+1.  Vytvořte objednávku přes prodejní formulář.
+2.  Označte objednávku jako zaplacenou, případně ji skutečně uhraďte.
+3.  Ověřte ve FAPI, že se spustila akce pro Circle.
+4.  Zkontrolujte v Circle, zda byl člen vytvořen.
+5.  Ověřte, zda se členovi přiřadil správný štítek.
+6.  Zkontrolujte, zda se spustilo workflow v Circle.
+7.  Ověřte, zda zákazník dostal pozvánku do Circle.
+
+Při testování nepoužívejte stejnou e-mailovou adresu, pod kterou jste v Circle přihlášeni jako administrátor. Circle ji může vyhodnotit jako již existující účet a test nemusí odpovídat běžnému zákaznickému chování.
+
+Pozor také na testovací adresy s `+`     , například `jmeno+test@gmail.com`     . Circle je nemusí vždy vyhodnotit jako samostatnou unikátní adresu.
+
+## 9\. Co zákazník obdrží
+
+Pokud zákazník v Circle ještě nemá účet, Circle mu obvykle pošle e-mail s pozvánkou.
+
+Zákazník pozvánku potvrdí, nastaví si profil a heslo a následně získá přístup podle toho, jaké štítky a workflow máte v Circle nastavené.
+
+Dokud zákazník pozvánku nepotvrdí, nemusí se v některých přehledech Circle zobrazovat jako plně aktivní člen.
+
+## 10\. Pokud používáte více Circle komunit
+
+Ve FAPI můžete vytvořit více samostatných propojení s Circle. To využijete například tehdy, když spravujete několik komunit, kurzů nebo klientských projektů.
+
+Při nastavování akce **Přidat člena a štítky do Circle** nebo **Odebrat štítky členovi v Circle** nejprve vyberte konkrétní Circle propojení, se kterým má daná akce pracovat. FAPI následně načte štítky právě z vybrané komunity.
+
+Do nabídky se zobrazí pouze funkční propojení, u kterých úspěšně proběhla kontrola spojení.
+
+Pokud požadované propojení nevidíte, zkontrolujte jeho nastavení v části [**Nastavení → Propojení aplikací**](https://web.fapi.cz/settings/connections?projectId=all) **→ Circle**.
+
+  
+
+A v části **„4. Nastavení akce v prodejním formuláři“** bych původní postup upravila takto:
+
+1.  Ve FAPI otevřete prodejní formulář, přes který prodáváte přístup do Circle.
+2.  Přejděte do kroku **Akce**.
+3.  Přidejte novou akci, například při události **Při zaplacení**.
+4.  Vyberte akci **Přidat člena a štítky do Circle**.
+5.  Pokud máte více Circle propojení, vyberte komunitu, se kterou má akce pracovat.
+6.  Vyberte štítek nebo štítky načtené z této komunity.
+7.  Nastavení formuláře uložte.
+
+:::danger
+**Důležité:** Každá Circle akce pracuje s konkrétním propojením. Před uložením proto zkontrolujte, že jste vybrali správnou komunitu a odpovídající štítky.
+:::
+
+## Shrnutí
+
+Propojení FAPI s Circle umožňuje automaticky vytvořit zákazníkovi členský účet v Circle a přiřadit mu štítky podle objednávky ve FAPI.
+
+Základní postup je:
+
+1.  vytvořit API token v Circle typu **Admin V2**,
+2.  vložit token do FAPI v části **Propojení aplikací**,
+3.  vytvořit štítky v Circle,
+4.  nastavit akci v prodejním formuláři ve FAPI,
+5.  vytvořit workflow v Circle,
+6.  otestovat celý proces objednávkou.
+
+Díky propojení můžete prodávat přístup do komunit, kurzů, členských sekcí nebo jiného obsahu v Circle bez ručního přidávání členů.

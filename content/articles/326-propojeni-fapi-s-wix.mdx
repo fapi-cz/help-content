@@ -1,0 +1,338 @@
+---
+title: Propojení FAPI s Wix
+url: /article/326-propojeni-fapi-s-wix
+description: Propojení FAPI s platformou Wix umožňuje předávat zákazníky z objednávek ve FAPI do Wix. Díky tomu můžete ve Wix automaticky vytvářet nebo aktualizovat kontakty
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Propojení FAPI s Wix
+  - Automatizace
+  - Nastavení
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/326-propojeni-fapi-s-wix
+order: 287
+updatedAt: 2026-07-27T13:15:01Z
+legacyAnchors:
+  - id: Videonpovda-ZUFpL
+    tag: h2
+    text: Videonápověda
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-budete-potebovat-llu1l
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 1
+  - id: 1-Zskn-ID-strnky-ve-Wixu-DdtIt
+    tag: h2
+    text: 1. Získání ID stránky ve Wix
+    occurrence: 0
+    headingIndex: 2
+  - id: 2-Vytvoen-API-kle-ve-Wixu-rAtqv
+    tag: h2
+    text: 2. Vytvoření API klíče ve Wix
+    occurrence: 0
+    headingIndex: 3
+  - id: 3-Propojen-Wixu-s-FAPI-lle9K
+    tag: h2
+    text: 3. Propojení Wix s FAPI
+    occurrence: 0
+    headingIndex: 4
+  - id: 11-Vloen-prodejnho-formule-FAPI-do-Wixu-UiVC_
+    tag: h2
+    text: 4. Vložení prodejního formuláře FAPI do Wix
+    occurrence: 0
+    headingIndex: 5
+  - id: 4-Vloen-prodejnho-formule-FAPI-do-Wix-mOM46
+    tag: h2
+    text: 5. Akce v prodejním formuláři
+    occurrence: 0
+    headingIndex: 6
+  - id: 4-Kontakty-ve-Wixu-yC3tm
+    tag: h2
+    text: 6. Kontakty a členové ve Wix
+    occurrence: 0
+    headingIndex: 7
+  - id: 5-ttky-ve-Wixu-Eey4S
+    tag: h2
+    text: 7. Štítky ve Wix
+    occurrence: 0
+    headingIndex: 8
+  - id: 6-Odznaky-ve-Wixu-FKddx
+    tag: h2
+    text: 8. Odznaky ve Wix
+    occurrence: 0
+    headingIndex: 9
+  - id: 7-Rozdl-mezi-ttky-a-odznaky-KMdV9
+    tag: h2
+    text: Rozdíl mezi štítky a odznaky
+    occurrence: 0
+    headingIndex: 10
+  - id: 8-Akce-FAPI-pro-Wix-CRmix
+    tag: h2
+    text: ""
+    occurrence: 0
+    headingIndex: 11
+  - id: 12-Oven-e-se-akce-spustila-svvoF
+    tag: h2
+    text: 9. Ověření správného nastavení
+    occurrence: 0
+    headingIndex: 12
+  - id: Shrnut-qn-oN
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 13
+---
+Propojení FAPI s platformou **Wix** umožňuje předávat zákazníky z objednávek ve FAPI do Wix. Díky tomu můžete ve Wix automaticky vytvářet nebo aktualizovat kontakty, pracovat se štítky, členy webu a odznaky.
+
+Wix je platforma pro tvorbu webových stránek, e-shopů a členských sekcí. Ve FAPI můžete Wix využít například tehdy, když přes FAPI prodáváte produkt nebo službu a chcete zákazníka automaticky přidat do Wix kontaktů, přiřadit mu štítek nebo mu nastavit členský odznak.
+
+:::tip
+## Videonápověda
+
+Celý postup najdete také ve videonápovědě.
+
+<Video src="https://www.youtube.com/embed/Yz0xxc6AbJU" />
+:::
+
+  
+
+## Co budete potřebovat
+
+Pro propojení potřebujete:
+
+-   aktivní účet ve FAPI,
+-   aktivní účet ve [**Wix**](https://www.wix.com/),
+-   API klíč z Wix,
+-   ID Wix stránky.
+
+ID stránky je potřeba pro propojení API klíče s konkrétním webem. Wix ve své dokumentaci uvádí, že Site ID najdete v URL adrese dashboardu webu, konkrétně za částí `/dashboard/`  .
+
+  
+
+## 1\. Získání ID stránky ve Wix
+
+Přihlaste se do Wix, v každé stránce pak v url adrese je schovaný vaše tzv. Site ID.
+
+ID stránky najdete přímo v URL adrese prohlížeče.
+
+Jde o část adresy za dashboard/  a před dalším lomítkem /setup.
+
+**Toto ID si zkopírujte.** Budete ho vkládat do FAPI.
+
+  
+
+![Propojení FAPI s Wix](/assets/articles/a61bee0618e805c4.png)
+
+  
+
+## 2\. Vytvoření API klíče ve Wix
+
+Ve Wix přejděte do nastavení účtu a otevřete správu API klíčů.
+
+Postup:
+
+1.  Klikněte na svůj uživatelský účet vpravo nahoře.
+
+![Propojení FAPI s Wix](/assets/articles/41285e3e7e5ebd6c.png)
+
+2.  Otevřete nastavení účtu.
+
+![Propojení FAPI s Wix](/assets/articles/14ab227f5bd944eb.png)
+
+3.  Přejděte do části **API Keys**.
+
+  
+
+![Propojení FAPI s Wix](/assets/articles/252c10e7e64476c0.png)
+
+4.  Klikněte na vpravo nahoře na vytvoření nového API klíče "+ Generate API Key"
+
+![Propojení FAPI s Wix](/assets/articles/cec1de5a14fa5ff7.png)
+
+API klíč si pojmenujte, například **FAPI**.
+
+3.  Vyberte, pro které stránky (Sites) má být klíč dostupný.
+4.  Nastavte oprávnění (Permissions), na **All permissions**.
+5.  Vygenerujte API klíč.
+
+  
+
+![Propojení FAPI s Wix](/assets/articles/467ac5f4fc08fc77.png)
+
+6.  Následně budete vyzvání k vygenerování **ověřovacího kódu**, který přijde na **váš email**. Kód je platný po 10 min a můžete jej upravit 20x za den
+
+![Propojení FAPI s Wix](/assets/articles/efbe9ed32a1c3363.png)
+
+Ověřovací kód najdete ve svém emailu, zkopírujte jej a vložte do pole Code. Následně Potvrďte a vytvořte API klíč.
+
+![Propojení FAPI s Wix](/assets/articles/46af6195f8adb695.png)
+
+Po vygenerování **API klíč zkopírujte**. Budete je vkládat do FAPI.
+
+![Propojení FAPI s Wix](/assets/articles/d00b2893cdae9913.png)
+
+API klíče je potřeba uchovávat bezpečně a používat je pouze tam, kde je to nezbytné.
+
+  
+
+## 3\. Propojení Wix s FAPI
+
+Ve FAPI přejděte tradičně do karty Nastavení a Propojení aplikací:
+
+[**Nastavení → Propojení aplikací**](https://web.fapi.cz/settings/connections?projectId=all)
+
+![Propojení FAPI s Wix](/assets/articles/51e7cb127fb58734.png)
+
+Najděte propojení **Wix** a klikněte na **Připojit**.
+
+![Propojení FAPI s Wix](/assets/articles/9330eb266f93bb90.png)
+
+Vyplňte:
+
+-   **API klíč** z Wix,
+-   **ID Wix stránky**.
+-   Nastavení uložte.
+
+![Propojení FAPI s Wix](/assets/articles/2baf27efc42c347b.png)
+
+:::danger
+Po uložení je FAPI propojené s Wixem.
+
+Pokud by se při ukládání zobrazila chyba **"zadané údaje nejsou správné", chvíli počkejte a zkuste uložení zopakovat.**
+
+Nově vytvořený API klíč může chvíli trvat, než se ve Wix autorizuje.
+:::
+
+  
+
+## 4\. Vložení prodejního formuláře FAPI do Wix
+
+Chcete na Wix stránku vložit přímo prodejní formulář FAPI, použijte samostatnou nápovědu:
+
+[**Jak vložit prodejní formulář FAPI do WIX**](/article/151-jak-vlozit-prodejni-formular-do-stranek-wixu)
+
+  
+
+## 5\. Akce v prodejním formuláři
+
+Po propojení Wix s FAPI můžete ve FAPI nastavit akce, které se spustí například po vytvoření nebo zaplacení objednávky.
+
+Akce nastavíte v prodejním formuláři v části ve **4\. krok Akce**
+
+Můžete pracovat například s těmito akcemi:
+
+![Propojení FAPI s Wix](/assets/articles/ce79ceda0f055874.png)
+
+Konkrétní akci zvolte podle toho, co chcete, aby se po objednávce stalo.
+
+  
+
+## 6\. Kontakty a členové ve Wix
+
+Zákazníci z objednávek ve FAPI se do Wix předávají jako kontakty, což si nastavíte přímo v akcích prodejního formuláře, dle předchozího bodu.
+
+Ve Wix pak kontakty najdete v části určené pro zákazníky (Customers and Leads).
+
+Kontakt můžete ve Wix vytvořit také ručně nebo importem přes CSV soubor.
+
+Pokud už kontakt ve Wix existuje a přijde nová objednávka se stejným kontaktem, FAPI nevytváří zbytečně nový duplicitní kontakt, ale pracuje s existujícím kontaktem a aktualizuje je o dostupné údaje nebo štítky.
+
+Kontakt pak již ve WIX zůstává, ale můžete mu všechny štítky odebrat.
+
+Rovněž v této sekci můžete vytvářet i **členy webu**. Doporučujeme projít hlavně nastavení vpravo nahoře v bublině ... .
+
+![Propojení FAPI s Wix](/assets/articles/780f7b6b5b9e3984.png)
+
+  
+
+## 7\. Štítky ve Wix
+
+Štítky se ve Wix používají pro organizaci a segmentaci kontaktů. A jsou volitelné, nikoliv povinné.
+
+Wix štítky popisuje jako statické značky, pomocí kterých můžete kontakty rozdělovat podle společných vlastností nebo chování. Lze je využít například pro filtrování kontaktů nebo e-mail marketing.
+
+Štítky jsou:
+
+-   interní,
+-   viditelné pouze v administraci Wix,
+-   určené pro správu kontaktů,
+-   vhodné pro segmentaci, filtrování a automatizace.
+
+Příklady štítků:
+
+-   VIP klient,
+-   B2B,
+-   Z newsletteru,
+-   FAPI,
+-   Kurz zakoupen.
+
+Jeden kontakt může mít přiřazený jeden nebo více štítků.
+
+## 8\. Odznaky ve Wix
+
+Odznaky se týkají členů webu a členské části Wix.
+
+Wix uvádí, že odznaky slouží k vizuálnímu označení členů, pomáhají členům vyniknout a mohou jim také zpřístupnit exkluzivní obsah na webu.
+
+Odznaky jsou:
+
+-   veřejné,
+-   viditelné u člena webu,
+-   spojené s Wix Members Area,
+-   vhodné pro označení rolí nebo úrovní členství,
+-   použitelné i pro řízení přístupu k vybranému obsahu.
+
+Příklady odznaků:
+
+-   Administrátor,
+-   Expert,
+-   Premium člen,
+-   VIP,
+-   Absolvent kurzu.
+
+Jeden člen může mít přiřazený jeden nebo více odznaků.
+
+:::caution
+## Rozdíl mezi štítky a odznaky
+
+Zjednodušeně: **štítky slouží hlavně pro interní práci s kontakty**, zatímco **odznaky slouží pro práci se členy webu a mohou být viditelné i navenek**.
+:::
+
+| Funkce | Štítky / Labels | Odznaky / Badges |
+| --- | --- | --- |
+| Viditelnost | Skryté, pouze v administraci | Veřejné, viditelné u člena |
+| Použití | Kontakty a CRM | Členové webu a komunita |
+| Hlavní účel | Segmentace, filtrování, marketing | Role, status, přístup, ocenění |
+| Příklad | B2B, VIP klient, Z newsletteru | Expert, Premium člen, Administrátor |
+
+## 9\. Ověření správného nastavení
+
+Po testovací objednávce si můžete ve FAPI ověřit, zda se akce do Wix správně spustily.
+
+Zápisy najdete v tzv. [**historii změn.**](/article/283-jak-zjistit-jake-akce-probehly-u-dokladu)
+
+V historii uvidíte například informaci, že byl do Wix přidán kontakt, štítek, člen nebo odznak.
+
+  
+
+## Shrnutí
+
+Propojení FAPI s Wixem umožňuje předávat zákazníky z FAPI do Wix a pracovat s nimi jako s kontakty nebo členy webu.
+
+Ve FAPI můžete automaticky spouštět akce, které ve Wix:
+
+-   vytvoří nebo aktualizují kontakt se štítky,
+-   nebo kontakt a štítky odeberou,
+-   vytvoří člena webu a odznaky,
+-   nebo odeberou člena a odznaky,
+-   případně odeberou člena.
+
+Díky tomu můžete propojit prodej přes FAPI s webem, členskou sekcí nebo komunitní částí ve Wix.

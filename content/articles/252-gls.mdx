@@ -1,0 +1,182 @@
+---
+title: Propojení s přepravní službou GLS
+url: /article/252-gls
+description: S FAPI si můžete zjednodušit zasílání zásilek propojením s dopravcem GLS. Díky tomu můžete automaticky vytvářet zásilky a tisknout štítky přímo z detailu faktur
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Propojení s přepravní službou GLS
+  - Online prodej
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/252-gls
+order: 168
+updatedAt: 2026-10-14T10:14:45Z
+legacyAnchors:
+  - id: 1-Registrace-a-aktivace-sluby-GLS-ZFJRf
+    tag: h3
+    text: 1. Registrace a aktivace služby GLS
+    occurrence: 0
+    headingIndex: 0
+  - id: 2-Propojen-GLS-ve-FAPI-cWzb8
+    tag: h3
+    text: 2. Propojení GLS ve FAPI
+    occurrence: 0
+    headingIndex: 1
+  - id: 3-Vytvoen-dopravy-ve-Fapi-s-GLS-Fwg0V
+    tag: h3
+    text: 3. Vytvoření dopravy ve Fapi s GLS
+    occurrence: 0
+    headingIndex: 2
+  - id: 4-Pidn-dopravy-do-prodejnho-formule-sHNv2
+    tag: h3
+    text: 4. Přidání dopravy do prodejního formuláře
+    occurrence: 0
+    headingIndex: 3
+  - id: 5-Vbr-vdejnho-msta-zkaznkem-ebCEp
+    tag: h3
+    text: 5. Výběr výdejního místa zákazníkem
+    occurrence: 0
+    headingIndex: 4
+  - id: 6-Vytvoen-zsilky-a-tisk-ttku-FAm3O
+    tag: h3
+    text: 6. Vytvoření zásilky a tisk štítku
+    occurrence: 0
+    headingIndex: 5
+  - id: Hromadn-tisk-ttk-GLS-aXqFy
+    tag: h2
+    text: Hromadný tisk štítků GLS
+    occurrence: 0
+    headingIndex: 6
+---
+S FAPI si můžete zjednodušit zasílání zásilek propojením s dopravcem GLS. Díky tomu můžete automaticky vytvářet zásilky a tisknout štítky přímo z detailu faktury. Tento návod vás provede celým procesem – od registrace až po výběr výdejního místa zákazníkem.
+
+:::caution
+Je možné využít dodání **na výdejní místo** GLS i **na adresu**.
+:::
+
+### 1\. Registrace a aktivace služby GLS
+
+-   Než začnete, je potřeba mít aktivní účet u GLS s přístupem k jejich API.
+    
+    **Postup:**
+    
+
+-   Kontaktujte obchodní zástupce GLS – domluví s vámi uzavření smlouvy.
+
+[https://mygls.cz/Account/Login](https://mygls.cz/Account/Login)
+
+[https://mygls.sk/Account/Login](https://mygls.cz/Account/Login)
+
+-   Vyplňte potřebné dokumenty a požádejte podporu GLS o zpřístupnění API.
+-   Získáte přihlašovací údaje: **uživatelské jméno, heslo a číslo účtu**.
+
+📩 _V případě potřeby kontaktujte podporu GLS, která vám API přístup zpřístupní._
+
+![Propojení s přepravní službou GLS](/assets/articles/b3c4dddb9b80c954.png)
+
+### 2\. Propojení GLS ve FAPI
+
+1.  Přejděte do sekce [**Nastavení \> Propojení aplikací**](https://web.fapi.cz/settings/basic-information?projectId=all).
+    
+    Zvolte **GLS** a klikněte na tlačítko **Připojit**.
+    
+    Vyplňte získané údaje:
+    
+    -   Uživatelské jméno
+    -   Heslo
+    -   Číslo účtu
+    
+
+💡 _Po uložení dojde k propojení a budete moci nastavovat dopravu přes GLS._
+
+![Propojení s přepravní službou GLS](/assets/articles/cffabd1918469aff.png)
+
+### 3\. Vytvoření dopravy ve Fapi s GLS
+
+1.  Přejděte na záložku [**Prodej \> Doprava**](https://web.fapi.cz/shipping-methods/?projectId=all) a klikněte na **Nový způsob dopravy**.
+    
+    Vyberte typ dopravy:
+    
+    -   **GLS** **doručení na adresu**
+    -   **GLS výdejní místa** (zásilka na výdejní místo)
+    
+2.  Nastavte ceny dopravy, státy, případně aktivujte dopravu zdarma.
+
+📦 _Možnosti můžete kombinovat a nabízet zákazníkům volbu._
+
+### 4\. Přidání dopravy do prodejního formuláře
+
+1.  Otevřete si formulář: **Prodej \> Prodejní formuláře**
+2.  Klikněte na **Upravit** daný formulář.
+3.  Přejděte na krok **3\. Doprava, platba a fakturace**.
+4.  V sekci **Doprava** přidejte nově vytvořenou dopravu z předchozího kroku.
+
+📝 _Zákazníci uvidí možnost výběru doručení GLS nebo výdejního místa._
+
+![Propojení s přepravní službou GLS](/assets/articles/05758d8d913da617.png)
+
+:::danger
+Pro správné fungování výdejních míst GLS je nutné, aby byly v prodejním formuláři **povinně vyplněny následující údaje:**
+
+-   e-mailová adresa
+-   jméno
+-   telefonní číslo
+
+❗️Bez těchto informací **není možné vytvořit zásilku v systému GLS.**
+:::
+
+### 5\. Výběr výdejního místa zákazníkem
+
+Pokud si zákazník zvolí „GLS výdejní místa“:
+
+-   V prodejním formuláři se zobrazí interaktivní mapa nebo výběrové okno.
+-   Po kliknutí si zákazník zvolí preferované výdejní místo.
+-   Není nutné zadávat doručovací adresu – výdejní místo se automaticky uloží k objednávce.
+
+📍 _Tento krok výrazně zrychluje objednávkový proces pro zákazníky._
+
+![Propojení s přepravní službou GLS](/assets/articles/214c000f2a87883b.png)
+
+  
+
+Po kliknutí do dopravu se otevře okno pro výběr výdejní místa, po vybrání výdejního místa se uloží dané místo do objednávky a je následně použité pro vytvoření zásilky v GLS.
+
+![Propojení s přepravní službou GLS](/assets/articles/31eb85ac3e5b4a34.png)
+
+### 6\. Vytvoření zásilky a tisk štítku
+
+Po dokončení objednávky přejděte na:
+
+1.  **Faktury \> Detail faktury**
+2.  Klikněte na tlačítko **Vytvořit zásilku**
+
+![Propojení s přepravní službou GLS](/assets/articles/f941414fdf33c350.png)
+
+3\. Po úspěšném vytvoření zásilky se zobrazí možnost **Tisk štítku**
+
+🖨️ _Štítek si můžete ihned vytisknout a přiložit k balíku_
+
+![Propojení s přepravní službou GLS](/assets/articles/77aae0d63318070e.png)
+
+## Hromadný tisk štítků GLS
+
+Pokud expedujete větší množství objednávek, můžete si ve FAPI nechat zpřístupnit funkci pro hromadný tisk štítků GLS.
+
+:::info
+Funkci zatím testujeme, proto je dostupná na vyžádání. V případě zájmu nám napište na [podpora@fapi.cz](mailto:podpora@fapi.cz).
+:::
+
+Po aktivaci se vám v kartě [Faktury \> Přehled faktur](https://web.fapi.cz/invoice/?projectId=all) zpřístupní další hromadná akce **"Vytisknout štítky GLS".**
+
+Nutno je pouze požadované faktury pro tisk štítků označit a následně akci vybrat.
+
+![Propojení s přepravní službou GLS](/assets/articles/51c886b59902d66f.png)
+
+Štítky lze připravit ve formátu A6 nebo jako štítky A6 umístěné na listu A4. U varianty A4 si můžete zvolit také požadovanou pozici štítku na stránce. V jedné dávce lze zpracovat nejvýše 99 skupin zásilek; větší množství je proto potřeba rozdělit do více dávek.
+
+Pro potvrzení akce je potřeba vybrat požadovný formát štítku a nechat akci Provést.
+
+![Propojení s přepravní službou GLS](/assets/articles/bdb0755d866c0dca.png)

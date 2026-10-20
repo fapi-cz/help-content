@@ -1,0 +1,130 @@
+---
+title: Doklady / Faktury ve FAPI
+url: /article/25-faktury-ve-fapi
+description: Jednou z klíčových funkcí FAPI je vystavování prodejních dokladů - faktur. Tak jako prodejní proces může mít mnoho různých podob, může se výrazně lišit i typ, o
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+keywords:
+  - Doklady / Faktury ve FAPI
+  - Nastavení
+  - Fakturace
+sourceUrl: https://napoveda.fapi.cz/article/25-faktury-ve-fapi
+order: 16
+updatedAt: 2026-07-13T09:39:41Z
+---
+Jednou z klíčových funkcí FAPI je vystavování prodejních dokladů - _faktur_. Tak jako prodejní proces může mít mnoho různých podob, může se výrazně lišit i typ, obsah a vzhled vystavovaných faktur.
+
+V tomto článku se dozvíte, s jakými typy dokladů FAPI pracuje, jaké jsou jejich základní vlastnosti a použití i to, jak si můžete faktury přizpůsobit svým potřebám a vkusu.
+
+## Jaké typy dokladů FAPI vystavuje
+
+Pod zažitým pojmenováním "faktura" najdeme celou skupinu prodejních dokladů, z nichž každý má svou specifickou funkci.
+
+FAPI dokáže vystavovat tyto prodejní doklady:
+
+-   zálohová faktura
+-   doklad o přijetí platby
+-   faktura/daňový doklad
+-   zjednodušený daňový doklad
+-   opravný daňový doklad
+
+### Zálohová faktura
+
+_Zálohovou fakturu_ využijete v případě, kdy zákazníka žádáte o úhradu dohodnuté ceny ještě před dodáním zboží nebo služby. Proto se často tento doklad označuje také jako "výzva k platbě". Z účetního a daňového hlediska má zálohová faktura nezávazný charakter.
+
+Vzhledem k tomu, že zálohové faktury se účetně nezpracovávají, ušetříte si jejich používáním spoustu administrativy v případech, kdy vám klient z jakéhokoli důvodu nezaplatí (např. proto, že si objednávku ještě před jejím zaplacením rozmyslel).
+
+Ihned po úhradě zálohové faktury, FAPI vystavuje _fakturu/daňový doklad_ nebo _doklad o přijetí platby_ (pokud je vystavování dokladů o přijetí platby aktivní).
+
+### Doklad o přijetí platby
+
+Přijme-li plátce DPH platbu, je ze zákona povinen vystavit do 15 dnů doklad, jímž odvádí z přijaté platby DPH. To je hlavní funkce tzv. _dokladu o přijetí platby_. Pokud plátce DPH vystavuje rovnou _daňový doklad_, není potřeba doklad o přijetí platby vystavovat.
+
+:::caution
+Pro neplátce DPH nemá vystavování dokladů o přijetí platby žádný praktický význam.
+:::
+
+Ve FAPI se doklad o přijetí platby vystavuje automaticky ihned po zaplacení objednávky - platbě prostřednictvím platební brány nebo stažení údajů o platbě pomocí importu plateb z banky.
+
+Vystavování dokladů o přijetí platby se aktivuje pro celý účet FAPI pomocí volby **Vystavovat doklady o přijetí platby** v nabídce **Nastavení - Nastavení fakturace**.
+
+![Doklady / Faktury ve FAPI](/assets/articles/37b40acadba1bc32.png)
+
+### Faktura/daňový doklad
+
+Doklad, který závazně stvrzuje uskutečnění prodeje a slouží jako účetní doklad, se ve FAPI nazývá _faktura_ (u neplátců DPH), v případě plátců DPH _daňový doklad_.
+
+### Zjednodušený daňový doklad
+
+Pokud celková cena objednávky nepřevýší 10000 Kč (a současně je splněno i několik dalších omezení, které popisuje § 30 Zákona o dani z přidané hodnoty), můžete vystavit daňový doklad ve zjednodušené podobě, tzv. _zjednodušený daňový doklad_. Jeho hlavní odlišnost od běžného daňového dokladu spočívá v tom, že neobsahuje všechny údaje o odběrateli.
+
+:::caution
+FAPI vystavuje zjednodušené daňové doklady automaticky z prodejních formulářů, kde není po zákazníkovi vyžadováno vyplnění všech fakturačních údajů, a proto nelze vystavit fakturu v plném rozsahu.
+:::
+
+:::danger
+POZOR: Zjednodušené daňové doklady nejde kombinovat s používáním OSS. Zjednodušené doklady budou vždy používat vaši tuzemskou DPH sazbu.
+:::
+
+### Opravný daňový doklad
+
+Pokud je objednávka již zaplacena (nebo je přímo vystaven daňový doklad) a zákazník odstoupí od smlouvy, je třeba vystavit tzv. _opravný daňový doklad_, dříve nazývaný _dobropis_. Opravným daňovým dokladem dochází ke korekci v účetnictví i v přiznání DPH.
+
+Ve FAPI vystavíte opravný daňový doklad pomocí tlačítka **Vytvořit opravný daňový doklad** na stránce s detailními informacemi o faktuře, kterou chcete "dobropisovat". (Opravný daňový doklad je možné vystavit pouze z dokladu typu _faktura/daňový doklad_.)
+
+:::tip
+Opravný daňový doklad lze vystavit jak na plnou částku původní faktury, tak pouze na její část (např. při snížení ceny v důsledku reklamace).
+:::
+
+## Co najdete na faktuře
+
+Základní údaje, které obsahuje faktura, zachycuje následující obrázek.
+
+![Doklady / Faktury ve FAPI](/assets/articles/bf31d32ac9cba8e6.png)
+
+-   **typ a číslo dokladu** - na faktuře je specifikován typ dokladu (viz předchozí kapitola) a jeho číslo; číslování dokladů se řídí nastavením [číselné řady](/article/16-ciselne-rady),
+-   **údaje o dodavateli** - fakturační údaje převzaté ze základního nastavení aplikace; k dodavateli se na faktuře vztahuje také **logo** a **podpis/razítko**, které dotvářejí zejména její vzhled,
+-   **údaje o odběrateli** - fakturační údaje, které vyplní zákazník v objednávce; pokud je v objednávce vyplněna doručovací adresa, na faktuře se objeví jako adresa **konečného příjemce**,
+-   **časové údaje** - specifikují datum vystavení, datum uskutečnění zdanitelného plnění (u plátců DPH) a datum splatnosti, u zaplacených dokladů datum přijetí platby,
+-   **způsob platby** - zvolený způsob platby v objednávce při vystavení dokladu, resp. skutečný způsob platby, je-li faktura vystavena až po zaplacení,
+-   **platební údaje** - údaje potřebné pro provedení platby bankovním převodem (číslo účtu, variabilní symbol, IBAN, BIC/SWIFT a částka k úhradě),
+-   **QR kód pro platbu** - platbu faktury bankovním převodem je možné provést také načtením QR kódu do mobilní aplikace, odpadá tak nutnost přepisování platebních údajů,
+-   **soupis položek faktury** - tabulka přehledně zachycující, jaké položky jsou předmětem prodeje, včetně jejich množství, sazby DPH a ceny
+-   **součtový řádek** - součet cen položek uvedených v soupisu,
+-   **rekapitulace DPH** - přehled základu, výše DPH a celkové částky rozepsaných podle jednotlivých sazeb DPH; rekapitulace DPH je uvedena pouze na fakturách plátců DPH,
+-   **poznámka klienta** - text vyplněný zákazníkem v objednávce; název pole v prodejním formuláři i na faktuře je možné upravit v nastavení prodejního formuláře,
+-   **uživatelský text** - libovolný text, který si prodejce přeje vkládat na fakturu (může jít např. o upřesnění dodacích podmínek, promo na další produkty a služby apod.); nastavuje se v nabídce **Nastavení - Nastavení fakturace**, popř. v nastavení projektu,
+-   **kontaktní údaje dodavatele** - kontakty, na nichž se může zákazník spojit s prodejcem; přebírají se ze základního nastavení aplikace,
+-   **stránkování** - počet stránek ve formátu "X/Y" (X...aktuální stránka faktury, Y...celkový počet stránek faktury)
+-   **stav dokladu** - u zaplacených a stornovaných faktur se zobrazuje stav dokladu ve formě "razítka" v záhlaví dokladu
+
+V prostoru pod uživatelským textem se za určitých okolností zobrazují i **systémové texty**, které zákazníkovi podávají další informace o režimu vystavení faktury. Spadají sem například informace o přenesené daňové povinnosti, apod.
+
+## Vzhled faktury
+
+Nezapomínejte na to, že faktura je také vaší vizitkou. Je proto na místě věnovat dostatečnou pozornost i tomu, jak vaše faktury vypadají.
+
+K individuálnímu přizpůsobení vzhledu faktury skvěle poslouží vložení _loga_, popř. _podpisu_ do výtisku faktury. Slouží k tomu nabídky **Loga a podpisy** na záložce **Nastavení**.
+
+![Doklady / Faktury ve FAPI](/assets/articles/d273383662b7debf.png)
+
+:::caution
+Legislativa uvedení razítka a podpisu vystavitele na faktuře nevyžaduje.
+:::
+
+Celkový vzhled faktury bezesporu nejvíc ovlivňuje její barva. Barevné schéma faktur nastavíte pomocí volby **BARVA FAKTURY** v nabídce **Nastavení - Nastavení fakturace**.
+
+![Doklady / Faktury ve FAPI](/assets/articles/c6640dde5d8b4230.png)
+
+Můžete si vybrat z 22 přednastavených barev nebo si namíchat svou vlastní. Barvu písma na zvoleném pozadí určí FAPI automaticky, tak aby byla zaručena dobrá čitelnost.
+
+:::tip
+Spoustu údajů (např. logo, podpis, barvu faktury, uživatelský text na faktuře, kontaktní údaje apod.) můžete nastavit odlišně od základního nastavení v rámci [Projektu](/article/132-projekty).
+:::
+
+:::caution
+U dokladů vystavených v [testovací číselné řadě](/article/16-ciselne-rady) se na pozadí zobrazuje vodoznak "TEST"
+:::

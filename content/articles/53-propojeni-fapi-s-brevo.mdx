@@ -1,0 +1,104 @@
+---
+title: Propojení FAPI s Brevo / Sendinblue
+url: /article/53-propojeni-fapi-s-brevo
+description: Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v ob
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s Brevo / Sendinblue
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/53-propojeni-fapi-s-brevo
+order: 102
+updatedAt: 2026-07-13T10:51:26Z
+redirects:
+  - /article/53-propojeni-fapi-se-sendinblue
+---
+Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete pro rozesílku e-mailových kampaní.
+
+V tomto článku si ukážeme, jak propojit FAPI s aplikací _Sendinblue_.
+
+## Nastavení propojení FAPI s Brevo (Sendinblue)
+
+Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do ovládané aplikace (Brevo) pomocí speciálního přístupového údaje, tzv. _API klíče_. Proto je nutné nejprve obě aplikace propojit.
+
+### Získání API klíče z aplikace Brevo
+
+  
+
+V aplikaci Brevo přejděte v nastavení účtu do nabídky **SMTP & API**. Najdete ji pod tlačítkem/roletou vašeho profilu vpravo nahoře.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/077ae8b483fd2ace.png)
+
+Zkopírujte API klíč z pole **API KEY** (doporučujeme použít API klíč verze v3).
+
+Popřípadě si vytvořte a poté zkopírujte nový API klíč pomocí tlačítka **CREATE A NEW API KEY**.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/028fe22b988663d5.png)
+
+### Vložení API klíče do FAPI
+
+Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **Brevo** a na následující stránce vyplňte přístupové údaje do aplikace Brevo.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/ab575f85837817c8.png)
+
+-   **UŽIVATELSKÉ JMÉNO** - vyplňte své uživatelské jméno, pod kterým se přihlašujete do Brevo.
+-   **API KLÍČ** - vyplňte API klíč, zkopírovaný v předchozím kroku z nastavení aplikace Brevo.
+
+Zadané údaje uložte stiskem tlačítka **Uložit nastavení**.
+
+Po uložení se zobrazí informační hláška a u propojení se Brevo se objeví stav **Připojeno**.
+
+## Zápis a odebrání kontaktních údajů do/z Brevo (Sendinblue)
+
+Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybraného seznamu Brevo nastavíte v prodejním formuláři na záložce **Akce**.
+
+Použijte k tomu akci **přidat kontakt do Brevo**, resp. **odebrat kontakt ze Brevo**.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/1c11c095c2fced1c.png)
+
+:::tip
+Do aplikace Brevo můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+:::
+
+## **Filtrování dotazů dle IP adress**
+
+Pro filtrování dotazů dle IP adres v aplikaci Brevo zvolte **SECURITY** z nabídky pod Vašim profilem.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/e4e5a33dd9f4de69.png)
+
+Dále na kartě **Security** pokračujte volbou **Authorized IPs**.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/06eb450b5cb0a3ad.png)
+
+Zapněte obě volby kontroly adres níže.
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/de0d40d5328ab322.png)
+
+Pod volbami kontrol najdete seznam spravovaných adres, případně si přidejte nové.
+
+V ukázce níže můžete vidět adresy FAPI pro přidání.
+
+IP adresy
+
+178.238.37.32
+
+18.158.192.220
+
+83.167.243.140
+
+![Propojení FAPI s Brevo / Sendinblue](/assets/articles/a786c9b1135d7bc4.png)
+
+## Jaké údaje se přenáší do Brevo (Sendinblue)?
+
+-   email
+-   attributes
+    -   jméno
+    -   příjmení
+    
+-   vlastní pole

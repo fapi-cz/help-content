@@ -1,0 +1,85 @@
+---
+title: Dvoukrokový prodejní formulář
+url: /article/192-dvoukrokovy-prodejni-formular
+description: Ve výchozím stavu jsou prodejní formuláře ve FAPI nastavené jako jednostránkové. Volitelně si jde v nastavení vzhledu formuláře (Krok 6 Vzhled) zapnout i dvoukr
+category: Jak vložit prodejní formulář do stránky
+categorySlug: 150-vlozeni-prodejniho-formulare-na-web
+categorySlugs:
+  - 150-vlozeni-prodejniho-formulare-na-web
+  - 9-online-prodej
+keywords:
+  - Dvoukrokový prodejní formulář
+  - Jak vložit prodejní formulář do stránky
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/192-dvoukrokovy-prodejni-formular
+order: 134
+updatedAt: 2026-07-13T10:59:56Z
+---
+Ve výchozím stavu jsou prodejní formuláře ve FAPI nastavené jako jednostránkové. Volitelně si jde v nastavení vzhledu formuláře (Krok 6 Vzhled) zapnout i dvoukrokové zobrazení:
+
+![Dvoukrokový prodejní formulář](/assets/articles/e028dde35258f87c.png)
+
+Změna zobrazení je vratná - jde ji zapnout nebo vypnout kdykoliv, a to na všech prodejních formulářích, i dříve vytvořených. Jedinou podmínkou je, aby byl vzhled formuláře nastaven na nový. Tzv. "původní vzhled" formuláře dvoukrokové nastavení prodeje nepodporuje.
+
+  
+
+## **V čem je rozdíl oproti jednokrokovému vzhledu?**
+
+Průchod prodejním formulářem bude nově rozdělený na dva kroky:
+
+1.  vyplnění kontaktních údajů (minimálně @ adresa, volitelně pak jméno&příjmení či telefon)
+2.  výběr položek, dopravy, způsobů platby, případně ostatních volitelných prvků a odeslání objednávky
+
+  
+
+Informace vyplněné zákazníky mezi 1. a 2. krokem si FAPI automaticky samo přenese.
+
+  
+
+**První krok objednávky** se nově omezí jen na sběr konktaktu (pole telefon i jméno a příjmení lze vypnout):
+
+![Dvoukrokový prodejní formulář](/assets/articles/6f677e19e7ca4115.png)
+
+Ihned po průchodu prvním krokem vzniká tzv. poptávka. Na ni lze nově v každém prodejním formuláři, kde se používá dvoukrokové nastavení, zpracovávat novou událost (krok 4 Akce), která reaguje na vytvoření poptávky (tj. na odeslání prvního kroku formuláře):
+
+![Dvoukrokový prodejní formulář](/assets/articles/af259048ad4c11ff.png)
+
+  
+
+**Druhý krok** ve formuláři už je stejný jako běžný formulář. Stejně se pak chovají i miniupselly, upselly či pravidelná fakturace.
+
+  
+
+:::caution
+Nedokončením druhého kroku objednávky nevzniká ve FAPI žádná objednávka. Údaje o potenciálních nakupujících z prvního kroku FAPI neshromažďuje.
+:::
+
+Pokud chcete sbírat údaje o potenciálních zákaznících, kteří projdou jen prvním krokem, je potřeba je požádat už v prvním kroku o souhlas. Na to je v kroku 6 Vzhled samostatné nové nastavení souhlasů pro první krok formuláře:
+
+![Dvoukrokový prodejní formulář](/assets/articles/b72a1f08e747cce5.png)
+
+S takto nastaveným souhlasem pak můžete i u neregistrovaných nakupujících z webu používat sesbírané emailové adresy a použít je pomocí mailingových nástrojů na oslovení s obchodním sdělením.
+
+:::danger
+Pozor: FAPI samo o sobě v prvním kroku žádné osobní údaje o zákaznících neukládá. To se děje až po dokončení celé objednávky.
+
+Zájemce, kteří dokončí pouze první krok dvoukrokové objednávky tak ve FAPI nikde nenajdete. Jejich poptávky si je potřeba sbírat přes mailingové nástroje, postupem z videonávodu níže.
+:::
+
+  
+
+## Pojmenování tlačítek
+
+Spolu s novým krokem před hlavní objednávkou je k dispozici nové tlačítko pro přejmenování tlačítka v prvním kroku. Najdete ho také v kroku 6 Vzhled:
+
+![Dvoukrokový prodejní formulář](/assets/articles/4f8e163c4759802e.png)
+
+V textu lze používat [emoji](https://emojipedia.org/).
+
+![Dvoukrokový prodejní formulář](/assets/articles/3a12784614d9d159.png)
+
+  
+
+Podrobný videonávod najdete k nové funkci zde:
+
+<Video src="https://www.youtube.com/embed/PXC_9d4Yzw0" />

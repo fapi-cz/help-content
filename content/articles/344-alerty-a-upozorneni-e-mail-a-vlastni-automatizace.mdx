@@ -1,0 +1,175 @@
+---
+title: "Alerty a upozornění: e-mail a vlastní automatizace"
+url: /article/344-alerty-a-upozorneni-e-mail-a-vlastni-automatizace
+description: Alerty, neboli upozornění ze zvonečku, vám pomohou zachytit důležité situace ve FAPI. Například když je potřeba prověřit platbu nebo se nepodařilo odeslat e-mai
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+keywords:
+  - "Alerty a upozornění: e-mail a vlastní automatizace"
+  - Automatizace
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/344-alerty-a-upozorneni-e-mail-a-vlastni-automatizace
+order: 303
+updatedAt: 2026-10-15T07:58:02Z
+legacyAnchors:
+  - id: Jak-zapnout-e-mailov-upozornn-zMYas
+    tag: h2
+    text: Jak zapnout e-mailová upozornění
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-obsahuje-e-mail-upIjg
+    tag: h3
+    text: Co obsahuje e-mail
+    occurrence: 0
+    headingIndex: 1
+  - id: Jak-pedvat-alerty-do-vlastn-automatizace-miX-G
+    tag: h2
+    text: Jak předávat alerty do vlastní automatizace
+    occurrence: 0
+    headingIndex: 2
+  - id: Pklad-vlastnho-workflow-s9ZLY
+    tag: h2
+    text: Příklad vlastního workflow
+    occurrence: 0
+    headingIndex: 3
+  - id: Bezpen-postup-pi-novm-odesln-e-mailu-k-faktue-3BkOq
+    tag: h3
+    text: Bezpečný postup při novém odeslání e-mailu k faktuře
+    occurrence: 0
+    headingIndex: 4
+  - id: Jak-upozornn-vypnout-xkwR8
+    tag: h2
+    text: Jak upozornění vypnout
+    occurrence: 0
+    headingIndex: 5
+  - id: ast-otzky-esCIy
+    tag: h2
+    text: Časté otázky
+    occurrence: 0
+    headingIndex: 6
+  - id: Zstanou-upozornn-ve-zvoneku-nNUQs
+    tag: h3
+    text: Zůstanou upozornění ve zvonečku?
+    occurrence: 0
+    headingIndex: 7
+  - id: Me-stejn-upozornn-pijt-vcekrt-Doput
+    tag: h3
+    text: Může stejné upozornění přijít vícekrát?
+    occurrence: 0
+    headingIndex: 8
+  - id: Pro-mi-upozornn-nepilo-Jb-D6
+    tag: h3
+    text: Proč mi upozornění nepřišlo?
+    occurrence: 0
+    headingIndex: 9
+  - id: Jak-se-alerty-li-od-globlnch-webhook-Yi1hN
+    tag: h3
+    text: Jak se alerty liší od globálních webhooků?
+    occurrence: 0
+    headingIndex: 10
+  - id: Bezpenost-a-prce-s-daty-Q_gPQ
+    tag: h2
+    text: Bezpečnost a práce s daty
+    occurrence: 0
+    headingIndex: 11
+---
+Alerty, neboli upozornění ze zvonečku, vám pomohou zachytit důležité situace ve FAPI. Například když je potřeba prověřit platbu nebo se nepodařilo odeslat e-mail.
+
+Nemusíte je již sledovat jen ve zvonečku: nové alerty si můžete posílat e-mailem nebo je předat do vlastního systému přes webhook.
+
+:::tip
+**Zde je celý videonávod:**
+
+<Video src="https://www.youtube.com/embed/cU0fM4zN_oU" />
+:::
+
+E-mail se hodí pro lidské zpracování.
+
+Webhook využijte, pokud chcete alerty zpracovávat ve vlastním workflow, například v Make, nebo ve své aplikaci.
+
+Oba způsoby doručování můžete používat samostatně i současně.
+
+## Jak zapnout e-mailová upozornění
+
+1.  Přihlaste se do svého účtu FAPI.
+2.  Otevřete [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/settings/emails?projectId=all).
+3.  Na této stránce přejděte do sekce **Alerty a upozornění**. Nejde o samostatnou podzáložku.
+4.  Do pole **Cílová e-mailová adresa** zadejte adresu, na kterou mají upozornění chodit.
+5.  Klikněte na **Uložit nastavení**.
+
+  
+
+![Alerty a upozornění: e-mail a vlastní automatizace](/assets/articles/d2c9ccb8ef396546.png)
+
+Od uložení budou na zadanou adresu chodit nově vzniklé alerty daného účtu. Starší upozornění se zpětně neposílají.
+
+  
+
+### Co obsahuje e-mail
+
+Upozornění přichází z adresy `alert@fapi.cz` . Obsahuje českou a anglickou verzi textu, identifikaci účtu FAPI a odkaz zpět do nastavení. Podle těchto údajů snadno poznáte, kterého účtu se zpráva týká, i když jich spravujete více.
+
+  
+
+## Jak předávat alerty do vlastní automatizace
+
+1.  Ve svém automatizačním nástroji nebo vlastním systému připravte webhook, který umí přijmout požadavek POST s daty JSON. Pro komunikaci doporučujeme HTTPS.
+2.  Ve FAPI otevřete [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/settings/emails?projectId=all) **→ Alerty a upozornění**.
+3.  Do pole **Webhooková URL** vložte adresu svého webhooku.
+4.  Klikněte na **Uložit nastavení**.
+
+FAPI od této chvíle předává nově vzniklé alerty na zadanou adresu. Nastavení webhooku samo o sobě nezapne AI ani automatickou opravu: pravidla, filtrování, schvalování a navazující akce nastavujete ve svém systému.
+
+:::caution
+**Pozor:** v tomto nastavení ve FAPI nevybíráte jednotlivé typy událostí ani priority. Pokud chcete zpracovávat jen některé alerty, nastavte filtr ve svém workflow. Při použití e-mailu můžete využít pravidla své schránky.
+:::
+
+## Příklad vlastního workflow
+
+Například alert o nespárované platbě může vaše workflow předat do úkolovacího systému:
+
+1.  Rozpozná typ alertu a ověří, zda stejný alert už nezpracovalo.
+2.  Načte dostupný detail platby a případně související faktury.
+3.  Nechá AI připravit stručné shrnutí a návrh dalšího postupu.
+4.  Vytvoří úkol pro odpovědného člověka, který rozhodne o dalším kroku.
+
+Člověk tak dostane potřebný kontext i návrh postupu, ale samotný alert nemění stav platby ani faktury.
+
+### Bezpečný postup při novém odeslání e-mailu k faktuře
+
+Pokud se e-mail k faktuře nepodaří odeslat, může vaše vlastní workflow po odstranění příčiny a kontrole historie komunikace připravit jedno nové odeslání přes veřejné API. Použijte k němu předem schválenou šablonu a konkrétní oprávnění k odeslání.
+
+:::caution
+Nové odeslání není univerzálním zopakováním původní zprávy a úspěšná odpověď API sama nepotvrzuje doručení do schránky zákazníka. U nejasného výsledku, vrácené zprávy nebo spamové stížnosti případ předejte člověku místo dalšího automatického opakování.
+:::
+
+## Jak upozornění vypnout
+
+Na stránce **Notifikace a reporty** vymažte obsah pole **Cílová e-mailová adresa** nebo **Webhooková URL** a klikněte na **Uložit nastavení**. Chcete-li vypnout oba kanály, vyprázdněte obě pole.
+
+Odkaz v e-mailovém alertu pouze otevře nastavení. Upozornění nevypne bez přihlášení do správného účtu a uložení změny.
+
+## Časté otázky
+
+### Zůstanou upozornění ve zvonečku?
+
+Ano. E-mailové a webhookové doručování je doplněk. Jeho vypnutí nemění upozornění ve zvonečku v administraci.
+
+### Může stejné upozornění přijít vícekrát?
+
+Ano. Ve vlastním workflow proto ukládejte zpracovaná ID alertů, aby opakované doručení nezaložilo stejný úkol ani nespustilo stejnou akci podruhé.
+
+### Proč mi upozornění nepřišlo?
+
+Ověřte, že jste nastavení uložili ve správném účtu, zadali správnou adresu a očekávaný alert vznikl až po uložení. U e-mailu zkontrolujte také spam. U webhooku musí váš systém data převzít a potvrdit úspěšnou odpovědí HTTP 2xx. Případné selhání doručování hledejte i mezi upozorněními v administraci.
+
+### Jak se alerty liší od globálních webhooků?
+
+Alerty a upozornění slouží k předávání nově vzniklých alertů. Globální webhooky jsou samostatné nastavení pro jiné události související s fakturami. Pro jejich nastavení použijte článek [Globální webhooky](/article/213-globalni-webhooky).
+
+## Bezpečnost a práce s daty
+
+Alerty mohou obsahovat údaje o účtu a souvisejících obchodních událostech. Předávejte je jen důvěryhodným příjemcům a systémům. AI posílejte pouze údaje nezbytné k řešení a přístupové údaje nikdy nevkládejte do alertu, webhookové adresy ani promptu. U změn plateb, faktur nebo komunikace se zákazníky nastavte odpovídající oprávnění a podle svých pravidel i lidské schválení.

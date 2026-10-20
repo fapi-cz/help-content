@@ -1,0 +1,34 @@
+---
+title: Ochrana videa
+url: /article/242-ochrana-videa
+description: FAPI umožňuje ochranu videí. Funkčnost spočívá v tom, že video se otevře v samostatném přehrávači na stránce, kde je zablokováno stahování videa. Doporučená max
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Ochrana videa
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/242-ochrana-videa
+order: 250
+updatedAt: 2026-07-13T12:06:48Z
+---
+FAPI umožňuje ochranu videí. Funkčnost spočívá v tom, že video se otevře v samostatném přehrávači na stránce, kde je zablokováno stahování videa.
+
+:::caution
+Doporučená maximální velikost souboru je 500 MB.
+:::
+
+Samotné nastavení ochrany probíhá v úpravě šablony zpráv, kam vkládáte video jako odkaz ke zhlédnutí.
+
+Po kliknutí na **Přidat soubor** a nahrání videa na server se zobrazí zaškrtávací tlačítko **Povolit ochranu videa**.
+
+Poté jen stačí do těla zprávy vložit příslušný zástupný symbol `{file:x}` , který bude při zpracování nahrazen odkazem na přehrání videa.
+
+Po kliknutí na odkaz ke zhlédnutí videa zákazníka přesměrujeme na stránku ve FAPI, kde bude možné video přehrát.
+
+:::caution
+Video lze přehrát až po zaplacení objednávky. Pokud by se zákazník dostal na stránku dříve, než je objednávka zaplacená, video se nezobrazí a zákazník uvidí chybovou hlášku.
+:::
+
+Podporované formáty jsou 'mp4', 'webm', 'ogv', 'mpg', 'mpeg', '3gp', 'mov'.

@@ -1,0 +1,150 @@
+---
+title: Propojení FAPI s Facebook Conversion API (CAPI)
+url: /article/226-propojeni-fapi-s-facebook-conversion-api
+description: Velmi užitečnou vlastností FAPI je schopnost propojení s nástroji pro sledování a vyhodnocování událostí, jako je Facebook Conversion API (CAPI). Díky tomu může
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s Facebook Conversion API (CAPI)
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/226-propojeni-fapi-s-facebook-conversion-api
+order: 122
+updatedAt: 2026-07-13T10:55:04Z
+legacyAnchors:
+  - id: Co-budete-potebovat-Jmj62
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 1
+  - id: Jak-zskat-Pixel-ID-a-Access-Token-z_jmQ
+    tag: h2
+    text: Jak získat Pixel ID a Access Token
+    occurrence: 0
+    headingIndex: 2
+  - id: Propojen-s-Facebook-CAPI-ve-FAPI-5SPtn
+    tag: h2
+    text: Propojení s Facebook CAPI ve FAPI
+    occurrence: 0
+    headingIndex: 3
+  - id: Jak-daje-se-penej-do-Facebook-Conversion-API-I7dZw
+    tag: h2
+    text: Jaké údaje se přenášejí do Facebook Conversion API?
+    occurrence: 0
+    headingIndex: 4
+  - id: Odesln-dat-o-objednvkch-do-Facebook-Conversion-API-N9Xzv
+    tag: h2
+    text: Odesílání dat o objednávkách do Facebook Conversion API
+    occurrence: 0
+    headingIndex: 5
+  - id: spn-zpracovn-dat-do-Facebook-Conversion-API-2vTYc
+    tag: h2
+    text: Úspěšné zpracování dat do Facebook Conversion API
+    occurrence: 0
+    headingIndex: 6
+  - id: Pnosy-propojen-s-Facebook-Conversion-API-HvjxB
+    tag: h2
+    text: Přínosy propojení s Facebook Conversion API
+    occurrence: 0
+    headingIndex: 7
+---
+Velmi užitečnou vlastností FAPI je schopnost propojení s nástroji pro sledování a vyhodnocování událostí, jako je Facebook Conversion API (CAPI). Díky tomu můžete informace o vytvořených objednávkách ve FAPI automaticky předávat Facebooku a lépe analyzovat chování zákazníků nebo efektivitu reklamních kampaní.
+
+V tomto článku si ukážeme, jak správně propojit FAPI s Facebookem krok za krokem.
+
+:::caution
+## **Důležité doporučení předem**
+
+Conversion API je serverové měření (odesílá se „ze serveru“), ale i tak doporučujeme mít na webu nasazený Meta Pixel. Pixel totiž na webu sbírá identifikátory (např. FBP/FBC), které pomáhají Metě lépe párovat návštěvy a konverze, měření i optimalizace kampaní pak obvykle fungují lépe.
+
+Pokud používáte vlastní děkovací stránku mimo FAPI, nezapomeňte na ni vložit [konverzní kódy](/article/144-konverzni-kody) (Meta Pixel / události). CAPI samo o sobě nenahradí Pixel na vašem webu.
+:::
+
+## Co budete potřebovat
+
+Pro propojení budete potřebovat dva přístupové údaje z Facebook Business Manageru:
+
+-   **Pixel ID**
+-   **Access Token**
+
+## Jak získat Pixel ID a Access Token
+
+1.  Přihlaste se do [Meta Business Suite](https://business.facebook.com/) (dříve Facebook Business Manager).
+2.  V horní nabídce klikněte na **Všechny nástroje** a vyberte Reklama -\> **Správce událostí (Events Manager)**.
+3.  V levém menu přejděte do sekce **Data sety (Zdroje dat/Datové sady)**.
+4.  Vyberte požadovaný **Pixel**, ke kterému chcete FAPI napojit.
+5.  Přejděte na záložku **Nastavení**.
+6.  V části **Conversions API** klikněte na možnost **Ruční nastavení**.
+7.  Zobrazí se vám **Pixel ID** i možnost kliknout na tlačítko **Vygenerovat přístupový token** – ten si zkopírujte.
+
+🎥 Podívejte se na [videonávod pro získání Pixel ID](https://youtu.be/TYAJEzelBwo)
+
+[Jak vložit META pixel do stránky](/article/221-jak-vlozit-meta-pixel-facebook-pixel-do-stranky)
+
+:::danger
+Než budete pokračovat dále, ujistěte se prosím, že máte k dispozici oba přístupové údaje – Pixel ID a Access Token. Bez nich nelze propojení úspěšně dokončit.
+:::
+
+## Propojení s Facebook CAPI ve FAPI
+
+1\. Přihlaste se do FAPI a přejděte do sekce Nastavení \> Propojení aplikací.
+
+2\. Najděte položku **Facebook Conversion API** a klikněte na tlačítko **Připojit**.
+
+3\. Do zobrazeného formuláře zadejte:
+
+-   **Pixel ID** – ten jste získali ve Správci událostí.
+-   **Access Token** – který jste si vygenerovali v nastavení Pixela.
+
+4\. Uložte nastavení.
+
+Po uložení se u propojení zobrazí hláška **Připojeno** – tím je propojení aktivní a data z objednávek budou předávána do vašeho Facebook účtu.
+
+## Jaké údaje se přenášejí do Facebook Conversion API?
+
+Do Facebook Conversion API se z FAPI přenášejí následující údaje o objednávkách (PURCHASE = nákup):
+
+-   Informace o zákazníkovi:
+    -   E-mail.
+    -   Telefonní číslo (pokud je dostupné).
+    -   Jméno a příjmení.
+    -   IP adresa.
+    -   Identifikátory Facebook Pixelu (FBP, FBC), pokud jsou dostupné.
+    
+-   Detailní informace o objednávce:
+    -   Čas vytvoření objednávky.
+    -   ID objednávky (variabilní symbol faktury).
+    -   Položky objednávky (název produktu, množství).
+    -   Celková hodnota objednávky.
+    -   Měna (např. CZK, EUR).
+    
+
+:::caution
+**Deduplikace**
+
+Pokud používáte současně Pixel (browser) i CAPI (server), je potřeba, aby Meta uměla události spárovat. V praxi se pro „Event ID“ používá variabilní symbol objednávky, díky čemuž Meta dokáže události deduplikovat.
+
+Aby deduplikace dávala smysl, musí být Pixel událost (browser) skutečně odesílaná z webu/děkovací stránky.
+:::
+
+## Odesílání dat o objednávkách do Facebook Conversion API
+
+Data o objednávkách se odesílají automaticky při vytvoření nové objednávky v FAPI.
+
+-   Pro zajištění správné funkčnosti je nutné mít správně nastavené **Pixel ID a Access Token** (viz výše).
+-   Po vytvoření objednávky jsou informace odeslány do Facebook Conversion API a můžete je vidět v přehledu událostí v Business Manageru.
+
+## Úspěšné zpracování dat do Facebook Conversion API
+
+Po úspěšném odeslání dat z FAPI do Facebook Conversion API se informace o zpracování zobrazí v detailu konkrétní faktury dole v historii změn.
+
+Pro zobrazení detailu faktury přejděte do přehledu faktur a klikněte na variabilní symbol (VS) příslušné faktury. Tím se dostanete na stránku s podrobnými informacemi o dané faktuře. 
+
+Pokud se vyskytne chyba při přenosu dat, bude tato informace také dostupná v přehledu faktur.
+
+## Přínosy propojení s Facebook Conversion API
+
+-   Přesnější sledování konverzí z reklamních kampaní.
+-   Možnost cílit reklamy na konkrétní segmenty zákazníků.
+-   Lepší optimalizace reklam na základě reálných dat o nákupech.

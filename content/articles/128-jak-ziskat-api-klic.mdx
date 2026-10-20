@@ -1,0 +1,72 @@
+---
+title: Jak získat API klíč
+url: /article/128-jak-ziskat-api-klic
+description: API klíč slouží k bezpečnému propojení FAPI s externí aplikací. Použijte pro každou aplikaci samostatný klíč. Pokud některé propojení přestanete používat, můžet
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Jak získat API klíč
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/128-jak-ziskat-api-klic
+order: 13
+updatedAt: 2026-09-08T06:26:03Z
+legacyAnchors:
+  - id: Vytvoen-API-kle-mVN2t
+    tag: h2
+    text: Vytvoření API klíče
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-daje-pout-BN6Jb
+    tag: h2
+    text: Jak údaje použít
+    occurrence: 0
+    headingIndex: 1
+  - id: Bezpenost-3U4YG
+    tag: h2
+    text: Bezpečnost
+    occurrence: 0
+    headingIndex: 2
+---
+API klíč slouží k bezpečnému propojení FAPI s externí aplikací. Použijte pro každou aplikaci samostatný klíč. Pokud některé propojení přestanete používat, můžete příslušný klíč ve FAPI smazat, aniž byste ovlivnili ostatní napojení.
+
+## Vytvoření API klíče
+
+1.  Ve FAPI otevřete [**Můj účet → API klíče**](https://web.fapi.cz/account-settings/api-tokens?projectId=all).
+2.  Klikněte na **Nový API klíč**.
+
+![Jak získat API klíč](/assets/articles/f00a149003f0a00c.png)
+
+3.  Do pole **Aplikace, pro kterou je klíč určen** zadejte název služby nebo propojení, pro které klíč vytváříte. Doporučujeme uvést i název webu, pokud máte stejné propojení na více webech.
+4.  Klikněte na **Uložit**.
+
+![Jak získat API klíč](/assets/articles/69d5f30df082da9b.png)
+
+5.  Po uložení se vám zobrazí uživatelské jméno i API klíč s ikonkou pro rychlé zkopírování.
+
+Níže pak máte i přehled všech vytvořených API klíčů.
+
+![Jak získat API klíč](/assets/articles/ce8677d1cd51e80b.png)
+
+  
+
+## Jak údaje použít
+
+Na stránce API klíčů najdete **uživatelské jméno pro API**. V externím napojení jej použijte společně s API klíčem určeným pro danou aplikaci.
+
+API klíče jsou ve výchozím zobrazení skryté. Pro zobrazení konkrétního klíče klikněte v jeho řádku na **Zobrazit**.
+
+![Jak získat API klíč](/assets/articles/214782a7b4cf2b14.png)
+
+:::tip
+## Bezpečnost
+
+-   **API klíč chraňte** stejně jako heslo; nikdy jej nezveřejňujte ani nevkládejte do veřejně dostupných dokumentů.
+-   Pro každé externí napojení používejte vlastní klíč.
+-   Pokud klíč nebo propojení již nepotřebujete, smažte jej tlačítkem **Smazat** v příslušném řádku.
+
+Technickou dokumentaci REST API najdete na [https://web.fapi.cz/api-doc/](https://web.fapi.cz/api-doc/).
+:::

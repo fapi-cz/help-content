@@ -1,0 +1,71 @@
+---
+title: Zamykání dokladů
+url: /article/70-zamykani-dokladu
+description: Při účetním zpracování faktur vystavených ve FAPI je potřeba zajistit konzistentní stav mezi účetní evidencí a FAPI. Zvláště pracuje-li s účtem FAPI více uživat
+category: Fakturace
+categorySlug: 6-fakturace
+categorySlugs:
+  - 6-fakturace
+keywords:
+  - Zamykání dokladů
+  - Fakturace
+sourceUrl: https://napoveda.fapi.cz/article/70-zamykani-dokladu
+order: 113
+updatedAt: 2026-07-13T10:54:54Z
+---
+Při účetním zpracování faktur vystavených ve FAPI je potřeba zajistit konzistentní stav mezi účetní evidencí a FAPI. Zvláště pracuje-li s účtem FAPI více uživatelů, hrozí nebezpečí, že bude upraven údaj na faktuře, která je již zpracována v účetnictví.
+
+Aby k této situaci nedocházelo, umožňuje FAPI faktury, které již byly exportovány do účetního systému, uzamknout proti nežádoucí úpravě.
+
+## Jaké jsou důsledky zamčení dokladu?
+
+U zamčeného dokladu není možné (tlačítka na detailu dokladu jsou nedostupná):
+
+-   upravovat doklad,
+-   stornovat doklad,
+-   zrušit storno,
+-   zrušit zaplacení,
+-   smazat doklad.
+
+Zamčený doklad je naopak možné:
+
+-   označit jako zaplacený,
+-   odeslat e-mailem,
+-   zkopírovat.
+
+:::caution
+V přehledu dokladů se zamčené doklady zobrazují s ikonou zámečku.
+:::
+
+## Kdo může zamykat a odemykat doklady?
+
+Oprávnění k zamykání a odemykání dokladů má:
+
+-   uživatel, na jehož jméno byl účet FAPI zaregistrován (majitel účtu)
+-   uživatel s oprávněním k zamykání dokladů
+
+Oprávnění k zamykání dokladů se pro daného uživatele nastavuje zaškrtnutím parametru **Oprávnění k zamykání dokladů** v nabídce **Můj účet - Uživatelské účty**.
+
+![Zamykání dokladů](/assets/articles/32764d3448abb6da.png)
+
+## Jak se doklad zamyká a odemyká?
+
+Doklady je možné zamykat buď hromadně (při exportu dokladů), nebo jednotlivě pomocí tlačítka na detailu dokladu.
+
+Odemknout zamčený doklad lze pouze tlačítkem na stránce s detailem dokladu. 
+
+### Hromadné zamčení dokladů
+
+Při [exportu dokladů](/article/85-export-faktur) do libovolného formátu je možné hromadně uzamknout všechny doklady zahrnuté do exportovaného souboru, a to zaškrtnutím parametru **Zamknout exportované doklady** v nabídce **Faktury - Export**.
+
+![Zamykání dokladů](/assets/articles/a42162cf10ea1c3b.png)
+
+:::tip
+Tato funkce má praktické využití v situaci, kdy přenášíte doklady do externího účetního systému a nepřejete si, aby tyto doklady byly ve FAPI dodatečně upraveny.
+:::
+
+### Zamčení a odemčení jednotlivého dokladu
+
+Kromě hromadného zamčení je možné doklady zamykat také jednotlivě - tlačítkem **Zamknout doklad** na detailu dokladu.
+
+Po zamčení dokladu se text tlačítka změní na **Odemknout doklad**. Jeho stiskem lze doklad znovu odemknout.

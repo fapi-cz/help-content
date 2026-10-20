@@ -1,0 +1,55 @@
+---
+title: Přecházím na plátcovství DPH (nebo naopak), co mám vše upravit/nastavit?
+url: /article/116-prechazim-na-platcovstvi-dph-nebo-naopak-co-mam-vse-upravit-nastavit
+description: "Při změně podnikatele z neplátce na plátce DPH ve FAPI proveďte následující úpravy v nastavení. Dodržujte prosím přesné pořadí kroků: Pokud přecházíte z plátce "
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+keywords:
+  - Přecházím na plátcovství DPH (nebo naopak), co mám vše upravit/nastavit?
+  - Často kladené dotazy (FAQ)
+sourceUrl: https://napoveda.fapi.cz/article/116-prechazim-na-platcovstvi-dph-nebo-naopak-co-mam-vse-upravit-nastavit
+order: 51
+updatedAt: 2026-07-13T10:11:57Z
+---
+Při změně podnikatele z neplátce na plátce DPH ve FAPI proveďte následující úpravy v nastavení. Dodržujte prosím přesné pořadí kroků:
+
+:::caution
+Pokud přecházíte z plátce DPH na neplátce, je postup stejný, pouze jej provádíte v opačném pořadí. Tedy 1. krok v Nastavení fakturace provedete až jako poslední.
+:::
+
+1\) V  [Nastavení \> Nastavení fakturace](https://web.fapi.cz/settings/?projectId=all) je třeba vyplnit všechny nové údaje, které se vztahují k DPH:
+
+-   určení typu plátce (identifikovaná osoba nebo plátce DPH),
+-   nově přidělené identifikační číslo pro účely DPH,
+-   způsob rekapitulace DPH,
+-   upřednostňovaný způsob fakturace v zemích EU.
+
+2\) U všech aktivních produktů v sekci [Prodej \> Produkty](https://web.fapi.cz/templates/items?projectId=all) je nutné aktualizovat toto nastavení:
+
+-   nová cena po změně na plátce DPH,
+-   určení zda je cena s nebo bez DPH,
+-   určení tuzemské sazby DPH,
+-   zkontrolovat nastavení Typu produktu.
+
+3\) U všech doprav aktualizovat nastavení:
+
+-   nová cena po změně na plátce DPH,
+-   určení zda je zadaná cena dopravy s nebo bez DPH.
+
+4\) Upravit všechny dosud [nezaplacené zálohové faktury](https://web.fapi.cz/invoice/?projectId=all) (včetně faktur po splatnosti) a doplnit k nim novou položku Datum uskutečnění zdanitelného plnění (DUZP). DUZP je u vystavených zálohových dokladů datum jejich vystavení. Jinak zde bude stále na vystaveném dokladu zobrazeno "Neplátce DPH". A doplnit ke všem produktům sazbu DPH případně upravit cenu. 
+
+5\) Stejným způsobem upravit všechny [šablony pravidelných faktur](https://web.fapi.cz/invoice/periodic?projectId=all) a doplnit k nim DUZP. A doplnit ke všem produktům sazbu DPH případně upravit cenu. 
+
+6\) V případě, kdy plátcovství doplňujete se zpožděním (tedy jste už plátci X dní, ale některé doklady už jsou v mezičase zaplacené), je nutné upravit i již vystavené zálohové faktury a následně vystavené faktury podle bodu 4.
+
+7\) V prodejních formulářích, v kroku 6 Vzhled \> Zobrazit částky - vyberte zda se budou zobrazovat nakupujícím částky včetně nebo bez DPH.
+
+:::danger
+Pozor: Změna ceny produktu se promítne jen do nových prodejů novým zákazníkům. Vaše stávající doklady a šablony pravidelných faktur, které vznikly ještě za neplátce DPH se zpětně samy nezmění.
+
+Případné úpravy cen produktů a režimů a sazeb DPH je na již vystavených dokladech a šablonách pravidelných faktur potřeba udělat ručně.
+:::
+
+_Upozornění: S přechodem na plátce DPH můžete rozhodnout o nové ceně tak, že zachováte původní ceny jako nové ceny vč. DPH, nebo původní ceny o nově placenou DPH navýšíte. Toto rozhodnutí má zásadní vliv na ekonomiku Vašeho podnikání._

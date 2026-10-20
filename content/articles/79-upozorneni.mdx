@@ -1,0 +1,62 @@
+---
+title: Upozornění
+url: /article/79-upozorneni
+description: Při automatizovaném zpracování objednávek mohou - přes veškerou snahu - nastat situace, které automat sám o sobě nevyřeší a které vyžadují ruční zásah uživatele
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Upozornění
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/79-upozorneni
+order: 149
+updatedAt: 2026-07-13T11:07:23Z
+---
+Při automatizovaném zpracování objednávek mohou - přes veškerou snahu - nastat situace, které automat sám o sobě nevyřeší a které vyžadují ruční zásah uživatele.
+
+_Upozornění_ mají za úkol vás o všech takových nestandardních stavech v aplikaci včas informovat, podobně jako výstražné kontrolky na přístrojové desce auta.
+
+Upozornění se zobrazují v záhlaví aplikace pod ikonou zvonku. Číslo u ikony udává počet dosud nepřečtených upozornění.
+
+![Upozornění](/assets/articles/24367f874900bb96.png)
+
+## Na jaké situace FAPI upozorňuje?
+
+Systém upozornění momentálně monitoruje a hlásí tyto nestandardní stavy:
+
+-   nespárovaná platba,
+-   duplicitní platba,
+-   přeplatek nebo nedoplatek faktury,
+-   chyba při automatickém stržení z karty (u [opakovaných plateb](/article/73-opakovane-platby)),
+-   chyba URL notifikace (u skriptů spouštěných z prodejního formuláře),
+-   vypršení časového limitu URL notifikace (u skriptů spouštěných z prodejního formuláře),
+-   nepřidání kontaktu do externí aplikace,
+-   neodebrání kontaktu z externí aplikace,
+-   neodeslání SMS zprávy,
+-   chybějící/nefunkční propojení s externí aplikací,
+-   chybějící/nefunkční propojení se SMS bránou,
+-   docházející číselná řada (posledních 10 a 5 % kapacity číselné řady a její vyčerpání).
+
+:::caution
+Upozornění se v systému uchovává po dobu 3 měsíců, poté je automaticky smazáno.
+:::
+
+## Typy upozornění
+
+Upozornění se dělí do dvou kategorií podle úrovně závažnosti:
+
+-   **výstraha** - méně závažná situace, kterou lze snadno vyřešit ručním zásahem (zobrazuje se s oranžovým pruhem),
+-   **chyba** - nekorektní stav systému nebo zpracování objednávky (zobrazuje se s červeným pruhem).
+
+## Řešení nestandardních a chybových stavů
+
+Text upozornění obsahuje číslo objektu, ke kterému se upozornění vztahuje. Kliknutím na upozornění dojde k přesměrování na místo v aplikaci, kde je možné zjistit více informací, popř. vzniklý stav vyřešit.
+
+:::info
+Například upozornění na nespárovanou platbu (z důvodu chybějícího nebo chybného variabilního symbolu) přesměruje na detail platby, kde je možné platbu ručně spárovat s příslušnou fakturou.
+:::
+
+Po prokliknutí se upozornění označí jako přečtené. Přečtená upozornění se zobrazují bez barevného pruhu a se světlejší barvou pozadí.
+
+![Upozornění](/assets/articles/9c57573441d54d1f.png)

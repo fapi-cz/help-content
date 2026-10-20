@@ -1,0 +1,96 @@
+---
+title: Jak na změnu platební brány
+url: /article/277-jak-na-zmenu-platebni-brany
+description: Změna platební brány není jen technický krok – je to zásah, který má dopad na veškeré opakované platby vašich klientů. Proto je důležité k celé věci přistupovat
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Jak na změnu platební brány
+  - Platební brány (platba kartou)
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/277-jak-na-zmenu-platebni-brany
+order: 208
+updatedAt: 2026-07-13T11:43:37Z
+---
+Změna platební brány není jen technický krok – je to zásah, který má dopad na **veškeré opakované platby vašich klientů**. Proto je důležité k celé věci přistupovat promyšleně.
+
+  
+
+### ❌ Co se stane, když stávající platební bránu ve FAPI **odstraníte**?
+
+-   U všech běžících opakovaných plateb přestanou fungovat automatická stržení plateb.
+-   Klienti nebudou mít napojenou kartu a **platby selžou**.
+-   Dochází ke ztrátě napojení mezi původním souhlasem k platbě a novou bránou.
+
+  
+
+### ❌ Co se stane, pokud **změníte** platební bránu (např. z GoPay na Stripe)?
+
+-   Ani v tomto případě nebudou původní platby fungovat – každá platební brána má vlastní proces tokenizace karet.
+-   Souhlasy klientů k opakovanému stržení jsou **vázány na konkrétní platební bránu**, takže do nové brány je potřeba **získat nový souhlas**.
+
+  
+
+## ✅ Doporučený postup změny platební brány
+
+Nejlepší řešení je **průběžná migrace**:
+
+1.  **Ponechte původní platební bránu aktivní.**
+2.  **Přidejte novou platební bránu** do nastavení ve FAPI.
+3.  Upravte **prodejní formuláře** tak, aby používaly **jen novou bránu**.
+4.  Po několika měsících můžete starou bránu **bezpečně odstranit**.
+
+  
+
+### 💬 Komunikace se zákazníky je klíčová
+
+Změna platební brány vyžaduje **nový souhlas klienta** k opakovaným platbám.
+
+To znamená:
+
+-   První platba po změně **musí být zaplacena ručně kartou** (ne automaticky),
+-   tím se karta napojí na novou bránu a vše pak funguje automaticky dál.
+
+  
+
+📌 **Doporučujeme informovat klienty předem**, ideálně formou:
+
+-   E-mailu nebo SMS zprávy,
+-   Stručného vysvětlení, proč změna probíhá a že je potřeba provést znovu první platbu ručně.
+
+  
+
+:::caution
+🔁 Co se stane se stávajícími opakovanými platbami při změně platební brány?
+
+U všech **již vystavených opakovaných faktur**, které vznikly při propojení s původní platební bránou, **se FAPI pokusí strhnout platbu právě přes tuto původní bránu**.
+
+Pokud původní bránu **ponecháte aktivní**, strhávání z karty bude dál probíhat bez problémů.
+
+❗ Pokud však starou platební bránu **smažete nebo deaktivujete**, FAPI nebude schopné platbu strhnout a klientovi odešle e-mail, že **platba kartou neproběhla**.
+:::
+
+:::tip
+Pokud zákazník s původní opakovanou platbou **zaplatí znovu kartou (např. po selhání platby)**, FAPI si vytvoří **nový záznam platby**, který už bude fungovat s **novou bránou**.
+:::
+
+### 🛠 Shrnutí – co **nedělat**:
+
+-   **Neodstraňujte** starou bránu ihned po přidání nové. \> Počkejte než se vám všichni klienti postupně nepřemigrují.
+-   **Nespoléhejte**, že opakované platby se „samy přehodí“ na novou bránu – opravdu je potřeba, aby to klienti udělali ručně.
+-   **Nekomunikovaná změna** = nárůst neuhrazených faktur.
+
+:::danger
+### ⚠️ Důležité upozornění
+
+FAPI **neukládá platební údaje zákazníků** – ty má uložené původní platební brána. Pokud byste ji zcela zrušili, bude potřeba, aby **všichni klienti zadali ihned znovu svou kartu**, jinak se platby nebudou strhávat.
+
+To by mohlo vést k **vysokému počtu neuhrazených objednávek** a zbytečné ztrátě příjmů.
+:::

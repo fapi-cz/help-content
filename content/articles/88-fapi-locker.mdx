@@ -1,0 +1,103 @@
+---
+title: FAPI Locker
+url: /article/88-fapi-locker
+description: FAPI Locker není k dispozici. Jeho náhradou je wordpress plugin FAPI Member. Jak vyřešit situaci, kdy chcete svým klientům zpřístupnit webovou stránku až po zak
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - FAPI Locker
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/88-fapi-locker
+order: 61
+updatedAt: 2026-07-13T10:31:07Z
+---
+:::danger
+# FAPI Locker není k dispozici. Jeho náhradou je wordpress plugin [FAPI Member](/article/97-fapi-member-propojeni-s-fapi).
+:::
+
+Jak vyřešit situaci, kdy chcete svým klientům zpřístupnit webovou stránku až po zakoupení obsahu? Jedním z možných řešení je uzavřená členská sekce. Nicméně pokud jde pouze o jednotlivou stránku, nabízí se řešení o něco jednodušší. Je jím plugin redakčního systému WordPress s názvem _FAPI Locker_.
+
+FAPI Locker umožňuje uzamknout obsah zveřejněný na webu a zpřístupnit jej pouze platícím uživatelům. Uzamknout lze jak stránky, tak také články.
+
+Svůj nárok na zobrazení stránky prokazuje návštěvník zadáním e-mailové adresy, se kterou přístup ke stránce zakoupil. Pokud uživatel přístup k obsahu nemá, lze mu přímo na stránce nabídnout také možnost jeho zakoupení pomocí prodejního formuláře FAPI.
+
+:::tip
+V nastavení pluginu nebo stránky je možné uvést e-mailové adresy, které zpřístupní zamčený obsah i bez jeho zakoupení.
+:::
+
+## Uzamčení stránky nebo článku pomocí FAPI Lockeru
+
+Pro nasazení FAPI Lockeru je třeba provést následující kroky:
+
+1.  instalace FAPI Lockeru do WordPressu
+2.  nastavení FAPI Lockeru
+3.  nastavení přístupu ke stránce/článku
+
+### 1\. Instalace FAPI Lockeru do WordPressu
+
+Aktuální verzi FAPI Lockeru (verze 3.0) si stáhněte zde: [fapi-locker\_3.0\_20201207.zip](/assets/articles/abd821b19dbadd8f.zip)
+
+Instalace FAPI Lockeru probíhá stejně jako instalace jakéhokoliv jiného pluginu ve WordPressu. V menu WordPressu vyberte **Pluginy - Instalace pluginů**. Vedle nadpisu zobrazené stránky stiskněte tlačítko **Nahrát plugin**.
+
+![FAPI Locker](/assets/articles/47c7dc08322ac14c.png)
+
+Vyberte instalační soubor FAPI Lockeru (stažený z odkazu výše) a stiskněte tlačítko **Instalovat**.
+
+Po instalaci aktivujte FAPI Locker v přehledu pluginů kliknutím na odkaz **Aktivovat**.
+
+![FAPI Locker](/assets/articles/30f59450919d36e3.png)
+
+### 2\. Nastavení FAPI Lockeru
+
+FAPI Locker je po instalaci potřeba nejprve propojit s FAPI. To provedete zadáním přihlašovacích údajů ke svému účtu FAPI v administračním prostředí WordPressu, konkrétně v nabídce **Nastavení - FAPI Locker** (sekce Propojení s FAPI).
+
+![FAPI Locker](/assets/articles/53ef0f74536918fa.png)
+
+:::caution
+API klíč pro propojení s FAPI získáte, popř. vygenerujete ve svém účtu FAPI v nabídce **Můj účet - API klíče**.
+:::
+
+Sekce **Vzhled** slouží k nastavení vzhledu viditelných prvků FAPI Lockeru - ohraničení formuláře, barvy pozadí a písma tlačítka pro zakoupení přístupu a odemčení obsahu.
+
+V poli **E-mailové adresy s univerzálním přístupem (pro všechny zamčené stránky)** můžete uvést e-mailové adresy, které lze použít k odemknutí obsahu na jakékoli zamčené stránce v rámci celého webu.
+
+### 3\. Nastavení přístupu ke stránce/článku
+
+V administraci WordPressu si otevřete stránku (resp. článek), kterou chcete uzamknout. Na konci stránky se zobrazí nastavení týkající se FAPI Lockeru.
+
+![FAPI Locker](/assets/articles/0e9fa72c1cf1ec21.png)
+
+Vysvětlení jednotlivých položek nastavení:
+
+-   **Zamknout stránku** \- přepínač aktivuje FAPI Locker pro danou stránku, tj. určuje, zda se má stránka pomocí FAPI Lockeru uzamykat, či nikoliv.
+-   **Text zobrazený před udělením přístupu** \- zadaný text se zobrazí na stránce v zamčeném stavu, tj. před zakoupením přístupu, resp. odemčením stránky.
+-   **Produkt udělující přístup k obsahu** - zakoupení uvedeného produktu odemyká obsah stránky nebo článku; má-li klient se zadanou e-mailovou adresou v propojeném účtu FAPI zakoupen uvedený produkt, obsah se zpřístupní (produktů udělujících přístup může být i více, další je možné zadat pomocí odkazu **Přidat další produkt**).
+-   **Text odkazu pro odemčení obsahu** - zadaný text se na stránce zobrazí jako odkaz pro zpřístupnění obsahu.
+-   **E-mailové adresy s univerzálním přístupem (pro tuto stránku)** - pole slouží pro zadání e-mailových adres, které odemykají obsah na dané stránce i bez jeho zakoupení.
+-   **Zobrazit tlačítko pro zakoupení přístupu** - přepínač určuje, zda je možné přímo na zamčené stránce zobrazit prodejní formulář pro zakoupení přístupu; není-li přepínač aktivní, následující volby se nezobrazí
+-   **Text tlačítka pro zobrazení prodejního formuláře** - zadaný text se zobrazí na tlačítku pro zakoupení přístupu k obsahu.
+-   **Prodejní formulář pro zakoupení přístupu** - volba určuje, jaký prodejní formulář se zobrazí na zamčené stránce pro zakoupení přístupu.
+
+## Zpřístupnění zamčeného obsahu
+
+Návštěvníkovi zamčené stránky se z jejího obsahu zobrazí pouze nadpis. Pod ním je uveden text, který se má podle nastavení zobrazit na stránce v zamčeném stavu, tlačítko pro zakoupení přístupu (je-li aktivní) a odkaz pro odemčení stránky.
+
+![FAPI Locker](/assets/articles/06f03fd5ec6e3754.png)
+
+Po kliknutí na odkaz pro odemčení obsahu se zobrazí výzva k zadání e-mailové adresy, se kterou byl obsah zakoupen.
+
+![FAPI Locker](/assets/articles/9a98d934c86e7364.png)
+
+Pokud je v propojeném účtu FAPI na zadanou e-mailovou adresu zakoupen produkt, který uděluje přístup k zamčenému obsahu, stránka se odemkne a její obsah se zobrazí v plném znění.
+
+:::tip
+Pro zpřístupnění obsahu je možné použít i adresu s univerzálním přístupem uvedenou v nastavení pluginu nebo stránky.
+:::
+
+:::caution
+Zpřístupnění stránky se ukládá do internetového prohlížeče ve formě _cookies_. Při opakované návštěvě ze stejného počítače a pomocí stejného prohlížeče proto bude stránka již odemčená. Vymazání cookies z prohlížeče naopak způsobí, že se při další návštěvě zobrazí stránka jako uzamčená a pro její odemčení je potřeba znovu zadat oprávněnou e-mailovou adresu.
+:::

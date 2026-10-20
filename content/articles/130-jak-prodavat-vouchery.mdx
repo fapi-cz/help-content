@@ -1,0 +1,116 @@
+---
+title: Jak prodávat vouchery
+url: /article/130-jak-prodavat-vouchery
+description: V této nápovědě si ukážeme jak prodávat vouchery skrze FAPI. Pokud nevíte jak s vouchery ve FAPI pracovat, tak mrkněte do nápovědy Vouchery. Zde si na konkrétní
+category: Začínáme
+categorySlug: 4-zaciname
+categorySlugs:
+  - 4-zaciname
+  - 9-online-prodej
+keywords:
+  - Jak prodávat vouchery
+  - Začínáme
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/130-jak-prodavat-vouchery
+order: 83
+updatedAt: 2026-07-13T10:35:51Z
+---
+V této nápovědě si ukážeme jak prodávat vouchery skrze FAPI. Pokud nevíte jak s vouchery ve FAPI pracovat, tak mrkněte do nápovědy [Vouchery](/article/94-vouchery).
+
+Zde si na konkrétním příkladu ukážeme, jak celý nastavit prodejní proces. Jako ukázku použijeme prodej našeho voucheru FAPI tarif START na rok za 570,- Kč.
+
+Prodáváme FAPI tarif START – kupující daruje voucher například svému blízkému (obdarovanému). Obdarovaný potom může tento voucher uplatit a využít nabídky. V našem případě bude obdarovaný moct voucher uplatnit přes voucher formulář na našich FAPI stránkách.
+
+Kupujícímu potřebujeme srozumitelně sdělit, co všechno a jaké informace má obdarovanému předat. V našem případě to bude kód voucheru a URL adresa, kde bude moct obdarovaný voucher uplatnit a také datum, do kdy je voucher platný.   
+ 
+
+Co budeme potřebovat:
+
+-   produkt nastavený tak, abychom ho prodávali jako voucher
+-   nové sady emailových šablon zpráv
+-   v našem případě nový prodejní formulář s voucher produktem (voucher produkt můžete ale přidat i do stávajících formulářů)
+-   samostatnou prodejní stránku
+-   nový formulář pro uplatnění voucheru (tedy místo kde si jej obdarovaný aktivuje)
+-   novou stránku pro uplatnění voucheru, kam vystavíme voucher formulář z předchozího bodu
+
+## Nastavení produktu-voucheru ve FAPI
+
+Přihlasíme se do FAPI a přejdeme na stránku **Prodej –\> Produkty –\>** [Vytvořit produkt](https://web.fapi.cz/templates/create-item?projectId=all). Nastavení našeho voucher produktu může vypadat nějak takto.  
+![Jak prodávat vouchery](/assets/articles/e171b9ac968a311b.png)
+
+Vytvořili jsme tedy produkt, který budeme prodávat jako voucher. K tomu je **nezbytně nutné zaškrtnout políčko „prodávat jako voucher“.** Platnost voucheru lze omezit buď do konkrétního data, nebo v časovém intervalu od momentu zakoupení. V našem případě bude voucher platný jeden měsíc od nákupu.
+
+Důležitá část procesu je i nastavení pod produktem, tedy **„AKCE PO UPLATNĚNÍ VOUCHERU“**. Zde si přidáme novou akci – **přidat kontakt do SmartEmailingu**, abychom těm, kteří voucher uplatní, mohli posílat další výhodné nabídky. Pro ten účel jsme si ve SmartEmailingu vytvořili nový seznam kontaktů „Prodej tarifu START jako voucher“. 
+
+Dále také potřebujeme, aby se po uplatnění voucheru ve FAPI založil nový účet. K tomu jsme si vytvořili vlastní script, který se nám o to postará. (Podobně lze například založit nového uživatele ve členské sekci – k tomu [více zde](/article/99-fapi-member-zakladani-clenstvi)) Nastavení takové akce může vypadat obdobně jako na obrázku níže.
+
+![Jak prodávat vouchery](/assets/articles/4ef5aceee2e123cd.png)
+
+Produkt máme tedy nastavený a můžeme kliknout na tlačítko **uložit**. 
+
+## Příprava e-mailových šablon
+
+  
+V dalším kroku si vytvoříme emailové šablony, v nichž se kupující dočte, jak obdarovanému voucher předat a kde ho může uplatnit.   
+  
+Přejdeme tedy do **Prodej –\> Šablony zpráv –\>** [Nová sada šablon zpráv](https://web.fapi.cz/message-template-sets/create?projectId=all), nebo můžeme zduplikovat nějakou z již vytvořených šablon zpráv a pouze upravit texty. Připravíme si tyto 3 šablony:
+
+-   E-mail při vystavení objednávky
+-   E-mail při zaplacení objednávky
+-   E-mail k opravnému daňovému dokladu
+
+V e-mailu při vystavení objednávky a e-mailu k opravnému daňovému dokladu předáme standardní informace.  
+Do e-mail při zaplacení objednávky ale chceme zapsat kód voucheru a jeho platnost plus podrobnosti o místu/stránce, kde voucher může obdarovaný uplatnit.
+
+V našem případě se bude voucher uplatňovat na webu FAPI. Do e-mailu proto vložíme URL odkaz na naše stránky. 
+
+:::info
+**TIP:** Můžete také vytvořit designový voucher a odkaz na tento voucher zasílat v e-mailu. Kupující si jej potom může stáhnout, vytisknout a dopsat do něj například věnování.
+:::
+
+![Jak prodávat vouchery](/assets/articles/7fe467885fa10ecb.png)
+
+Ukázka emailové šablony.  
+![Jak prodávat vouchery](/assets/articles/e679f0c60fba409d.png)
+
+## Založení prodejního formuláře
+
+Nyní přejdeme do záložky  **Prodej –\> Prodejní formuláře –\>** [Nový prodejní formulář](https://web.fapi.cz/forms/create?projectId=all)
+
+Vytvoříme nový prodejní formulář, vybereme název, vložíme produkt, upravíme platební metody. Přiřadíme nové e-mailové šablony a prodejní formulář uložíme. Jak přesně a co vše se dá nastavit u prodejního formuláře máme vysvětleno [v naší nápovědě](/article/44-prodejni-formular). 
+
+Výsledný prodejní formulář může vypadat třeba takto: 
+
+![Jak prodávat vouchery](/assets/articles/bb04368d8d6384a2.png)
+
+## Vytvoření prodejní stránky
+
+Tento krok zde nebudeme rozebírat dopodrobna. Jde čistě o vytvoření prodejní stránky, do které jen vložíte prodejní formulář.
+
+## Založení formuláře pro uplatnění voucheru
+
+Další krok, který je potřeba udělat, je vytvoření **voucher formuláře**. Ten se používá pro uplatnění voucheru přímo na vašich stránkách. V administraci FAPI tedy přejdeme na **Prodej –\> Voucher formuláře –\>** [Vytvořit voucher formulář](https://web.fapi.cz/voucher-form/create?projectId=all)
+
+Nastavení formuláře může vypadat takto.  
+![Jak prodávat vouchery](/assets/articles/93fb26cb9d5c760e.png)
+
+Vybereme výstižný název formuláře, abychom se orientovali v tom, k čemu vlastně formulář používáme; můžeme zvolit i jazyk, ve kterém se zobrazuje, vyplníme GDPR a obchodní podmínky.
+
+Následně si můžeme vybrat, zda chceme přesměrovat na děkovací stránku s dalšími instrukcemi, nebo zda nám stačí vypsání pouze jednoduché hlášky. V našem případě volíme vlastní děkovací stránku, proto vkládáme její URL adresu.  
+  
+Výsledný voucher formulář vypadá takto:  
+![Jak prodávat vouchery](/assets/articles/42ff00bca2623882.png)
+
+## Vytvoření stránky pro uplatnění voucheru
+
+Nyní máme vytvořený voucher formulář. Teď je potřeba vytvořit stánku, kam ho umístíme. Odkaz na ni pak pošleme zákazníkům v e-mailu po zaplacení objednávky nebo ji můžeme napsat na vlastní voucher k vytisknutí. Cílem je, aby se tento odkaz **dostal k obdarovanému, protože to on bude voucher uplatňovat**.
+
+Na této stránce je důležité obdarovanému sdělit, na jakou službu tento voucher může použít. Také ho seznámit s tím, co se bude dít po uplatnění voucheru.
+
+:::caution
+Ve vašem editoru stránek vytvoříte novou stránku a do ní voucher formulář vložíte stejně, jako byste vkládali klasický FAPI prodejní formulář.
+:::
+
+Na stránku chceme vložit informace, na koho se má obrátit, pokud bude mít s uplatněním voucheru nějaké problémy (část z toho můžete vložit třeba až na děkovací stránku po uplatnění voucheru). A přidáváme podstatné informace k našemu produktu. Stránka může vypadat nějak takto:  
+  
+![Jak prodávat vouchery](/assets/articles/bc86d573405869dd.png)

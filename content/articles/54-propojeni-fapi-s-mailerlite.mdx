@@ -1,0 +1,90 @@
+---
+title: Propojení FAPI s MailerLite
+url: /article/54-propojeni-fapi-s-mailerlite
+description: Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v ob
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s MailerLite
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/54-propojeni-fapi-s-mailerlite
+order: 84
+updatedAt: 2026-07-13T10:35:50Z
+---
+Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete pro rozesílku e-mailových kampaní.
+
+V tomto článku si ukážeme, jak propojit FAPI s aplikací [MailerLite](https://www.mailerlite.com/a/5fnwsx81eefc).
+
+## Nastavení propojení FAPI s MailerLite
+
+Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do ovládané aplikace (MailerLite) pomocí speciálního přístupového údaje, tzv. _API klíče_. Proto je nutné nejprve obě aplikace propojit.
+
+### Získání API klíče z aplikace MailerLite
+
+V aplikaci MailerLite přejděte v nastavení účtu do nabídky **Integrations**.
+
+![Propojení FAPI s MailerLite](/assets/articles/721a42ca2e223719.png)
+
+Na následující stránce otevřete (pomocí tlačítka **Use**) nabídku **Developer API**.
+
+![Propojení FAPI s MailerLite](/assets/articles/789b31f6404f8673.png)
+
+A vytvoříte si novou integraci přes tlačítko **Generate new token**, který si pojmenujte např. **Fapi.**
+
+  
+
+![Propojení FAPI s MailerLite](/assets/articles/cdde9ce2897e3921.png)
+
+Zde zkopírujte (pomocí tlačítka **Copy**) API klíč, který následně použijete pro nastavení přístupu z FAPI do svého účtu MailerLite.
+
+![Propojení FAPI s MailerLite](/assets/articles/5738d043cc9c74d3.png)
+
+### Vložení API klíče do FAPI
+
+Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **MailerLite** a na následující stránce vyplňte API klíč a již do nové verze zkopírovaný Token z aplikace MailerLite.
+
+![Propojení FAPI s MailerLite](/assets/articles/c1a573eb0f0af6b1.png)
+
+Zadané údaje uložte stiskem tlačítka **Uložit**.
+
+Po uložení se zobrazí informační hláška a u propojení s MailerLite se objeví stav **Připojeno**.
+
+## Zápis a odebrání kontaktních údajů do/z MailerLite
+
+Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybrané skupiny kontaktů ( _Group_) aplikace MailerLite nastavíte v prodejním formuláři na záložce **Akce**.
+
+Použijte k tomu akci **přidat kontakt do MailerLite**, resp. **odebrat kontakt z MailerLite**.
+
+![Propojení FAPI s MailerLite](/assets/articles/56a7ec7db9dea085.png)
+
+:::tip
+Do aplikace MailerLite můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+:::
+
+  
+
+## Jaké údaje přenášíme do Mailerlite?
+
+-   email
+-   jméno
+-   fields
+    -   příjmení
+    -   firma
+    -   telefon
+    -   město
+    -   psč
+    -   země
+    
+-   vlastní pole
+
+  
+
+:::caution
+Standardně lze napojit pouze jeden MailerLite účet. Pokud ale potřebujete napojit další, můžete to obejít pomocí [integrace přes Make](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat).
+:::

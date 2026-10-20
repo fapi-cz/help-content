@@ -1,0 +1,56 @@
+---
+title: Dvojí spuštění scénáře po zaplacení – jak tomu předejít v Make
+url: /article/292-dvoji-spusteni-scenare-po-zaplaceni-jak-tomu-predejit-v-make
+description: Pokud máte v prodejním formuláři ve FAPI nastavenou akci spuštění programového skriptu po zaplacení (např. webhook do Make.com), může dojít k tomu, že se daný s
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 7-platby
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Dvojí spuštění scénáře po zaplacení – jak tomu předejít v Make
+  - Automatizace
+  - Nastavení
+  - Platby
+  - Online prodej
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/292-dvoji-spusteni-scenare-po-zaplaceni-jak-tomu-predejit-v-make
+order: 267
+updatedAt: 2026-07-13T12:41:55Z
+legacyAnchors:
+  - id: -Jak-na-to-v-Makecom-huXfd
+    tag: h3
+    text: Jak na to v Make.com
+    occurrence: 0
+    headingIndex: 0
+---
+Pokud máte v prodejním formuláři ve FAPI nastavenou akci **spuštění programového skriptu** po zaplacení (např. webhook do Make.com), může dojít k tomu, že se daný scénář **spustí dvakrát**:
+
+-   jednou po zaplacení **zálohové faktury**
+-   podruhé po vystavení **daňového dokladu k přijaté platbě**
+
+To je záměrné chování systému FAPI – skript se spouští **při každém vystavení faktury s evidovanou platbou**.
+
+Pokud však potřebujete, aby se scénář v Make.com spustil **pouze jednou**, doporučujeme přidat do scénáře **filtr**.
+
+### Jak na to v Make.com
+
+V Make scénáři, hned za triggerem (např. příchozí webhook), přidejte **filtr** a nastavte podmínku, která povolí spuštění jen v případě, že se jedná např. **o zálohovou fakturu** nebo naopak **jen o daňový doklad** – podle toho, co potřebujete.
+
+Nejčastěji se filtruje podle:
+
+-   typu dokladu (`invoice_type` )
+-   nebo podle jiného specifického parametru ve struktuře webhooku
+
+![Dvojí spuštění scénáře po zaplacení – jak tomu předejít v Make](/assets/articles/886266274ff716d2.png)
+
+:::tip
+### **Tip**
+
+Nezapomeňte si ve FAPI zkontrolovat, jaké údaje o dokladu vám webhook odesílá – ty využijete právě při nastavení filtru. Dokumentaci k FAPI webhookům najdete zde: https://napoveda.fapi.cz/article/119-webhooky
+:::

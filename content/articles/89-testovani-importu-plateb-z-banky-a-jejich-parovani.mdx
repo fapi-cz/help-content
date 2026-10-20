@@ -1,0 +1,47 @@
+---
+title: Testování importu plateb z banky a jejich párování
+url: /article/89-testovani-importu-plateb-z-banky-a-jejich-parovani
+description: "Import plateb z banky a jejich následné párování s fakturami je jedním z klíčových bodů automatizace ve FAPI. Abyste mohli s klidným svědomím nechat FAPI dělat "
+category: Platby
+categorySlug: 7-platby
+categorySlugs:
+  - 7-platby
+  - 10-propojeni-s-externimi-systemy
+  - 12-testovani
+keywords:
+  - Testování importu plateb z banky a jejich párování
+  - Platby
+  - Propojení s jinými systémy
+  - Testování
+sourceUrl: https://napoveda.fapi.cz/article/89-testovani-importu-plateb-z-banky-a-jejich-parovani
+order: 80
+updatedAt: 2026-07-13T10:35:49Z
+legacyAnchors:
+  - id: Postup-testovn-7ASNa
+    tag: h2
+    text: Postup testování
+    occurrence: 0
+    headingIndex: 0
+---
+Import plateb z banky a jejich následné párování s fakturami je jedním z klíčových bodů automatizace ve FAPI. Abyste mohli s klidným svědomím nechat FAPI dělat svou práci, otestujte, že spolu vaše banka a FAPI komunikují a dochází k přenosu informací o platbách.
+
+:::danger
+Testování párování plateb vyžaduje provedení skutečné platby.
+:::
+
+## Postup testování
+
+1.  Vytvořte objednávku přes prodejní formulář vložený na prodejní webovou stránku.
+2.  Vystavenou fakturu zaplaťte na bankovní účet, ze kterého importujete platby do FAPI. Nezapomeňte uvést správný variabilní symbol pro spárování platby s fakturou.
+3.  Po připsání platby na váš bankovní účet ověřte v přehledu plateb na záložce **Platby**, zda byla platba za danou objednávku stažena do FAPI.
+
+:::caution
+Informace o platbách se do FAPI stahují každou hodinu, vždy cca kolem 20-35 minuty.
+:::
+
+-   ![Testování importu plateb z banky a jejich párování](/assets/articles/4f1be9ebb59abe71.png)
+    
+
+1.  V přehledu faktur (v nabídce **Faktury - Přehled faktur**) zkontrolujte, zda byla příslušná faktura automaticky označena jako zaplacená.
+    
+    ![Testování importu plateb z banky a jejich párování](/assets/articles/69c1e5a85fbcfdf1.png)

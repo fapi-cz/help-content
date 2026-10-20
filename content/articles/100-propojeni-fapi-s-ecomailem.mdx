@@ -1,0 +1,156 @@
+---
+title: Propojení FAPI s Ecomailem
+url: /article/100-propojeni-fapi-s-ecomailem
+description: Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v ob
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s Ecomailem
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/100-propojeni-fapi-s-ecomailem
+order: 62
+updatedAt: 2026-07-13T10:31:08Z
+legacyAnchors:
+  - id: Nastaven-propojen-FAPI-s-Ecomailem-mRb87
+    tag: h2
+    text: Nastavení propojení FAPI s Ecomailem
+    occurrence: 0
+    headingIndex: 0
+  - id: Zskn-API-kle-z-aplikace-Ecomail-Z-MM7
+    tag: h3
+    text: Získání API klíče z aplikace Ecomail
+    occurrence: 0
+    headingIndex: 1
+  - id: Vloen-API-kle-do-FAPI-Rwj7b
+    tag: h3
+    text: Vložení API klíče do FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: Zpis-a-odebrn-kontaktnch-daj-doz-Ecomailu-WxwSx
+    tag: h2
+    text: Zápis a odebrání kontaktních údajů do/z Ecomailu
+    occurrence: 0
+    headingIndex: 3
+  - id: Jak-poloky-se-do-Ecomail-pen-MpzO9
+    tag: h2
+    text: Jaké položky se do Ecomail přenáší?
+    occurrence: 0
+    headingIndex: 4
+  - id: Odesln-dat-o-objednvce-do-Ecomailu-uHpD4
+    tag: h2
+    text: Odesílání dat o objednávce do Ecomailu
+    occurrence: 0
+    headingIndex: 5
+  - id: -Technick-parametry-odesln-kontaktu-do-Ecomailu-RPzZu
+    tag: h3
+    text: 🛠️ Technické parametry odesílání kontaktu do Ecomailu
+    occurrence: 0
+    headingIndex: 6
+---
+Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete např. pro rozesílku e-mailových kampaní nebo pokročilou komunikaci se svými zákazníky.
+
+[V tomto článku si ukážeme, jak propojit FAPI s aplikací Ecomail](https://ecomail.cz/?fpr=mr0u2).
+
+## Nastavení propojení FAPI s Ecomailem
+
+Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do ovládané aplikace ([Ecomail](https://ecomail.cz/?fpr=mr0u2)) pomocí speciálního přístupového údaje, tzv. _API klíče_. Proto je nutné nejprve obě aplikace propojit.
+
+### Získání API klíče z aplikace Ecomail
+
+V aplikaci Ecomail přejděte v nastavení účtu do nabídky **Správa účtu**.
+
+![Propojení FAPI s Ecomailem](/assets/articles/913410a60a1fe231.png)
+
+Na následující stránce v části **Integrace** najdete **API klíč** svého účtu.
+
+![Propojení FAPI s Ecomailem](/assets/articles/97fad866f8df0ed2.png)
+
+Zobrazený API klíč si zkopírujte. Poslouží pro přístup do vašeho účtu Ecomailu z FAPI.
+
+### Vložení API klíče do FAPI
+
+Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky Ecomail a na následující stránce vyplňte API klíč zkopírovaný z aplikace Ecomail.
+
+![Propojení FAPI s Ecomailem](/assets/articles/5e6040db3a10e4b9.png)
+
+Zadané údaje uložte stiskem tlačítka **Uložit**.
+
+Po uložení se zobrazí informační hláška a u propojení s aplikací Ecomail se objeví stav **Připojeno**.
+
+## Zápis a odebrání kontaktních údajů do/z Ecomailu
+
+Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybraného seznamu kontaktů Ecomailu nastavíte v prodejním formuláři na záložce **Akce**.
+
+Použijte k tomu akci **přidat kontakt do Ecomail**, resp. **odebrat kontakt z Ecomail**.
+
+  
+
+Při přidání kontaktu do Ecomail je možné taky vyplnit pole pro štítky. Štítky se řídí pravidly Ecomail.
+
+viz. [https://support.ecomail.cz/cs/articles/2409519-stitky-ke-kontaktum-a-jejich-pouziti](https://support.ecomail.cz/cs/articles/2409519-stitky-ke-kontaktum-a-jejich-pouziti)
+
+Musí být bez diakritiky a oddělené čárkou. Víceslovné musí být spojené podtržítkem.
+
+  
+
+![Propojení FAPI s Ecomailem](/assets/articles/06233414044a8822.png)
+
+:::tip
+Do aplikace Ecomail můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+:::
+
+## Jaké položky se do Ecomail přenáší?
+
+-   email
+-   jméno
+-   příjmení
+-   firma
+-   telefon
+-   město
+-   ulice
+-   psč
+-   země
+-   hodnoty vlastních polí (vizte zelený boxík výše)
+-   štítky pro ecomail (pokud jsou vyplněny)
+
+  
+
+## Odesílání dat o objednávce do Ecomailu
+
+Odesílání dat o objednávce je nutno nejprve povolit v nastavení propojení se [Ecomailem](https://web.fapi.cz/settings/update-ecomail-connection?projectId=all) (Nastavení \> Propojení aplikací \> Ecomail \> Upravit). 
+
+![Propojení FAPI s Ecomailem](/assets/articles/1430707c93c037a4.png)
+
+S objednávkou se přenášejí tato data:
+
+-   název prodejního formuláře,
+-   emailová adresa klienta,
+-   status objednávky (objednáno, zaplaceno, stornováno),
+-   datum poslední změny (objednání, stornování, zaplacení),
+-   celková cena (v Kč),
+-   celková cena poštovného (v Kč),
+-   celková cena DPH (v Kč),
+-   dále se posílají i údaje o jednotlivých objednaných produktech: Název, Cena (v Kč) a Množství.
+
+Tyto údaje jsou odeslány při každé z těchto změn objednávky: Objednána, Zaplacena, Stornována.
+
+:::danger
+U objednávky **na splátky** se data přenesou až po úhradě první splátky.
+:::
+
+### 🛠️ Technické parametry odesílání kontaktu do Ecomailu
+
+Při přenosu údajů z FAPI do Ecomailu API automaticky využívá následující výchozí nastavení:
+
+-   `skip_confirmation: false`  – Tato hodnota znamená, že se při přihlášení kontaktu **odesílá potvrzovací e-mail (tzv. double opt-in)**.
+    
+    Tento parametr **nelze ve FAPI změnit**, protože ho FAPI vůbec nepodporuje. Pokud si nepřejete, aby byl double opt-in odesílán, musíte jej **vypnout přímo v nastavení konkrétního seznamu v Ecomailu**.
+    
+-   `trigger_autoresponders: true`  – Tímto se při přihlášení kontaktu **aktivují nastavené automatizace v Ecomailu** (např. uvítací série, e-maily po nákupu apod.).
+-   `update_existing: true`  – Pokud již kontakt v seznamu existuje, budou jeho údaje **aktualizovány**, nikoli přidány jako nový kontakt.

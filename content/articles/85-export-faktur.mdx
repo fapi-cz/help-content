@@ -1,0 +1,181 @@
+---
+title: Export faktur
+url: /article/85-export-faktur
+description: FAPI není uzavřený svět sám pro sebe. Již od svého zrodu bylo navrženo tak, aby mohlo komunikovat s jinými systémy. Kromě otevřeného API rozhraní poskytuje FAPI
+category: Fakturace
+categorySlug: 6-fakturace
+categorySlugs:
+  - 6-fakturace
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Export faktur
+  - Fakturace
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/85-export-faktur
+order: 48
+updatedAt: 2026-07-13T10:11:53Z
+legacyAnchors:
+  - id: Jak-exportovat-faktury-sw1Hm
+    tag: h2
+    text: Jak exportovat faktury
+    occurrence: 0
+    headingIndex: 0
+  - id: Vbr-faktur-pro-export-MQ_Rk
+    tag: h3
+    text: Výběr faktur pro export
+    occurrence: 0
+    headingIndex: 1
+  - id: Volba-vstupnho-formtu-exportu-9hfV7
+    tag: h3
+    text: Volba výstupního formátu exportu
+    occurrence: 0
+    headingIndex: 2
+  - id: Proveden-exportu-IXcCl
+    tag: h3
+    text: Provedení exportu
+    occurrence: 0
+    headingIndex: 3
+  - id: ablony-pro-export-MKBZ3
+    tag: h2
+    text: Šablony pro export
+    occurrence: 0
+    headingIndex: 4
+  - id: Znme-chyby-vG6Ym
+    tag: h2
+    text: Známe chyby
+    occurrence: 0
+    headingIndex: 5
+---
+FAPI není uzavřený svět sám pro sebe. Již od svého zrodu bylo navrženo tak, aby mohlo komunikovat s jinými systémy. Kromě otevřeného [API rozhraní](/article/84-ovladani-fapi-pres-api-rozhrani) poskytuje FAPI také dávkový export vystavených faktur a [údajů o klientech](/article/86-export-klientu).
+
+Typický a nejčastější případ použití exportu faktur je jejich přenos do externího systému pro účetní zpracování. Využijete jej ale také při hromadném tisku faktur nebo v situaci, kdy potřebujete objednávky analyzovat pokročilejším způsobem, než jaký nabízejí standardní funkce FAPI.
+
+## Jak exportovat faktury
+
+Všechny volby potřebné pro vytvoření souboru s vybranými fakturami najdete v nabídce **Faktury - Export faktur**.
+
+![Export faktur](/assets/articles/97f7ebe496c69a47.png)
+
+  
+
+### Výběr faktur pro export
+
+Export můžete omezit podle několika kritérií, přičemž do výsledného souboru budou zahrnuty pouze takové faktury, které splňují současně všechny zvolené podmínky.
+
+Doklady lze filtrovat podle:
+
+-   projektu,
+-   prodejního formuláře,
+-   produktu (prodejní položky),
+-   typu dokladu,
+-   stavu dokladu,
+-   data,
+-   variabilního symbolu nebo čísla dokladu,
+-   klienta,
+-   měny,
+-   částky,
+-   způsobu úhrady,
+-   způsobu dopravy,
+-   zamčení dokladu (zamčeno/nezamčeno)
+
+:::tip
+Do exportu můžete volitelně zahrnout také testovací faktury (volba **Exportovat i testovací faktury**), které jsou z exportu standardně vyloučeny.
+:::
+
+### Volba výstupního formátu exportu
+
+V poli **Formát** určíte, jaký bude výstupní formát exportovaného souboru.
+
+  
+
+![Export faktur](/assets/articles/92892674c657c81a.png)
+
+Formát pro export
+
+FAPI v současné době podporuje tyto formáty:
+
+-   **CSV** (comma-separated values) - jednoduchý formát obsahující data oddělená středníkem. Vzniklý soubor je možné načíst do libovolného tabulkového procesoru, např. Excelu. Po výběru formátu CSV můžete dále zvolit, v jaké znakové sadě (tedy s jakým kódováním češtiny) bude soubor vytvořen - _UTF-8_, nebo _Windows-1250_.
+    
+    :::caution
+    V základním formátu odpovídá každé faktuře jeden řádek vygenerovaného souboru. Chcete-li, aby ve výstupním souboru byla každá prodejní položka na samostatném řádku, vyberte formát **CSV - položkový export**. V tomto formátu najdete i některé další údaje jako např. počet kusů prodejní položky.
+    :::
+    
+-   **Pohoda** - nativní formát oblíbeného účetního systému Pohoda z produkce společnosti Stormware. Tento formát podporuje řadu dalších nastavení reprezentovaných doplňujícími volbami (zobrazí se po výběru formátu Pohoda). V Nastavení \> Nastavení fakturace pak lze dále upřesnit, zda používáte českou nebo slovenskou verzi Pohody (nastavení mění způsob zápisu kurzu cizích měn).
+-   **Money S3** - nativní formát účetního systému Money S3 z produkce společnosti Cígler Software.
+-   **Money S4** - nativní formát účetního systému Money S4 z produkce společnosti Cígler Software.
+-   **V-Soft** - nativní formát slovenského ekonomického systému V-Soft z produkce stejnojmenné společnosti.
+-   **PDF** (Portable Document Format) - populární a široce podporovaný formát pro výměnu dokumentů. Formát PDF je vhodný jak pro zobrazení na elektronických zařízeních, tak pro tisk. Můžete si zvolit, zda chcete vyexportovat všechny faktury do jednoho souboru, nebo každou fakturu do samostatného souboru.
+-   **Zásilkovna V6** - formát vhodný pro hromadný import objednávek z FAPI, které budete předávat doručení prostřednictvím Zásilkovny. Popis jak na to [najdete zde](/article/62-propojeni-fapi-se-sluzbou-zasilkovna).
+-   **MRPK** \- formát pro účetnictví MRP.
+-   **CSV-ISklad** - formát určený pro export do systému ISklad. Export obsahuje pouze produkty, nezahrnuje dopravu, dobírku, korekce ani zaokrouhlení.
+-   **ABRA Flexi -** XML formát
+
+:::tip
+Při exportu lze volitelně [zamknout](/article/70-zamykani-dokladu) všechny faktury zařazené do exportovaného souboru (volba **Zamknout exportované doklady**), aby ve FAPI nemohlo dojít k jejich následné úpravě. Při přenosu faktur do účetního systému se tak zajistí konzistentní stav ve FAPI a v účetním systému.
+:::
+
+### Provedení exportu
+
+Po stisku tlačítka **Exportovat** se spustí export faktur do souboru ve zvoleném formátu.
+
+Po spuštění exportu je možné buď počkat na dokončení procesu a automatické stažení souboru, nebo stránku opustit a vytvořený soubor si stáhnout později.
+
+Kliknutím na **Export s uložením šablony** se vytvoří vzorová šablona s uloženými filtry, kterou budete moct používat i v budoucnu (viz další kapitola Šablony pro export)
+
+:::caution
+Poslední vygenerovaný soubor je v systému uložen a připraven ke stažení (na konci stránky) až do příštího spuštění exportu.
+:::
+
+![Export faktur](/assets/articles/70bede0351226c2c.png)
+
+:::tip
+Faktury lze alternativně exportovat i přímo ze stránky **Faktury \> Přehled faktur**, a to pomocí tlačítka **Exportovat doklady**. Tím dojde k přesměrování na stránku pro vytvoření exportu, kde budou předvyplněny podmínky zadané ve filtru tabulky na stránce s přehledem faktur.
+:::
+
+  
+
+## Šablony pro export
+
+Pro jednodušší a rychlejší konfigurování exportu dokladů lze uložit předpřipravnou šablonu, která obsahuje hotová nastavení filtrů dokladů pro export.
+
+Novou šablonu uložíte při novém exportu po kliknutí na tlačítko **Export s uložením šablony**. Po kliknutí se zobrazí nabídka s políčkem pro zadání názvu šablony.
+
+Pojmenujte novou šablonu, klikněte na OK a vyčkejte na zpracování exportu.
+
+![Export faktur](/assets/articles/28e81ba6764ea491.png)
+
+Po potvrzení se vytvoří požadovaný export a uloží se nová šablona nastavení exportu.
+
+Poté už novou šablonu najdete pro budoucí používání v nabídce zcela nahoře, kde je výběr šablony exportu.
+
+Při výběru konkrétní šablony jsou na výběr 3 možnosti:
+
+-   načtení - použití - šablony exportu
+-   přejmenování
+-   smazání
+
+![Export faktur](/assets/articles/c8144d9c654ca4cf.png)
+
+:::caution
+Maximální možný počet šablon je 20.
+:::
+
+Užitečnou kombinací u šablon je používání zkratek pro rychlý výběr časového období -\> **Časové rozmezí**.
+
+![Export faktur](/assets/articles/03ce52226d5f098f.png)
+
+V něm najdete typické volby pro stahování dat, které na dva kliky nastaví datumy od-do bez nutnosti vybírat je v kalendáři, nebo vypisovat je na číselné klávesnici.
+
+## Známe chyby
+
+:::danger
+**Chybné kódování při stahování exportů pomocí Outlooku.**
+
+V případě, že exporty faktury, odesíláte svému účetnímu, který pro správu své e-mailové schránky používá Outlook. Nastává problém, kdy Outlook z nějakého důvodu změní kódování souboru z UTF-8 na ASCII. Tento soubor potom nejde řádně naimportovat například do účetního softwaru Pohoda.
+
+Řešením je takový export nestahovat přes Outlook, ale přímo přes webové rozhraní například gmail, seznam e-mail atp.
+:::
+
+:::caution
+Formát JSON - zde použijte prosím API - [https://napoveda.fapi.cz/article/84-ovladani-fapi-pres-api-rozhrani](/article/84-ovladani-fapi-pres-api-rozhrani)
+:::

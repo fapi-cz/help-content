@@ -1,0 +1,126 @@
+---
+title: Propojení aplikací pomocí služby Make.com (Integromat)
+url: /article/87-propojeni-aplikaci-pomoci-sluzby-integromat
+description: Potřebujete přenášet data z FAPI do jiného systému? Nebo naopak na základě události v jiné aplikaci vytvářet nebo modifikovat data ve FAPI? Přímá komunikace mez
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení aplikací pomocí služby Make.com (Integromat)
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/87-propojeni-aplikaci-pomoci-sluzby-integromat
+order: 32
+updatedAt: 2026-07-13T09:52:48Z
+---
+Potřebujete přenášet data z FAPI do jiného systému? Nebo naopak na základě události v jiné aplikaci vytvářet nebo modifikovat data ve FAPI?
+
+Přímá komunikace mezi různými počítačovými systémy je možná pomocí [API rozhraní](/article/84-ovladani-fapi-pres-api-rozhrani). Jeho využití vyžaduje technické znalosti a nutnost programování.
+
+Dostupnější alternativou jsou speciální nástroje, které umí různé systémy propojit ve vizuálním rozhraní bez potřeby programování. Jedním z těchto nástrojů je [Make.com](https://www.make.com/en/register?pc=fapimake), který dokáže propojit a přenášet data mezi stovkami aplikací a služeb.
+
+Základní seznámení s Make.com a ukázku hlavních funkcí přináší následující video (v angličtině).
+
+<Video src="https://www.youtube.com/embed/OExHVQ9CRCw" />
+
+## Jak začít?
+
+Abyste mohli Make začít používat, je nejprve potřeba se [zaregistrovat a založit si účet](https://www.make.com/en/register?pc=fapimake).
+
+Pro propojení aplikací a přenos dat mezi nimi můžete v Make využít buď předpřipravené _šablony_, nebo si pro konkrétní potřebu vytvořit svůj vlastní _scénář_.
+
+:::caution
+Scénář je vámi nadefinovaná akce, která se bude automaticky provádět v nastaveném intervalu nebo na základě zvolené události.
+:::
+
+Vyčerpávající informace o používání Make poskytuje jeho [nápověda](https://www.make.com/en/help/home) (v angličtině).
+
+## Propojení Make s FAPI
+
+V rámci scénáře se vytváří tzv. _spojení_, což je vazba mezi účtem Make a externí službou (v tomto případě FAPI).
+
+Pro vytvoření spojení mezi Make a vaším účtem FAPI je potřeba zadat přístupové údaje do FAPI.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/9909f0d5326c8a8d.png)
+
+Do pole **Username** zadejte své _přihlašovací jméno_ do FAPI. Do pole **Password** vyplňte _API klíč_, který si pro účely tohoto propojení vygenerujete ve svém účtu FAPI pomocí tlačítka **Nový API klíč** v nabídce **Můj účet - API klíče**. [Jak vytvořit API klíč?](/article/128-jak-ziskat-api-klic)
+
+## Jaké akce v [Make.com](https://www.make.com/en/register?pc=fapimake) FAPI podporuje?
+
+Momentálně je přes Make možné zpracovávat přes 40 různých akcí. Ty se v Make nazývají moduly. Jejich úplný seznam [najdete zde](https://www.make.com/en/integrations/fapi).
+
+  
+
+Ty hlavní jsou:
+
+-   sledovat tzv. notifikace, tedy spuštění akcí ve FAPI (např. vytvoření nové objednávky),
+-   získávat data z vystavených faktur,
+-   aktualizovat údaje o prodejní položce.
+
+Podrobněji o nich pojednávají následující kapitoly.
+
+:::tip
+Potřebujete data zpracovávat ještě jiným způsobem? Máte námět na rozšíření funkcí? Napište nám na [podpora@fapi.cz](mailto:mailto:podpora@fapi.cz).
+:::
+
+### Modul Sledovat notifikace
+
+Modul _Sledovat notifikace_ funguje v prostředí Make jako spouštěč akce vyvolané událostí ve FAPI.
+
+Po vložení modulu _Sledovat notifikace_ do scénáře je vyžadováno vyplnění tzv. _webhooku_, což je objekt, který "zachytává" události ve FAPI. Pomocí tlačítek **Přidat** a následně **Uložit** vygenerujete webhook, který si můžete libovolně pojmenovat. Jeho adresu zkopírujete do schránky pomocí tlačítka **Zkopírovat do schránky**.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/6a7aeb36a278fc89.png)
+
+Ve FAPI vložte zkopírovaný webhook do pole **URL adresa programového skriptu** u akce, která má vyvolat spuštění scénáře v Make (např. vystavení objednávky).
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/6277613b376acfcf.png)
+
+Je-li modul _Sledovat notifikace_ aktivní a ve FAPI dojde ke spuštění akce, v níž je vložen webhook tohoto modulu, získá Make z FAPI údaj _ID faktury_, který lze použít v libovolné další akci scénáře vytvořeného v Make.
+
+### Modul Získat data faktury
+
+K načtení dat z objednávky ve FAPI slouží modul _Získat data faktury_. K tomu potřebuje Make znát _ID faktury_, z níž má data načíst.
+
+Pokud jste v předchozím kroku scénáře použili modul _Sledovat notifikace_, nabídne se vám vyplnění _ID faktury_ z tohoto modulu.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/00ef0415e643b311.png)
+
+Data načtená z faktury FAPI můžete použít v dalším kroku scénáře v Make, např. pro zápis údajů z objednávky do nového řádku Google tabulky.
+
+### Modul Aktualizovat prodejní položku
+
+Tento modul využijete, pokud potřebujete automaticky opakovaně upravit vlastnosti produktu prodávaného prostřednictvím FAPI. V praxi jej lze využít např. pro automatické přejmenování produktu, změnu jeho popisku nebo k nastavení dostupného množství zboží při jeho naskladnění.
+
+### Modul Aktualizovat data faktury
+
+K úpravě dat na fakturách ve FAPI můžete použít modul *Aktualizovat data faktury.* Aby modul fungoval, musí mít ID faktury, se kterou má pracovat. 
+
+Tento modul je většinou spárovaný s modulem *Sledovat notifikace,* ze kterého získáte ID faktury.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/ce9ca80618f36676.png)
+
+### Modul Získat data šablony pravidelných faktur
+
+Pomocí tohoto modulu můžete získat informace o pravidelné fakturaci. Modul vrací hodnoty jako například: perioda vystavování, konec vystavování faktur, den v měsíci pro vystavování faktur, splatnost, aj.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/71f1b39ad58af76c.png)
+
+  
+
+### Jak získat data jednotlivých produktů z faktury
+
+1.  Je potřeba si do modulu FAPI (Získat data faktury) vložit ID/číslo faktury, z které potřebujeme získat data.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/1f4c6157fb98930a.png)
+
+2.  Jako druhý modul, potřebujeme vložit, Řízení toku dat (Iterátor), do kterého vložíme pole, ze kterého potřebujeme získat data. Tímto rozdělením získáme jednotlivé prvky pole.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/e61da3a8d0ac113e.png)
+
+3.  V posledním kroku si vložíme modul dokumentu, kam chceme námi vybrané data uložit.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/4680f950faca0efb.png)
+
+4.  Výstup takto zvoleného scénáře vypadá následovně.
+
+![Propojení aplikací pomocí služby Make.com (Integromat)](/assets/articles/1c3afcff7a90fedf.png)

@@ -1,0 +1,142 @@
+---
+title: Jak vložit prodejní formulář FAPI do Konverzek
+url: /article/315-jak-vlozit-prodejni-formular-fapi-do-konverzek
+description: Vytváříte prodejní stránku v Konverzkách a chcete, aby si zákazník mohl váš produkt nebo službu rovnou objednat? Vložte do stránky prodejní formulář vytvořený v
+category: Jak vložit prodejní formulář do stránky
+categorySlug: 150-vlozeni-prodejniho-formulare-na-web
+categorySlugs:
+  - 150-vlozeni-prodejniho-formulare-na-web
+  - 202-automatizace
+  - 5-nastaveni
+  - 6-fakturace
+keywords:
+  - Jak vložit prodejní formulář FAPI do Konverzek
+  - Jak vložit prodejní formulář do stránky
+  - Automatizace
+  - Nastavení
+  - Fakturace
+sourceUrl: https://napoveda.fapi.cz/article/315-jak-vlozit-prodejni-formular-fapi-do-konverzek
+order: 269
+updatedAt: 2026-09-03T13:46:30Z
+legacyAnchors:
+  - id: Jak-jsou-vhody-propojen-Konverzek-s-FAPI-oGCVm
+    tag: h3
+    text: Jaké jsou výhody propojení Konverzek s FAPI
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-budeme-potebovat-WC-Ia
+    tag: h2
+    text: Co budeme dále potřebovat
+    occurrence: 0
+    headingIndex: 1
+  - id: Bezpen-otestujte-objednvku-HE_Ac
+    tag: h2
+    text: Bezpečně otestujte objednávku
+    occurrence: 0
+    headingIndex: 2
+---
+Vytváříte prodejní stránku v Konverzkách a chcete, aby si zákazník mohl váš produkt nebo službu rovnou objednat? Vložte do stránky prodejní formulář vytvořený ve FAPI.
+
+Prodejní stránka zákazníkovi představí vaši nabídku a prodejní formulář zajistí samotné dokončení objednávky. Zákazník tak nemusí přecházet na jinou stránku – všechny důležité informace i možnost nákupu najde na jednom místě.
+
+  
+
+:::caution
+### Jaké jsou výhody propojení Konverzek s FAPI
+
+-   prodejní stránku vytvoříte v Konverzkách a objednávku zpracujete prostřednictvím FAPI,
+-   zákazník může objednávku dokončit přímo na vaší prodejní stránce,
+-   nemusíte vytvářet samostatnou objednávkovou stránku,
+-   vzhled a obsah prodejní stránky upravujete v Konverzkách,
+-   produkty, ceny, platební možnosti a navazující prodejní proces nastavujete ve FAPI,
+-   změny provedené v prodejním formuláři ve FAPI se projeví také ve formuláři vloženém na stránce.
+:::
+
+:::tip
+**Celý videonávod najdete zde:**
+
+<Video src="https://www.youtube.com/embed/AG-zbL4H7aY" />
+:::
+
+:::info
+**NEJPRVE SI FAPI A KONVERZKY PROPOJTE**
+
+  
+
+**Propojte Konverzky s FAPI přes** [**novou integraci FAPI**](https://saas.konverzky.cz/admin/integration/new?type=fapi)
+
+V levém panelu vyhledejte Integrace, v pravém horním rohu pak klikněte na + Přidat novou integraci.
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/84b0db880c5698ea.png)
+
+Z nabídky připravených integrací si vyberte právě FAPI.
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/d75d3317d158407f.png)
+
+  
+
+Vyplňte a nechte Povolit automatizace. Další nastavení zvolte dle vlastního uvážení a potřeb. FAPI doporučuje všechny volby povolit.
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/0bb51758ef2eb9df.png)
+
+**Název -** si pojmenujte např. FAPI (máte-li více FAPI účtů dejte např. FAPI 1)
+
+**Uživatelské jméno** - stejné jako email, na který máte své FAPI registrováno (při generování API klíče se vám zobrazí).
+
+**API klíč** -  pro propojení s Konverzkami si vytvoříte jedinečný API klíč ve FAPI v sekci [Můj účet \> API klíče](https://web.fapi.cz/account-settings/api-tokens?projectId=all),
+
+Můžete postupovat i pomocí této FAPI nápovědy: [Jak získat API klíč](/article/128-jak-ziskat-api-klic)
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/63a5fa168fc2475b.png)
+
+Nastavte si rovněž formulář pro spárování z 1. kroku tohoto návodu.
+
+Nastavení Integrace v Konverzkách uložte.
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/3058692a8ff2fe49.png)
+:::
+
+  
+
+## Co budeme dále potřebovat
+
+Připravte si prodejní stránku v Konverzkách a prodejní formulář ve FAPI. V následujícím postupu si ukážeme, jak formulář do stránky vložit.
+
+  
+
+1.  [Vytvořený prodejní formulář.](/article/44-prodejni-formular)
+2.  Vytvořenou prodejní stránku [v Konverzkách](https://saas.konverzky.cz/admin/projects).
+3.  Mějte vytvořený [prodejní formulář ve FAPI v kartě Prodej \> Prodejní formuláře](https://web.fapi.cz/forms/?projectId=all)
+4.  Mějte vytvořenou [prodejní stránku v Konverzkách](https://saas.konverzky.cz/admin/projects).
+5.  Přejděte do úpravy své stránky v Konverzkách
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/972ad683e15e0cda.png)
+
+  
+  
+
+6.  Do stránky pak vkládáte **FAPI widget** a to několika způsoby.
+
+  
+
+Přes tlačítko Přidat na stránku \> Komponenty \> FAPI Pak již jen widget přesuňte na místo, kde chcete, aby se ve stránce nacházel.
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/91c0d57fbda13401.png)
+
+Následně **vybíráte správný prodejní formulář z vytvořené integrace:**
+
+![Jak vložit prodejní formulář FAPI do Konverzek](/assets/articles/3b2328f346d5bcc9.png)
+
+Postupovat můžete i vložením komponenty přímo ve stránce přes tlačítko PLUS, kde opět pak najdete widget FAPI a vámi vybraný prodejní formulář.
+
+**Stránku uložte.**
+
+Následně zkontrolujte vizuál stránky, zda je v pořádku.
+
+  
+
+## Bezpečně otestujte objednávku
+
+Před testováním se odhlaste z administrace Konverzek nebo otevřete stránku v anonymním okně prohlížeče. Uvidíte ji tak stejně jako běžný návštěvník.
+
+Pomoci vám může tato nápověda: [Testování celého online prodejního procesu](/article/90-testovani-celeho-online-prodejniho-procesu)

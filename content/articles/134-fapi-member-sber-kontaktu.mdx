@@ -1,0 +1,109 @@
+---
+title: "FAPI Member: Sběr kontaktů"
+url: /article/134-fapi-member-sber-kontaktu
+description: Chcete rozšířit svou databázi klientů? Poodkrýt zákazníkům, jakou novou členskou sekci chystáte?  Nachystat předprodej své členské sekce? Zjistit, zda o váš obs
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - "FAPI Member: Sběr kontaktů"
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/134-fapi-member-sber-kontaktu
+order: 98
+updatedAt: 2026-07-13T10:39:15Z
+legacyAnchors:
+  - id: Vytvoen-a-vloen-kontaktnho-formule-na-web-szkZo
+    tag: h2
+    text: Vytvoření a vložení kontaktního formuláře na web
+    occurrence: 0
+    headingIndex: 0
+  - id: Vytvoen-lena-v-sekci-po-odesln-kontaktnho-formule-KIb2C
+    tag: h2
+    text: Vytvoření člena v sekci po odeslání kontaktního formuláře
+    occurrence: 0
+    headingIndex: 1
+---
+-   Chcete rozšířit svou databázi klientů?
+-   Poodkrýt zákazníkům, jakou novou členskou sekci chystáte? 
+-   Nachystat předprodej své členské sekce?
+-   Zjistit, zda o váš obsah bude mít někdo zájem?
+
+V této nápovědě si ukážeme, jak získat kontakt na klienta výměnou za částečný přístup do členské sekce. Toto je dobré v případě, že například chystáte novou sekci a chcete si ověřit, zda o ni bude zájem. 
+
+  
+
+Jak tedy získat kontakt na klienta a zpřístupnit mu členskou sekci? K tomu budou potřeba 2 věci:
+
+1.  Vložení kontaktního formuláře na váš web.
+2.  Vytvoření člena v členské sekci po odeslání kontaktního formuláře.
+
+Co k tomu budeme potřebovat?
+
+1.  Nástroj pro e-mail marketing (SmartEmailing, MailChimp, [Ecomail](https://ecomail.cz/?fpr=mr0u2), ...)
+2.  [Make.com](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat)
+3.  WordPress s nainstalovaným FAPI Member pluginem
+
+V této ukázce **budeme používat E-mailový nástroj SmartEmailing**, stejně tak ale můžete použít jaký koliv jiný mailingový nástroj. 
+
+## Vytvoření a vložení kontaktního formuláře na web
+
+Podle [nápovědy SmartEmailingu](https://napoveda.smartemailing.cz/article/420-webovy-formular) vytvořte formulář pro sběr kontaktů a k němu jednoduchou stránku, kam formulář umístíte. Výsledná stránka může vypadat třeba takto:
+
+![FAPI Member: Sběr kontaktů](/assets/articles/25d431a82f191ac6.png)
+
+Na tuto stránku můžete později směřovat například reklamu, a tím tak získat nové kontakty a budoucí zákazníky. 
+
+## Vytvoření člena v sekci po odeslání kontaktního formuláře
+
+Nyní je třeba vytvořit scénář v Make. Tento scénář bude reagovat na přidání nového kontaktu do seznamu. Pokud tam takový kontakt přibude, vytvoří vám nového člena v členské sekci. 
+
+Pokud máte účet v Make přihlaste se do něj, případně se [registrujte](https://www.integromat.com/cs/integrations/fapi) zdarma.
+
+V Make vytvořte nový scénář. Přidejte nový modul **SmartEmailing - Watch New Contacts**.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/99fe74c51cccc159.png)
+
+Pokud ještě nemáte napojený Make a SmartEmailing, v [nápovědě SmartEmailingu](https://napoveda.smartemailing.cz/article/966-integrace-s-integromatem) se dozvíte, jak na to.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/f2a61b01724bf451.png)
+
+Po uspěšném napojení SmartEmailingu a Make, dokončete nastavení modulu. V poli **"Contact lists"** vyberte seznam kontaktů pro který se po přidání nového kontaktu založí i přístup do členské sekce. Limit nastavte alespoň na 500 kontaktů.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/bcddf94f0a81363d.png)
+
+Nyní přidejte nový modul **FAPI Member - Přidat nebo Upravit Člena**.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/ef0e32b2ff90effe.png)
+
+Stejně jako u SmartEmailingu je i zde třeba propojit Make a FAPI Member plugin. V administraci svého webu zkopírujte API Token, který najdete v administraci **FAPI Member -\> propojení FAPI -\> API Token**.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/540ee6d381de6a41.png)
+
+Tento API Token zkopírujte a vložte ho do propojení s Make. Pro lepší orientaci vypňte název propojení a URL adresu webu, kde je FAPI Member plugin nainstalovaný.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/5e2cba2b3c05aec4.png)
+
+Klikněte do pole **E-mailová adresa** a vyberte nabízenou možnost **"Email address"**. Díky tomu si Make přenese informace o e-mailové adrese klienta ze SmartEmailingu do FAPI Memberu. 
+
+Vyplňte ID členské sekce a nastavte počet dní, po které bude sekce uživatelům přístupná. 
+
+:::danger
+Pokud pole necháte prázdné, budou mít uživatelé doživotní přístup.
+:::
+
+ID členské sekce získáte v administraci FAPI Memberu. V editoru svých stránek klikněte na nastavení **FAPI Member -\> Členské sekce -\> Sekce/úrovně.** Po najetí myši na danou sekci/úrověň se zobrazí ID členské sekce. Toto ID vepište do modulu FAPI Member v Make.
+
+![FAPI Member: Sběr kontaktů](/assets/articles/4171593ec46bb6d9.png)
+
+Nastavení modulu **FAPI Member - Přidat nebo Upravit člena** bude vypadat nějak takto:
+
+![FAPI Member: Sběr kontaktů](/assets/articles/6e4f8abdc4073432.png)
+
+Nezapomeňte v Make scénář aktivovat, jinak se vám po přidání do seznamu kontaktů člen do členské sekce nepřidá. 
+
+![FAPI Member: Sběr kontaktů](/assets/articles/7821c855f7791440.png)
+
+Nyní se vám každých 15 minut stáhnou kontakty ze SmartEmailingu a vytvoří se nové přístupy do členské sekce na vašem webu. 
+
+![FAPI Member: Sběr kontaktů](/assets/articles/8402e81f1713512c.png)

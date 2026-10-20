@@ -1,0 +1,168 @@
+---
+title: Import plateb z banky
+url: /article/30-import-plateb-z-banky
+description: Sotva můžeme tvrdit, že je prodejní proces automatický, dokud prodejní systém neumí sám párovat přijaté platby s fakturami. Jak se zbavit rutinní práce, jako je
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 7-platby
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Import plateb z banky
+  - Nastavení
+  - Platby
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/30-import-plateb-z-banky
+order: 0
+updatedAt: 2026-07-13T09:30:13Z
+---
+Sotva můžeme tvrdit, že je prodejní proces automatický, dokud prodejní systém neumí sám párovat přijaté platby s fakturami. Jak se zbavit rutinní práce, jako je kontrola plateb na účtu, jejich párování s fakturami a ruční potvrzení zaplacení, si popíšeme v tomto článku.
+
+:::danger
+Import plateb z banky se týká pouze plateb, které přijímáte přímo na svůj bankovní účet pomocí klasického bankovního převodu. Nemá nic společného s platbami přijatými prostřednictvím platební brány.
+:::
+
+## Jak se informace o platbách dostanou do FAPI?
+
+Funkce _Import plateb_ propojí váš bankovní účet s FAPI. Aplikace v pravidelných intervalech (1x za hodinu) stahuje z bankovního účtu údaje o příchozích platbách a ukládá je do FAPI. Informace o platbách můžete do FAPI stahovat z libovolného počtu bankovních účtů.
+
+Pokud jde o způsob importu plateb, na výběr máte ze dvou možností:
+
+-   **API** - informace o došlých platbách získává FAPI přímo skrze _API (Application Programming Interface)_ rozhraní. Pro přístup je potřeba zadat speciálně vygenerovaný _token_ (šifrovací klíč). Metoda je nejjednodušší a nespolehlivější, momentálně ji však podporujeme pouze u Fio banky.
+-   **FAPI e-mailová schránka** - informace o došlých platbách jsou vaší bankou zasílány do e-mailové schránky FAPI, odkud si je FAPI stahuje. Pokud nemá banka API, pak doporučujeme použít tento způsob.
+
+:::tip
+Doporučujeme pro účely přijímání plateb ve FAPI používat samostatný bankovní účet. V opačném případě se při importu plateb budou z bankovního účtu do FAPI stahovat i údaje o platbách, které s FAPI nesouvisí.
+:::
+
+## Z jakých bank lze platby stahovat?
+
+FAPI aktuálně podporuje import plateb z následujících bank:
+
+-   Fio banka (CZ, SK)
+-   Komerční banka (CZ)
+-   Raiffeisenbank (CZ)
+-   ČSOB - Era (CZ, SK)
+-   MONETA Money Bank (CZ)
+-   Air Bank (CZ)
+-   Tatra banka (SK)
+-   UniCredit Bank (CZ)
+-   VÚB banka (SK)
+-   Česká spořitelna (CZ)
+
+:::caution
+Nabídku bank, ze kterých FAPI dokáže importovat platby, rozšiřujeme postupně. Pokud vaše banka chybí, napište nám a my ji do FAPI přidáme. Bohužel ne všechny banky komunikují ve formátu, který FAPI vyžaduje, a propojení pak není možné. Z bank na českém trhu je to případ třeba mBank.
+:::
+
+## Jak se párují platby?
+
+Platby stažené do FAPI jsou automaticky párovány s vystavenými fakturami, a to na základě shodného _variabilního symbolu_. Pokud je po spárování dosaženo plné úhrady faktury, je faktura automaticky označena jako zaplacená.
+
+Při párování nerozhoduje, na jaký z propojených bankovních účtů (je-li jich více) byla platba přijata.
+
+:::caution
+Pokud není variabilní symbol zadán u platby standardním způsobem, pokusí se jej FAPI alternativně získat ze _zprávy pro příjemce_.
+:::
+
+:::caution
+Pokud je u pravidelné fakturace nastaveno automatické strhávání z karty, platby přichází vždy s variabilním symbolem první vystavené faktury. V tomto případě bude platba automaticky spárována s první nezaplacenou fakturou, která patří do této pravidelné fakturace.
+:::
+
+## Nastavení importu plateb
+
+Pro automatické stahování a párování přijatých plateb ve FAPI je potřeba provést následující nastavení:
+
+1.  Nastavení získávání informací z bankovního účtu (v internetovém bankovnictví)
+2.  Nastavení importu plateb ve FAPI
+
+### 1\. Nastavení získávání informací z bankovního účtu
+
+Informace o platbách došlých na účet se získávají u každé banky specifickým způsobem. Postup se liší také v závislosti na tom, jaký způsob importu zvolíte (API, nebo e-mail). Podrobné návody k nastavení u jednotlivých bank, naleznete pod níže uvedenými odkazy.
+
+#### Import přes API
+
+Při importu plateb přes API rozhraní si potřebné informace o platbách stahuje FAPI přímo z vaší banky. Na straně banky (v internetovém bankovnictví) je potřeba mu k tomu pouze udělit oprávnění, a to pomocí tzv. _API klíče_ neboli _tokenu_.
+
+-   [Jak vytvořit token ve Fio bance](/article/31-jak-vytvorit-token-ve-fio-bance)
+-   [Import plateb Česká Spořitelna](/article/174-import-plateb-ceska-sporitelna)
+
+#### Import přes e-mail
+
+Princip importu plateb přes e-mail spočívá v tom, že v internetovém bankovnictví svého bankovního účtu aktivujete zasílání notifikačních e-mailů při každé příchozí platbě. Jako cílovou adresu pro zasílání e-mailů je potřeba nastavit e-mailovou adresu, kterou najdete v nastavení importu plateb ve svém účtu FAPI.
+
+Výsledkem nastavení je, že kdykoli je připsána platba na váš bankovní účet, odešle se e-mail s údaji o platbě do FAPI.
+
+-   [Nastavení zasílání e-mailů o příchozích platbách z Fio banky](/article/32-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-fio-banky)
+-   [Nastavení zasílání e-mailů o příchozích platbách z Komerční banky](/article/33-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-komercni-banky)
+-   [Nastavení zasílání e-mailů o příchozích platbách z Raiffeisenbank](/article/35-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-raiffeisen-bank)
+-   [Nastavení zasílání e-mailů o příchozích platbách z ČSOB](/article/36-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-csob)
+-   [Nastavení zasílání e-mailů o příchozích platbách z MONETA Money Bank](/article/34-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-moneta-money-bank)
+-   [Nastavení zasílání e-mailů o příchozích platbách z Air Bank](/article/40-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-air-bank)
+-   [Nastavení zasílání e-mailů o příchozích platbách z Tatra banky](/article/37-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-tatra-banky)
+-   [Nastavení zasílání e-mailů o příchozích platbách z UniCredit Bank](/article/38-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-unicredit-bank)
+-   [Nastavení zasílání e-mailů o příchozích platbách z VÚB banky](/article/39-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-vub-banky)
+
+### 2\. Nastavení importu plateb ve FAPI
+
+Na záložce **Nastavení - Způsoby platby** stiskněte tlačítko **Nový import plateb**.
+
+![Import plateb z banky](/assets/articles/1637466e13a0283d.png)
+
+#### API
+
+:::caution
+Způsob importu pomocí API podporuje pouze Fio banka a Česká spořitelna.
+:::
+
+:::tip
+Import přes API rozhraní je spolehlivější a přitom jednodušší na nastavení než import přes e-mailovou schránku, proto jej doporučujeme přednostně využívat.
+:::
+
+![Import plateb z banky](/assets/articles/d27e826457c2decc.png)
+
+1.  Do pole **BANKOVNÍ ÚČET** zadejte číslo svého bankovního účtu, ze kterého chcete importovat platby.
+2.  Vyberte **ZPŮSOB IMPORTU**: **API** (zobrazuje se pouze tehdy, je-li v poli **BANKA** vybrána Fio banka).
+3.  Do pole **API TOKEN** zkopírujte token (šifrovací klíč) vygenerovaný v internetovém bankovnictví vašeho bankovního účtu.
+4.  Nastavení importu uložte stiskem tlačítka **Uložit**.
+
+  
+  
+
+#### FAPI e-mailová schránka
+
+![Import plateb z banky](/assets/articles/cb581e43a7136dfa.png)
+
+**Doporučený způsob: Přímé posílání e-mailů z banky do FAPI schránky**
+
+1.  Do pole **BANKOVNÍ ÚČET** zadejte číslo svého bankovního účtu, ze kterého chcete importovat platby.
+2.  Vyberte **ZPŮSOB IMPORTU**: **FAPI e-mailová schránka**.
+3.  Automaticky vygenerovanou unikátní e-mailovou adresu (pole **FAPI E-MAILOVÁ ADRESA**) zkopírujte z FAPI do internetového bankovnictví podle návodu pro svou banku (viz výše).
+4.  Nastavení importu uložte stiskem tlačítka **Uložit**.
+
+  
+
+**Alternativní způsob: Přeposílání přes vlastní e-mailovou schránku.**
+
+Potřeba kontaktovat podporu FAPI, ať tuto možnost povolíme.
+
+Tento způsob je ideální v případech, kdy:
+
+✅ Nelze v bance nastavit přímé posílání na FAPI schránku.
+
+🔹 **Jak to funguje?**
+
+1.  Nastavíte si v bance zasílání zpráv na svou e-mailovou adresu.
+2.  Ve své schránce si nastavíte automatické přeposílání na FAPI e-mailovou adresu.
+
+Tímto způsobem budete mít přehled o tom, co posílá banka, a zároveň budete vědět, které zprávy dorazí do FAPI.
+
+  
+
+![Import plateb z banky](/assets/articles/3e3bc1ceccc2874d.png)
+
+[Preposilani emailu z fapi do e-mailove-schranky](/article/234-preposilani-emailu-do-fapi-e-mailove-schranky)
+
+:::tip
+Před ostrým provozem doporučujeme import plateb otestovat. Více informací najdete v návodu [Testování importu plateb z banky a jejich párování](/article/89-testovani-importu-plateb-z-banky-a-jejich-parovani).
+:::

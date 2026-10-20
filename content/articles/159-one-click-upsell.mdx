@@ -1,0 +1,87 @@
+---
+title: One-click upsell
+url: /article/159-one-click-upsell
+description: One-click upsell je nový způsob jak ve FAPI používat upsellové stránky. Jak funguje one-click upsell? zákazník vyplní objednávkový formulář zaplatí pomocí vybra
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 9-online-prodej
+keywords:
+  - One-click upsell
+  - Platební brány (platba kartou)
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/159-one-click-upsell
+order: 128
+updatedAt: 2026-07-13T10:59:54Z
+legacyAnchors:
+  - id: Jak-funguje-one-click-upsell-0QX47
+    tag: h3
+    text: Jak funguje one-click upsell?
+    occurrence: 0
+    headingIndex: 0
+  - id: Schma-one-click-upsellu-nClxs
+    tag: h2
+    text: Schéma one-click upsellu
+    occurrence: 0
+    headingIndex: 1
+---
+One-click upsell je nový způsob jak ve FAPI používat upsellové stránky.
+
+### Jak funguje one-click upsell?
+
+1.  zákazník vyplní objednávkový formulář
+2.  zaplatí pomocí vybrané platební metody
+3.  vytvoří se faktura na hlavní položky prodejního formuláře a zákazníkovi strhneme peníze z vybrané plat. metody
+4.  zákazník je přesměrován na 1. upsell stránku
+5.  **po zvolení upsell položky je zákazníkovi automaticky stržena částka z předchozí plat. metody**
+6.  zákazník je přesměrován na další upsell stránku..
+7.  vybráním upsell položky se automaticky vytvoří nová faktura za každý přidaný upsell.
+
+## Schéma one-click upsellu
+
+![One-click upsell](/assets/articles/6886bc5edeb4a0f2.png)
+
+:::caution
+One-click upsell je dostupný pouze pro platební bránu Stripe a nově i GoPay.
+
+  
+
+⚠️ **Důležité pro upsellové stránky u GoPay:**
+
+Doporučujeme vyžádat si **navýšení denního limitu pro počet stržení plateb**.
+
+Ve výchozím nastavení bývá tento limit nastaven pouze na **1 stržení denně**. To znamená, že pokud zákazník projde objednávkou a následně přijme více upsellů, další platby by se nestrhávaly ihned, ale vždy až v následujících dnech.
+
+👉 Doporučujeme požádat například o navýšení limitu na **5 stržení denně**.
+
+Díky tomu se mohou všechny přijaté upsellové nabídky zaplatit **hned v návaznosti na první objednávku**, a ne postupně během několika dnů.
+
+Například pokud máte **5 upsellových stránek**, bez navýšeného limitu by se platby mohly rozložit až do **5 dní po sobě**.
+:::
+
+:::danger
+One-click upsell je nutné zapnout v kroku 3 Platba, doprava a fakturace. Pod výběrem platební brány.
+
+![One-click upsell](/assets/articles/8d106fb16afe6cc0.png)
+:::
+
+:::danger
+Při nákupu na splátky s nastavením [one-click upsellu](/article/159-one-click-upsell), dojde k rozdělení upsellu do splátek stejně jako u hlavního produktu.
+:::
+
+:::note
+**Důležité:** Pro správné odesílání e-mailů o zaplacení upsellu je nutné mít v šabloně zpráv nastavené e-maily pro úspěšné i neúspěšné stržení platby z karty, jelikož se jedná o další/dodatečnou platbu.
+
+  
+
+![One-click upsell](/assets/articles/a51530a24b6081fd.png)
+:::
+
+:::danger
+Při použití Stripe a one-click upsellu se **údaje z platební karty** zadávají přímo v prodejním formuláři.
+:::
+
+  
+
+[Více o upsellech naleznete zde](/article/76-upsell).

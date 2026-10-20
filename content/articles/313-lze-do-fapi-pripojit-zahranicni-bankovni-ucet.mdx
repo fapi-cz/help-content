@@ -1,0 +1,87 @@
+---
+title: Lze do FAPI připojit zahraniční bankovní účet?
+url: /article/313-lze-do-fapi-pripojit-zahranicni-bankovni-ucet
+description: "V tuto chvíli není možné do FAPI napojit zahraniční bankovní účet. Důvod je jednoduchý: FAPI umí automaticky pracovat jen s těmi bankami, u kterých podporujeme "
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Lze do FAPI připojit zahraniční bankovní účet?
+  - Platební brány (platba kartou)
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/313-lze-do-fapi-pripojit-zahranicni-bankovni-ucet
+order: 290
+updatedAt: 2026-07-13T12:42:05Z
+legacyAnchors:
+  - id: Co-to-znamen-v-praxi-HKzUn
+    tag: h2
+    text: Co to znamená v praxi?
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-je-een-9vTSy
+    tag: h2
+    text: Jaké je řešení?
+    occurrence: 0
+    headingIndex: 1
+  - id: Vhoda-platebn-brny-D2MWk
+    tag: h3
+    text: Výhoda platební brány
+    occurrence: 0
+    headingIndex: 2
+  - id: Doporuen-jXb_I
+    tag: h2
+    text: Doporučení
+    occurrence: 0
+    headingIndex: 3
+---
+V tuto chvíli **není možné do FAPI napojit zahraniční bankovní účet**.
+
+Důvod je jednoduchý: FAPI umí automaticky pracovat jen s těmi bankami, u kterých podporujeme **import plateb**. Právě díky importu plateb dokáže FAPI rozpoznat přijatou úhradu a automaticky ji spárovat s fakturou. U zahraničních bank toto napojení aktuálně nepodporujeme.
+
+## Co to znamená v praxi?
+
+Pokud používáte zahraniční bankovní účet, můžete jej sice uvádět na fakturách, ale:
+
+-   FAPI z něj **nebude umět automaticky načítat platby**,
+-   platby se tedy **nebudou automaticky párovat**,
+-   úhrady bude potřeba řešit **ručně**.
+
+## Jaké je řešení?
+
+Nejjednodušší variantou je využít **platební bránu**.
+
+Pokud zákazník zaplatí přes platební bránu, FAPI dostane informaci o zaplacení přímo od ní a platbu správně spáruje **bez ohledu na to, do které banky peníze dorazí**.
+
+### Výhoda platební brány
+
+Platební brána obchází omezení bankovního importu, protože:
+
+-   FAPI nečeká na informaci z banky,
+-   ale dostane potvrzení o platbě přímo od platební brány.
+
+Díky tomu můžete přijímat platby i na účet vedený v zahraničí, pokud to vaše platební brána umožňuje.
+
+## Doporučení
+
+Pokud potřebujete používat zahraniční účet, doporučujeme:
+
+-   přijímat platby přes **platební bránu**,
+-   nebo počítat s tím, že bankovní převody budete ve FAPI párovat **ručně**.
+
+  
+
+:::tip
+**Řešením pro vás může být napojení na WISE.**
+
+Více máme v této FAPI nápovědě:
+
+[https://napoveda.fapi.cz/article/323-propojeni-wise-ve-fapi](/article/323-propojeni-wise-ve-fapi)
+:::

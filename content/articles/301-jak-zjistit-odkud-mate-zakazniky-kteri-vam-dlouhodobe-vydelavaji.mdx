@@ -1,0 +1,330 @@
+---
+title: Jak zjistit, odkud máte zákazníky, kteří vám dlouhodobě vydělávají
+url: /article/301-jak-zjistit-odkud-mate-zakazniky-kteri-vam-dlouhodobe-vydelavaji
+description: Ve FAPI můžete sledovat zdroj zákazníka, nikoli jen zdroj jednotlivé objednávky. K tomu slouží parametr ref_code (v cookies fapi_ref_code) - "referenční označen
+category: Měření a Marketing
+categorySlug: 300-mereni-a-marketing
+categorySlugs:
+  - 300-mereni-a-marketing
+keywords:
+  - Jak zjistit, odkud máte zákazníky, kteří vám dlouhodobě vydělávají
+  - Měření a Marketing
+sourceUrl: https://napoveda.fapi.cz/article/301-jak-zjistit-odkud-mate-zakazniky-kteri-vam-dlouhodobe-vydelavaji
+order: 202
+updatedAt: 2026-07-13T11:51:24Z
+legacyAnchors:
+  - id: K-emu-je-refcode-a-pro-ho-pouvat-jrLHN
+    tag: h2
+    text: K čemu je ref_code a proč ho používat?
+    occurrence: 0
+    headingIndex: 0
+  - id: Typick-pouit--aGY2A
+    tag: h2
+    text: Typické použití ref_code
+    occurrence: 0
+    headingIndex: 1
+  - id: Pklady-hodnot-bsDgw
+    tag: h3
+    text: Příklady hodnot
+    occurrence: 0
+    headingIndex: 2
+  - id: Jak---5WnK
+    tag: h2
+    text: Jak ref_code funguje ve FAPI
+    occurrence: 0
+    headingIndex: 3
+  - id: 1-Sbr--BwLHX
+    tag: h3
+    text: 1. Sběr ref_code
+    occurrence: 0
+    headingIndex: 4
+  - id: 2-Odesln-s-objednvkou-1rAtB
+    tag: h3
+    text: 2. Odeslání s objednávkou
+    occurrence: 0
+    headingIndex: 5
+  - id: 3-Uloen-ke-klientovi-first-touch-VMthe
+    tag: h3
+    text: 3. Uložení ke klientovi (first-touch)
+    occurrence: 0
+    headingIndex: 6
+  - id: Jak--bjbO3
+    tag: h2
+    text: Jak ref_code používat pro vyhodnocování
+    occurrence: 0
+    headingIndex: 7
+  - id: Praktick-pklad-FRt_E
+    tag: h3
+    text: Praktický příklad
+    occurrence: 0
+    headingIndex: 8
+  - id: Jak--JoDYU
+    tag: h2
+    text: Jak měření pomocí ref_code nastavit
+    occurrence: 0
+    headingIndex: 9
+  - id: Shrnut-USul-
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 10
+  - id: Script-pro-vloen-do-vech-strnek-na-webu-iEXyz
+    tag: h2
+    text: "Script pro vložení do všech stránek na webu:"
+    occurrence: 0
+    headingIndex: 11
+---
+Ve FAPI můžete sledovat **zdroj zákazníka**, nikoli jen zdroj jednotlivé objednávky.
+
+K tomu slouží parametr **ref\_code** (v cookies **fapi\_ref\_code**) - "referenční označení".
+
+Tato funkce je určená pro **dlouhodobé vyhodnocování marketingu** – v řádu měsíců a let.
+
+Nejvíce se hodí pro ty z vás, kteří máte nějakou formu předplatného, kurzy, kluby, SaaS aplikace a další. A potřebujete vědět odkud sbíráte ty nejlepší zákazníky.
+
+## K čemu je ref\_code a proč ho používat?
+
+Běžné reklamní systémy (Facebook, Google apod.) vyhodnocují výkon:
+
+-   krátkodobě,
+-   často modelovaně,
+-   a primárně podle poslední interakce.
+
+To je dostačující pro optimalizaci kampaní, ale **nedává to odpověď na otázku**:
+
+:::tip
+**Odkud mám zákazníky, kteří mi dlouhodobě vydělávají?**
+:::
+
+`ref_code` ve FAPI řeší právě **původ zákazníka**.
+
+Díky tomu můžete:
+
+-   porovnávat kampaně podle kvality zákazníků,
+-   sledovat dlouhodobou hodnotu (LTV = Lifetime Value),
+-   rozhodovat se, **co má smysl dál škálovat**.
+
+## **Typické použití ref\_code**
+
+`ref_code` se ve FAPI nejčastěji používá pro označení:
+
+-   hlavních kampaní,
+-   vstupních produktů,
+-   marketingových kanálů,
+-   affiliate partnerů.
+
+### **Příklady hodnot**
+
+-   `book-fb`   – reklama na knihu (Facebook)
+-   `ws-gads`   – reklama na workshop (Google ads)
+-   `course-ig`   – reklama na kurz (Instagram)
+-   `partner-jan`   – affiliate partner
+
+Doporučujeme používat **krátké, čitelné a stabilní názvy**.
+
+:::caution
+**Doporučené zkratky pro platformy:**
+
+[Jak správně a konzistentně označovat reklamní platformy a kampaně](/article/302-jak-spravne-a-konzistentne-oznacovat-reklamni-platformy-a-kampane).
+:::
+
+  
+
+## **Jak ref\_code funguje ve FAPI**
+
+### **1\. Sběr ref\_code**
+
+FAPI pracuje s URL parametrem:
+
+```text
+ref_code
+```
+
+Například:
+
+```text
+https://example.cz/?ref_code=book-fb
+```
+
+Pomocí jednoduchého skriptu se hodnota:
+
+-   uloží do cookies jako `fapi_ref_code`  ,
+-   normalizuje (trim + lowercase),
+-   uloží se pouze při první návštěvě (first-touch).
+
+### **2\. Odeslání s objednávkou**
+
+Pokud je `ref_code` :
+
+-   přítomný v URL, nebo
+-   uložený v cookies (`fapi_ref_code` ),
+
+FAPI jej **automaticky odešle spolu s objednávkou**.
+
+Není nutné:
+
+-   přidávat skrytá pole do formuláře,
+-   ručně pracovat s daty,
+-   cokoliv nastavovat na straně objednávky.
+
+### **3\. Uložení ke klientovi (first-touch)**
+
+Pokud se jedná o **zcela nového zákazníka**, FAPI:
+
+-   uloží `ref_code`  k detailu klienta,
+-   tato hodnota se **už nikdy neaktualizuje**.
+
+Díky tomu:
+
+-   máte stabilní informaci o původu zákazníka,
+-   i když později přijde z jiné kampaně nebo kanálu.
+
+  
+
+## **Jak ref\_code používat pro vyhodnocování**
+
+Po určité době (např. 3–12 měsíců) můžete:
+
+-   filtrovat zákazníky podle `ref_code`  ,
+    
+    analyzovat:
+    
+    -   kolik jich platí,
+    -   kolik celkem utratili,
+    -   jaká je jejich dlouhodobá hodnota.
+    
+
+### **Praktický příklad**
+
+-   `book-fb`   přivede méně zákazníků,
+-   ale mají vyšší průměrnou útratu,
+-   `ws-fb`   přivede více zákazníků,
+-   ale s nižší dlouhodobou hodnotou.
+
+Na základě těchto dat se rozhodujete:
+
+-   co dál propagovat,
+-   kam směřovat rozpočet,
+-   jaký vstupní produkt má největší smysl.
+
+  
+
+## **Jak měření pomocí ref\_code nastavit**
+
+1.  **Nasadíte sběrný skript** na svůj web (viz další část nápovědy).
+    
+    **Použijete parametr ref\_code** ve svých odkazech:
+    
+    -   reklamy,
+    -   e-maily,
+    -   affiliate odkazy,
+    -   obsahové stránky.
+    
+
+FAPI se postará o zbytek:
+
+-   uložení,
+-   přenos do objednávky,
+-   vazbu na klienta.
+
+  
+
+## **Shrnutí**
+
+-   `ref_code`   slouží ke sledování **zdroje zákazníka**, ne jen objednávky.
+    
+    Ve FAPI:
+    
+    -   se sbírá z URL nebo cookies,
+    -   odesílá se s objednávkou,
+    -   ukládá se k novému klientovi natrvalo.
+    
+
+Díky tomu můžete:
+
+-   vyhodnocovat marketing dlouhodobě,
+-   porovnávat kvalitu zákazníků,
+-   rozhodovat se na základě reálných dat.
+    
+      
+    
+
+Pokud chcete vědět, **odkud máte zákazníky, kteří vám skutečně vydělávají**, `ref_code`   je základní nástroj.
+
+## Script pro vložení do všech stránek na webu:
+
+Vložte jej do hlavičky vašeho webu.
+
+```text
+<script>
+  (function () {
+    function getRootDomain() {
+      var host = window.location.hostname;
+
+      // localhost / IP → bez domain atributu
+      if (host === "localhost" || /^[0-9.]+$/.test(host)) {
+        return null;
+      }
+
+      var parts = host.split(".");
+      if (parts.length <= 2) {
+        return "." + host;
+      }
+
+      return "." + parts.slice(-2).join(".");
+    }
+
+    function setCookie(name, value, daysToLive) {
+      var cookie = name + "=" + encodeURIComponent(value);
+      cookie += "; path=/";
+
+      if (typeof daysToLive === "number") {
+        cookie += "; max-age=" + (daysToLive * 24 * 60 * 60);
+      }
+
+      var domain = getRootDomain();
+      if (domain) {
+        cookie += "; domain=" + domain;
+      }
+
+      document.cookie = cookie;
+    }
+
+    function getCookie(name) {
+      var cookieArr = document.cookie.split(";");
+
+      for (var i = 0; i < cookieArr.length; i++) {
+        var cookiePair = cookieArr[i].split("=");
+
+        if (name === cookiePair[0].trim()) {
+          return decodeURIComponent(cookiePair[1] || "");
+        }
+      }
+
+      return null;
+    }
+
+    // pokud už ref_code existuje, nic nepřepisuj (first-touch)
+    if (getCookie("fapi_ref_code")) {
+      return;
+    }
+
+    // ref_code z URL
+    var params = Object.fromEntries(new URLSearchParams(window.location.search).entries());
+    var refCode = params.ref_code || params.refCode || null;
+
+    if (!refCode) {
+      return;
+    }
+
+    // normalizace
+    refCode = refCode.trim().toLowerCase();
+    if (!refCode) {
+      return;
+    }
+
+    // uložení na 60 dní
+    setCookie("fapi_ref_code", refCode, 60);
+  })();
+</script>
+```

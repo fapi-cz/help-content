@@ -1,0 +1,76 @@
+---
+title: Odložené vystavení vyúčtovací faktury
+url: /article/69-odlozene-vystaveni-vyuctovaci-faktury
+description: Za normálních okolností FAPI vystavuje "vyúčtovací fakturu" (daňový doklad) ihned po přijetí platby. V určitých situacích může však vzniknout potřeba vystavit v
+category: Fakturace
+categorySlug: 6-fakturace
+categorySlugs:
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Odložené vystavení vyúčtovací faktury
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/69-odlozene-vystaveni-vyuctovaci-faktury
+order: 73
+updatedAt: 2026-10-12T13:47:41Z
+legacyAnchors:
+  - id: Pedpoklady-pro-pouit-funkce-Z1vIA
+    tag: h2
+    text: Předpoklady pro použití funkce
+    occurrence: 0
+    headingIndex: 0
+  - id: Nastaven-v-prodejnm-formuli-rjrav
+    tag: h2
+    text: Nastavení v prodejním formuláři
+    occurrence: 0
+    headingIndex: 1
+  - id: Vystavovn-doklad-po-aktivaci-funkce-t5-ZC
+    tag: h2
+    text: Vystavování dokladů po aktivaci funkce
+    occurrence: 0
+    headingIndex: 2
+---
+Za normálních okolností FAPI vystavuje "vyúčtovací fakturu" (daňový doklad) ihned po přijetí platby. V určitých situacích může však vzniknout potřeba vystavit vyúčtovací fakturu k prodávané službě až v době jejího dodání, přestože platbu přijímáte s předstihem. Typicky k tomu dochází u živých akcí, jako jsou semináře a školení.
+
+Tento případ ve FAPI řeší funkce časového odkladu vystavení vyúčtovací faktury, jejíž praktické použití si popíšeme v následujícím textu.
+
+## Předpoklady pro použití funkce
+
+Odložené vystavení vyúčtovací faktury je možné použít pouze tehdy, je-li aktivní vystavování zálohových faktur a dokladů o přijetí platby, tj. jsou-li zaškrtnuty přímo v prodejním formuláři v 3. kroku Platba, doprava a fakturace, v sekci nastavení fakturace, následující parametry:
+
+  
+
+1.  **Vystavovat doklady o přijetí platby**
+2.  **Vystavovat** **zálohové faktury**
+3.  Odložit vystavení daňového dokladu, včetně datumu pro odložené vystavení
+
+  
+
+![Odložené vystavení vyúčtovací faktury](/assets/articles/2153c994840e98bd.png)
+
+## Nastavení v prodejním formuláři
+
+Den, ke kterému chcete automaticky vystavit vyúčtovací fakturu u všech objednávek z daného prodejního formuláře, zadáte v nastavení tohoto prodejního formuláře, a to v poli **Datum vystavení daňového dokladu** po aktivaci parametru **Odložit vystavení daňového dokladu** v nastavení (záložka **Platby a fakturace**).
+
+![Odložené vystavení vyúčtovací faktury](/assets/articles/2153c994840e98bd.png)
+
+:::danger
+Při vypnutí funkce před dosažením zadaného data dojde k okamžitému vystavení všech vyúčtovacích faktur, jejichž vystavení bylo odloženo.
+:::
+
+## Vystavování dokladů po aktivaci funkce
+
+Po aktivaci funkce odloženého vystavení vyúčtovací faktury (daňového dokladu) se doklady vystavují následujícím způsobem:
+
+-   Po přijetí objednávky se vystaví zálohová faktura.
+-   Ihned po úhradě zálohové faktury se vystaví doklad o přijetí platby.
+-   Vyúčtovací faktura (daňový doklad) se vystaví automaticky k datu, které je nastaveno v prodejním formuláři (pole **Datum vystavení daňového dokladu**). Informace o datu vystavení vyúčtovací faktury je uvedeno i na stránce s detailem dokladu o přijetí platby.
+    
+    ![Odložené vystavení vyúčtovací faktury](/assets/articles/dd6e00ed03afb53c.png)
+    
+-   Alternativně lze vyúčtovací fakturu vystavit ještě před datem zadaným v nastavení prodejního formuláře, a to pomocí tlačítka **Vystavit fakturu ihned** na detailu dokladu o přijetí platby.
+
+:::caution
+Při odloženém vystavení vyúčtovací faktury přiznává plátce DPH daň z přijaté platby dokladem o přijetí platby, který se vystavuje ihned po úhradě zálohové faktury. Na vyúčtovací faktuře je proto DPH vyčíslena v nulové výši.
+:::

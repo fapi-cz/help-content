@@ -1,0 +1,252 @@
+---
+title: Založení a integrace platební brány GP Webpay ve FAPI
+url: /article/138-zalozeni-a-integrace-platebni-brany-gpwebpay
+description: Platební brána je internetové rozhraní pro zpracování online plateb. Umožňuje vašim zákazníkům zaplatit za objednané produkty a služby okamžitě. Kromě zvýšení k
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 5-nastaveni
+keywords:
+  - Založení a integrace platební brány GP Webpay ve FAPI
+  - Platební brány (platba kartou)
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/138-zalozeni-a-integrace-platebni-brany-gpwebpay
+order: 70
+updatedAt: 2026-07-13T10:31:15Z
+legacyAnchors:
+  - id: 2-Vytvoen-propojen-s-GPWebpay-ve-FAPI--KIi6T
+    tag: h2
+    text: 1. Založení GP Webpay účtu
+    occurrence: 0
+    headingIndex: 0
+  - id: Nastaven-platebn-brny-5BSWv
+    tag: h2
+    text: Nastavení platební brány
+    occurrence: 0
+    headingIndex: 1
+  - id: -4-Propojen-FAPI-s-platebn-brnou--mlXnd
+    tag: h2
+    text: 2. Vytvoření propojení s GP Webpay ve FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 3-Nastaven-platebn-brny-GoPay-v-prodejnm-formuli-nw0hg
+    tag: h2
+    text: 3. Nastavení platební brány GP Webpay v prodejním formuláři
+    occurrence: 0
+    headingIndex: 3
+---
+_Platební brána_ je internetové rozhraní pro zpracování online plateb. Umožňuje vašim zákazníkům zaplatit za objednané produkty a služby okamžitě. Kromě zvýšení komfortu pro zákazníka se to pozitivně projevuje také na množství dokončených nákupů.
+
+Následující článek popisuje postup pro integraci platební brány [GP webpay](https://www.gpwebpay.cz/) do FAPI. Více informací o platební bráně najdete na [webových stránkách provozovatele](https://www.gpwebpay.cz/).
+
+:::caution
+Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli (společnosti Global payments Europe s.r.o.), a není tedy součástí ceny za licenci FAPI.
+:::
+
+**Návod vám pomůže se:**
+
+1.  Založením GP Webpay účtu
+2.  Napojením GP Webpay do FAPI
+3.  Aktivací GP Webpay v prodejním formuláři
+
+  
+
+## 1\. Založení GP Webpay účtu
+
+Účet u platební brány GP Webpay si je možné **založit 2 způsoby:**
+
+  
+
+:::info
+**1.1 Přímo z administrace FAPI**
+:::
+
+Tento způsob je jednodušší a pracuje již rovnou s daty, které máte ve FAPI uvedeny v sekci Fakturační údaje. Tento způsob doporučujeme i kvůli správnému nastavení notifikačních URL adres.
+
+Ve FAPI v nabídce **Nastavení -\> Propojení aplikací** stiskněte tlačítko **Nové propojení s GP Webpay**.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/096df348ffd33eb7.png)
+
+Na následující stránce Klikněte na tlačítko **Registrovat do GP**.
+
+  
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/820bffea2ddee881.png)
+
+Tímto krokem se dostanete na stránku, kde již máte předvyplněný poptávkový formulář údaji z FAPI, nyní stačí jen **odeslat**.
+
+  
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/ff39b3050c42eb94.png)
+
+Po odeslání se dostanete na stránku s potvrzením, kde vás informují o tom, že se vám brzy ozvou.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/921ec1134169c389.png)
+
+:::tip
+Další možností je objednání platební brány **přímo přes formulář níže s vazbou na FAPI.**
+
+Tato varianta pomáhá se správným nastavením notifikačních URL adres a může urychlit celý proces zřízení.
+
+Stačí vyplnit jeden z následujících kontaktních formulářů a GP Webpay vás následně bude kontaktovat.
+
+[GP Webpay kontaktní formulář pro CZ](https://globalpayments.formstack.com/forms/cz_lead_partner2?Source%20detail=FAPI%201115Business%20s.r.o.&PartnerID=57548)
+
+[GP Webpay kontaktní formulář pro SK](https://globalpayments.formstack.com/forms/sk_lead_partner2?Source%20detail=FAPI%20Business&PartnerID=55943)
+:::
+
+  
+
+:::info
+**1.2 Na stránkách společnosti GP Webpay**.
+:::
+
+Přes tento odkaz [https://www.gpwebpay.cz/objednat/](https://www.gpwebpay.cz/objednat/), kde následně pokračujte ve 4 krocích.
+
+**1.2.1 Objednejte si platební bránu** přes některou se spolupracujících [bank](https://www.gpwebpay.cz/objednat/), které ji nabízí.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/f6d22fce21345734.png)
+
+**1.2.2 Uzavřete smlouvu o provozu platební brány GP Webpay s vaší bankou.** Od banky vám pak přijde smlouva s konkrétní nabídkou. Následně dostanete přístup do testovacího prostředí. Tím se ve FAPI nemusíte zabývat; můžete rovnou požádat o zprovoznění **ostrého režimu**.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/07c3f68376019731.png)
+
+**1.2.3 Nyní můžete integrovat platební bránu GP Webpay do FAPI**
+
+(tento krok je více popsán dále v 2. Vytvoření propojení s GP Webpay ve FAPI),
+
+na to navazuje i nastavení platební brány přímo v prodejním formuláři ve FAPI
+
+(tento krok je více popsán dále v 3. Nastavení platební brány GP Webpay v prodejním formuláři).
+
+  
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/cd420296ebdcbe86.png)
+
+  
+
+**1.2.4 Nyní můžete platební bránu GP Webpay používat**, k dispozici máte testovací i produkční režim. Oba mají své vlastní přístupy.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/a3f822adffecc481.png)
+
+:::caution
+## **Nastavení platební brány**
+
+Pro správné fungování platební brány je potřeba začít prvotním nastavením pár věcí přímo v GP Webpay. V administraci GP Webpay toto nastavení najdete v záložce  **E-shopy** (nákupní košík), kde vyberete váš eshop.
+
+V této části také najdete údaje, které budete následně potřebovat při vytváření propojení ve FAPI, zejména číslo obchodníka a kód poskytovatele.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/283655f6b1d5230b.png)
+
+Nastavte si HTTP metodu pro odpověď jako **POST.**
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/67efe1df7483325b.png)
+
+Dále si nechte vygenerovat klíče k platební bráně. Na stránce **Správa klíčů** (ikona klíče) stiskněte na tlačítko **VYTVOŘIT.**
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/6c6ea6b0ab8bc22d.png)
+
+V tomto kroku se vytvoří **soukromý klíč**, který si stáhněte a **uložte** na místo, kde ho ve svém počítači snadno najdete.
+
+Během vytváření klíče budete vyzváni k **zadání hesla**.
+:::
+
+:::danger
+**Heslo** k soukromému klíči si **zapamatujte**, budete ho dále potřebovat.
+:::
+
+:::caution
+Platební brána GP Webpay vám nyní vytvořila nový **soukromý klíč**. Pro aktivaci nového soukromého klíče je potřeba tento klíč nahrát do platební brány GP Webpay. 
+
+  
+
+Zvolte e-shop, pro který chcete tento klíč nahrát (tzn. FAPI).
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/f2dc9d2c20103d37.png)
+
+Klikněte na tlačítko **Vložit**. Otevře se vám pop-up okno, do kterého vložíte soukromý klíč, který jste si před chvílí stáhli.
+
+Do kolonky Heslo napíšete heslo, které jste zadali v předchozím kroku.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/f9d7ea90bdb07b83.png)
+
+Po úspěšném uložení si soukromý klíč zálohujte pomocí tlačítka **Zálohovat.**
+:::
+
+:::danger
+Tento zálohovaný soubor poté budete používat pro propojení FAPI a platební brány GP Webpay.
+:::
+
+:::caution
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/7c46d8d5c9b8e9e5.png)
+:::
+
+:::danger
+Všechny výše uvedené kroky je potřeba dokončit, jinak vámi vygenerovaný soukromý klíč nebude fungovat.
+
+Klíč nemažte, obsah tohoto souboru je potřeba nahrát do FAPI při vytváření propojení s platební branou.
+:::
+
+  
+
+## 2\. Vytvoření propojení s GP Webpay ve FAPI
+
+Pokud jste si založili platební bránu **na stránkách společnosti GP Webpay (nikoliv přes FAPI).** Pokračujte ve FAPI na nabídku **Nastavení -\> Propojení aplikací** stiskněte tlačítko **Nové propojení s GP Webpay**.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/096df348ffd33eb7.png)
+
+Dále je postup jednotný, bez ohledu na to, kterým způsobem jste platební bránu založili.
+
+Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení se službou GP Webpay.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/5922da42ac9a80b0.png)
+
+Vyplňte všechna pole:
+
+-   **Doména**: zvolte doménu, na které budete platební bránu používat (jde o interní pojmenování platební brány ve FAPI, ve tvaru např. fapi.cz)
+-   **Číslo obchodníka**: zjistíte v [portálu](https://portal.gpwebpay.com/portal/anon/login.xhtml) platební brány v sekci **E-shopy**
+-   **Soukromý klíč**: pokud ještě nemáte, je potřeba si jej nechat vygenerovat viz. **Nastavení platební brány.** Pokud již máte klíč vygenerovaný, stačí ho otevřít v textovém editoru a **celý jeho obsah překopírovat do FAPI**.
+-   **Heslo k soukromému klíči**: zvolíte si při vytváření soukromého klíče (je nutné si je **zapamatovat**).
+-   **Veřejný klíč**: nachází se v sekci **Ke stažení** a slouží k ověření, zda někdo nepodvrhnul odpověď z platební brány, ve staženém ZIP souboru najděte soubor končící na **.pem**, otevřete jej v textovém editoru a vykopírujte do **FAPI** **celý jeho obsah**.
+-   **Kód poskytovatele**: zjistíte v [portálu](https://portal.gpwebpay.com/portal/anon/login.xhtml) platební brány v sekci **E-shopy**
+
+  
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/283655f6b1d5230b.png)
+
+  
+
+Zadané údaje ve FAPI uložte stiskem tlačítka **Uložit nastavení**.
+
+:::danger
+Testovací i produkční režim mají své vlastní přístupové údaje a je potřeba je správně zadat, jinak jsou vyhodnoceny chybou, že se jedná o nesprávné přístupy.
+:::
+
+  
+
+## 3\. Nastavení platební brány GP Webpay v prodejním formuláři
+
+Nakonec už jen zbývá propojenou platební bránu přidat do prodejního formuláře, v němž si přejete platební bránu využívat.
+
+V nabídce **Prodej -\> Prodejní formuláře**, vyberte formulář, u kterého chcete nabídnout online platby zprostředkované pomocí platební brány GP Webpay a stiskněte tlačítko **Upravit prodejní formulář.**
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/aa8bda03be354320.png)
+
+Na záložce **3\.** **Platba, doprava a fakturace** v úpravě prodejního formuláře vyberte v sekci **Platební brána** příslušné propojení s platební bránou GP Webpay.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/d9a3a7da38190a02.png)
+
+Změny provedené v nastavení prodejního formuláře uložte tlačítkem **Uložit formulář**.
+
+![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/b421dcfa3013840d.png)
+
+Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář je nyní propojen s platební bránou GP Webpay a vaši zákazníci vám mohou začít platit online.
+
+  
+
+:::tip
+Mnoho užitečných návodů o GP Webpay najdete pod tímto odkazem, mimo to GP Webpay má českou podporu:
+
+[https://www.gpwebpay.cz/ke-stazeni/](https://www.gpwebpay.cz/ke-stazeni/)
+:::

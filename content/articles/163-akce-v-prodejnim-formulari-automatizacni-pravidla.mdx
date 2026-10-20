@@ -1,0 +1,126 @@
+---
+title: Akce v prodejním formuláři – automatizační pravidla
+url: /article/163-akce-v-prodejnim-formulari-automatizacni-pravidla
+description: Jednou z nejsilnějších stránek FAPI je automatizace. Jejím správným nastavením ušetříte obrovská množství času a zajistíte na pár kliknutí spoustu rutinních čin
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Akce v prodejním formuláři – automatizační pravidla
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla
+order: 76
+updatedAt: 2026-07-13T10:35:44Z
+---
+Jednou z nejsilnějších stránek FAPI je automatizace. Jejím správným nastavením ušetříte obrovská množství času a zajistíte na pár kliknutí spoustu rutinních činností, které by jinak musela dělat spousta lidí ve firmě.
+
+  
+
+Kromě automatické tvorby dokladů nebo párování plateb, je významnou součástí FAPI automatizace používání AKCÍ. Jsou to předdefinovaná pravidla, která funguje jednoduchou logikou: **KDYŽ nastane akce A =\> PROVEĎ akci B.**
+
+Nastavují se pro každý prodejní formulář zvlášť, najdete je v režimu úprav prodejního formuláře v kroku 4 Akce. 
+
+![Akce v prodejním formuláři – automatizační pravidla](/assets/articles/13fb112e1ad2379d.png)
+
+Takhle vypadají v úplně novém formuláři, když ještě nemáte definované žádné pravidlo:
+
+![Akce v prodejním formuláři – automatizační pravidla](/assets/articles/8616b549af51365b.png)
+
+### Co je UDÁLOST
+
+Událost je spouštěč (trigger), který v pravidle říká, kdy se má pravidlo provést (část KDYŽ nastane ...). Ve FAPI jsou dostupné tyto typy spouštěcích událostí:
+
+Objednávka:
+
+-   vystavení objednávky
+-   zaplacení objednávky
+-   stornování objednávky
+-   vystavení Opravného Daňového Dokladu
+
+Položky:
+
+-   objednání položky X
+-   zaplacení položky X
+-   stornování položky X
+
+Položky podle kódu:
+
+-   objednání položky s kódem XYZ
+-   zaplacení položky s kódem XYZ
+-   stornování položky s kódem XYZ
+
+Pravidelná fakturace:
+
+-   Spuštění pravidelné fakturace — Pozor!: duplikuje událost "vystavení objednávky"
+-   Zastavení pravidelné fakturace
+-   Deaktivace strhávání z karty
+-   Znovuspuštění pravidelné fakturace
+
+  
+
+**"Objednávka"** události se spouští s každou objednávkou, bez ohledu na její obsah (i na prázdné objednávky).
+
+**"Položky"** události se spouští jen tehdy, když objednávka obsahuje konkrétní položku, kterou jste upřesnili v zadání pravidla. Objednávky, které položku neobsahují, se tímto pravidlem přeskočí a akce se nespustí.
+
+**"Položky podle kódu"** události se spouští jen tehdy, když objednávka obsahuje konkrétní položku s definovaným kódem. Objednávky, které položku neobsahují, se tímto pravidlem přeskočí a akce se nespustí. Pravidla se používají pro projení s některými jinými systémy, jako [Konverzky](/article/141-konverzky-a-automatizace), nebo [Mioweb](/article/160-mioweb-a-automatizace).
+
+**"Pravidelná fakturace"** události se spouští s nastavenou pravidelnou fakturací a s šablonou pravidelných faktur. "Spuštění pravidelné fakturace" se spouští (chová) stejně jako "vystavení objednávky", pokud budete mít obě události totožně nastavené, bude docházet k duplikovanému spuštění.
+
+### Co je AKCE
+
+Akce je definicí úkolu, který se má provést, když nastane spouštěcí událost. Je to ta část pravidla, která popisuje co se provede po splnění podmínky KDYŽ. Ve FAPI jsou dostupné tyto typy akcí:
+
+-   spuštění skriptu na definované URL adrese
+-   přidání do nebo odebrání kontaktu z mailingové aplikace (musí existovat napojení ve Nastavení \> Propojení aplikací)
+-   přidání do nebo odebrání kontaktu do Anabixu (musí existovat napojení ve Nastavení \> Propojení aplikací)
+-   odeslání emailové nebo SMS zprávy klientovi (pro SMS zprávy musí existovat napojení ve Nastavení \> Propojení aplikací)
+-   odeslání emailu na předdefinovanou emailovou adresu
+-   přidání kontaktu do členské sekce FAPI member (podrobnější [nápovědu najdete zde](/article/99-fapi-member-zakladani-clenstvi))
+
+## Jak nastavit nové pravidlo
+
+V prodejním formuláři v kroku 4 Akce sjeďte na konec stránky s tabulkou Akcí. Jeden řádek tabulky = jedno pravidlo. Vyplňujte seshora dolů, zleva doprava. 
+
+1\. Ve sloupci Událost definujte co bude špouštěčem pravidla. Pokud vybíráte události spojené s položkou, specifikujte i kterou položku bude spouštěč hlídat.
+
+2\. Upřesnění vyplníte v druhém řádku, v buňce hned po výběrem události.
+
+![Akce v prodejním formuláři – automatizační pravidla](/assets/articles/177f1af8a70e08fe.png)
+
+3\. Ve sloupci Akce upřesněte jakou činnost má FAPI vykonat. U většiny akcí bude potřeba doplnit podrobnosti:
+
+-   u skriptů vyplnit URL adresu, kde skript běží
+-   u zpracování kontaktů v mailingových nástrojích upřesnit ve kterém @ seznamu máme akci provést
+-   u odesílání emailů a SMS zpráv pak určit kterou konkrétní šablonu máme použít (pokud žádnou nevidíte, [projděte si tuto nápovědu](/article/14-casto-kladene-dotazy-faq))
+-   u FAPI member napojení vybrat na kterém webu aplikace běží (FAPI umožňuje napojit více webů najednou) + určit na kolik dní se má přístup založit
+
+### K čemu se dají automatizační akce používat?
+
+To už záleží na konkrétních potřebách vašeho podnikání. Postavit můžete jednoduché akce na jedinou činnost, nebo udělat seznam, který bude například:
+
+-   podrobně pracovat na třídění kontaktů v mailingové aplikaci podle zakoupených položek,
+-   rozesílat info emaily dropshipping partnerům,
+-   posílat data do Integromatu, kde dále třídíte, filtrujete nebo upravujete data z objednávky a dále rozesíláte do vlastních aplikací,
+-   otevírat členské sekce v [Miowebu](https://www.mioweb.cz/?a_box=aq8y9f9x),
+-   a mnoho dalšího.
+
+FAPI každé pravidlo kontroluje, takže při chybném nastavení nepovolíme změny v nastavení formuláře uložit. Pročtěte prosím podrobnosti ohlášené chyby, opravte ji a uložte prodejní formulář. Typicky když vyberete akci, týkající se položky, ale zapomenete upřesnit o kterou položku jde.
+
+U napojení na mailingové nebo CRM aplikace, je nutné aby daná aplikace skutečně existovala a byla dostupná. Pokud ji přestanete používat, nebo má aplikace výpadek, budou automatizační akce hlásit problém, nebo budou dočasně zobrazovat prázdné řádky (data z externích aplikací nejdou v tu chvíli načíst).
+
+  
+
+## Chci měnit stav dokladu, ale nespouštět akce s tím spojené
+
+Pro tenhle účel je u vybraných akcí v detailu dokladu (Faktury \> Přehled faktur \> klik na číslo dokladu) k dispozici rozšířená nabídka pod "trojúhelníčkem"
+
+![Akce v prodejním formuláři – automatizační pravidla](/assets/articles/71e07d10c04d930e.png)
+
+Zde máte na výběr, zda chcete konkrétní změnu provést:
+
+-   běžným způsobem i s odesláním emailu a spuštěním akci (to je výchozí způsob),
+-   provést změnu, ale neodesílat související email,
+-   provést změnu a neposílat email, ani nespouštět akce.

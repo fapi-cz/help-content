@@ -1,0 +1,138 @@
+---
+title: Jak propojit FAPI s MioWebem
+url: /article/172-jak-propojit-fapi-a-mioweb
+description: Máte web vytvořený v MioWebu a chcete na něm prodávat pomocí FAPI? Propojením zpřístupníte své prodejní formuláře FAPI přímo v editoru MioWebu. Následně si vybe
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak propojit FAPI s MioWebem
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/172-jak-propojit-fapi-a-mioweb
+order: 101
+updatedAt: 2026-09-08T06:43:09Z
+legacyAnchors:
+  - id: Co-budete-potebovat-Q0JeA
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 0
+  - id: 1-Otevete-nastaven-propojen-v-MioWebu-EkX0N
+    tag: h2
+    text: 1. Otevřete nastavení propojení v MioWebu
+    occurrence: 0
+    headingIndex: 1
+  - id: 2-Pidejte-propojen-s-FAPI-tc_xy
+    tag: h2
+    text: 2. Přidejte propojení s FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 3-Vyplte-pstupov-daje-z-FAPI-YP7a8
+    tag: h2
+    text: 3. Vyplňte přístupové údaje z FAPI
+    occurrence: 0
+    headingIndex: 3
+  - id: 4-Ovte-propojen-hy1VK
+    tag: h2
+    text: 4. Ověřte propojení
+    occurrence: 0
+    headingIndex: 4
+  - id: ropojen-nefunguje-nebo-se-formule-nenabzej-BrjER
+    tag: h2
+    text: Propojení nefunguje nebo se formuláře nenabízejí?
+    occurrence: 0
+    headingIndex: 5
+---
+Máte web vytvořený v MioWebu a chcete na něm prodávat pomocí FAPI? Propojením zpřístupníte své prodejní formuláře FAPI přímo v editoru MioWebu. Následně si vyberete požadovaný formulář a vložíte jej na svou stránku.
+
+MioWeb vám poslouží k vytvoření prodejní stránky, zatímco ve FAPI budete spravovat prodejní formuláře, doklady a navazující automatizace. Propojení využijete také při nastavení fakturace pro MioWeb e-shop.
+
+:::danger
+**Důležité:** Propojením účtů se formulář na stránku ještě nevloží. Po dokončení tohoto návodu pokračujte vložením formuláře nebo nastavením propojení e-shopu podle odkazů na konci článku.
+:::
+
+## Co budete potřebovat
+
+Připravte si:
+
+-   [přístup do administrace svého webu v MioWebu,](https://mujucet.mioweb.cz/sign/?backlink=8qdu3)
+
+(pokud [**MioWeb**](https://www.mioweb.cz/?a_box=aq8y9f9x) účet ještě nemáte, založte si jej z tohoto odkazu),
+
+-   [přístup do účtu FAPI](https://web.fapi.cz/?projectId=all), který chcete propojit,
+-   uživatelské jméno a API klíč k tomuto účtu FAPI.
+
+  
+
+:::caution
+**API klíč** je přístupový údaj, který umožňuje MioWebu komunikovat s vaším účtem FAPI. Zacházejte s ním podobně jako s heslem, tedy nezveřejňujte jej a nevkládejte jej do veřejně dostupných screenshotů.
+
+Pokud klíč ještě nemáte, postupujte podle nápovědy [Jak získat API klíč](/article/128-jak-ziskat-api-klic).
+
+Používáte-li více účtů FAPI, ověřte, že kopírujete údaje právě z toho účtu, jehož formuláře chcete v MioWebu používat.
+:::
+
+  
+
+:::tip
+**Můžete postupovat podle této FAPI videonápovědy:**
+
+<Video src="https://www.youtube.com/embed/5XneG6QZzhE" />
+:::
+
+## **1\. Otevřete nastavení propojení v MioWebu**
+
+Přihlaste se do administrace svého webu v MioWebu a přejděte do [**Nastavení - Propojení aplikací**](https://fapi.cz/mw-admin/?setting=ve_connect).
+
+![Jak propojit FAPI s MioWebem](/assets/articles/581cfcfee9de4ce1.png)
+
+## 2\. Přidejte propojení s FAPI
+
+V nabídce aplikací vyhledejte **FAPI** a klikněte na možnost pro jeho přidání.
+
+![Jak propojit FAPI s MioWebem](/assets/articles/998b32d7c6378edc.png)
+
+## 3\. Vyplňte přístupové údaje z FAPI
+
+Do připravených polí vložte údaje vygenerované [z FAPI ze sekce Můj účet \> API klíče.](https://web.fapi.cz/account-settings/api-tokens?projectId=all)
+
+Můžete postupovat rovněž podle této nápovědy [Jak získat API klíč](/article/128-jak-ziskat-api-klic).
+
+![Jak propojit FAPI s MioWebem](/assets/articles/9ebb4b546119586b.png)
+
+-   **Uživatelské jméno** k účtu FAPI,
+-   **API klíč** získaný v tomto účtu.
+
+Údaje zkopírujte přesně a zkontrolujte, že jste na jejich začátku nebo konci nepřidali mezeru.
+
+Poté klikněte na **Uložit**.
+
+![Jak propojit FAPI s MioWebem](/assets/articles/6bd5bd6773e0eaee.png)
+
+## 4\. Ověřte propojení
+
+Po uložení zkontrolujte, zda MioWeb nezobrazuje chybu.
+
+Pokud již máte ve FAPI vytvořený prodejní formulář, můžete propojení ověřit při jeho vkládání na stránku, kdy v nastavení elementu **Prodejní formulář** by se měly nabídnout formuláře z propojeného FAPI účtu.
+
+Podrobný postup najdete v nápovědě [Jak vložit prodejní formulář FAPI na stránku v MioWebu](/article/170-vlozeni-prodejniho-formulare-na-mioweb).
+
+Nebo se vám může hodit i tato nápověda [Jak propojit Mioweb e-shop s FAPI](/article/173-jak-propojit-fapi-s-mioweb-e-shopem) a mít svou fakturaci pod kontrolou. 
+
+:::danger
+**Důležité:** Než začnete testovat nákupy v prodejním formuláři, odhlaste se z administrace Miowebu.
+:::
+
+## Propojení nefunguje nebo se formuláře nenabízejí?
+
+Zkontrolujte, zda:
+
+-   uživatelské jméno a API klíč pocházejí ze stejného účtu FAPI,
+-   jste oba údaje zkopírovali celé a bez přidaných mezer,
+-   jste nastavení v MioWebu uložili,
+-   je požadovaný formulář vytvořený právě v propojeném účtu FAPI.
+
+Pokud problém přetrvává, kontaktujte podporu a popište, ve kterém kroku nastal. Přiložte případné chybové hlášení, ale **API klíč ve screenshotu skryjte**.

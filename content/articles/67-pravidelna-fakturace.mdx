@@ -1,0 +1,220 @@
+---
+title: Pravidelná fakturace
+url: /article/67-pravidelna-fakturace
+description: Prodáváte určitý produkt či službu opakovaně v pravidelných intervalech a stejným způsobem potřebujete svým zákazníkům i fakturovat? Pro tento případ nabízí FAP
+category: Fakturace
+categorySlug: 6-fakturace
+categorySlugs:
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Pravidelná fakturace
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/67-pravidelna-fakturace
+order: 23
+updatedAt: 2026-10-14T08:19:32Z
+legacyAnchors:
+  - id: Run-vytvoen-ablony-pravidelnch-faktur-2V4Iq
+    tag: h2
+    text: Ruční vytvoření šablony pravidelných faktur
+    occurrence: 0
+    headingIndex: 0
+  - id: Monosti-prce-s-pravidelnou-fakturac--yssbc
+    tag: h2
+    text: Možnosti práce s pravidelnou fakturací
+    occurrence: 0
+    headingIndex: 1
+  - id: Pravideln-fakturace-v-prodejnm-formuli-gDlT_
+    tag: h2
+    text: Pravidelná fakturace v prodejním formuláři
+    occurrence: 0
+    headingIndex: 2
+  - id: Vystavovn-pravidelnch-faktur-C5UP_
+    tag: h2
+    text: Vystavování pravidelných faktur
+    occurrence: 0
+    headingIndex: 3
+  - id: Nahrazen-prodejn-poloky-v-pravidelnch-fakturch-prodej-trialu-9bGy1
+    tag: h2
+    text: Nahrazení prodejní položky v pravidelných fakturách (prodej trialu)
+    occurrence: 0
+    headingIndex: 4
+  - id: Chovn-jednorzov-poloky-a-pravidelnho-upsellu-oArzh
+    tag: h2
+    text: Chování jednorázové položky a pravidelného upsellu
+    occurrence: 0
+    headingIndex: 5
+  - id: Jak-fakturovat-vdy-v-posledn-den-v-msci-8_Yym
+    tag: h2
+    text: Jak fakturovat vždy v poslední den v měsíci
+    occurrence: 0
+    headingIndex: 6
+  - id: Datum-v-nzvu-poloky-BjjoS
+    tag: h2
+    text: Datum v názvu položky
+    occurrence: 0
+    headingIndex: 7
+---
+Prodáváte určitý produkt či službu opakovaně v pravidelných intervalech a stejným způsobem potřebujete svým zákazníkům i fakturovat? Pro tento případ nabízí FAPI _šablony pravidelných faktur_, které takový úkol hravě zvládnou za vás.
+
+Šablonu pravidelných faktur můžete vytvořit buď ručně, nebo může být vytvořena automaticky na základě vystavení objednávky v prodejním formuláři. Oběma případům se podrobněji věnuje následující text.
+
+## Ruční vytvoření šablony pravidelných faktur
+
+Funkci pravidelné fakturace najdete v nabídce **Faktury - Šablony pravidelných faktur**. Pomocí tlačítka **Vytvořit šablonu pravidelných faktur** zobrazíte formulář pro zadání všech nezbytných údajů nové šablony.
+
+![Pravidelná fakturace](/assets/articles/af830effd0e002a8.png)
+
+Ve formuláři zadejte parametry pravidelné fakturace, a to konkrétně:
+
+-   stav šablony pravidelných faktur (výchozím stavem je "aktivní", vystavování pravidelných faktur se může ukončit automaticky pomocí parametru **KONEC VYSTAVOVÁNÍ**, popř. je můžete kdykoli zastavit ručně),
+-   periodu, s jakou se budou faktury vystavovat,
+-   začátek příštího období (vyjadřuje období předplatného, ke kterému se pravidelná fakturace vztahuje),
+-   parametry ukončení pravidelné fakturace (pokud si přejete vystavování faktur omezit),
+-   předstih pro vystavování faktur (díky tomuto parametru lze fakturu na další období předplatného vystavit 1-30 dní před před začátkem následujícího období),
+-   pro automaticky strhávané platby z karty doporučujeme nastavit 7 dní, včetně splatnosti,
+-   splatnost pravidelně vystavovaných faktur (může být nastavena odlišně od základního nastavení v účtu FAPI),
+-   poznámku (zde můžete zapsat libovolné doplňující informace k vytvářené šabloně).
+
+Další pole formuláře mají obdobný význam jako u ručního vystavení faktury.
+
+:::caution
+Vyplnění poznámky je v přehledu šablon pravidelných faktur signalizováno zabarveným pravým horním rohem řádku s danou šablonou. Text poznámky se zobrazí po najetí myší.
+:::
+
+:::danger
+Ruční vytvoření šablony pro pravidelnou fakturaci lze provést i tak, že objednáte jménem zákazníka přímo v prodejním formuláři v administraci - Prodej \> Prodejní formuláře \> Náhled.
+
+**Pozor:** Ruční vytvoření jednoho dokladu přes Faktury \> Přehled faktur \> Vystavit fakturu novou pravidelnou fakturaci **nezaloží**.
+
+**Pozor:** Při znovu spuštění zastavených šablon je rozhodující 9 h. Šablony spuštěné před 9 h vystaví fakturu ještě tentýž den. Šablony spuštěné po 9 h vystaví faktury den následující.
+:::
+
+## Možnosti práce s pravidelnou fakturací
+
+![Pravidelná fakturace](/assets/articles/620cdcb2268d164f.png)
+
+-   **Zastavit** - Zastaví danou pravidelnou fakturaci. Další faktury z této fakturace již nebudou automaticky vystavovány.
+-   **Duplikovat** - Vytvoří kopii vybrané pravidelné fakturace. Kopii je možné upravit a uložit jako novou samostatnou pravidelnou fakturaci.
+-   **Zrušit automatické strhávání** - Tato volba slouží k odstranění uložené platební karty zákazníka – tzv. „zapomenutí karty“. Znamená to, že se FAPI při dalším vystavení faktury již nebude pokoušet strhnout platbu automaticky z karty./
+
+:::danger
+**Důležité:** Pravidelná fakturace se tímto krokem **nezastaví**. Faktury budou zákazníkovi nadále vystavovány podle nastaveného plánu, ale bez pokusu o automatickou úhradu kartou.
+
+Pro automatické zastavení využijte tuto FAPI nápovědu a funkce FAPI:
+
+[Automatické storno faktur a zastavení pravidelné fakturace](/article/296-automaticke-storno-faktur-a-zastaveni-pravidelne-fakturace)
+:::
+
+-   **Vystavení fakturu** - Vystaví okamžitě novou fakturu podle nastavení pravidelné fakturace. Tuto volbu lze použít v případě, že zákazník potřebuje uhradit další období dříve.
+-   **Smazat** - Trvale odstraní pravidelnou fakturaci. Tato možnost je dostupná pouze tehdy, pokud z dané pravidelné fakturace nebyla dosud vystavena žádná faktura.
+
+## Pravidelná fakturace v prodejním formuláři
+
+Šablona pravidelné fakturace se může automaticky vytvořit také vystavením objednávky přes prodejní formulář.
+
+Pro tento případ je třeba v nastavení prodejního formuláře zaškrtnout v sekci **PRAVIDELNÁ FAKTURACE** na záložce **Platby a fakturace** parametr **Vystavovat pravidelné faktury**. Tím se zobrazí parametry pro nastavení pravidelné fakturace.
+
+Pravidelné faktury vystavovat s předstihem můžete 1 - 30 dní.
+
+![Pravidelná fakturace](/assets/articles/e1fb9e471ba33d38.png)
+
+Konkrétně jde o:
+
+-   periodu fakturace,
+-   nastavení automatického ukončení pravidelné fakturace,
+-   možnost vystavování faktur s časovým předstihem 1 - 30 dnů,
+-   při automatické strhávání platby z karty doporučujeme ponechat právě 7 dnů a uzpůsobit tomu i splatnost na 7 dní,
+-   možnost náhrady prodejní položky od 2. vystavené faktury (např. při prodeji produktu na zkoušku - trialu).
+
+Po vytvoření objednávky v prodejním formuláři, ve kterém je nastavena pravidelná fakturace, se vystaví první faktura a současně se automaticky založí šablona pravidelných faktur na základě údajů vyplněných klientem v objednávce.
+
+:::danger
+V šabloně pravidelných faktur ani v prodejním formuláři s pravidelnou fakturací nelze použít [prodejní položku s omezeným množstvím](/article/48-omezeni-dostupneho-mnozstvi-produktu).
+:::
+
+:::tip
+Pravidelnou fakturaci lze rozšířit o automatické strhávání plateb z karty. Více se dozvíte v článku nápovědy [Opakované platby](/article/73-opakovane-platby).
+:::
+
+## Vystavování pravidelných faktur
+
+Je-li vytvořená šablona pravidelných faktur ve stavu _aktivní_, FAPI na základě údajů uvedených v šabloně automaticky vystavuje doklady s nastavenou periodou až do vystavení zadaného počtu faktur, data ukončení pravidelné fakturace, popř. do jejího ručního zastavení.
+
+**Automatické zastavení pravidelné fakturace**
+
+Pokud chcete zajistit, aby se pravidelná fakturace automaticky zastavila v případě stornování poslední zálohové faktury, postupujte podle následujících kroků:
+
+**Přejděte do nastavení:**
+
+_Nastavení_ → [_Nastavení fakturace_](https://web.fapi.cz/settings) → Aktivujte možnost **Zastavit pravidelnou fakturaci při stornu poslední zálohové faktury**.
+
+**Jak tato funkce funguje:**
+
+Pravidelná fakturace se automaticky zastaví, pokud zákazník nezaplatil poslední vystavenou zálohovou fakturu (vytvořenou na základě pravidelné fakturace) a tato faktura byla následně stornována.
+
+Po stornování dané zálohové faktury systém automaticky ukončí i odpovídající pravidelnou fakturaci pro daného zákazníka.
+
+## Nahrazení prodejní položky v pravidelných fakturách (prodej trialu)
+
+V některých případech může být užitečné automaticky modifikovat obsah objednávky po vystavení první pravidelné faktury a nahradit objednaný produkt (prodejní položku) v dalších fakturách jiným produktem.
+
+:::danger
+**Pozor:** nahrazení položky je možné pouze pro hlavní prodejní položky a pro miniupsell produkty. Produkty v **Upsellu nahrazovat nejde**, ty se automaticky po vystavení prvního dokladu z šablony pro 2. a další fakturu **vymažou**.
+:::
+
+V praxi nachází tato funkce uplatnění např. při prodeji _trialu_ (zkušební verze) předplacené služby. Jiným příkladem využití je situace, kdy společně s opakujícím se produktem prodáváte i jednorázový miniupsell produkt a nechcete, aby miniupsellový produkt byl součástí pravidelně vystavovaných faktur.
+
+K aktivaci této funkce slouží volba **Nahradit položku v 2. a další pravidelné faktuře** (v sekci **PRAVIDELNÁ FAKTURACE** na záložce **Platby a fakturace** v nastavení prodejního formuláře).
+
+![Pravidelná fakturace](/assets/articles/146e59930491e373.png)
+
+Pomocí dvojic polí s vyplněnými prodejními položkami určíte, jaká položka má být od druhé pravidelné faktury z objednávky odstraněna a jakou položkou má být nahrazena.
+
+Volba **Délka prvního období ... dní** slouží k nastavení délky období nahrazované položky (tedy např. doby trvání trialu), pokud se tato délka liší od periody hlavního produktu.
+
+:::tip
+Funkci nahrazení položky lze využít nejen pro _nahrazení_ prodejních položek, ale také pro _odebrání_ položky z dalších pravidelných faktur (prázdné pole v druhém sloupci) nebo pro _přidání_ prodejní položky, která není součástí objednávky (prázdné pole v prvním sloupci).
+:::
+
+Pokud funkci nahrazení, resp. odebrání, položky používáte tak, že se z následujících faktur ztratí fyzické produkty (knížka, zboží), odstraní se z celé šablony pravidelné fakturace i [související doprava](/article/61-doprava). Pokud v šabloně zůstane alespoň jeden fyzický produkt, doprava zůstane beze změny.
+
+:::danger
+Pokud chcete funkci používat pro prodej trialu v kombinaci s [opakovanými platbami](/article/73-opakovane-platby), je nutné, aby trialová položka měla nenulovou cenu, resp. minimální hodnotu, kterou akceptuje daná platební brána (např. u Stripe je to 15 Kč, resp. €0,5. V opačném případě by se nemohla založit opakovaná platba na platební bráně.
+
+Délku trialu při aktivních opakovaných platbách nelze zkrátit pod 8 dní, a to z důvodu povinnosti informovat klienta o chystaném automatickém stržení platby.
+:::
+
+## Chování jednorázové položky a pravidelného upsellu
+
+Občas se hodí používat specifické nastavení prodeje, kdy chcete prodávat jednu hlavní položku jako jednorázový nákup, a jako upsell nabídnout pravidelné předplatné. Prodejní formulář tedy nastavíte na pravidelnou fakturaci a použijete výše popisovanou funkci Nahrazení položky tak, aby se hlavní - jednorázová - položka odstranila z následných faktur:
+
+![Pravidelná fakturace](/assets/articles/a2e2c282516dd404.png)
+
+FAPI potom už jen čeká, zda zákazník při nákupu přihodí do košíku upsellovou položku (která je pravidelně fakturovaná), a pak nastane jedna ze dvou situací:
+
+1.  zákazník upsell nechce – nezaložíme pravidelnou fakturaci, z nákupu vznikne jen jednorázová faktura,
+2.  zákazník dokoupil upsell – založíme pravidelnou fakturaci jen s upsell položkou (může jich být i vícero, pokud máte upsellů v daném formuláři nastaveno více).
+
+  
+
+## Jak fakturovat vždy v poslední den v měsíci
+
+FAPI zatím nemá automatickou funkčnost pro nastavení posledního dne v měsíci. Aby se fakturovalo vždy poslední den v měsíci, tak je potřeba nastavit šablonu pravidelné fakturace na poslední den v měsíci a zároveň to musí být měsíc, který má 31 dní.
+
+Tedy pokud prav. fakturaci nastavujete v únoru a nastavíte na 28. (resp. 29. den v přestupném roce), tak se bude vždy vystavovat doklad 28., resp. 29. den v měsíci. Analogicky pokud byste nastavili šablonu např. na 30. dubna, tak se vždy bude vystavovat 30. den v měsíci.
+
+Pokud ji ale nastavíte např. na 31. květen, tak se další faktura vždy vystaví poslední den v měsíci, ať má měsíc 28, 29, 30 nebo 31 dnů.
+
+  
+
+## Datum v názvu položky
+
+Někdy může být užitečné do názvu položky doplnit datum vystavení faktury. Toho lze dosáhnout pomocí zástupného symbolu \{createDate\} zadaného v názvu položky, popř. v jejím popisu. Tento zástupný symbol se na faktuře v okamžiku jejího vystavení automaticky nahradí aktuálním datem. Funkci využijete např. při fakturaci za členství v uzavřené internetové komunitě.
+
+:::info
+Příklad použití:
+
+Název položky v šabloně: Měsíční členství v komunitě od \{createDate\} Text položky na faktuře: Měsíční členství v komunitě od 07.05.2015
+:::

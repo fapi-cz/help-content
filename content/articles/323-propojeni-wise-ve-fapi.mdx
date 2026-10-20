@@ -1,0 +1,181 @@
+---
+title: Propojení Wise ve FAPI
+url: /article/323-propojeni-wise-ve-fapi
+description: Propojení FAPI s Wise slouží k automatickému importu příchozích plateb z Wise účtu do FAPI. FAPI pak může tyto platby párovat s fakturami. Kdy se propojení s Wi
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 5-nastaveni
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Propojení Wise ve FAPI
+  - Platební brány (platba kartou)
+  - Nastavení
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/323-propojeni-wise-ve-fapi
+order: 278
+updatedAt: 2026-07-13T12:42:07Z
+legacyAnchors:
+  - id: Kdy-se-propojen-s-Wise-hod-GRmeO
+    tag: h2
+    text: Kdy se propojení s Wise hodí
+    occurrence: 0
+    headingIndex: 0
+  - id: Videonpovda-txwrY
+    tag: h2
+    text: Videonápověda
+    occurrence: 0
+    headingIndex: 1
+  - id: Co-budete-potebovat-1ME56
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 2
+  - id: 1-Vytvote-import-plateb-ve-FAPI-nBd3B
+    tag: h2
+    text: 1. Vytvořte import plateb ve FAPI
+    occurrence: 0
+    headingIndex: 3
+  - id: 2-Vytvote-API-token-ve-Wise-nugP3
+    tag: h2
+    text: 2. Vytvořte API token ve Wise
+    occurrence: 0
+    headingIndex: 4
+  - id: 3-Vlote-API-token-do-FAPI-FxIVp
+    tag: h2
+    text: 3. Vložte API token do FAPI
+    occurrence: 0
+    headingIndex: 5
+  - id: 4-Voliteln-nastavte-webhook-pro-rychlej-import-eSzaj
+    tag: h2
+    text: "4. Volitelné: nastavte webhook pro rychlejší import"
+    occurrence: 0
+    headingIndex: 6
+  - id: Omezen-webhooku-jGMnL
+    tag: h2
+    text: Omezení webhooku
+    occurrence: 0
+    headingIndex: 7
+  - id: Shrnut-ngdc3
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 8
+---
+Propojení FAPI s Wise slouží k automatickému importu příchozích plateb z Wise účtu do FAPI. FAPI pak může tyto platby párovat s fakturami.
+
+## Kdy se propojení s Wise hodí
+
+Propojení s Wise využijete hlavně v případě, kdy přijímáte platby na zahraniční nebo víceměnový účet a chcete je automaticky párovat ve FAPI.
+
+Hodí se například pokud:
+
+-   používáte zahraniční bankovní účet, se kterým FAPI nemá přímou bankovní integraci,
+-   máte firmu registrovanou v zahraničí, například v USA,
+-   přijímáte platby od zákazníků v různých měnách,
+-   používáte ve Wise více měnových účtů, například CZK, EUR nebo USD,
+-   chcete platby z Wise načítat do FAPI automaticky bez ručního importu.
+
+Wise umožňuje přijímat peníze pomocí vlastních údajů k účtu ve více měnách, například v EUR, USD nebo GBP. Zákazníci tak mohou platit na údaje, které odpovídají dané měně nebo zemi, a FAPI si následně přijaté platby načte přes import plateb
+
+:::caution
+## Videonápověda
+
+Celý postup najdete také ve [videonápovědě.](https://www.youtube.com/watch?v=lYCVTJNHhWM)
+
+<Video src="https://www.youtube.com/embed/lYCVTJNHhWM" />
+:::
+
+## Co budete potřebovat
+
+-   účet ve FAPI,
+-   účet ve Wise ([https://wise.com/](https://wise.com/)).
+
+## 1\. Vytvořte import plateb ve FAPI
+
+Ve FAPI přejděte do:
+
+**Nastavení → Způsoby platby → Import plateb**
+
+Klikněte na vytvoření nového importu plateb a nastavte:
+
+-   **Banka:** Wise
+-   **Název účtu:** například Wise – CZK
+-   **Způsob importu:** API
+
+![Propojení Wise ve FAPI](/assets/articles/4b3818a535259ffb.png)
+
+## 2\. Vytvořte API token ve Wise
+
+Ve Wise přejděte do:
+
+**Profil / název firmy → Nastavení → Propojte a spravujte aplikace → API tokeny**
+
+Klikněte na vytvoření nového tokenu.
+
+Doporučené nastavení tokenu:
+
+-   **Název:** například FAPI – import plateb
+-   **Oprávnění:** pouze přístup pro čtení
+-   **Povolené IP adresy:** ponechte prázdné
+
+FAPI potřebuje pouze číst informace o platbách. Plný přístup není nutný.
+
+Po vytvoření tokenu si zobrazte API klíč a zkopírujte ho.
+
+## 3\. Vložte API token do FAPI
+
+Vraťte se do nastavení importu plateb ve FAPI.
+
+Do pole **API token** vložte zkopírovaný token z Wise.
+
+Poté vyberte:
+
+-   **Wise profil**,
+-   konkrétní Wise účet, například CZK nebo EUR účet.
+
+![Propojení Wise ve FAPI](/assets/articles/ed0f57a0444b9b62.png)
+
+Nastavení uložte.
+
+Po uložení FAPI spustí první import plateb. Další importy probíhají pravidelně **jednou za hodinu**.
+
+## 4\. Volitelné: nastavte webhook pro rychlejší import
+
+Webhook umožní Wise informovat FAPI ve chvíli, kdy na účet přijde platba. FAPI pak může import spustit dříve než při pravidelném hodinovém načítání.
+
+Ve FAPI si u vytvořeného importu plateb zkopírujte **URL webhooku**.
+
+Ve Wise přejděte do:
+
+**Nastavení → Propojte a spravujte aplikace → Webhooky**
+
+Vytvořte nový webhook a nastavte:
+
+-   **Název:** například FAPI
+-   **URL:** vložte URL webhooku z FAPI
+-   **Událost:** vklad na účet / přijatá platba
+
+Webhook uložte.
+
+:::danger
+## **Omezení webhooku**
+
+Webhook má tato omezení:
+
+-   import plateb se přes webhook spustí maximálně **jednou za 5 minut**,
+-   okamžité spuštění importu přes webhook funguje pouze pro tarify **Comfort, Premium, Custom a VIP**.
+
+U nižších tarifů zůstává dostupný pravidelný import plateb jednou za hodinu.
+:::
+
+  
+
+## Shrnutí
+
+Propojení FAPI s Wise nastavíte pomocí API tokenu z Wise. Po uložení FAPI pravidelně načítá příchozí platby z vybraného Wise účtu a páruje je s fakturami.
+
+Pro rychlejší načítání plateb můžete u tarifů Comfort a vyšších využít také webhook.

@@ -1,0 +1,572 @@
+---
+title: Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI
+url: /article/347-jak-nastavit-mereni-konverzi-z-reklam-v-chatgpt-ve-fapi
+description: Spouštíte reklamy v ChatGPT a chcete zjistit, zda vám skutečně přivádějí objednávky? V tomto návodu propojíte OpenAI Ads se svým webem a s FAPI. OpenAI potom zí
+category: AI
+categorySlug: 321-ai
+categorySlugs:
+  - 321-ai
+  - 300-mereni-a-marketing
+  - 5-nastaveni
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI
+  - AI
+  - Měření a Marketing
+  - Nastavení
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/347-jak-nastavit-mereni-konverzi-z-reklam-v-chatgpt-ve-fapi
+order: 271
+updatedAt: 2026-09-15T13:33:20Z
+legacyAnchors:
+  - id: Videonvod-lkHd_
+    tag: h2
+    text: Videonávod
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-men-funguje-p-MTP
+    tag: h2
+    text: Jak měření funguje
+    occurrence: 0
+    headingIndex: 1
+  - id: Co-budete-potebovat-D5xwA
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 2
+  - id: 1-Vytvote-datov-zdroj-v-OpenAI-Ads-UmknY
+    tag: h2
+    text: 1. Vytvořte datový zdroj v OpenAI Ads
+    occurrence: 0
+    headingIndex: 3
+  - id: 2-Vlote-OpenAI-Pixel-na-cel-web-7ujg5
+    tag: h2
+    text: 2. Vložte OpenAI Pixel na celý web
+    occurrence: 0
+    headingIndex: 4
+  - id: Pklad-vloen-v-MioWebu-xFAc0
+    tag: h3
+    text: Příklad vložení v MioWebu
+    occurrence: 0
+    headingIndex: 5
+  - id: Parametr-debug-pouijte-pi-testovn-NxqyX
+    tag: h4
+    text: Parametr "debug" použijte při testování
+    occurrence: 0
+    headingIndex: 6
+  - id: 3-Pidejte-konverzn-kd-FAPI-MsKkR
+    tag: h2
+    text: 3. Nastavte odeslání objednávky do OpenAI
+    occurrence: 0
+    headingIndex: 7
+  - id: Varianta-A-Pouvte-vlastn-dkovac-strnku-3Xmrw
+    tag: h3
+    text: "Varianta A: Používáte vlastní děkovací stránku"
+    occurrence: 0
+    headingIndex: 8
+  - id: Varianta-B-Pouvte-dkovac-strnku-FAPI-j9DL6
+    tag: h3
+    text: "Varianta B: Používáte děkovací stránku FAPI"
+    occurrence: 0
+    headingIndex: 9
+  - id: Pixel-mus-bt-tak-na-vaem-webu-St2yn
+    tag: h3
+    text: Pixel musí být také na vašem webu
+    occurrence: 0
+    headingIndex: 10
+  - id: Pokud-pouvte-dvoukrokov-prodejn-formul-TJ3mv
+    tag: h3
+    text: Pokud používáte dvoukrokový prodejní formulář
+    occurrence: 0
+    headingIndex: 11
+  - id: 4-Vytvote-konverzi-Order-Created-ncn5x
+    tag: h2
+    text: 4. Vytvořte konverzi Order Created
+    occurrence: 0
+    headingIndex: 12
+  - id: 5-Propojte-FAPI-s-OpenAI-pomoc-CAPI-z920-
+    tag: h2
+    text: 5. Propojte FAPI s OpenAI pomocí CAPI
+    occurrence: 0
+    headingIndex: 13
+  - id: Vytvote-Conversion-key-ft8j2
+    tag: h3
+    text: Vytvořte Conversion key
+    occurrence: 0
+    headingIndex: 14
+  - id: Ulote-propojen-ve-FAPI-kN-ao
+    tag: h3
+    text: Uložte propojení ve FAPI
+    occurrence: 0
+    headingIndex: 15
+  - id: 6-Otestujte-celou-objednvkovou-cestu-L4v9m
+    tag: h2
+    text: 6. Otestujte celou objednávkovou cestu
+    occurrence: 0
+    headingIndex: 16
+  - id: Zvren-kontrola-_9_OH
+    tag: h2
+    text: Závěrečná kontrola
+    occurrence: 0
+    headingIndex: 17
+  - id: Nejastj-problmy-M3Tv-
+    tag: h2
+    text: Nejčastější problémy
+    occurrence: 0
+    headingIndex: 18
+  - id: FAPI-hls-chybu-pi-uloen-propojen-XC7SZ
+    tag: h3
+    text: FAPI hlásí chybu při uložení propojení
+    occurrence: 0
+    headingIndex: 19
+  - id: Pixel-se-nate-ale-objednvka-se-neodele-ZG7Og
+    tag: h3
+    text: Pixel se načte, ale objednávka se neodešle
+    occurrence: 0
+    headingIndex: 20
+  - id: Udlost-je-pijat-ale-kampa-ukazuje-nulu-HSb_S
+    tag: h3
+    text: Událost je přijatá, ale kampaň ukazuje nulu
+    occurrence: 0
+    headingIndex: 21
+  - id: Konverz-je-vce-ne-objednvek-vcPnE
+    tag: h3
+    text: Konverzí je více než objednávek
+    occurrence: 0
+    headingIndex: 22
+  - id: Konverze-se-zaznamenala-ped-zaplacenm-YLeFO
+    tag: h3
+    text: Konverze se zaznamenala před zaplacením
+    occurrence: 0
+    headingIndex: 23
+---
+Spouštíte reklamy v ChatGPT a chcete zjistit, zda vám skutečně přivádějí objednávky? V tomto návodu propojíte OpenAI Ads se svým webem a s FAPI. OpenAI potom získá informaci, že člověk, který přišel z reklamy, vytvořil objednávku.
+
+  
+
+Díky správně nastavenému měření můžete vyhodnocovat úspěšnost kampaní, porovnávat reklamy a lépe rozhodovat, do kterých kampaní se vyplatí investovat.
+
+  
+
+:::danger
+**Důležité:** Tento postup měří **vytvoření objednávky**, nikoli její zaplacení. Událost se odešle také tehdy, když zákazník zvolí bankovní převod a objednávku zatím neuhradí.
+:::
+
+:::tip
+## **Videonávod**
+
+Celé nastavení uvidíte ve videu:
+
+<Video src="https://www.youtube.com/embed/T3f6KKjmbEw" />
+:::
+
+  
+
+## Jak měření funguje
+
+Nastavíte dvě cesty, kterými se informace o objednávce dostane do OpenAI:
+
+  
+
+-   **OpenAI Pixel** funguje v prohlížeči zákazníka. Rozpozná jeho příchod z reklamy a sleduje jeho cestu po webu.
+-   **Conversions API neboli CAPI** odešle informaci o objednávce přímo ze serveru FAPI do OpenAI.
+
+  
+
+Pro co nejspolehlivější přiřazení objednávek k reklamám doporučujeme používat OpenAI Pixel a CAPI společně. Pixel zachytí příchod návštěvníka z reklamy v prohlížeči. CAPI následně odešle informaci o vytvořené objednávce přímo ze serveru FAPI a doplňuje tak měření o druhou cestu.
+
+  
+
+Pokud se stejná objednávka odešle Pixelem i přes CAPI, OpenAI ji může podle společného identifikátoru spojit a nezapočítat dvakrát. Tomuto spojení se říká **deduplikace**. Podrobnosti najdete v [dokumentaci měření konverzí OpenAI](https://help.openai.com/en/articles/20001409-conversion-measurement).
+
+  
+
+FAPI odesílá událost `order_created`. V OpenAI Ads ji vyberete pod názvem **Order Created**.
+
+  
+
+## Co budete potřebovat
+
+  
+
+Připravte si:
+
+-   účet a přístup do [OpenAI Ads Manageru](https://ads.openai.com/),
+-   přístup do administrace FAPI,
+-   vytvořený prodejní formulář ve FAPI,
+-   oprávnění upravit vlastní kódy webu,
+-   informaci, zda používáte vlastní děkovací stránku, nebo děkovací stránku FAPI.
+
+  
+
+:::danger
+**Důležité:** Pixel a další marketingové měření spusťte až po získání odpovídajícího souhlasu návštěvníka. Nastavení musí navazovat na cookies lištu a pravidla vašeho webu.
+:::
+
+  
+
+## 1\. Vytvořte datový zdroj v OpenAI Ads
+
+1.  Přihlaste se do [OpenAI Ads Manageru](https://ads.openai.com/).
+2.  V levém menu otevřete **Tools → Conversions**.
+3.  Klikněte na **Create** a vyberte **Data source**.
+4.  Zadejte srozumitelný název, například `Můj web – FAPI objednávky`   .
+5.  Klikněte na **Create**.
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/bc9495e7cedde578.png)
+
+:::info
+Datový zdroj představuje web nebo projekt, ze kterého budete do OpenAI odesílat informace o návštěvách a objednávkách.
+:::
+
+V nabídce Tools otevřete Conversions a **přes tlačítko Create založte nový Data source**.
+
+:::info
+Datový zdroj pojmenujte tak, abyste později poznali, ke kterému webu patří.
+:::
+
+Po vytvoření si zkopírujte:
+
+-   **Pixel ID**, tedy identifikátor datového zdroje,
+-   celý instalační kód OpenAI Pixelu.
+
+  
+
+Pixel ID budete později vkládat také do FAPI. Pokud už pro stejný web vhodný datový zdroj máte, nemusíte vytvářet další.
+
+  
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/94b0db8cf0fbf4c9.png)
+
+  
+
+## 2\. Vložte OpenAI Pixel na celý web
+
+Zkopírovaný instalační kód vložte do globálních vlastních kódů svého webu. Kód musí být v hlavičce stránky, obvykle označené jako **HEAD** nebo `<head>`   .
+
+  
+
+Pixel musí být dostupný:
+
+-   na stránce, na kterou přichází návštěvník z reklamy,
+-   na dalších stránkách objednávkové cesty,
+-   na vlastní děkovací stránce, pokud ji používáte.
+
+  
+
+Nestačí jej vložit pouze na děkovací stránku. Pixel musí zachytit už příchod zákazníka z reklamy.
+
+  
+
+### Příklad vložení v MioWebu
+
+V administraci MioWebu otevřete **Vlastní kódy**, přidejte nový kód a jako umístění zvolte hlavičku webu.
+
+  
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/caa612d9f3eb85f5.png)
+
+  
+
+Instalační kód Pixelu vložte mezi kódy pro celý web a nastavte jeho umístění do hlavičky.
+
+  
+
+V jiném editoru webu hledejte obdobnou sekci, například **Vlastní kódy**, **Custom code**, **Tracking code** nebo **HEAD code**.
+
+  
+
+:::info
+#### Parametr "debug" použijte při testování
+
+Pokud instalační kód obsahuje parametr `debug: true` , můžete jej během nastavování a testování ponechat. Pixel díky němu vypisuje diagnostické informace do konzole prohlížeče, což může pomoci při ověřování funkčnosti a hledání případné chyby.
+
+Po úspěšném otestování můžete parametr odstranit nebo změnit jeho hodnotu na `false` . Parametr `debug`  nemá vliv na to, zda se konverze odešle – ovlivňuje pouze zobrazování diagnostických informací.
+
+Nastavení **uložte.**
+:::
+
+  
+
+## 3\. Nastavte odeslání objednávky do OpenAI
+
+Samotný Pixel sleduje návštěvu webu, ale je potřeba mu také předat informaci, že ve FAPI vznikla objednávka. Další postup se liší podle toho, zda používáte vlastní děkovací stránku, nebo děkovací stránku FAPI.
+
+U vlastní děkovací stránky vložíte následující konverzní kód ručně. U děkovací stránky FAPI kód ručně nevkládáte – stačí vyplnit pole **ChatGPT Ads Pixel ID** podle varianty B.
+
+  
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+    FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+        FAPI_CONVERSION.simpleChatgptAdsTransaction(fapiOrderData);
+    });
+});
+</script>
+```
+
+  
+
+Kód automaticky načte údaje o konkrétní objednávce a předá je OpenAI. Identifikátor ani hodnotu objednávky do něj ručně nedoplňujte.
+
+  
+
+Aktuální kód najdete také v nápovědě [Konverzní kódy FAPI](/article/144-konverzni-kody), v části **Ukázka zaslání dat do OpenAI (ChatGPT) pixelu**.
+
+  
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/2bf33cfc072ccde1.png)
+
+  
+
+_Na ukázce je konverzní kód uložený mezi vlastními kódy webu. Rozhodující je, aby se spustil na děkovací stránce po vytvoření objednávky._
+
+  
+
+Další postup závisí na typu děkovací stránky.
+
+  
+
+:::note
+### **Varianta A: Používáte vlastní děkovací stránku**
+:::
+
+Při použití vlastní děkovací stránky FAPI externí stránku nevytváří ani do ní nepřenáší obsah pole **ChatGPT Ads Pixel ID** nebo **Konverzní kód (HTML)**. Pixel, konverzní kód FAPI a FAPI SDK proto musíte vložit přímo na vlastní web podle následujícího postupu.
+
+  
+
+1.  Ve FAPI otevřete prodejní formulář a přejděte do **5\. kroku – Děkovací stránka**.
+2.  U vlastní děkovací stránky aktivujte volbu **Vkládat unikátní identifikátor objednávky do URL děkovací stránky**.
+3.  Zkontrolujte, že adresa děkovací stránky začíná `https://`   .
+4.  Ověřte, že se na ní načítá OpenAI Pixel se stejným Pixel ID. Pokud se Pixel načítá globálně na celém webu, nevkládejte jej podruhé.
+5.  Na stránku vložte výše uvedený konverzní kód FAPI.
+6.  Pod konverzní kód vložte FAPI SDK:
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+Na vlastní děkovací stránku ve svém webovém editoru vložte kódy v tomto pořadí:
+
+1.  instalační kód OpenAI Pixelu,
+2.  konverzní kód FAPI,
+3.  FAPI SDK.
+
+  
+
+Pokud už FAPI SDK načítá jiný kód nebo doplněk, nevkládejte jej znovu.
+
+Ve FAPI zadejte adresu vlastní děkovací stránky začínající `https://`   a aktivujte předávání unikátního identifikátoru objednávky. Samotné měřicí kódy vložte přímo do vlastní děkovací stránky ve svém webovém editoru, nikoli do pole **Trackovací kód (HTML)** zobrazeného ve FAPI.
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/9ad7ac2c17aa9b4d.png)
+
+:::note
+### **Varianta B: Používáte děkovací stránku FAPI**
+:::
+
+Pokud zákazníka po dokončení objednávky necháváte na děkovací stránce FAPI, nemusíte na ni ručně vkládat instalační ani konverzní kód OpenAI.
+
+  
+
+1.  Ve FAPI otevřete příslušný prodejní formulář.
+2.  Přejděte do **5\. kroku – Děkovací stránka**.
+3.  Ponechte vypnutou možnost **Použít vlastní děkovací stránku**.
+4.  Do pole **ChatGPT Ads Pixel ID** vložte Pixel ID datového zdroje z OpenAI Ads.
+5.  Nastavení formuláře uložte.
+
+  
+
+FAPI na své děkovací stránce automaticky:
+
+-   načte OpenAI Pixel,
+-   inicializuje jej zadaným Pixel ID,
+-   po vytvoření objednávky odešle událost `order_created` ,
+-   použije variabilní symbol objednávky jako `event_id` , aby OpenAI mohlo spojit událost odeslanou z prohlížeče s událostí odeslanou přes CAPI a nezapočítalo objednávku dvakrát.
+
+:::danger
+**Důležité:** Do pole **Konverzní kód (HTML)** už nevkládejte instalační kód OpenAI Pixelu ani konverzní kód FAPI. Při vyplněném poli **ChatGPT Ads Pixel ID** zajišťuje načtení Pixelu a odeslání objednávky děkovací stránka FAPI automaticky. Ruční vložení kódů by mohlo způsobit dvojí inicializaci nebo duplicitní měření.
+:::
+
+FAPI SDK rovněž nevkládejte. Děkovací stránka FAPI jej již obsahuje.
+
+  
+
+### Pixel musí být také na vašem webu
+
+Pole **ChatGPT Ads Pixel ID** zajistí načtení Pixelu až na děkovací stránce FAPI. Nenahrazuje Pixel na stránce, na kterou návštěvník přijde z reklamy, ani na objednávkové cestě.
+
+Instalační kód OpenAI Pixelu proto ponechte globálně v hlavičce vlastního webu. Díky tomu Pixel zachytí příchod návštěvníka z reklamy a uchová informace potřebné pro pozdější přiřazení objednávky.
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/92c406bfa0be2086.png)
+
+:::note
+### Pokud používáte dvoukrokový prodejní formulář
+
+U dvoukrokového prodejního formuláře slouží zadané Pixel ID také k odeslání události `lead_created`  po úspěšném dokončení prvního kroku.
+
+  
+
+Samotný prodejní formulář ale OpenAI Pixel nenačítá. Instalační kód OpenAI Pixelu proto musí být načtený na stránce, do které je prodejní formulář vložený. Pokud je Pixel vložený globálně v hlavičce celého webu podle 2. kroku tohoto návodu, nemusíte už nic dalšího přidávat.
+
+  
+
+Událost `lead_created`  informuje OpenAI, že návštěvník úspěšně dokončil první krok formuláře. Neznamená ještě vytvoření objednávky. Objednávka se odešle jako samostatná událost `order_created`  až po dokončení celého prodejního formuláře.
+:::
+
+## 4\. Vytvořte konverzi Order Created
+
+1.  V OpenAI Ads otevřete **Tools → Conversions**.
+2.  Přejděte na záložku **Conversion Events**.
+3.  Klikněte na **Create → Conversion Event**.
+4.  Vyberte datový zdroj vytvořený v prvním kroku.
+5.  V poli **Base event** vyberte **Order Created**.
+6.  Konverzi pojmenujte například `FAPI – vytvořená objednávka`    a uložte ji.
+
+  
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/9b80ff2e2e88f7b4.png)
+
+  
+
+_Vytvořte Conversion Event nad správným datovým zdrojem a jako Base event použijte Order Created._
+
+  
+
+Název konverze slouží pouze pro vaši orientaci. Rozhodující je vybraný typ události **Order Created**.
+
+  
+
+Pokud vám OpenAI po vytvoření nabídne další obecný kód pro odeslání této události, na web jej nepřidávejte. Odeslání už zajišťuje konverzní kód FAPI z předchozího kroku. Přidáním druhého kódu by mohla jedna objednávka odejít vícekrát.
+
+  
+
+Vytvořenou konverzi následně vyberte jako cíl příslušné reklamní kampaně.
+
+  
+
+## 5\. Propojte FAPI s OpenAI pomocí CAPI
+
+CAPI vytvoří druhou cestu odesílání: informaci o nové objednávce předá přímo server FAPI.
+
+  
+
+### Vytvořte Conversion key
+
+1.  V OpenAI Ads otevřete **Tools → Conversions**.
+2.  Vpravo nahoře otevřete **Conversion keys**.
+3.  Klikněte na **Create new key**.
+4.  Klíč pojmenujte například `FAPI`   .
+5.  Po vytvoření jej ihned zkopírujte.
+
+  
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/1a817a17fd5ab250.png)
+
+  
+
+_CAPI klíč vytvořte v části Conversion keys, nikoli v obecném nastavení API klíčů OpenAI._
+
+  
+
+:::danger
+**Pozor:** Vytvořený klíč se zobrazí pouze jednou. Pokud jej neuložíte, vytvořte nový. Klíč nevkládejte do HTML ani do veřejného JavaScriptu; patří pouze do nastavení propojení ve FAPI.
+:::
+
+  
+
+### Uložte propojení ve FAPI
+
+1.  Ve FAPI otevřete [**Nastavení → Propojení aplikací**](https://web.fapi.cz/settings/connections?projectId=all).
+2.  Najděte **ChatGPT Ads** a klikněte na **Připojit**.
+3.  Do pole **Pixel ID** vložte identifikátor datového zdroje z OpenAI Ads.
+4.  Do pole **CAPI klíč** vložte právě vytvořený Conversion key.
+5.  Klikněte na **Uložit**.
+
+  
+
+![Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/assets/articles/548aa3247e9b709f.png)
+
+  
+
+_V Nastavení → Propojení najděte ChatGPT Ads a otevřete nastavení přes tlačítko Připojit._
+
+  
+
+Při uložení FAPI provede test propojení. Testovací událost nemá ovlivnit běžné výsledky měření. Správné uložení poznáte podle potvrzení, že propojení s ChatGPT bylo nastaveno, a podle stavu **Připojeno** v seznamu propojení.
+
+  
+
+Pro Pixel, konverzi Order Created a propojení CAPI používejte stejný datový zdroj a stejné Pixel ID.
+
+  
+
+## 6\. Otestujte celou objednávkovou cestu
+
+Nestačí otevřít samotnou děkovací stránku. Projděte celý proces jako zákazník:
+
+1.  Otevřete stránku, na kterou vede reklama.
+2.  Přijměte odpovídající cookies podle testovaného scénáře.
+3.  Projděte prodejním formulářem a vytvořte testovací objednávku.
+4.  Poznamenejte si čas a variabilní symbol objednávky.
+5.  Zkontrolujte přesměrování na správnou děkovací stránku.
+6.  U vlastní děkovací stránky ověřte, že URL obsahuje unikátní identifikátor objednávky.
+7.  V OpenAI Ads zkontrolujte přijetí události u správného datového zdroje.
+8.  Obnovte děkovací stránku a ověřte, že se stejná objednávka nevytvořila jako další konverze s novým identifikátorem.
+
+  
+
+:::caution
+Přijatá událost ještě nemusí být okamžitě připsána konkrétní kampani. Zákazník musí skutečně přijít z reklamy a během cesty se nesmí ztratit identifikace reklamní návštěvy. OpenAI uvádí, že připsané konverze se mohou v přehledu objevit se zpožděním 24 až 48 hodin. Více najdete v nápovědě [Measure results](https://help.openai.com/en/articles/20001214-measure-results).
+:::
+
+## Závěrečná kontrola
+
+Před spuštěním kampaně ověřte, že:
+
+  
+
+-   OpenAI Pixel je nasazený na celém webu a spouští se podle uděleného souhlasu,
+-   Pixel používá správné Pixel ID,
+-   u vlastní děkovací stránky je vložený konverzní kód FAPI a FAPI SDK a dostává unikátní identifikátor objednávky,
+-   u děkovací stránky FAPI je vyplněné pole **ChatGPT Ads Pixel ID**,
+-   v OpenAI Ads existuje konverze typu Order Created,
+-   FAPI je propojeno klíčem z části Conversion keys,
+-   ve všech částech používáte stejný datový zdroj a stejné Pixel ID,
+-   prošli jste celou testovací objednávku.
+
+:::note
+## **Nejčastější problémy**
+:::
+
+### FAPI hlásí chybu při uložení propojení
+
+Zkontrolujte, zda jste vložili správné Pixel ID a klíč z části **Conversion keys**. Běžný OpenAI API klíč není správný.
+
+  
+
+### Pixel se načte, ale objednávka se neodešle
+
+Pokud používáte vlastní děkovací stránku, zkontrolujte konverzní kód FAPI, FAPI SDK, pořadí načítání kódů a unikátní identifikátor objednávky v URL.
+
+Pokud používáte děkovací stránku FAPI, zkontrolujte, zda je v prodejním formuláři vyplněné správné **ChatGPT Ads Pixel ID** a zda jste Pixel ani konverzní kód nevložili podruhé do pole **Trackovací kód (HTML)**.
+
+  
+
+### Událost je přijatá, ale kampaň ukazuje nulu
+
+Ověřte, že kampaň používá správný datový zdroj a konverzi Order Created. Zkontrolujte také, zda návštěvník skutečně přišel z reklamy, a vyčkejte na zpracování výsledků.
+
+  
+
+### Konverzí je více než objednávek
+
+Zkontrolujte, zda není Pixel nebo konverzní kód vložen vícekrát a zda jste vedle kódu FAPI nepřidali také obecný kód Order Created vygenerovaný OpenAI.
+
+  
+
+### Konverze se zaznamenala před zaplacením
+
+To je u tohoto postupu správné. Událost Order Created měří vznik objednávky. Počet zaplacených objednávek a skutečné tržby kontrolujte ve FAPI.

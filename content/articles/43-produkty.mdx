@@ -1,0 +1,197 @@
+---
+title: Produkty
+url: /article/43-produkty
+description: Produkty prodávané prostřednictvím FAPI představují samostatné objekty, které se vkládají do prodejních formulářů. Pro automatizovaný prodej pomocí prodejního f
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Produkty
+  - Nastavení
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/43-produkty
+order: 37
+updatedAt: 2026-07-13T09:52:54Z
+legacyAnchors:
+  - id: Nastaven-produktu-20Qz-
+    tag: h2
+    text: Nastavení produktu
+    occurrence: 0
+    headingIndex: 0
+  - id: Produkty-v-prodejnm-formuli-QZ8gD
+    tag: h2
+    text: Produkty v prodejním formuláři
+    occurrence: 0
+    headingIndex: 1
+  - id: Pouvn-Aknch-cen-produktu-DOghh
+    tag: h2
+    text: Používání Akčních cen produktu
+    occurrence: 0
+    headingIndex: 2
+  - id: Rozen-nastaven-produktu-Iptkg
+    tag: h2
+    text: Rozšířené nastavení produktu
+    occurrence: 0
+    headingIndex: 3
+redirects:
+  - /article/43-prodejni-polozky
+---
+_Produkty_ prodávané prostřednictvím FAPI představují samostatné objekty, které se vkládají do prodejních formulářů. Pro automatizovaný prodej pomocí prodejního formuláře je třeba všechny vlastnosti prodávaného produktu předem nastavit.
+
+:::caution
+Jako _produkt_ označujeme cokoli, co lze pomocí FAPI prodávat. Může tedy jít jak o digitální produkty (ebooky, videa, online kurzy, aplikace apod.), tak služby (koučink, konzultace, výuka jazyků, masáže apod.), živé či online akce (školení, semináře, webináře apod.), nebo fyzické věci (knihy nebo jiné zboží).
+:::
+
+S produkty je možné pracovat na dvou místech:
+
+-   v přehledu produktů (nabídka **PRODEJ - Produkty**),
+-   v nastavení prodejního formuláře.
+
+## Nastavení produktu
+
+Nabídka **PRODEJ - Produkty** poskytuje přehled všech produktů a nástroje pro jejich správu. Můžete zde produkty vytvářet, upravovat, duplikovat či mazat, a to pomocí příslušných tlačítek.
+
+:::tip
+Zobrazené produkty je možné filtrovat a řadit podle různých kritérií (kliknutím na záhlaví příslušného sloupce).
+:::
+
+![Produkty](/assets/articles/e1bc0a7b3b2448cd.png)
+
+  
+
+Při vytváření, úpravě či duplikaci produktu se otevře jeho detail, kde jsou uvedeny všechny vlastnosti produktu. Význam jednotlivých polí vysvětlují nápovědné otazníčky.
+
+![Produkty](/assets/articles/4bf0ba5e27e51f88.png)
+
+:::caution
+Zobrazená pole a jejich popisky se mohou lišit v závislosti na nastavení parametrů fakturace v účtu FAPI.
+:::
+
+**Název** \- je viditelný zákazníkům, a to jak v prodejním formuláři, tak na faktuře
+
+**Popis** - popis se z obrazuje ve vystavené faktuře (nezobrazuje se v prodejním formuláři)
+
+**Veřejný popis** \- se zobrazuje i v náhledu prodejního formuláře
+
+**Obrázek** - volitelná možnost pro náhledový obrázek v prodejním formuláři. Zobrazení funguje pouze pro hlavní položky a miniupselly. Podporované formáty JPG, JPEG, PNG, AVIF a WEBP.
+
+**Měna** - výběr měny, pro kterou se nastavují dané ceny
+
+**Cena** - cena za kterou si klient produkt pořizuje při jednorázovém prodeji a při splátkách (pokud není extra uvedena jiná, splátková cena)
+
+**Akční cena** - speciální akční cena, která se zobrazuje jako aktuální cena ve srovnání s původní Cenou.
+
+**Splátkové ceny** - pokud prodáváte produkt na splátky, můžete zadat jinou cenu, než je běžná cena. Například cenu zvednout o nějakou poměrnou část. Pokud cena není zadaná, ale i tak prodáváte na splátky, použije se výchozí **Cena** Pro každou splátkovou cenu je nutno nastavit minimální počet splátek, pro který tato cena platí.
+
+**Cena vč. DPH** - zatržítko pro určení, zda vyplněné ceny jsou základ DPH, nebo již ceny vč. DPH
+
+**Sazba DPH** - číslicemi určená procentuální sazba DPH v tuzemsku
+
+**Sazba DPH od 1.1.2024** \- číslicemi určená procentuální sazba DPH v tuzemsku, platná v ČR od 1.1.2024
+
+**Umožnit změnu množství v prodejním formuláři** - zatržítko pro určení, zda je možné produkt při nákupu pořizovat ve větším množství než 1 kus
+
+**Minimální množství na objednávku** \- zadáním čísla nastavíte, kolik minimálně kusů může zákazník v prodejním formuláři nakoupit na objednávku. Příklad, pokud zadáte hodnotu 3, zákazník bude muset koupit minimálně 3 kusy tohoto produktu.
+
+_Funkce nefunguje při ruční fakturaci nebo při vytváření objednávek skrze API._
+
+**Maximální množství na objednávku** - zadáním čísla nastavíte, kolik maximálně kusů může zákazník v prodejním formuláři nakoupit. Příklad, pokud zadáte hodnotu 3, zákazník bude moci koupit maximálně 3 kusy tohoto produktu na objednávku.
+
+_Funkce nefunguje při ruční fakturaci nebo při vytváření objednávek skrze API._
+
+**Omezit dostupné množství** \- zatržítko pro volitelné omezení maximálního počtu položek, které lze pořídit.
+
+**Typ produktu** - je jedna z nejdůležitějších části nastavení. Podle typu produktu se totiž ve FAPI řídí různé účetní náležitosti. FAPI disponuje několika typy produktů:
+
+-   **zboží** - jedná se o jakékoliv fyzické zboží: oblečení, elektronika, nábytek, atd. Typ produktu je zde důležitý kvůli [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss). Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrál alespoň jeden fyzický produkt.
+-   **potraviny a výživové doplňky** -
+-   **služba** - do služeb patří konzultace a workshopy. Ve FAPI tento produkt nemá žádný zvláštní daňový režim. 
+-   **jiná elektronicky poskytovaná služba** - sem spadají služby jako například FAPI, členské sekce, online konzultace, webináře atp. Opět je typ produktu důležitý pro [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).
+-   **e-book -** sem spadají všechny publikace, které jsou klientovi zaslané elektronicky. Typ produktu je zde důležitý kvůli [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss). 
+-   **kniha -** sem spadají všechny publikace v tištěné knihy. Opět je typ produktu důležitý pro [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).  Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
+-   **elektronický časopis, noviny a jiné periodika** - sem spadají všechny publikace, které jsou klientovi zaslané elektronicky, vyjma e-booku. Typ produktu je zde důležitý kvůli [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss). 
+-   **tištěný časopis, noviny a jiné periodika** \- sem spadají všechny publikace v tištěné publikace kromě knihy. Opět je typ produktu důležitý pro [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).  Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
+-   **živá akce** - platí pro všechny offline akce. Zde je pak vždy důležité místo konaní akce.
+
+**Prodávat jako voucher** - produkt bude prodáván jako voucher (více o [Voucherech](/article/94-vouchery))
+
+**Neuplatňovat slevové kódy** - na produkt nebude uplatněn slevový kód s procentní slevou. Pevná sleva uplatněna bude!
+
+**Hmotnost** - pole pro zadání hmotnosti produktu se zobrazí pouze u typů, kdy jde o fyzické zboží (tištěná publikace nebo zboží). Zadaná hmotnost produktu slouží pro výpočet hmotnosti zásilky v exportu dat do Zásilkovny. Odpadá tím nutnost hmotnost dopočítávat ručně a vyplňovat v administraci Zásilkovny.
+
+![Produkty](/assets/articles/07f8316044b68ce4.png)
+
+## Produkty v prodejním formuláři
+
+Vytvořený produkt vložíte do prodejního formuláře v jeho nastavení (tlačítko **Upravit** u příslušného formuláře v nabídce **PRODEJ - Prodejní formuláře**), a to na záložce **Položky a ceny**.
+
+![Produkty](/assets/articles/fe8583b0e272fe13.png)
+
+Zde je možné vkládat již vytvořené produkty do prodejního formuláře (výběrem ze seznamu, popř. pomocí tlačítka **Přidat položku**) a odebírat produkty z prodejního formuláře (tlačítko **Smazat**).
+
+Lze ale také přímo upravovat vlastnosti stávajících produktů (tlačítko **Upravit**) a vytvářet nové produkty položky (tlačítko **Vytvořit**).
+
+:::danger
+Vzhledem k tomu, že produkt je samostatný objekt propojený s prodejním formulářem, se jakákoli jeho změna okamžitě projeví ve všech prodejních formulářích, do kterých je tento produkt vložen.
+
+Změna produktu, např. jeho ceny se ale neprojeví v aktivní šablonách pravidelné fakturace. U šablon pravidelné fakturace je potřeba provést  změnu u každého jednotlivého klienta.
+:::
+
+  
+
+## **Používání Akčních cen produktu**
+
+U každého produktu jde určit až 3 ceny:
+
+-   běžnou cenu
+-   akční cenu
+-   splátkovou cenu
+
+  
+
+![Produkty](/assets/articles/a0a7f3f1b38f5304.png)
+
+nastavení akční ceny s omezením OD - DO
+
+Běžná cena (řádek CENA) musí být zadaná vždy. Ostatní ceny jsou volitelné.
+
+Akční cena je funkce pro zobrazení "přeškrtnuté" běžné ceny, a u ní barevně zvýrazněné akční ceny.
+
+![Produkty](/assets/articles/e70b649b4601fdff.png)
+
+V nastavení produktu se pro nastavení akční ceny vyplňují tyto položky:
+
+-   akční cena - tedy částka, která má být ve formuláři viditelná jako nová, akční cena s barevným zvýrazněním
+-   platnost akční ceny - volitelná část, lze nastavit:
+    -   neomezenou platnost
+    -   omezenou platnost od - do
+    
+
+![nastavení akční ceny bez omezení data platnosti OD - DO](/assets/articles/cf96ab64e800e402.png)
+
+nastavení akční ceny bez omezení platnosti
+
+:::caution
+Když uplyne datum platnosti akční ceny, tak v administraci zůstane akční cena i datumy vyplněné, ale pro zobrazení cen při prodeji už je budeme ignorovat. Jakmile uplyne datum platnosti akčních cen, tak zobrazovat zákazníkovi budeme již jen běžnou cenu.
+:::
+
+  
+  
+
+## Rozšířené nastavení produktu
+
+Pro účetní systém Pohoda jde povolit rozšířená nastavení, kde každému jednotlivému produktu můžete definovat:
+
+-   kód položky
+-   účetní kód
+-   kód předkontace
+-   kód střediska
+-   kód skladu a skladové položky
+
+  
+
+Zapnutí těchto položek je potřeba aktivovat v Nastavení \> [Nastavení fakturace](https://web.fapi.cz/settings/?projectId=all) \> Rozšířené nastavení produktu.

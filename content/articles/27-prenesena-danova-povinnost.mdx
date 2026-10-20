@@ -1,0 +1,84 @@
+---
+title: Přenesená daňová povinnost
+url: /article/27-prenesena-danova-povinnost
+description: "Přenesená daňová povinnost je zvláštní režim DPH používaný při fakturaci v rámci EU. Povinnost přiznat a zaplatit DPH se v tomto režimu přenáší na odběratele a "
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Přenesená daňová povinnost
+  - Nastavení
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/27-prenesena-danova-povinnost
+order: 1
+updatedAt: 2026-07-13T09:30:10Z
+---
+_Přenesená daňová povinnost_ je zvláštní režim DPH používaný při fakturaci v rámci EU. Povinnost přiznat a zaplatit DPH se v tomto režimu přenáší na odběratele a na faktuře musí být uvedena věta, že daň je povinen odvést zákazník. Faktura je proto vystavena s nulovou (0 %) sazbou DPH.
+
+:::caution
+Režim přenesení daňové povinnosti se někdy nazývá také _reverse charge_.
+:::
+
+:::tip
+O tom, za jakých okolností byste měli režim přenesené daňové povinnosti použít a jakým způsobem jej nastavit pro váš konkrétní případ, se poraďte se svým účetním nebo daňovým poradcem.
+:::
+
+## Přenesená daňová povinnost v prodejním formuláři
+
+V prodejním formuláři se přenesená daňová povinnost nastavuje na záložce **Platba, doprava a fakturace**, a to prostřednictvím volby **Přenesená daňová povinnost** v sekci **Nastavení fakturace**.
+
+![Přenesená daňová povinnost](/assets/articles/16f2ff8837eb0441.png)
+
+:::caution
+**DOVYSVĚTELNÍ MOŽNOSTÍ K PŘENESENÉ DAŇOVÉ POVINNOSTI**
+
+**Nikdy nepoužívat**
+
+-   Přenesená daňová povinnost nebude použita nikdy, bez ohledu na zemi nebo údaje klienta.
+
+**Používat u všech zahraničních klientů**
+
+-   Přenesená daňová povinnost bude použita bezpodmínečně u všech objednávek mimo tuzemsko, bez ohledu na vyplněné údaje.
+
+**Používat u zahraničních klientů, kteří vyplní DIČ nebo IČ DPH**
+
+-   Přenesená daňová povinnost bude použita, pokud zákazník:
+    -   nakupuje ze Slovenska a zadá IČ DPH,
+    -   nebo je z EU a zadá DIČ,
+    -   nebo je z třetích zemí
+    
+
+**Používat u zahraničních klientů, kteří vyplní IČ**
+
+-   Přenesená daňová povinnost bude použita, pokud zákazník:
+    -   je z EU a zadá IČ,
+    -   nebo je z třetích zemí
+    
+
+**Používat u zahraničních klientů, kteří mají platné DIČ nebo IČ DPH (ověření se provádí v registru VIES)**
+
+-   Přenesená daňová povinnost bude použita pouze v případě, že zákazník:
+    -   je ze Slovenska a zadá IČ DPH (platné dle systému VIES)
+    -   nebo má sídlo v EU a zadá DIČ (platné dle systému VIES)
+    -   nebo je z třetích zemí
+:::
+
+Splnění zadané podmínky pro přenesení daňové povinnosti se vyhodnocuje na základě údajů zadaných do objednávkového formuláře zákazníkem.
+
+:::danger
+U klientů ze **Slovenska** se pro určení přenesení daňové povinnosti (u příslušných voleb) nepoužívá údaj _DIČ_, ale **_IČ DPH_**. Neznamená to tedy, že stačí mít správně, buď DIČ nebo IČ DPH, ale konkrétní údaj pro danou zemi.
+
+U klientů z **EU** bude přenesená daňová povinnosti použita u všech, kteří zadají IČ, DIČ nebo IČ DPH. Pokud si nejste jisti, doporučujeme možnost přes ověření v registru VIES.
+
+U klientů **mimo EU** bude přenesená daňová povinnost použita plošně.
+:::
+
+## Přenesená daňová povinnost u ruční fakturace
+
+U ručně vystavovaných faktur (nabídka **Faktury - Přehled faktur** - tlačítko **Vystavit fakturu**) nastavíte přenesení daňové povinnosti prostřednictvím volby **Přenesená daňová povinnost** ve formuláři pro ruční fakturaci.
+
+![Přenesená daňová povinnost](/assets/articles/15f23bf2306ac9e7.png)

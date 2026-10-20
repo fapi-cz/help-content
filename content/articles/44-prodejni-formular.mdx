@@ -1,0 +1,353 @@
+---
+title: Prodejní formulář
+url: /article/44-prodejni-formular
+description: Prodejní formulář je srdcem celého automatizovaného prodejního procesu ve FAPI. Je to objekt, v němž se stýkají a propojují všechny kroky, které FAPI provádí au
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Prodejní formulář
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/44-prodejni-formular
+order: 5
+updatedAt: 2026-09-30T12:13:51Z
+legacyAnchors:
+  - id: 2-Poloky-a-ceny-LBcZB
+    tag: h3
+    text: 2. Položky a ceny
+    occurrence: 0
+    headingIndex: 6
+  - id: 4-Akce-mGpbK
+    tag: h4
+    text: 4. Akce
+    occurrence: 0
+    headingIndex: 8
+  - id: Vloen-pixel-a-konverznch-kdu-do-intern-dkovac-strnky-FAPI--4GWRu
+    tag: h3
+    text: Vložení pixelů a konverzních kódu do interní děkovací stránky FAPI.
+    occurrence: 0
+    headingIndex: 13
+---
+_Prodejní formulář_ je srdcem celého automatizovaného prodejního procesu ve FAPI. Je to objekt, v němž se stýkají a propojují všechny kroky, které FAPI provádí automaticky - příjem objednávky, vystavení a zaslání faktury, zprostředkování platby i veškeré akce navázané na zpracování objednávky, jako je například automatické doručení zboží či služby po zaplacení.
+
+Prostřednictvím prodejního formuláře umístěného na vaší webové stránce zákazník vyplňuje a odesílá svou objednávku.
+
+  
+
+![Prodejní formulář](/assets/articles/b33bc2b44225ff7f.png)
+
+  
+
+## Správa prodejních formulářů
+
+Všechny operace, které lze s prodejním formulářem provádět, najdete v nabídce **Prodej - Prodejní formuláře**.
+
+  
+
+![Prodejní formulář](/assets/articles/749bdeabab6b73b7.png)
+
+Výpis prodejních formulářů
+
+Prodejní formulář vytvoříte stiskem tlačítka **Nový prodejní formulář**. Pokud nemáte žádný aktivní formulář, můžete použít i tlačítko **Vytvořit prodejní formulář**.
+
+Nový prodejní formulář lze vytvořit také pomocí tlačítka **Duplikovat**, kdy se do nově vytvářeného prodejního formuláře přenese obsah a nastavení jiného, již existujícího prodejního formuláře. Tuto funkci oceníte zejména tehdy, když vytváříte více prodejních formulářů s obdobným nastavením.
+
+Jestliže chcete stávající prodejní formulář upravit, stiskněte u příslušného prodejního formuláře tlačítko **Upravit**.
+
+Prodejní formulář v podobě, v jaké jej uvidí zákazník na webové stránce, zobrazíte stiskem tlačítka **Náhled**. Náhledová stránka obsahuje mimo jiné i kód pro vložení prodejního formuláře na web. Formulář na náhledové stránce je plně funkční, lze přes něj tedy vytvářet objednávky. Náhled se zobrazuje také bezprostředně po uložení nastavení prodejního formuláře.
+
+Prodejní formulář můžete zařadit mezi neaktivní stiskem tlačítka **Archivovat** .
+
+Při zaškrtnutí políčka **Včetně archivovaných** se vám zobrazí i neaktivní formuláře.
+
+Formulář můžete znovu aktivovat pomocí tlačítka **Aktivovat**.
+
+**Statistiky** prodejního formuláře se vztahují k období posledních **7 dní** (včetně aktuálního dne).
+
+Vysvětlivky ikonek:
+
+-   **Oko** \- počet zobrazení prodejního formuláře na Vašich stránkách. Zobrazení náhledů ve FAPI se nezapočítává.
+-   **Bankovka** - počet objednávek zaznamenaných v prodejních formuláři.
+-   **Procento** - konverzní poměr prodejního formuláře. Jde o výpočet 'počet objednávek / počet zobrazení'. Vztaženo k období posledních 7 dní. 
+
+Jak se počítá zobrazení prodejních formulářů?
+
+Při prvním zobrazení prodejního formuláře zákazníka na vašich stránka se započte nové zobrazen. Další zobrazení téhož zákazníka se započte nejdříve po 30 minutách od prvního zobrazení formuláře. Při opakované návštěvě zákazníka během 30 minut se započítá pouze jedno zobrazení formuláře. Toto neplatí pro objednávky. Pokud zákazník během půlhodiny vytvoří několik objednávek, každá z nich je započítaná do statistik jako nová objednávka (tedy z 1 návštěvy může vzniknout více objednávek).
+
+## Archivace prodejního formuláře
+
+Prodejní formulář můžete zařadit mezi neaktivní (archivované) stiskem tlačítka **Archivovat**.
+
+-   **Zobrazení archivovaných formulářů:** Při zaškrtnutí políčka "Včetně archivovaných" se vám zobrazí i neaktivní formuláře.
+-   **Funkčnost neaktivních (archivovaných) formulářů:** Pokud je formulář zařazen mezi neaktivní (archivované), nemá to vliv na jeho funkčnost v rámci již existujících prodejů a automatizací. Například pokud by měl neuzavřenou objednávku, vše nadále běží. Po zaplacení se spustí automatizace nastavené u prodejního formuláře.
+
+### Důležité informace k archivaci:
+
+-   **Objednávky:** Pokud je formulář archivován, není možné přes něj vytvářet nové objednávky.
+-   **Prodeje a automatizace:** Stávající prodeje a automatizace spojené s archivovaným formulářem zůstávají aktivní. To zahrnuje například předplatné a pravidelnou fakturaci.
+
+##### Příklad:
+
+Pokud byste měli VIP klub a získali zákazníky skrze formulář (například 10 zákazníků), archivace tohoto formuláře neovlivní:
+
+-   Předplatné těchto zákazníků.
+-   Pravidelnou fakturaci.
+-   Spuštěné automatizace.
+
+Nicméně nové objednávky prostřednictvím tohoto formuláře již nebude možné vytvořit.
+
+## Nastavení prodejního formuláře
+
+Při vytváření, duplikování a úpravě prodejního formuláře se dostanete do jeho nastavení, které je pro přehlednost rozděleno do několika samostatných částí.
+
+![Prodejní formulář](/assets/articles/a6018d1f1d676c85.png)
+
+:::tip
+Podrobnější informace k nastavení prodejního formuláře i tipy a rady jak postupovat najdete přímo v aplikaci v modře podbarvených boxech nebo u jednotlivých polí pod ikonou otazníku.
+:::
+
+### 1\. Základní nastavení
+
+V úvodním kroku vyplňte jméno formuláře, popř. jeho zařazení pod určitý projekt.
+
+![Prodejní formulář](/assets/articles/8cf0ba950f8e1c94.png)
+
+### 2\. Položky a ceny
+
+Na druhé záložce nastavte položky, které se budou zákazníkovi nabízet v objednávkovém formuláři a po zakoupení budou obsaženy ve faktuře. Položky můžete vybírat z již přednastavených šablon prodejních položek nebo přímo z prodejního formuláře vytvářet nové. Více o práci s prodejními položkami se dozvíte v návodu [Prodejní položky](/article/43-produkty).
+
+![Prodejní formulář](/assets/articles/65d9cf44d9cbc4a5.png)
+
+  
+  
+
+V sekci **Pokročilé možnosti** lze nastavit další parametry vztahující se k prodejním položkám.
+
+  
+
+Pomocí sekce **Upsell** můžete po odeslání objednávkového formuláře svým zákazníkům nabídnout přidání dalších produktů k již uskutečněné objednávce. Více informací najdete v článku [Upsell](/article/76-upsell).
+
+  
+
+Zaškrtnutí parametru **Umožnit výběr více položek** (zobrazuje se pouze tehdy, obsahuje-li prodejní formulář více položek) povolí zákazníkovi vybrat v objednávce více než jednu z nabízených položek. V opačném případě může vybrat pouze jednu položku.
+
+  
+
+Pokud je zaškrtnut parametr **Zrušit předvyplnění prvního produktu**, při načtení prodejního formuláře nebude automaticky vybrán první produkt v hlavní sekci. Zákazník si bude muset produkt zvolit sám. V opačném případě se předvybere vždy 1. produkt
+
+  
+
+### 3\. Platby a fakturace
+
+V této části vyberte nabízené způsoby platby a nastavte další parametry fakturace.
+
+![Prodejní formulář](/assets/articles/a3f8d364c69c53b8.png)
+
+Jaké způsoby platby se budou v daném prodejním formuláři zákazníkům nabízet, nastavíte v sekci **Způsob platby**, popř. **Platební brána**, kde lze vytvořit a nastavit i propojení s platební bránou, a umožnit tak zákazníkům platit on-line. Přehled podporovaných platebních metod najdete v článku [Platby ve FAPI](/article/71-platby-ve-fapi).
+
+Můžete zde nastavit také další parametry fakturace, jako jsou např. používaná měna, číselná řada pro vystavování dokladů, režim vystavování zálohových faktur či přenesení daňové povinnosti při fakturaci do zahraniční.
+
+:::tip
+Proč vystavovat zálohové faktury? Zálohová faktura obsahuje obdobné údaje jako faktura a používá se jako výzva k platbě či jako nezávazná cenová nabídka. Teprve po její úhradě dodavatel vystavuje fakturu (daňový doklad). Vzhledem k tomu, že zálohová faktura není na rozdíl od faktury účetním ani daňovým dokladem, v případě nezaplacení zálohové faktury odpadá nutnost stornování účetních dokladů, čímž se výrazně zjednodušuje s tím spojená administrativa.
+:::
+
+Pokud chcete svým zákazníkům umožnit zaplatit objednávku ve více splátkách, stačí zde uvést počet splátek. Celková cena se pak rozdělí na zadaný počet splátek. Periodu splátek určíte v nabídce **Nastavení - Nastavení fakturace**.
+
+Prodejní formulář vám umožňuje automatizovat i pravidelnou fakturaci. U volby **Vystavovat pravidelné faktury** stačí nastavit periodu fakturace a o zbytek se FAPI postará samo. První faktura je vystavena ihned po uskutečnění objednávky, další se vystavují periodicky v zadaném intervalu. Dobu vystavování faktur můžete omezit datem ukončení. Více se dozvíte v návodu [Pravidelná fakturace](/article/67-pravidelna-fakturace).
+
+#### 4\. Akce
+
+Na této záložce nastavíte základní parametry automatické komunikace a akce, které se vykonají v různých fázích zpracování objednávky.
+
+  
+
+![Prodejní formulář](/assets/articles/fcc6a1978b2a63b7.png)
+
+Údaje v sekci **Šablony zpráv a upomínek** se týkají nastavení automatické komunikace se zákazníkem. Můžete zde vybrat, jaká sada šablon zpráv a upomínek se bude pro daný prodejní formulář používat, a také to, zda vám na vaši e-mailovou adresu bude chodit zpráva o každé uskutečněné objednávce. Více o šablonách zpráv a upomínek se dozvíte návodech [Šablony zpráv](/article/17-sablony-zprav) a [Upomínky](/article/19-upominky).
+
+  
+
+Pro větší přehlednost zobrazujeme ve výpisu i přesný seznam jednotlivých šablon zpráv, které můžete v dané sadě používat. Na každou šablonu se lze ihned prokliknout přes modře zvýrazněný název a začít ji rovnou editovat.
+
+![Prodejní formulář](/assets/articles/749ff6890acae3b1.png)
+
+V sekci **Akce** můžete nastavit, co se má provést v různých fázích zpracování objednávky. Pomocí akcí můžete zajistit například dodání produktu (odešle se e-mail s odkazem na kupovaný eBook) nebo založit členskou sekci a klientovi zaslat přístupové údaje. Akce mohou provádět i další úkony, jako je přenesení kontaktních údajů do aplikace SmartEmailing nebo zaslání e-mailu či SMS zprávy.
+
+Akce se spouští vždy v návaznosti na určitou událost, která nastane. Událost je tedy podmínka, při jejímž splnění se akce provede.
+
+![Prodejní formulář](/assets/articles/7416557a75f58b3e.png)
+
+  
+
+#### S jakými událostmi a akcemi FAPI pracuje?
+
+Dostupné události:
+
+-   vytvoření poptávky
+    -   spustí se při vyplnění 1. kroku dvoukrokového formuláře
+    
+-   vystavení objednávky
+    -   spustí se po vystavení objednávky (ručním vytvoření faktury)
+    -   při vystavení 2. a další pravidelné faktury
+    
+-   zaplacení objednávky
+    -   spustí se po zaplacení objednávky nebo ručním označením faktury jako zaplacené
+    -   při zaplacení 2. a další pravidelné faktury
+    
+-   stornování objednávky
+    -   spusti se při stornovanání objednávky, ručním i automatickým stornování faktury
+    -   při stornu 2. a další pravidelné faktury
+    
+-   objednání položky
+    -   spustí se po vystavení objednávky (faktury) v případě že obsahuje zadaný produkt
+    -   při vystavení 2. a další pravidelné faktury, která obsahuje zadaný produkt
+    
+-   zaplacení položky
+    -   spustí se po zaplacené objednávky (faktury) v případě že obsahuje zadaný produkt
+    -   při zaplacení 2. a další pravidelné faktury, která obsahuje zadaný produkt
+    
+-   stornování položky
+    -   spustí se po stornování objednávky (faktury) v případě že obsahuje zadaný produkt
+    -   při stornování 2. a další pravidelné faktury, která obsahuje zadaný produkt
+    
+-   objednání položky s kódem
+    -   spustí se po vystavení objednávky (faktury) v případě že nějaká z položek faktury má stejný kód s tím, který jsme vyplnili v automatizaco
+    -   při vystavení 2. a další pravidelné faktury, která obsahuje položku se zadaným kódem
+    
+-   zaplacení položky s kódem
+    -   spustí se po zaplacení objednávky (faktury) v případě že nějaká z položek faktury má stejný kód s tím, který jsme vyplnili v automatizaci
+    -   při zaplacení 2. a další pravidelné faktury, která obsahuje položku se zadaným kódem
+    
+-   stornování položky s kódem
+    -   spustí se po stornování objednávky (faktury) v případě že nějaká z položek faktury má stejný kód s tím, který jsme vyplnili v automatizaci
+    -   při stornování 2. a další pravidelné faktury, která obsahuje položku se zadaným kódem
+    
+
+Dostupné akce:
+
+-   spustit webhook (pouze pro vytvoření poptávky)
+-   spustit programový skript
+-   přidat do členské sekce FAPI Member
+-   přidat do Mioweb členské sekce
+-   přidat kontakt do SmartEmailingu
+-   odebrat kontakt ze SmartEmailingu
+-   přidat kontakt do SendinBlue
+-   odebrat kontakt ze SendinBlue
+-   přidat kontakt do Anabixu
+-   odebrat kontakt z Anabixu
+-   přidat kontakt do MailerLite
+-   odebrat kontakt z MailerLite
+-   přidat kontakt do MailChimp
+-   odebrat kontakt z MailChimp
+-   přidat kontakt do Ecomail
+-   odebrat kontakt z Ecomail
+-   odeslat e-mail klientovi
+-   odeslat e-mail na zadanou adresu
+-   odeslat SMS klientovi
+
+:::danger
+Standardní komunikaci se zákazníkem, jako je např. zaslání e-mailu s fakturou po vystavení nebo zaplacení dokladu, zajišťuje v prodejním formuláři "systémové šablony" v přiřazené sadě šablon zpráv (pole **Šablony zpráv**). Proto se v akcích na odeslání e-mailu nabízejí pouze šablony typu _Vlastní e-mailová šablona_. Pomocí tohoto typu šablony lze řešit zasílání zpráv, které nejsou součástí standardní funkcionality, např. výzvu k odeslání hmotného produktu expedičním oddělením.
+:::
+
+:::tip
+Jak používat akce v souladu s legislativou pro ochranu osobních údajů se dozvíte v článku [GDPR ve FAPI](/article/42-vop-gdpr-ve-fapi).
+:::
+
+:::caution
+## Postupné otevírání úrovní po splátkách –
+
+## rozdíl mezi FAPI Memberem a Miowebem
+
+  
+
+**FAPI Member** umožňuje otevírat jednotlivé úrovně členské sekce **postupně po každé uhrazené splátce**. Např. po první splátce zpřístupní lekci 1, po druhé lekci 2 atd. Vhodné pro kurzy nebo členství s dávkovaným obsahem.
+
+**Mioweb** naproti tomu zpřístupní **celou členskou sekci už po první platbě** – další splátky už nemají na přístup vliv. Nelze tedy pomocí FAPI a Miowebu postupně otevírat jednotlivé části obsahu po splátkách.
+
+> ✅ Pokud potřebujete obsah otevírat postupně, doporučujeme použít FAPI Member.
+:::
+
+### 5\. Děkovací stránka
+
+Zde nastavíte, jaká stránka se zobrazí zákazníkovi po úspěšném odeslání objednávky. Stránku lze vytvořit v jednoduchém editoru buď přímo v aplikaci, nebo můžete vložit odkaz na vlastní stránku.
+
+  
+
+![Prodejní formulář](/assets/articles/fab99f299aba5ff0.png)
+
+### Vložení pixelů a konverzních kódu do interní děkovací stránky FAPI.
+
+1.  Jako prvně vložte do políčka pixely. Tedy Facebook, Tiktok, Instagram, ... pixely.
+2.  A až poté použijte konverzní kód FAPI.
+
+  
+
+![Prodejní formulář](/assets/articles/b59222adc8ee4234.png)
+
+:::caution
+Při chybě bude automatickyy použita [stránka s přehledem objednávky](/article/102-prehled-objednavky). Ta má tu výhodu, že na ní zákazník vidí všechny informace o objednávce i s fakturou ke stažení a může zde eventuelně i zaplatit.
+:::
+
+Pokud spolupracujete s affiliate partnery, můžete zde nastavit propojení prodejního formuláře s provizním systémem _Affilbox_. Po uskutečnění nákupu prostřednictvím prodejního formuláře se partnerovi, který zákazníka doporučil, započítá provize z prodeje. [Více o systému Affilbox](https://www.affilbox.cz/)
+
+  
+
+### 6\. Vzhled
+
+Na poslední záložce nastavíte, jak se objednávkový formulář bude zobrazovat zákazníkům na vaší webové stránce a jaké údaje bude obsahovat.
+
+![Prodejní formulář](/assets/articles/b0c6d02bc9540bd0.png)
+
+Kromě přítomnosti jednotlivých polí v objednávkovém formuláři zde můžete nastavit i způsob zobrazení cen (ceny mohou být uvedené včetně DPH, nebo zvlášť základ a částka DPH).
+
+Volby **Jazyk prodejního formuláře** a **Jazyk faktur** určují, v jakém jazyce se bude zobrazovat objednávkový formulář a vystavovat faktury. Aktuálně můžete vybírat z těchto jazyků:
+
+-   čeština,
+-   slovenština,
+-   angličtina,
+-   čínština,
+-   francouzština,
+-   chorvatština,
+-   italština,
+-   maďarština,
+-   němčina,
+-   polština,
+-   portugalština,
+-   ruština,
+-   španělština,
+-   vietnamština.
+
+:::caution
+Jazyk prodejního formuláře ovlivňuje i výchozí stát zákazníka v objednávkovém formuláři. Pro češtinu je výchozím státem Česká republika, pro slovenštinu Slovenská republika, pro angličtinu Velká Británie, pro němčinu Německo, pro ruštinu Rusko a pro polštinu Polsko.
+:::
+
+Prodejní formulář je automaticky přednastavený ve zjednodušené podobě, kdy je po zákazníkovi vyžadováno vyplnění pouze e-mailové adresy (volitelně také jména a příjmení, telefonního čísla a státu). V tomto režimu FAPI vystavuje tzv. _zjednodušené daňové doklady_. Režim zjednodušeného formuláře lze použít jen tehdy, je-li celková hodnota objednávky do 10000 Kč. 
+
+Přejete-li si vystavovat plnohodnotný doklad, zaškrtněte i pole **Adresa**. Režim vystavování se poté bude vyhodnocovat automaticky, a to podle údajů, které zákazník v objednávce vyplní.
+
+:::caution
+U starého vzhledu prodejního formuláře se režim vystavování zjednodušených dokladů nastavuje zaškrtnutím políčka **Použít zjednodušený doklad.**
+:::
+
+Zpracování osobních údajů a obchodní podmínky upravují sekce **Obchodní podmínky a GDPR** a **Souhlas se zpracováním osobních údajů**. Najdete zde nastavení týkající se zpracování osobních údajů vyplněných v objednávce - text informační povinnosti a souhlas se zpracováním osobních údajů. Více informací najdete v nápovědě [GDPR ve FAPI](/article/42-vop-gdpr-ve-fapi).
+
+Chcete-li, aby zákazník před odesláním objednávky potvrdil svůj souhlas s obchodními podmínkami, zaškrtněte volbu **Požadovat souhlas s obchodními podmínkami** a uveďte adresu odkazu na obchodní podmínky.
+
+Vzhled objednávkového formuláře můžete přizpůsobit vlastnímu vkusu či svým webovým stránkám buď pomocí interního editoru vzhledu (sekce  **Úprava vzhledu**), nebo pomocí vlastních CSS stylů - volba **Použít vlastní soubor s CSS styly** (šablonu s některými třídami si můžete pro inspiraci stáhnout [zde](https://gist.github.com/fsArti24/ce1832c8b77ca4df2678de0a25909827)).
+
+:::danger
+Pro správné zobrazení české diakritiky v prodejním formuláři je třeba nastavit znakovou sadu webové stránky na kódování UTF-8.
+:::
+
+Kromě běžných znaků lze ve formulářích používat i Emoji ( [verze 1.0](https://emojipedia.org/emoji-1.0/) a Unicode [1.1](https://emojipedia.org/unicode-1.1/)). Emoji lze vložit do tlačítka objednat. Tím můžete ozvláštnit vzhled a dosáhnout například takových výsledků:
+
+![Prodejní formulář](/assets/articles/3195aac95c65c971.png)
+
+:::caution
+Při používání emoji dbejte na správné otestování vzhledu tlačítka v různých prohlížečích a zařízeních. Různí výrobci na svých zařízeních (Apple, Samsung, Google, Microsoft aj.) mohou jeden symbol vykreslovat různými způsoby.
+:::

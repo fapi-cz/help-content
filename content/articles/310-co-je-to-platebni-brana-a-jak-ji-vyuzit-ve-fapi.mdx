@@ -1,0 +1,92 @@
+---
+title: Co je to platební brána a jak ji využít ve FAPI
+url: /article/310-co-je-to-platebni-brana-a-jak-ji-vyuzit-ve-fapi
+description: Platební brána je služba, která umožňuje přijímat online platby od zákazníků, například platební kartou, expresním bankovním převodem, Google Pay či Apple Pay a
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 202-automatizace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Co je to platební brána a jak ji využít ve FAPI
+  - Platební brány (platba kartou)
+  - Automatizace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/310-co-je-to-platebni-brana-a-jak-ji-vyuzit-ve-fapi
+order: 187
+updatedAt: 2026-07-13T11:43:33Z
+legacyAnchors:
+  - id: Jak-monosti-platebnch-bran-FAPI-nabz-WXPO2
+    tag: h2
+    text: Jaké možnosti platebních bran FAPI nabízí
+    occurrence: 0
+    headingIndex: 0
+  - id: Shrnut-Fj_a0
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 2
+---
+Platební brána je **služba, která umožňuje přijímat online platby od zákazníků,** například platební kartou, expresním bankovním převodem, Google Pay či Apple Pay a dalšími metodami.
+
+Ve FAPI slouží k tomu, aby zákazníci mohli **zaplatit ihned** bez čekání na bankovní převod. Platba se **automaticky spáruje**, objednávka se označí jako zaplacená a může se rovnou spustit e-mail, skript nebo přístup do členské sekce.
+
+:::caution
+Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli, a není tedy součástí ceny za licenci FAPI.
+:::
+
+## Jaké možnosti platebních bran FAPI nabízí
+
+FAPI podporuje přímé napojení na tyto platební brány:
+
+  
+
+-   [Stripe](/article/60-zalozeni-a-integrace-platebni-brany-stripe)
+-   [GoPay](/article/56-zalozeni-a-integrace-platebni-brany-gopay)
+-   [Comgate](/article/58-zalozeni-a-integrace-platebni-brany-comgate)
+-   [ThePay](/article/57-zalozeni-a-integrace-platebni-brany-thepay)
+-   [Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays)
+-   [WebPay (Global Payments)](/article/138-zalozeni-a-integrace-platebni-brany-gpwebpay)
+
+  
+
+Každou z těchto bran můžete propojit přímo ve FAPI v sekci **Nastavení → Platební brány**.
+
+:::tip
+## **Jakou bránu si vybrat?**
+
+Pokud váháte, kterou platební bránu zvolit, doporučujeme přečíst si tento srovnávací článek na blogu FAPI:
+
+🔗 [**Platební brány, které lze využívat s FAPI – jakou vybrat?**](https://fapi.cz/blog/platebni-brany-ktere-lze-vyuzivat-s-fapi-jakou-vybrat/)
+
+Najdete zde výhody a nevýhody jednotlivých bran, doporučení podle typu podnikání i praktické postřehy.
+:::
+
+## Shrnutí
+
+Platební brána vám umožní:
+
+✅ přijímat online platby okamžitě
+
+✅ automaticky označit objednávku jako zaplacenou
+
+✅ spouštět návazné akce ihned po zaplacení
+
+FAPI podporuje napojení na **6 populárních platebních bran**, které si můžete snadno připojit podle návodů výše.
+
+:::caution
+💡 **TIP:** Používáte-li **Stripe** jako samostatnou platební bránu mimo FAPI a chcete po zaplacení automaticky vystavit fakturu ve FAPI, podívejte se na návod zde:
+
+👉 [Vystavení faktury z platby ve Stripe](/article/227-vystaveni-faktury-z-platby-ve-stripe)
+:::
+
+:::note
+**Rozhodli jste pro změnu platební brány?**
+
+Určitě postupujte podle této FAPI nápovědy:
+
+[https://napoveda.fapi.cz/article/277-jak-na-zmenu-platebni-brany](/article/277-jak-na-zmenu-platebni-brany)
+:::

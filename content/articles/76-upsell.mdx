@@ -1,0 +1,201 @@
+---
+title: Upsell
+url: /article/76-upsell
+description: "Upsell je účinná strategie zvýšení hodnoty objednávky, kdy v okamžiku nákupu nabídnete svému zákazníkovi další produkt, který vhodně doplňuje hlavní nabídku. V "
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Upsell
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/76-upsell
+order: 18
+updatedAt: 2026-10-15T12:29:53Z
+---
+_Upsell_ je účinná strategie zvýšení hodnoty objednávky, kdy v okamžiku nákupu nabídnete svému zákazníkovi další produkt, který vhodně doplňuje hlavní nabídku.
+
+V tomto článku si popíšeme jak upsell zapojit do prodejního procesu ve FAPI.
+
+## Upsell z pohledu zákazníka
+
+Standardní proces zpracování objednávky ve FAPI se dá zjednodušeně popsat jako sled následujících kroků:
+
+1.  vyplnění objednávkového formuláře a jeho odeslání
+2.  vystavení a odeslání faktury
+3.  zobrazení platební brány a provedení platby
+
+Funkce upsellu zařadí do výše uvedeného procesu za odeslání objednávkového formuláře zobrazení tzv. _upsellové stránky_, na kteréch je zobrazeno tlačítko (popř. více tlačítek) pro přidání upsellové prodejní položky do objednávky a tlačítko pro odmítnutí upsellové nabídky. Teprve po stisku jednoho z těchto tlačítek je vystavena faktura a zákazník je přesměrován na platební bránu, popř. děkovací stránku (při off-line platbě).
+
+Prodejní proces s upsellem tedy vypadá následovně:
+
+1.  vyplnění objednávkového formuláře a jeho odeslání
+2.  postupné zobrazování upsellových stránek
+3.  přidání vybraných upsellových produktů do objednávky, nebo odmítnutí nabídky
+4.  vystavení a odeslání faktury
+5.  zobrazení platební brány a provedení platby
+
+U prodejní procesu s upsellem lze také aktivovat **one-click upsell** (pouze pro Stripe plat. bránu), ten funguje takto:
+
+1.  vyplnění objednávkového formuláře a jeho odeslání
+2.  vystavení a odeslání faktury za hlavní položky formuláře (vč. mini upsellu)
+3.  zobrazení platební brány a provedení platby
+4.  postupné zobrazování upsellových stránek
+5.  přijmutí, nebo odmítnutí upsell produktu 
+    1.  přijmutí vytvoří novou objednávku a strhne částku z použité plat. metody pro zaplacení hlavních položek
+    2.  odmítnutí provede přesměrování na další upsell stránku
+    
+6.  zobrazení děkovací stránky
+
+Upsellová stránka s tlačítky pro přidání upsellové položky (žluté tlačítko) a odmítnutí nabídky (šedé tlačítko) může vypadat například jako na tomto obrázku.
+
+![Upsell](/assets/articles/7247ef83a1d4e8ef.png)
+
+## Nastavení upsellu ve FAPI
+
+### 1\. Vytvoření upsellové stránky
+
+Na svém webu vytvořte upsellovou stránku. Upsellová stránka by měla obsahovat prodejní argumenty (text, obrázky, video apod.) a výzvu vedoucí zákazníka k objednání upsellu. Nezbytnou součástí upsellové stránky jsou tlačítka pro přidání upsellových položek do faktury a odmítnutí nabídky. Cílové odkazy tlačítek získáte později na náhledové stránce prodejního formuláře po jeho uložení.
+
+### 2\. Vytvoření upsellové prodejní položky
+
+Upsellovou položku vytvoříte ve FAPI stejně jako jakoukoli jinou prodejní položku. Pokud si chcete celý postup zjednodušit, můžete upsellovou položku vytvořit přímo v nastavení prodejního formuláře.
+
+### 3\. Nastavení prodejního formuláře pro upsell
+
+Na záložce **Položky a ceny** v nastavení prodejního formuláře klikněte na tlačítko **Přidat upsellovou stránku**.
+
+![Upsell](/assets/articles/a6a670da0c9c1b81.png)
+
+Do pole **URL ADRESA UPSELLOVÉ STRÁNKY** zadejte URL adresu upsellové stránky, na kterou bude zákazník přesměrován po odeslání objednávky.
+
+![Upsell](/assets/articles/63efcd154c678817.png)
+
+Jeden prodejní formulář může obsahovat libovolné množství upsellových stránek a upsellových položek. Myslete však na to, že zákazník může na upsellové stránce vybrat pouze jednu z upsellových položek.
+
+Při využití více upsellových stránek bude zákazník postupně přesměrován skrze všechny definované upsellové stránky (dle jejich pořadí).
+
+Po uložení prodejního formuláře s vybranými upsellovými položkami se zobrazí náhledová stránka, kde najdete cílové odkazy tlačítek pro všechny upsellové stránky.
+
+:::danger
+Pozor: odkazy v upsellových stránkách (pro nákup nebo odmítnutí upsellu) nejsou zaměnitelné. Nejde kombinovat na jedné stránce tlačítko z prvního a druhého upsellu a naopak.
+:::
+
+![Upsell](/assets/articles/be30a3d93564c4bc.png)
+
+### 4\. Nastavení tlačítek upsellové stránky
+
+Odkazy zobrazené na náhledové stránce prodejního formuláře přiřaďte tlačítkům na upsellových stránkách.
+
+:::danger
+Protože odkazy pro přidání a odmítnutí upsellu jsou pro každý prodejní formulář unikátní, nelze jednu upsellovou stránku použít pro více prodejních formulářů.
+:::
+
+:::tip
+Vřele doporučujeme před spuštěním ostrého provozu celý prodejní proces s využitím upsellu otestovat. Testování je nutné provádět přímo na webu způsobem, jakým nakupuje i zákazník.
+
+  
+
+Testování tlačítek z upsellové stránky končí chybou 404.
+:::
+
+Při prodeji na splátky se upsell produkt v základním nastavení započítá jednorázově v plné výši do 1. splátky. Následující faktury / splátky už budou bez upsell produktu.
+
+Při zaškrtnutí checkboxu "Rozdělit upsell do všech splátek" se upsell rozpočítá mezi všechny splátkové faktury.
+
+:::danger
+Při nákupu na splátky s nastavením [one-click upsellu](/article/159-one-click-upsell), dojde k rozdělení upsellu do splátek stejně jako u hlavního produktu.
+:::
+
+[Nápověda ke splátkám.](/article/47-prodej-na-splatky)
+
+![Upsell](/assets/articles/d387fb7933d5aeff.png)
+
+### 5\. Vložení upsell scriptu pro bezchybné fungování
+
+Starší implementace upsellu ve FAPI funguje pomocí cookies. Nové prohlížeče ale aktivně blokují cookies, které uživatel výslovně nepovolil, což může zapříčinit chybu ve fungování upsellu.
+
+Řešením pro FAPI upsell pak je plošně na vaše stránky nasadit následující javascript:
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+Skript vložte do zdrojového kódu na stránku, kam vkládáte odkazy na upselly (tlačítka pro odmítnutí nebo přidání upsell položky do košíku). Po nasazení skriptu zajistíme hladký chod upsellů i bez použití cookies.
+
+Umístění musí být před koncovým tagem \</body\>.
+
+### 6\. Kontrola správného umístění upsell tlačítek na stránce
+
+Pomocí tlačítka "Zkontrolovat správnost umístění všech upsell tlačítek" na náhledu prodejního formuláře můžete zkontrolovat správnost nasazení odkazů na upsell produkty. 
+
+![Upsell](/assets/articles/09d0cb8c7389bac1.png)
+
+Po kliknutí na tlačítko budete informováni o správnosti/chybnosti nasazení upsell odkazů.
+
+![Upsell](/assets/articles/7475bd01cfb91fdf.png)
+
+![Upsell](/assets/articles/59e751b5eb98ffa2.png)
+
+### 7\. (VOLITELNÉ) Aktivace one-click upsell procesu
+
+Pokud používáte platební bránu Stripe, je možné aktivovat tzn. "one-click upsell". One-click upsell proces zapříčiní, že klienti budou nejprve vyzváni k zaplacení hlavních položek formuláře (vč. mini upsellu) a následně budou postupně zobrazeny upsell stránky. Částky za vybrané upsell položky na upsell stránkách budou strženy z platební metody použité pro zaplacení položek ve formuláři. Každý vybraný upsell produkt vytvoří novou objednávku a následně tedy i fakturu. Pro úplné pochopení této metody doporučujeme prodejní formulář nejprve otestovat v testovacím prostředí.
+
+![Upsell](/assets/articles/8b3064d2741f2196.png)
+
+  
+
+## Specifika chování upsellových objednávek
+
+  
+
+1.  **Pozdržení upsellové objednávky při čekání na výběr zákazníka**
+
+Pokud prodejní formulář obsahuje upsell nabídku, čeká na FAPI na výsledek upsellových stránek až 60 minut od okamžiku odeslání první části objednávky. Zákazník tak má čas až 60 minut vybrat, zda jeden či více upsellových nabídek chce nebo nechce.
+
+Upsell objednávku tak, v případě že není dokončený celý průchod všemi upsell stránkami, uvidíte ve FAPI (založí se jako nový doklad), až po cca 60 minutách.
+
+:::danger
+### POZOR na upsellové prodeje s produkty s omezeným množstvím
+
+Pokud jsou dva či více nakupujících delší dobu na upsellu, lze ve výjimečných situacích objednat i více produktů, než je na skladě.
+
+FAPI čeká na dokončení upsell nabídky a doklad, včetně odečtu množství ze skladu, se dělá až po dokončení průchodu celým upsellem.
+:::
+
+  
+
+2.  **Upsellové nákupy a pravidelná fakturace**
+
+Produkty z upsellu se objeví vždy jen v první faktuře, a do druhé a dalších faktur v [pravidelné fakturaci](/article/67-pravidelna-fakturace) se již nedostanou. Na upsell položkách tak je potřeba počítat s tím, že jsou vždy jednorázové a nejde na nich ani používat funkci **nahrazení položky** (vyměnění jedné položky za jinou).
+
+  
+
+3.  **Kombinování hmotných a nehmotných produktů**
+
+Pokud prodáváte v hlavní nabídce nehmotnou položku (např. videokurz nebo e-book), tak se v objednávce nedá vybrat doprava. Navazující hmotný produkt v upsellu tak nejde zpětně doplnit o dopravu.
+
+Při takových kombinacích buď:
+
+-   obraťte pořadí prodeje, aby byl hmotný produkt v hlavní nabídce a nehmotný produkt v upsellu.
+-   nebo hmotný produkt dejte namísto do upsellu do [miniupsellu](/article/77-miniupsell-order-bump), kde si FAPI automaticky ještě vyžádá od zákazníka dopravu a informace k doručení
+
+  
+
+## Stránka s rekapitulací objednávky po upsellech
+
+Funkci "rekapitulace objednávky" je možné zvolit pouze v případě, že je nastavený aspoň jeden upsell.
+
+![Upsell](/assets/articles/bd768e8d40919096.png)
+
+  
+
+Po dokončení všech upsellů se zobrazí stránka s rekapitulací objednávky:
+
+  
+
+![Upsell](/assets/articles/33fe8479def209de.png)
+
+Na ní je souhrn informací o údajích zákazníka, o způsobech dopravy a platby, částce k úhradě celkem a potvrzovací tlačítko k dokončení objednávky a přechod k platbě.
+
+Pod ním je pak tlačítko pro zrušení objednávky.

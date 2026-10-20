@@ -1,0 +1,70 @@
+---
+title: Vložení prodejního formuláře na Shoptet
+url: /article/161-vlozeni-prodejniho-formulare-na-shoptet
+description: Pokud používáte Shoptet a s funkcemi eshopu jste spokojení, stále vám možná chybí propracovaná automatizace, nebo funkce pro snadný prodej elektronických produk
+category: Jak vložit prodejní formulář do stránky
+categorySlug: 150-vlozeni-prodejniho-formulare-na-web
+categorySlugs:
+  - 150-vlozeni-prodejniho-formulare-na-web
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Vložení prodejního formuláře na Shoptet
+  - Jak vložit prodejní formulář do stránky
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/161-vlozeni-prodejniho-formulare-na-shoptet
+order: 67
+updatedAt: 2026-07-13T10:31:10Z
+---
+Pokud používáte Shoptet a s funkcemi eshopu jste spokojení, stále vám možná chybí propracovaná automatizace, nebo funkce pro snadný prodej elektronických produktů. Dobrá zpráva je, že tady vám snadno pomůže FAPI.
+
+  
+Do Shoptet článků jde jednoduše vkládat prodejní formuláře FAPI. Ukážeme si krok za krokem, jak na to.
+
+Budeme potřebovat:
+
+-   hotový prodejní FAPI formulář - tady [najdete jak na to](/article/44-prodejni-formular)
+-   dále jeho údaje pro vložení na web (najdete je ve FAPI přes Prodej \> Prodejní formuláře \> Náhled \> Kód HTML pro vložení formuláře na web)
+-   shoptetí eshop s dostupnou a viditelnou částí Články (V Shoptetu je to položka Vzhled a obsah \> Články \> Přidat článek)
+
+##   
+
+### Obrázkový postup krok za krokem
+
+Otevřete v Shoptetu nový článek:
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/0fdcfc0e42feeff1.png)
+
+V něm vyplňte název a URL. Pak klikněte na Nástroje \> Zdrojový kód
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/30ef00569ec5d4b0.png)
+
+Do zdrojového kódu článku v shoptetu vložte zkopírovaný script z prodejního fomuláře FAPI:
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/d8621b44efd30081.png)
+
+a klikněte na OK.
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/81b6c96e400ce054.png)
+
+Po uložení scriptu v Shoptet článku nemusí být vůbec nic vidět, ale toho se nelekejte. Klikněte v Shoptetu na ULOŽIT.
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/3d212963ea417bf4.png)Hned po uložení se objeví nové tlačítko Zobrazit. Klikněte na něj a dostanete se do náhledu nové stránky s prodejním formulářem:
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/54880523b398224f.png)
+
+Klikněte na něj, dostanete se na shoptetí stránku s článkem. Pokud jste všechno udělali správně, uvidíte FAPI prodejní formulář:
+
+![Vložení prodejního formuláře na Shoptet](/assets/articles/97538771010446c9.png)
+
+### Tipy a triky
+
+-   Před i za prodejní formulář můžete do shoptetího článku přidávat další obsah. Texty, obrázky nebo multimédia. Klidně z něj můžete udělat samostatnou prodejní stránku, kde bude podrobné představení vaší služby nebo produktu, a samotný formulář bude až na samém konci.
+-   **Pokud máte na doméně Shoptet eshopu autorizovanou platební bránu, tak tady pozor** – ta ve FAPI formuláři nebude správně fungovat. Musíte se spokojit buď jen s bankovními převody, nebo pro FAPI formulář použít jinou instanci platební brány. Ta sice bude stále pro stejnou doménu jakou máte u Shoptetu, ale bude obsahovat jiné reference a adresy. O tento "duplikát" je nutné požádat na platební bráně, případně můžete pro Shoptet mít jednoho poskytovatele (např. [Comgate](https://www.comgate.cz/?r=H378)) a pro FAPI formuláře na Shoptetu používat Stripe.
+-   Shoptet bohužel neumožňuje synchronizovat objednávky 😭. Čísla objednávek v Shoptetu a ve FAPI se nikdy nebudou doplňovat (nemohou používat stejnou číselnou řadu). Myslete na to dopředu a použijte takové číslování dokladů, u kterého nehrozí, že by dva doklady (shoptetí a FAPI doklad) měly stejné číslo.
+-   Na Shoptetu bude fungovat i upsell. Pokud ho chcete používat, ujistěte se, že upsellová stránka (ta, kam zákazníka posíláte po odeslání první části objednávky), obsahuje upsellový skript:  
+    
+    ```text
+    <script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+    ```
+    
+    Před zveřejněním prodeje si také určitě otestujte, že je vše v pořádku a funkční.

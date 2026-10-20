@@ -1,0 +1,69 @@
+---
+title: Propojení FAPI s Anabixem
+url: /article/51-propojeni-fapi-s-anabixem
+description: Potřebujete sledovat o svých zákaznících více informací nebo je váš prodejní proces složitější? V takovém případě je užitečné využít CRM systém (systém pro říze
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s Anabixem
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/51-propojeni-fapi-s-anabixem
+order: 167
+updatedAt: 2026-07-13T11:11:03Z
+---
+Potřebujete sledovat o svých zákaznících více informací nebo je váš prodejní proces složitější? V takovém případě je užitečné využít _CRM systém_ (systém pro řízení vztahů se zákazníky), který vám umožní zpracovávat informace o vašich zákaznících pokročilejším způsobem.
+
+FAPI podporuje přímé propojení s [CRM systémem Anabix](https://www.anabix.cz/?a_box=z3xyfr5w). Díky tomu můžete synchronizovat údaje klientů mezi FAPI a Anabixem, načítat do Anabixu faktury klientů z FAPI nebo automaticky zařazovat klienty do seznamů Anabixu podle toho, jaký produkt či službu od vás využívají.
+
+## Princip propojení FAPI s Anabixem
+
+Pro spolupráci aplikací, je nutné nejprve obě aplikace propojit. FAPI a Anabix se dají propojit z obou stran, přičemž každé z těchto propojení se dá využít k jinému účelu. Oběma způsobům propojení se věnují následující kapitoly.
+
+:::tip
+Aplikace můžete propojit buď jednostranně, nebo - což doporučujeme - oba uvedené způsoby propojení zkombinovat.
+:::
+
+### Propojení ze strany Anabixu
+
+Tento způsob propojení využijete tehdy, když chcete, aby Anabix měl přístup do FAPI a mohl z něj načítat data (klienty a vystavené faktury), popř. do FAPI zapisovat (zakládat nové klienty).
+
+Propojení spočívá ve vyplnění přístupových údajů do FAPI v Anabixu v nabídce **Nastavení - Služby - Faktury - FAPI**. Zde vyplňte uživatelské jméno účtu FAPI a API klíč, který si vytvoříte ve FAPI pomocí tlačítka **Nový API klíč** v nabídce **Můj účet - API klíče**.
+
+:::caution
+Po propojení se v Anabixu automaticky vytvoří seznam pojmenovaný "FAPI", který slouží pro synchronizaci dat s propojeným účtem FAPI.
+:::
+
+Více informací najdete v [nápovědě Anabixu](http://anabix.mioweb.cz/videonapoveda-napojeni-na-fakturacni-systemy/).
+
+### Propojení ze strany FAPI
+
+Při tomto způsobu propojení má FAPI přístup do Anabixu a může automaticky zapisovat údaje klienta do vybraného seznamu Anabixu po objednání nebo zaplacení produktu, popř. údaje klienta ze seznamu naopak odebrat. (Zápis a odebrání dat do/z Anabixu je popsáno v následující kapitole.)
+
+Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **Anabix** a na následující stránce vyplňte potřebné přístupové údaje.
+
+![Propojení FAPI s Anabixem](/assets/articles/f38ff7068cededac.png)
+
+-   **UŽIVATELSKÉ JMÉNO** - vyplňte své uživatelské jméno, pod kterým se přihlašujete do Anabixu.
+-   **API TOKEN** - vyplňte tzv. _API token_, který najdete v systému Anabix v nabídce **Nastavení - Hlavní nastavení - API token**.
+
+Po vložení správných přístupových údajů a uložení nastavení pomocí tlačítka **Uložit** se na stránce **Propojení aplikací** objeví u položky **Anabix** ve sloupci **Stav spojení** text **Připojeno**.
+
+## Zápis a odebrání kontaktních údajů do/z Anabixu
+
+Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybraného seznamu Anabixu nastavíte v prodejním formuláři na záložce **Akce**. Použijte k tomu akci **přidat kontakt do Anabixu**, resp. **odebrat kontakt z Anabixu**.
+
+![Propojení FAPI s Anabixem](/assets/articles/951d71dbf99e6cb7.png)
+
+:::tip
+Do Anabixu můžete přenášet také údaje vyplněné zákazníkem do  _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+:::
+
+:::caution
+GDPR: Údaje o zákazníkovi se do Anabixu přenášejí s právním důvodem zpracování osobních údajů _Plnění smlouvy nebo jednání o jejím uzavření_.
+:::

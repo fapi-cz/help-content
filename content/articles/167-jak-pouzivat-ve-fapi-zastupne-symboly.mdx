@@ -1,0 +1,63 @@
+---
+title: Jak používat ve FAPI zástupné symboly v e-mailech a sms
+url: /article/167-jak-pouzivat-ve-fapi-zastupne-symboly
+description: "Pro snadné přizpůsobení emailů jsou ve FAPI k dispozici zástupné symboly, které se při posílání konkrétní zprávy nahradí za údaje z objednávky (dokladu). To se "
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+keywords:
+  - Jak používat ve FAPI zástupné symboly v e-mailech a sms
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/167-jak-pouzivat-ve-fapi-zastupne-symboly
+order: 130
+updatedAt: 2026-07-13T10:59:55Z
+---
+Pro snadné přizpůsobení emailů jsou ve FAPI k dispozici zástupné symboly, které se při posílání konkrétní zprávy nahradí za údaje z objednávky (dokladu).
+
+To se hodí například pro odkázání se na číslo dokladu v předmětu zprávy, pro souhrn objednaných položek, nebo pro zaslání platebních údajů k bankovnímu převodu či poslání odkazu do platební brány.
+
+### Kde zástupné symboly najít?
+
+Seznam všech dostupných zástupných symbolů najdete u všech editorů zpráv. Používat je můžete u **Šablon zpráv** u **Šablon upomínek**. Výběr a vložení zástupného symbolu najdete pod ikonou zcela vpravo, na horním řádku editoru.
+
+![Jak používat ve FAPI zástupné symboly v e-mailech a sms](/assets/articles/2d76a7332bcbb145.png)
+
+Po kliknutí na ikonku se otevře nové okno se seznamem zástupných symbolů. Pro větší přehlednost jsou rozděleny do záložek, seskupených tematicky. Konkrétní zástupný symbol se do zprávy vloží jednoduše kliknutím na světle šedé políčko s daným symbolem.
+
+Každý zástupný symbol je stručně popsaný a označený samotným zástupcem - ten tvoří celý obsah včetně složených závorek, např. **\{amount\}**.
+
+![Jak používat ve FAPI zástupné symboly v e-mailech a sms](/assets/articles/2ec8f47bc1590935.png)
+
+:::caution
+Zástupné symboly fungují správně jen tehdy, když jsou vložené 1:1 přesně tak, jak mají být, včetně závork. Pokud je chcete formátovat (tučné písmo, barevné zvýraznění), vždy se ujistěte přes HTML zobrazení celého textu zprávy, že samotný zástupný symbol se během formátování nerozkouskoval.
+:::
+
+:::tip
+**DOBŘE**: \<span style="color:#2ecc71"\>\<strong\>\{amount\}\</strong\>\</span
+:::
+
+:::danger
+**ŠPATNĚ**: \<span style="color:#2ecc71"\>\{\<strong\>amount\</strong\>\}\</span\>
+:::
+
+Zástupné symboly se při rozesílání emailu nahradí obsahem, který odpovídá danému dokladu, připojenému dokumentu apod. Promyslete si tedy, jaký je vhodný způsob formátování. Někdy se hodí nechat symbol jen tak, někdy zvýraznit **tučně**, někdy je lepší z něj udělat [klikací odkaz](http://www.fapi.cz/).
+
+:::danger
+**Pozor**: Některé zástupné symboly nejde testovat v náhledech emailů, ale je nutné udělat testovací objednávku stejně, jako by postupoval zákazník. Typicky jde o odkazy ke stažení DRM souborů, nebo voucher odkazy.
+:::
+
+### Jak udělat zástupný symbol klikací
+
+Označte si v editoru tažením myší tu část textu zprávu, kterou chcete změnit na odkaz. Pak klikněte na ikonu řetězu, nebo na klávesnici použijte zkratku Ctrl+K (Cmd+K).
+
+![Jak používat ve FAPI zástupné symboly v e-mailech a sms](/assets/articles/9fe0210f549f7cf4.png)
+
+-   Pole ZOBRAZIT TEXT ukazuje to, co bude viditelné při čtení zprávy -\> v ukázce je to slovo _převodem_
+-   TYP ODKAZU neměňte
+-   PROTOKOL u zástupných symbolů nastavte vždy na \<jiný\>, jinak nebudou fungovat správně.
+-   URL obsahuje samotný zástupný symbol, který FAPI bude měnit za hodnotu podle dané objednávky, resp. dokladu.
+
+V **editoru** uvidíte u takto definovaného odkazu: `převodem`
+
+V **HTML editoru** pak: \<a href="\{file:9876\}" target="\_blank"\>převodem\</a\>

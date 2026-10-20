@@ -1,0 +1,194 @@
+---
+title: Založení a integrace platební brány GoPay ve FAPI
+url: /article/56-zalozeni-a-integrace-platebni-brany-gopay
+description: GoPay je česká platební brána, která umožňuje přijímat online platby kartou, expresními bankovními převody i dalšími platebními metodami. Ve FAPI ji můžete jedn
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 5-nastaveni
+  - 7-platby
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Založení a integrace platební brány GoPay ve FAPI
+  - Platební brány (platba kartou)
+  - Nastavení
+  - Platby
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/56-zalozeni-a-integrace-platebni-brany-gopay
+order: 9
+updatedAt: 2026-10-15T15:07:36Z
+legacyAnchors:
+  - id: -1-Zaloen-tu-GoPay--oU1cc
+    tag: h2
+    text: 1. Založení účtu platební brány u GoPay
+    occurrence: 0
+    headingIndex: 0
+  - id: Dleit-doporuen-bcs_-
+    tag: h2
+    text: Důležité doporučení
+    occurrence: 0
+    headingIndex: 1
+  - id: 2-Vytvoen-propojen-se-Stripe-ve-FAPI-fktGl
+    tag: h2
+    text: 2. Vytvoření propojení s GoPay ve FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 3-Nastaven-platebn-brny-Stripe-v-prodejnm-formuli-7Q2X-
+    tag: h2
+    text: 3. Nastavení platební brány GoPay v prodejním formuláři
+    occurrence: 0
+    headingIndex: 3
+---
+GoPay je česká platební brána, která umožňuje přijímat online platby kartou, expresními bankovními převody i dalšími platebními metodami. Ve FAPI ji můžete jednoduše propojit s prodejním formulářem a automaticky tak přijímat online platby od svých zákazníků.
+
+Tento článek pojednává o integraci platební brány [GoPay](https://registration.gopay.com/cs/registrace-dodavatel/fapi) do FAPI.
+
+:::caution
+Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli (společnosti GoPay Czech odštěpný závod), a není tedy součástí ceny za licenci FAPI.
+
+[Ceník platební brány GoPay](https://www.gopay.com/cs/cenik.html)
+:::
+
+  
+
+**Návod vám pomůže se:**
+
+1.  Založením platební brány GoPay
+2.  Napojením GoPay do FAPI
+3.  Aktivací GoPay v prodejním formuláři
+
+  
+
+## 1\. Založení účtu platební brány u GoPay
+
+Účet GoPay si zřídíte na stránkách společnosti GoPay.
+
+:::tip
+👉 **Použijte tento** [přímý odkaz na založení platební brány](https://registration.gopay.com/cs/registrace-dodavatel/fapi) u GoPay.
+
+  
+
+Registrace přes tento odkaz je doporučená, protože:
+
+-   víme, že účet bude kompatibilní s FAPI, jelikož jsme certifikované řešení [Seznam certifikovaných dodavatelů GoPay](https://help.gopay.com/cs/s/ve),
+-   proces schvalování je nastavený pro online prodej,
+-   není potřeba nutně řešit nastavení testovacího režimu, tedy integrace s GoPay je jednodušší.
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/3df0625e17a10c71.png)
+
+## Důležité doporučení
+
+Při komunikaci s GoPay vždy uveďte, že budete platební bránu používat s **FAPI**.
+
+FAPI je ověřené certifikované řešení pro online prodej a fakturaci a pracovníci GoPay jsou s tímto napojením běžně obeznámeni.
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/cee92c5f10584905.png)
+:::
+
+**Co bude dál?**
+
+Společnost GoPay vám obratem zašle **e-mail pro ověření**. Po ověření vám zpřístupní rozhraní pro aktivaci brány a do 3 dnů v ní najdete i vaši cenovou nabídku.
+
+Následně si zadáte **heslo** do GoPay a projdete **dvoufázovým ověřením** přes sms.
+
+V zápětí vám přijde z GoPay **potvrzující email, že vám aktivovaly účet** a dostanete se do administrace GoPay, kde je potřeba pokračovat v nastavení.
+
+**Dále je potřeba vyplnit informace o vašem obchodu:**
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/24864bf14240b004.png)
+
+Vámi vyplněné informace budou pak v GoPay zkontrolovány, a pokud celý proces projde v pořádku, uzavřou s vámi smlouvu. V jiném případě vás vyzvou k opravě.
+
+**Se schválenou smlouvou pak dostanete z GoPay i přístupové údaje.** Tyto údaje dostanete emailem a sms zprávou.
+
+Rovněž je najdete i ve svém GoPay účtu, v sekci Integrace.
+
+  
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/e3f0f79eabded04b.png)
+
+:::danger
+Jestliže chcete platební bránu využívat **na více webových doménách**, je nutné si vyžádat od společnosti GoPay **samostatné přístupové údaje** pro každou provozovanou doménu.
+
+Ve FAPI není omezení na to, kolik platebních bran si u GoPay založíte. V každém prodejním formuláři si zvolíte tu, kterou pro svůj prodej potřebujete.
+:::
+
+:::danger
+Pokud máte potíže s jakýmkoliv nastavením plateb, potřebujete poradit, nebo se chcete informovat o možnostech nastavení platební brány pro váš e-shop, obraťte se prosím na zákaznickou podporu GoPay na e-mailu [podpora@gopay.cz](mailto:podpora@gopay.cz) nebo na tel. čísle +420 387 685 123.
+:::
+
+Protože GoPay integrujete přes **certifikované řešení FAPI**, **nemusíte provádět platby v testovacím prostředí.** Testovací profil vám je však automaticky dostupný.
+
+Tento krok je naopak  **povinný** v případě, že GoPay integrujete **vlastním řešením mimo FAPI**.
+
+Pokud si přesto přejete propojení otestovat na testovacím profilu, napište na [integrace@gopay.cz](mailto:integrace@gopay.cz)  a vyžádejte si tzv. **testovací integrační soupis** nebo si testovací údaje zobrazte v GoPay obchodním účtu v sekci Integrace.
+
+:::tip
+**Více o testovacím profilu v GoPay máme v této FAPI nápovědě:**
+
+[https://napoveda.fapi.cz/article/72-testovani-platebni-brany-gopay](/article/72-testovani-platebni-brany-gopay)
+
+  
+
+Testovací profil má své přístupy, které jsou odlišné od produkčního režimu platební brány.
+:::
+
+:::caution
+Pokud chcete v GoPay používat **opakované platby kartou** (např. u pravidelné fakturace), je potřeba mít v GoPay aktivovanou funkci **„platby na vyžádání“ (On Demand)**. Tuto funkci je potřeba **nechat schválit ze strany GoPay**, obvykle na základě vaší žádosti.
+
+**Více máme v této FAPI nápovědě**: [https://napoveda.fapi.cz/article/73-opakovane-platby](/article/73-opakovane-platby)
+:::
+
+## 2\. Vytvoření propojení s GoPay ve FAPI
+
+Ve FAPI v nabídce **Nastavení -\> Propojení aplikací** stiskněte tlačítko **Nové propojení s GoPay**.
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/7dc3284b37be0efc.png)
+
+Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení se službou GoPay.
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/e8eac6f3d3a988e2.png)
+
+**Údaje pro vyplnění máte v e-mailu a sms od GoPay** nebo **v GoPay obchodním účtu v sekci Integrace.**
+
+-   **DOMÉNA** - webová doména, na které budete platební bránu GoPay používat (např. ve tvaru fapi.cz)
+-   **CLIENT ID** - identifikátor subjektu registrovaného v GoPay
+-   **CLIENT SECRET** - tajný identifikátor subjektu registrovaného v GoPay
+-   **GOID -** jedinečný identifikátor pro každý e-shop zaregistrovaný v GoPay
+
+  
+
+Zadané údaje ve FAPI uložte stiskem tlačítka **Uložit nastavení**.
+
+:::danger
+Testovací i produkční režim mají své vlastní přístupové údaje a je potřeba je správně zadat, jinak jsou vyhodnoceny chybou, že se jedná o nesprávné přístupy.
+:::
+
+## 3\. Nastavení platební brány GoPay v prodejním formuláři
+
+Nakonec už jen zbývá propojenou platební bránu přidat do prodejního formuláře, v němž si přejete platební bránu využívat.
+
+V nabídce **Prodej -\> Prodejní formuláře**, vyberte formulář, u kterého chcete nabídnout online platby zprostředkované pomocí platební brány GoPay a stiskněte tlačítko **Upravit prodejní formulář.**
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/aa8bda03be354320.png)
+
+Na záložce **3\.** **Platba, doprava a fakturace** v úpravě prodejního formuláře vyberte v sekci **Platební brána** příslušné propojení s platební bránou GoPay.
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/cabeb7542cd252e5.png)
+
+Změny provedené v nastavení prodejního formuláře uložte tlačítkem **Uložit formulář**.
+
+![Založení a integrace platební brány GoPay ve FAPI](/assets/articles/b421dcfa3013840d.png)
+
+Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář je nyní propojen s platební bránou GoPay a vaši zákazníci vám mohou začít platit online.
+
+  
+
+:::tip
+Mnoho užitečných návodů o GoPay najdete pod tímto odkazem, mimo to GoPay má českou podporu:
+
+[https://help.gopay.com/cs/](https://help.gopay.com/cs/)
+:::

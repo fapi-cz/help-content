@@ -1,0 +1,83 @@
+---
+title: Hromadná změna data splatnosti dokladu / Pevné datum splatnosti
+url: /article/176-hromadna-zmena-data-splatnosti-dokladu
+description: Funkci využijete v případech, kdy realizujete předobjednávky, nebo pořádáte akce s pevným datem konání, ale přihlášky sbíráte dlouho dopředu. Pomocí jednoduchéh
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Hromadná změna data splatnosti dokladu / Pevné datum splatnosti
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/176-hromadna-zmena-data-splatnosti-dokladu
+order: 151
+updatedAt: 2026-07-13T11:07:27Z
+---
+Funkci využijete v případech, kdy realizujete předobjednávky, nebo pořádáte akce s pevným datem konání, ale přihlášky sbíráte dlouho dopředu. Pomocí jednoduchého scénáře v aplikaci Make automaticky změníte datum splatnosti nového dokladu na pevně stanovené datum.
+
+  
+
+Kdykoliv tedy nový doklad vznikne, bude mít sjednoceno datum se všemi ostatními doklady, které pocházejí z přesně definovaného prodejního formuláře, který přes Akce posílá data ke zpracování do Make.
+
+  
+
+Pokud se chcete podívat na videotutorial, [mrkněte sem.](https://www.youtube.com/watch?v=3AAr3eqDb0A)
+
+  
+
+Co ke zprovoznění potřebujete:
+
+-   FAPI prodejní formulář
+-   [Make.com](http://make.com/) účet
+-   předpřipravenou kopii [tohoto Make scénáře](http://www.make.com/cs/integration/10545-konkretni-datum-splatnosti-pro-faktury?templatePublicId=10545)
+
+  
+
+Workflow funguje takto:
+
+-   ve FAPI vznikne nový doklad,
+-   spustí se automatizační pravidlo z Akcí, které pošle data do aplikace Make (spustit skript),
+-   v Make se ověří správnost údajů, dohledají se data o dané faktuře a posune se datum splatnosti dokladu na zadané datum,
+-   daný doklad ve FAPI získá nové datum splatnosti, nastavené ve scénáři v Make.
+
+:::danger
+Pozor: změna splatnosti dokladu pomocí tohoto návodu probíhá v Make odděleně od FAPI.
+
+Zákazníkovi tedy hned po objednání dorazí emailem doklad se splatností platnou v době vytvoření dokladu. Ta se ale s nějakým zpožděním, po průchodu automatizace v Make, změní.
+
+Nový doklad, se změněnou splatností, už klientovi FAPI ale **nepošle**.
+:::
+
+## Postup v Make
+
+Načtěte do svého účtu náš předpřipravený [scénář odtud.](http://www.make.com/cs/integration/10545-konkretni-datum-splatnosti-pro-faktury?templatePublicId=10545)
+
+Vyplňte postupně:
+
+-   **webhook** (vyberte existující, nebo vytvořte nový),
+-   do **filtru** zadejte číslo, které označuje ID prodejního formuláře. Najdete ho v URL adrese, když upravujete prodejní formulář, je to číslo na konci adresního řádku.
+
+![Hromadná změna data splatnosti dokladu / Pevné datum splatnosti](/assets/articles/0e940bdae9119152.png)
+
+V posledním kroku scénáře zadejte datum, na které má Make posunout datum splatnosti. Datum zadáváme ve formátu DD.MM.RRRR. Například 01.04.2024.
+
+![Hromadná změna data splatnosti dokladu / Pevné datum splatnosti](/assets/articles/70727029c3f6ee70.png)
+
+  
+
+Scénář uložte, zapněte testovací spuštění a dokončete nastavení ve FAPI prodejním formuláři. Zde nastavte v kroku 4 akce v tabulce automatizací nový krok.
+
+-   Událost -\> vystavení objednávky
+-   Akce -\> spustit programový skript
+-   do URL adresy vložte adresu z Make scénáře, kterou najdete v prvním kroku
+    
+    ![Hromadná změna data splatnosti dokladu / Pevné datum splatnosti](/assets/articles/2cac67fe2dbbfcb5.png)
+    
+
+Zkopírovanou adresu z Make vložte ve FAPI do sloupce Akce do prostředního řádku:
+
+![Hromadná změna data splatnosti dokladu / Pevné datum splatnosti](/assets/articles/c4ae2f6d7af01d7f.png)
+
+Nastavení uložte, a vyzkoušejte testovací objednávkou, zda skript ve FAPI a v Make správně běží. Pokud máte vše nastaveno dobře, změní se datum splatnosti do pár vteřin až minut od okamžiku vystavení objednávky.

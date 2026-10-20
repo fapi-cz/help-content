@@ -1,0 +1,56 @@
+---
+title: Export klientů
+url: /article/86-export-klientu
+description: FAPI není uzavřený svět sám pro sebe. Již od svého vzniku bylo navrženo tak, aby mohlo komunikovat s jinými systémy. Kromě otevřeného API rozhraní poskytuje FAP
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Export klientů
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/86-export-klientu
+order: 142
+updatedAt: 2026-07-13T10:59:59Z
+---
+FAPI není uzavřený svět sám pro sebe. Již od svého vzniku bylo navrženo tak, aby mohlo komunikovat s jinými systémy. Kromě otevřeného [API rozhraní](/article/84-ovladani-fapi-pres-api-rozhrani) poskytuje FAPI také dávkový [export vystavených faktur](/article/85-export-faktur) a údajů o klientech.
+
+Export klientů využijete například v situaci, kdy potřebujete získat přehled kompletních informací o svých klientech, popř. tyto údaje dále zpracovávat.
+
+## Jak exportovat klienty
+
+Všechny volby potřebné pro export údajů o klientech uložených ve FAPI najdete v nabídce  **Klienti - Export klientů**.  
+
+![Export klientů](/assets/articles/d09a1bdd5f310f5f.png)
+
+### Výběr klientů pro export
+
+Export můžete omezit podle několika kritérií, přičemž do výsledného souboru budou zahrnuti pouze klienti, kteří splňují současně všechny zvolené podmínky.
+
+Klienty lze filtrovat podle:
+
+-   projektu, do kterého klient patří,
+-   typu klienta (nepodnikatel/podnikající subjekt),
+-   státu klienta,
+-   jména klienta, názvu firmy nebo e-mailové adresy,
+-   prodejního formuláře, prostřednictvím kterého klient objednal,
+-   produktu, který klient zakoupil,
+-   počtu objednávek (volitelně jen zaplacených),
+-   celkové částky objednávek (volitelně jen zaplacených),
+-   data objednávek (volitelně jen zaplacených)
+
+### Provedení exportu
+
+Po stisku tlačítka **Exportovat do CSV** se spustí export klientů do souboru ve formátu CSV.
+
+Po spuštění exportu je možné buď počkat na dokončení procesu a automatické stažení souboru, nebo stránku opustit a vytvořený soubor si stáhnout později.
+
+:::caution
+Poslední vygenerovaný soubor je v systému uložen a připraven ke stažení (na konci stránky) až do příštího spuštění exportu.
+:::
+
+![Export klientů](/assets/articles/ab8a13cb4173e2d8.png)
+
+:::tip
+Klienty lze alternativně exportovat i přímo ze stránky **Klienti - Přehled klientů**, a to pomocí tlačítka **Exportovat klienty**. Tím dojde k přesměrování na stránku pro vytvoření exportu, kde budou předvyplněny podmínky zadané ve filtru na stránce s přehledem klientů.
+:::

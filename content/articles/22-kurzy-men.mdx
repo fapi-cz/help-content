@@ -1,0 +1,46 @@
+---
+title: Kurzy měn
+url: /article/22-kurzy-men
+description: "Vystavujete-li faktury v cizí měně, potřebujete pracovat také s kurzy měn. Měnový kurz se ve FAPI používá: k přepočtu hodnot zobrazených na nástěnce a ve statis"
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+keywords:
+  - Kurzy měn
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/22-kurzy-men
+order: 85
+updatedAt: 2026-07-13T10:35:52Z
+---
+Vystavujete-li faktury v cizí měně, potřebujete pracovat také s kurzy měn.
+
+Měnový kurz se ve FAPI používá:
+
+-   k přepočtu hodnot zobrazených na nástěnce a ve statistikách,
+-   k výpočtu rekapitulace DPH u faktur vystavených v cizí měně (pouze u plátců DPH),
+-   k vyčíslení cen prodejních položek v [režimu "plovoucích cen"](/article/20-meny-ve-fapi).
+
+## Nastavení kurzu
+
+Měnové kurzy se nastavují centrálně pro celý účet FAPI, a to v nabídce **Nastavení - Nastavení fakturace** \- sekce **KURZY MĚN**.
+
+![Kurzy měn](/assets/articles/81a3d84e7c94ad77.png)
+
+FAPI automaticky načítá každý den aktuální kurzovní lístek. Můžete přitom určit (pomocí volby **NAČÍTAT KURZY**), zda se pro přepočet měny na vystavených fakturách má používat kurz předchozího dne (hodnota **Denní včerejší**), nebo kurz platný v daný den (hodnota **Denní dnešní**).
+
+:::caution
+Kurzovní lístek je zveřejňován _Českou národní bankou_, resp. _Evropskou centrální bankou_ každý den v odpoledních hodinách a poté stažen do FAPI, v průběhu dne se tedy kurz může změnit. Proto doporučujeme používat hodnotu **Denní včerejší**, kdy se kurzy v rámci jednoho dne nemění.
+:::
+
+Kromě toho je možné pro vybranou měnu zadat libovolný pevný kurz - pomocí tlačítka **Přidat pevný kurz**.
+
+Je-li zadaný pevný kurz smazán (tlačítko **Odebrat**), použije se pro příslušnou měnu opět výchozí kurz načtený podle volby **NAČÍTAT KURZY**.
+
+## Historie kurzů
+
+Po stisku tlačítka **Zobrazit historii kurzů měn** je zobrazena tabulka s historií kurzů pro vybranou měnu.
+
+## Vazba na datum
+
+U plátce DPH se kurz váže na  _datum uskutečnění zdanitelného plnění_. U neplátce je kurz navázán na _datum vystavení_. Pokud je tedy u plátce DPH při editaci faktury změněno datum uskutečnění zdanitelného plnění, změní se i kurz použitý ve faktuře. U neplátce se kurz změní při změně data vystavení faktury.

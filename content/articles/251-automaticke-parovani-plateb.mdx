@@ -1,0 +1,113 @@
+---
+title: Automatické párování plateb ve Fapi
+url: /article/251-automaticke-parovani-plateb
+description: Párování plateb – kdy dojde k automatickému spárování? Platby, které jsou realizované přes platební bránu jsou párovány automaticky. Platby provedené přes banko
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Automatické párování plateb ve Fapi
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/251-automaticke-parovani-plateb
+order: 138
+updatedAt: 2026-07-13T11:21:09Z
+legacyAnchors:
+  - id: Provn-plateb--kdy-dojde-k-automatickmu-sprovn-31F5l
+    tag: h2
+    text: Párování plateb – kdy dojde k automatickému spárování?
+    occurrence: 0
+    headingIndex: 0
+  - id: Platby-proveden-pes-bankovn-spojen-KA_aE
+    tag: h3
+    text: Platby provedené přes bankovní spojení
+    occurrence: 0
+    headingIndex: 1
+  - id: -Co-je-poteba-pro-sprvn-provn-_J96_
+    tag: h3
+    text: "✅ Co je potřeba pro správné párování:"
+    occurrence: 0
+    headingIndex: 2
+  - id: -Platby-kartou--automatick-provn-bez-starost-Dut7j
+    tag: h3
+    text: 💳 Platby kartou = automatické párování bez starostí
+    occurrence: 0
+    headingIndex: 3
+  - id: -Platba-odpovd-ale-pesto-se-nesprovala-FuzXX
+    tag: h3
+    text: 🔍 Platba odpovídá, ale přesto se nespárovala?
+    occurrence: 0
+    headingIndex: 4
+---
+## Párování plateb – kdy dojde k automatickému spárování?
+
+Platby, které jsou realizované přes platební bránu jsou párovány automaticky.
+
+  
+
+### Platby provedené přes bankovní spojení
+
+FAPI umí platby automaticky párovat s vystavenými objednávkami, **pokud jsou splněny tyto podmínky**:
+
+### ✅ Co je potřeba pro správné párování:
+
+1.  **Správně nastavené napojení na vaši banku**
+    
+    Postup najdete v této nápovědě: 👉 [Jak napojit FAPI na banku pro automatické párování](/article/30-import-plateb-z-banky)
+    
+
+  
+
+2.  **Shoda variabilního symbolu (VS)**
+
+-   – VS v přijaté platbě se musí **shodovat s VS objednávky** ve FAPI.
+
+  
+
+3.  **Shoda částky a měny**
+
+-   – Částka na platbě se musí přesně rovnat částce objednávky.
+    
+    – Měna musí odpovídat měně nastavené na faktuře.
+    
+
+Pokud **některý z těchto údajů nesouhlasí**, nebo je např. platba rozdělená, případně přišla bez VS, **platba se nespáruje automaticky**.
+
+V takovém případě se zobrazí v sekci **Nespárované platby**, kde s ní můžete dále pracovat ručně.
+
+👉 Podrobný návod, jak pracovat s nespárovanými platbami, najdete zde:
+
+[🔗 Jak pracovat s nespárovanými platbami](/article/158-jak-pracovat-s-nesparovanymi-platbami)
+
+  
+
+:::danger
+Všechny bankovní převody párujeme 1x za hodinu, vždy cca od 20. do 40. minuty.
+
+Platba QR kódem je rovněž bankovní převod.
+:::
+
+:::caution
+### 💳 Platby kartou = automatické párování bez starostí
+
+Pokud zákazník uhradí objednávku **platební kartou přes integrovanou platební bránu**, k automatickému spárování dochází vždy – **není třeba žádné další nastavení**. Platební brána totiž automaticky předává všechny potřebné informace (variabilní symbol, částku i měnu), takže spárování proběhne hladce a ihned.
+:::
+
+:::danger
+### 🔍 Platba odpovídá, ale přesto se nespárovala?
+
+Na vaší platbě **souhlasí variabilní symbol, částka i měna**, a přesto se platba **nespárovala s objednávkou**?
+
+V takovém případě nám prosím napište na podpora@fapi.cz – rádi to prověříme.
+
+Pro urychlení řešení nám prosím zašlete:
+
+-   potvrzení o provedené platbě z banky (s viditelným VS, částkou a datem),
+-   informaci, **které konkrétní faktury nebo objednávky** se problém týká.
+:::

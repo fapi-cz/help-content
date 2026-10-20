@@ -1,0 +1,209 @@
+---
+title: Slevové kódy
+url: /article/78-slevove-kody
+description: Funkce slevových kódů umožňuje vašim zákazníkům snížit cenu objednávky zadáním slevového kódu do objednávkového formuláře. Sníží se tím celková cena objednávky,
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Slevové kódy
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/78-slevove-kody
+order: 22
+updatedAt: 2026-08-04T09:51:14Z
+legacyAnchors:
+  - id: Vytvoen-slevovho-kdu-4KNRh
+    tag: h2
+    text: Vytvoření slevového kódu
+    occurrence: 0
+    headingIndex: 0
+  - id: Vloen-slevovho-kdu-do-prodejnho-formule-Rnayr
+    tag: h2
+    text: Vložení slevového kódu do prodejního formuláře
+    occurrence: 0
+    headingIndex: 1
+  - id: Pouit-slevovho-kdu-v-objednvce-v6ZMj
+    tag: h2
+    text: Použití slevového kódu v objednávce
+    occurrence: 0
+    headingIndex: 3
+  - id: Vylouen-produkt-ze-slevy-wyydk
+    tag: h2
+    text: Vyloučení produktů ze slevy
+    occurrence: 0
+    headingIndex: 4
+  - id: Pedvyplnn-slevovho-kdu-v-objednvce-aCu-K
+    tag: h2
+    text: Předvyplnění slevového kódu v objednávce
+    occurrence: 0
+    headingIndex: 5
+  - id: Sleva-ve-spltkch-wXZve
+    tag: h2
+    text: Sleva ve splátkách
+    occurrence: 0
+    headingIndex: 6
+  - id: Sleva-v-upsellu-yuCxf
+    tag: h2
+    text: Sleva v upsellu
+    occurrence: 0
+    headingIndex: 7
+  - id: Dynamick-slevov-kdy-FRnJh
+    tag: h2
+    text: Dynamické slevové kódy
+    occurrence: 0
+    headingIndex: 8
+---
+Funkce slevových kódů umožňuje vašim zákazníkům snížit cenu objednávky zadáním slevového kódu do objednávkového formuláře. Sníží se tím celková cena objednávky, a to o hodnotu, která je definována ve slevovém kódu.
+
+_Slevový kód_ je samostatný objekt, který se propojuje s prodejním formulářem, v němž chcete slevu uplatnit. Slevových kódů můžete ve svém účtu FAPI vytvořit libovolné množství.
+
+V tomto článku si popíšeme, jak se slevové kódy ve FAPI používají.
+
+## Vytvoření slevového kódu
+
+Přehled existujících slevových kódů poskytuje nabídka **Prodej \> Slevové kódy**. Zde vytvoříte nový slevový kód pomocí tlačítka **Vytvořit slevový kód**.
+
+![Slevové kódy](/assets/articles/95020223efcaf861.png)
+
+  
+
+Slevový kód může být definován dvěma způsoby (volba **TYP SLEVY**):
+
+-   _procentem_ - od celkové ceny objednávky se odečte částka vyčíslená zadaným procentem,
+-   _pevnou částkou_ - od celkové ceny objednávky se odečte částka zadaná pro příslušnou měnu.
+
+  
+
+Pro prodeje do zahraničí je důležité správně nastavit zatržítko HODNOTA SLEVY VČ. DPH. Jeho chování je dvojí:
+
+-   zaškrtnutím nastavíte, že zadanou částku slevy získají všichni nakupující
+-   odškrtnutím se bude zadaná sleva brát jako základ pro výpočet finální částky adekvátně daňovému režimu konkrétní objednávky
+
+:::caution
+Pro správné počítání slevy v režimu OSS a reverse charge doporučujeme tvořit kódy bez DPH, tedy nechat možnost **nezaškrtnutou**.
+:::
+
+Příklad českého prodejce při prodeji na Slovensko. Produkt s 21 % českou a 20 % slovenskou sazbou DPH. Slevový kód na €10:
+
+| typ nakupujícího / režim prodeje | pole je zaškrtnuté | pole je nezaškrtnuté |
+| --- | --- | --- |
+| SK spotřebitel - režim OSS | sleva €10 vč. 20% DPH | sleva €10 bez DPH |
+| SK spotřebitel - režim tuzemsko | sleva €10 vč. 21% DPH | sleva €10 bez DPH |
+| SK podnikatel neplátce | sleva €10 vč. 21% DPH | sleva €10 bez DPH |
+| SK podnikatel plátce | sleva €10 vč. 0% DPH | sleva €10 bez DPH |
+
+  
+
+Volitelně lze u slevového kódu zadat den začátku a konce platnosti (pole **ZAČÁTEK PLATNOSTI** a **KONEC PLATNOSTI**), nebo jeho platnost omezit počtem použití (pole **MAXIMÁLNÍ POČET POUŽITÍ**), nebo jejich kombinací.
+
+Omezení datem:
+
+-   **Datum začátku platnosti:** Slevový kód začne platit od 00:00 zadaného dne.
+    -   Například: Pokud nastavíte datum začátku na **1\. 12.**, kód bude platný od **1\. 12. 00:00**.
+    
+-   **Datum konce platnosti:** Slevový kód je platný do **23:59 včetně zadaného dne**.
+    -   Například: Pokud nastavíte datum konce na **31\. 12.**, kód bude platný do **31\. 12. 23:59**.
+    
+
+Po zadání všech nezbytných údajů slevový kód uložte stiskem tlačítka **Uložit slevový kód**.
+
+:::danger
+Slevový kód může obsahovat pouze písmena bez diakritiky (a-z, A-Z), číslice (0-9) a pomlčky. Nově vytvářený slevový kód nesmí být shodný s již existujícím slevovým kódem.
+:::
+
+:::tip
+Slevový kód můžete alternativně vytvořit i přímo z prodejního formuláře.
+:::
+
+:::danger
+Pokud by mohla nastat situace, kdy hodnota slevového kódu bude vyšší než celková cena objednávaných produktů, doporučujeme nastavit [zaokrouhlování dokladů](/article/21-zaokrouhlovani-dokladu) (matematicky) maximálně na jedno desetinné místo.
+:::
+
+## Vložení slevového kódu do prodejního formuláře
+
+Do prodejního formuláře vložíte vytvořený slevový kód obdobně jako prodejní položku, a to v úpravě prodejního formuláře na záložce **Položky a ceny**, sekce **SLEVOVÉ KÓDY**.
+
+![Slevové kódy](/assets/articles/5a9710f149a760cd.png)
+
+### Hromadné přiřazení slevového kódu k prodejním formulářům
+
+V úpravě slevového kódu můžete přidat seznam formulářů, u kterých bude slevový kód platný. Nemusíte tedy upravovat jeden formulář za druhým.
+
+![Slevové kódy](/assets/articles/18eb1effacb3d5ac.png)
+
+Po uložení nastavení v prodejním formuláři je slevový kód u daného prodejního formuláře aktivní a může být uplatněn v objednávce.
+
+:::tip
+Jeden slevový kód může být použit u více prodejních formulářů a u jednoho prodejního formuláře můžete použít více slevových kódů.
+:::
+
+## Použití slevového kódu v objednávce
+
+Po vložení slevového kódu do prodejního formuláře se v objednávkovém formuláři zobrazí nová sekce **Slevový kód** se stejnojmenným polem pro zadání slevového kódu.
+
+![Slevové kódy](/assets/articles/ca35a6b0eb5b8609.png)
+
+Po zadání platného slevového kódu a stisku tlačítka **Uplatnit slevový kód** se celková cena objednávky sníží o hodnotu zadanou v nastavení slevového kódu.
+
+:::caution
+Při zadávání slevového kódu do objednávky se nerozlišují velká a malá písmena ("A" je stejné jako "a").
+:::
+
+U procentních slevových kódů jsou ve vystaveném dokladu názvy prodejních položek s uplatněnou slevou doplněny o text "sleva .. %".
+
+Uplatněný slevový kód se zobrazuje na stránce s detailními informacemi o vystavené faktuře. Najdete jej také v exportu faktur do formátu CSV.
+
+## Vyloučení produktů ze slevy
+
+U konkrétních produktů lze volitelně nastavit, aby se u nich neuplatňovala jakákoliv sleva. K zapnutí a vypnutí slouží parametr **Neuplatňovat slevové kódy** v nastavení produktu.
+
+Pozor – zákaz platí jen pro procentuální slevové kódy. Slevy stanovené pevnou částkou zůstanou i nadále povolené.
+
+:::tip
+Toto nastavení je praktické pro doplňkové služby (např. poštovné, balné, doprava apod.), jejichž cenu si nepřejete procentuálním slevovým kódem ovlivnit.
+:::
+
+:::caution
+**Jak odebrat slevové kódy v pravidelné fakturaci máme zde:**
+
+[Jak odebrat slevu na pevnou částku z následné šablony pravidelných faktur](/article/201-jak-odebrat-slevu-na-pevnou-castku-z-nasledne-sablony-pravidelnych-faktur)
+
+[Jak odebrat slevu na procentualní částku z následné šablony pravidelných faktur](/article/106-jak-odebrat-slevu-na-procentualni-castku-z-nasledne-sablony-pravidelnych-faktur)
+:::
+
+## Předvyplnění slevového kódu v objednávce
+
+Pomocí jednoduchého parametru v URL formuláře můžete usnadnit zákazníkům vkládání slevového kódu do košíku. Za URL adresu formuláře doplňte:
+
+`&fapi-form-discountCode=`  a za poslední znak vložte Kód slevy. (To je údaj z 2. [sloupce tabulky zde](https://web.fapi.cz/discount-code/discount-codes?projectId=all)).
+
+  
+
+## **Sleva ve splátkách**
+
+Při rozdělení nákupu do splátek se hodnota slevy, která je definovaná pevnou částkou, rozpočítá do každého dokladu jako poměrná část. Při splátkách na 6 dílů tak ze slevy bude v každé splátkové faktuře hodnota 1/6 slevy.
+
+  
+
+## Sleva v upsellu
+
+FAPI umožňuje tři typy upsell nabídek. Chování **procentuálních** slev se u nich liší podle toho, který typ upsellu používáte:
+
+-   miniupsell přímo v prodejním formuláři – slevy se budou aplikovat i na miniupsell položky (pokud není uplatnění slevy zakázáno v nastavení daného produktu - platí jen pro procentuální slevy),
+-   běžný upsell – slevy z prvního kroku objednávky se přenáší i na upsell položky (pokud není uplatnění slevy zakázáno v nastavení daného produktu),
+-   one-click upsell – slevy z prvního kroku objednávky se nepřenáší, nakupuje se vždy za plnou cenu.
+
+  
+
+## Dynamické slevové kódy
+
+Dynamické slevové kódy jsou chytrým nástrojem, jak zákazníkům automaticky nabídnout slevu bez nutnosti ručního zadávání kódu.
+
+Jedná se o běžné slevové kódy, které však vložíte přímo do URL adresy prodejní stránky. Když zákazník na takový odkaz klikne, slevový kód se mu automaticky předvyplní ve formuláři, a sleva se ihned uplatní. Tento způsob zjednodušuje nákupní proces, zvyšuje konverzi a zároveň umožňuje snadno sledovat efektivitu konkrétních kampaní či partnerů.
+
+  
+
+Technický návod zde v tomto videu:
+
+<Video src="https://fast.wistia.net/embed/iframe/jf92w45p6c?videoFoam=false" />

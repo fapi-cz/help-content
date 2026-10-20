@@ -1,0 +1,88 @@
+---
+title: Upomínky
+url: /article/19-upominky
+description: "Jednou z nejméně příjemných situací při prodeji je, když vám zákazník nezaplatí za provedenou objednávku a vy jej musíte upomínat. Díky FAPI však můžete i tuto "
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Upomínky
+  - Nastavení
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/19-upominky
+order: 25
+updatedAt: 2026-07-13T09:39:49Z
+---
+Jednou z nejméně příjemných situací při prodeji je, když vám zákazník nezaplatí za provedenou objednávku a vy jej musíte upomínat. Díky FAPI však můžete i tuto práci svěřit automatu. Hlídání termínů splatnosti vystavených faktur a upomínání zákazníků se tak stane minulostí.
+
+Ve FAPI můžete svým zákazníkům připomínat nejen úhradu faktur po splatnosti, ale i blížící se datum splatnosti. Budete mile překvapeni, jak moc snížíte počet neplatičů.
+
+## Šablony upomínek
+
+Upomínky jsou z FAPI odesílány na základě tzv. _šablon upomínek_. Šablona upomínky definuje jaký text, jakou formou a v jaký čas se odešle.
+
+Šablony jednotlivých upomínek jsou ve FAPI sdruženy do tzv. _sad šablon upomínek_. V rámci jedné sady si můžete vytvořit více šablon upomínek, např. pro upomínku vyzývající k zaplacení ještě před datem splatnosti a další pro upomínku, která je zasílána až po jeho překročení.
+
+## Formy upomínek
+
+Vybrat si můžete ze 3 typů upomínek:
+
+-   E-mail zaslaný klientovi
+-   SMS zaslaná klientovi (vyžaduje aktivaci [posílání SMS zpráv](/article/49-posilani-sms-zprav-z-fapi))
+-   E-mail na vaši zákaznickou podporu (např. pro připomenutí telefonického upomínání)
+
+## Vytvoření a nastavení upomínky
+
+V nabídce **Prodej - Šablony upomínek** vidíte přehled všech sad upomínek. Naleznete zde _výchozí sadu upomínek_ a můžete zde vytvářet i své vlastní sady upomínek, a to pomocí tlačítka **Vytvořit novou sadu upomínek**.
+
+:::caution
+Výchozí sada upomínek je ve výchozím stavu prázdná (neobsahuje žádné šablony). Tuto sadu nelze přejmenovat ani smazat.
+:::
+
+Kliknutím na název sady, popř. stiskem tlačítka **Upravit** zobrazíte šablony upomínek, které daná sada obsahuje.
+
+Ve zvolené sadě upomínek vytvoříte novou šablonu upomínky stiskem tlačítka **Vytvořit novou upomínku**. Již existující šablonu můžete upravit kliknutím na její název, popř. stiskem tlačítka **Upravit**. V následně zobrazeném formuláři vyplňte všechny požadované údaje, tedy název, časovou podmínku (počet dnů vzhledem k datu splatnosti), typ, předmět a text upomínky.
+
+![Upomínky](/assets/articles/fce952027a716504.png)
+
+Provedené změny uložíte pomocí tlačítka **Uložit**. Od toho okamžiku je vytvořená šablona upomínky aktivní.
+
+## Zástupné symboly k personalizaci textu
+
+Do předmětu a textu upomínek můžete (pomocí tlačítka [Vložit zástupný symbol](/article/167-jak-pouzivat-ve-fapi-zastupne-symboly) na nástrojové liště editoru) vložit zástupné symboly a personalizovat tak obsah upomínky o údaje jako např. číslo faktury, datum splatnosti, fakturovaná částka apod.
+
+Zástupné symboly budou v odeslané zprávě nahrazeny konkrétní hodnotou.
+
+## Upomínky formou SMS zpráv
+
+Pro zasílání upomínek formou SMS je nutné mít ve FAPI aktivováno posílání SMS zpráv prostřednictvím jedné ze služeb [SMSbrána.cz](http://www.smsbrana.cz/), [BulkGate](https://www.bulkgate.com/cs/) nebo [GoSMS](https://www.gosms.cz/). Více se dozvíte v článku [Posílání zpráv z FAPI](/article/49-posilani-sms-zprav-z-fapi).
+
+  
+
+## Odesílání upomínek
+
+Odeslání upomínek probíhá každý den v 10 hodin dopoledne, a to na základě vyhodnocení všech podmínek pro jejich zaslání. Tyto podmínky se vyhodnocují u všech zálohových faktur, daňových dokladů a zjednodušených daňových dokladů, které nejsou stornované.
+
+  
+
+Upomínku odešleme, pokud faktura, ke které se vztahuje, splňuje zároveň tyto podmínky:
+
+-   je ve stavu vystavená – tedy je neuhrazena, není stornovaná,
+-   má způsob platby jiný než dobírka (na dobírkové faktury se neodesílají upomínky),
+-   je splněná časová podmínka zadaná v poli před/po datu splatnosti.
+
+:::caution
+Pokud byla časová podmínka splněna v minulosti, tj. den splnění podmínky již uplynul, upomínka se nepošle. To znamená, že upomínky se posílají pouze v den, kdy je časová podmínka pro jejich zaslání splněna, neposílají se dodatečně.
+:::
+
+:::tip
+V příloze e-mailu s upomínkou se zasílá faktura, k níž se upomínka vztahuje.
+:::
+
+U faktur vystavených z prodejního formuláře se používá sada upomínek zvolená v nastavení tohoto prodejního formuláře (pole **SADA UPOMÍNEK** na záložce **Akce**).
+
+U faktur vystavených ručně nebo prostřednictvím rozhraní API se používá _Výchozí sada upomínek_.

@@ -1,0 +1,936 @@
+---
+title: Konverzní kódy
+url: /article/144-konverzni-kody
+description: Konverzní kódy slouží k odesílání informací o objednávkách z FAPI do analytických a reklamních nástrojů, například do Google Analytics, Google Tag Manageru, Met
+category: Měření a Marketing
+categorySlug: 300-mereni-a-marketing
+categorySlugs:
+  - 300-mereni-a-marketing
+  - 9-online-prodej
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Konverzní kódy
+  - Měření a Marketing
+  - Online prodej
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/144-konverzni-kody
+order: 27
+updatedAt: 2026-09-10T06:22:21Z
+legacyAnchors:
+  - id: Jak-sprvn-nastavit-konverzn-kdy-pro-Facebook-i-jin-nstroje--NuCV6
+    tag: h2
+    text: Jak správně nastavit konverzní kódy pro Facebook i jiné nástroje
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-konverzn-kdy-funguj-M3k76
+    tag: h2
+    text: Jak konverzní kódy fungují
+    occurrence: 0
+    headingIndex: 1
+  - id: FAPI-dkovac-strnka-nebo-vlastn-dkovac-strnka-fw3Bx
+    tag: h2
+    text: FAPI děkovací stránka nebo vlastní děkovací stránka
+    occurrence: 0
+    headingIndex: 2
+  - id: FAPI-dkovac-strnka-IbHDJ
+    tag: h2
+    text: FAPI děkovací stránka
+    occurrence: 0
+    headingIndex: 3
+  - id: Vlastn-dkovac-strnka-Anonu
+    tag: h2
+    text: Vlastní děkovací stránka
+    occurrence: 0
+    headingIndex: 4
+  - id: Predani-UTM-parametru-do-prodejniho-formulare
+    tag: h2
+    text: Předání UTM parametrů do prodejního formuláře
+    occurrence: 0
+    headingIndex: 5
+  - id: Voliteln-uloen-UTM-parametr-Ghi8k
+    tag: h3
+    text: Volitelné uložení UTM parametrů
+    occurrence: 0
+    headingIndex: 6
+  - id: Dvoukrokov-prodejn-formul-wpa0v
+    tag: h3
+    text: Dvoukrokový prodejní formulář
+    occurrence: 0
+    headingIndex: 7
+  - id: Napojen-na-cookies-litu-52-gO
+    tag: h3
+    text: Napojení na cookies lištu
+    occurrence: 0
+    headingIndex: 8
+  - id: Doporuen-k-micm-nstrojm-8krmo
+    tag: h2
+    text: Doporučení k měřicím nástrojům
+    occurrence: 0
+    headingIndex: 9
+  - id: Pozor-na-duplicitn-men-konverz-xvah8
+    tag: h2
+    text: Pozor na duplicitní měření konverzí
+    occurrence: 0
+    headingIndex: 10
+  - id: SmartEmailing-webtracking-vpOsb
+    tag: h2
+    text: SmartEmailing webtracking
+    occurrence: 0
+    headingIndex: 11
+  - id: Meta-Pixel-a-Facebook-Conversion-API-wd1Up
+    tag: h2
+    text: Meta Pixel a Facebook Conversion API
+    occurrence: 0
+    headingIndex: 12
+  - id: Mit-vechny-objednvky-nebo-jen-zaplacen-KRcGk
+    tag: h2
+    text: Měřit všechny objednávky, nebo jen zaplacené
+    occurrence: 0
+    headingIndex: 13
+  - id: Jak-tyto-funkce-pout-awgCo
+    tag: h2
+    text: Jak tyto funkce použít?
+    occurrence: 0
+    headingIndex: 14
+  - id: -Ukzka-zasln-dat-do-FB-pixelu-zYrQg
+    tag: h5
+    text: "Ukázka zaslání dat do FB pixelu:"
+    occurrence: 0
+    headingIndex: 15
+  - id: -Ukzka-zasln-dat-do-FB-pixelu-Sb1Wm
+    tag: h5
+    text: "Ukázka zaslání dat do OpenAI (ChatGPT) pixelu:"
+    occurrence: 0
+    headingIndex: 16
+  - id: Ukzka-zasln-dat-do-GA4-Jqi6-
+    tag: h5
+    text: "Ukázka zaslání dat do GA4:"
+    occurrence: 0
+    headingIndex: 17
+  - id: Ukzka-zasln-dat-do-GTM-h2h71
+    tag: h5
+    text: "Ukázka zaslání dat do Google Tag Manageru (GTM):"
+    occurrence: 0
+    headingIndex: 18
+  - id: Ukzka-zasln-dat-do-Google-Analytics-kZWPl
+    tag: h5
+    text: "Ukázka zaslání dat do Google Analytics:"
+    occurrence: 0
+    headingIndex: 19
+  - id: Ukzka-zasln-dat-do-Google-Ads-bQMY-
+    tag: h5
+    text: "Ukázka zaslání dat do Google Ads:"
+    occurrence: 0
+    headingIndex: 20
+  - id: Ukzka-zasln-konverz-do-Affilboxu-cUQnC
+    tag: h5
+    text: "Ukázka zaslání konverzí do Affilboxu:"
+    occurrence: 0
+    headingIndex: 21
+  - id: Ukzka-zasln-dat-do-TikTok-Pixel-vaUTl
+    tag: h5
+    text: "Ukázka zaslání dat do TikTok Pixel:"
+    occurrence: 0
+    headingIndex: 22
+  - id: Ukzka-zasln-dat-do-Pinterest-UIZRF
+    tag: h5
+    text: "Ukázka zaslání dat do Pinterestu:"
+    occurrence: 0
+    headingIndex: 23
+  - id: Ukzka-zasln-konverz-do-CJ-oiZ54
+    tag: h5
+    text: "Ukázka zaslání konverzí do CJ:"
+    occurrence: 0
+    headingIndex: 24
+  - id: Ukzka-zasln-konverz-do-Sklik-DO0DR
+    tag: h5
+    text: "Ukázka zaslání konverzí do Sklik:"
+    occurrence: 0
+    headingIndex: 25
+  - id: Pokud-chcete-odeslat-konverze-do-vce-nstroj-mete-tyto-kdy-zjedn-hfz57
+    tag: h5
+    text: "Pokud chcete odeslat konverze do více nástrojů, můžete tyto kódy zjednodušit takto:"
+    occurrence: 0
+    headingIndex: 26
+  - id: Dle-se-daj-pout-funkce-kter-polou-data-do-analytickch-nstroj-GOjjv
+    tag: h5
+    text: "Dále se dají použít funkce, které pošlou data do analytických nástrojů jen když jsou dané objednávky zaplacené:"
+    occurrence: 0
+    headingIndex: 27
+  - id: -V-ppad-e-potebujete-data-odeslat-do-njakho-jinho-nstroje-p-eRqFV
+    tag: h5
+    text: V případě, že potřebujete data odeslat do nějakého jiného nástroje, pro který funkci nemáme, můžete si data objednávky namapovat do analytického nástroje sami.
+    occurrence: 0
+    headingIndex: 28
+  - id: Ukzka-pro-sKlikcz-tML7L
+    tag: h5
+    text: "Ukázka pro Sklik.cz:"
+    occurrence: 0
+    headingIndex: 29
+  - id: Jak-data-jsou-dostupn-v-promnn-fapiOrderData--auyff
+    tag: h2
+    text: Jaká data jsou dostupná v proměnné fapiOrderData?
+    occurrence: 0
+    headingIndex: 30
+  - id: Jak-vloit-konverzn-kdy-do-dkovac-strnky-FAPI--LY_kG
+    tag: h2
+    text: Jak vložit konverzní kódy do děkovací stránky FAPI?
+    occurrence: 0
+    headingIndex: 31
+  - id: Peddefinovan-funkce-ChWQE
+    tag: h2
+    text: Předdefinované funkce
+    occurrence: 0
+    headingIndex: 32
+  - id: FAPICONVERSIONrunConversiononSuccess-callback-Dtq03
+    tag: h5
+    text: "FAPI_CONVERSION.runConversion(onSuccess: callback)"
+    occurrence: 0
+    headingIndex: 33
+  - id: FAPICONVERSIONsimpleFacebookPixelTransactionfapiOrderData-object-LIelM
+    tag: h5
+    text: "FAPI_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 34
+  - id: FAPICONVERSIONsimpleFacebookPixelTransactionOnlyPaidfapiOrderData--vnHb3
+    tag: h5
+    text: "FAPI_CONVERSION.simpleFacebookPixelTransactionOnlyPaid(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 35
+  - id: FAPICONVERSIONsimpleGA4TransactionfapiOrderData-object-7uxYQ
+    tag: h5
+    text: "FAPI_CONVERSION.simpleGA4Transaction(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 36
+  - id: FAPICONVERSIONsimpleGA4TransactionOnlyPaidfapiOrderData-object-9ghSK
+    tag: h5
+    text: "FAPI_CONVERSION.simpleGA4TransactionOnlyPaid(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 37
+  - id: FAPICONVERSIONsimpleGoogleTagManagerTransactionfapiOrderData-objec-T2xMa
+    tag: h5
+    text: "FAPI_CONVERSION.simpleGoogleTagManagerTransaction(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 38
+  - id: FAPICONVERSIONsimpleGoogleTagManagerTransactionOnlyPaidfapiOrderDat-4-f5B
+    tag: h5
+    text: "FAPI_CONVERSION.simpleGoogleTagManagerTransactionOnlyPaid(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 39
+  - id: FAPICONVERSIONsimpleGoogleAnalyticsEcommerceTransactionTransactionf-gUUWV
+    tag: h5
+    text: "FAPI_CONVERSION.simpleGoogleAnalyticsEcommerceTransaction(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 40
+  - id: FAPICONVERSIONsimpleGoogleAnalyticsEcommerceTransactionTransactionOn-fZbVG
+    tag: h5
+    text: "FAPI_CONVERSION.simpleGoogleAnalyticsEcommerceTransactionOnlyPaid(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 41
+  - id: FAPICONVERSIONsimpleAffilboxTransactionfapiOrderData-object-url--3bgjV
+    tag: h5
+    text: "FAPI_CONVERSION.simpleAffilboxTransaction(fapiOrderData: object, url: string, campaignId: string|int)"
+    occurrence: 0
+    headingIndex: 42
+  - id: FAPICONVERSIONsimpleAffilboxTransactionOnlyPaidfapiOrderData-objec-1pT3e
+    tag: h3
+    text: "FAPI_CONVERSION.simpleAffilboxTransactionOnlyPaid(fapiOrderData: object, url: string, campaignId: string|int)"
+    occurrence: 0
+    headingIndex: 43
+  - id: FAPICONVERSIONsimpleCJTransactionfapiOrderData-object-enterpriseI-T6Wgi
+    tag: h3
+    text: "FAPI_CONVERSION.simpleCJTransaction(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)"
+    occurrence: 0
+    headingIndex: 44
+  - id: FAPICONVERSIONsimpleCJTransactionOnlyPaidfapiOrderData-object-ent-Yf-JV
+    tag: h3
+    text: "FAPI_CONVERSION.simpleCJTransactionOnlyPaid(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)"
+    occurrence: 0
+    headingIndex: 45
+  - id: FAPICONVERSIONsimpleSklikTransactionfapiOrderData-object-l2vAS
+    tag: h3
+    text: "FAPI_CONVERSION.simpleSklikTransaction(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 46
+  - id: FAPICONVERSIONsimpleSklikTransactionOnlyPaidfapiOrderData-object-YhfPP
+    tag: h3
+    text: "FAPI_CONVERSION.simpleSklikTransactionOnlyPaid(fapiOrderData: object)"
+    occurrence: 0
+    headingIndex: 47
+  - id: FAPICONVERSIONsimpleGoogleAdsTransactionfapiOrderData-object-ADId-mYaT2
+    tag: h3
+    text: "FAPI_CONVERSION.simpleGoogleAdsTransaction(fapiOrderData: object, ADId string)"
+    occurrence: 0
+    headingIndex: 48
+  - id: FAPICONVERSIONsimpleGoogleAdsTransactionOnlyPaidfapiOrderData-obje-YrYbC
+    tag: h3
+    text: "FAPI_CONVERSION.simpleGoogleAdsTransactionOnlyPaid(fapiOrderData: object, ADId string)"
+    occurrence: 0
+    headingIndex: 49
+  - id: Kdy-data-v-analytickm-nstroji-nesed-QKD8e
+    tag: h2
+    text: Když data v analytickém nástroji nesedí
+    occurrence: 0
+    headingIndex: 50
+  - id: Shrnut-5kmn9
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 51
+---
+Konverzní kódy slouží k odesílání informací o objednávkách z FAPI do analytických a reklamních nástrojů, například do Google Analytics, Google Tag Manageru, Meta Pixelu, Google Ads, Skliku nebo dalších systémů.
+
+FAPI umí načíst data objednávky a pomocí jednoduchého skriptu je předat do zvoleného nástroje jako konverzi.
+
+  
+
+Konverzní kódy můžete využít například pro:
+
+-   měření objednávek,
+-   vyhodnocení kampaní,
+-   předávání hodnoty objednávky do reklamních systémů,
+-   vlastní analytiku,
+-   odesílání dat do nástrojů, pro které FAPI nemá připravenou hotovou integraci.
+
+:::tip
+**TIP:** **FAPI Signals.**
+
+Pokud používáte WordPress, můžete pro jednodušší nastavení měření využít plugin **FAPI Signals**.
+
+Díky němu lze pixely a konverze nastavit jednodušeji bez ručního vkládání kódů.
+
+[FAPI Signals – pixely a konverze ve WordPressu jednoduše.](/article/306-fapi-signals-pixely-a-konverze-ve-wordpressu-jednoduse)
+:::
+
+## **Jak správně nastavit konverzní kódy pro Facebook i jiné nástroje**
+
+Zde máte celý videonávod:
+
+<Video src="https://www.youtube.com/embed/e7xnreUC79M" />
+
+## Jak konverzní kódy fungují
+
+Aby se konverze správně odeslala, je potřeba rozlišit tři části:
+
+-   **měřicí nástroj** – například Meta Pixel, Google Analytics, Google Tag Manager, OpenAi (chatGPT) nebo jiný nástroj,
+-   **FAPI konverzní kód** – odešle data objednávky do vybraného nástroje,
+-   **FAPI SDK script** – načte data objednávky z FAPI, používá se pouze u vlastní děkovací stránky.
+
+FAPI konverzní kód nenahrazuje samotný měřicí nástroj. Pokud například na stránce nemáte načtený Meta Pixel, funkce pro odeslání konverze do Meta Pixelu nemá kam data odeslat.
+
+  
+
+:::tip
+**FAPI - osobní konzultace k nastavení**
+
+Chcete si nechat konverzní kódy nastavit? Využijte naši službu [FAPI osobní konzultace](https://page.fapi.cz/10559/osobni-konzultace-fapi-4pvizkwmec).
+:::
+
+Nápověda platí jak pro **vlastní děkovací stránky**, tak pro FAPI děkovací stránky.
+
+Pokud používáte současně Meta Pixel a CAPI, věnujte pozornost části Meta Pixel a Facebook Conversion API níže.
+
+:::caution
+## FAPI děkovací stránka nebo vlastní děkovací stránka
+
+  
+
+Nastavení se liší podle toho, zda používáte děkovací stránku přímo ve FAPI, nebo vlastní děkovací stránku na svém webu.
+
+## FAPI děkovací stránka
+
+Pokud používáte děkovací stránku vytvořenou přímo ve FAPI, konverzní kódy vložte v prodejním formuláři do části:
+
+**5\. krok Děkovací stránka → Konverzní kódy**
+
+  
+
+Do FAPI děkovací stránky **nevkládejte znovu FAPI SDK script**. Ten už je její součástí.
+
+Pokud byste SDK script vložili znovu, mohlo by docházet k duplicitnímu odesílání konverzí.
+
+Do pole pro konverzní kódy nejprve vložte inicializační kódy nástrojů, do kterých chcete konverze odesílat, například Meta Pixel, Google Analytics 4 nebo jiný měřicí nástroj. Pod ně následně vložte FAPI konverzní kód.
+
+## Vlastní děkovací stránka
+
+Pokud používáte vlastní děkovací stránku na svém webu, je potřeba splnit několik podmínek:
+
+-   v prodejním formuláři v kroku **5\. Děkovací stránka** zaškrtnout volbu **Vkládat unikátní identifikátor objednávky do URL děkovací stránky**,
+-   vlastní děkovací stránka musí běžet na **HTTPS**,
+-   na stránce musí být načtené analytické nástroje, do kterých chcete konverze posílat,
+-   na vlastní děkovací stránku je potřeba vložit FAPI SDK script,
+-   konverzní kódy je vhodné vkládat do patičky stránky.
+
+![Konverzní kódy](/assets/articles/3e7b32a2c98b6f52.png)
+
+  
+
+**FAPI SDK script pro vlastní děkovací stránku:**
+:::
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+::::caution
+Tento script zajistí načtení informací o objednávce z FAPI do vaší vlastní děkovací stránky. Díky tomu můžete data objednávky předat do analytických nebo reklamních nástrojů.
+
+  
+
+:::info
+Skript se nepoužívá pro FAPI děkovací stránky, ale **pouze u vlastních děkovacích stránek.**
+:::
+::::
+
+## Předání UTM parametrů do prodejního formuláře
+
+Tato část se týká situace, kdy návštěvník přijde z reklamy na vaši landing page a následně přejde do prodejního formuláře na `form.fapi.cz`  . Nejde o nastavení konverzních kódů na děkovací stránce.
+
+Na každou landing page, ze které návštěvníky posíláte do prodejního formuláře, vložte jednou tento FAPI SDK script. Doporučujeme jej vložit do patičky stránky před `</body>`  .
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+Skript automaticky doplní parametry z URL landing page do všech odkazů a akcí formulářů vedoucích na `form.fapi.cz`  .
+
+:::info
+**Automaticky se předávají:** všechny neprázdné parametry začínající `utm_`   a reklamní identifikátory `fbclid`  , `gclid`  , `gbraid`  , `wbraid`  , `msclkid`  , `ttclid`  , `sclid`  , `yclid`  , `epik`  , `li_fat_id` , `twclid`, `oppref`, `obref`.
+:::
+
+Například návštěvník přijde na adresu:
+
+```text
+https://domena.cz/nabidka?utm_source=facebook&utm_campaign=leto&fbclid=abc123
+```
+
+Odkaz na prodejní formulář:
+
+```text
+<a href="https://form.fapi.cz/?path=prodejni-formular">Koupit</a>
+```
+
+se automaticky změní na adresu:
+
+```text
+https://form.fapi.cz/?path=prodejni-formular&utm_source=facebook&utm_campaign=leto&fbclid=abc123
+```
+
+Tato automatická část nic neukládá do cookies ani localStorage. Je určená pro běžný scénář landing page → `form.fapi.cz`  .
+
+### Volitelné uložení UTM parametrů
+
+Chcete-li UTM parametry zachovat i při přechodu mezi stránkami na stejném webu, aktivujte volitelně jejich uložení do localStorage:
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+<script>
+  document.addEventListener('FapiSdkLoaded', function () {
+    window.FAPI_CONVERSION.enableUtmStorage();
+  });
+</script>
+```
+
+Po aktivaci se uloží všechny parametry `utm_`   na 24 hodin. Prodejní formulář vždy nejprve použije hodnoty z URL; pokud v URL nejsou, použije uložené standardní UTM parametry.
+
+:::caution
+**LocalStorage funguje pouze v rámci stejné domény.** Z `domena.cz`   jej nelze přečíst na `form.fapi.cz`  . Pro přechod z landing page na `form.fapi.cz`   proto slouží automatické předání parametrů v URL popsané výše.
+:::
+
+### Dvoukrokový prodejní formulář
+
+Při přesměrování z prvního kroku formuláře na druhou stránku se parametry `utm_`   i reklamní identifikátory přenesou automaticky. Platí to pro původní i nový prodejní formulář. Není potřeba přidávat další kód do cílové stránky druhého kroku.
+
+### Napojení na cookies lištu
+
+Volání `FAPI_CONVERSION.enableUtmStorage()`   spouštějte až po udělení souhlasu s kategorií, do které na svém webu řadíte marketingové nebo analytické ukládání dat. Přesný název kategorie se řídí účelem zpracování a nastavením vaší cookies lišty.
+
+Do callbacku cookies lišty vložte funkci podobnou této:
+
+```text
+window.FAPI_CONVERSION.enableUtmStorage();
+```
+
+Tento řádek spusťte až po udělení souhlasu. Při nesouhlasu jej jednoduše nespouštějte. Při odvolání souhlasu odstraňte uložená data pomocí `localStorage.removeItem('fapi-utm-forwarding')`  .
+
+:::info
+Automatické předání parametrů do URL nepoužívá localStorage. Pokud ale cookies lišta před souhlasem blokuje načtení externích skriptů, je potřeba rozhodnout, zda má načtení `fapi.js`   povolit i před souhlasem. Technicky je to nutné pro okamžité doplnění parametrů do odkazů; právní posouzení a zařazení do kategorií cookies lišty je na provozovateli webu.
+:::
+
+## Doporučení k měřicím nástrojům
+
+Kdykoliv je to možné, spouštějte analytické nástroje na stránce napřímo, ne pouze přes kontejnery nebo aplikace třetích stran.
+
+Typicky Google Tag Manager se může inicializovat se zpožděním nebo se nemusí načíst vůbec. V takovém případě se konverze nemusí správně odeslat.
+
+## Pozor na duplicitní měření konverzí
+
+Konverzní kód se obvykle spouští při načtení děkovací stránky.
+
+Pokud se stejná konverzní událost odešle více způsoby nebo vícekrát, může analytický nebo reklamní nástroj započítat jednu objednávku opakovaně.
+
+  
+
+K duplicitám může dojít například když:
+
+-   máte stejný konverzní event vložený přímo na děkovací stránce,
+-   stejnou událost odesíláte přes FAPI konverzní kód i přes vlastní kód,
+-   konverze se posílá současně přes Google Tag Manager i přímo vloženým kódem,
+-   používáte Meta Pixel i Facebook Conversion API bez správné deduplikace,
+-   zákazník znovu načte nebo obnoví děkovací stránku.
+
+Pokud v reklamním nebo analytickém nástroji vidíte více konverzí, než kolik reálně vzniklo objednávek ve FAPI, zkontrolujte, zda se stejná událost neposílá vícekrát.
+
+  
+
+:::caution
+Skript se spojením s unikátním identifikátorem objednávky, zajišťuje stažení informací o objednávce z FAPI do vaší děkovací stránky. 
+
+Díky tomu můžete konverze zaslat do jakéhokoliv analytického nástroje. 
+
+Kde získat trackovací kód pro FB pixel: [https://developers.facebook.com/docs/meta-pixel/get-started/](https://developers.facebook.com/docs/meta-pixel/get-started/)
+:::
+
+  
+
+## SmartEmailing webtracking
+
+SmartEmailing webtracking je samostatné předpřipravené měření na děkovací stránce FAPI; nenastavuje se vložením kódu do pole **Konverzní kód (HTML)**.
+
+V prodejním formuláři otevřete **5\. krok → Děkovací stránka**, ponechte vypnutou volbu **Použít vlastní děkovací stránku** a do pole **SmartEmailing webtracking GUID** vložte pouze GUID ze SmartEmailingu. FAPI pak na své děkovací stránce načte SmartEmailing tracker a po úspěšném vytvoření objednávky mu předá údaje o objednávce.
+
+Pro toto nastavení není potřeba vytvářet samostatné propojení FAPI se SmartEmailingem. Nevkládejte celý SmartEmailing měřicí kód ani do pole **SmartEmailing webtracking GUID**, ani do pole **Konverzní kód (HTML)**.
+
+Pokud používáte vlastní děkovací stránku, FAPI na ni SmartEmailing tracker ani údaje o objednávce nevkládá. Webtracking je v takovém případě potřeba nastavit přímo na vašem webu.
+
+Podrobný postup včetně ověření najdete v nápovědě [SmartEmailing webtracking ve FAPI](/article/333-smartemailing-webtracking-ve-fapi).
+
+  
+
+## Meta Pixel a Facebook Conversion API
+
+Pokud používáte současně **Meta Pixel** a **Facebook Conversion API**, je potřeba správně řešit deduplikaci.
+
+Meta deduplikuje události podle společného **Event ID**. Ve FAPI/CAPI se jako Event ID používá variabilní symbol objednávky.
+
+Aby deduplikace fungovala správně, musí do Mety odejít jak serverová část přes CAPI, tak browser část z webu nebo děkovací stránky.
+
+Pokud deduplikace nefunguje správně, může Meta jednu objednávku započítat vícekrát.
+
+## Měřit všechny objednávky, nebo jen zaplacené
+
+Ve FAPI můžete použít dva typy funkcí:
+
+-   funkce **bez** `OnlyPaid`      odešlou konverzi po vytvoření objednávky,
+-   funkce **s** `OnlyPaid`      odešlou konverzi pouze tehdy, pokud je objednávka zaplacená.
+
+Příklad funkce pro odeslání objednávky bez ohledu na stav platby:
+
+```text
+FAPI_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData);
+```
+
+Příklad funkce pro odeslání pouze zaplacené objednávky:
+
+```text
+FAPI_CONVERSION.simpleFacebookPixelTransactionOnlyPaid(fapiOrderData);
+```
+
+Před nastavením si proto ujasněte, zda chcete v daném nástroji měřit všechny vytvořené objednávky, nebo pouze zaplacené objednávky.
+
+## Jak tyto funkce použít?
+
+##### Ukázka zaslání dat do FB pixelu:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do OpenAI (ChatGPT) pixelu:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleChatgptAdsTransaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do GA4:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleGA4Transaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do Google Tag Manageru (GTM):
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleGoogleTagManagerTransaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do Google Analytics:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleGoogleAnalyticsEcommerceTransaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do Google Ads:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleGoogleAdsTransaction(fapiOrderData, 'AW-***');
+	});
+});
+</script>
+```
+
+Je potřeba správně nastavit kód kampaně "AW-\*\*\*".
+
+##### Ukázka zaslání konverzí do Affilboxu:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleAffilboxTransaction(fapiOrderData, 'demo.affilbox.cz', '1');
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do TikTok Pixel:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleTikTokPixelTransaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání dat do Pinterestu:
+
+Pro odeslání dat do Pinterestu je potřeba nejprve propojit Pinterest s Google Tag Managerem.
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simplePinterestTransaction(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání konverzí do CJ:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleCJTransaction(fapiOrderData, 'enterpriseId', 'actionTrackerId', 'cjeventOrder');
+	});
+});
+</script>
+```
+
+##### Ukázka zaslání konverzí do Sklik:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+                var sklikId = 123456;/* vložte Váš identifikátor konverze Sklik*/
+var zboziId = 123456;/* Id provozovny zbozi.cz*/
+		FAPI_CONVERSION.simpleSklikTransaction(fapiOrderData, sklikId, zboziId);
+	});
+});
+</script>
+```
+
+##### Pokud chcete odeslat konverze do více nástrojů, můžete tyto kódy zjednodušit takto:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {   
+		FAPI_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData);
+		FAPI_CONVERSION.simpleGoogleTagManagerTransaction(fapiOrderData);
+		FAPI_CONVERSION.simpleGoogleAnalyticsEcommerceTransaction(fapiOrderData);
+		FAPI_CONVERSION.simpleGA4Transaction(fapiOrderData);
+
+	});
+});
+</script>
+```
+
+##### Dále se dají použít funkce, které pošlou data do analytických nástrojů jen když jsou dané objednávky zaplacené:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+		FAPI_CONVERSION.simpleFacebookPixelTransactionOnlyPaid(fapiOrderData);
+		FAPI_CONVERSION.simpleGoogleTagManagerTransactionOnlyPaid(fapiOrderData);
+		FAPI_CONVERSION.simpleGoogleAnalyticsEcommerceTransactionOnlyPaid(fapiOrderData);
+		FAPI_CONVERSION.simpleGA4TransactionOnlyPaid(fapiOrderData);
+	});
+});
+</script>
+```
+
+##### V případě, že potřebujete data odeslat do nějakého jiného nástroje, pro který funkci nemáme, můžete si data objednávky namapovat do analytického nástroje sami. 
+
+##### Ukázka pro Sklik.cz:
+
+```text
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+	var conversionConf = {
+                id: 123456, /* váš identifikátor konverze Sklik*/
+		orderId: fapiOrderData['number'], /* číslo objednávky */
+		value: fapiOrderData['total_amount'], /* hodnota objednávky v Kč bez DPH*/
+		consent: 1 /* souhlas od návštěvníka na odeslání konverzního hitu, povolené hodnoty: 0 (není souhlas) nebo 1 (je souhlas) */
+	};
+	// Ujistěte se, že metoda existuje, předtím než ji zavoláte
+	if (window.rc && window.rc.conversionHit) {
+		window.rc.conversionHit(conversionConf);
+	}
+});
+});
+</script>
+```
+
+  
+
+## Jaká data jsou dostupná v proměnné fapiOrderData? 
+
+Dostupné parametry a jejich vysvětlivky jsme popsali v API dokumentaci:
+
+[https://web.fapi.cz/api-doc/#api-OrderConversion](https://web.fapi.cz/api-doc/#api-OrderConversion).
+
+V dokumentaci najdete všechny dostupné parametry a vysvětlení, jaké hodnoty obsahují.
+
+  
+
+# Jak vložit konverzní kódy do děkovací stránky FAPI?
+
+:::danger
+Do **děkovací stránky FAPI** nemusíte vkládat koncový script.
+
+Skript vložte jen do vlastní děkovací stránky, jak jsme psali již výše.
+:::
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+Konverzní kódy je potřeba uložit do prodejního formuláře, konkrétně krok číslo **5\. děkovací stránka** - **políčko konverzní kódy**.
+
+Je zapotřebí do **konverzního kódu (HTML)** nejprve vložit pixely od nástrojů, kam chcete odesílat konverze. Ať už je to Facebook, Google analytics 4, Instagram atd. Je potřeba prvně nahrát jejich startovací kód. A pod tento startovací a inicializační kód můžete vložit konverzní kódy FAPI.
+
+![Konverzní kódy](/assets/articles/90ca802665a90ac6.png)
+
+:::danger
+**Pozor na opakované odeslání konverze**
+
+Konverzní kód na děkovací stránce se spouští při načtení stránky. Pokud zákazník děkovací stránku znovu načte nebo obnoví, může se konverzní událost odeslat znovu.
+
+To může způsobit, že v analytickém nebo reklamním nástroji uvidíte více konverzí, než kolik reálně vzniklo objednávek ve FAPI.
+
+  
+
+Doporučujeme proto zkontrolovat, že stejnou konverzní událost neposíláte více způsoby současně, například přes:
+
+-   vlastní kód na děkovací stránce,
+-   Meta Pixel / Facebook Pixel,
+-   Google Tag Manager,
+-   FAPI konverzní kód,
+-   Facebook Conversion API.
+
+  
+
+Pokud používáte současně Meta Pixel a Facebook Conversion API, je potřeba mít správně nastavenou deduplikaci událostí. Jinak může Meta jednu objednávku započítat vícekrát.
+:::
+
+## Předdefinované funkce
+
+Tento script vytvoří objekt FAPI\_CONVERSION, který má přístupné tyto funkce:
+
+##### FAPI\_CONVERSION.runConversion(onSuccess: callback)
+
+Toto je výchozí funkce pro získání dat objednávky a spuštění konverzních kódů.
+
+Dále při spuštění této funkce vloží informace o objednávce do Google Tag Manageru. Pomocí eventu "fapiOrderDataLoaded" a data objednávky jsou následně uložena pod klíčem "fapiOrderData". Dále se tedy s objednávkou dá pracovat přímo v GTM.
+
+Po načtení dat objednávky tato funkce také vyvolá event "fapiOrderDataLoaded", kde v detailu eventu pod klíčem "fapiOrderData", jsou uložena data objednávky. Použití je možné pro vlastní zpracování konverzí.
+
+  
+
+##### FAPI\_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi ve Facebook pixelu. Data nejsou odeslaná do FB Pixelu, pokud na stránce nemáte FB Pixel nainstalovaný.
+
+  
+
+##### FAPI\_CONVERSION.simpleFacebookPixelTransactionOnlyPaid(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi ve Facebook pixelu, pouze pokud je objednávka zaplacená. Data nejsou odeslaná, pokud na stránce nemáte FB Pixel nainstalovaný.
+
+  
+
+##### FAPI\_CONVERSION.simpleGA4Transaction(fapiOrderData: object)
+
+Tato funkce odešle konverzi do Google Analytics 4 pouze v případě, že je objednávka zaplacená. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
+
+  
+
+##### FAPI\_CONVERSION.simpleGA4TransactionOnlyPaid(fapiOrderData: object)
+
+Tato funkce odešle konverzi do Google Analytics 4. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
+
+  
+
+##### FAPI\_CONVERSION.simpleGoogleTagManagerTransaction(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi v Google Tag Manageru. Data nejsou odeslaná do GTM pokud na stránce nemáte GTM nainstalovaný.
+
+  
+
+##### FAPI\_CONVERSION.simpleGoogleTagManagerTransactionOnlyPaid(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi ve Google Tag Manageru, pouze pokud je objednávka zaplacená.  Data nejsou odeslaná do GTM pokud na stránce nemáte GTM nainstalovaný.
+
+  
+
+##### FAPI\_CONVERSION.simpleGoogleAnalyticsEcommerceTransaction(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi v Google Analytics. Data nejsou odeslaná do Google Analytics pokud na stránce nemáte Google Analytics nainstalovaný.
+
+  
+
+##### FAPI\_CONVERSION.simpleGoogleAnalyticsEcommerceTransactionOnlyPaid(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi ve Google Analytics, pouze pokud je objednávka zaplacená. Data nejsou odeslaná do Google Analytics pokud na stránce nemáte Google Analytics nainstalovaný.
+
+  
+
+##### FAPI\_CONVERSION.simpleAffilboxTransaction(fapiOrderData: object, url: string, campaignId: string|int)
+
+Tato funkce vytvoří konverzi v [Affilboxu](https://www.affilbox.cz/?a_box=cwykpgpe). 
+
+Tato funkce narozdíl od výše uvedených přijmá 2 argumenty. Url adresu a ID kampaně:
+
+-   url - tuto url najdete v administraci Affilboxu - konverzní kódy a je to hodnota proměnné "ab\_instance", která bude v podobném tvaru: "demo.affiliate.cz"
+-   campaignId - ID kampaně najdete také v administraci Affilboxu - konverzní kódy a je to hodnota proměnné ab\_kampan, kde hodnota je číslo kampaně, například: '1'
+
+### FAPI\_CONVERSION.simpleAffilboxTransactionOnlyPaid(fapiOrderData: object, url: string, campaignId: string|int)
+
+Tato funkce vytvoří konverzi v Affilboxu, pouze pokud je objednávka zaplacená. 
+
+Tato funkce má stejné fungování jako "simpleAffilboxTransaction".
+
+  
+
+### FAPI\_CONVERSION.simpleCJTransaction(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)
+
+Tato funkce vytvoří konverzi na platformě [https://www.cj.com/](https://www.cj.com/). Do této funkce je potřeba doplnit 3 parametry, enterpriseId, actionTrackerId a cjeventOrder.
+
+  
+
+### FAPI\_CONVERSION.simpleCJTransactionOnlyPaid(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)
+
+Tato funkce vytvoří konverzi na platformě CJ, pouze pokud je objednávka zaplacená. 
+
+Tato funkce má stejné fungování jako "simpleCJTransaction".
+
+  
+
+### FAPI\_CONVERSION.simpleSklikTransaction(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi na platformě Sklik.
+
+  
+
+### FAPI\_CONVERSION.simpleSklikTransactionOnlyPaid(fapiOrderData: object)
+
+Tato funkce vytvoří konverzi na platformě Sklik, pouze pokud je objednávka zaplacená. 
+
+  
+
+### FAPI\_CONVERSION.simpleGoogleAdsTransaction(fapiOrderData: object, ADId string)
+
+Tato funkce vytvoří konverzi v Google Ads. 
+
+Tato funkce narozdíl od výše uvedených přijmá 1 argument.
+
+ADId - ID kampaně, které začíná na AW-
+
+  
+
+### FAPI\_CONVERSION.simpleGoogleAdsTransactionOnlyPaid(fapiOrderData: object, ADId string)
+
+Tato funkce odešle konverzi do Google Ads pouze v případě, že je objednávka zaplacená.
+
+  
+
+## Když data v analytickém nástroji nesedí
+
+Po vložení konverzních kódů doporučujeme vytvořit testovací objednávku a ověřit v daném analytickém nebo reklamním nástroji, že se konverze odeslala pouze jednou.
+
+Pokud v analytickém nebo reklamním nástroji vidíte jiné počty konverzí než ve FAPI, zkontrolujte hlavně:
+
+-   zda se konverzní kód nespouští vícekrát,
+-   zda není stejný event vložený na více místech,
+-   zda se konverze neposílá současně přes FAPI, vlastní kód a Google Tag Manager,
+-   zda se event znovu neodešle při obnovení děkovací stránky,
+-   zda máte správně načtený Meta Pixel, Google Analytics nebo jiný měřicí nástroj,
+-   zda u kombinace Meta Pixelu a Facebook Conversion API funguje deduplikace,
+-   zda používáte správnou funkci podle toho, jestli chcete měřit všechny objednávky, nebo jen zaplacené objednávky.
+
+  
+
+## Shrnutí
+
+Konverzní kódy ve FAPI umožňují odesílat data objednávek do analytických a reklamních nástrojů.
+
+Při nastavení si vždy ověřte:
+
+-   zda používáte FAPI děkovací stránku, nebo vlastní děkovací stránku,
+-   zda máte správně načtené měřicí nástroje,
+-   zda neposíláte stejnou konverzi vícekrát,
+-   zda chcete měřit všechny objednávky, nebo pouze zaplacené,
+-   zda máte při použití Meta Pixelu a CAPI správně nastavenou deduplikaci.
+
+Správné nastavení konverzních kódů pomůže tomu, aby data v reklamních a analytických nástrojích odpovídala skutečným objednávkám ve FAPI.

@@ -1,0 +1,171 @@
+---
+title: "FAPI Member: Nastavení členské sekce ve Wordpress"
+url: /article/98-fapi-member-nastaveni-clenske-sekce
+description: "Jak vytvořit členskou sekci? V tomto návodu si ukážeme jak: vytvořit členskou sekci vytvořit přihlašovací stránku vytvořit stránku po přihlášení (nástěnku) vytv"
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - "FAPI Member: Nastavení členské sekce ve Wordpress"
+  - FAPI Member
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/98-fapi-member-nastaveni-clenske-sekce
+order: 15
+updatedAt: 2026-07-13T09:39:39Z
+---
+# Jak vytvořit členskou sekci?
+
+V tomto návodu si ukážeme jak:
+
+-   vytvořit členskou sekci
+-   vytvořit přihlašovací stránku
+-   vytvořit stránku po přihlášení (nástěnku)
+-   vytvořit uzamčenou stránku
+-   vytvořit e-mailové šablony
+
+  
+
+:::caution
+Pro používání ve FAPI member musí být obsah veřejně dostupný (public). FAPI member podporuje tyto typy obsahu:
+
+-   _page_ (stránka),
+-   _post_ (příspěvek),
+-   _custom post type_ (CPT).
+:::
+
+## Vytvoření členské sekce
+
+Členskou sekci vytvoříte velice jednoduše: 
+
+1.  Přejděte do administrace svého webu.
+2.  Klikněte na **FAPI member -\> Členská sekce -\> Sekce a úrovně**. Zvolte si název své členské sekce a klikněte na tlačítko **Vytvořit novou sekci.**
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/c23a5e431f27a687.png)
+
+Nyní máte členskou sekci vytvořenou.
+
+Jestliže si budete chtít vytvořit členskou úroveň, mějte na paměti, že **úrovně jsou vždy pod sekcemi**. Proto, aby mohla vzniknout úroveň, musíte mít alespoň jednu sekci, pod kterou úroveň zařadíte.
+
+Úroveň vytvoříte kliknutím na druhou záložku v pravém sloupci. Zvolte název, pod kterou sekci se má úroveň zařadit a pak klikněte na modré tlačítko. 
+
+Všechny založené sekce nebo úrovně se ihned zobrazí v levém sloupci.
+
+## Vytvoření přihlašovací stránky
+
+Každá členská sekce potřebuje místo, odkud se budou uživatelé přihlašovat. Standardní cestou pro přihlášení skrze WordPress je přihlašovací stránka /wp-admin. V takovém případě bude ale uživatel přihlášen do administrace WordPressu, odkud se zbytečně musí prokliknout na web, a to je nepohodlné.
+
+Pojďme si proto vytvořit přihlašovací stránku. Abyste na svou přihlašovací stránku mohli vložit přihlašovací formulář, musíte nejprve získat **"shortcode" pro přihlašovací formulář**. Přejděte tedy na stránku **Prvky pro web** a zkopírujte si shortcode formuláře.
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/daad201e0f5fd57d.png)
+
+Nyní vytvořte novou stránku. Klikněte v administraci na stránky a poté na tlačíkto **Vytvořit stránku**. 
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/0c59f733e6ceba9a.png)
+
+Do stránky vložte zkopírovaný shotcode. Místo tohoto shortcodu, se na stránce bude zobrazovat přihlašovací formulář.
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/c981aee5b083e589.png)
+
+Po jejím vytvoření si tuto stránku můžete nastavit jako přihlašovací stránku buď pouze pro konkrétní členskou sekci, nebo pro všechny své sekce.
+
+Pro všechny sekce a úrovně existuje pouze jeden formulář. Shortcode si ale můžete vkládat na libovolný počet stránek a můžete tak navenek docílit toho, že každá sekce nebo úroveň bude mít svůj přihlašovací formulář. Uživatelé po přihlášení ale samozřejmě uvidí jen ty sekce, které mají zaplacené.
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/8aafee672bd1b0a8.png)
+
+:::danger
+**POZOR!** Stránka s přihlašovacím formulářem nesmí být zařazena do žádné členské sekce ani úrovně. Stránka musí být přístupná všem a není vhodné ji jakkoliv zamykat.
+:::
+
+## Vytvoření stránky po přihlášení
+
+Nástěnka je první stránka, kam se klient po přihlášení do členské sekce dostane.
+
+Tato stránka by měla obsahovat úvodní informace o kurzu a také slouží jako rozcestník s odkazy, vedoucími k jednotlivých částem vaší členské sekce.
+
+Přejděme tedy k vytvoření další stránky. 
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/0c59f733e6ceba9a.png)
+
+Nástěnka by mohla vypadat přibližně takto:
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/cd9187c4b7939908.png)
+
+Na nástěnce jsou prokliky do 3 modlů naší členské sekce. Také zde máme kontaktní údaje, pokud by náš klient měl s něčím problém. Dále by se zde také dalo v rychlosti popsat, o čem tato členská sekce je, a případně dodat uvítací video a další informace, které jsou pro klienta důležité.
+
+Nástěnka by měla být již přístupná pouze pro přihlášené členy. Jak to udělat?  
+
+Přejděte zpátky do **adminsitrace webu -\> FAPI Member -\> Členská sekce -\> Přiřazené stránky a přizpěvky.** 
+
+V levém menu vyberte členskou sekci a klikněte na **Upravit přiřazení.** Vyberte stránky, které chcete přiřadit do členské sekce, a klikněte na tlačítko **Uložit**.
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/b5a898ffd3170b16.png)
+
+Nyní máte nástěnku zamčenou, takže se na ni nově dostanou pouze přihlášení klienti. Nyní je třeba nastavit, aby se tato stránka po přihlášení klientům zobrazila.
+
+V pluginu **FAPI Member -\> Členská sekce** klikněte v horním menu na **Servisní stránky**. Vyberte svou členskou sekci. Zobrazí se vám nastavení se třemi typy stránek:
+
+-   **Přihlašovací stránka –** odtud se přihlašují klienti do členské sekce.
+-   **Nástěnka** – sem jsou klienti přesměrováni po přihlášení do členské sekce (toto je ona **Nástěnka**).
+-   **Stránka, když uživatel nemá přístup** – tato stránka slouží pro klienty, kteří nemají vaši sekci zakoupenou. Zde máte příležitost jim sekci představit a motivovat je k nákupu.
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/999d0770fb1ec2d0.png)
+
+Nyní už máte hotovou přihlašovací stránku, po přihlášení se klient dostane na Nástěnku, odkud se může dostat na další placený obsah. Teď chybí už jen vytvořit uzavřené stránky s obsahem. 
+
+## Vytvoření uzamčené stránky
+
+Při vytvořání uzamčené stránky členské sekce postupujte podobně, jako při vytvoření stránky Nástěnka. 
+
+Začněte tedy tím, že v administraci webu vytvoříte novou stránku. 
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/0c59f733e6ceba9a.png)
+
+Připravte si stránku s obsahem.
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/4b038af4a7589322.png)
+
+Tuto stránku  **můžete do členské sekce přiřadit přimo v editaci**. Nemusíte tedy znovu chodit do FAPI Member pluginu a tuto stránku přidávat.
+
+Takto můžete postupně vytvořit všechny stránky, které chcete ve své členské sekci mít. 
+
+## Vytvoření e-mailové šablony
+
+Poslední krok, který je potřeba nastavit, je e-mailová komunikace s klientem, tedy informace o tom, kde se má přihlásit do členské sekce a s jakými údaji. 
+
+K tomu v pluginu slouží E-mailové šablony. Najdete je v **FAPI Member -\> Členská sekce -\> E-maily.**  V levém menu vyberte členskou sekci. 
+
+![FAPI Member: Nastavení členské sekce ve Wordpress](/assets/articles/a5bd05f52b921e03.png)
+
+Plugin obsahuje tyto přednastavené e-mailové šablony:
+
+-   **E-mail po registraci do sekce** je 1. e-mail, který se zasílá klientovi v momentě, kdy se mu vytvoří přístup na váš web a do vaší první členské sekce.
+-   **E-mail po prodloužení členství v sekci** se zasílá vždy, když je klientovi prodlouženo členství v sekci.
+-   **E-mail po přidaní do sekce** se zasílá v momentě, kdy klient u vás již má založený účet a je mu zpřístupněna další členská sekce.
+
+### **E-mail po registraci do sekce** 
+
+V tom to e-mailu je tedy klientovi potřeba sdělit několik zásadních informací:
+
+1.  o jakou členskou sekci jde
+2.  na jaké stránce se má do sekce přihlásit a jaké je jeho uživatelské jméno a heslo pro přihlášení
+3.  dále zde klientovi můžete napsat, do kdy mu přístup do členské sekce platí
+
+### E-mail po prodloužení členství v sekci
+
+V tomto e-mailu klientovi sdělujete, že jeho setrvání v členské sekci bylo prodlouženo s informací, do kdy může členskou sekci čerpat. 
+
+### E-mail po přidaní do sekce
+
+V tomto e-mailu klientovi sdělujete, že má nově přístup i do jiné sekce, než do které měl aktuálně přístup. Také je dobré mu zde poslat přihlašovací stránku. 
+
+:::tip
+V e-mailech můžete také používat různé proměnné. Ty najdete na stránce  **E-maily** ve **FAPI Member** pluginu.
+:::

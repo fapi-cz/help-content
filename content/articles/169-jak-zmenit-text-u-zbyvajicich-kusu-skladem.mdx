@@ -1,0 +1,54 @@
+---
+title: Jak změnit text u zbývajících kusů skladem
+url: /article/169-jak-zmenit-text-u-zbyvajicich-kusu-skladem
+description: Pokud omezujete počet dostupných položek při prodeji, tak jedinou možností počítání zbývajících položek, jsou kusy. Při prodeji workshopů, školení nebo sportovn
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Jak změnit text u zbývajících kusů skladem
+  - Automatizace
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/169-jak-zmenit-text-u-zbyvajicich-kusu-skladem
+order: 171
+updatedAt: 2026-07-13T11:11:10Z
+---
+Pokud omezujete počet dostupných položek při prodeji, tak jedinou možností počítání zbývajících položek, jsou **kusy**.
+
+Při prodeji workshopů, školení nebo sportovních aktivit, to ale není ideální volba a počítání by bylo lepší změnit na **"místa"**.
+
+  
+
+Pro takovou úpravu stačí přidat následující skript, který výskyty slova kus/kusy/kusů zamění za "místo, místa, míst".
+
+Celý skript vložte hned nad skript, kterým odkazujete na prodejní formulář (najdete ho v náhledu každého prodejního formuláře).
+
+```text
+<script>
+   // naslouchání na událost, která říká že je formulář vložený do stránky
+   document.addEventListener('fapiFormMounted', function (event) {
+      var formElement = event.detail.formWrapper;
+      var productsLines = formElement.querySelectorAll('div[class*="fapi-product-"]');
+
+      productsLines.forEach(function (productLine) {
+         // element s počtem kusů
+         var temp = productLine.childNodes[1].querySelector('div[class*="f-text-red"]');
+
+         if (temp === null) {
+            return;
+         }
+
+         // změna textu
+         temp.innerHTML = temp.innerHTML.replace('kusů', 'míst');
+         temp.innerHTML = temp.innerHTML.replace('kusy', 'místa');
+         temp.innerHTML = temp.innerHTML.replace('jeden kus', 'jedno místo');
+      });
+   });
+</script>
+```
+
+:::danger
+Změna se vám ve FAPI neprojeví. Uvidíte ji přímo ve stránce, kde máte prodejní formulář vložený.
+:::

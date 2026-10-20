@@ -1,0 +1,191 @@
+---
+title: Jak propojit produkt z Konverzek s automatizací ve FAPI
+url: /article/141-konverzky-a-automatizace
+description: Produkt, který prodáváte v Konverzkách, nemusíte znovu nutně vytvářet jako produkt v katalogu FAPI, pokud váš prodej probíhá jen přes Konverzky. Aby však FAPI p
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak propojit produkt z Konverzek s automatizací ve FAPI
+  - Často kladené dotazy (FAQ)
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/141-konverzky-a-automatizace
+order: 81
+updatedAt: 2026-09-03T06:59:24Z
+legacyAnchors:
+  - id: Mte-produkt-vytvoen-ve-FAPI-i-v-Konverzkch-c388c
+    tag: h3
+    text: Máte produkt vytvořený ve FAPI i v Konverzkách?
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-propojen-funguje-Ss90M
+    tag: h2
+    text: Jak propojení funguje
+    occurrence: 0
+    headingIndex: 1
+  - id: Je-nutn-vytvoit-produkt-tak-ve-FAPI-NASXw
+    tag: h2
+    text: Je nutné vytvořit produkt také ve FAPI?
+    occurrence: 0
+    headingIndex: 2
+  - id: Jak-ovit-e-propojen-funguje-IMPq-
+    tag: h2
+    text: Jak ověřit, že propojení funguje
+    occurrence: 0
+    headingIndex: 3
+---
+Produkt, který prodáváte v Konverzkách, nemusíte znovu nutně vytvářet jako produkt v katalogu FAPI, pokud váš prodej probíhá jen přes Konverzky. Aby však FAPI poznalo, ke kterému produktu se objednávka vztahuje a spustilo správné automatizační pravidla, je potřeba produktu přiřadit jedinečný identifikátor.
+
+Identifikátor je krátký kód produktu, například `KURZ2026` . Konverzky tento kód odešlou do FAPI společně s objednávkou. FAPI podle něj pozná, která automatizace se má spustit.
+
+Nejde tedy o synchronizaci produktů. Změna názvu, ceny nebo jiných údajů produktu v Konverzkách automaticky neupraví produkt ve FAPI. Identifikátor slouží pouze ke správnému rozpoznání objednané položky.
+
+:::danger
+**Pokud máte stejný produkt vytvořený ve FAPI i v Konverzkách, nastavte mu v obou systémech stejný kód. Konverzky díky tomu produkt správně rozpoznají a mohou ve svých statistikách zobrazovat také nákupy uskutečněné prostřednictvím prodejního formuláře FAPI.**
+:::
+
+:::tip
+**Celý postup najdete i v této videonápovědě:**
+
+<Video src="https://www.youtube.com/embed/n7t2O_tqv4U" />
+:::
+
+  
+
+**Postupujte prosím v těchto krocích:**
+
+1.  **Nastavte si** [**ve FAPI prodejní formulář**](/article/44-prodejni-formular)
+
+Nejprve si ve FAPI vytvořte prodejní formulář, pod kterým chcete objednávky z Konverzek evidovat.
+
+V tomto formuláři následně nastavíte automatizace, které se mají spustit například po:
+
+-   objednání produktu,
+-   zaplacení produktu,
+-   stornování objednávky.
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/addfe9ad5d1084a0.png)
+
+2.  **Propojte Konverzky s FAPI přes** [**novou integraci FAPI**](https://saas.konverzky.cz/admin/integration/new?type=fapi)
+
+V levém panelu vyhledejte Integrace, v pravém horním rohu pak klikněte na + Přidat novou integraci.
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/84b0db880c5698ea.png)
+
+Z nabídky připravených integrací si vyberte právě FAPI.
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/d75d3317d158407f.png)
+
+  
+
+Vyplňte a nechte Povolit automatizace. Další nastavení zvolte dle vlastního uvážení a potřeb. FAPI doporučuje všechny volby povolit.
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/0bb51758ef2eb9df.png)
+
+**Název -** si pojmenujte např. FAPI (máte-li více FAPI účtů dejte např. FAPI 1)
+
+**Uživatelské jméno** - stejné jako email, na který máte své FAPI registrováno (při generování API klíče se vám zobrazí).
+
+**API klíč** -  pro propojení s Konverzkami si vytvoříte jedinečný API klíč ve FAPI v sekci [Můj účet \> API klíče](https://web.fapi.cz/account-settings/api-tokens?projectId=all),
+
+Můžete postupovat i pomocí této FAPI nápovědy: [Jak získat API klíč](/article/128-jak-ziskat-api-klic)
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/63a5fa168fc2475b.png)
+
+Nastavte si rovněž formulář pro spárování z 1. kroku tohoto návodu.
+
+Nastavení Integrace v Konverzkách uložte.
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/3058692a8ff2fe49.png)
+
+**3\. V Konverzkách nastavte u produktu identifikátor**
+
+Vytvořte nový produkt v Konverzkách a při vytváření přidejte přes Pokročilá nastavení "**Identifikátor**", cílovou službu vyberte FAPI. Těchto identifikátorů můžete nastavit neomezeně.
+
+Každý produkt by měl mít vlastní jedinečný identifikátor. Používejte jednoduchý kód bez mezer a diakritiky.
+
+**Tento Identifikátor pak použijte v prodejním formuláři ve FAPI ve 4. kroku Akce.**
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/8215d48a1731b68b.png)
+
+:::info
+### **Máte produkt vytvořený ve FAPI i v Konverzkách?**
+
+  
+
+Pak je vhodné mít kód v obou systémech stejný
+
+  
+
+**Prodáváte-li stejný produkt v Konverzkách i ve FAPI, pak jako Identifikátor** doporučujeme použít **kód produktu z FAPI**, který najdete kartě [Prodej \> Produkty](https://web.fapi.cz/templates/items?projectId=all), v levém sloupci Kód.
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/c9605423ed5ae4a3.png)
+
+Pokud si tento kód chcete nastavit podle sebe, např. test123, pak v kartě [Nastavení \> Nastavení fakturace](https://web.fapi.cz/settings/?projectId=all), v sekci ROZŠÍŘENÉ NASTAVENÍ PRODUKTU, si aktivujte Kód položky (EAN/ISBN)
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/84ac1318202ac216.png)
+
+Toto nastavení vám umožní přímo v Úpravě produktu nastavit **vlastní kód položky.**
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/2b059d2f93a5a81f.png)
+:::
+
+  
+
+4.  **Použijte stejný identifikátor v automatizaci FAPI**
+
+Ve FAPI v prodejním formuláři vytvořeném v 1. kroku pro Konverzky, přejděte do 4. kroku Akce nastavte nad vytvořeným produktem automatizaci.
+
+1.  Úprava prodejního formuláře, přejděte do **4\.** kroku **Akce**.
+2.  Vytvořte novou událost a akci. Zadejte požadovanou událost: **objednání / zaplacení / stornování položky s kódem**.
+3.  Do pole kód produktu vyplňte právě "**Identifikátor**" z 3. kroku
+
+![Jak propojit produkt z Konverzek s automatizací ve FAPI](/assets/articles/0ac0d6544c9ffe77.png)
+
+5\. FAPI formulář uložte.
+
+  
+
+## Jak propojení funguje
+
+Po vytvoření objednávky proběhne následující:
+
+1.  Zákazník objedná produkt v Konverzkách.
+2.  Konverzky odešlou objednávku do FAPI.
+3.  Součástí objednávky je identifikátor produktu.
+4.  Objednávka se přiřadí k prodejnímu formuláři vybranému v poli **Formulář pro spárování**.
+5.  FAPI porovná identifikátor položky s kódy uvedenými v automatizacích formuláře.
+6.  Pokud se kódy shodují, FAPI provede nastavenou akci.
+
+## Je nutné vytvořit produkt také ve FAPI?
+
+Pro samotné rozpoznání produktu a spuštění automatizace by měl stačit identifikátor odeslaný z Konverzek. Produkt proto zpravidla není nutné vytvářet také v katalogu FAPI.
+
+Vytvoření stejného produktu ve FAPI může být užitečné, pokud jej chcete používat také:
+
+-   v běžném prodejním formuláři FAPI,
+-   při ručním vystavování dokladů,
+-   v dalších samostatných prodejích vedených přímo přes FAPI.
+
+  
+
+## Jak ověřit, že propojení funguje
+
+Vytvořte testovací objednávku produktu v Konverzkách a následně ve FAPI zkontrolujte:
+
+-   zda se objednávka ve FAPI zobrazila,
+-   zda je přiřazena ke správnému prodejnímu formuláři,
+-   zda objednaná položka obsahuje správný identifikátor,
+-   zda se spustila očekávaná automatizace.
+
+Pokud se objednávka přenesla, ale automatizace se nespustila, zkontrolujte především přesnou shodu identifikátoru a zapnutí možnosti **Povolit automatizace**.
+
+  
+
+:::danger
+Pokud budete provádět testování a formulář bude v testovacím režimu, děkovací stránka se nezobrazuje správně. Zobrazení děkovačky je potřeba otestovat v produkčním režimu.
+:::
+
+Může vás též zajímat: [**JAK VLOŽIT PRODEJNÍ FORMULÁŘ DO PRODEJNÍ STRÁNKY V KONVERZKÁCH**](/article/315-jak-vlozit-prodejni-formular-fapi-do-konverzek)

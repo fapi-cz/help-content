@@ -1,0 +1,94 @@
+---
+title: Základní nastavení FAPI
+url: /article/15-zakladni-nastaveni-fapi
+description: Právě jste se zaregistrovali do FAPI a byl vám zřízen účet? Pak si pravděpodobně kladete otázku, co je třeba udělat, abyste mohli začít FAPI plně využívat. V to
+category: Začínáme
+categorySlug: 4-zaciname
+categorySlugs:
+  - 4-zaciname
+keywords:
+  - Základní nastavení FAPI
+  - Začínáme
+sourceUrl: https://napoveda.fapi.cz/article/15-zakladni-nastaveni-fapi
+order: 30
+updatedAt: 2026-07-13T09:52:44Z
+---
+Právě jste se zaregistrovali do FAPI a byl vám zřízen účet? Pak si pravděpodobně kladete otázku, co je třeba udělat, abyste mohli začít FAPI plně využívat. V tomto článku si popíšeme, co musíte v aplikaci nastavit ještě před tím, než uvedete svůj účet FAPI do ostrého provozu.
+
+:::caution
+Níže zmíněná nastavení se samozřejmě netýkají pouze začátku používání FAPI, můžete je měnit a přizpůsobovat svým potřebám i kdykoli později. Pokud změníte jakékoli nastavení, změna se projeví ihned od okamžiku jejího uložení. Typickým příkladem z praxe může být třeba změna bankovního účtu pro platbu převodem nebo režimu DPH.
+:::
+
+:::tip
+Podrobnější informace k nastavení i tipy a rady jak postupovat najdete přímo v aplikaci v modře podbarvených boxech nebo u jednotlivých polí pod ikonou otazníku.
+:::
+
+## Nastavení aplikace
+
+Všechny podstatné volby pro základní fungování aplikace najdete na záložce **Nastavení**. Pro úvodní "oživení" účtu jsou klíčové zejména první čtyři podnabídky, tedy **Fakturační údaje**, **Způsoby platby**, **Nastavení fakturace** a **E-maily**.
+
+### Fakturační údaje
+
+Jednou ze základních funkcí FAPI je vystavování prodejních dokladů. Aby FAPI mohlo fakturovat, je třeba mu nejprve poskytnout údaje, které se mají na fakturách uvádět.
+
+Všechny údaje o vystaviteli faktur (tedy vaší osobě či firmě) se zadávají v nabídce **Nastavení - Fakturační údaje**.
+
+![Základní nastavení FAPI](/assets/articles/653f14ff96e2f532.png)
+
+### Způsoby platby
+
+Dalším důležitým nastavením jsou parametry některých způsobů platby. Jde zejména o čísla bankovních účtů, které se používají pro platbu převodem a tisknou se na vystavené faktury. Nastavíte je v nabídce **Nastavení - Způsoby platby**. Pro vygenerování QR kódu jsou důležité údaje **SWIFT** a **IBAN**, bez těchto údajů není možné na fakturu vytisknout QR kód pro platbu. 
+
+:::danger
+QR kódy lze používat pouze s účty, které používají CZ nebo SK prefix IBAN kódu.
+:::
+
+![Základní nastavení FAPI](/assets/articles/3134c998d0411ab4.png)
+
+:::danger
+Pokud fakturujete ve více měnách, je třeba v nastavení zadat čísla bankovních účtů pro všechny používané měny, aby se na faktuře, popř. v zasílaných zprávách číslo bankovního účtu zobrazilo.
+:::
+
+Na stejném místě najdete i nastavení funkce **Import plateb**. Tato funkce není nezbytná pro vystavování faktur, nicméně má zásadní význam pro automatizaci párování plateb. Více se dozvíte v článku [Import plateb z banky](/article/30-import-plateb-z-banky).
+
+V nabídce **Způsoby platby** můžete nastavit také cenu dobírky a státy, pro které má být dobírka jako platební metoda dostupná.
+
+### Nastavení fakturace
+
+V nabídce **Nastavení - Nastavení fakturace** najdete všechny důležité parametry fakturace, jako jsou režim DPH, zaokrouhlování celkové částky faktur, splatnost a jazyk faktur, měnové kurzy aj.
+
+![Základní nastavení FAPI](/assets/articles/db665ad9da03e03c.png)
+
+![Základní nastavení FAPI](/assets/articles/cbb277a5b084f18c.png)
+
+![Základní nastavení FAPI](/assets/articles/34369098e0ef08e8.png)
+
+:::danger
+Při automatické fakturaci pomocí prodejního formuláře se některé parametry fakturace (např. vystavování zálohových faktur, jazyk prodejního formuláře a vystavených dokladů, měna fakturace aj.) přednostně řídí nastavením na úrovni prodejního formuláře. Toto nastavení se může od základního nastavení lišit.
+:::
+
+### E-maily
+
+Protože FAPI faktury nejen vystavuje, ale rovněž zasílá klientům (popř. i vystaviteli) e-mailem, je třeba určit, jaké doklady a s jakým **jménem odesilatele** se budou z FAPI zasílat. Tyto údaje nastavíte v nabídce **Nastavení - E-maily**.
+
+Můžete si zde nastavit jméno odesílatele, které se zobrazí v e-mailu.
+
+A také e-mail, na který se odešlou případné dotazy zákazníků.
+
+![Základní nastavení FAPI](/assets/articles/b25de51d144b7332.png)
+
+Můžete si zde také nastavit pravidelné **e-mailové reporty** o tom jak Vám podnikání šlape. 
+
+:::caution
+Odesílací adresa je pevně nastavena na  _fakturace@fapifaktura.cz_ a nelze ji změnit.
+:::
+
+### Loga a podpisy
+
+Další dvě nabídky v nastavení ovlivňují vzhled faktur. Jejich prostřednictvím můžete vizuálně odlišit a oživit své faktury přidáním loga společnosti/projektu a obrázku s naskenovaným podpisem, popř. razítkem.
+
+:::caution
+Uvedení loga a podpisu na faktuře není nutné z funkčního ani legislativního hlediska (razítko a podpis vystavitele faktury není údaj vyžadovaný zákonem).
+:::
+
+![Základní nastavení FAPI](/assets/articles/f3459bb205544240.png)

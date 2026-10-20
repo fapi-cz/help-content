@@ -1,0 +1,106 @@
+---
+title: Jak vložit obrázek do miniupsellu
+url: /article/266-jak-vlozit-obrazek-do-miniupsellu
+description: Jak vložit obrázek k miniupsellu a upravit jeho velikost? Chcete do svého prodejního formuláře přidat obrázek k miniupsellu, a zároveň si upravit jeho zobrazeno
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+keywords:
+  - Jak vložit obrázek do miniupsellu
+  - Nastavení
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/266-jak-vlozit-obrazek-do-miniupsellu
+order: 261
+updatedAt: 2026-03-10T16:02:03Z
+legacyAnchors:
+  - id: Jak-vloit-obrzek-k-miniupsellu-a-upravit-jeho-velikost-ZX1vy
+    tag: h2
+    text: Jak vložit obrázek k miniupsellu a upravit jeho velikost?
+    occurrence: 0
+    headingIndex: 0
+  - id: 1-Jak-vloit-obrzek-k-miniupsellu-ujNFQ
+    tag: h2
+    text: 1. Jak vložit obrázek k miniupsellu
+    occurrence: 0
+    headingIndex: 1
+  - id: 2-Jak-zmnit-velikost-obrzku-v-miniupsellu-EEPuY
+    tag: h2
+    text: 2. Jak změnit velikost obrázku v miniupsellu
+    occurrence: 0
+    headingIndex: 2
+  - id: Postup-_Oeny
+    tag: h3
+    text: "Postup:"
+    occurrence: 0
+    headingIndex: 3
+  - id: Co-kdy-se-kd-vkld-patn-4OGED
+    tag: h2
+    text: Co když se kód vkládá špatně?
+    occurrence: 0
+    headingIndex: 4
+---
+# Jak vložit obrázek k miniupsellu a upravit jeho velikost?
+
+Chcete do svého prodejního formuláře přidat **obrázek k miniupsellu**, a zároveň si upravit jeho **zobrazenou velikost**? V tomto návodu vás provedeme celým postupem.
+
+## 1\. Jak vložit obrázek k miniupsellu
+
+1.  U produktu pro miniupsell si obrázek nejdříve nahrajte.
+2.  Otevřete svůj prodejní formulář ve FAPI.
+3.  Přejděte do 2. kroku Položky a ceny, oddíl **Miniupsell**.
+
+  
+
+Do textového pole, kde upravujete popis miniupsellu, můžete použít zástupné symboly:
+
+-   \{itemName\} - jméno položky
+-   \{price\} - cena položky (povinné v textu miniupsellu)
+-   \{priceBeforeDiscount\} - cena položky před slevou
+-   \{image\} - obrázek produktu
+
+![Jak vložit obrázek do miniupsellu](/assets/articles/66679e504d9bed21.png)
+
+Následně zápis u položky Miniupsellu vypadá třeba takto:
+
+![Jak vložit obrázek do miniupsellu](/assets/articles/80a6cf5348db7e3e.png)
+
+  
+
+## 2\. Jak změnit velikost obrázku v miniupsellu
+
+Výchozí rozměr obrázku je relativně malý. Pokud chcete, aby byl větší (např. přes celou šířku stránky), můžete si jeho velikost **upravit pomocí CSS stylu**.
+
+  
+
+### Postup:
+
+1.  V prodejním formuláři jděte do sekce **5 – Děkovací stránka**.
+
+![Jak vložit obrázek do miniupsellu](/assets/articles/3fcc1af1b4c29976.png)
+
+2.  Do pole **Trackovací kód** vložte následující kód:
+
+```text
+<style>
+.fapi-item-image {
+  max-width: 300px !important;
+  max-height: 200px !important;
+}
+</style>
+```
+
+3.  Hodnoty `max-width` **300** a `max-height` **200** si upravte podle vlastních preferencí – např. 100% šířku apod.
+
+:::caution
+> **Důležité:**
+> 
+> Změna velikosti se **nezobrazí v náhledu** formuláře ve FAPI. Uvidíte ji až **na stránce, kam máte formulář vložený** (například v Konverzkách nebo na webu).
+:::
+
+## Co když se kód vkládá špatně?
+
+Pokud systém, do kterého formulář vkládáte (např. Konverzky), automaticky **mění znaky jako** `<` **nebo** `>`  , ujistěte se, že kód **vkládáte jako HTML**, ne jako text.
+
+V Konverzkách doporučujeme úpravu provádět přímo **ve zdrojovém kódu stránky**.

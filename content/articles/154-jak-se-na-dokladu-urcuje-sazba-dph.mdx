@@ -1,0 +1,49 @@
+---
+title: Jak se na dokladu určuje sazba DPH?
+url: /article/154-jak-se-na-dokladu-urcuje-sazba-dph
+description: Pokud jste plátci DPH, můžete se tu a tam setkat s tím, že na právě vystaveném dokladu je jiná sazba DPH, než jakou byste tam chtěli aktuálně mít. Nejčastěji se
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+keywords:
+  - Jak se na dokladu určuje sazba DPH?
+  - Často kladené dotazy (FAQ)
+sourceUrl: https://napoveda.fapi.cz/article/154-jak-se-na-dokladu-urcuje-sazba-dph
+order: 120
+updatedAt: 2026-07-13T10:55:01Z
+redirects:
+  - /article/154-jak-se-urcuje-sazba-dph
+---
+Pokud jste plátci DPH, můžete se tu a tam setkat s tím, že na právě vystaveném dokladu je jiná sazba DPH, než jakou byste tam chtěli aktuálně mít. Nejčastěji se s tím setkáte při fakturaci pro zahraničního klienta, nebo při přechodu z neplátce na plátce DPH.
+
+Když se stáváte plátcem DPH, tak ve FAPI je potřeba nastavit tyto základní údaje:
+
+-   jakým způsobem budete zdaňovat přeshraniční prodeje (Nastavení \> Nastavení fakturace \> Do zemí EU fakturovat jako)
+-   doplnit **sazby DPH** a konkrétní označení **typu produktu** (Prodej \> Produkty)
+
+Touto obecnou logikou se pak budou řídit všechny objednávky.
+
+Při nastavení fakturace zdaňováním tuzemskou sazbou, budou mít všechny doklady tuzemskou DPH sazbu. DPH z přeshraničních prodejů pak odvádíte vy běžným způsobem.
+
+![Jak se na dokladu určuje sazba DPH?](/assets/articles/e1e4ed1d8fc40968.png)Pokud nastavíte režim OSS, daní se prodeje DPH sazbou platnou pro daný typ produktu v zemi nakupujícího. Podrobně to popisujeme v naší [nápovědě k OSS zde](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).
+
+![Jak se na dokladu určuje sazba DPH?](/assets/articles/f1e612cc94a56939.png)
+
+## Obecné nastavení mám dobře, ale sazba DPH je pořád v jiné výši
+
+Tohle obvykle nastává z jednoho z těchto důvodů:
+
+1.  v kartě nakupujícího (Klienti \> Klient \> Upravit) chybí informace, že jde o plátce DPH
+2.  ![Jak se na dokladu určuje sazba DPH?](/assets/articles/70604f7f86046970.png)V nastavení prodejního formuláře (Prodej \> Prodejní formuláře \> krok 3 \> Přenesená daňová povinnost) jste zakázali používání reverse charge (podrobnosti o [reverse charge najdete tady](/article/27-prenesena-danova-povinnost))
+3.  ![Jak se na dokladu určuje sazba DPH?](/assets/articles/3ea84b641ce6b629.png)Režim zdanění (reverse charge) nebo označení dokladu jako podléhajícího DPH jste vypnuli přímo v úpravách daného dokladu. V ruční editaci (Faktury \> vyberte doklad \> Upravit) zkontrolujte, nebo změňte:
+    
+    1.  doplnit Datum uskutečnění zdanitelného plnění (tím se doklad stane daňovým)
+    2.  vyberte jeden z režimů Přenesené daňové povinnosti
+    
+    ![Jak se na dokladu určuje sazba DPH?](/assets/articles/69d548a6c92515e0.png)
+4.  U daného dokladu není povoleno sbírat informace o adrese (jde o zjednodušený daňový doklad), FAPI tedy neví že jde o přeshraniční prodej. Změňte typ dokladu, a / nebo doplňte celou adresu zahraničního zákazníka a opravte sazby DPH v dokladu.
+
+Po kontrole všech výše uvedených bodů už zbývá poslední krok – upravit DPH sazbu v daném dokladu v rozpisu položek. Ten se nachází zcela vespod.
+
+Každý nakoupený produkt je jednou položkou, kde přepíšete Sazbu DPH a celý doklad uložíte kliknutím na zelené tlačítko **Uložit fakturu.**

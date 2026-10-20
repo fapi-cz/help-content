@@ -1,0 +1,215 @@
+---
+title: Propojení FAPI s účetním systémem POHODA
+url: /article/352-propojeni-fapi-s-ucetnim-systemem-pohoda
+description: Přímé propojení FAPI s účetním systémem POHODA vám pomůže omezit ruční přenášení dokladů. Volitelně můžete také synchronizovat dostupné množství produktů z POHO
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI s účetním systémem POHODA
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/352-propojeni-fapi-s-ucetnim-systemem-pohoda
+order: 305
+updatedAt: 2026-10-14T10:46:51Z
+legacyAnchors:
+  - id: Co-propojen-umouje-vChz1
+    tag: h2
+    text: Co propojení umožňuje
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-budete-potebovat-BMJxV
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 1
+  - id: 1-Pidejte-propojen-s-POHODOU-IfEGg
+    tag: h2
+    text: 1. Přidejte propojení s POHODOU
+    occurrence: 0
+    headingIndex: 2
+  - id: 2-Vyberte-kdy-se-maj-doklady-pedvat-a5cph
+    tag: h2
+    text: 2. Vyplňte přístupové údaje
+    occurrence: 0
+    headingIndex: 3
+  - id: 2-Vyberte-kdy-se-maj-doklady-pedvat-QYv-n
+    tag: h2
+    text: 3. Vyberte, kdy se mají doklady předávat
+    occurrence: 0
+    headingIndex: 4
+  - id: 3-Voliteln-zapnte-synchronizaci-zsob-hBUlM
+    tag: h2
+    text: 4. Volitelně zapněte synchronizaci zásob
+    occurrence: 0
+    headingIndex: 5
+  - id: 4-Propojen-otestujte-dmekw
+    tag: h2
+    text: 5. Propojení otestujte
+    occurrence: 0
+    headingIndex: 6
+  - id: Pokud-propojen-nefunguje-EiP7_
+    tag: h2
+    text: Pokud propojení nefunguje
+    occurrence: 0
+    headingIndex: 7
+  - id: Souvisejc-npovdy-WbHvj
+    tag: h2
+    text: Související nápovědy
+    occurrence: 0
+    headingIndex: 8
+---
+Přímé propojení FAPI s účetním systémem POHODA vám pomůže omezit ruční přenášení dokladů. Volitelně můžete také synchronizovat dostupné množství produktů z POHODY do FAPI.
+
+  
+
+## Co propojení umožňuje
+
+Po nastavení můžete:
+
+  
+
+-   předávat doklady do POHODY při jejich vystavení,
+-   předávat doklady až po jejich zaplacení,
+-   volitelně předávat také opravné daňové doklady,
+-   synchronizovat dostupné množství produktů z POHODY do FAPI.
+
+  
+
+Synchronizace dostupného množství probíhá z POHODY do FAPI.
+
+  
+
+:::info
+Funkce je zatím v testovacím režimu, proto je dostupná na vyžádání. V případě zájmu o aktivaci se nám ozvěte na [podpora@fapi.cz](mailto:podpora@fapi.cz) a my vám ji rádi zpřístupníme.
+:::
+
+## Co budete potřebovat
+
+Před nastavením si připravte:
+
+  
+
+-   přístup do svého účtu FAPI,
+-   účetní systém POHODA s funkčním připojením k POHODA mServeru,
+-   přihlašovací údaje k mServeru,
+-   vyplněné IČ ve FAPI.
+
+  
+
+Pokud POHODA mServer nenastavujete sami, požádejte o potřebné údaje správce POHODY nebo svého IT specialistu.
+
+  
+
+## 1\. Přidejte propojení s POHODOU
+
+Ve FAPI přejděte do části:
+
+  
+
+[**Nastavení → Propojení aplikací**](https://web.fapi.cz/settings/connections?projectId=all) **→ POHODA**
+
+![Propojení FAPI s účetním systémem POHODA](/assets/articles/cc456f9806830920.png)
+
+## 2\. Vyplňte přístupové údaje
+
+Otevřete nastavení propojení a vyplňte údaje pro připojení k POHODA mServeru. **Poté nastavení uložte.**
+
+  
+
+Adresu POHODA mserveru získáte od svého poskytovatele hostingu. Adresa by měla být šifrovaná ve formátu https.
+
+Uživatelské jméno a heslo použijte stejné, jako v účetním programu POHODA.
+
+:::danger
+Přístupové údaje k mServeru jsou citlivé. Nezveřejňujte je ani je neposílejte na screenshotech.
+:::
+
+![Propojení FAPI s účetním systémem POHODA](/assets/articles/937c857c26e819da.png)
+
+## 3\. Vyberte, kdy se mají doklady předávat
+
+V nastavení propojení zvolte, kdy má FAPI doklad do POHODY předat:
+
+  
+
+-   **při vystavení dokladu**, nebo
+-   **po zaplacení dokladu**.
+
+  
+
+Vyberte variantu, která odpovídá způsobu, jakým doklady ve firmě zpracováváte. Pokud si nejste jistí, doporučujeme volbu konzultovat s účetní.
+
+  
+
+Ve stejném nastavení můžete povolit také předávání opravných daňových dokladů.
+
+  
+
+## 4\. Volitelně zapněte synchronizaci zásob
+
+Pokud vedete sklad v POHODĚ, můžete zapnout synchronizaci dostupného množství produktů do FAPI.
+
+  
+
+Aby se množství propsalo ke správnému produktu, musí být produkt ve FAPI správně přiřazený ke skladové položce v POHODĚ. Pro produkty lze ve FAPI používat rozšířená pole pro POHODU, například kód skladu a kód skladové položky.
+
+  
+
+Rozšířená pole produktu zapnete v části:
+
+  
+
+[**Nastavení → Nastavení fakturace**](https://web.fapi.cz/settings/?projectId=all) **→ Rozšířené nastavení produktu**
+
+![Propojení FAPI s účetním systémem POHODA](/assets/articles/333236e3e443aecd.png)
+
+Samotné údaje potom doplníte u příslušného produktu.
+
+  
+
+## 5\. Propojení otestujte
+
+Před běžným používáním doporučujeme vytvořit testovací doklad a ověřit, že se správně předal do POHODY.
+
+  
+
+Zkontrolujte zejména:
+
+-   zákazníka a položky dokladu,
+-   částky, měnu a DPH,
+-   okamžik předání podle zvoleného nastavení.
+
+  
+
+Pokud používáte synchronizaci zásob, ověřte na jednom produktu také správné propsání dostupného množství z POHODY do FAPI.
+
+  
+
+## Pokud propojení nefunguje
+
+Zkontrolujte, zda:
+
+-   je POHODA mServer spuštěný a dostupný,
+-   jsou přístupové údaje zadané správně,
+-   máte ve FAPI vyplněné IČ,
+-   má produkt správně nastavený kód skladu a skladové položky,
+-   je v propojení zapnutá požadovaná funkce.
+
+  
+  
+
+## Související nápovědy
+
+-   [Nastavení DPH pro účetní program POHODA](/article/29-nastaveni-dph-pro-ucetni-program-pohoda)
+-   [Produkty ve FAPI](/article/43-produkty)
+-   [Jak vytvořit opravný daňový doklad](/article/127-jak-vytvorit-opravny-danovy-doklad)
+-   [Export faktur](/article/85-export-faktur)

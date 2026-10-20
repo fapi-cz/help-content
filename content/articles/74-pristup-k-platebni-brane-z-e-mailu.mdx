@@ -1,0 +1,71 @@
+---
+title: Přístup k platební bráně z e-mailu
+url: /article/74-pristup-k-platebni-brane-z-e-mailu
+description: "Kromě přesměrování na platební bránu v okamžiku vytvoření objednávky na webové stránce po potvrzení objednávky klientem, umožňuje FAPI přístup k on-line platbě "
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 7-platby
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Přístup k platební bráně z e-mailu
+  - Platební brány (platba kartou)
+  - Platby
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/74-pristup-k-platebni-brane-z-e-mailu
+order: 78
+updatedAt: 2026-07-13T10:35:45Z
+legacyAnchors:
+  - id: Vloen-odkazu-na-platebn-brnu-do-e-mailu-RIP2F
+    tag: h2
+    text: Vložení odkazu na platební bránu do e-mailu
+    occurrence: 0
+    headingIndex: 0
+  - id: Pstup-k-platebn-brn-RN2Du
+    tag: h2
+    text: Přístup k platební bráně
+    occurrence: 0
+    headingIndex: 1
+---
+Kromě přesměrování na platební bránu v okamžiku vytvoření objednávky na webové stránce po potvrzení objednávky klientem, umožňuje FAPI přístup k on-line platbě i pomocí odkazu na platební bránu v zaslaném e-mailu s vystavenou fakturou z FAPI.
+
+Tato možnost usnadňuje vašim zákazníkům zaplacení objednávky, pokud tak hned neučinili.
+
+## Vložení odkazu na platební bránu do e-mailu
+
+Aby odesílaný e-mail obsahoval odkaz na platební bránu, je třeba upravit šablonu zprávy, která se používá při vystavení objednávky (a jejíž součástí je vystavená faktura). To provedete v nabídce **Prodej - Šablony zpráv** (tlačítko **Upravit** u konkrétní šablony zprávy).
+
+![Přístup k platební bráně z e-mailu](/assets/articles/c1032f343f031ac3.png)
+
+Odkaz na platební bránu vložte do e-mailové šablony pomocí zástupného symbolu **\{OrderStatusPage\}**.
+
+![Přístup k platební bráně z e-mailu](/assets/articles/3fca1470bad1d259.png)
+
+:::danger
+Pro funkčnost zástupného symbolu **\{OrderStatusPage\}** je nezbytné mít nastaven přístup k platební bráně v prodejním formuláři.
+
+  
+
+Zajímá vás více k přehledové stránce objednávky?
+
+Čtěte zde: [Přehledová stránka objednávky](/article/102-prehled-objednavky)
+
+  
+
+U ruční fakturace je třeba vystavované faktuře přiřadit prodejní formulář s přístupem k platební bráně - pole **PRODEJNÍ FORMULÁŘ (PROJEKT)**.
+:::
+
+:::caution
+Obdobným způsobem můžete vložit odkaz na platební bránu i do [upomínky](/article/19-upominky) (nabídka **Prodej - Šablony upomínek**).
+:::
+
+## Přístup k platební bráně
+
+Zástupný symbol **\{OrderStatusPage\}** je v zaslaném e-mailu nahrazen odkazem, který po kliknutí na něj přesměruje zákazníka na platební bránu s vyplněnou částkou a variabilním symbolem.
+
+![Přístup k platební bráně z e-mailu](/assets/articles/43c792d1dfeb999f.png)
+
+Následná platba probíhá obdobně jako při on-line platbě bezprostředně po odeslání objednávky.

@@ -1,0 +1,247 @@
+---
+title: Prodej na splátky
+url: /article/47-prodej-na-splatky
+description: U dražších produktů může být vhodné nabídnout zákazníkům možnost nákupu na splátky. V takovém případě je celková cena produktu rozdělena na několik menších část
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Prodej na splátky
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/47-prodej-na-splatky
+order: 42
+updatedAt: 2026-08-04T08:43:32Z
+legacyAnchors:
+  - id: Nastaven-spltek-ve-FAPI-59raN
+    tag: h2
+    text: Nastavení splátek ve FAPI
+    occurrence: 0
+    headingIndex: 0
+  - id: -TVtBM
+    tag: h3
+    text: ""
+    occurrence: 0
+    headingIndex: 1
+  - id: Nastaven-ceny-spltek-t6hPU
+    tag: h3
+    text: Nastavení ceny splátek
+    occurrence: 0
+    headingIndex: 2
+  - id: Nastaven-potu-spltek-periody-spltek-a-aktivace-spltkovho-prodej-bS7E2
+    tag: h2
+    text: Nastavení počtu splátek, periody splátek a aktivace splátkového prodeje
+    occurrence: 0
+    headingIndex: 3
+  - id: Pstup-do-lensk-sekce-pi-spltkovm-prodeji-WZ37_
+    tag: h2
+    text: Přístup do členské sekce při splátkovém prodeji
+    occurrence: 0
+    headingIndex: 4
+  - id: Spltky-a-upsell-2nzeb
+    tag: h2
+    text: Splátky a upsell
+    occurrence: 0
+    headingIndex: 5
+---
+U dražších produktů může být vhodné nabídnout zákazníkům možnost nákupu na splátky.
+
+V takovém případě je celková cena produktu rozdělena na několik menších částek splácených v nastavených časových intervalech.
+
+I když je nákup na splátky administrativně náročnější, jeho výhodou je, že umožní nákup i zákazníkům, kteří si nemohou dovolit zaplatit cenu zakoupeného produktu najednou.
+
+## Nastavení splátek ve FAPI
+
+Pro prodej na splátky je potřeba ve FAPI nastavit několik základních parametrů.
+
+Konkrétně jde o:
+
+-   periodu splátek
+-   cenu splátek
+-   počet splátek
+
+### Nastavení ceny splátek
+
+Cena splátek se odvíjí od ceny produktu v nastavení prodejní položky
+
+(nabídka **Prodej - Produkty** a zvolení akce **Upravit**).
+
+  
+
+**Cena jednotlivých splátek se vypočítá**
+
+1\) Buď z řádné ceny produktu rozdělením na příslušný počet splátek (**Cena)**
+
+2\) Další možností je zvýhodnění či nezvýhodnění ceny při prodeji na splátky
+
+(**Ceny splátek)** \- Pokud nastavíte cenu pro určitý počet splátek, bude tato cena aplikována pro objednávky s daným a vyšší počtem splátek.
+
+  
+
+> Příklad:
+> 
+> -   Běžná cena = 30 Kč
+> -   Ceny: 3 a více splátek - 40 Kč, 5 a více splátek - 50 Kč
+> -   Při prodeji na 2 splátky platí běžná cena produktu (ne však akční cena)
+> -   Při prodeji na 3 nebo 4 splátky platí cena 40 Kč
+> -   Při prodeji na 5 a více splátek platí cena 50 Kč
+
+  
+
+![Prodej na splátky](/assets/articles/296ac4e0abfcd20d.png)
+
+Dále je vhodné nastavit tyto možnosti pro všechny měny, ve kterých nabízíte prodej vašeho produktu nebo služby. viz. screenshot výše.
+
+  
+
+:::danger
+U nastavení produktu si nezapomeňte rozdělení do splátek povolit.
+
+![Prodej na splátky](/assets/articles/9e3b3c0a44752482.png)
+:::
+
+:::caution
+Do pole zadávejte vždy celkovou cenu. Uvedená cena se automaticky rozdělí podle počtu splátek.
+
+  
+
+Při rozdělení částky na 3 splátky, je první splátka vždy malinko jiná kvůli zaokrouhlování. Vycházelo by periodické číslo a v takovém případě by nevycházel zpětný součet částky. Pokud to tak je, tak u 3 splátek rozdělujeme částku na 0,334 a 0,333 a 0,333, tím zajistíme, že zpětný součet zase sedí.
+:::
+
+:::caution
+**Akční cena neplatí** v případě prodeje na splátky. Pokud pro daný počet splátek není nastavena splátková cena, bude hodnota jednotlivých splátek vypočtena ze standardní ceny.
+:::
+
+:::tip
+Samostatnou cenu pro splátkový prodej využijete tehdy, když chcete celkovou cenu při prodeji na splátky oproti standardní ceně navýšit. Pokud má být celková cena při prodeji na splátky stejná jako při jednorázové platbě, splátkové ceny nemusíte používat - v takovém případě se na příslušný počet splátek rozdělí standardní cena v nastavení prodejní položky (produktu).
+:::
+
+## **Nastavení počtu splátek, periody splátek a aktivace splátkového prodeje**
+
+Splátkový prodej se aktivuje na úrovni prodejního formuláře.
+
+Přesněji v jeho nastavení (nabídka **Prodej - Prodejní formuláře** - tlačítko **Upravit** u příslušného prodejního formuláře).
+
+Na záložce **Platba, doprava a fakturace** v nastavení prodejního formuláře aktivujete prodej na splátky zaškrtnutím checkboxu **Umožnit platbu na splátky** a zadáním počtu splátek do pole **POČET SPLÁTEK**, které klientovy chcete nabídnout.
+
+Můžete také klientům dát na výběr, na kolik splátek si platby za Váš produkt či službu sami rozvrhnou.
+
+Do pole **Počet splátek** stačí při jedné možnosti napsat jen počet splátek dané možnosti. Pokud dáte klientům na výběr do kolika splátek si částku rozdělí stačí následující počet splátek oddělit **čárkou**, jako je ukázáno na screenu: Tedy klient si bude moci vybrat, zda zaplatí na 3 nebo 5 nebo 7 splátek.
+
+![Prodej na splátky](/assets/articles/95bb383b9316dd3a.png)
+
+Časový interval pro splátky (perioda) se nastavuje v prodejním formuláři hned pod  **POČET SPLÁTEK**, 
+
+a to v poli **PERIODA PRO SPLÁTKY**. Nastavit můžete dny, týdny, měsíce a roky, podle Vaší libosti.
+
+:::tip
+**POSLEDNÍ NOVINKOU** respektive přidanou funkcí, je **Povolení odesílání splátkových faktur postupně.**
+
+Tato možnost nabízí, jak z názvu plyne, **zasílání splátkových zálohových faktur klientům postupně.** Tedy tak jak je nastavena perioda pro splátky, oproti původní možnosti, kdy byla první splátková faktura byla vystavena a odeslána klientovi do 10minut a následně doposlány všechny ostatní zálohové splátkové faktury, což by mohlo být matoucí.
+
+Pro aktivaci této možnosti stačí pouze zaškrtnutí uvedeného checkboxu.
+:::
+
+Prodej na splátky mírně modifikuje standardní prodejní proces.
+
+-   V objednávkovém formuláři ve Shrnutí objednávky se zobrazuje zatrhávací políčko (checkbox) **Koupit na splátky**, kde si zákazník může vybrat mezi jednorázovou platbou a platbou na splátky.
+    
+    Může si zde také vybrat počet splátek, pokud to klientům umožníte. Automaticky je podle zvoleného počtu splátek přepočítána cena jedné splátky x počet zvolených splátek.
+    
+      
+    
+-   ![Prodej na splátky](/assets/articles/80e018462d40af59.png)
+    
+    Zobrazení splátek v prodejním formuláři zákazníkovi.
+    
+
+  
+
+-   Po odeslání objednávky se vystaví a v samostatných e-mailech zákazníkovi zašlou všechny splátkové faktury, pokud nemáte zvolenou možnost **Povolení odesílání splátkových faktur postupně.** V tomto případě dojde také k vystavení všech zálohových faktur, kdy první splátka má standardní splatnost, další faktury mají splatnost posunutou o nastavenou periodu splátek.
+    
+    Tyto faktury jsou zasílány také postupně klientů podle nastavené periody, a nikoliv všechny současně, i když Vám se současně všechny vystaví.
+    
+
+:::caution
+Všechny splátkové faktury v případě nezvolení "Povolení odesílání splátkových faktur postupně" se vystavují okamžitě po odeslání objednávky. První faktura se klientovi zasílá ihned, další splátkové faktury zhruba po 10 minutách.
+:::
+
+:::caution
+K názvu položky FAPI automaticky přidává dodatek, že jde o splátkovou fakturu i číslo splátky.
+:::
+
+## Přístup do členské sekce při splátkovém prodeji
+
+V případě, že **prodáváte přístup do členské sekce** (např. online kurz nebo uzavřenou vzdělávací platformu) a zároveň využíváte splátkový prodej, **FAPI automaticky otevírá obsah ve FAPI Member postupně – podle zaplacených splátek**.
+
+V případě členský sekcí v Miowebu se otevírá celý obsah hned po první splátce, další skripty ze splátkových faktur MW zahazuje a nezpracovává.
+
+Pokud však již máte nové propojení s Miowebem, pak funguje stejně jako FAPI Member a lze rovněž použít nastavení u akcí pro jednotlivé splátky.
+
+Konkrétně:
+
+-   Přístup se **alokuje alikvotně**, tedy v poměru k počtu splátek.
+-   Pokud například nabízíte **roční členství** rozdělené do **3 měsíčních splátek**, FAPI zákazníkovi po každé zaplacené splátce **otevře přístup na 4 měsíce** (12 měsíců ÷ 3 splátky = 4 měsíce přístupu za každou zaplacenou splátku).
+-   Tento způsob přístupu je **automatický** a není možné ho v systému měnit.
+
+Je tedy na vás, **jak si strukturu kurzu nebo členství nastavíte**, aby odpovídala způsobu platby. Pokud chcete např. otevřít přístup po lekcích nebo tématech, doporučujeme přizpůsobit obsah členské sekce odpovídajícím intervalům splácení.
+
+:::caution
+**Více se tomuto tématu věnujeme v této FAPI nápovědě:**
+
+[https://napoveda.fapi.cz/article/297-jak-funguji-pristupy-do-clenskych-sekci-pri-splatkovem-prodeji](/article/297-jak-funguji-pristupy-do-clenskych-sekci-pri-splatkovem-prodeji)
+:::
+
+:::danger
+Maximální počet splátek je 99.
+
+  
+
+❗**UPOZORNĚNÍ**     
+
+Každá splátková faktura se počítá jako samostatná objednávka do limitu objednávek u vašeho tarifu, jelikož se u ní spouští všechny akce, jako u jednorázové objednávky.
+:::
+
+:::note
+**Chcete mít prodejní formulář JEN na SPLÁTKY** a neumožnit v něm jednorázový prodej?
+
+  
+
+K tomu slouží tento checkbox v prodejním formuláři v sekci Splátky **"Povolit pouze prodej na splátky".**
+
+![Prodej na splátky](/assets/articles/0aa46c63f57b5cbe.png)
+:::
+
+## **Splátky a upsell**
+
+:::danger
+Při souběžném použití splátek a upsell prodeje se upsell produkt v základním nastavení započítá jednorázově v plné výši do 1. splátky.
+
+To lze změnit zaškrtnutím políčka u upsellů - "Rozdělit upsell na splátky". Při nákupu na splátky s nastavením [one-click upsellu](/article/159-one-click-upsell), dojde vždy k rozdělení upsellu na splátky.
+:::
+
+![Možnost povolit rozdělení upsell produktů na splátky](/assets/articles/4bd3e59ea3f11163.png)
+
+Možnost povolit rozdělení upsell produktů na splátky
+
+  
+
+:::tip
+Chcete-li fakturu s druhou a další splátkou zaslat zákazníkovi v e-mailu s jiným textem, použijte k tomu šablonu typu _E-mail k vystavenému dokladu_ pro 2. a další splátku (příklad vhodného nastavení je na obrázku níže). Více o e-mailových šablonách se dozvíte v článku [Šablony zpráv](/article/17-sablony-zprav).
+:::
+
+![Prodej na splátky](/assets/articles/88f34b5f5ada2cd5.png)
+
+:::danger
+Akce "PO VYSTAVENÍ objednávky/položky" se spustí pouze u první objednávky.
+:::
+
+:::danger
+Splátky v kombinaci s prodejem [voucheru](/article/94-vouchery) fungují tak, že ihned po zaplacení první splátky se vytvoří nový voucher. Po dalších splátkách už se pak nové vouchery netvoří.
+:::

@@ -1,0 +1,112 @@
+---
+title: Propojení FAPI se SmartEmailingem
+url: /article/52-propojeni-fapi-se-smartemailingem
+description: Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v ob
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Propojení FAPI se SmartEmailingem
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/52-propojeni-fapi-se-smartemailingem
+order: 45
+updatedAt: 2026-07-13T10:11:51Z
+legacyAnchors:
+  - id: Odesln-dat-o-objednvce-do-SmartEmailingu-UbyzC
+    tag: h2
+    text: Odesílání dat o objednávce do SmartEmailingu
+    occurrence: 0
+    headingIndex: 3
+---
+Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete pro rozesílku e-mailových kampaní.
+
+V tomto článku si ukážeme, jak propojit FAPI s aplikací [SmartEmailing](https://www.smartemailing.cz/?a_box=21gse).
+
+## Nastavení propojení FAPI se SmartEmailingem
+
+Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do ovládané aplikace (SmartEmailing) pomocí speciálního přístupového údaje, tzv. _API klíče_. Proto je nutné nejprve obě aplikace propojit.
+
+Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **SmartEmailing** a na následující stránce vyplňte přístupové údaje do aplikace SmartEmailing.
+
+![Propojení FAPI se SmartEmailingem](/assets/articles/b4c981aa38c67d51.png)
+
+-   **UŽIVATELSKÉ JMÉNO** - vyplňte své uživatelské jméno, pod kterým se přihlašujete do SmartEmailingu.
+-   **API KLÍČ** - vyplňte API klíč, který vygenerujete v aplikaci SmartEmailing v nabídce **Můj účet - API klíče**.
+
+:::caution
+Z bezpečnostních důvodů se API klíč zobrazí pouze bezprostředně po vygenerování. Při pozdější návštěvě stránky **Můj účet - API klíče** již API klíč v čitelné podobě nelze získat.
+:::
+
+Zadané údaje uložte stiskem tlačítka **Uložit nastavení**.
+
+Po uložení se zobrazí informační hláška a u propojení se SmartEmailingem se objeví stav **Připojeno**.
+
+## Zápis a odebrání kontaktních údajů do/ze SmartEmailingu
+
+Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybraného seznamu SmartEmailingu nastavíte v prodejním formuláři na záložce **Akce**.
+
+Použijte k tomu akci **přidat kontakt do SmartEmailingu**, resp. **odebrat kontakt ze SmartEmailingu**.
+
+![Propojení FAPI se SmartEmailingem](/assets/articles/ef48de5d3a20ad18.png)
+
+:::tip
+Do aplikace SmartEmailing můžete přenášet také údaje vyplněné zákazníkem do  _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+:::
+
+  
+
+## Jaké údaje se přenáší do SmartEmailingu?
+
+-   jméno
+-   příjmení
+-   telefon
+-   adresa
+-   hodnoty vlastních polí (vizte zelený boxík výše)
+-   firma
+-   ulice
+-   město
+-   psč
+-   země
+-   affil ID
+-   údaje o obsahu objednávky (volitelně, vizte další blok níže)
+
+  
+
+## Odesílání dat o objednávce do SmartEmailingu
+
+Odesílání dat o objednávce je nutno nejprve povolit v nastavení propojení se [SmartEmailingem](https://web.fapi.cz/settings/update-smartemailing-connection?projectId=all) (Nastavení \> Propojení aplikací \> Smartemailing \> upravit). 
+
+![Propojení FAPI se SmartEmailingem](/assets/articles/d95385d1c1979ea7.png)
+
+S objednávkou se přenášejí tato data:
+
+Jméno eshopu: "FAPI", Variabilní symbol objednávky, emailová adresa klienta, status objednávky (objednáno, zaplaceno, stornováno), Datum objednávky, Datum zaplacení Dále se posílají i údaje o jednotlivých objednaných produktech: Název, Popis, Cena bez DPH, Cena s DPH, Měna, Množství, odkaz na prodejní formulář
+
+Tyto údaje jsou odeslány při každé z těchto změn objednávky: Objednána, Zaplacena, Stornována.
+
+:::tip
+Stavy objednávek ve FAPI odpovídají stavům ve smartemailingu takto:
+
+-   vystavená/issued = placed
+-   zaplacená/paid = shipped
+-   stornovaná/cancelled = canceled
+
+případně pro neznámý stav je unknown
+:::
+
+:::danger
+U objednávky **na splátky** se data přenesou až po úhradě první splátky.
+:::
+
+  
+
+## Synchronizace starších dat
+
+Pro nahrání starších dat z objednávek FAPI je v Nastavení \> Propojení aplikací \> Smartemailing k dispozici funkce **synchronizace objednávek**. Spustíte ji kliknutím na šipku dolů a kliknutím na řádek [Synchronizovat objednávky](https://web.fapi.cz/settings/synchronize-invoices-data-to-smartemailing?projectId=all).
+
+![Propojení FAPI se SmartEmailingem](/assets/articles/0c885528b80aeeb4.png)

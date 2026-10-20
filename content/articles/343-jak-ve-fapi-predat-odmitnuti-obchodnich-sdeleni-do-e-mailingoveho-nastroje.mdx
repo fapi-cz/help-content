@@ -1,0 +1,254 @@
+---
+title: Jak ve FAPI předat odmítnutí obchodních sdělení do e-mailingového nástroje
+url: /article/343-jak-ve-fapi-predat-odmitnuti-obchodnich-sdeleni-do-e-mailingoveho-nastroje
+description: Chcete zákazníka po dokončení objednávky přidat do SmartEmailingu, Ecomailu, Breva, MailerLite nebo Mailchimpu, ale pouze tehdy, pokud vám aktivně udělí souhlas
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Jak ve FAPI předat odmítnutí obchodních sdělení do e-mailingového nástroje
+  - Nastavení
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/343-jak-ve-fapi-predat-odmitnuti-obchodnich-sdeleni-do-e-mailingoveho-nastroje
+order: 301
+updatedAt: 2026-08-28T11:33:46Z
+legacyAnchors:
+  - id: Jak-nastaven-funguje-BitWu
+    tag: h2
+    text: Jak nastavení funguje
+    occurrence: 0
+    headingIndex: 0
+  - id: Vyberte-udlost-uRmaV
+    tag: h3
+    text: Vyberte událost
+    occurrence: 0
+    headingIndex: 1
+  - id: Vyberte-akci-A9Alb
+    tag: h3
+    text: Vyberte akci
+    occurrence: 0
+    headingIndex: 2
+  - id: 6-Nastavte-prci-s-kontakty-v-e-mailingovm-nstroji-pAZbl
+    tag: h2
+    text: 6. Nastavte práci s kontakty v e-mailingovém nástroji
+    occurrence: 0
+    headingIndex: 3
+  - id: 7-Nastaven-otestujte-ZU7Us
+    tag: h2
+    text: 7. Nastavení otestujte
+    occurrence: 0
+    headingIndex: 4
+  - id: Prvn-objednvka-se-souhlasem-XatYH
+    tag: h3
+    text: První objednávka se souhlasem
+    occurrence: 0
+    headingIndex: 5
+  - id: Druh-objednvka-bez-souhlasu-bg406
+    tag: h3
+    text: Druhá objednávka bez souhlasu
+    occurrence: 0
+    headingIndex: 6
+  - id: Jak-dohledat-udlen-souhlas-WOKGR
+    tag: h2
+    text: Jak dohledat udělený souhlas
+    occurrence: 0
+    headingIndex: 7
+  - id: Souvisejc-npovdy-MNd4f
+    tag: h2
+    text: Související nápovědy
+    occurrence: 0
+    headingIndex: 8
+---
+Chcete zákazníka po dokončení objednávky přidat do SmartEmailingu, Ecomailu, Breva, MailerLite nebo Mailchimpu, ale pouze tehdy, pokud vám aktivně udělí souhlas se zasíláním obchodních sdělení?
+
+**Ve FAPI můžete do prodejního formuláře přidat dobrovolný souhlas** a následně jím podmínit automatizaci pro předání kontaktu. **Pokud zákazník souhlas zaškrtne, FAPI kontakt do vybraného e-mailingového nástroje odešle. Pokud jej nezaškrtne, objednávku může dokončit, ale příslušná akce se neprovede a kontakt se do zvoleného seznamu nepřenese.** S kontaktem dále pracujte pomocí automatizací přímo v e-mailingovém nástroji.
+
+  
+
+Tento postup využijete například tehdy, když chcete zákazníkům posílat:
+
+-   newslettery,
+-   novinky a nabídky,
+-   informace o dalších produktech a službách,
+-   obchodní sdělení, která přímo nesouvisejí s vyřízením jejich objednávky.
+
+  
+
+:::danger
+**Důležité:** Tento návod popisuje **předání kontaktu na základě aktivně uděleného souhlasu** – tedy kladné volby typu:
+
+-   „Souhlasím se zasíláním novinek a nabídek.“
+-   "Nesouhlasím se zasílám novinek."
+
+FAPI neumí spuštění akce podmínit tím, že zákazník určitý souhlas **nezaškrtl**.
+:::
+
+  
+
+## Jak nastavení funguje
+
+Celé propojení má tři části:
+
+1.  **Ve FAPI propojíte svůj e-mailingový nástroj.**
+
+Nejprve musí být váš e-mailingový účet propojený s FAPI.
+
+Ve FAPI přejděte do části [**Nastavení → Propojení aplikací**](https://web.fapi.cz/settings/connections?projectId=all) a připojte nástroj, který používáte.
+
+FAPI umožňuje propojení například s těmito aplikacemi:
+
+-   [SmartEmailing](/article/52-propojeni-fapi-se-smartemailingem),
+-   [Ecomail](/article/100-propojeni-fapi-s-ecomailem),
+-   [Brevo](/article/53-propojeni-fapi-s-brevo),
+-   [MailerLite](/article/54-propojeni-fapi-s-mailerlite),
+-   [Mailchimp](/article/55-propojeni-fapi-s-mailchimp).
+
+V e-mailingovém nástroji si současně připravte seznam, skupinu nebo publikum, do kterého chcete kontakty se souhlasem předávat. Přesný název této části se v jednotlivých aplikacích liší.
+
+  
+
+2.  **Nastavte dobrovolný souhlas v prodejním formuláři**
+
+V nastavení prodejního formuláře přejděte do **6\. kroku Vzhled** a vyhledejte sekci **Souhlasy v objednávkovém formuláři**.
+
+Klikněte na **Přidat souhlas** a vložte text, který se má zákazníkovi zobrazit.
+
+U marketingového souhlasu ponechte vypnutou volbu **Povinný souhlas**. Zákazník tak může objednávku dokončit, i když políčko nezaškrtne.
+
+Nastavení je potřeba provést v každém prodejním formuláři, ve kterém chcete dobrovolný souhlas zobrazovat a podle něj předávat kontakty.
+
+Konkrétní text přizpůsobte tomu, jaké zprávy chcete posílat, kdo je bude zasílat a za jakým účelem budete e-mailovou adresu používat.
+
+:::danger
+**Pozor:** Nezaměňujte tento souhlas s povinným potvrzením obchodních podmínek. Souhlas se zasíláním marketingových sdělení má být vytvořen jako samostatná dobrovolná volba.
+:::
+
+:::caution
+**TIP:** Pokud souhlasů vytváříte více, pamatujte si pod jakým číslem souhlasu, jste co nastavili. Toto označení Souhlas #1 či Souhlas #2, atd. budete dále potřebovat umět rozlišit.
+:::
+
+**Nastavení zatím uložte.**
+
+![Jak ve FAPI předat odmítnutí obchodních sdělení do e-mailingového nástroje](/assets/articles/d1dc1f699b420f1c.png)
+
+  
+
+![Jak ve FAPI předat odmítnutí obchodních sdělení do e-mailingového nástroje](/assets/articles/be719079fcf5e33a.png)
+
+3.  **Nastavte akci pro předání kontaktu**
+
+**Ve 4. kroku** Akce prodejního formuláře, vytvořte tzv. akci, tedy Automatizační pravidlo, kdy nastavíte podmíněné předání kontaktu do e-mailingového nástroje udělením tohoto dobrovolného souhlasu.
+
+![Jak ve FAPI předat odmítnutí obchodních sdělení do e-mailingového nástroje](/assets/articles/dbce31ce32733185.png)
+
+**Výsledek bude následující:**
+
+-   zákazník souhlas zaškrtne → FAPI kontakt předá do vybraného seznamu,
+-   zákazník souhlas nezaškrtne → objednávku dokončí, ale kontakt se prostřednictvím podmíněné akce nepřenese. \>\>\> Dále si nastavte vlastní automatizaci přímo v e-mailingovém nástroji pro další práci a nakládání s těmito kontakty.
+
+  
+
+**Přes tlačítko "Přidat další událost" vytvořte nové automatizační pravidlo. Každé pravidlo určuje:**
+
+-   při jaké události se má spustit,
+-   jakou akci má FAPI provést,
+-   zda má být provedení akce podmíněné udělením souhlasu.
+
+  
+
+### Vyberte událost
+
+Nejprve zvolte, kdy chcete kontakt do e-mailingového nástroje předat.
+
+Nejčastěji použijete některou z těchto událostí:
+
+-   **vystavení objednávky** – kontakt se předá po vytvoření objednávky,
+-   **zaplacení objednávky** – kontakt se předá až po zaplacení,
+-   **objednání konkrétní položky** – pravidlo se použije jen při objednání vybraného produktu,
+-   **zaplacení konkrétní položky** – pravidlo se použije až po zaplacení vybraného produktu.
+
+Vyberte událost podle toho, v jakém okamžiku chcete s kontaktem v e-mailingovém nástroji pracovat.
+
+  
+
+### Vyberte akci
+
+Jako akci zvolte přidání kontaktu do propojeného e-mailingového nástroje.
+
+Následně vyberte seznam, skupinu nebo publikum, do kterého se má kontakt uložit.
+
+Dostupná pole se mohou podle zvoleného e-mailingového nástroje mírně lišit.
+
+V poslední poli vybíráte Souhlas, na který chcete pravidlo navázat.
+
+![Jak ve FAPI předat odmítnutí obchodních sdělení do e-mailingového nástroje](/assets/articles/68eb1272cc943278.png)
+
+:::danger
+**Pozor:** Pokud u akce žádný souhlas nevyberete, nebude její provedení udělením souhlasu podmíněné. Akce se spustí při splnění zvolené události bez ohledu na to, zda zákazník dobrovolný souhlas zaškrtl.
+:::
+
+Nakonec celé nastavení prodejního formuláře uložte.
+
+## 6\. Nastavte práci s kontakty v e-mailingovém nástroji
+
+Do vybraného seznamu se prostřednictvím této podmíněné akce přenesou pouze zákazníci, kteří souhlas aktivně udělili.
+
+V e-mailingovém nástroji pak můžete:
+
+-   kontakt podle typu uděleného souhlasu přidat do další seznamu/segmentu,
+-   spustit uvítací akci či zařadit kontakt do připravené kampaně,
+-   vytvářet další segmenty podle zakoupených produktů,
+-   rozlišovat zákazníky podle formuláře nebo seznamu, přes který byli přidáni.
+
+Pokud používáte jeden seznam pro více zdrojů kontaktů, zkontrolujte, zda jsou vaše segmenty a automatizace nastavené tak, aby pracovaly se správnou skupinou zákazníků.
+
+## 7\. Nastavení otestujte
+
+Před spuštěním formuláře doporučujeme vytvořit dvě testovací objednávky s rozdílnými e-mailovými adresami.
+
+### První objednávka se souhlasem
+
+U první objednávky dobrovolný souhlas zaškrtněte.
+
+Po splnění nastavené události ověřte, že:
+
+-   objednávka vznikla ve FAPI,
+-   souhlas je u objednávky evidovaný jako udělený,
+-   kontakt se přenesl do správného seznamu,
+-   v e-mailingovém nástroji se případně spustila očekávaná automatizace.
+
+### Druhá objednávka bez souhlasu
+
+U druhé objednávky dobrovolný souhlas nezaškrtávejte.
+
+Ověřte, že:
+
+-   objednávku lze dokončit,
+-   souhlas není evidovaný jako udělený,
+-   podmíněná akce se nespustila,
+-   kontakt se prostřednictvím této akce nepřenesl do vybraného seznamu.
+
+Testovací e-mailové adresy by před provedením testu neměly být v cílovém seznamu. Jinak může být obtížné poznat, zda je přidala právě nově nastavená akce.
+
+## Jak dohledat udělený souhlas
+
+FAPI ukládá údaje o souhlasech k jednotlivým objednávkám a fakturám.
+
+Při exportu faktur do CSV najdete informace v těchto sloupcích:
+
+-   **GDPR text** – text informační povinnosti a souhlasů platný v okamžiku objednávky,
+-   **GDPR souhlas** – názvy a stavy souhlasů nastavených v prodejním formuláři.
+
+Podrobnější postup najdete v nápovědě [Dohledání souhlasu zákazníka při objednávce](/article/168-dohledani-souhlasu-zakaznika-pri-objednavce).
+
+  
+
+## Související nápovědy
+
+-   [Obchodní podmínky a GDPR ve FAPI](/article/42-vop-gdpr-ve-fapi)
+-   [Akce v prodejním formuláři – automatizační pravidla](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla)
+-   [Dohledání souhlasu zákazníka při objednávce](/article/168-dohledani-souhlasu-zakaznika-pri-objednavce)

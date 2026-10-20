@@ -1,0 +1,59 @@
+---
+title: Jak prodávat slevové vouchery a poukazy?
+url: /article/206-jak-prodavat-slevove-vouchery-a-poukazy
+description: Jak snadno můžete nabízet a prodávat slevové kódy a vouchery svým zákazníkům? To se dozvíte ve video návodu níže. Co budeme potřebovat? FAPI a prodejní formulář
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak prodávat slevové vouchery a poukazy?
+  - Automatizace
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/206-jak-prodavat-slevove-vouchery-a-poukazy
+order: 158
+updatedAt: 2026-07-13T11:07:33Z
+legacyAnchors:
+  - id: Co-budeme-potebovat-IsMvF
+    tag: h2
+    text: Co budeme potřebovat?
+    occurrence: 0
+    headingIndex: 0
+---
+Jak snadno můžete nabízet a prodávat slevové kódy a vouchery svým zákazníkům? To se dozvíte ve video návodu níže.
+
+## Co budeme potřebovat?
+
+-   FAPI a prodejní formulář včetně vytvořených produktů, které
+-   [Registraci v aplikaci Make](https://www.make.com/en/register?pc=fapimake)
+-   [Automatizační scénář "Prodej slevového poukazu"](http://www.make.com/cs/integration/12154-prodej-slevoveho-poukazu?templatePublicId=12154)
+
+## Video návod
+
+<Video src="https://www.youtube.com/embed/UlApIwzykuk" />
+
+## Jak na to?
+
+1.  Zaregistrujte se do aplikace [Make](https://www.make.com/en/register?pc=fapimake).
+2.  Použijte šablonu scénáře ["Prodej slevového poukazu"](http://www.make.com/cs/integration/12154-prodej-slevoveho-poukazu?templatePublicId=12154).
+3.  Vytvořte webhook a správně jej pojmenujte, nejlépe: "Vytvořit slevový poukaz/voucher".
+4.  [Vytvořte propojení mezi FAPI a Make.](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat)
+5.  Postupujte podle předchystaného nastavení v Make scénáři. Není potřeba nic upravovat nebo měnit.
+6.  Jakmile budete mít vytvořený scénář, přejděte na jeho úpravu.
+7.  Zkopírujte URL adresu 1. modulu (modré bubliny). URL adresa webhooku je vždy unikátní, je tedy potřeba správně zkopírovat celou URL adresu.
+    
+    ![Jak prodávat slevové vouchery a poukazy?](/assets/articles/3fea19301f3b3e9e.png)
+    
+8.  Přejděte do FAPI a úpravy prodejního formuláře - 4. krok akce.
+9.  Přidejte novou událost při vytvoření objednávky.
+10.  Vyberte akci "spustit programový skript".
+11.  Vložte URL adresu webhooku z Make do URL adresy programového skriptu.
+     
+     ![Jak prodávat slevové vouchery a poukazy?](/assets/articles/df0fb2973721ee6d.png)
+     
+12.  Formulář uložte a máte hotovo.
+
+  
+
+Nyní můžete si můžete celý scénář otestovat. Zda funguje přesně podle vašich představ.

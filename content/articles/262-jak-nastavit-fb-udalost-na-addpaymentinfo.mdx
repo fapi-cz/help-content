@@ -1,0 +1,85 @@
+---
+title: Jak nastavit FB událost na AddPaymentInfo
+url: /article/262-jak-nastavit-fb-udalost-na-addpaymentinfo
+description: "Chcete sledovat, kdy si zákazník v prodejním formuláři vybere způsob dopravy? Níže najdete příklad kódu, který tuto interakci zaznamená prostřednictvím vlastní "
+category: Měření a Marketing
+categorySlug: 300-mereni-a-marketing
+categorySlugs:
+  - 300-mereni-a-marketing
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Jak nastavit FB událost na AddPaymentInfo
+  - Měření a Marketing
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/262-jak-nastavit-fb-udalost-na-addpaymentinfo
+order: 260
+updatedAt: 2026-07-27T14:21:00Z
+---
+Chcete sledovat, kdy si zákazník v prodejním formuláři **vybere způsob dopravy**? Níže najdete příklad kódu, který tuto interakci zaznamená prostřednictvím vlastní události do analytiky (např. pro Facebook Pixel, Google Analytics 4 apod.).
+
+  
+
+```text
+<script>
+(function waitForShippingOptions() {
+const interval = setInterval(() => {
+const deliveryRadios = document.querySelectorAll('input[name="shipping_method"]');
+
+if (deliveryRadios.length > 0) {
+clearInterval(interval);
+let fbEventSent = false;
+deliveryRadios.forEach(radio => {
+radio.addEventListener('change', function () {
+if (fbEventSent) {
+return;
+}
+
+fbq('track', 'AddPaymentInfo', {
+currency: 'CZK',
+value: 0 // doplnit hodnotu podle potřeby
+});
+
+fbEventSent = true;
+});
+});
+}
+}, 300);
+})();
+</script>
+```
+
+  
+
+### Kam kód vložit?
+
+1.  Otevřete daný prodejní formulář ve FAPI.
+2.  V kroku **„5 – Děkovací stránka“** přejděte na sekci **„Trackovací kódy“** (nejedná se o konverzní kódy, ty patří na děkovací stránku).
+3.  Vložte upravený skript do této sekce.
+
+![Jak nastavit FB událost na AddPaymentInfo](/assets/articles/e0854a1f8cb81cbf.png)
+
+  
+
+### Co kód dělá?
+
+-   Po načtení stránky se inicializuje posluchač události.
+-   Ve chvíli, kdy zákazník **poprvé zvolí způsob dopravy**, odešle událost `AddPaymentInfo` .
+-   Pokud zákazník následně změní volbu dopravy, **událost se již znovu nespustí** – dojde k ní pouze při prvním výběru.
+
+  
+
+### Úprava kódu – co doplnit?
+
+Uvnitř skriptu najdete komentář `// doplnit hodnotu podle potřeby` .
+
+Zde nahraďte **číslo 0 konkrétní částkou**, např. `value: 500` .
+
+  
+
+### Jak testovat?
+
+Testování je nutné provádět **přímo na prodejní stránce**, kde je formulář vložen.
+
+:::danger
+Ve FAPI administraci (v náhledu formuláře) se tyto trackovací kódy nespouštějí.
+:::

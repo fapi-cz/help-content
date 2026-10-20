@@ -1,0 +1,116 @@
+---
+title: Nástěnka
+url: /article/139-nastenka
+description: FAPI Nástěnka je stránka, která se vám zobrazí přihlášení do FAPI účtu. Představuje zjednodušený náhled vystavených objednávek, které dále dělí na zaplacené, ne
+category: Začínáme
+categorySlug: 4-zaciname
+categorySlugs:
+  - 4-zaciname
+keywords:
+  - Nástěnka
+  - Začínáme
+sourceUrl: https://napoveda.fapi.cz/article/139-nastenka
+order: 147
+updatedAt: 2026-07-13T11:00:07Z
+---
+FAPI Nástěnka je stránka, která se vám zobrazí přihlášení do FAPI účtu. Představuje zjednodušený náhled vystavených objednávek, které dále dělí na zaplacené, nezaplacené ve splatnosti a nezaplacené po splatnosti. Všechny částky přepočítáváme do jedné měny, kterou máte ve FAPI účtu jako hlavní (tuzemskou měnu), a jste-li plátce DPH, jsou to sumy bez DPH.
+
+:::danger
+**Nástěnka neslouží jako náhled do účetnictví.** Zobrazované výpočty v Nástěnce fungují jinak, než jak je běžné s nimi pracovat v účetnictví / daňové evidenci. Podklady pro účetnictví získáte přes [Exporty faktur](/article/85-export-faktur).
+:::
+
+Údaje vypočítané v nástěnce se vztahují k **datu vystavení prvního dokladu** v objednávce. Tím může být zálohová faktura, faktura nebo zjednodušený daňový doklad. Do hodnot některých kvadrantů se tak mohou započítávat i platby a dobropisy, které vznikly s pozdějším datem, ale vztahují se k prvotnímu dokladu ve filtrovaném období.
+
+### 
+
+![Nástěnka](/assets/articles/a673b84794f1d2ad.png)
+
+Nástěnka se dále přepočítává vzhledem k jednotlivým [Projektům](/article/132-projekty), které ve FAPI účtu používáte. Data v nástěnce tak mohou být **celková** (za všechny projekty), nebo jen **dílčí** za jeden konkrétní projekt.
+
+### Modrý kvadrant OBJEDNÁNO
+
+Zde najdete součet hodnot všech nestornovaných prvních dokladů –\> obrat všech platných objednávek. Zbývající kvadranty vždy počítají z tohoto celkového obratu a jejich hodnota (jednotlivě ani jejich součet) nikdy **nemohou být vyšší**, než je objem modrého kvadrantu Objednáno.
+
+Součet hodnotově odpovídá jen novým objednávkám, které vznikly v daném časově omezeném filtru v pravém horním rohu nad tabulkou.
+
+### Zelený kvadrant ZAPLACENO 
+
+U všech prvotních zaplacených dokladů spočítáme jejich hodnotu a zobrazíme celkovou sumu.
+
+_Příklady chování Nástěnky za 3. měsíc:_
+
+  
+
+_A) Vznikne-li první doklad 28.2. jako zálohová faktura, a zaplacený je 8. března (kdy vznikne daňový doklad), **nebude** v nástěnce pro filtr 1.3. až 31.3. zobrazený ani mezi objednanými, ani mezi zaplacenými objednávkami._
+
+  
+
+_B)  Vznikne-li první doklad 5.3. (jako zálohová faktura) a zaplacený je 8. března (kdy vznikne daňový doklad), **bude** v nástěnce zobrazený v obou buňkách._
+
+_C) Vznikne-li první doklad 5.3. (jako zálohová faktura) a je dosud nezaplacený, **bude** zobrazený v buňce Objednáno a pak v buňce Zbývá zaplatit (pokud ještě nenastala splatnost), nebo Po splatnosti (pokud už je po datu splatnosti)._
+
+Částka, která zbyde ze sumy OBJEDNÁNO po odečtení sumy ZAPLACENO se dále dělí podle splatnosti.
+
+#### Oranžový kvadrant ZBÝVÁ ZAPLATIT
+
+Jde o součet neuhrazených objednávek vzniklých ve filtrovaném období, u nichž ještě nenastal den splatnosti.
+
+  
+
+#### Červený kvadrant PO SPLATNOSTI
+
+Součet objednávek, které vznikly v daném období a už jsou minimálně 1 den po splatnosti.
+
+  
+
+:::danger
+Pozor na některé speciální případy, které mohou ovlivňovat výsledek v NÁSTĚNCE:
+:::
+
+##### a) Vliv cizích měn
+
+Všechny doklady v jiné než „tuzemské" měně se přepočítávají kurzem, který je uložený u daného prvního dokladu v poli "kurz cizí měny".
+
+##### 
+
+![Nástěnka](/assets/articles/d90564c64d897756.png)
+
+Vystavené ODD snižují hodnotu prvních dvou kvadrantů - OBJEDNÁNO a ZAPLACENO. Snížení částek o hodnotu dobropisu se projeví ihned při jejich vystavení.
+
+##### c) Jak chápat zaplacení objednávky
+
+Pro výpočet ZAPLACENÝCH objednávek nezáleží na tom, zda byla objednávka jako zaplacená označená automaticky z importu, z platební brány, z API nebo ručně. 
+
+Zobrazenou částku v zeleném kvadrantu tvoří součet hodnot všech uhrazených faktur. Hodnota se sčítá vždy z hodnoty **prvního dokladu**. Ta se může dále převádět na cenu bez DPH, případně přepočítávat na vaši „tuzemskou“ měnu kurzem prvního dokladu.
+
+##### d) Splátkové objednávky
+
+Každá jednotlivá splátka se bere jako jedna objednávka. Ostatní vlastnosti a výpočty u splátkových dokladů jsou stejné, jako u běžných objednávek.
+
+##### e) Stornované a testovací objednávky
+
+Testovací objednávky a stornované doklady se do Nástěnky nezapočítávají.
+
+**f) Proklikávací filtry z jednotlivých kvadrantů**
+
+  
+
+Zatímco Nástěnka pracuje s Objednávkami (které jsou jedním obchodním případem), tak přehledy faktur pracují s konkrétními doklady. Jedna objednávka může mít 1 a více dokladů. Filtry z Nástěnky tak mohou po proklinutí se do Faktur obsahovat jiný počet dokladů. Upřesnění je pak potřeba dodělat ručně (např. k zálohovým dokladům dovybrat zjednodušené daňové doklady), apod.
+
+  
+
+## **Nástěnka u neplátců DPH**
+
+Neplátci DPH máte na stránce Nástěnky k dispozici souhrnný přehled o svém výdělku a obratu. Tento přehled najdete ve **spodní části stránky v sekci "Nástěnka"**.
+
+#### **Co zde pro vás počítáme?**
+
+-   **Aktuální výdělek**
+-   **Nezaplacené objednávky**
+-   **Obrat pro povinnou registraci k DPH**
+-   **Notifikace při blížícím se limitu**
+-   Pokud se váš obrat začne blížit hranici **2 000 000 Kč**, obdržíte upozornění (notifikaci) do **zvonečku v horní části stránky**.
+
+Tento přehled umožňuje neplátcům snadno sledovat svůj obrat a včas se připravit na případnou povinnost registrace k DPH.
+
+![Nástěnka](/assets/articles/e0a62d9c98f601fb.png)

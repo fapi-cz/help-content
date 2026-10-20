@@ -1,0 +1,225 @@
+---
+title: Založení a integrace platební brány ThePay ve FAPI
+url: /article/57-zalozeni-a-integrace-platebni-brany-thepay
+description: ThePay je česká platební brána, která umožňuje přijímat online platby od zákazníků. Ve FAPI ji můžete propojit se svým účtem a následně používat v prodejních fo
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 7-platby
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Založení a integrace platební brány ThePay ve FAPI
+  - Nastavení
+  - Platby
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/57-zalozeni-a-integrace-platebni-brany-thepay
+order: 31
+updatedAt: 2026-07-13T09:52:50Z
+legacyAnchors:
+  - id: 1-Zaloen-tu-Stripe-pfhIf
+    tag: h2
+    text: 1. Založení účtu ThePay
+    occurrence: 0
+    headingIndex: 0
+  - id: 2-Vytvoen-propojen-s-GoPay-ve-FAPI-qjsDH
+    tag: h2
+    text: 2. Vytvoření propojení s ThePay ve FAPI
+    occurrence: 0
+    headingIndex: 1
+  - id: 3-Nastaven-platebn-brny-GoPay-v-prodejnm-formuli-Eru3h
+    tag: h2
+    text: 3. Nastavení platební brány ThePay v prodejním formuláři
+    occurrence: 0
+    headingIndex: 2
+---
+ThePay je česká platební brána, která umožňuje přijímat online platby od zákazníků. Ve FAPI ji můžete propojit se svým účtem a následně používat v prodejních formulářích pro pohodlné online placení, jak platební kartou, tak expresními bankovními převody.
+
+Tento článek pojednává o integraci platební brány [ThePay](https://admin.thepay.cz/registration?token=SEmv4M8jLoY8L7WUQ4oi) do FAPI. Více informací o platební bráně najdete na [webových stránkách provozovatele](https://admin.thepay.cz/partner/save-token/SEmv4M8jLoY8L7WUQ4oi?redirect_url=https://www.thepay.cz/).
+
+:::danger
+ThePay nepovoluje zpracovávání plateb přes iframe. Proto pokud používáte WIX, vyberte prosím jiného poskytovatele platební brány.
+:::
+
+:::caution
+Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli (společnosti ThePay.cz s.r.o.), a není tedy součástí ceny za licenci FAPI.
+:::
+
+**Návod vám pomůže se:**
+
+1.  Založením ThePay účtu
+2.  Napojením ThePay do FAPI
+3.  Aktivací ThePay v prodejním formuláři
+
+  
+
+## 1\. Založení účtu ThePay
+
+Proces založení účtu ThePay je velmi intuitivní. První registraci vyřídíte online prostřednictvím tohoto [jednoduchého registračního formuláře](https://admin.thepay.eu/partner/save-token/SEmv4M8jLoY8L7WUQ4oi).
+
+:::tip
+Použijte tento náš odkaz pro registraci, bude tak jasné, že ThePay budete používat s FAPI, které je certifikované řešení pro ThePay.
+
+[Odkaz pro registraci do ThePay](https://admin.thepay.eu/partner/save-token/SEmv4M8jLoY8L7WUQ4oi)
+:::
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/4abe015a8f67cfae.png)
+
+a obdržíte e-mail k ověření.a obdržíte e-mail k ověření.
+
+Ihned po registraci, jste na stránce obeznámeni, že proběhla v pořádku.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/70146fb59f30d86f.png)
+
+Rovněž v zápětí obdržíte e-mail k přihlášení.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/0674be4446f9d498.png)
+
+  
+
+Odkaz vás povede na vytvoření hesla.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/eccdb18877fda484.png)
+
+Následně se ověřuje vaše telefonní číslo.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/630fea9801c8deb9.png)
+
+Tím jste se dostali do prostředí platební brány, kde si můžete svou platební bránu založit.
+
+  
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/7be126c5880e7e77.png)
+
+Zde již přichází na řadu vyplnění všech potřebných náležitostí, aby s vámi ThePay mohli podepsat smlouvu.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/8a08fa1a42d50255.png)
+
+  
+
+Pro úspěšné vytvoření spojení platební brány si připravte **občanský průkaz, druhý průkaz totožnosti a výpis z bankovního účtu**.
+
+Online registrace se skládá z následujících kroků:
+
+-   načtení a kontrola údajů na základě zadaného IČ,
+-   zadání údajů o zástupci a majiteli firmy,
+-   zadání adresy vašich prodejních stránek/e-shopu,
+-   konfigurace služeb,
+-   zobrazení a potvrzení obchodních podmínek,
+-   ověření totožnosti (zadání 3 dokumentů),
+-   zaslání autorizační platby,
+-   zpracování registrace,
+-   dokončení registrace (po přijetí schvalovacího e-mailu),
+-   závěrečná rekapitulace a ověření smlouvy,
+-   zaslání e-mailu a SMS s přihlašovacími údaji.
+
+  
+
+Přístupové údaje, které obdržíte od ThePay, využijete pro nastavení propojení s FAPI (popsáno dále).
+
+:::caution
+Platby online bankovním převodem, tzv. expresní platby můžete využívat ihned po založení účtu.
+
+Pokud vám jsou nabídnuty i platby kartou, tzn. nemáte nějaké individuální podmínky, kdy by nabídnutí nebylo možné, též jsou plně funkční obratem.
+:::
+
+  
+
+## 2\. Vytvoření propojení s ThePay ve FAPI
+
+Ve FAPI v nabídce **Nastavení -\> Propojení aplikací** stiskněte tlačítko **Nové propojení s ThePay**.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/eee3015e8c2c92fe.png)
+
+Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení se službou ThePay.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/7ed435f0e7753834.png)
+
+Do zobrazeného formuláře vyplňte všechny potřebné údaje:
+
+-   **doména** - webová doména, na které budete platební bránu ThePay používat (např. ve tvaru fapi.cz)
+-   **Verzi API** \- zvolte Nová platební brána
+-   **režim** - pro "ostrý" provoz  zvolte **produkční režim,** režim testovací je pouze pro testovací platby
+-   **MERCHANT ID** - ID obchodníka
+-   **PROJECT ID** - ID projektu
+-   **HESLO -**
+
+:::danger
+Přístupové údaje pro Starou a Novou platební bránu jsou rozdílné!
+:::
+
+:::tip
+Pokud si chcete nejprve propojení otestovat v **testovacím režimu**, je potřeba používat také **testovací implementační údaje platební brány ThePay**.
+
+Tyto údaje nezískáte z produkčního účtu. Nejprve je nutné si u ThePay **zaregistrovat testovací platební bránu z tohoto odkazu:** [https://demo.admin.thepay.eu/registration](https://demo.admin.thepay.eu/registration).
+
+Po přihlášení do testovací administrace se vám automaticky vytvoří **testovací obchodník** a spolu s ním i **testovací implementační údaje**, které následně vložíte do FAPI.
+
+👉 Jinými slovy: **produkční údaje patří do produkčního režimu** a **testovací údaje patří do testovacího režimu**.
+
+Tyto režimy nelze mezi sebou kombinovat.
+:::
+
+  
+
+Přístupové údaje najdete ve svém účtu ThePay v sekci **Implementace**.
+
+Vyplněné hodnoty uložte stiskem tlačítka **Uložit**.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/72c140ece99a95c8.png)
+
+Dále je potřeba v platební bráně ThePay nastavit IP adresy, ze kterých se budou požadavky na vytvoření platby akceptovat. Špatně vyplněné IP adresy mohou zapříčinit nefunkčnost propojení mezi FAPI a platební branou ThePay. 
+
+:::danger
+Pro správnou funkčnost platební brány je potřeba mít u propojení obchodu v účtu platební brány ThePay (nabídka **Integrace**) povoleny tyto **IP adresy**:
+
+**83.167.243.140**
+
+**178.238.37.32**
+
+**18.158.192.220**
+
+Pokud nejsou vyplněny správné údaje, nemusí platební brána ThePay fungovat správně.
+:::
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/fa8203f2a3c95af8.jpg)
+
+:::danger
+**Automatické strhávání z karty - při přechodu ze Staré na Novou platební bránu**
+
+Pokud používáte automatické strhávání z karty, budou se vám nové platby ke strhnutí nadále vytvářet pod původní platební branou. Aby se začala používat nová platební brána, je potřeba, aby klient znovu provedl platbu kartou u šablony pravidelných faktur. K tomu je potřeba u šablony pravidelných faktur zrušit automatické strhávání z karty. 
+
+Celý postup najdete zde, [Jak na změnu platební brány](/article/277-jak-na-zmenu-platebni-brany).
+:::
+
+## 3\. Nastavení platební brány ThePay v prodejním formuláři
+
+Nakonec už jen zbývá propojenou platební bránu přidat do prodejního formuláře, v němž si přejete platební bránu využívat.
+
+V nabídce **Prodej -\> Prodejní formuláře**, vyberte formulář, u kterého chcete nabídnout online platby zprostředkované pomocí platební brány ThePay a stiskněte tlačítko **Upravit prodejní formulář.**
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/aa8bda03be354320.png)
+
+Na záložce **3\.** **Platba, doprava a fakturace** v úpravě prodejního formuláře vyberte v sekci **Platební brána** příslušné propojení s platební bránou ThePay.
+
+  
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/8dbdec458931d9e6.png)
+
+  
+
+Změny provedené v nastavení prodejního formuláře uložte tlačítkem **Uložit formulář**.
+
+![Založení a integrace platební brány ThePay ve FAPI](/assets/articles/b421dcfa3013840d.png)
+
+Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář je nyní propojen s platební bránou ThePay a vaši zákazníci vám mohou začít platit online.
+
+  
+
+:::tip
+Mnoho užitečných návodů o ThePay najdete pod tímto odkazem, mimo to ThePay má českou podporu:
+
+[https://www.thepay.eu/cs/napoveda/](https://www.thepay.eu/cs/napoveda/)
+:::

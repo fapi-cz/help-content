@@ -1,0 +1,179 @@
+---
+title: Automatické opakované strhávání z karty
+url: /article/232-opakovane-strhavani-z-karty
+description: U pravidelné fakturace s aktivním automatickým strháváním z karty se FAPI v případě neúspěchu nepokusí strhnout platbu jen jednou. Pokud to máte v prodejním for
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+keywords:
+  - Automatické opakované strhávání z karty
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/232-opakovane-strhavani-z-karty
+order: 234
+updatedAt: 2026-07-14T05:59:22Z
+legacyAnchors:
+  - id: Kde-se-to-nastavuje-zGFSG
+    tag: h3
+    text: Kde se to nastavuje
+    occurrence: 0
+    headingIndex: 0
+  - id: Jak-se-pokusy-chovaj-908Fr
+    tag: h3
+    text: Jak se pokusy chovají
+    occurrence: 0
+    headingIndex: 1
+  - id: Tip-kolik-pokus-nastavit-5acHf
+    tag: h3
+    text: "Tip: kolik pokusů nastavit"
+    occurrence: 0
+    headingIndex: 2
+  - id: E-mailov-komunikace-doporuen-nastaven-AJ1JP
+    tag: h2
+    text: E-mailová komunikace (doporučené nastavení)
+    occurrence: 0
+    headingIndex: 3
+  - id: 1-E-mail-pi-vystaven-faktury-ped-automatickm-strenm-6vu7D
+    tag: h4
+    text: 1) E-mail při vystavení faktury před automatickým stržením
+    occurrence: 0
+    headingIndex: 4
+  - id: 2-E-mail-pi-pesunut-pokusu-o-stren-na-dal-den-pQdbP
+    tag: h4
+    text: 2) E-mail při přesunutí pokusu o stržení na další den
+    occurrence: 0
+    headingIndex: 5
+  - id: 3-E-mail-pi-spnm-stren-platby-z-karty-T1Xry
+    tag: h4
+    text: 3) E-mail při úspěšném stržení platby z karty
+    occurrence: 0
+    headingIndex: 6
+  - id: 4-E-mail-pi-nespnm-stren-platby-z-karty-finln-CcPAm
+    tag: h4
+    text: 4) E-mail při neúspěšném stržení platby z karty (finální)
+    occurrence: 0
+    headingIndex: 7
+  - id: Co-m-zkaznk-dlat-a-co-naopak-ne-CfDLH
+    tag: h3
+    text: Tipy pro komunikaci se zákazníkem
+    occurrence: 0
+    headingIndex: 8
+  - id: Prvn-objednvka-probhla-bez-automatickho-strhvn--co-te-dSRHp
+    tag: h2
+    text: První objednávka proběhla bez automatického strhávání – co teď?
+    occurrence: 0
+    headingIndex: 9
+  - id: Kdy-zkaznkovi-expiruje-karta-1UDE6
+    tag: h2
+    text: Co když je karta po expiraci
+    occurrence: 0
+    headingIndex: 10
+---
+U pravidelné fakturace s aktivním automatickým strháváním z karty se FAPI v případě neúspěchu nepokusí strhnout platbu jen jednou.
+
+Pokud to máte v prodejním formuláři nastavené, FAPI provede další pokus **následující den**. Tento postup se opakuje, dokud:
+
+-   se platbu podaří strhnout, nebo
+-   se vyčerpá nastavený maximální počet pokusů.
+
+### Kde se to nastavuje
+
+V prodejním formuláři otevřete:
+
+**3\. krok „Platba, doprava a fakturace“ → sekce Pravidelná fakturace**
+
+Zde nastavíte **maximální počet pokusů o stržení z karty**.
+
+-   Maximum je **5 pokusů**.
+
+![Automatické opakované strhávání z karty](/assets/articles/bbab5dfcc9e1ba4f.png)
+
+### Jak se pokusy chovají
+
+-   Pokud se stržení nepodaří, FAPI se o stržení pokusí znovu **další den** (pokud máte povolený více než 1 pokus).
+-   Počet pokusů určuje, kolikrát se FAPI maximálně pokusí platbu strhnout (např. 3 pokusy = 1 pokus + 2 opakování v dalších dnech).
+
+:::tip
+### Tip: kolik pokusů nastavit
+
+Z praxe se nejčastěji osvědčují **2–3 pokusy.** Zvyšují šanci na úspěch, ale zároveň zbytečně neprodlužují dobu, kdy je faktura neuhrazená.
+
+Počet pokusů vždy slaďte s e-mailovou komunikací, aby zprávy dávaly smysl.
+:::
+
+  
+
+## E-mailová komunikace (doporučené nastavení)
+
+Aby zákazník věděl, co se děje, je potřeba mít k prodejnímu formuláři nastavené správné e-mailové šablony pro 2. a další fakturu.
+
+Opakované strhávání z karty typicky doprovázejí tyto e-maily:
+
+![Automatické opakované strhávání z karty](/assets/articles/c8900d0017e2d2dd.png)
+
+  
+
+![Automatické opakované strhávání z karty](/assets/articles/f95e97ce88ec8a31.png)
+
+#### 1\) E-mail při vystavení faktury před automatickým stržením
+
+-   Slouží k tomu, aby zákazník věděl, že mu byl vystaven doklad k dalšímu období a platba proběhne automaticky.
+-   V e-mailu vždy uveďte, že **fakturu nemá platit ručně**, protože platba bude stržena automaticky.
+-   Doporučené (není povinné).
+
+#### 2\) E-mail při přesunutí pokusu o stržení na další den
+
+-   Odesílá se, když se platbu nepodaří strhnout a systém posune další pokus na další den.
+-   Používá se **jen tehdy, když máte nastaveno více než 1 pokus**.
+-   Pokud máte nastavené např. 3 pokusy, e-mail o přesunu pokusu se odešle **2×**.
+-   Poznámka: v šablonách není zástupný symbol pro „číslo pokusu“, proto doporučujeme text formulovat obecně („zkusíme to znovu zítra“) bez uvádění „pokus č. X“.
+
+#### 3\) E-mail při úspěšném stržení platby z karty
+
+-   Odesílá se po úspěšném stržení (potvrzení úhrady).
+-   Doporučené (není povinné).
+
+#### 4\) E-mail při neúspěšném stržení platby z karty (finální)
+
+-   Odesílá se jako finální informace ve chvíli, kdy se platbu nepodaří strhnout ani po nastaveném počtu pokusů.
+-   Zákazník má dostat jasné instrukce, co dál:
+    -   zopakovat platbu kartou přes [přehled objednávky](/article/102-prehled-objednavky) (typicky přes `{{orderStatusPage}}` ), nebo
+    -   uhradit převodem (platební údaje / VS).
+    
+-   **Tato šablona je povinná** pro uložení nastavení prodejního formuláře.
+
+:::tip
+### Tipy pro komunikaci se zákazníkem
+
+-   Pokud má zákazník aktivní opakované platby a službu chce dál, **nemá fakturu platit ručně**, pokud mu v e-mailu píšete, že proběhne automatické stržení.
+-   Pokud se stržení nepodaří, zákazník má obvykle:
+    -   zkontrolovat zůstatek / limity,
+    -   ověřit, že karta je platná a není blokovaná,
+    -   případně uhradit ručně podle finálního e-mailu.
+:::
+
+## První objednávka proběhla bez automatického strhávání – co teď?
+
+Pokud se první objednávka zaplatila kartou ve chvíli, kdy ještě nebylo zapnuté automatické strhávání z karty, FAPI nemá uložený token ke kartě. V takovém případě **se další platby automaticky strhávat nezačnou**, dokud zákazník znovu nezaplatí kartou ve chvíli, kdy už je automatické strhávání aktivní.
+
+Postup:
+
+1.  Zapněte automatické strhávání v nastavení prodejního formuláře. (Zkontrolujte, že je u prodejního formuláře zapnuté automatické strhávání z karty a že tato šablona pravidelné fakturace u klienta používá správný prodejní formulář.)
+2.  Nechte zákazníka uhradit následující fakturu **kartou ručně** (např. přes přehled objednávky).
+3.  Po této platbě se karta uloží pro opakované platby a od dalšího období už mohou probíhat automatické pokusy o stržení dle vašeho nastavení.
+
+Kontrola, zda je karta napojená:
+
+[https://napoveda.fapi.cz/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani](/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani?utm_source=chatgpt.com)
+
+  
+
+:::caution
+## Co když je karta po expiraci
+
+Jediný způsob, jak znovu obnovit automatické strhávání z karty po expiraci karty, je provést novou kartovou platbu.
+
+Jakmile zákazník znovu zaplatí kartou (novou nebo obnovenou), uloží se nová karta pro opakované platby a další stržení mohou opět probíhat automaticky.
+
+[https://napoveda.fapi.cz/article/104-jak-zmenit-kartu](/article/104-jak-zmenit-kartu)
+:::

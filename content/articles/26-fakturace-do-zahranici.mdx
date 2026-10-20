@@ -1,0 +1,95 @@
+---
+title: Fakturace do zahraničí
+url: /article/26-fakturace-do-zahranici
+description: Vystavovaní faktur do zahraničí není úplně snadná záležitost. V tomto článku si popíšeme specifika fakturace do zahraničí a ukážeme si, jaká nastavení ve FAPI s
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 9-online-prodej
+keywords:
+  - Fakturace do zahraničí
+  - Nastavení
+  - Fakturace
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/26-fakturace-do-zahranici
+order: 6
+updatedAt: 2026-07-13T09:30:15Z
+---
+Vystavovaní faktur do zahraničí není úplně snadná záležitost. V tomto článku si popíšeme specifika fakturace do zahraničí a ukážeme si, jaká nastavení ve FAPI s nimi souvisí.
+
+:::danger
+Níže uvedené skutečnosti představují pouze obecný rámec. Legislativní povinnosti platné pro váš konkrétní případ rozhodně doporučujeme konzultovat s účetním nebo daňovým poradcem.
+:::
+
+Kromě obecných požadavků (např. formálních náležitostí daňových dokladů předepsaných Zákonem o dani z přidané hodnoty) je při fakturaci do zahraničí nutné zohlednit zejména:
+
+-   jazyk prodejního formuláře a vystavovaných dokladů,
+-   měnu a měnový kurz,
+-   údaje pro mezinárodní platební styk (IBAN a BIC/SWIFT) ,
+-   režim DPH pro zahraniční klienty.
+
+## Nastavení jazyka
+
+První specifikum fakturace do zahraničí nevychází z legislativy, ale z praxe. Aby vaši zahraniční klienti rozuměli objednávkovému formuláři a vystaveným prodejním dokladům, je zapotřebí přizpůsobit jazyk prodejního formuláře zemi, do které prodáváte. Volbu jazyka provedete v poli **Jazyk** v nastavení prodejního formuláře (záložka **Vzhled**).
+
+![Fakturace do zahraničí](/assets/articles/5bc7b7448e31b79f.png)
+
+Jazyk ručně vystavovaných faktur nastavíte v poli **Jazyk faktur** v nabídce **Nastavení - Nastavení fakturace**.
+
+:::caution
+FAPI aktuálně podporuje tyto jazyky: čeština, slovenština, angličtina, němčina, francouzština, italština, portugalština, ruština, polština, čínština a vietnamština.
+:::
+
+## Měna a měnový kurz
+
+Fakturaci do zahraničí je obvykle potřeba přizpůsobit i měnu vystavovaných faktur.
+
+Měnu faktur vystavených přes prodejní formulář, určuje parametr **Nastavení měny** v nastavení prodejního formuláře (záložka **Platba, doprava a fakturace**).
+
+![Fakturace do zahraničí](/assets/articles/dfec757c7f80ea9e.png)
+
+V případě ruční fakturace se měna nastavuje ve formuláři pro ruční vystavení faktury (pole **Měna**).
+
+![Fakturace do zahraničí](/assets/articles/ba2f4363673a017f.png)
+
+Na daňových dokladech vystavených v cizí měně se vždy uvádí rekapitulace DPH v domácí měně. Proto je třeba nastavit také [měnový kurz](/article/22-kurzy-men), podle kterého se bude přepočet na domácí měnu provádět.
+
+## Údaje pro mezinárodní platební styk
+
+Při fakturaci do zahraničí se dá předpokládat, že budete ze zahraničí přijímat i platby. Pro mezinárodní platební styk je nutné uvádět údaje _IBAN (International Bank Account Number)_ a _BIC/SWIFT (Bank Identifier Code/Society for Worldwide Interbank Financial Telecommunication)_ bankovního účtu, na který přijímáte platby.
+
+:::caution
+Bankovní spojení zadávejte pro **každou měnu**, ve které fakturujete a pro kterou chcete **přijímat platby na bankovní účet** (tedy ne přes platební bránu).
+:::
+
+  
+
+Ve FAPI se tyto údaje zadávají v polích **IBAN** a **SWIFT** v nabídce **Nastavení - Způsoby platby** (sekce **Bankovní převod**). Vyplněné údaje se zobrazují na faktuře a je možné je také vložit do zasílaných zpráv pomocí zástupných symbolů.
+
+  
+
+![Fakturace do zahraničí](/assets/articles/d49fd9bf718d7087.png)
+
+  
+
+## Režim DPH pro zahraniční klienty
+
+Určení správného režimu DPH pro zahraniční klienty je poněkud komplikovanější záležitost. Do hry vstupuje několik faktorů.
+
+Jedním z nich je, zda příjemce faktury je, či není plátce DPH. Svůj status z hlediska plátcovství DPH dává klient najevo zadáním DIČ (popř. IČ DPH u slovenských subjektů) v objednávkovém formuláři.
+
+Další proměnná, která vstupuje do rozhodnutí o DPH, je to, jaký produkt nebo služba je předmětem prodeje.
+
+Ve FAPI můžete v prodejním formuláři nastavit, jakým způsobem se má nakládat s DPH u zahraničních klientů. Jde o tzv. _přenesenou daňovou povinnost_ a příslušné nastavení najdete v podobě stejnojmenného parametru v nastavení prodejního formuláře (záložka **Platba, doprava a fakturace**).
+
+![Fakturace do zahraničí](/assets/articles/16f2ff8837eb0441.png)
+
+Nastavení ovlivňuje, jak bude účtováno DPH v daňových dokladech pro zahraniční klienty. Při nastavování si musíte být vědomi právních a zákonných požadavků a zvolit nastavení podle předmětu plnění, místa plnění, toho, zda jste jako dodavatel plátce, či neplátce DPH a zda je odběratel nepodnikající fyzická osoba, podnikatel v rámci EU, nebo mimo EU. Vybrat můžete jeden z těchto režimů:
+
+-   **nikdy nepoužívat** - DPH bude přidáno do každého daňového dokladu. Toto nastavení můžete použít např. tehdy, když je místo plnění v tuzemsku (typicky třeba u seminářů a školení).
+-   **používat u všech zahraničních klientů** - U zahraničních klientů nebude DPH na daňovém dokladu nikdy uvedeno. V praxi má tento režim velmi okrajové využití.
+-   **používat u zahraničních klientů, kteří vyplní DIČ nebo IČ DPH** - DPH nebude na daňovém dokladu uvedeno, pokud klient v objednávce vyplní pole DIČ, resp. IČ DPH (u slovenských subjektů). Jinými slovy, je-li odběratelem plátce DPH, daňový doklad se vystaví bez DPH.
+-   **používat u zahraničních klientů, kteří vyplní IČ** - DPH nebude na daňovém dokladu uvedeno, pokud klient v objednávce vyplní pole IČ. Používá se v případech, kdy má daňová povinnost přecházet na jakoukoli osobu povinnou k dani (podnikatele).
+-   **používat u zahraničních klientů, kteří mají platné DIČ nebo IČ DPH (ověření se provádí v registru VIES)** - DPH nebude na daňovém dokladu uvedeno, pokud je DIČ zadané v objednávkovém formuláři nalezeno v registru Evropské databáze VIES (ověření se provádí automaticky ihned po zadání DIČ). Jestliže zadané DIČ není platné, vystaví se daňový doklad s DPH. Při nedostupnosti VIESu se ověření sice nezdaří, ale doklad se vystaví v režimu reverse charge.

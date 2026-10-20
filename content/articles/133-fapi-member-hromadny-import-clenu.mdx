@@ -1,0 +1,118 @@
+---
+title: "FAPI Member: Hromadný import členů"
+url: /article/133-fapi-member-hromadny-import-clenu
+description: Hromadný import členu do členské sekce Od verze pluginu FAPI Member 1.8.6 lze hromadně naimportovat členy do členské sekce. A v tomto návodu si povíme, jak na t
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - "FAPI Member: Hromadný import členů"
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/133-fapi-member-hromadny-import-clenu
+order: 95
+updatedAt: 2026-07-13T10:39:10Z
+---
+## Hromadný import členu do členské sekce
+
+Od verze pluginu FAPI Member 1.8.6 lze hromadně naimportovat členy do členské sekce. A v tomto návodu si povíme, jak na to.
+
+  
+
+Co k tomu budeme potřebovat:
+
+1.  Google sheet se seznamem klientů, které chcete do členské sekce naimportovat
+2.  Nachystanou členskou sekci s FAPI Memberem
+3.  Účet v aplikaci [Make](https://www.integromat.com/cs).
+
+## Příprava Google sheetu se seznamem klientů
+
+Vytvořte si novou [Google tabulku](https://support.google.com/docs/answer/6000292). V tabulce nám budou stačit 2 sloupce:
+
+1.  E-mailová adresa
+2.  ID Členské sekce
+
+Do tabulky vyplňte emailové adresy klientů, které chcete importovat do členské sekce.
+
+Dále je potřeba získat ID členské sekce. K tomu stačí v administaci webu kliknout na **FAPI Member -\> Členské sekce -\> Sekce / úrovně** a po najetí myší na danou sekci nebo úroveň se po vteřině zobrazí ID členské sekce. To si zapíšete do své Google tabulky. 
+
+![FAPI Member: Hromadný import členů](/assets/articles/e2c1196dc9fee37c.png)
+
+Výsledná tabulka by měla vypadat přibližně takto.
+
+![FAPI Member: Hromadný import členů](/assets/articles/eb5e753af2e3a0d6.png)
+
+Nyní máte připravený seznam klientů, které chcete importovat. 
+
+Abyste tyto klienty mohli naimportovat pomocí služby [Integromat](https://www.integromat.com/), je potřeba v ní mít založený účet. Není se čeho bát integromat je v základním tarifu zdarma. 
+
+Po přihlášení do Integromatu si vytvořte nový scénář (kliknutím na pravé horní tlačítko **"Vytvořit nový scénář"**).
+
+![FAPI Member: Hromadný import členů](/assets/articles/39858b207e9fb80e.png)
+
+Integromat vás přesměruje na vytvoření nového scénáře. Zde klikněte na velké plus a vyskočí vám seznam nástrojů a aplikací, mezi nimiž vyhledejte a vyberte modul **"Google Sheets"**.
+
+![FAPI Member: Hromadný import členů](/assets/articles/c98d8267dbd65805.png)
+
+Vyskočí vám další nabídka, v níž vyberte akci **"Search Rows"**:
+
+![FAPI Member: Hromadný import členů](/assets/articles/bc9056404167e9be.png)
+
+Nyní je potřeba propojit váš účet Google s integromatem. Pojmenujte si propojení nejlépe podle své emailové adresy.
+
+Poté co se vám podaří účet Googlu s integromatem propojit,vyhledejtev políčku **"Spreadsheet"** vámi vytvořenou Google tabulku. A v dalším políčku **"Sheet"** vyberte přímo daný list tabulky (tedy pravděpodobně List 1).
+
+![FAPI Member: Hromadný import členů](/assets/articles/ae7cc76e59d97f61.png)
+
+Nyní máte nastavené propojení na Google tabulku. Teď je třeba ještě přidat propojení na FAPI Member plugin. 
+
+Klikněte na **"Přidat další modul"**.
+
+![FAPI Member: Hromadný import členů](/assets/articles/3417160eae931cdf.png)
+
+Vytvoří se vám prázný modul, do něhož vložíte modul FAPI Member. Klikněte tedy na **"+ přidal další modul"**.
+
+![FAPI Member: Hromadný import členů](/assets/articles/f2ada00e506af46e.png)
+
+Vyhledejte modul FAPI Member a přidejte si ho.
+
+  
+
+![FAPI Member: Hromadný import členů](/assets/articles/c28119bd5965dd74.png)
+
+Vyberte akci **"Vytvořit nebo přidat člena"**.
+
+:::danger
+Pokud se vám modul FAPI Member nezobrazuje, stačí si modul přidat pomocí tohoto odkazu: [https://www.integromat.com/en/apps/invite/c7243ede84f892032ab213e6424d790c](https://www.integromat.com/en/apps/invite/c7243ede84f892032ab213e6424d790c)
+:::
+
+![FAPI Member: Hromadný import členů](/assets/articles/04a520bf3686f4cd.png)
+
+Nyní je potřeba propojit Integromat s FAPI Member pluginem. K tomu budete potřebovat 2 věci:
+
+1.  URL adresu, kde máte plugin FAPI Member nainstalovaný a kam chcete přidat členy
+2.  API Token pro komunikaci Integromatu a FAPI Memberu
+
+API Token získáte v pluginu FAPI Member. Ve své administraci webu se překlikněte do pluginu **FAPI Member -\> propojení s FAPI**.
+
+![FAPI Member: Hromadný import členů](/assets/articles/284ef8e79911131b.png)
+
+FAPI Member token si zkopirujte do schránky a vypňte jej do propojení v Integromatu. Vyplňte Název propojení a URL adresu webu a klikněte na tlačítko **Pokračovat**.
+
+![FAPI Member: Hromadný import členů](/assets/articles/bb0ff8592a4aca31.png)
+
+Po uspěšném propojení můžete dokončit nastavení akce Vytvořit nebo přidat člena. Po kliknutí do políčka E-mailová adresa vyberte z Google sheetu sloupec **A** nazvaný E-mail a pro políčko ID členské sekce/úrovně vyberte sloupec **B** nazvaný ID členské sekce. Doplňte počet dní setrvání v členské sekci. 
+
+:::tip
+Pokud políčko nevyplníte, založí se klientům doživotní přístup.
+:::
+
+Kliknutím na tlačítko **OK** uložíte nastavení.
+
+![FAPI Member: Hromadný import členů](/assets/articles/4c6089abd5a0c90c.png)
+
+Nyní už zbývá pouze poslední věc, a tou je spustit import členů do členské sekce. Stačí kliknout na tlačítko v levém dolním rohu **"Jednorázové spuštění"** a klienti se naimportují.
+
+![FAPI Member: Hromadný import členů](/assets/articles/2dc09567fb0c305f.png)
+
+Po dokončení importu se novým členům rozešlou přístupové údaje běžným způsobem.

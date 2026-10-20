@@ -1,0 +1,126 @@
+---
+title: Omezení dostupného množství produktu
+url: /article/48-omezeni-dostupneho-mnozstvi-produktu
+description: Při prodeji může nastat situace, kdy máte k dispozici pouze omezené množství produktu nebo služby. Typicky se jedná například o fyzické zboží skladem, omezený p
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+keywords:
+  - Omezení dostupného množství produktu
+  - Nastavení
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/48-omezeni-dostupneho-mnozstvi-produktu
+order: 111
+updatedAt: 2026-07-13T10:51:34Z
+legacyAnchors:
+  - id: Kdy-se-omezen-dostupnho-mnostv-hod-jmBEL
+    tag: h2
+    text: Kdy se omezení dostupného množství hodí
+    occurrence: 0
+    headingIndex: 0
+  - id: Nastaven-dostupnho-mnostv-u-prodejn-poloky-m5_Eh
+    tag: h2
+    text: Nastavení dostupného množství u prodejní položky
+    occurrence: 0
+    headingIndex: 1
+  - id: Kdy-se-dostupn-mnostv-odet-DxVVv
+    tag: h2
+    text: Kdy se dostupné množství odečítá
+    occurrence: 0
+    headingIndex: 2
+  - id: Storno-doklad-a-dostupn-mnostv-Gtjvv
+    tag: h2
+    text: Storno dokladů a dostupné množství
+    occurrence: 0
+    headingIndex: 3
+  - id: Spltkov-prodej-a-automatick-storno-qMnMX
+    tag: h2
+    text: Splátkový prodej a automatické storno
+    occurrence: 0
+    headingIndex: 4
+  - id: Co-se-stane-po-vyprodn-poloky-ijO4U
+    tag: h2
+    text: Co se stane po vyprodání položky
+    occurrence: 0
+    headingIndex: 5
+  - id: Omezen-pouit-PnshI
+    tag: h2
+    text: Omezení použití
+    occurrence: 0
+    headingIndex: 6
+---
+Při prodeji může nastat situace, kdy máte k dispozici pouze omezené množství produktu nebo služby. Typicky se jedná například o fyzické zboží skladem, omezený počet míst na živé akci, workshopu nebo konzultacích.
+
+Aby si zákazníci nemohli objednat větší množství, než je skutečně dostupné, můžete u prodejní položky nastavit **omezení dostupného množství**.
+
+## Kdy se omezení dostupného množství hodí
+
+Tuto funkci využijete například v těchto případech:
+
+-   prodáváte fyzický produkt a máte omezený počet kusů skladem,
+-   nabízíte vstupenky na akci s omezenou kapacitou,
+-   prodáváte konzultace, lekce nebo služby s omezeným počtem míst,
+-   chcete zabránit tomu, aby zákazníci objednali více kusů, než můžete dodat.
+
+## Nastavení dostupného množství u prodejní položky
+
+1.  Otevřete nastavení konkrétní prodejní položky.
+2.  Zaškrtněte možnost **Omezit dostupné množství**.
+3.  Do pole **Dostupné množství** zadejte počet kusů nebo míst, které jsou k dispozici.
+
+Tím určíte maximální množství, které lze přes danou prodejní položku objednat.
+
+:::tip
+Volitelně můžete zákazníkům zobrazit zbývající dostupné množství přímo v prodejním formuláři. Stačí zaškrtnout možnost **Zobrazit dostupné množství v prodejním formuláři**.
+
+Pokud je tato volba aktivní, zákazník při vyplňování objednávky uvidí, kolik kusů nebo míst ještě zbývá, a může podle toho upravit objednávané množství.
+:::
+
+![Omezení dostupného množství produktu](/assets/articles/07b5152066713708.png)
+
+  
+
+## Kdy se dostupné množství odečítá
+
+FAPI automaticky hlídá, aby nebylo možné objednat větší množství položky, než je nastavené dostupné množství.
+
+Dostupné množství se odečítá **už při vytvoření objednávky**, nikoliv až při zaplacení faktury.
+
+To platí jak pro objednávky s jednorázovou platbou celé částky, tak pro objednávky s platbou rozloženou do splátek.
+
+Například pokud nastavíte dostupné množství na 20 a zákazník vytvoří objednávku na 2 kusy, dostupné množství se sníží na 18 už v okamžiku vytvoření objednávky.
+
+## Storno dokladů a dostupné množství
+
+Funkce zohledňuje také storno dokladů.
+
+Pokud dojde ke stornu dokladu, dostupné množství se u dané položky znovu navýší. Pokud je storno následně zrušeno, dostupné množství se opět sníží.
+
+Díky tomu dostupné množství odpovídá aktuálnímu stavu objednaných, prodaných a případně stornovaných položek.
+
+## Splátkový prodej a automatické storno
+
+U objednávek s platbou rozloženou do splátek je potřeba počítat s tím, že dostupné množství se odečte už při vytvoření objednávky.
+
+Máte-li např. 2 splátkové faktury, a první faktura je stornovaná, na sklad se vrací 0,5 ks, tedy poměrná část.
+
+## Co se stane po vyprodání položky
+
+Jakmile dostupné množství klesne na nulu, položka se automaticky označí jako vyprodaná. V nastavení prodejní položky se aktivuje parametr **Vyprodáno**.
+
+V prodejním formuláři se taková položka zobrazí jako přeškrtnutá s textem **VYPRODÁNO**. Zákazník ji už nemůže objednat.
+
+:::danger
+## **Omezení použití**
+
+Prodejní položku s omezeným dostupným množstvím není možné použít:
+
+-   v šabloně pravidelných faktur,
+-   v prodejním formuláři s pravidelnou fakturací.
+
+  
+
+Toto omezení je z důvodu opakované fakturace, u které není možné dostupné množství standardně odečítat stejným způsobem jako u jednorázového nebo splátkového prodeje.
+:::

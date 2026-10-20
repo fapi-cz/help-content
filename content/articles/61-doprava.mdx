@@ -1,0 +1,139 @@
+---
+title: Doprava
+url: /article/61-doprava
+description: Pokud prodáváte fyzické produkty, potřebujete řešit také způsob, jakým objednávku zákazníkovi doručíte. K tomu můžete využít způsoby dopravy, které se zobrazí z
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+keywords:
+  - Doprava
+  - Nastavení
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/61-doprava
+order: 58
+updatedAt: 2026-07-13T10:31:04Z
+legacyAnchors:
+  - id: Vytvoen-zpsobu-dopravy-HhwsD
+    tag: h2
+    text: Vytvoření způsobu dopravy
+    occurrence: 0
+    headingIndex: 0
+  - id: Dal-nastaven-NyYSb
+    tag: h2
+    text: Další nastavení
+    occurrence: 0
+    headingIndex: 1
+  - id: -Nastaven-dopravy-v-prodejnm-formuli-81cfs
+    tag: h2
+    text: Nastavení dopravy v prodejním formuláři
+    occurrence: 0
+    headingIndex: 2
+  - id: Doprava-v-objednvce-a-na-faktue-vTbCI
+    tag: h2
+    text: Doprava v objednávce a na faktuře
+    occurrence: 0
+    headingIndex: 3
+  - id: DPH-u-dopravy-VzhRq
+    tag: h2
+    text: DPH u dopravy
+    occurrence: 0
+    headingIndex: 4
+  - id: Jak-se-uruje-sazba-DPH-bVpB7
+    tag: h3
+    text: "Jak se určuje sazba DPH:"
+    occurrence: 0
+    headingIndex: 5
+---
+Pokud prodáváte fyzické produkty, potřebujete řešit také způsob, jakým objednávku zákazníkovi doručíte. K tomu můžete využít _způsoby dopravy_, které se zobrazí zákazníkům v objednávkovém formuláři.
+
+Způsoby dopravy, které chcete svým zákazníkům poskytnout, je potřeba ve FAPI nejprve definovat. Vytvořené způsoby dopravy pak použijete pro nastavení dopravy v prodejním formuláři.
+
+## Vytvoření způsobu dopravy
+
+Poskytované způsoby dopravy vytvoříte pomocí tlačítka **Nový způsob dopravy** v nabídce **Prodej - Doprava**.
+
+![Doprava](/assets/articles/7f20cb18e943c3f4.jpg)
+
+U každého způsobu dopravy je třeba zvolit jeho _typ_. V současnosti můžete vybírat z těchto typů:
+
+-   **Zásilkovna** - doručení pomocí služby Zásilkovna, a to buď prostřednictvím výdejních míst Zásilkovny, nebo pomocí externích dopravců. Je potřeba specifikovat, pro jaké státy (ve fakturační, resp. doručovací adrese) se má způsob dopravy nabízet.
+    
+    :::danger
+    Pro využití Zásilkovny je potřeba nejprve oba systémy propojit. Postupujte podle návodu [Propojení FAPI se službou Zásilkovna](/article/62-propojeni-fapi-se-sluzbou-zasilkovna).
+    :::
+    
+-   **Osobní odběr** - vyzvednutí objednávky na výdejním místě obchodníka, např. na kamenné prodejně. U osobního odběru je nutné specifikovat adresu výdejního místa. Adresy výdejních míst se zákazníkovi zobrazí k výběru v objednávkovém formuláři.
+-   **Vlastní typ dopravy** - pomocí vlastního typu dopravy je možné zákazníkovi v objednávce nabídnout libovolný typ dopravy, který ve FAPI není implementován. I zde je nutné zadat, v jakých státech je daný způsob dopravy dostupný.
+    
+    :::danger
+    U vlastního typu dopravy je třeba proces doručení objednávky zajistit mimo FAPI.
+    :::
+    
+
+U všech typů dopravy je dále možné zadat:
+
+-   název, pod kterým se daný způsob dopravy bude zobrazovat v prodejním formuláři (pole **NÁZEV**),
+-   popis, pomocí kterého je možné zákazníkovi poskytnout více informací o daném způsobu dopravy (pole **POPIS**),
+-   cenu v libovolné podporované měně (pole **CENA** a **MĚNA**), a to zvlášť pro každý stát, resp. výdejní místo.
+-   celkovou cenu objednávky, od které bude doprava zdarma. (pole **DOPRAVA ZDARMA OD** a **MĚNA**), také zvlášť pro každý stát, resp. výdejní místo.
+
+:::caution
+Dopravu zdarma lze nastavit jen v novém prodejním formuláři (Krok 6 Vzhled \> Vzhled formuláře \> Nový vzhled)
+:::
+
+:::caution
+Pokud je v objednávce použita jiná měna, než jaká je nastavena u způsobu dopravy, cena dopravy se na tuto měnu přepočítá podle aktuálního měnového kurzu.
+:::
+
+:::caution
+Po uložení nového způsobu dopravy nelze jeho typ již upravovat.
+:::
+
+Pokud chcete přestat používat nabídku dopravy zdarma, stačí u dané dopravy vymazat:
+
+-   hodnotu košíku pro dopravu zdarma (nechat pole prázdné)
+-   vypnout měnu - přepnout na položku "-měna-"
+
+a tuto novou úpravu dopravy uložit.
+
+## Další nastavení
+
+Účetní kódy - obdobně jako u produktů se dá k dopravě nastavit
+
+-   účetní kód
+-   kód předkontace
+-   kód střediska
+-   kód skladu
+-   kód skladové položky
+
+## Nastavení dopravy v prodejním formuláři
+
+Způsoby dopravy, které se mají zákazníkovi při objednávce nabízet, je třeba nastavit v prodejním formuláři, a to na záložce **Platba, doprava a fakturace** v sekci **ZPŮSOB DOPRAVY** v úpravě prodejního formuláře.
+
+![Doprava](/assets/articles/6c6b79f9d4ffa651.png)
+
+## Doprava v objednávce a na faktuře
+
+V objednávkovém formuláři se způsoby dopravy zobrazují v samostatné sekci s názvem **Způsob dopravy**.
+
+![Doprava](/assets/articles/5674dd050c672c6a.jpg)
+
+Na vystavené faktuře se doprava zobrazuje jako samostatná položka. V závorce je upřesněn typ dopravy.
+
+![Doprava](/assets/articles/773d0d5daa6d69d8.png)
+
+:::info
+## **DPH u dopravy**
+
+Doprava se ve FAPI považuje za **vedlejší náklad k objednávce** (tzv. doplňkový prodej). Z tohoto důvodu se na ni automaticky aplikuje stejná sazba DPH jako na fyzický produkt v objednávce.
+
+### Jak se určuje sazba DPH:
+
+-   Pokud je v objednávce **jeden produkt**, použije se jeho sazba DPH i na dopravu.
+-   Pokud je v objednávce **více produktů s různou sazbou DPH**, použije se sazba DPH podle produktu s **nejvyšší cenou**.
+-   Pokud jsou v objednávce **produkty s různou sazbou DPH o stejné ceně**, pak se bere vyšší sazba DPH.
+
+Tím je zajištěno, že doprava odpovídá hlavnímu plnění v objednávce.
+:::

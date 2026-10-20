@@ -1,0 +1,104 @@
+---
+title: Vystavení faktury z platby ve Stripe
+url: /article/227-vystaveni-faktury-z-platby-ve-stripe
+description: "Jak vystavit fakturu z platby ve Stripe: Automatizace s FAPI Pokud prodáváte produkty nebo služby prostřednictvím jiné platformy, jako je CircleCI, Passion.io, "
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 202-automatizace
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Vystavení faktury z platby ve Stripe
+  - Platební brány (platba kartou)
+  - Automatizace
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/227-vystaveni-faktury-z-platby-ve-stripe
+order: 64
+updatedAt: 2026-07-13T10:31:11Z
+legacyAnchors:
+  - id: Jak-propojit-Stripe-a-FAPI-Dva-scne-automatizace-t6fUM
+    tag: h2
+    text: Jak propojit Stripe a FAPI
+    occurrence: 0
+    headingIndex: 3
+---
+## **Jak vystavit fakturu z platby ve Stripe: Automatizace s FAPI**
+
+Pokud prodáváte produkty nebo služby prostřednictvím jiné platformy, jako je **CircleCI**, **Passion.io**, **Skool** nebo jiné prodejní aplikace, a přitom používáte **Stripe** pro zpracování plateb, pravděpodobně řešíte otázku, jak automaticky vystavovat faktury. Díky integraci mezi Stripe, **FAPI** a automatizačními nástroji, jako je [**Make**](https://www.make.com/en/register?pc=fapimake), můžete tento proces plně zautomatizovat.
+
+Tato automatizace umožňuje, aby se faktury vytvářely ve **FAPI** na základě plateb, které zákazníci provedli přes Stripe. Faktura je následně automaticky odeslána zákazníkovi e-mailem. Navíc můžete zautomatizovat další kroky, jako je přenos kontaktů do nástrojů pro e-mail marketing, například **SmartEmailing**, **Ecomail**, nebo jejich zařazení do dalších interních procesů.
+
+## **K čemu slouží tato automatizace?**
+
+Tento systém integrace slouží podnikatelům, kteří využívají platformy třetích stran k prodeji svých produktů nebo služeb, ale potřebují zároveň zajišťovat kompletní fakturaci. Automatizace vám ušetří čas, sníží administrativní zátěž a eliminuje chyby při manuálním vystavování faktur.
+
+Například pokud prodáváte online kurzy přes platformu **Passion.io** a zákazník provede platbu pomocí Stripe, automatizace zajistí:
+
+-   Přijetí notifikace o platbě ve Stripe.
+-   Automatické vytvoření faktury ve FAPI na základě údajů o platbě.
+-   Odeslání faktury zákazníkovi e-mailem.
+-   Volitelné předání kontaktu zákazníka do CRM nebo e-mailového marketingového nástroje, jako je SmartEmailing.
+
+## **Jak integraci využít a proč je užitečná?**
+
+Automatizace přináší klíčové benefity:
+
+-   **Úspora času**: Nemusíte ručně vystavovat faktury ani přepisovat údaje o zákaznících.
+-   **Přesnost**: Vystavené faktury obsahují správné údaje díky synchronizaci se Stripe.
+-   **Profesionální komunikace**: Faktura je zákazníkovi odeslána okamžitě po dokončení platby, což zvyšuje důvěryhodnost vašeho podnikání.
+-   **Flexibilita**: Lze ji přizpůsobit na míru, například přidáním dalších automatizovaných kroků, jako je přiřazení zákazníka do členské sekce nebo odeslání přístupových údajů k zakoupenému kurzu.
+
+Tento proces je ideální pro podnikatele, kteří chtějí kombinovat sílu moderních prodejních nástrojů a robustní fakturační systém, jako je FAPI, a zároveň automatizovat celý proces tak, aby ušetřili čas a zajistili maximální komfort pro zákazníky.
+
+## **Jak propojit Stripe a FAPI**
+
+1.  ### **Externí prodejní aplikace vystavuje faktury ve Stripe**
+    
+
+V tomto scénáři vystavuje faktury přímo externí aplikace, například **Passion.io** nebo **Skool**, a Stripe slouží jako platební brána. Faktury jsou již vytvořené ve Stripe a automatizace zajistí přenos dat do FAPI, kde se vytvoří odpovídající faktura. Tento proces je ideální, pokud externí aplikace poskytuje dostatečné údaje o nákupu.
+
+### Co k tomu budeme potřebovat?
+
+-   Stripe
+-   FAPI
+-   [Make - scénář](http://www.make.com/cs/integration/11167-stripe-fapi-vystaveni-faktury-z-platby-ze-stripu?templatePublicId=11167)
+
+### Postup:
+
+1.  Vytvořte si prodejní formulář pro faktury, které se vytvoří skrze platby ve Stripe. Pojmenujte si jej například Stripe a nebo podle toho co prodáváte - členská sekce Skool.
+2.  Přihlaste se do [Make](https://www.make.com/en/register?pc=fapimake) a použijte [tento scénář](http://www.make.com/cs/integration/11167-stripe-fapi-vystaveni-faktury-z-platby-ze-stripu?templatePublicId=11167).
+3.  Postupujte podle pokynu scénáře. Případně podle video návodu.
+4.  Upravený scénář v Make uložte a aktivujte.
+5.  Počkejte, jakmile přijde další platba a zkontrolujte vystavenou fakturu.
+
+### Video návod:
+
+<Video src="https://www.youtube.com/embed/uCPTPEePtxc" />
+
+2.  ### **Externí aplikace nevystavuje faktury ve Stripe**
+    
+
+Pokud externí aplikace faktury ve Stripe nevystavuje, například při jednorázových platbách, párování probíhá na základě částky platby. Automatizace v takovém případě porovná částku zaplacenou zákazníkem s cenou produktu ve FAPI a vytvoří odpovídající fakturu. Tento přístup umožňuje i jednodušší integraci bez složité správy faktur v externích systémech.
+
+### Co k tomu budeme potřebovat?
+
+-   Stripe,
+-   FAPI,
+-   [Make - scénář.](http://www.make.com/cs/integration/13994-stripe-platba-fapi-faktura-z-platby-ze-stripu?templatePublicId=13994)
+
+### Postup:
+
+1.  Vytvořte si prodejní formulář pro faktury, které se vytvoří skrze platby ve Stripe. Pojmenujte si jej například Stripe a nebo podle toho co prodáváte - členská sekce Skool.
+2.  Přihlaste se do [Make](https://www.make.com/en/register?pc=fapimake) a použijte [tento scénář](http://www.make.com/cs/integration/13994-stripe-platba-fapi-faktura-z-platby-ze-stripu?templatePublicId=13994).
+3.  Postupujte podle pokynu scénáře. Případně podle video návodu.
+4.  Vytvořte si seznam produktů podle ceny.
+5.  Upravený scénář v Make uložte a aktivujte.
+6.  Počkejte, jakmile přijde další platba a zkontrolujte vystavenou fakturu.
+
+  
+  
+
+Video návod:
+
+<Video src="https://www.loom.com/embed/a387a60663a24301b99e6c4765c34ada?sid=81dd56dd-9183-4c99-9502-7a746c952178" />

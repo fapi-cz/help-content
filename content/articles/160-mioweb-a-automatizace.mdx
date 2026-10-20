@@ -1,0 +1,44 @@
+---
+title: Mioweb a automatizace
+url: /article/160-mioweb-a-automatizace
+description: Automatizace Mioweb e-shop a FAPI Mioweb e-shop a FAPI lze propojit tak, aby při prodeji zboží vytvořeného pouze v e-shopu Miowebu, fungovala automatizace nasta
+category: Často kladené dotazy (FAQ)
+categorySlug: 105-casto-kladene-dotazy-faq
+categorySlugs:
+  - 105-casto-kladene-dotazy-faq
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Mioweb a automatizace
+  - Často kladené dotazy (FAQ)
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/160-mioweb-a-automatizace
+order: 125
+updatedAt: 2026-07-13T10:54:59Z
+---
+# **Automatizace Mioweb e-shop a FAPI**
+
+**[Mioweb](https://www.mioweb.cz/?a_box=aq8y9f9x) e-shop** a **FAPI** lze propojit tak, aby při prodeji zboží vytvořeného pouze v e-shopu [Miowebu](https://www.mioweb.cz/?a_box=aq8y9f9x), fungovala automatizace nastavená ve formuláři FAPI.
+
+Díky této funkci není potřeba mít duplicitně produkty jak v [Miowebu](https://www.mioweb.cz/?a_box=aq8y9f9x) tak ve FAPI.
+
+Postupujte prosím v těchto krocích:
+
+1.  Vytvořte si propojení svého e-shopu na Mioweb s FAPI, podle [tohoto návodu.](https://napoveda.mioweb.cz/article/114-zakladni-nastaveni-fapi-pro-eshop)
+2.  Při vytváření propojení automaticky vznikne ve FAPI formulář ve tvaru: **MioWeb - vase.domena.cz \[XXXX/XX/XX XX:XX\]**.
+    1.  Tento formulář je propojený s Mioweb a musíte ho použít. 
+    
+3.  [Vytvořte nový produkt](https://napoveda.mioweb.cz/article/115-jak-vytvorit-produkt) v Mioweb e-shopu.
+    1.  Při vytváření zadejte "Evidenční kód".
+    
+
+![Mioweb a automatizace](/assets/articles/466eec93804b525c.png)Povolené znaky pro označení evidenčního kódu velká a malá písmena bez diakritiky, číslice a spodní podtržítko.
+
+ 4. Ve FAPI nastavte v prodejním formuláři nad vytvořeným produktem automatizaci.
+
+-   Úprava prodejního formuláře - **4.** **Akce**.
+-   Vytvořte novou akci a událost vyberte **objednání / zaplacení /stornování položky s kódem**.
+-   Do pole kód produktu vyplňte "**Evidenční kód**" produktu z 3. kroku.  
+
+![Mioweb a automatizace](/assets/articles/3f416777f17530e7.png)  5. Vše uložte.
+
+Tím je integrace hotová. Nově vzniklé objednávky se spárovanými produkty se nyní po objednání, zaplacení, nebo stornování budou ve FAPI spouštět i s automatizacemi z kroku 4. Akce u prodejního formuláře.

@@ -1,0 +1,47 @@
+---
+title: Nastavení zasílání e-mailů o příchozích platbách z Fio banky
+url: /article/32-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-fio-banky
+description: V tomto článku si popíšeme, jak nastavit zasílání e-mailů o příchozích platbách z vašeho bankovního účtu u Fio banky. Před nastavením doporučujeme seznámit se s
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 7-platby
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Nastavení zasílání e-mailů o příchozích platbách z Fio banky
+  - Nastavení
+  - Platby
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/32-nastaveni-zasilani-e-mailu-o-prichozich-platbach-z-fio-banky
+order: 46
+updatedAt: 2026-07-13T10:11:55Z
+---
+V tomto článku si popíšeme, jak nastavit zasílání e-mailů o příchozích platbách z vašeho bankovního účtu u Fio banky.
+
+Před nastavením doporučujeme seznámit se s návodem [Import plateb z banky](/article/30-import-plateb-z-banky).
+
+:::tip
+U Fio banky je vhodnější pro získávání informací o došlých platbách použít místo e-mailové schránky API rozhraní. Tento způsob je v principu mnohem jednodušší a spolehlivější. Více se dozvíte v návodu [Jak vytvořit token ve Fio bance](/article/31-jak-vytvorit-token-ve-fio-bance).
+:::
+
+:::danger
+Při importu plateb z Fio banky pomocí zasílaných notifikačních e-mailů se **automaticky nastavuje měna CZK**. Tento způsob importu proto nelze využít pro načítání plateb z bankovních účtů vedených v jiné měně. V takovém případě použijte metodu [importu _API_](/article/31-jak-vytvorit-token-ve-fio-bance).
+:::
+
+1.  Po přihlášení do internetového bankovnictví Fio banky klikněte v záhlaví obrazovky na odkaz **Nastavení**.
+    
+    ![Nastavení zasílání e-mailů o příchozích platbách z Fio banky](/assets/articles/ed339c941cbbf453.png)
+    
+2.  V následujícím dialogovém okně vyberte v menu položku **SMS a e-mailová upozornění**. V části **Pohyby** klikněte na tlačítko **Přidat upozornění**.
+    
+    ![Nastavení zasílání e-mailů o příchozích platbách z Fio banky](/assets/articles/f8a64e58db857ac5.png)
+    
+3.  V poli **Forma kontaktu** vyberte hodnotu **E-mail**.
+4.  Do pole **E-mailová adresa** zadejte e-mailovou adresu, která Vám byla vygenerována při vytváření importu plateb ve Fapi.
+5.  Stiskněte tlačítko **Odeslat**.
+6.  ![Nastavení zasílání e-mailů o příchozích platbách z Fio banky](/assets/articles/eae09bbcad1ed9ba.png)
+    
+7.  Úspěšné uložení nastavení bude potvrzeno dalším dialogovým oknem. Stiskem tlačítka **Zpět** se vrátíte do nastavení.
+    
+    ![Nastavení zasílání e-mailů o příchozích platbách z Fio banky](/assets/articles/76d3eab75b7386b0.png)

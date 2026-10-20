@@ -1,0 +1,138 @@
+---
+title: Vlastní pole
+url: /article/80-vlastni-pole
+description: Máte specifický produkt nebo prodejní proces? Potřebujete získat od klienta informace, které objednávka standardně neobsahuje? Přesně pro tento účel slouží vlas
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Vlastní pole
+  - Nastavení
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/80-vlastni-pole
+order: 69
+updatedAt: 2026-07-13T10:31:14Z
+legacyAnchors:
+  - id: Definice-vlastnch-pol-2eo_P
+    tag: h2
+    text: Definice vlastních polí
+    occurrence: 0
+    headingIndex: 0
+  - id: Penos-vlastnch-pol-do-externch-aplikac-8AaAV
+    tag: h2
+    text: Přenos vlastních polí do externích aplikací
+    occurrence: 0
+    headingIndex: 1
+  - id: Vlastn-pole-v-prodejnm-formuli-k6o73
+    tag: h2
+    text: Vlastní pole v prodejním formuláři
+    occurrence: 0
+    headingIndex: 2
+  - id: Vlastn-pole-v-objednvce-Vrd-D
+    tag: h2
+    text: Vlastní pole v objednávce
+    occurrence: 0
+    headingIndex: 3
+  - id: Vlastn-pole-v-zaslanch-zprvch-GAviv
+    tag: h2
+    text: Vlastní pole v zasílaných zprávách
+    occurrence: 0
+    headingIndex: 4
+---
+Máte specifický produkt nebo prodejní proces? Potřebujete získat od klienta informace, které objednávka standardně neobsahuje?
+
+Přesně pro tento účel slouží _vlastní pole_ v prodejním formuláři. Zákazník do nich může vyplnit jakékoli doplňující údaje, které od něj pro zpracování objednávky potřebujete.
+
+## Definice vlastních polí
+
+Vlastní pole vytvoříte v nabídce **Prodej - Vlastní pole** (tlačítko **Vytvořit vlastní pole**). Na stejném místě můžete vlastní pole také upravovat nebo mazat.
+
+![Vlastní pole](/assets/articles/cf442de844712d92.png)
+
+U vytvářeného vlastního pole vyplňte jeho název (pole **Název**) a podle toho, jaký údaj se bude do vlastního pole ukládat, zvolte vhodný typ vlastního pole (pole **Typ**).
+
+Typem vlastního pole může být:
+
+-   jednořádkový text,
+-   víceřádkový text,
+-   číslo,
+-   datum,
+-   zaškrtávací políčko (checkbox),
+-   výběr jedné možnosti z variant,
+-   výběr více možností z variant,
+-   rozbalovací seznam.
+
+Představuje-li typ vlastního pole výběr z variant, je třeba definovat hodnoty, z nichž bude klient v objednávce vybírat.
+
+:::caution
+U vlastního pole typu _číslo_ lze přípustné hodnoty omezit na celá nebo kladná čísla.
+:::
+
+:::tip
+Alternativně se dají vlastní pole vytvářet přímo v nastavení prodejního formuláře (záložka **Vzhled**).
+:::
+
+## Přenos vlastních polí do externích aplikací
+
+V nastavení vlastního pole je možné v sekci **PŘENOS DAT DO EXTERNÍCH APLIKACÍ** určit, zda se má při zápisu dat do externí aplikace (prostřednictvím akce v prodejním formuláři) přenášet i hodnota vlastního pole a kam se má zapisovat.
+
+:::caution
+Vlastní pole lze přenášet do aplikací [SmartEmailing](/article/52-propojeni-fapi-se-smartemailingem), [Mailchimp](/article/55-propojeni-fapi-s-mailchimp), [Brevo(Sendinblue)](/article/53-propojeni-fapi-s-brevo), [MailerLite](/article/54-propojeni-fapi-s-mailerlite), [Ecomail](/article/100-propojeni-fapi-s-ecomailem) a [Anabix](/article/51-propojeni-fapi-s-anabixem). Formát dat a způsob zápisu údajů se u konkrétních aplikací může lišit.
+
+U [Ecomailu](https://ecomail.cz/?fpr=mr0u2) se vlastní pole nedefinují globálně, ale nad seznamem kontaktů. Proto i přenos vlastních polí lze nastavit jen pro konkrétní seznam. 
+
+U Anabixu lze hodnoty vlastních polí přenášet pouze do objektů _Kontakt_ a _Firma_.
+:::
+
+:::danger
+Pro správný přenos hodnot mezi aplikacemi musí být typ vlastního pole ve FAPI a v cílové aplikaci stejný.
+
+Pokud je typ vlastního pole ve FAPI výběr z hodnot, musí být odpovídající hodnoty založeny i v cílové aplikaci. V opačném případě se údaj nepřenese.
+:::
+
+## Vlastní pole v prodejním formuláři
+
+Do prodejního formuláře se vlastní pole vkládají ve stejnojmenné sekci na záložce **Vzhled** v nastavení prodejního formuláře.
+
+![Vlastní pole](/assets/articles/1bd6da76bc01ed1e.png)
+
+**Název pole** určuje, s jakým názvem se vlastní pole zobrazí v prodejním formuláři. Pokud není název vyplněn, bude se vlastní pole v prodejním formuláři zobrazovat s výchozím názvem.
+
+:::caution
+Vlastní pole se v prodejním formuláři zobrazují v sekci s fakturačními údaji.
+:::
+
+## Vlastní pole v objednávce
+
+Hodnoty vlastních polí vyplněné v objednávce najdete na stránce s detailními informacemi o faktuře a také v exportu faktur do formátu CSV.
+
+![Vlastní pole](/assets/articles/46e048f5c150fd2e.png)
+
+Pokud zvolíte možnost **Upravit,** můžete editovat hodnoty v polích či přidávat další pole v editaci faktury.
+
+![Vlastní pole](/assets/articles/c545593659679d5e.png)
+
+  
+  
+
+## Vlastní pole v zasílaných zprávách
+
+Hodnoty vlastních polí z objednávky můžete vložit také do zasílaných e-mailů, a to prostřednictvím následujících zástupných symbolů v šablonách zpráv a upomínek.
+
+-   \{customField:x\} - hodnota vlastního pole (s ID = x)
+-   \{customFieldsList\} - hodnoty všech vlastních polí vyplněných v objednávce ve formě odrážkového seznamu
+
+:::tip
+Seznam všech zástupných symbolů, které můžete použít, se zobrazuje pod editorem šablon zpráv a upomínek. Více informací najdete v článcích [Šablony zpráv](/article/17-sablony-zprav) a [Upomínky](/article/19-upominky).
+:::
+
+:::danger
+Vlastní pole:
+
+-   se nepropisují do pdf faktury,
+-   jsou součástí exportu faktur.
+:::

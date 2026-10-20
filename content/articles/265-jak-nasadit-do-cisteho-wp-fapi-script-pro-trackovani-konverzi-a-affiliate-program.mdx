@@ -1,0 +1,73 @@
+---
+title: Jak nasadit do Wordpressu FAPI script pro trackování konverzí a Affiliate program
+url: /article/265-jak-nasadit-do-cisteho-wp-fapi-script-pro-trackovani-konverzi-a-affiliate-program
+description: Pokud používáte WordPress (WP) a potřebujete na svůj web vložit externí skripty – například ty, které poskytujeme z FAPI (např. pro měření/trackování nebo jinou
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - Jak nasadit do Wordpressu FAPI script pro trackování konverzí a Affiliate program
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/265-jak-nasadit-do-cisteho-wp-fapi-script-pro-trackovani-konverzi-a-affiliate-program
+order: 228
+updatedAt: 2026-07-13T12:06:45Z
+legacyAnchors:
+  - id: een-g8eQ5
+    tag: h2
+    text: "Řešení:"
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-plugin-dl-QgBug
+    tag: h2
+    text: Co plugin dělá
+    occurrence: 0
+    headingIndex: 1
+  - id: Jak-ovit-e-to-funguje-C1Qb1
+    tag: h2
+    text: Jak ověříte, že to funguje
+    occurrence: 0
+    headingIndex: 2
+---
+Pokud používáte **WordPress (WP)** a potřebujete na svůj web **vložit externí skripty** – například ty, které poskytujeme z FAPI (např. pro měření/trackování nebo jinou integraci), pak je důležité to udělat **správným a bezpečným způsobem**.
+
+„Čistý“ WordPress neumí sám od sebe vkládat vlastní JavaScript na všechny stránky webu. Ruční vkládání \<script\> tagů do šablon (např. header.php/footer.php) je nespolehlivé, rozbíjí se po aktualizacích a špatně se verzuje.
+
+Pro správné měření potřebujete bezpečně a udržitelně vložit **dva externí skripty FAPI** na **všechny** veřejné stránky:
+
+```text
+<script src="https://form.fapi.cz/js/order-conversion/fapi-rewards-tracking.js"></script>
+
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+## **Řešení:**
+
+1.  [Stáhněte si náš miniplugin pro WordPress.](https://drive.google.com/file/d/1PteuhKZED2BXUiYiScXpWc2BUg1_frVF/view?usp=sharing)
+2.  Přihlaste se do WordPressu.
+3.  V levém menu přejděte na **Pluginy** → **Přidat nový**.
+4.  Nahoře u nadpisu **Instalace pluginu** klikněte na tlačítko **Nahrát plugin**.
+5.  Vyberte ZIP soubor pluginu, který jste si stáhli v 1. kroku, a nahrajte ho.
+6.  Aktivujte plugin (WordPress vás k tomu vyzve po nahrání).
+
+## **Co plugin dělá**
+
+Po aktivaci se na všech stránkách vašeho webu do hlavičky \<head\> automaticky vloží FAPI skripty:
+
+```text
+<script defer src="https://form.fapi.cz/js/order-conversion/fapi-rewards-tracking.js"></script>
+<script defer src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+Tím se zajistí správné trackování konverzí i affiliate programu.
+
+## **Jak ověříte, že to funguje**
+
+1.  Otevřete libovolnou stránku svého webu.
+2.  V prohlížeči stiskněte **Ctrl+U** (nebo pravé tlačítko → „Zobrazit zdroj/Inspect“).
+3.  V sekci \<head\> najděte tyto řádky:
+
+```text
+<script src="https://form.fapi.cz/js/order-conversion/fapi-rewards-tracking.js"></script>
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```

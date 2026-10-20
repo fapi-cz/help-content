@@ -1,0 +1,174 @@
+---
+title: Propojení FAPI se Skool
+url: /article/327-propojeni-fapi-se-skool
+description: Skool je online komunitní platforma, ve které můžete vytvářet vlastní komunity, kurzy a události. Některé komunity mohou být zdarma, jiné placené, takže se Skoo
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 5-nastaveni
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Propojení FAPI se Skool
+  - Automatizace
+  - Nastavení
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/327-propojeni-fapi-se-skool
+order: 283
+updatedAt: 2026-08-04T09:43:45Z
+legacyAnchors:
+  - id: Videonpovda-wn1Jt
+    tag: h2
+    text: Videonápověda
+    occurrence: 0
+    headingIndex: 0
+  - id: Co-budete-potebovat-hjZEF
+    tag: h2
+    text: Co budete potřebovat
+    occurrence: 0
+    headingIndex: 1
+  - id: 2-Propojen-Skoolu-s-FAPI-dFr4J
+    tag: h2
+    text: 1.Propojení Skool s FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 1-Zskn-webhook-URL-ve-Skoolu-nxrii
+    tag: h2
+    text: 2. Získání webhook URL ve Skool
+    occurrence: 0
+    headingIndex: 3
+  - id: 3-Nastaven-akce-v-prodejnm-formuli-DarPs
+    tag: h2
+    text: 3. Nastavení akce v prodejním formuláři
+    occurrence: 0
+    headingIndex: 5
+  - id: 4-Oven-e-se-pozvnka-odeslala-a9pS0
+    tag: h2
+    text: 4. Ověření, že se pozvánka odeslala
+    occurrence: 0
+    headingIndex: 6
+  - id: Doporuen-k-nastaven-b2PPe
+    tag: h2
+    text: Doporučení k nastavení
+    occurrence: 0
+    headingIndex: 7
+  - id: Shrnut-zrUl0
+    tag: h2
+    text: Shrnutí
+    occurrence: 0
+    headingIndex: 8
+---
+Skool je online komunitní platforma, ve které můžete vytvářet vlastní komunity, kurzy a události. Některé komunity mohou být zdarma, jiné placené, takže se Skool hodí například pro členské sekce, online kurzy, mentoringové skupiny nebo placené komunity.
+
+Díky propojení s FAPI nemusíte zákazníky do Skool přidávat ručně. Po nastavené události ve FAPI, například po zaplacení objednávky, se zákazníkovi automaticky odešle pozvánka do Skool.
+
+:::tip
+## Videonápověda
+
+Celý postup najdete také ve videonápovědě.
+
+  
+
+<Video src="https://www.youtube.com/embed/xc_x1u2YuUQ" />
+:::
+
+  
+
+## Co budete potřebovat
+
+Pro propojení potřebujete:
+
+-   aktivní účet ve FAPI,
+-   aktivní účet ve [Skool](https://www.skool.com/),
+-   placený tarif Skool **Pro**,
+-   aktivní webhook ve Skool.
+
+  
+
+## 1.Propojení Skool s FAPI
+
+Ve FAPI přejděte do karty:
+
+[**Nastavení → Propojení aplikací**](https://web.fapi.cz/settings/connections?projectId=all)
+
+Najděte propojení **Skool** a klikněte na **Připojit**.
+
+![Propojení FAPI se Skool](/assets/articles/665cedb0ebfa1fad.png)
+
+Do pole vložte zkopírovaný **webhook URL** ze Skool a nastavení uložte.
+
+Jak webhook získat je popsáno v dalším kroku.
+
+![Propojení FAPI se Skool](/assets/articles/0365539ba4a74b69.png)
+
+Po uložení je propojení FAPI se Skool nastavené.
+
+## 2\. Získání webhook URL ve Skool
+
+  
+
+Přihlaste se do svého účtu ve Skool a otevřete nastavení uživatele.
+
+![Propojení FAPI se Skool](/assets/articles/5160f8beb60d6385.png)
+
+Přejděte do části:
+
+**Settings → Plugins → Webhook**
+
+![Propojení FAPI se Skool](/assets/articles/ec2e6e8d1e1aef64.png)
+
+Webhook aktivujte a zkopírujte webhook URL.
+
+  
+
+![Propojení FAPI se Skool](/assets/articles/0d81edd34965400e.png)
+
+## 3\. Nastavení akce v prodejním formuláři
+
+Aby se zákazníkovi po objednávce odeslala pozvánka do Skool, nastavte akci v konkrétním prodejním formuláři.
+
+Ve FAPI otevřete prodejní formulář a přejděte do **4\. krok Akce**
+
+Přidejte novou akci a vyberte událost, při které se má akce **Odeslat pozvánku do Skool spustit a**  pozvánka odeslat.
+
+![Propojení FAPI se Skool](/assets/articles/069f49b66d758721.png)
+
+## 4\. Ověření, že se pozvánka odeslala
+
+Po nastavení doporučujeme vytvořit testovací objednávku.
+
+Postup:
+
+1.  Vytvořte objednávku přes prodejní formulář.
+2.  Objednávku uhraďte nebo ji [ve FAPI označte jako zaplacenou](/article/219-jak-oznacit-objednavku-jako-zaplacenou).
+3.  Otevřete doklad ve FAPI.
+4.  Zkontrolujte [**historii změn**](/article/283-jak-zjistit-jake-akce-probehly-u-dokladu) u dokladu.
+5.  Ověřte, že se spustila akce pro odeslání pozvánky do Skool.
+
+V historii změn u dokladu uvidíte, zda se akce pro Skool spustila.
+
+  
+
+:::tip
+## Doporučení k nastavení
+
+Pozvánku do Skool doporučujeme odesílat až po zaplacení objednávky. Díky tomu získá zákazník přístup až ve chvíli, kdy je objednávka uhrazená.
+
+Pokud prodáváte přístup do placené komunity, kurzu nebo mentoringové skupiny, nastavte akci v prodejním formuláři právě na událost **Při zaplacení objednávky**.
+:::
+
+  
+
+## Shrnutí
+
+Propojení FAPI se Skool slouží k automatickému odesílání pozvánek do Skool komunity.
+
+Základní postup:
+
+1.  Ve Skool si zkopírujte webhook URL.
+2.  Ve FAPI propojte Skool v části **Nastavení → Propojení aplikací**.
+3.  V prodejním formuláři nastavte akci **Odeslat pozvánku do Skool**.
+4.  Propojení otestujte objednávkou.
+5.  Ověřte spuštění akce v historii změn u dokladu.
+
+Díky propojení můžete zákazníkům po zaplacení automaticky posílat pozvánku do vaší Skool komunity bez ručního přidávání členů.

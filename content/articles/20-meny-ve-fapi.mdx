@@ -1,0 +1,107 @@
+---
+title: Měny ve FAPI
+url: /article/20-meny-ve-fapi
+description: Měna je při prodeji a fakturaci jedním ze základních parametrů. FAPI přitom umožňuje prodávat, přijímat platby a vystavovat prodejní doklady v široké škále měn.
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Měny ve FAPI
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/20-meny-ve-fapi
+order: 74
+updatedAt: 2026-07-13T10:35:42Z
+legacyAnchors:
+  - id: Mna-v-prodejnm-formuli-B-iJy
+    tag: h2
+    text: Měna v prodejním formuláři
+    occurrence: 0
+    headingIndex: 3
+---
+Měna je při prodeji a fakturaci jedním ze základních parametrů. FAPI přitom umožňuje prodávat, přijímat platby a vystavovat prodejní doklady v široké škále měn.
+
+:::caution
+Množina skutečně použitelných měn závisí na konkrétní situaci, zejména na podpoře měn ze strany platební brány, popř. nastavení bankovních účtů, na které přijímáte platby za objednávky.
+:::
+
+V aplikaci se s měnou setkáte hned na několika místech. V tomto článku si ukážeme, kde se měna nastavuje a jak se ve FAPI používá.
+
+## Výchozí měna
+
+Od sídla fakturujícího subjektu se odvíjí _výchozí měna_. Nastavuje se automaticky na základě státu, který je vyplněn ve fakturačních údajích (nabídka **Nastavení - Fakturační údaje**).
+
+-   Výchozí měna určuje zdroj (ČNB, nebo ECB), ze kterého se automaticky načítají [kurzy cizích měn](/article/22-kurzy-men). Kurzy jednotlivých měn jsou vždy vyčísleny vzhledem k výchozí měně.
+-   Ve výchozí měně se zobrazují údaje na nástěnce a ve statistikách.
+-   U plátců DPH se na výchozí měnu přepočítává DPH na fakturách vystavených v cizí měně, a to podle platného měnového kurzu.
+-   Na základě ceny prodejní položky ve výchozí měně a měnového kurzu dokáže FAPI automaticky vypočítat cenu položky v dalších měnách (pokud není cena pro danou měnu zadána v nastavení položky) - režim "plovoucích cen".
+
+:::caution
+Výchozí měna může být pouze CZK (je-li jako stát ve fakturačních údajích vyplněna Česká republika) nebo EUR (u všech ostatních států).
+:::
+
+## Zaokrouhlování faktur
+
+V základním nastavení FAPI najdete mimo jiné také volbu pro zaokrouhlování celkové částky faktury (nabídka **Nastavení - Nastavení fakturace** - sekce **Zaokrouhlování faktur**), kde můžete nastavit různé způsoby zaokrouhlení pro různé měny.
+
+![Měny ve FAPI](/assets/articles/3fa03e6ec6ef64a9.png)
+
+:::caution
+Není-li zaokrouhlení pro příslušnou měnu nastaveno, celková částka faktur vystavených v této měně se nezaokrouhluje.
+:::
+
+## Cena prodejní položky
+
+Prodejní položka se prodává za cenu, která je u ní nastavena, přičemž cenu v různých měnách je možné určit dvěma způsoby:
+
+-   zadat pevnou hodnotu pro příslušnou měnu,
+-   zadat cenu ve výchozí měně a pro další měny nechat cenu vyčíslit na základě měnového kurzu - režim "plovoucích cen".
+
+Cenu prodejní položky nastavíte pomocí volby **Cena za položku** v jejím detailu (nabídka **Prodej - Položky** - tlačítko **Upravit**).
+
+![Měny ve FAPI](/assets/articles/2bdc942ca6b60e22.png)
+
+:::caution
+Položka se primárně prodává za zadanou pevnou cenu. Pokud cena pro danou měnu není vyplněna, vypočítá se z ceny ve výchozí měně pomocí aktuálního měnového kurzu ("plovoucí cena").
+:::
+
+## Měna v prodejním formuláři
+
+U automatizovaného prodeje pomocí prodejního formuláře je třeba určit, v jaké měně se budou vystavovat objednávky. K tomu slouží volba **Nastavení měny** na záložce **Platba, doprava a fakturace** v nastavení prodejního formuláře.
+
+![Měny ve FAPI](/assets/articles/dfec757c7f80ea9e.png)
+
+Měna může být v prodejním formuláři zadána 3 způsoby:
+
+-   **automaticky rozhodnout dle sídla zákazníka** - Měna se vyhodnotí na základě státu zadaného klientem v jeho fakturační adrese.
+    
+    :::caution
+    Přiřazení měn jednotlivým státům je možné uživatelsky nastavit v nabídce **Nastavení - Nastavení fakturace -** sekce **Měny států**.
+    :::
+    
+    ![Měny ve FAPI](/assets/articles/f04bb3a914325027.png)
+    
+-   **nechat zvolit zákazníka** - Měnu zvolí v objednávce sám zákazník. Nabídku měn dostupných v objednávkovém formuláři můžete omezit.
+-   **vždy (vybraná měna)** - Pro všechny objednávky vystavené z prodejního formuláře bude použita měna zadaná v nastavení prodejního formuláře.
+
+## Nastavení bankovních účtů pro různé měny
+
+Prodáváte-li v různých měnách, potřebujete svým zákazníkům poskytnout také možnost v těchto měnách zaplatit.
+
+U online plateb řeší tuto problematiku platební brána, která podporuje platby i v cizích měnách. (Nabídka podporovaných měn se může u různých platebních bran lišit.)
+
+Tradiční způsob platby bankovním převodem zajišťuje nastavení bankovních účtů pro cizí měny (nabídka **Nastavení - Způsoby platby**).
+
+![Měny ve FAPI](/assets/articles/b8c2f02dd750ed42.png)
+
+Na fakturách a v komunikaci s klientem (na základě zástupného symbolu v [šablonách zpráv](/article/17-sablony-zprav)) se automaticky uvádí číslo bankovního účtu pro danou měnu zadané v nastavení.
+
+:::caution
+V rámci projektu lze nastavit jiné bankovní účty než v základním nastavení.
+:::

@@ -1,0 +1,51 @@
+---
+title: "FAPI Member: Zakládání členství"
+url: /article/99-fapi-member-zakladani-clenstvi
+description:  Jak vygeneruji přístupy do členské sekce? Hlavní výhodou FAPI pluginu ve spolupráci s FAPI aplikací je možnost vytvářet automaticky přístupy po zaplacení objed
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - "FAPI Member: Zakládání členství"
+  - FAPI Member
+  - Online prodej
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/99-fapi-member-zakladani-clenstvi
+order: 38
+updatedAt: 2026-07-13T09:52:52Z
+---
+##  Jak vygeneruji přístupy do členské sekce?
+
+Hlavní výhodou FAPI pluginu ve spolupráci s FAPI aplikací je možnost vytvářet automaticky přístupy po zaplacení objednávky. Aby se tak stalo, je zapotřebí dvou věcí:
+
+-   [Propojit FAPI Member s aplikací FAPI](/article/97-fapi-member-propojeni-s-fapi)
+-   [Mít vytvořenou alespoň jednu členskou sekci](/article/98-fapi-member-nastaveni-clenske-sekce)
+
+Pokud máte již [FAPI Member propojený s FAPI](/article/97-fapi-member-propojeni-s-fapi) a [členskou sekci vytvořenou](/article/98-fapi-member-nastaveni-clenske-sekce), můžete přejít k nastavení automatizace celého procesu.  
+
+Přejděte do záložky **“Prodej”** a editujte svůj stávající, nebo vytvořte nový prodejní FAPI formulář. 
+
+V editaci formuláře přejděte do kroku č.4 **“Akce”**. V dolní tabulce zvolte událost **“zaplacení objednávky”**. V druhém sloupci zvolte **“přidat do členské sekce FAPI Member”**. 
+
+Nyní se vám objeví další roletka, kde vyberete požadovanou sekci/úroveň, kam chcete uživatele přidávat. V poli níže můžete zvolit, zda má být přístup časově omezen. 
+
+:::danger
+Když pole necháte prázdné, bude členství časově neomezené.
+:::
+
+![FAPI Member: Zakládání členství](/assets/articles/6fa54bdbea2f2ace.png)
+
+:::tip
+V tomto případě jsme tedy nastavili následující: „Jestliže někdo uskuteční objednávku přes tento formulář, tak na základě události **zaplacení objednávky** se provede akce **vytvoření přístupů** uživateli na zadanou e-mailovou adresu”. Po vytvoření člena v členské sekci, přijdou klientovi přístupy do členské sekce na e-mail, který vyplnil v objednávce.
+:::
+
+:::danger
+**Poznámka k doručování e-mailů (SMTP)**
+
+Ve výchozím nastavení WordPressu je odesílání e-mailů z FAPI Memberu funkční – tedy není nutné ihned nic nastavovat. Přesto **pro vyšší doručitelnost a jistotu, že e-maily neskončí ve spamu**, doporučujeme nastavit vlastní SMTP připojení přes specializovaný plugin (např. WP Mail SMTP) a propojit jej s vaší e-mailovou službou (např. Gmail, MailerSend, Sendinblue apod.).
+:::

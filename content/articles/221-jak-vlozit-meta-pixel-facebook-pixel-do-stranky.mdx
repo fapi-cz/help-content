@@ -1,0 +1,113 @@
+---
+title: Jak vložit Meta pixel (Facebook pixel) do stránky
+url: /article/221-jak-vlozit-meta-pixel-facebook-pixel-do-stranky
+description: Získání Meta Pixelu Otevřte Meta Business Manager > Nastavení firmy V nástrojích > Správce událostí (Events Manager) Zdroje dat > Zvolte nebo vytvořte Meta Pixe
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Jak vložit Meta pixel (Facebook pixel) do stránky
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/221-jak-vlozit-meta-pixel-facebook-pixel-do-stranky
+order: 148
+updatedAt: 2026-07-13T11:07:26Z
+legacyAnchors:
+  - id: 1-Zskn-Meta-Pixelu-s7Qpa
+    tag: h2
+    text: Získání Meta Pixelu
+    occurrence: 0
+    headingIndex: 0
+  - id: 2-Kam-Meta-Pixel-vloit-IR_0j
+    tag: h2
+    text: Kam Meta Pixel vložit
+    occurrence: 0
+    headingIndex: 1
+  - id: 3-Varianty-nasazen-Meta-Pixelu-6wyaA
+    tag: h2
+    text: Varianty nasazení Meta Pixelu
+    occurrence: 0
+    headingIndex: 2
+  - id: -Varianta-A-Pm-vloen-do-HTML-FlDyb
+    tag: h3
+    text: "✅ Varianta A: Přímé vložení do HTML"
+    occurrence: 0
+    headingIndex: 3
+  - id: 4-Oven-e-Meta-Pixel-funguje-Dlcr7
+    tag: h2
+    text: Ověření, že Meta Pixel funguje
+    occurrence: 0
+    headingIndex: 4
+  - id: Pixel-Facebook-Helper-nutn-KWP8t
+    tag: h3
+    text: Meta pixel Helper
+    occurrence: 0
+    headingIndex: 5
+---
+<Video src="https://www.youtube.com/embed/TYAJEzelBwo" />
+
+## **Získání Meta Pixelu**
+
+1.  Otevřte **Meta Business Manager \> Nastavení firmy**
+2.  **V nástrojích \> Správce událostí (Events Manager)**
+3.  Zdroje dat \> Zvolte nebo vytvořte **Meta Pixel**
+4.  Aktivní integrace \> Spravovat integrace \> Meta Pixel
+5.  Zkopírujte si svůj **Pixel ID** nebo celý kód
+
+:::caution
+Pro ruční vložení na web kopírujte **základní kód Pixelu** (ne jen ID).
+
+  
+
+Meta vás občas automaticky přepne do jiné firmy/účtu. Před kopírováním kódu si zkontrolujte, že jste ve správném Business účtu a u správného Pixelu.
+:::
+
+## **Kam Meta Pixel vložit**
+
+Pixel se vkládá **do hlavičky webu (\<head\>)** **na všech stránkách**, kde chcete měřit chování uživatelů.
+
+:::caution
+**Doporučení**
+
+Meta Pixel mějte nasazený na webu i v případě, že používáte Conversion API (CAPI). Pixel na webu pomáhá Metě správně párovat návštěvy a měření/optimalizace pak fungují lépe.
+:::
+
+## **Varianty nasazení Meta Pixelu**
+
+### **✅ Varianta A: Přímé vložení do HTML**
+
+Vlož kód pixelu **před \</head\>**:
+
+```text
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+```
+
+:::danger
+**PIXEL\_ID** nahraď te **svým ID**.
+:::
+
+## **Ověření, že Meta Pixel funguje**
+
+### **Meta pixel Helper**
+
+-   Nainstalujte rozšíření **Meta pixel Helper (Chrome)**
+-   Otevři stránku
+
+**Zkontrolujte:**
+
+-   že se pixel načetl
+-   že běží PageView
+-   že nejsou chyby

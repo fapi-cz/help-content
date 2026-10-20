@@ -1,0 +1,48 @@
+---
+title: Posílání SMS zpráv z FAPI
+url: /article/49-posilani-sms-zprav-z-fapi
+description: Chcete se svými zákazníky komunikovat v průběhu prodejního procesu také formou SMS zpráv? FAPI vám tuto možnost poskytuje. SMS zprávy můžete ve FAPI využít ke t
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Posílání SMS zpráv z FAPI
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/49-posilani-sms-zprav-z-fapi
+order: 97
+updatedAt: 2026-07-13T10:39:17Z
+---
+Chcete se svými zákazníky komunikovat v průběhu prodejního procesu také formou SMS zpráv? FAPI vám tuto možnost poskytuje.
+
+SMS zprávy můžete ve FAPI využít ke těmto účelům:
+
+-   pro posílání libovolných informací týkajících se zpracování objednávky
+-   pro zasílání upomínek plateb faktur
+-   pro zasílání šablon zpráv
+
+Předpokladem pro používání SMS zpráv ve FAPI je aktivace služby pro zasílání SMS. V současnosti FAPI umožňuje propojení s externími službami se srovnatelnými funkcemi. Je pouze na vás, jakou z těchto služeb si vyberete. Více o nastavení služeb:
+
+-   [SMSbrána.cz](/article/50-jak-si-aktivovat-sluzbu-smsbrana-cz)
+-   [GoSMS](/article/149-propojeni-fapi-se-sluzbou-gosms)
+-   [BulkGate](/article/125-jak-si-aktivovat-sluzbu-bulkgate)
+
+## SMS zprávy pro šablony zpráv
+
+Pod sekcí **Prodej - Šablony zpráv** můžete nastavit odesílání SMS na tel. číslo klienta. Více naleznete v sekci [Šablony zpráv](/article/17-sablony-zprav).
+
+![Posílání SMS zpráv z FAPI](/assets/articles/1a3a604c0f78fa9e.png)
+
+## SMS zprávy jako akce v prodejním formuláři
+
+Chcete-li svým zákazníkům posílat SMS zprávy při vystavení, zaplacení či stornování objednávky, resp. konkrétního produktu, vytvořte akci typu **odeslat SMS klientovi** v nastavení prodejního formuláře. Obsah posílané zprávy nadefinujte v přiřazené sadě šablon zpráv (jako šablonu typu **Vlastní SMS šablona**). Okamžik, kdy se má SMS zpráva poslat, definujte pomocí události (např. při zaplacení objednávky).
+
+![Posílání SMS zpráv z FAPI](/assets/articles/50008e099e13852b.png)
+
+## SMS zprávy jako upomínky
+
+Další způsob využití SMS zpráv ve FAPI představují upomínky zaplacení vystavených faktur. K tomu je třeba vytvořit v sadě upomínek přiřazené prodejnímu formuláři (u ruční fakturace se používá **Výchozí sada upomínek**) šablonu upomínky typu SMS. Zpráva na základě této šablony se zákazníkovi pošle v čase definovaném v nastavení upomínky, tj. zadaný počet dní před, resp. po dosažení data splatnosti faktury.
+
+![Posílání SMS zpráv z FAPI](/assets/articles/21f9e6ab2f41eedd.png)

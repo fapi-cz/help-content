@@ -1,0 +1,187 @@
+---
+title: "FAPI Member: Postupné uvolňování obsahu"
+url: /article/195-fapi-member-postupne-uvolnovani-obsahu
+description: Jak vytvořit členskou sekci, která automaticky uvolňuje obsah členům podle uběhnutých dní nebo splněných úkolů? Jde o tzv. drip content = postupné uvolňování ob
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - "FAPI Member: Postupné uvolňování obsahu"
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/195-fapi-member-postupne-uvolnovani-obsahu
+order: 121
+updatedAt: 2026-08-21T10:19:30Z
+legacyAnchors:
+  - id: Jak-vytvoit-lenskou-sekci-kter-automaticky-uvoluje-obsah-lenm-p-4H3yC
+    tag: h2
+    text: Jak vytvořit členskou sekci, která automaticky uvolňuje obsah členům podle uběhnutých dní nebo splněných úkolů?
+    occurrence: 0
+    headingIndex: 0
+  - id: Vytvome-si-lenskou-sekci-a-rovn-uPIy-
+    tag: h2
+    text: Vytvoříme si členskou sekci a úrovně
+    occurrence: 0
+    headingIndex: 1
+  - id: Vytvome-si-strnky-s-obsahem-kter-chceme-postupn-uvolovat-1wRO1
+    tag: h2
+    text: Vytvoříme si stránky s obsahem, který chceme postupně uvolňovat
+    occurrence: 0
+    headingIndex: 2
+  - id: Piadme-jednotliv-strnky-k-rovnm-UuUpv
+    tag: h2
+    text: Přiřadíme jednotlivé stránky k úrovním
+    occurrence: 0
+    headingIndex: 3
+  - id: Nastavme-automatick-uvolnn-l-rovn-uBmXS
+    tag: h2
+    text: Nastavíme automatické uvolnění čl. úrovně
+    occurrence: 0
+    headingIndex: 4
+  - id: Jak-funguj-vechny-3-monosti-postupnho-uvolovn-K4BJK
+    tag: h3
+    text: Jak fungují všechny 3 možnosti postupného uvolňování
+    occurrence: 0
+    headingIndex: 5
+  - id: Nastaven-automatizace-ve-FAPI-UiE7R
+    tag: h2
+    text: Nastavení automatizace ve FAPI
+    occurrence: 0
+    headingIndex: 6
+  - id: Jak-zobrazit-kdy-se-odemkne-dal-rove-lenstv-zE4-D
+    tag: h2
+    text: Jak zobrazit, kdy se odemkne další úroveň členství?
+    occurrence: 0
+    headingIndex: 7
+---
+## Jak vytvořit členskou sekci, která automaticky uvolňuje obsah členům podle uběhnutých dní nebo splněných úkolů?
+
+Jde o tzv. drip content = postupné uvolňování obsahu.
+
+V tomto návodu vám ukážu jak si vytvořit členskou sekci, která automaticky uvolňuje obsah členům. Na základě toho jak dlouho je člen v členské sekci a nebo zda potvrdil splnění úkolu kliknutím na tlačítko.
+
+**Jak tedy na to:**
+
+1.  vytvoříme si členskou sekci a úrovně
+2.  vytvoříme si stránky s obsahem, který chceme postupně uvolňovat
+3.  přiřadíme jednotlivé stránky k úrovním
+4.  nastavíme automatické uvolnění čl. úrovně
+5.  nastavení automatizace ve FAPI
+
+:::caution
+Funkce je dostupná od verze FAPI Member **1.9.42**
+:::
+
+## Vytvoříme si členskou sekci a úrovně
+
+Vytvořte si členskou sekci a k ní jednotlivé úrovně.
+
+Například budu mít 5 denní výzvu, kdy každý den chci aby členovi uvolnil nový obsah, ten obsah bude ukrytý pod jednotlivými úrovněmi pro každý den.
+
+V tomto případě bude naše 5denní výzva takzvaný [evergreen](https://fapi.cz/blog/jak-efektivne-automatizovat-evergreen-placeny-obsah-pomoci-fapi/), tedy poběží 24/7.
+
+Vytvořím si tedy členskou sekci, kterou si v tomto případě pojmenuji "5denní výzva". Do této členské sekce vytvořím 5 úrovní (pro každý den jednu úroveň).
+
+Pokud chcete aby 5denní výzva začala ihned po registraci, vytvořte si obdobnou strukturu:
+
+-   5denní výzva
+    -   0\. den (ihned po registraci)
+    -   1\. den
+    -   2\. den
+    -   3\. den
+    -   4\. den
+    
+
+Pokud by jsme chtěli aby výzva začala například až na druhý den, tak si strukturu členské sekce vytvořte takto:
+
+-   5denní výzva
+    -   1\. den
+    -   2\. den
+    -   3\. den
+    -   4\. den
+    -   5\. den
+    
+
+Po registraci by dostali přístup pouze do členské sekce a na druhý den rovnou přístup k 1. dní ve výzvě.
+
+Já tvořím evergreen 5 denní výzvu a strukturu jsem ještě více rozšířil takto:
+
+![Ukázka struktury 5denní výzvy](/assets/articles/862588a8d932cb97.png)
+
+V mém případě tedy 5 denní výzva začne ihned. Po registraci bude mít člen hned přístup k 1. dní ve výzvě. Na konci každé stránky, které se bude věnovat jednomu dní (můžete mít i více stránek pro danou úrověň), bude tlačítko, kterým si budou moci otevřít bonusový obsah (***TIP***_: můžeme sledovat jak daleko jednotliví členové dojdou_).
+
+## Vytvoříme si stránky s obsahem, který chceme postupně uvolňovat
+
+Osobně budu mít vždy pro jeden den, resp. pro jednu úrovneň pouze jednu stránku. Tedy struktura stránek, přesně kopíruje strukturu členské sekce. Vytvořím si tedy pro každou úroveň jednu stránku + stránku pro členskou sekci "Nástěnku".
+
+![Struktura stránek pro členskou sekci](/assets/articles/c62f5ebf0285439e.png)
+
+## Přiřadíme jednotlivé stránky k úrovním
+
+Přejdeme zpátky do pluginu **FAPI Member** - **Členské sekce** - **Přiřazené stránky a příspěvky** - **vybereme úroveň a přiřadíme správnou stránku**. A postupně nastavíme pro každou úroveň správnou stránku.
+
+![Návod jak nastavit úroveň pro stránku ve FAPI Member](/assets/articles/f015498a1398d997.png)
+
+## Nastavíme automatické uvolnění čl. úrovně
+
+Přejdeme zpátky do pluginu **FAPI Member** - **Členské sekce** - **Uvolňování obsahu** - **vybereme úroveň a nastavíme kdy se má členovi zpřístupnit**.
+
+Možnosti zpřístupnění máme 3:
+
+-   počtem dní od registrace do členské sekce
+-   k zadanému datumu
+-   kliknutím na tlačítko
+
+Pro 0. den, 1. den, ... zvolím zpřístupnění po dnech.
+
+![Jak nastavit odemknutí obsahu po uplynutí x dní](/assets/articles/4d3569f9c23afd5c.png)
+
+Členské úroveň se členovi odemkne x dní po registraci do členské sekce
+
+Pro 0. den - Bonus. 1. den - Bonus, ... zvolím možnost zpřístupnění po kliknutí na tlačítko.
+
+![Jak nstavnit odemknutí obsahu tlačítkem](/assets/articles/5e68ad42b058cef4.png)
+
+Členské úroveň se členovi odemkne po kliknutí na tlačítko
+
+Pokud plánujete kurz, který staruje v budoucnu, můžete si u jednotlivých úrovní nastavit i datum, kdy se má úroveň jednotlivým členům automaticky odemknout.
+
+![Jak nastavit odemknutí obsahu pevným datem](/assets/articles/155a12e699ae8ba2.png)
+
+Členské úroveň se odemkne všem členům v zadaný den
+
+### Jak fungují všechny 3 možnosti postupného uvolňování
+
+<Video src="https://www.youtube.com/embed/AX3njo3GHMI" />
+
+:::danger
+Při automatickém odemknutí do nové členské úrovně, se členovi **neodesílá e-mail** o tom že byl do této čl. úrovně přiřazen.
+
+Odeslání e-mailů si můžete načasovat skrze e-mailové nástroje jako je například [SmartEmailing](/article/52-propojeni-fapi-se-smartemailingem).
+:::
+
+## Nastavení automatizace ve FAPI
+
+Teď už nám stačí pouze nastavit automatizaci ve FAPI.
+
+Přejdeme tedy do prodejního formuláře, skrze který budeme prodávat tuto 5 denní výzvu - **4\. akce** - **sekce Akce**.
+
+Zde přidáme novou událost "při zaplacení objednávky" a přidáme akci "přidat člena do členské sekce FAPI Member" a vybereme sekci "5denní výzva".
+
+![Nastavení autoamtizace členské sekce pro 5 denní výzvu](/assets/articles/189148e6dc6a2714.png)
+
+Nastavení prodejního formuláře uložíme a otestujeme prodej a automatizaci.
+
+:::caution
+Funkce je dostupná od verze FAPI Member **1.9.42**
+:::
+
+## **Jak zobrazit, kdy se odemkne další úroveň členství?**
+
+Pro zobrazení data odemčení další úrovně členství použijte tento shortcode:
+
+```text
+[fapi-member-level-unlock-date level=x]
+```
+
+Shortcode zobrazí datum ve formátu “01.01.2023”. Doporučujeme jej umístit na stránku, kterou členové navštěvují nejčastěji a kde mohou snadno zjistit, kdy získají přístup k další úrovni členství.

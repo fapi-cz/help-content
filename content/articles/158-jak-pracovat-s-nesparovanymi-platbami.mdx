@@ -1,0 +1,84 @@
+---
+title: Jak pracovat s nespárovanými platbami
+url: /article/158-jak-pracovat-s-nesparovanymi-platbami
+description: "Při párování plateb FAPI hledá shodu dvou parametrů přijaté platby: variabilní symbol měna Pokud načteme z banky platbu, která má zadaný variabilní symbol (VS) "
+category: Začínáme
+categorySlug: 4-zaciname
+categorySlugs:
+  - 4-zaciname
+  - 105-casto-kladene-dotazy-faq
+keywords:
+  - Jak pracovat s nespárovanými platbami
+  - Začínáme
+  - Často kladené dotazy (FAQ)
+sourceUrl: https://napoveda.fapi.cz/article/158-jak-pracovat-s-nesparovanymi-platbami
+order: 72
+updatedAt: 2026-07-13T10:35:43Z
+---
+Při párování plateb FAPI hledá shodu dvou parametrů přijaté platby:
+
+-   variabilní symbol
+-   měna
+
+Pokud načteme z banky platbu, která má zadaný variabilní symbol (VS) a měnu shodnou s některou z dosud neuhrazených faktur, automaticky platbu přiřadíme k faktuře, která číslem odpovídá VS v dané platbě. Pak mohou nastat tyto situace:
+
+-   přijatá částka přesně souhlasí s fakturovanou
+-   přijatá částka nesouhlasí (je menší nebo větší) - o takové platbě dáváme vědět do notifikačního "zvonečku", i s poznámkou přeplatek / nedoplatek
+
+![Jak pracovat s nespárovanými platbami](/assets/articles/057401811e4543d9.png)
+
+## Jak vznikají nespárované platby
+
+U plateb, které zákazníci hradí ručně bankovním převodem bohužel velmi často dochází k lidským chybám. O nespárované platbě se dozvíte z notifikací přímo v administraci, ze "zvonečku".
+
+![Jak pracovat s nespárovanými platbami](/assets/articles/58886db66c7b1d81.png)
+
+Příčiny toho, že není možné platbu správně spárovat s dokladem ve FAPI:
+
+1.  variabilní symbol u platby nesouhlasí s žádným číslem existující neuhrazené faktury
+    1.  VS je chybně – chybí nebo přebývají číslice, pořadí číslic je přehozené
+    2.  VS už byl použitý dříve a pod tímto VS už existuje zaplacený doklad
+    
+2.  u platby úplně chybí VS
+
+## Jak platby spárovat ručně
+
+FAPI všechny platby s chybou shromažďuje na jednom místě – Platby \> [Platby k vyřešení](https://web.fapi.cz/payment/unresolved?projectId=all). Všechny nedořešené platby  najdete v jedné tabulce, kde jeden řádek = jedna konkrétní platba.
+
+![Jak pracovat s nespárovanými platbami](/assets/articles/47a51df79219246f.png)
+
+1 - kliknutím na zvýrazněné číslo platby se dostanete do detailu této konkrétní platby
+
+2 - v tomto sloupci zobrazíme číslo dokladu, pokud je platba k nějakému dokladu už přiřazená (typicky jen u přeplatků a nedoplatků)
+
+3 - v poznámce najdete důvod, proč je platba v této tabulce
+
+4 - kliknutím na Skrýt platbu z tabulky odstraníte. Platba ve FAPI zůstane, jen ji schováte v této tabulce. Znovu zobrazit ji můžete zaškrtnutím ZOBRAZIT SKRYTÉ (hned nad tabulkou)
+
+5 - zobáčkem dolů označíte platbu jako vyřešenou a zmizí z tabulky plateb k vyřešení.
+
+  
+  
+
+### Detail nevyřešené platby
+
+Po kliknutí na modře podtržené číslo platby (bod 1 z předchozího obrázku) se otevře detail platby. V něm jsou vidět užitečné podrobnosti, zejména číslo protiúčtu, odkud peníze přišly a poznámka zadaná odesilatelem platby.
+
+![Jak pracovat s nespárovanými platbami](/assets/articles/022fd30baf603211.png)
+
+V detailu jde vyplnit dvě políčka: 
+
+1.  zadat variabilní symbol neuhrazené faktury, se kterou máme platbu spojit,
+2.  přidat textový komentář (např. "přeplatek, vrátit",)
+
+  
+
+a kliknout na tlačítka:
+
+-   Spárovat - platba se přiřadí k dokladu, který jste zadali do políčka Variabilní symbol faktury
+-   Vyhledat platby z účtu - spustí se vyhledávání v historii plateb se stejným číslem protiúčtu
+-   Označit platbu jako vyřešenou - platba zmizí z tabulky Plateb k vyřešení
+-   Refundovat platbu - spustí se průvodce pro snadné zpětné proplacení platby
+-   Refundovat a stornovat doklad - totéž jako možnost výše, ale i se změnou stavu příslušného dokladu na stornovaný
+-   Refundovat a vystavit dobropis - totéž jako výše, ale k dokladu se vytvoří opravný daňový doklad
+-   Upravit komentář - kterým můžete zapisovat a měnit poznámky k platbě

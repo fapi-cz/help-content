@@ -1,0 +1,46 @@
+---
+title: Ovládání FAPI přes API rozhraní
+url: /article/84-ovladani-fapi-pres-api-rozhrani
+description: Kromě standardního způsobu (přes webové rozhraní) lze s FAPI pracovat také pomocí tzv. API (Application Programming Interface) rozhraní. API je služba umožňujíc
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Ovládání FAPI přes API rozhraní
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/84-ovladani-fapi-pres-api-rozhrani
+order: 49
+updatedAt: 2026-07-13T10:11:54Z
+---
+Kromě standardního způsobu (přes webové rozhraní) lze s FAPI pracovat také pomocí tzv. _API (Application Programming Interface)_ rozhraní.
+
+API je služba umožňující spouštět funkce FAPI pomocí požadavků zasílaných z jiné aplikace. To má význam zejména při propojení s libovolným jiným systémem (typicky např. s vlastním e-shopem), který v této situaci může sloužit pouze jako uživatelské rozhraní pro zadání objednávky, přičemž zbytek prodejního procesu - tedy vystavení faktury, přijetí platby, doručení zakoupeného produktu atd. - se již odehrává ve FAPI.
+
+:::caution
+Když jsme začali FAPI vyvíjet, jedním z našich hlavních záměrů byla snadnost jeho využití a možnost vystavování faktur z dalších aplikací či webových stránek. Toho jsme docílili díky využití API rozhraní pro ovládání FAPI. Ostatně aplikace to má přímo ve svém názvu _FAPI = Fakturační API_.
+:::
+
+## K čemu lze API například využít?
+
+-   vystavení a úprava faktury
+-   stažení existujících faktur a pravidelných faktur
+-   vytvoření, úprava a mazání klientů
+-   vytvoření, úprava a mazání položek faktury
+-   zprostředkování funkcí prodejního formuláře atd.
+
+Nejčastější případy použití API přehledně shrnuje [tento návod](https://gist.github.com/fabik/eb3e4d4fe118a78124b7), který využívá knihovnu [FAPIClient](https://github.com/fapi-cz/php-client) pro PHP (starší verze ke stažení [zde](https://www.fapi.cz/download/FAPIClient.zip)).
+
+Další příklady volání API bez použití knihovny FAPIClient najdete [zde](https://gist.github.com/fabik/2d5cd9711efb8c2a07df).
+
+## Dokumentace API
+
+FAPI využívá tzv. _REST API_. Jeho dokumentaci naleznete na adrese [https://web.fapi.cz/api-doc/](https://web.fapi.cz/api-doc/).
+
+:::caution
+Některé API metody nemusí být ve výše uvedené dokumentaci popsané. Pokud nenajdete to, co potřebujete, obraťte se na naši podporu, kde vám rádi pomůžeme vyřešit konkrétní požadavek.
+:::
+
+## API klíče
+
+Co je a jak získat api klíč najdete v nápovědě [Jak získat API klíč](/article/128-jak-ziskat-api-klic).

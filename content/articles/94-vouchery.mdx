@@ -1,0 +1,194 @@
+---
+title: Vouchery
+url: /article/94-vouchery
+description: "Voucher (poukaz) obecně chápeme jako potvrzení nároku zákazníka na čerpání služby nebo odběr zboží. Prodej se realizuje prostřednictvím standardního prodejního "
+category: Online prodej
+categorySlug: 9-online-prodej
+categorySlugs:
+  - 9-online-prodej
+keywords:
+  - Vouchery
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/94-vouchery
+order: 20
+updatedAt: 2026-07-13T09:39:44Z
+legacyAnchors:
+  - id: Nastaven-voucheru-3ZVq6
+    tag: h2
+    text: Nastavení voucheru
+    occurrence: 0
+    headingIndex: 0
+  - id: Akce-po-uplatnn-voucheru-ucLHK
+    tag: h2
+    text: Akce po uplatnění voucheru
+    occurrence: 0
+    headingIndex: 1
+  - id: Vystaven-voucheru-4jiov
+    tag: h2
+    text: Vystavení voucheru
+    occurrence: 0
+    headingIndex: 2
+  - id: Stav-voucheru-eMESQ
+    tag: h2
+    text: Stav voucheru
+    occurrence: 0
+    headingIndex: 3
+  - id: -Doruen-voucheru-Zn7ZB
+    tag: h2
+    text: Doručení voucheru
+    occurrence: 0
+    headingIndex: 4
+  - id: Uplatnn-voucheru-5dk2F
+    tag: h2
+    text: Uplatnění voucheru
+    occurrence: 0
+    headingIndex: 5
+  - id: Voucher-formule-GAkd3
+    tag: h2
+    text: Voucher formuláře
+    occurrence: 0
+    headingIndex: 7
+---
+_Voucher_ (poukaz) obecně chápeme jako potvrzení nároku zákazníka na čerpání služby nebo odběr zboží. Prodej se realizuje prostřednictvím standardního [prodejního formuláře](/article/44-prodejni-formular), jediný rozdíl je právě v nastavení produktu.
+
+Vouchery se obvykle používají v situacích, kdy k čerpání služby nebo odběru zboží nedochází bezprostředně po prodeji, ale až s časovým odstupem, popř. když produkt využívá jiná osoba, než která jej zakoupila.
+
+:::caution
+Ve FAPI je **voucher reprezentován unikátním kódem**, který je klientovi zaslán po nákupu a jehož předložením klient u obchodníka svůj nárok uplatní.
+:::
+
+:::tip
+Vouchery se skvěle hodí pro prodej osobních služeb (např. masáže, kadeřnictví, kosmetika apod.), restauračních a ubytovacích služeb, zájezdů nebo zážitků. Najdou ale široké uplatnění i při prodeji elektronických služeb nebo fyzických produktů.
+:::
+
+## Nastavení voucheru
+
+Voucher je ve FAPI vázán na produkt. Proto chcete-li při prodeji konkrétního produktu vystavit současně voucher, je toto chování potřeba nastavit v nastavení produktu (nabídka **PRODEJ - Produkty** - tlačítko **Upravit**), a to zaškrtnutím volby **Prodávat jako voucher**.
+
+![Vouchery](/assets/articles/765be09785778eef.png)
+
+V nastavení voucheru můžete omezit jeho platnost v čase, a to jedním ze dvou způsobů:
+
+-   **Období od zakoupení**, kdy zadáte, jaká má být doba platnosti voucheru od okamžiku zakoupení,
+-   **Do zadaného data**, kdy uvedete datum, do kterého má voucher platit.
+
+  
+
+Můžete nastavit i **počet použití**, např. pro **permanentky**.
+
+## Akce po uplatnění voucheru
+
+Na úrovni produktu si též nastavuje rovnou AKCE, které se mají stát **po uplatnění voucheru.**
+
+Tyto akce jsou funkčně shodné s Akcemi v nastavení prodejního formuláře s tím rozdílem, že tyto akce nastávají až ve chvíli, kdy je voucher uplatněn.
+
+Více informací naleznete v [nápovědě k prodejnímu formuláři](/article/44-prodejni-formular) - část Akce.
+
+FAPI umožňuje zpracování těchto akcí:
+
+-   spustit programový skript,
+-   přidat do členské sekce [FAPI Member](/article/98-fapi-member-nastaveni-clenske-sekce),
+-   přidat kontakt do [SmartEmailingu](/article/52-propojeni-fapi-se-smartemailingem).
+
+![Vouchery](/assets/articles/a160ed54c426e3e4.png)
+
+## Vystavení voucheru
+
+Voucher se automaticky vystaví zaplacením objednávky produktu, v jehož nastavení je zaškrtnuta volba **Prodávat jako voucher**.
+
+Vystavené vouchery najdete v nabídce **FAKTURY - Vouchery**.
+
+![Vouchery](/assets/articles/811e66c2927b1e7a.png)
+
+![Vouchery](/assets/articles/2277459b5fa013d5.png)
+
+V přehledu voucherů se zobrazují základní parametry voucheru, jako jsou
+
+-   kód voucheru (použije se při jeho uplatnění),
+-   název produktu, ke kterému se voucher vztahuje,
+-   stav voucheru,
+-   datum vytvoření, expirace a uplatnění.
+
+Pro vyhledání voucheru můžete využít filtr v záhlaví nebo možnost řazení přehledu (kliknutím na příslušný sloupec záhlaví).
+
+Více informací o voucheru najdete v jeho detailu (tlačítko **Detail**). Přímo v přehledu voucherů můžete také provádět základní operace s voucherem (jeho uplatnění nebo naopak zneplatnění, změnu data expirace, smazání apod.), a to pomocí tlačítka se symbolem šipky u konkrétního voucheru, popř. pomocí hromadných operací.
+
+:::tip
+Nový voucher je možné vytvořit také ručně, bez vazby na produkt v objednávce. Slouží k tomu tlačítko **Vytvořit voucher**.
+
+[**Vouchery lze vytvořit také hromadně.**](https://page.fapi.cz/10559/hromadne-vytvoreni-voucheru)
+:::
+
+## Stav voucheru
+
+Voucher se může nacházet v těchto stavech:
+
+-   **platný** - voucher je připraven k využití (uplatnění nároku na zakoupený produkt), ve stavu _platný_ je voucher bezprostředně po vystavení,
+-   **uplatněný** - voucher byl uplatněn, tj. zákazník jej použil k čerpání služby nebo produktu,
+-   **expirovaný** - voucher byl automaticky zneplatněn uplynutím období jeho platnosti,
+-   **neplatný** - voucher byl zneplatněn obchodníkem v administraci FAPI.
+
+:::caution
+Stav voucheru je možné změnit pomocí tlačítek v jeho detailu, popř. v přehledu voucherů. Ze stavů _uplatněný_, _expirovaný_ a _neplatný_ lze voucher vrátit zpět do stavu _platný_ pomocí operace **Obnovit**.
+:::
+
+## Doručení voucheru
+
+Vygenerovaný kód voucheru doručíte zákazníkovi pomocí zástupného symbolu vloženého do [šablony zpráv](/article/17-sablony-zprav) (např. do zprávy zasílané po zaplacení objednávky, popř. položky).
+
+Pro vložení údajů o zakoupeném voucheru můžete použít následující zástupné symboly:
+
+![Vouchery](/assets/articles/da4122f0b9afea8a.png)
+
+-   **Kód voucheru \{voucherCodes\}** - slouží k vložení samotného kódu voucheru; pokud je zakoupených voucherů více, budou jednotlivé kódy odděleny čárkami,
+-   **Datum expirace voucheru \{voucherExpirations\}** - slouží k vložení data expirace voucheru; pokud je zakoupených voucherů více, budou jednotlivé hodnoty odděleny čárkami,
+-   **Vouchery jako odrážkový seznam \{vouchersList\}** - zobrazí všechny základní informace (název produktu, kód voucheru a datum expirace) o zakoupených voucherech ve formě odrážkového seznamu, hodí se při současném prodeji více voucherů.
+
+:::tip
+První dva zástupné symboly se hodí především v situacích, kdy je možné v jedné objednávce zakoupit pouze jeden voucher. Naopak pro případy, kdy může být voucherů v objednávce více, je vhodné v e-mailu použít zobrazení voucherů jako odrážkový seznam.
+:::
+
+Zaslaný e-mail pak může vypadat například takto:
+
+![Vouchery](/assets/articles/12663d5f1d8d83c5.png)
+
+## Uplatnění voucheru
+
+Při uplatnění voucheru zákazník předá kód voucheru obchodníkovi, u kterého produkt či službu zakoupil. Ten ověří, že je voucher platný a zakoupený produkt či službu zákazníkovi poskytne.
+
+K ověření, resp. uplatnění voucheru slouží speciální stránka, do které obchodník (popř. jeho obsluhující personál) zadá kód voucheru. Odkaz na tuto stránku najdete v nabídce **FAKTURY - Vouchery**.
+
+![Vouchery](/assets/articles/06b87d0b285faaa0.png)
+
+Stránka poskytuje dvě funkce:
+
+-   **Ověřit voucher** - ověří se, zda je voucher platný a jaké je datum jeho expirace (ověřením se stav voucheru ve FAPI nezmění),
+-   **Uplatnit voucher** - pokud je voucher platný, uplatní se (jeho stav se ve FAPI změní na _uplatněný_).
+
+![Vouchery](/assets/articles/d42c8a044a968aff.png)
+
+:::caution
+Stránka pro ověření a uplatnění voucheru je unikátní pro každý účet FAPI.
+:::
+
+  
+
+V těchto akcích je možné:
+
+-   spustit programový skript
+-   přidat člena přes [FAPI member](/article/98-fapi-member-nastaveni-clenske-sekce)
+-   přidání kontaktu do SmartEmailingu
+
+  
+
+## Voucher formuláře
+
+Zde si můžete vytvořit vlastní formulář pro uplatňování voucherů. V praxi tedy buď operujete se stavem voucheru (např. zneplatnění) ručně přes administraci FAPI v záložce [Faktury - vouchery](https://web.fapi.cz/voucher/?projectId=all) nebo si [vytvoříte formulář](https://web.fapi.cz/voucher-form/?projectId=all), přes který mohou toto dělat přímo vaši zákazníci.
+
+Tento formulář si pak můžete vložit do webové stránky stejně jako [prodejní formulář](/article/44-prodejni-formular).
+
+  
+
+:::danger
+Vouchery prodávané na [splátky](/article/47-prodej-na-splatky) se generují jen jednou, a to ihned po úhradě první splátky. Všechny ostatní platby u zbývajících splátek už se ignorují a další vouchery nevzniknou.
+:::

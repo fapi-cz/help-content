@@ -1,0 +1,92 @@
+---
+title: Zůstane karta navázaná i po platbě převodem
+url: /article/354-zustane-karta-navazana-i-po-platbe-prevodem
+description: Co se stane s uloženou kartou, když zákazník zaplatí pravidelnou fakturu převodem? Pokud má zákazník u šablony pravidelných faktur uloženou platební kartu, FAPI
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 6-fakturace
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Zůstane karta navázaná i po platbě převodem
+  - Platební brány (platba kartou)
+  - Fakturace
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/354-zustane-karta-navazana-i-po-platbe-prevodem
+order: 307
+updatedAt: 2026-10-19T07:31:13Z
+legacyAnchors:
+  - id: Co-se-stane-s-uloenou-kartou-kdy-zkaznk-zaplat-pravidelnou-faktu-O3sxJ
+    tag: h2
+    text: Co se stane s uloženou kartou, když zákazník zaplatí pravidelnou fakturu převodem?
+    occurrence: 0
+    headingIndex: 0
+  - id: Zstane-karta-po-platb-pevodem-uloen-1NLzk
+    tag: h2
+    text: Zůstane karta po platbě převodem uložená?
+    occurrence: 0
+    headingIndex: 1
+  - id: Me-bt-stejn-faktura-uhrazena-tak-z-karty-4Sp7O
+    tag: h2
+    text: Může být stejná faktura uhrazena také z karty?
+    occurrence: 0
+    headingIndex: 2
+  - id: Co-se-stane-u-dal-faktury-A-hGU
+    tag: h2
+    text: Co se stane u další faktury
+    occurrence: 0
+    headingIndex: 3
+---
+# Co se stane s uloženou kartou, když zákazník zaplatí pravidelnou fakturu převodem?
+
+Pokud má zákazník u šablony pravidelných faktur uloženou platební kartu, FAPI ji může používat k automatickým úhradám dalších faktur.
+
+Zákazník ale může některou fakturu zaplatit také bankovním převodem. Taková úhrada uloženou kartu automaticky neodpojí, ani neukončí automatické strhávání pro další faktury.
+
+## Zůstane karta po platbě převodem uložená?
+
+Ano. Pokud zákazník fakturu zaplatí bankovním převodem, karta zůstane propojená se šablonou pravidelných faktur.
+
+Platba převodem tedy:
+
+-   neodpojí uloženou kartu,
+-   nezruší automatické strhávání,
+-   neukončí pravidelnou fakturaci,
+-   neovlivní možnost automaticky strhnout další fakturu ze stejné karty.
+
+Odpojení karty je samostatná akce. Samotný výběr jiného způsobu úhrady jej nezpůsobí.
+
+## Může být stejná faktura uhrazena také z karty?
+
+Rozhodující je, zda byla platba převodem včas připsaná, spárovaná s fakturou a faktura je ve FAPI označená jako zaplacená.
+
+**Pokud je faktura před plánovaným pokusem o stržení z karty plně uhrazená a ve FAPI označená jako zaplacená, FAPI už ji z uložené karty nestrhne.**
+
+:::danger
+**Důležité:** Nestačí, že zákazník platbu odeslal ze svého bankovního účtu. Dokud se platba nespáruje a faktura zůstává ve FAPI nezaplacená, může proběhnout naplánovaný pokus o stržení z karty.
+:::
+
+## Co se stane u další faktury
+
+U další vystavené faktury může automatické stržení pokračovat ze stejné uložené karty.
+
+Příklad:
+
+1.  Zákazník má u pravidelné fakturace uloženou kartu.
+2.  Aktuální fakturu zaplatí bankovním převodem.
+3.  Platba se ve FAPI spáruje a faktura se označí jako zaplacená.
+4.  Uložená karta zůstane propojená s pravidelnou fakturací.
+5.  Další faktura může být v příštím období automaticky uhrazena z této karty.
+
+  
+
+Pokud vás zajímá další relevantní nápovědy na toto téma čtěte zde:
+
+[Jak může váš zákazník zrušit své předplatné](/article/257-jak-muze-vas-zakaznik-zrusit-sve-predplatne)
+
+[Jak se dozvědět o zrušení pravidelné fakturace ze strany zákazníka](/article/288-jak-se-dozvedet-o-zruseni-pravidelne-fakturace-ze-strany-zakaznika)
+
+[Jak poznáte, zda má klient napojenou kartu pro automatické strhávání](/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani)

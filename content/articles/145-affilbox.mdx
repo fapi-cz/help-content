@@ -1,0 +1,94 @@
+---
+title: Affilbox
+url: /article/145-affilbox
+description: Máte provizní program u Affilboxu? Chcete, aby se všechny konverze vašich partnerů správně propsaly do Affilboxu? Připravili jsme pro vás jednoduchý script, kte
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Affilbox
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/145-affilbox
+order: 131
+updatedAt: 2026-07-13T10:55:05Z
+---
+Máte provizní program u [Affilboxu](https://www.affilbox.cz/?a_box=cwykpgpe)? Chcete, aby se všechny konverze vašich partnerů správně propsaly do [Affilboxu](https://www.affilbox.cz/?a_box=cwykpgpe)?
+
+Připravili jsme pro vás jednoduchý script, který stačí vložit na vaše děkovací stránky. O nic dalšího se starat nemusíte, všechny konverze se propíšou automaticky. 
+
+## Co je affiliate a jak to funguje? 
+
+Affiliate je provizní program pro vaše partnery, kteří vaši aplikaci/službu/produkt používají a chtějí jí doporučit ostatním. Ale aby vás partneři nepropagovali jenom tak, chcete je za to odměnit nějakou provizí. 
+
+Kdykoliv vám partneři dovedou nového zákazníka, odměníte je částí vašeho obratu. Provize může být procentem z dané částky, nebo pevnou částkou.
+
+Z pozice partnera přivádíte na inzerentův web zákazníky a v momentě, kdy některýze zákazníků zakoupí, je vám připsána provize. 
+
+## Jak tedy nastavit affiliate pomocí [Affilboxu](https://www.affilbox.cz/?a_box=cwykpgpe)?
+
+Co k tomu budeme potřebovat? 
+
+-   Potřebujete mít vytvořený provizní program v [Affilboxu](https://www.affilbox.cz/?a_box=cwykpgpe).
+-   Vytvořenou provizní kampaň.
+-   [Vložený trackovací kód do webu](https://www.affilbox.cz/tracking-kod/)
+-   Přístup k úpravě vašich děkovacích stránek ve FAPI.
+-   Povolit vkládání unikátního identifikátoru objednávky do URL děkovací stránky.
+
+Pokud máte vytvořenou provizní kampaň, tak z ní budete potřebovat 2 údaje (vizte obrázek níže):
+
+-   ab\_instance
+-   ab\_kampan
+
+Oba najdete v affilboxu v **konverzních kódech.**
+
+![Affilbox](/assets/articles/1c818438fcbe75af.png)
+
+Pokud tyto dva údaje máme, můžeme přejít do administrace webu, kde máte napsanou svou vlastní děkovací stránku. Najděte děkovací stránku, na které budete chtít spustit konverzní kód.
+
+Spustíme si úpravu kódu děkovací stránky a do patičky této děkovací stránky vložíme tento script:
+
+:::danger
+POZOR: Aby vše fungovalo jak má, musíme ve scriptu, který je níže, změnit 2 údaje:
+
+-   'demo.affilbox.cz'
+-    '1' 
+
+a to na hodnoty, které jste získali z Affilboxu.
+:::
+
+```text
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+<script>
+document.addEventListener('FapiSdkLoaded', function () {
+FAPI_CONVERSION.runConversion(function (fapiOrderData) {
+	FAPI_CONVERSION.simpleAffilboxTransaction(
+		fapiOrderData, 
+		'demo.affilbox.cz', 
+		'1'
+	);
+});
+});
+</script>
+```
+
+Nyní potřebujete ve FAPI u prodejního formuláře, který přesměrovává na vaši děkovací stránku, povolit funkci, která do URL děkovací stránky vloží unikátní identifikátor objednávky. S jeho pomocí si script získá hodnoty objednávky. Pozor – bez těchto údajů se konverze nespustí. 
+
+Přejděte tedy do vašeho FAPI účtu. Prodej \> Prodejní formuláře \> najděte prodejní formulář a klikněte na Upravit. 
+
+Jděte na krok 5 Děkovací stránka \> zaškrtněte políčko "Vkládat unikátní identifikátor objednávky do URL děkovací stránky."
+
+Nyní máme vše nastaveno a můžeme například na sobě otestovat zda se nám koverze propisují. Nezapomeňte se při testu na vaše stránky prokliknout nějakým affiliate odkazem, aby byla konverze přiřazena partnerovi.
+
+## Chcete se stát affiliate partnerem FAPI a zíkat 20% z každé objednávky po dobu jednoho roku? 
+
+Abyste se stali affiliate partnerem FAPI, stačí se registrovat na této stránce: [https://fapi.cz/affiliate/](https://fapi.cz/affiliate/).
+
+Vytvořte propagační materiál:
+
+-   blogové články,
+-   kurzy,
+-   videa,
+-   a další
+
+Mějte v propagačních materiálech vždy affiliate odkaz, a potom už můžete jenom počítat provize.

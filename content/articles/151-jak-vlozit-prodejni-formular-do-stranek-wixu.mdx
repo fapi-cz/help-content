@@ -1,0 +1,127 @@
+---
+title: Jak vložit prodejní formulář FAPI do stránek ve Wixu
+url: /article/151-jak-vlozit-prodejni-formular-do-stranek-wixu
+description: "Wix umožňuje vložit prodejní formulář FAPI dvěma způsoby – buď jako vloženou stránku (URL), nebo pomocí HTML kódu. Níže najdete obě varianty krok za krokem. ⚠️ "
+category: Jak vložit prodejní formulář do stránky
+categorySlug: 150-vlozeni-prodejniho-formulare-na-web
+categorySlugs:
+  - 150-vlozeni-prodejniho-formulare-na-web
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Jak vložit prodejní formulář FAPI do stránek ve Wixu
+  - Jak vložit prodejní formulář do stránky
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/151-jak-vlozit-prodejni-formular-do-stranek-wixu
+order: 90
+updatedAt: 2026-07-13T10:39:11Z
+legacyAnchors:
+  - id: Vloen-pes-URL-Web-OqesK
+    tag: h2
+    text: "Varianta A: Vložení přes URL (Web)"
+    occurrence: 0
+    headingIndex: 0
+  - id: Vloen-pes-HTML-kd-script-ImhoA
+    tag: h2
+    text: "Varianta B: Vložení přes HTML kód (script)"
+    occurrence: 0
+    headingIndex: 1
+  - id: -OjJc2
+    tag: h2
+    text: ""
+    occurrence: 0
+    headingIndex: 2
+---
+**Wix umožňuje vložit prodejní formulář FAPI dvěma způsoby – buď jako vloženou stránku (URL), nebo pomocí HTML kódu.** Níže najdete obě varianty krok za krokem.
+
+:::danger
+⚠️ **Důležité omezení Wixu:**
+
+Na Wixu nemusí správně fungovat některé platební brány a platební metody, zejména pokud vyžadují zobrazení platební stránky „uvnitř“ formuláře (v iframe).
+
+**Na Wixu není možné používat platební bránu ThePay ani Apple Pay.** Komplikace mohou výjimečně nastat i u jiných platebních bran.
+
+Pokud chcete zákazníkům nabídnout **platbu kartou (a případně Apple Pay)**, doporučujeme zvolit takovou platební bránu, která podporuje platby v iframe (např. Stripe — podle vašeho nastavení ve FAPI).
+:::
+
+## **Varianta A: Vložení přes URL (Web)**
+
+Tato varianta vloží formulář do Wixu jako **vloženou webovou stránku** (přes URL). Je to nejrychlejší cesta, pokud nechcete pracovat s HTML kódem.
+
+🎥 **Celý videonávod (včetně tipů pro správné zobrazení) najdete zde:**
+
+<Video src="https://www.youtube.com/embed/-_U2v9UCkKc" />
+
+**Postup:**
+
+1.  Ve FAPI si otevřete **Prodejní formuláře**.
+2.  Zkopírujte si **URL adresu formuláře** (odkaz), kterou budete vkládat do Wixu.
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/284f40ad7cd61874.png)
+
+3.  Ve Wixu otevřete editor stránky (**Edit Site**) a přejděte na místo, kam chcete formulář vložit.
+4.  Vytvořte si nový oddíl, kam chcete prodejní formulář vložit.
+5.  Klikněte na **Přidat prvek** → vyberte možnost pro "vložený kód"  a vyberte vložit web
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/390a15272b3cb372.png)
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/c36e003fdb7d742a.png)
+
+5.  Vložte zkopírovanou **URL adresu** formuláře z FAPI.
+6.  Vložený prvek si můžete **pojmenovat**, ať se vám v editoru lépe orientuje.
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/2cf8fbc75df86f37.png)
+
+7.  Nakonec prvek s formulářem **upravte rozměrově** (šířka/výška), aby se správně zobrazoval i na mobilu.
+
+:::tip
+**_Tip:_** _„Vychytávky“ pro správné zobrazení ukazuje videonávod výše._
+:::
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/e7ee30d1960b59eb.png)
+
+8.  Nakonec publikujte na web
+
+  
+
+## **Varianta B:** Vložení přes HTML kód (script)
+
+  
+
+Postup:
+
+1.  Ve FAPI si otevřete **Prodejní formuláře**.
+2.  Zkopírujte si kód pro HTML, který budete vkládat do Wixu.
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/44f0a78bf9b8ff05.png)
+
+3.  Ve Wixu otevřete editor stránky (**Edit Site**) a přejděte na místo, kam chcete formulář vložit.
+4.  Vytvořte si nový oddíl, kam chcete prodejní formulář vložit.
+5.  Klikněte na **Přidat prvek** → vyberte možnost pro "vložený kód"  a vyberte vložit HTML
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/390a15272b3cb372.png)
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/69d4443da15acc98.png)
+
+6.  Nyní je potřeba vložit zkopírovaný HTML kód prodejního formuláře z FAPI
+7.  Aby se však vložil skutečně na správné místo, je potřeba ještě před samotný kód na první řádek vepsat ***\<br\>*** a následně pod něj až vložte script prodejního formuláře. Aby to vypadalo stejně jako na screenshotu pod tímto textem.
+
+![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/629de84aac0cab74.png)
+
+8\. Vložený prvek si můžete **pojmenovat**, ať se vám v editoru lépe orientuje
+
+9.  Nakonec prvek s formulářem **upravte rozměrově** (šířka/výška), aby se vám správně zobrazoval na celé prodejní stránce.
+    
+    ![Jak vložit prodejní formulář FAPI do stránek ve Wixu](/assets/articles/84b9860db6d5d547.png)
+    
+
+  
+
+10.  Nakonec publikujte na web
+
+  
+
+🎥 **Celý videonávod (včetně tipů pro správné zobrazení) najdete zde:**
+
+<Video src="https://www.youtube.com/embed/LQL7js12TSc" />

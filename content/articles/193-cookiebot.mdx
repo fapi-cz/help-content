@@ -1,0 +1,52 @@
+---
+title: Cookiebot
+url: /article/193-cookiebot
+description: Pokud používáte správu cookies pomocí pluginu Cookiebot, můžete narazit na problém, kdy se prodejní formuláře nezobrazí, dokud zákazník nesouhlasí se všemi cook
+category: Propojení s jinými systémy
+categorySlug: 10-propojeni-s-externimi-systemy
+categorySlugs:
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Cookiebot
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/193-cookiebot
+order: 190
+updatedAt: 2026-07-13T11:21:34Z
+---
+Pokud používáte správu cookies pomocí pluginu [Cookiebot](https://www.cookiebot.com/), můžete narazit na problém, kdy se prodejní formuláře nezobrazí, dokud zákazník nesouhlasí se všemi cookies.
+
+Problém je v tom že Cookiebot kompletně blokuje načtení scriptu pro prodejní formulář.
+
+Aktuální řešení je upravit script, kterým vkládáte prodejní formulář do vaši stránek.
+
+  
+
+Script prodejního formuláře vypadá nějak takto:
+
+```text
+<script type="text/javascript" src="https://form.fapi.cz/script.php?id=138f384d-0b93-11e9-90xb3-0a483fe6dc7e"></script>
+```
+
+Pro správnou funkčnost prodejního formuláře s kombinací s Cookiebot je potřeba upravit script a přidat attribut:
+
+```text
+data-cookieconsent="ignore"
+```
+
+Výsledný script potom bude vypadat takto:
+
+```text
+<script type="text/javascript" src="https://form.fapi.cz/script.php?id=138f384d-0b93-11e9-90xb3-0a483fe6dc7e" data-cookieconsent="ignore"></script>
+```
+
+Po nasazení prodejního formuláře na vaše stránky s tímto atribudem se prodejní formulář na stránce zobrazí i v případě že zákazník neodsouhlasi všechny cookies.
+
+  
+
+Vždy kopírujete script prodejního formuláře z náhledu prodejního formuláře ať máte jistotu že vkládáte správný prodejní formulář do stránky.
+
+  
+
+Více o tom jaké cookies používá prodejní formulář se dozvíte v naší nápovědě [Cookies prodejních formulářů](/article/137-cookies-prodejnich-formularu).

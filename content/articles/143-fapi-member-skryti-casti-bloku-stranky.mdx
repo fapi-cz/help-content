@@ -1,0 +1,128 @@
+---
+title: "FAPI Member: skrytí části bloků stránky"
+url: /article/143-fapi-member-skryti-casti-bloku-stranky
+description: Jak zobrazit částečně obsah klientovi, který nemá zakoupený placený obsah? Ve FAPI Memberu můžete zobrazit nebo skrývat části vašich stránek na základě toho, zd
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - "FAPI Member: skrytí části bloků stránky"
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/143-fapi-member-skryti-casti-bloku-stranky
+order: 94
+updatedAt: 2026-07-13T10:39:14Z
+legacyAnchors:
+  - id: Elementor--vypnut-funkce-Element-Caching-HyYTl
+    tag: h2
+    text: Elementor – vypnutí funkce Element Caching
+    occurrence: 0
+    headingIndex: 9
+---
+## Jak zobrazit částečně obsah klientovi, který nemá zakoupený placený obsah?
+
+Ve FAPI Memberu můžete zobrazit nebo skrývat části vašich stránek na základě toho, zda má daný návštěvník webu přiřazenou nějakou členskou sekci nebo úroveň.
+
+:::danger
+Tato funkce je dostupná pouze pro Wordpress editory [Gutenberg](https://wordpress.org/gutenberg/), [Elementor](https://trk.elementor.com/iqcvf0tzoz51), DIVI a Mioweb. Jiné editory nejsou podporovány. Používáte jiný editor? Dejte nám vědět na [podpora@fapi.cz](mailto:podpora@fapi.cz).
+:::
+
+:::danger
+Pokud používáte **Elementor**, je nutné v jeho nastavení deaktivovat funkci "**Element Caching**". Viz sekce [Elementor – vypnutí funkce Element Caching](#Elementor--vypnut-funkce-Element-Caching-HyYTl)
+:::
+
+  
+
+## K čemu je tato funkce dobrá? 
+
+Představte si, že článek s cenným know-how, za který chcete nechat návštěvníky platit. Zároveň ale potenciální nakupující nechce zajíce v pytli a potřebujete jej nechat nahlédnout pod pokličku. Vzbudit jejich zájem, aby si chtěli přečíst více.
+
+A právě tady použijete naši funkci částečného skrytí. Tehdy jen část obsahu necháte viditelnou pro všechny návštěvníky a zbytek bude skrytý. Místo zbytku článku pak bude FAPI objednávkový formulář, díky kterému si budou moci placený obsah zakoupit a rovnou zpřístupnit.
+
+Jiné využití této funkce je i v případě, kdy máte více členských sekcí a pro vaše klienty chcete vytvořit přehlednou nástěnku, kde uvidí jaké kurzy mají zakoupené (a přes které se mohou prokliknout přímo na jejich stránky). Také zde můžete zobrazit členské sekce, které klient zakoupené nemá a získat tak další objednávku za nový placený obsah.
+
+## Jak nastavit skrytí části článku neplatícímu návštěvníkovi?
+
+Funkci skrývání a zobrazování bloků nalezenete ve vašem wordpressu v editaci stránky nebo příspěvku. Klikněte na blok, který chcete skrýt.
+
+V pravém bočním menu se zobrazí nastavení FAPI Member. Zde si můžete vybrat ze 3 možností:
+
+1.  možnost zobrazí blok pouze pro platící členy, kteří mají přístup k dané členské sekci nebo úrovni.
+2.  možnost zobrazí blok pouze přihlášeným zákazníkům, kteří nemají přístup k dané sekci / úrovni.
+3.  možnost zobrazí blok všem, bez ohledu na to zda mají nebo nemají přístup k sekci nebo úrovni, nebo zda jsou přihlášení nebo ne (výchozí stav).
+
+Jednotlivé bloky se podle zvoleného typu zobrazení chovají následujícím způsobem:
+
+-   **ANO** = daný návštěvník blok vidí
+-   NE = blok je danému návštěvníkovi skrytý
+
+<table class="hs-table"><tbody><tr><td>možnost</td><td>nepřihlášený návštěvník</td><td>přihlášený návštěvník bez přístupu</td><td>přihlášený návštěvník s přístupem</td></tr><tr><td>je člen sekce</td><td>NE</td><td>NE</td><td><strong>ANO</strong></td></tr><tr><td>není členem sekce</td><td><strong>ANO</strong></td><td><strong>ANO</strong></td><td>NE</td></tr><tr><td>zobrazit všem</td><td><strong>ANO</strong></td><td><strong>ANO</strong></td><td><strong>ANO</strong></td></tr></tbody></table>
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/b9e7974eeb575c89.png)
+
+Na obrázku výše je blok článku nastavený tak, aby jej viděli všichni návštěvníci stránky. Je tedy viditelný komukoliv bez ohledu na to zda je/není přihlášený, zda má/nemá placený přístup k sekci či úrovni.
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/aefeea20fd6eb64a.png)
+
+Další blok z obrázku výše je chráněný. Přístup k tomuto obsahu mají pouze klienti, kteří mají aktivní členství v sekci "Placený blog". Ostatním návštěvníkům webu (přihlášeným i nepřihlášeným) není obsah viditelný.
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/35a7e2ef60a6a1e8.png)
+
+Další 2 bloky jsou nastaveny tak, aby se zobrazily všem návštěvníkům i přihlášeným uživatelům, kteří nemají přístup do sekce "Placený blog".
+
+Po menších úpravách potom může stránka, pro návštěvníky, kteří nemají zakoupený přístup vypadat takto: 
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/707518bd722883f1.png)
+
+A takto potom vidí web člen, který má zakoupený placený obsah:
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/6c049ca2d6d94ba3.png)
+
+## Jak vytvořit nástěnku pro mé členské sekce?
+
+Nástěnku pro členské sekce můžete vytvářet stejným způsobem. Vytvoříte si stránku, kde například v jednotlivých sloupečcích vytvoříte prokliky do členských sekcí a urovní. Ty člensé sekce, které klient nemá zakoupeném můžete úplně schovat.
+
+Lepší variantou pak může být návštěvníkovi zobrazit informaci, že přístup do této sekce nemá + rovnou jej přesměrovat na prodejní stránku. Tam mu popíšete, o čem členská sekce je a dáte rovnou možnost zakoupení přístupu do této sekce.
+
+Úplně základní nástěnka může vypadat například takto: 
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/04bbf17fb2874b98.png)
+
+Nástěnku jako stránku nemáte zařazenou do žádné členské sekce. Tedy je veřejně přístupná. Návštěvník, který by se na tuto stránku dostal, tak by viděl pouze toto:
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/b589b7f6c64eec2d.png)
+
+Dále rozepíšeme, jak jsou jednotlivé bloky webu nastavené.
+
+**Nadpis**
+
+Ten je veřejný pro všechny návštěvníky. Totéž platí pro názvy sekcí – tedy "Placený blog" a "Perličky z tvorby blogu".
+
+Pod nimi jsou v editoru **bloky**, které odkazují na placený obsah. U bloků je nastaveno, že je vidí pouze člen, který má zároveň zakoupený daný přístup, tedy "Placený web" nebo "Perličky z tvorby blogu". 
+
+A jako poslední jsou bloky, které vidí klienti, jež nemají přístup k danému obsahu. Tedy tyto bloky vidí jak běžný návštěvník, který u vás není členem, tak i váš člen, který ale danou sekci nemá zaplacenou. Pod odkazy je tedy stránka, kde jsou informace o dané sekci + prodejní formulář, aby si jej mohl klient jednoduše zakoupit. 
+
+Pokud by si stránku zobrazil člen, který má sekci "Placený blog", ale nemá sekci "Perličky z tvorby blogu" stránka by se mu zobrazila takto: 
+
+![FAPI Member: skrytí části bloků stránky](/assets/articles/d1a39fe3bba1f7cf.png)
+
+## **Jak se vyhodnocuje, zda je/není návštěvník v sekci nebo úrovni?**
+
+### Možnost: "Zobrazit pokud návštěvník je člen sekce/úrovně"
+
+Vyhodnocení této podmínky funguje následovně:
+
+-   pokud nebyla zašrktnutá žádná sekce/úrovně automaticky se obsah zobrazí
+-   dále pokud byly
+
+**Funkce je dostupná pro FAPI Member od verze 1.8.19.**
+
+# Elementor – vypnutí funkce Element Caching
+
+Pokud používáte **Elementor**, je nutné vypnout funkci _Element Caching_, jinak nemusí skrývání bloků fungovat správně.
+
+Postup:
+
+1.  Přejděte do **WordPress administrace** → **Elementor** → **Nastavení** → **Výkon**.
+2.  Najděte volbu **Element caching** a vypněte ji.
+3.  Stejný postup proveďte i v záložce **Vlastnosti**, kde je třeba funkci _Element caching_ rovněž vypnout.

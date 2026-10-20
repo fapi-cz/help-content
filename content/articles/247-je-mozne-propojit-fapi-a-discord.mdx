@@ -1,0 +1,66 @@
+---
+title: Je možné propojit FAPI a Discord?
+url: /article/247-je-mozne-propojit-fapi-a-discord
+description: "Ano, propojení FAPI a Discordu je možné, ale nejde o přímou integraci – celý proces je třeba zrealizovat přes nástroj Make (dříve Integromat). Zároveň je dobré "
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Je možné propojit FAPI a Discord?
+  - Nastavení
+  - Propojení s jinými systémy
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/247-je-mozne-propojit-fapi-a-discord
+order: 248
+updatedAt: 2026-07-13T12:06:55Z
+---
+Ano, **propojení FAPI a Discordu je možné**, ale **nejde o přímou integraci** – celý proces je třeba zrealizovat **přes nástroj** [**Make (dříve Integromat)**](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat). Zároveň je dobré počítat s tím, že nastavení je **technicky trochu složitější** a vyžaduje určitou orientaci v automatizaci.
+
+  
+
+### 🎯 Co je možné propojením dosáhnout?
+
+Typicky se využívá scénář, kdy:
+
+-   zákazník **provede objednávku nebo platbu ve FAPI**,
+-   následně mu je **automaticky zaslán odkaz na vstup do Discordu** (např. do soukromého serveru nebo kanálu),
+-   vše probíhá automaticky přes Make.
+
+  
+
+### ❗ Co je potřeba vědět předem:
+
+Discord **neumožňuje přes své API vytvořit uživatele ani plně automatizovat přidání člena do serveru**. Místo toho musíte:
+
+1.  **Ručním nastavením v Discordu** vytvořit **vlastní pozvánkový odkaz (invite link)**.
+2.  Tento odkaz pak **odesíláte automaticky zákazníkům** – např. e-mailem, přes Make.
+
+Make tedy funguje tak, že:
+
+-   **zachytí událost ve FAPI** (např. přijatá objednávka),
+-   na základě ní **vygeneruje nebo použije předem vytvořený Discord odkaz**,
+-   a následně jej odešle zákazníkovi (např. e-mailem nebo jiným způsobem).
+
+  
+
+### 🧰 Jak na to krok za krokem (základní přehled):
+
+1.  **Vytvořte pozvánku v Discordu** – z vašeho serveru, ručně (pravým klikem na kanál → „Pozvat“ → nastavit trvalost odkazu).
+2.  **Připravte Make scénář:**
+    -   První modul: FAPI webhook (např. nový prodej, platba).
+    -   Mezi moduly můžete nastavit logiku (např. kontrola stavu platby, výběr odkazu podle produktu).
+    -   Výstupní modul: odeslání e-mailu se zprávou obsahující Discord odkaz (přes Gmail, MailerSend apod.).
+    
+
+  
+
+### 💡 Tip:
+
+Pokud potřebujete, aby měl zákazník specifická oprávnění nebo přístup jen na určité kanály, můžete využít boty v Discordu – jejich nastavení ale vyžaduje další programování nebo pokročilé nástroje třetích stran.
+
+:::caution
+Ale pokud byste použili permanentní link, nepotřebujete Make. Pak stačí tento link vložit do FAPI emailu.
+:::

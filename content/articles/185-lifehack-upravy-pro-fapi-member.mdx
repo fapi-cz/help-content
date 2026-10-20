@@ -1,0 +1,33 @@
+---
+title: Lifehack úpravy pro FAPI member
+url: /article/185-lifehack-upravy-pro-fapi-member
+description: "Postupně rozšiřované tipy na custom úpravy pro prvky používané v rámci Worpdress FAPI member. Přejmenování polí pro shortcode [fapi-member-login] (přihlasovací "
+category: FAPI Member
+categorySlug: 129-fapi-member
+categorySlugs:
+  - 129-fapi-member
+keywords:
+  - Lifehack úpravy pro FAPI member
+  - FAPI Member
+sourceUrl: https://napoveda.fapi.cz/article/185-lifehack-upravy-pro-fapi-member
+order: 79
+updatedAt: 2026-07-13T10:35:47Z
+---
+Postupně rozšiřované tipy na custom úpravy pro prvky používané v rámci Worpdress FAPI member.
+
+  
+
+1.  ### Přejmenování polí pro shortcode \[fapi-member-login\] (přihlasovací formulář členské sekce)
+    
+
+Script patří na stránku, kam vkládáte přihlašovací formulář pro členskou sekci, který potřebujete přeložit z výchozího jazyka čeština. Vložte shortcode a pod něj níže uvedený script.
+
+:::danger
+Pozor: do skriptu je potřeba doplnit správnou URL adresu. Text v uvozovkách "sem je nutne doplnit URL adresu pro reset hesla, kam se uzivatele maji presmerovat" nahraďte celou adresou stránky, kde se dá požádat o reset. Uvozovky musí zůstat.
+
+Správný by byl např. "https://www.fapi.cz/wp-login.php?action=lostpassword".
+:::
+
+```text
+<script> window.onload = function() {    let labelElement = document.querySelector('label[for="log"]');    if(labelElement) {        labelElement.textContent = 'User name';    }    let pwdLabelElement = document.querySelector('label[for="pwd"]');    if(pwdLabelElement) {        pwdLabelElement.textContent = 'Password';    }    let submitButton = document.querySelector('.f-m-row.controls input[type="submit"]');    if(submitButton) {        submitButton.value = 'Log in';    }    let forgotPasswordLink = document.querySelector('.f-m-row a[href="sem je nutne doplnit URL adresu pro reset hesla, kam se uzivatele maji presmerovat"]');    if(forgotPasswordLink) {        forgotPasswordLink.textContent = 'Forgot your password?';    }};</script>
+```

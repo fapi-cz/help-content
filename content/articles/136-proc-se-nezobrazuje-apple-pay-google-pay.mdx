@@ -1,0 +1,103 @@
+---
+title: Proč se nezobrazuje Apple Pay nebo Google Pay
+url: /article/136-proc-se-nezobrazuje-apple-pay-google-pay
+description: Obě tyto platební metody FAPI podporuje prostřednictvím platebních bran. Aby se mohly vašim zákazníkům zobrazovat, je nejprve potřeba, aby vám je váš poskytovat
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 7-platby
+  - 9-online-prodej
+keywords:
+  - Proč se nezobrazuje Apple Pay nebo Google Pay
+  - Platební brány (platba kartou)
+  - Platby
+  - Online prodej
+sourceUrl: https://napoveda.fapi.cz/article/136-proc-se-nezobrazuje-apple-pay-google-pay
+order: 119
+updatedAt: 2026-07-13T10:54:57Z
+legacyAnchors:
+  - id: Pro-zkaznk-nevid-pi-objednvn-platbu-pes-Apple-pay-rfqho
+    tag: h2
+    text: Proč zákazník nevidí Apple pay?
+    occurrence: 0
+    headingIndex: 0
+  - id: Pro-zkaznk-nevid-Google-Pay-s84iT
+    tag: h2
+    text: Proč zákazník nevidí Google Pay?
+    occurrence: 0
+    headingIndex: 1
+  - id: Me-mt-jeden-zkaznk-Apple-Pay-i-Google-Pay-FBuq3
+    tag: h2
+    text: Může mít jeden zákazník Apple Pay i Google Pay
+    occurrence: 0
+    headingIndex: 2
+---
+Obě tyto platební metody FAPI podporuje prostřednictvím platebních bran. Aby se mohly vašim zákazníkům zobrazovat, je nejprve potřeba, aby vám je váš poskytovatel platební brány aktivoval.
+
+Následně se vám budou se tyto platební metody zobrazovat v prodejních formulářích v 3. kroku Platba, doprava a fakturace, v sekci Způsob platby.
+
+![Proč se nezobrazuje Apple Pay nebo Google Pay](/assets/articles/72fe4e2fde8e243a.png)
+
+Jejich zobrazení ale vždy závisí také na zařízení, prohlížeči a nastavení zákazníka.
+
+:::caution
+Dostupnost Apple Pay a Google Pay si ověříte ve FAPI v **Nastavení → Propojení aplikací**, po kliknutí na **Detail** dané platební brány. Pokud máte tyto metody zpřístupněné, uvidíte je v tabulce dostupných plateb.
+
+Toto však neplatí pro Stripe. Dostupnost je viditelná pouze přímo ve Stripe.
+
+![Proč se nezobrazuje Apple Pay nebo Google Pay](/assets/articles/630cd3026969d37c.png)
+:::
+
+  
+
+# Proč zákazník nevidí  Apple pay?
+
+Platba přes Apple Pay se zobrazí v prodejním formuláři jako dostupná platební metoda pouze při současném splnění těchto podmínek:
+
+-   zákazník používá zařízení Apple (iPhone, iPad, Mac),
+-   objednávku otevírá v prohlížeči Safari,
+-   má na zařízení aktivní a funkční Apple Pay,
+-   váš web používá zabezpečené připojení (SSL / HTTPS),
+-   máte podporovanou platební bránu s aktivní možností Apple Pay,
+-   v prodejním formuláři je Apple Pay povolený způsob platby.
+
+Pokud některá z těchto podmínek není splněna, Apple Pay se vám v prodejním formuláři nezobrazí.
+
+  
+
+# Proč zákazník nevidí Google Pay?
+
+Platba přes Google Pay se zobrazí v prodejním formuláři jako dostupná platební metoda pouze při současném splnění těchto podmínek:
+
+-   zákazník používá podporované zařízení a prohlížeč (typicky Android nebo kompatibilní prohlížeče),
+-   má na zařízení aktivní a funkční Google Pay,
+-   váš web používá zabezpečené připojení (SSL / HTTPS),
+-   máte podporovanou platební bránu s aktivní možností Google Pay,
+-   v prodejním formuláři je Google Pay povolený způsob platby.
+
+Pokud některá z těchto podmínek není splněna, Google Pay se zákazníkovi nezobrazí.
+
+  
+
+:::caution
+## Může mít jeden zákazník Apple Pay i Google Pay
+
+Ano. Pokud zákazník používá více zařízení (např. iPhone i Android), může mít k dispozici obě platební metody.
+
+**Na konkrétním zařízení se ale obvykle zobrazí jen ta metoda, kterou daný operační systém a prohlížeč podporují.**
+
+Například na iPhonu v Safari se typicky zobrazí Apple Pay, zatímco na Android zařízení spíše Google Pay.
+:::
+
+:::danger
+**POZOR!!!**
+
+**Platební brána STRIPE je jediná, která tyto platební metody Google a Apple Pay nabízí přímo v platbě kartou.** Jelikož z jejich pohledu jde o platbu kartou. Tedy se vám v prodejních formulářích nebudou nabízet jako samotný způsob platby. Ale zobrazí se vždy až při platbě kartou.
+
+  
+
+**U platební brány Pays** lze používat Apple Pay i Google Pay, ale je nutné **požádat podporu Pays o jejich aktivaci.**
+
+Ve výchozím stavu totiž tyto platební metody nejsou povolené.
+:::

@@ -1,0 +1,58 @@
+---
+title: Nastavení DPH pro účetní program Pohoda
+url: /article/29-nastaveni-dph-pro-ucetni-program-pohoda
+description: Používáte-li pro účetní zpracování faktur z FAPI systém Pohoda, je potřeba ve FAPI nastavit správný režim rekapitulace DPH. Uvedené nastavení se týká pouze plát
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Nastavení DPH pro účetní program Pohoda
+  - Nastavení
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/29-nastaveni-dph-pro-ucetni-program-pohoda
+order: 57
+updatedAt: 2026-10-14T10:52:13Z
+legacyAnchors:
+  - id: Omezen-ve-vyuit-pednastavench-daj-pro-export-do-POHODY-21Yiv
+    tag: h3
+    text: Omezení ve využití přednastavených údajů pro export do POHODY
+    occurrence: 0
+    headingIndex: 0
+---
+Používáte-li pro účetní zpracování faktur z FAPI systém _Pohoda_, je potřeba ve FAPI nastavit správný režim rekapitulace DPH.
+
+:::caution
+Uvedené nastavení se týká pouze plátců DPH, resp. identifikovaných osob.
+:::
+
+V nabídce [**Nastavení \> Nastavení fakturace**](https://web.fapi.cz/settings/?projectId=all) zvolte v sekci **NASTAVENÍ DPH** u parametru **ZPŮSOB VÝPOČTU REKAPITULACE DPH** režim pro systém Pohoda (jako na obrázku). Provedenou změnu uložte stiskem tlačítka **Uložit nastavení**.
+
+![Nastavení DPH pro účetní program Pohoda](/assets/articles/ceaeac6b940e3e27.png)
+
+:::caution
+Uživatelé účetního programu _Money_ nemusí v nastavení FAPI nic upravovat, volba pro jejich systém je ve výchozím stavu přednastavena.
+:::
+
+### Omezení ve využití přednastavených údajů pro export do POHODY
+
+FAPI aktuálně při exportu do účetního programu POHODA pracuje **pouze s následujícími předdefinovanými údaji**, které ovlivňují daňové zařazení dokladu. Jiné hodnoty či kombinace nejsou systémem podporovány:
+
+-   **UNost** – pro nulovou sazbu DPH (např. neplátci nebo osvobozená plnění)
+-   **UDA4** – pro plnění nad 10 000 Kč, kdy je potřeba uvést DIČ
+-   **UDA5** – pro plnění pod 10 000 Kč, typicky např. tuzemské živé akce
+-   **RDzasEU** – plnění v rámci EU přes režim OSS
+-   **UDdodEU** – reverse charge při dodání fyzického zboží do EU
+-   **USregEU** – reverse charge u jiných než zbožových plnění v EU
+-   **UDzahr** – plnění mimo EU (zahraniční plnění)
+
+Pokud vaše fakturační logika vyžaduje použití jiných údajů nebo složitější kombinace sazeb a režimů, doporučujeme tyto doklady upravit přímo v účetním programu POHODA po importu.
+
+  
+
+:::caution
+Můžete využít i přímého propojení s účetním programem POHODA
+
+[Propojení FAPI s účetním systémem POHODA](/article/352-propojeni-fapi-s-ucetnim-systemem-pohoda)
+:::

@@ -1,0 +1,48 @@
+---
+title: Automatické storno objednávky zákazníka na blacklistu
+url: /article/204-blacklist-zakazniku
+description: Někteří to znáte, máte zákazníka, který si na vás zasednul. A snaží se vás ve všech ohledech prudit a mařit vaše podnikání. Mařit vaší usilovnou práci. Na takov
+category: Automatizace
+categorySlug: 202-automatizace
+categorySlugs:
+  - 202-automatizace
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Automatické storno objednávky zákazníka na blacklistu
+  - Automatizace
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/204-blacklist-zakazniku
+order: 173
+updatedAt: 2026-07-13T11:11:11Z
+---
+Někteří to znáte, máte zákazníka, který si na vás zasednul. A snaží se vás ve všech ohledech prudit a mařit vaše podnikání. Mařit vaší usilovnou práci.
+
+Na takové lidi ale nemáme čas ani se jimi nechceme zabývat.
+
+Nejlépe aby takový zákazník u nás nemohl objednat naše služby či produkty.
+
+## Co k tomu budeme potřebovat?
+
+-   FAPI a prodejní formulář
+-   [Aplikaci Make](https://www.make.com/en/register?pc=fapimake)
+-   [Automatizační scénář "Automatické storno objednávky zákazníka na blacklistu"](http://www.make.com/cs/integration/10608-automaticke-storno-objednavky-zakazniku-na-blacklistu?templatePublicId=10608)
+
+## Jak na to?
+
+<Video src="https://www.youtube.com/embed/D203az1I7o8" />
+
+### Rychlý návod:
+
+1.  Zaregistrujte se do aplikace Make
+2.  Použijte automatizační scénář ["Automatické storno objednávky zákazníka na blacklistu"](http://www.make.com/cs/integration/10608-automaticke-storno-objednavky-zakazniku-na-blacklistu?templatePublicId=10608)
+3.  [Propojte FAPI a Make](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat)
+4.  Postupujte nastavením ve scénáři
+    1.  Vytvořte si webhook
+    2.  [Propojte FAPI a Make](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat)
+    3.  Vytvotře si tabulku s blacklistem
+    4.  Natavte storno faktury
+    
+5.  Automatizační scénář aktivujte
+6.  Zkopírujte url adresu webhooku z Make do akcí prodejního formuláře událost "Vystavení objednávky" akce spustit programový script
+7.  Prodejní fomrulář uložte
+8.  Otestujte zda scénář funguje, přidejte nějakou ze svým e-mailových adres na blacklist a vykoušejte objednávku.

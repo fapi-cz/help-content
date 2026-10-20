@@ -1,0 +1,125 @@
+---
+title: Kredity ve FAPI
+url: /article/318-kredity-ve-fapi
+description: Funkce Kredity umožňuje přiznat FAPI klientovi určitou hodnotu, kterou může následně využít k částečné úhradě své další faktury za FAPI. Kredity mohou být uděle
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+  - 6-fakturace
+  - 7-platby
+  - 11-rozsireni-a-doplnky
+keywords:
+  - Kredity ve FAPI
+  - Nastavení
+  - Fakturace
+  - Platby
+  - Rozšíření a doplňky
+sourceUrl: https://napoveda.fapi.cz/article/318-kredity-ve-fapi
+order: 251
+updatedAt: 2026-07-13T12:19:54Z
+legacyAnchors:
+  - id: Jak-kredity-funguj-Ixwpc
+    tag: h2
+    text: Jak kredity fungují
+    occurrence: 0
+    headingIndex: 0
+  - id: Uplatnn-kredit-u-platby-kartou-WSBTu
+    tag: h2
+    text: Uplatnění kreditů u platby kartou
+    occurrence: 0
+    headingIndex: 1
+  - id: Uplatnn-kredit-u-platby-bankovnm-pevodem-YOJAf
+    tag: h2
+    text: Uplatnění kreditů u platby bankovním převodem
+    occurrence: 0
+    headingIndex: 2
+  - id: Co-je-dobr-vdt-y4_lf
+    tag: h2
+    text: Co je dobré vědět
+    occurrence: 0
+    headingIndex: 3
+  - id: Plnovan-rozen-funkce-uz2wI
+    tag: h2
+    text: Kde najdete přehled o svých kreditech?
+    occurrence: 0
+    headingIndex: 4
+  - id: Plnovan-rozen-funkce-Jwa8A
+    tag: h2
+    text: Plánované rozšíření funkce
+    occurrence: 0
+    headingIndex: 5
+  - id: Zapojen-do-testovn-CDudp
+    tag: h2
+    text: Zapojení do testování
+    occurrence: 0
+    headingIndex: 6
+---
+Funkce **Kredity** umožňuje přiznat FAPI klientovi určitou hodnotu, kterou může následně využít k částečné úhradě své další faktury za FAPI.
+
+  
+
+Kredity mohou být uděleny například jako:
+
+-   kompenzace,
+-   poděkování,
+-   individuální bonus,
+-   součást zákaznické péče.
+
+  
+
+## Jak kredity fungují
+
+Pokud má klient přiznané kredity, použijí se automaticky k úhradě jeho další faktury.
+
+Kredity se však vždy uplatní maximálně do výše **50 % hodnoty faktury**. Druhou polovinu faktury je tedy potřeba uhradit standardním způsobem.
+
+:::caution
+Například pokud je vystavena faktura na 1 000 Kč a klient má k dispozici dostatek kreditů, může být kredity uhrazeno maximálně 500 Kč. Zbývajících 500 Kč klient doplatí běžnou platbou.
+:::
+
+## Uplatnění kreditů u platby kartou
+
+U platby kartou probíhá uplatnění kreditů automaticky.
+
+Pokud má klient nastavenou platbu kartou a na svém účtu dostupné kredity, FAPI je při úhradě další faktury automaticky zohlední. Z karty se následně strhne pouze zbývající částka po odečtení kreditů.
+
+Klient tedy nemusí provádět žádný další krok.
+
+## Uplatnění kreditů u platby bankovním převodem
+
+U platby bankovním převodem je potřeba věnovat pozornost částce, která má být skutečně uhrazena.
+
+Pokud se na fakturu uplatní kredity, částka k úhradě se sníží. Klient by si proto měl zkontrolovat, jaká část faktury zůstává k doplacení.
+
+Zvláštní pozornost je potřeba věnovat situaci, kdy má klient nastavený **trvalý příkaz**. V takovém případě je nutné pohlídat, aby trvalý příkaz neodeslal původní plnou částku faktury, ale pouze částku poníženou o uplatněné kredity.
+
+:::tip
+## **Co je dobré vědět**
+
+Kredity neslouží k plné úhradě faktury. Vždy mohou pokrýt maximálně 50 % její hodnoty.
+
+Zbývající část faktury je nutné uhradit běžným způsobem, tedy například kartou nebo bankovním převodem.
+
+Pokud není k dispozici dostatečný počet kreditů, uplatní se pouze dostupná část kreditů, opět maximálně do 50 % hodnoty faktury.
+:::
+
+## Kde najdete přehled o svých kreditech?
+
+Přehled svých kreditů najdete ve svém FAPI účtu v sekci [Můj účet \> Tarif a faktury](https://web.fapi.cz/billing/?projectId=all)
+
+![Kredity ve FAPI](/assets/articles/8d3c540e1f9e0837.png)
+
+## Plánované rozšíření funkce
+
+Do budoucna plánujeme funkci kreditů zpřístupnit také přímo ve FAPI účtech našich klientů.
+
+Díky tomu budou moci klienti využívat kredity jako benefit pro své vlastní zákazníky.
+
+Například jako kompenzaci, věrnostní odměnu, bonus nebo individuální slevový nástroj.
+
+## Zapojení do testování
+
+Funkce kreditů je nyní v testovacím režimu, kdy kredity přiznáváme pouze uživatelům FAPI.
+
+Pokud máte zájem být součástí testování a vyzkoušet kredity na svém FAPI účtu, napište nám na [podpora@fapi.cz](mailto:podpora@fapi.cz). Po domluvě vás můžeme do testovacího programu přidat.

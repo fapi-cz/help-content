@@ -1,0 +1,222 @@
+---
+title: Založení a integrace platební brány Comgate ve FAPI
+url: /article/58-zalozeni-a-integrace-platebni-brany-comgate
+description: Comgate je spolehlivá platební brána pro online platby, kterou můžete ve FAPI snadno propojit a začít přes ni přijímat platby z prodejních formulářů. Po propoje
+category: Platební brány (platba kartou)
+categorySlug: 309-platebni-brany
+categorySlugs:
+  - 309-platebni-brany
+  - 5-nastaveni
+  - 7-platby
+  - 9-online-prodej
+  - 10-propojeni-s-externimi-systemy
+keywords:
+  - Založení a integrace platební brány Comgate ve FAPI
+  - Platební brány (platba kartou)
+  - Nastavení
+  - Platby
+  - Online prodej
+  - Propojení s jinými systémy
+sourceUrl: https://napoveda.fapi.cz/article/58-zalozeni-a-integrace-platebni-brany-comgate
+order: 11
+updatedAt: 2026-09-03T14:20:49Z
+legacyAnchors:
+  - id: -1-Zaloen-tu-platebn-brny-u-GoPay--LXS9e
+    tag: h2
+    text: 1. Založení účtu platební brány u Comgate
+    occurrence: 0
+    headingIndex: 0
+  - id: 3-Nastaven-Comgate--HECFT
+    tag: h2
+    text: Nastavení Comgate
+    occurrence: 0
+    headingIndex: 1
+  - id: 4-Vytvoen-propojen-s-platebn-brnou-Comgate-UoRQ8
+    tag: h2
+    text: 2. Vytvoření propojení s Comgate ve FAPI
+    occurrence: 0
+    headingIndex: 2
+  - id: 3-Nastaven-platebn-brny-GoPay-v-prodejnm-formuli--8Mol
+    tag: h2
+    text: 3. Nastavení platební brány Comgate v prodejním formuláři
+    occurrence: 0
+    headingIndex: 3
+---
+Comgate je spolehlivá platební brána pro online platby, kterou můžete ve FAPI snadno propojit a začít přes ni přijímat platby z prodejních formulářů. Po propojení se platby automaticky párují k objednávkám a zákazník si při dokončení objednávky zvolí platbu přes Comgate.
+
+V této nápovědě najdete postup, jak si [Comgate](https://www.comgate.eu/cs?r=H378) založit, kde získat potřebné údaje pro propojení a jak bránu správně nastavit, aby vše fungovalo bez komplikací. Více informací o platební bráně najdete na [webových stránkách provozovatele](https://www.comgate.cz/?r=H378).
+
+:::caution
+Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli (společnosti Comgate a.s.), a není tedy součástí ceny za licenci FAPI.
+
+[Ceník platební brány Comgate](https://www.comgate.eu/cs/ceniky-platebni-brany)
+:::
+
+:::danger
+Minimální výše platby, kterou platební brána Comgate dokáže zpracovat, je 1 Kč.
+:::
+
+**Návod vám pomůže se:**
+
+1.  Založením platební brány Comgate
+2.  Napojením Comgate do FAPI
+3.  Aktivací Comgate v prodejním formuláři
+
+  
+
+## 1\. Založení účtu platební brány u Comgate
+
+Účet Comgate si zřídíte na stránkách společnosti Comgate vyplnění tzv. [poptávkového formuláře](https://www.comgate.cz/?r=H378).
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/8b68094778d2c869.png)
+
+Ihned po vyplnění poptávkového formuláře o vás Comgate ví a pro další hladký průběh dokončení registrace vás žádají o vyplnění dalších údajů přímo na jejich stránkách.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/3de400101be6ef19.png)
+
+Zároveň z Comgate z adresy [poptavky@comgate.cz](mailto:poptavky@comgate.cz) obdržíte e-mail s předmětem "_Děkuji za poptávku služeb Comgate. Další kroky._" pro nastavení další komunikace.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/2553d1459a92d29d.png)
+
+Většinou do jednoho dne od vyplnění vaší poptávky vám společnost Comgate zašle cenovou nabídku a smluvní dokumentaci.
+
+Pokud se na základě nabídky rozhodnete pro spolupráci a podepíšete s provozovatelem platební brány smlouvu, bude vám založen přístup do klientského portálu Comgate.  
+
+Po splnění všech smluvních podmínek, ověření a schválení žádosti si můžete nechat **aktivovat expresní bankovní převody** a začít provádět testovací platby. Comgate vás o zpřístupnění této platební metody bude informovat.
+
+Následně se schvalují samostatně **platby kartou**, což může trvat až 5 dnů. Opět jste ze strany Comgate informováni.
+
+  
+
+V klientském portálu můžete rovněž mít založený produkční i testovací profil.
+
+  
+
+## Nastavení Comgate
+
+Přihlaste se svého účtu Comgate a **přejděte na Integrace** a vyberte obchod.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/1b68fe56324082e3.png)
+
+Poté pro založení nového obchodu se přepněte do záložky Propojení obchodu, pak klikněte na modré tlačítko **Přidat**.
+
+Již vytvořené propojení můžete spravovat kliknutím u konkrétního obchodu na tužtičku pro úpravu.  
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/9bb9602ea4a92bff.png)
+
+Doplňte správné údaje pro URL notifikace a povolené IP adresy. Údaje najdete níže v červeném bloku.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/ee7f4616a2587aa1.png)
+
+:::danger
+⚠️ **Důležité nastavení v Comgate**
+
+Aby propojení platební brány **Comgate** ve FAPI fungovalo správně, je potřeba mít v administraci Comgate u daného obchodu správně vyplněné návratové URL adresy a nastavení IP adres.
+
+V Comgate přejděte dle screenu výše do:
+
+**Integrace → Nastavení obchodů → Upravit propojení obchodu**
+
+  
+
+Nastavte tyto návratové URL adresy adresy:
+
+**Url zaplacený:**          _`https://gateway.fapi.cz/return/com-gate/${refId}?transactionId=${id}`_
+
+**Url zrušený:**               _`https://gateway.fapi.cz/return/com-gate/${refId}?transactionId=${id}`_
+
+**Url nevyřízený:**        _`https://gateway.fapi.cz/return/com-gate/${refId}?transactionId=${id}`_
+
+**Url pro předání výsledku platby:** [_https://gateway.fapi.cz/notification/com-gate_](https://gateway.fapi.cz/notification/com-gate)
+
+  
+
+**Povolené IP adresy:**
+
+Do seznamu povolených IP adres zadejte, tyto adresy níže. Dbejte, ať mezi nimi nemáte mezery.
+
+  
+
+83.167.243.140
+
+178.238.37.32
+
+18.158.192.220
+
+  
+
+V Comgate musí být zobrazeny takto:
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/5456a270e594c695.png)
+
+Alternativně můžete jednoduše zaškrtnout možnost **„Povolit všechny IP“**.
+
+V takovém případě není potřeba IP adresy ručně vyplňovat a při případné změně IP není nutné nastavení znovu kontrolovat.
+
+Pokud některý údaj chybí nebo není správně vyplněný, můžete nastavení obchodu změnit pomocí tlačítka **Upravit** (ikona tužky).
+
+❗ **Bez správného nastavení obchodu v Comgate nelze platební bránu úspěšně propojit s FAPI.**
+:::
+
+  
+
+## 2\. Vytvoření propojení s Comgate ve FAPI
+
+Ve FAPI v nabídce **Nastavení -\> Propojení aplikací** stiskněte tlačítko **Nové propojení s Comgate**.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/6fa8528a0dc9ecfe.png)
+
+Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení se službou Comgate.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/42d243c499175fac.png)
+
+Do zobrazeného formuláře vyplňte všechny potřebné údaje. Přístupové údaje najdete ve svém účtu Comgate v nabídce **Nastavení obchodů** - záložka **Propojení obchodu**.
+
+-   **DOMÉNA**: vyplňte doménu, na které budete platební bránu používat (jde o interní pojmenování platební brány ve FAPI, např. ve tvaru www.fapi.cz)
+-   **CLIENT MERCHANT**: vyplňte údaj, který se v účtu Comgate nazývá _Identifikátor propojení obchodu_
+-   **CLIENT SECRET**: vyplňte údaj, který se v účtu Comgate nazývá _Heslo_
+-   **REŽIM**: zvolte režim testovací/produkční (podle stavu ve kterém je nastaven Váš účet Comgate)
+
+Vyplněné hodnoty uložte stiskem tlačítka **Uložit**.
+
+:::danger
+Po přepnutí platební brány do ostrého provozu na straně Comgate, je třeba stejným způsobem změnit i nastavení platební brány ve FAPI.
+
+V nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u příslušného propojení s platební bránou Comgate a volbu **REŽIM** nastavte na hodnotu **produkční režim.**
+:::
+
+:::tip
+Pokud chcete, aby se peníze přijaté přes platební bránu Comgate **automaticky převáděly na váš konkrétní bankovní účet**, je možné v nastavení propojení s platební bránou vyplnit **ID bankovního účtu** z administrace Comgate (pole **ACCOUNT**).
+
+Tato funkce není ve FAPI dostupná automaticky a aktivujeme ji **na vyžádání**.
+
+V případě zájmu nám napište na [podpora@fapi.cz](mailto:mailto:podpora@fapi.cz).
+:::
+
+:::danger
+Testovací i produkční režim mají své vlastní přístupové údaje a je potřeba je správně zadat, jinak jsou vyhodnoceny chybou, že se jedná o nesprávné přístupy.
+:::
+
+## 3\. Nastavení platební brány Comgate v prodejním formuláři
+
+Nakonec už jen zbývá propojenou platební bránu přidat do prodejního formuláře, v němž si přejete platební bránu využívat.
+
+V nabídce **Prodej -\> Prodejní formuláře**, vyberte formulář, u kterého chcete nabídnout online platby zprostředkované pomocí platební brány Comgate a stiskněte tlačítko **Upravit prodejní formulář.**
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/aa8bda03be354320.png)
+
+Na záložce **3\.** **Platba, doprava a fakturace** v úpravě prodejního formuláře vyberte v sekci **Platební brána** příslušné propojení s platební bránou Comgate.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/6a244789f38537bb.png)
+
+Změny provedené v nastavení prodejního formuláře uložte tlačítkem **Uložit formulář**.
+
+![Založení a integrace platební brány Comgate ve FAPI](/assets/articles/b421dcfa3013840d.png)
+
+Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář je nyní propojen s platební bránou Comgate a vaši zákazníci vám mohou začít platit online.
+
+:::tip
+Mnoho užitečných návodů o Comgate najdete pod tímto odkazem, mimo to Comgate má českou podporu:
+
+[Podpora Comgate](https://help.comgate.cz/?utm_source=podpora&utm_medium=email)
+:::

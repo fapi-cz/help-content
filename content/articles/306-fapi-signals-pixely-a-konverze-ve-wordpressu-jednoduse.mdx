@@ -1,0 +1,414 @@
+---
+title: FAPI Signals – pixely a konverze ve WordPressu jednoduše
+url: /article/306-fapi-signals-pixely-a-konverze-ve-wordpressu-jednoduse
+description: FAPI Signals je WordPress plugin, který vám umožní rychle a správně nasadit měření konverzí a reklamních pixelů bez programování. Plugin automaticky vloží do va
+category: Měření a Marketing
+categorySlug: 300-mereni-a-marketing
+categorySlugs:
+  - 300-mereni-a-marketing
+keywords:
+  - FAPI Signals – pixely a konverze ve WordPressu jednoduše
+  - Měření a Marketing
+sourceUrl: https://napoveda.fapi.cz/article/306-fapi-signals-pixely-a-konverze-ve-wordpressu-jednoduse
+order: 152
+updatedAt: 2026-07-13T11:07:34Z
+legacyAnchors:
+  - id: Video-nvod-1R4h-
+    tag: h2
+    text: "Video návod:"
+    occurrence: 0
+    headingIndex: 0
+  - id: 1-Co-je-FAPI-Signals-rq6GZ
+    tag: h2
+    text: 1) Co je FAPI Signals
+    occurrence: 0
+    headingIndex: 1
+  - id: 1-Vloen-pixel-do-webu-pQCyo
+    tag: h3
+    text: 1. Vložení pixelů do webu
+    occurrence: 0
+    headingIndex: 2
+  - id: 2-Odesln-konverz-z-FAPI-L4cl2
+    tag: h3
+    text: 2. Odesílání konverzí z FAPI
+    occurrence: 0
+    headingIndex: 3
+  - id: 3-Server-side-PageView-voliteln-83Lit
+    tag: h3
+    text: 3. Server-side PageView (volitelné)
+    occurrence: 0
+    headingIndex: 4
+  - id: 2-Instalace-5BJwk
+    tag: h2
+    text: 2) Instalace
+    occurrence: 0
+    headingIndex: 5
+  - id: 3-Nastaven-pixel-NkP3y
+    tag: h2
+    text: 3) Nastavení pixelů
+    occurrence: 0
+    headingIndex: 6
+  - id: Pklady-ID-formt-x5Cdq
+    tag: h3
+    text: Příklady ID formátů
+    occurrence: 0
+    headingIndex: 7
+  - id: 4-Nastaven-konverz-ilVQF
+    tag: h2
+    text: 4) Nastavení konverzí
+    occurrence: 0
+    headingIndex: 8
+  - id: Meta-Purchase-obsahuje-kompletn-data-objednvky-Y67Qk
+    tag: h3
+    text: Meta Purchase obsahuje kompletní data objednávky
+    occurrence: 0
+    headingIndex: 9
+  - id: 5-Dkovac-strnka--parametr--ei-bR
+    tag: h2
+    text: 5) Děkovací stránka + parametr "path" (nejdůležitější)
+    occurrence: 0
+    headingIndex: 10
+  - id: Aktivace-ve-FAPI-aGVl3
+    tag: h3
+    text: Aktivace ve FAPI
+    occurrence: 0
+    headingIndex: 11
+  - id: Jak-to-poznte-kVU1V
+    tag: h3
+    text: Jak to poznáte?
+    occurrence: 0
+    headingIndex: 12
+  - id: 6-Debug-a-oven-funknosti-6MstD
+    tag: h2
+    text: 6) Debug a ověření funkčnosti
+    occurrence: 0
+    headingIndex: 13
+  - id: Doporuen-postup-mumja
+    tag: h3
+    text: Doporučený postup
+    occurrence: 0
+    headingIndex: 14
+  - id: Doporuen-nstroje-pro-oven-6NuhC
+    tag: h3
+    text: Doporučené nástroje pro ověření
+    occurrence: 0
+    headingIndex: 15
+  - id: 7-Nejastj-chyby-duplicity-GTM-PixelYourSite-lgsbC
+    tag: h2
+    text: 7) Nejčastější chyby (duplicity, GTM, PixelYourSite)
+    occurrence: 0
+    headingIndex: 16
+  - id: Nejastj-problm-men-je-vloen-dvakrt-A-FQ9
+    tag: h3
+    text: "Nejčastější problém: měření je vložené dvakrát"
+    occurrence: 0
+    headingIndex: 17
+  - id: 8-Server-side-PageView-FHDR6
+    tag: h2
+    text: 8) Server-side PageView
+    occurrence: 0
+    headingIndex: 19
+  - id: Co-se-odesl-Mk8TZ
+    tag: h3
+    text: Co se odesílá?
+    occurrence: 0
+    headingIndex: 20
+  - id: Co-se-neodesl-TAbQs
+    tag: h3
+    text: Co se neodesílá?
+    occurrence: 0
+    headingIndex: 21
+  - id: 9-GDPR--Consent-stav-3G5Rj
+    tag: h2
+    text: 9) GDPR / Consent stav
+    occurrence: 0
+    headingIndex: 22
+  - id: Plugin-mi-nem-Purchase-pro-3Xsyi
+    tag: h3
+    text: Plugin mi neměří Purchase, proč?
+    occurrence: 0
+    headingIndex: 24
+  - id: Musm-mt-pixel-aktivn-abych-mohl-mit-konverze-07LSu
+    tag: h3
+    text: Musím mít pixel aktivní, abych mohl měřit konverze?
+    occurrence: 0
+    headingIndex: 25
+  - id: Podporuje-plugin-Google-Ads-Conversion-Label-KO30z
+    tag: h3
+    text: Podporuje plugin Google Ads Conversion Label?
+    occurrence: 0
+    headingIndex: 26
+  - id: Mohu-pouvat-souasn-GTM-a-FAPI-Signals-P3K5N
+    tag: h3
+    text: Mohu používat současně GTM a FAPI Signals?
+    occurrence: 0
+    headingIndex: 27
+  - id: K-emu-je-FAPI-Rewards-script-VePxf
+    tag: h3
+    text: K čemu je FAPI Rewards script?
+    occurrence: 0
+    headingIndex: 28
+  - id: Posl-plugin-server-side-nkupy-Alb9q
+    tag: h3
+    text: Posílá plugin server-side nákupy?
+    occurrence: 0
+    headingIndex: 29
+---
+**FAPI Signals** je WordPress plugin, který vám umožní rychle a správně nasadit [**měření konverzí**](/article/144-konverzni-kody) a **reklamních pixelů bez programování**.
+
+Plugin automaticky vloží do vašeho webu:
+
+-   reklamní pixely (Meta, TikTok, Pinterest, LinkedIn, GA4…)
+-   konverzní kódy napojené na objednávky z FAPI
+-   volitelné server-side měření návštěvnosti (PageView)
+
+Díky tomu máte přehled o tom, odkud přichází zákazníci a, které kampaně vám vydělávají, tak můžete správně optimalizovat reklamy.
+
+## Video návod:
+
+<Video src="https://www.youtube.com/embed/KX1d2pQK0AQ" />
+
+## **1\) Co je FAPI Signals**
+
+FAPI Signals slouží k propojení vašeho **WordPress** webu s **reklamními platformami** a **FAPI** objednávkami. Plugin řeší tři hlavní věci:
+
+### **1\. Vložení pixelů do webu**
+
+Například Meta Pixel nebo TikTok Pixel.
+
+### **2\. Odesílání konverzí z FAPI**
+
+Po dokončení objednávky se automaticky odešle _Purchase_ event do reklamních systémů.
+
+### **3\. Server-side** _**PageView**_ **(volitelné)**
+
+Návštěvy stránky lze odesílat i serverově (lepší match pro remarketing).
+
+## **2\) Instalace**
+
+1.  Stáhněte plugin **FAPI Signals** ve formátu .zip nebo vyhledejte plugin přímo skrze WP vyhledávací políčku pluginů.
+
+:::note
+Odkaz na stažení pluginu: [https://drive.google.com/file/d/1QtZGX6y5hxuWbe2\_FedpeQpUoi1hV9d5/view?usp=sharing](https://drive.google.com/file/d/1QtZGX6y5hxuWbe2_FedpeQpUoi1hV9d5/view?usp=sharing)
+:::
+
+2.  Ve WordPress administraci otevřete:
+
+**Pluginy → Instalace pluginů → Nahrát plugin**
+
+3.  Nahrajte ZIP soubor a klikněte na **Instalovat**
+4.  Po instalaci klikněte na **Aktivovat**
+5.  Nastavení pluginu najdete zde:
+
+**Nastavení → FAPI Signals**
+
+## **3\) Nastavení pixelů**
+
+V administraci pluginu má každý nástroj vlastní sekci.
+
+Například:
+
+-   Meta Pixel
+-   TikTok Pixel
+-   Pinterest Tag
+-   LinkedIn Insight Tag
+-   GA4
+-   Google Tag Manager
+-   Google Ads
+
+Postup je vždy stejný:
+
+1.  Zapněte přepínač **Aktivovat pixel**
+2.  Vyplňte požadované ID
+3.  Uložte nastavení (na konci stránky)
+
+### **Příklady ID formátů**
+
+-   Meta Pixel ID: 1234567890
+-   GA4 Measurement ID: G-XXXXXXXXXX
+-   GTM Container ID: GTM-XXXXXXX
+-   Google Ads ID: AW-XXXXXXXXX
+
+Po uložení plugin automaticky vloží pixel do hlavičky webu (wp\_head).
+
+## **4\) Nastavení konverzí**
+
+**Konverze** znamenají, že po dokončení objednávky se odešle událost typu _Purchase_.
+
+V pluginu můžete pro každý nástroj samostatně zapnout:
+
+-   Pixel (měření návštěv)
+-   Konverze (měření nákupů)
+
+Například:
+
+-   Meta Pixel → Zapnout konverze
+-   GA4 → Zapnout konverze
+-   TikTok → Zapnout konverze
+
+### **Meta Purchase obsahuje kompletní data objednávky**
+
+Odesílá se:
+
+-   hodnota objednávky (value)
+-   měna (currency)
+-   položky (items)
+
+Konverze se odesílají pomocí FAPI SDK automaticky na děkovací stránce.
+
+FAPI Signals automaticky do stránek vkládá [konverzní kódy FAPI](/article/144-konverzni-kody).
+
+## **5\) Děkovací stránka + parametr "path" (nejdůležitější)**
+
+Aby plugin mohl odeslat konverzi, musí poznat, že se zákazník nachází na děkovací stránce objednávky.
+
+To funguje tak, že v URL musí být unikátní identifikátor objednávky.
+
+### **Aktivace ve FAPI**
+
+Otevřete ve FAPI: **Prodejní formulář → krok 5 (Děkovací stránka).** Zapněte volbu:
+
+✅ **Vkládat unikátní identifikátor do URL děkovací stránky**
+
+![FAPI Signals – pixely a konverze ve WordPressu jednoduše](/assets/articles/50db2304e3fe6ce7.png)
+
+### **Jak to poznáte?**
+
+Po nákupu musí být na děkovací stránce v URL parametr:
+
+_path=..._
+
+Pokud tam parametr **path** není, plugin **nemůže načíst objednávku a konverze se neodešlou.**
+
+## **6\) Debug a ověření funkčnosti**
+
+Plugin obsahuje Debug mode, který výrazně pomáhá při kontrole nastavení.
+
+### **Doporučený postup**
+
+1.  Zapněte v pluginu:
+
+✅ **Debug mode**
+
+2.  Otevřete web v anonymním okně (ne jako admin)
+3.  Otevřete konzoli prohlížeče (F12)
+
+V konzoli uvidíte:
+
+-   které pixely byly vloženy
+-   které konverze byly odeslány
+-   výsledky server-side PageView
+
+### **Doporučené nástroje pro ověření**
+
+-   Meta Pixel Helper (Chrome)
+-   TikTok Pixel Helper
+-   Pinterest Tag Helper
+-   GA4 DebugView
+
+## **7\) Nejčastější chyby (duplicity, GTM, PixelYourSite)**
+
+### **Nejčastější problém: měření je vložené dvakrát**
+
+Pokud máte pixely aktivní zároveň:
+
+-   přes GTM
+-   přes PixelYourSite
+-   přes jiný plugin nebo builder
+-   a zároveň přes FAPI Signals
+
+budou se eventy odesílat duplicitně.
+
+:::caution
+### **Doporučení**
+
+Používejte vždy pouze jedno řešení:
+
+-   FAPI Signals
+-   nebo GTM
+-   nebo jiné pluginy/doplňky
+
+**ne současně**
+
+  
+
+Plugin sice používá _event\_id_ pro deduplikaci, ale žádná platforma to neřeší stoprocentně automaticky.
+:::
+
+## **8\) Server-side PageView**
+
+FAPI Signals podporuje server-side měření návštěvnosti.
+
+### **Co se odesílá?**
+
+Pouze událost:
+
+-   _PageView_
+
+### **Co se neodesílá?**
+
+Plugin neposílá server-side **Purchase**.
+
+:::tip
+Nákupy se odesílají přímo z FAPI přes konverzní kódy na děkovací stránce. Nebo skrze napojení CAPI ve FAPI.
+:::
+
+Server-side **PageView** je vhodný hlavně pro:
+
+-   lepší remarketing
+-   přesnější měření návštěv při blokování cookies
+
+## **9\) GDPR / Consent stav**
+
+Aktuální verze pluginu:
+
+-   nečeká na cookies souhlas
+-   pixely i konverze se vkládají okamžitě
+
+Consent manager integrace je připravená v kódu, ale zatím není aktivní.
+
+GDPR režim bude doplněn v dalších updatech.
+
+Zodpovědnost za právní nastavení cookies lišty je na provozovateli webu.
+
+:::note
+## **FAQ**
+
+### **Plugin mi neměří Purchase, proč?**
+
+Nejčastější důvod je chybějící parametr **path** v URL děkovací stránky.
+
+Zkontrolujte krok 5. ve FAPI formuláři.
+
+  
+
+### **Musím mít pixel aktivní, abych mohl měřit konverze?**
+
+**Ano**. Konverze sice lze zapnout i samostatně, ale pokud nemáte vložený pixel do stránky, nebude se nic měřit
+
+  
+
+### **Podporuje plugin Google Ads Conversion Label?**
+
+**Ne**. Aktuálně plugin podporuje pouze základní Google Ads ID (AW-...).
+
+  
+
+### **Mohu používat současně GTM a FAPI Signals?**
+
+**Ano**, ale ne k měření konverzí a událostí do stejných nástrojů jako ve FAPI Signals.
+
+  
+
+### **K čemu je FAPI Rewards script?**
+
+Trackuje affiliate prokliky a počítá provize partnerům ve [FAPI Rewards](/article/272-o-cem-je-fapi-rewards-a-prace-s-partnery).
+
+Pokud FAPI Rewards nepoužíváte, můžete jej vypnout.
+
+  
+
+### **Posílá plugin server-side nákupy?**
+
+Ne. Server-side je pouze pro PageView. Purchase jde přímo z FAPI.
+:::

@@ -1,0 +1,78 @@
+---
+title: Co znamená  'Bounce' u kontaktu a jak s tím pracovat?
+url: /article/256-co-znamena-bounce-u-kontaktu-a-jak-s-tim-pracovat
+description: V systému FAPI se u některých kontaktů může stát, že e-mail nebude doručen a kontakt získá status bounce nebo complaint. Obě tyto situace mají za následek, že F
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+keywords:
+  - Co znamená  'Bounce' u kontaktu a jak s tím pracovat?
+  - Nastavení
+sourceUrl: https://napoveda.fapi.cz/article/256-co-znamena-bounce-u-kontaktu-a-jak-s-tim-pracovat
+order: 165
+updatedAt: 2026-07-13T11:11:08Z
+---
+V systému FAPI se u některých kontaktů může stát, že e-mail **nebude doručen** a kontakt získá status **bounce** nebo **complaint**. Obě tyto situace mají za následek, že FAPI **automaticky ukončí odesílání všech transakčních e-mailů** (např. potvrzení objednávky, faktury) danému kontaktu.
+
+  
+
+## Co je "B*ounce"*
+
+**Bounce** znamená, že e-mail **nebyl doručen** z technického důvodu.
+
+## Nejčastější příčiny "bounce" stavu:
+
+1.  **Chyba v e-mailové adresa -** E-mail byl zadán s chybou (např. `@gmial.com` namísto `@gmail.com`).
+2.  **Zrušená či neexistující e-mailová adresa**
+3.  **Plná schránka příjemce -** Server příjemce odmítl zprávu, protože není místo pro další příchozí poštu.
+4.  **Dočasná nedostupnost serveru -** E-mailový server příjemce nebyl dočasně dostupný nebo výpadek zpŭsobil odmítnutí zprávy.
+5.  **Antispamová ochrana -** Příjemcův server vyhodnotil zprávu jako spam a odmítl ji doručit.
+6.  **Blacklist nebo reputace domény -** Naše doména odesílatele nebo IP adresa může být u příjemce na blacklistu a naše zpráva je pak zamítnuta.
+
+  
+
+FAPI takový e-mail **vyhodnotí jako nedoručitelný** a zastaví další rozesílku na tuto adresu.
+
+:::danger
+Pokud dojde k bounce, je nutné před opětovným povolením ověřit správnost e-mailové adresy.
+:::
+
+![Co znamená  'Bounce' u kontaktu a jak s tím pracovat?](/assets/articles/a537b71af98434de.png)
+
+## Co se stane s kontaktem ve stavu "bounce"
+
+-   Na tento kontakt se **dále neodesílají žádné e-maily**.
+-   V detailu kontaktu se zobrazí stav "bounce" a případná chybová hláška (pokud ji server poskytl).
+-   Tím se chrání doručitelnost vašich zpráv ostatním kontaktům.
+
+  
+
+## Jak pracovat s kontaktem ve stavu "bounce"
+
+1.  **Zkontrolujte e-mailovou adresu**
+    
+    Hledejte chyby v doméně nebo překlepy.
+    
+2.  **Oslovte kontakt jiným způsobem**
+    
+    Pokud máte jiné kontaktní údaje (např. telefon), ověřte si adresu a nastavení jeho emailu přímo s klientem. Popř. může přidat Fapi [fakturace@fapifaktura.cz](mailto:fakturace@fapifaktura.cz) do seznamu ověřených adres.
+    
+3.  **Adresu opravte**
+    
+    Pokud zjistíte chybu, opravte adresu a kontakt znovu uložte. Tím se adresa automaticky znovu aktivuje.
+    
+
+  
+
+**Poznámka:** Automatický status bounce je důležitý pro udržení spolehlivého e-mailingu. Pokud si nejste jistí, proč adresa bounce vznikla, kontaktujte příjemce nebo naši podporu, rádi vám pomůžeme s analýzou.
+
+  
+
+## Co je "Complaint"
+
+Další poznámkou, kterou u stavu klienta můžete vidět, je oznámení, že se klient sám dal na blacklist.
+
+Zde nás stačí kontaktovat a my můžeme vašeho klienta reaktivovat pro obnovení odesílky.
+
+![Co znamená  'Bounce' u kontaktu a jak s tím pracovat?](/assets/articles/fea64961540c656b.png)
