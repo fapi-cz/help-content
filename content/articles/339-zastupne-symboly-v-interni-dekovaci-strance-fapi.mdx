@@ -180,7 +180,7 @@ FAPI zde objednávku zná automaticky. Nepřidávejte proto SDK script ani ident
 ### Podmíněné bloky platbu v děkovací stránce
 
 -   ### Podmíněné bloky platbu v e-mailech
-    
+
 -   `{{ifCash}}...` `{{/ifCash}}`         – pouze pro platbu v hotovosti
 -   `{{` `ifWire}}...{/ifWire}}`         – pouze pro platbu bankovním převodem
 -   `{{` `ifCreditCard}}...{/ifCreditCard}}`         – pouze pro platbu kartou
@@ -246,7 +246,7 @@ Například `{{items.0.name}}`         vypíše název první zakoupené
 
 -   ` {{item-<kód_produktu>}}...{{/item-<kód_produktu>}}  `     – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
 
-  
+
 
 :::info
 **Příklad:**
@@ -273,7 +273,7 @@ Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem 
 -   `{{ifIssued}}...{{/ifIssued}}`         – pouze pokud je faktura vystavená a nezaplacená
 -   `{{ifCancelled}}...{{/ifCancelled}}`         – pouze pokud je objednávka stornovaná
 
-  
+
 
 Párové bloky vložte na samostatné řádky. Otevírací a zavírací značku ponechte ve stejném formátování. Text mezi nimi vložte do vlastního odstavce.
 
@@ -343,7 +343,7 @@ Stejný princip platí i pro vlastní pole:
 JSON symboly využijete hlavně tehdy, pokud s daty dál pracujete technicky, například ve vlastním kódu na děkovací stránce. Pokud chcete zobrazit zákazníkovi běžný text, použijte raději konkrétní symbol s názvem nebo hodnotou.
 :::
 
-  
+
 
 :::caution
 ## Vlastní externí děkovací stránka
@@ -385,7 +385,7 @@ Pokud editor platformy nepřijme symbol `{{orderStatusPage}}`        př�
 :::caution
 SDK a parametr `path`        jsou nutné i v tomto případě.
 
-  
+
 
 Více podrobný postup je zde:
 
@@ -407,7 +407,7 @@ Vložte HTML element a do něj tento kód:
 
 Kód vytvoří funkční odkaz na přehled objednávky.
 
-  
+
 
 **Konverzky**
 
@@ -430,8 +430,8 @@ Výsledek je kliknutelný odkaz:
 ![Zástupné symboly v děkovací stránce](/assets/articles/bb08744c01617807.png)
 :::
 
-  
-  
+
+
 
 :::danger
 # Nejčastější chyby

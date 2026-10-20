@@ -55,7 +55,7 @@ Tento článek vás provede integrací platební brány [Stripe](https://stripe.
 Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli, a není tedy součástí ceny za licenci FAPI.
 :::
 
-  
+
 
 **Návod vám pomůže se:**
 
@@ -63,7 +63,7 @@ Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazn
 2.  Napojením Stripe do FAPI
 3.  Aktivací Stripe v prodejním formuláři
 
-  
+
 
 ## 1\. Založení účtu Stripe
 
@@ -97,7 +97,7 @@ Minimální výše platby, kterou platební brána Stripe dokáže zpracovat je 
 Pro produkční režim (live account) doporučujeme na straně FAPI vytvořit nové propojení s použitím produkčních (live) API klíčů.
 :::
 
-  
+
 
 ## 2\. Vytvoření propojení se Stripe ve FAPI
 
@@ -113,7 +113,7 @@ Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení
 -   **PUBLISHABLE KEY** - veřejný klíč z účtu Stripe,
 -   **SECRET KEY** - tajný klíč z účtu Stripe.
 
-  
+
 
 Zadané údaje ve FAPI uložte stiskem tlačítka **Uložit**.
 
@@ -121,7 +121,7 @@ Zadané údaje ve FAPI uložte stiskem tlačítka **Uložit**.
 Při uložení se na pozadí automaticky vytvoří a na obou stranách uloží i tzv. _webhook_, který slouží pro správné zpracování platby. Pomocí webhooku předává Stripe do FAPI informaci o změně stavu platby.
 :::
 
-  
+
 
 **Kde klíče najdete ve Stripe?**
 
@@ -131,7 +131,7 @@ Veřejný (publishable) i tajný (secret) klíč najdete ve svém účtu Strip
 
 ![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/e9fb7f75e7838d30.png)
 
-  
+
 
 ![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/8f5bc02cd2bd04f9.png)
 
@@ -143,7 +143,7 @@ Pro zobrazení tajného klíče je potřeba kliknout na tlačítko **Reveal key
 Stripe má oddělený testovací a produkční režim a každý z nich používá vlastní API klíče. Pokud tedy do FAPI omylem vložíte testovací klíče místo produkčních, propojení nebude fungovat a FAPI může hlásit chybu v přístupu a že přihlašovací údaje nejsou správné.
 :::
 
-  
+
 
 ## 3\. Nastavení platební brány Stripe v prodejním formuláři
 
@@ -171,7 +171,7 @@ Tento screen vás navede, jak na to.
 ![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/b982b0c98c0accc3.png)
 :::
 
-  
+
 
 ## Dostupné platební metody u Stripe
 
@@ -183,7 +183,7 @@ Přes Stripe lze používat i PayPal obchodní účet, pokud jej do Stripe přip
 **Platební brána STRIPE je jediná, která platební metody Google a Apple Pay nabízí přímo v platbě kartou.** Jelikož z jejich pohledu jde o platbu kartou. Tedy se vám v prodejních formulářích nebudou nabízet jako samotný způsob platby. Ale zobrazí se vždy až při platbě kartou.
 :::
 
-  
+
 
 ## Platební údaje v prodejním formuláři
 
@@ -209,6 +209,6 @@ Pokud chcete **vystavit fakturu až po platbě ve Stripe**:
 [https://napoveda.fapi.cz/article/227-vystaveni-faktury-z-platby-ve-stripe](/article/227-vystaveni-faktury-z-platby-ve-stripe)
 :::
 
-  
+
 
 Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář je nyní propojen s platební bránou Stripe a vaši zákazníci vám mohou začít platit online.

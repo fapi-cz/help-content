@@ -44,7 +44,7 @@ U prodejní procesu s upsellem lze také aktivovat **one-click upsell** (pouze p
 5.  přijmutí, nebo odmítnutí upsell produktu 
     1.  přijmutí vytvoří novou objednávku a strhne částku z použité plat. metody pro zaplacení hlavních položek
     2.  odmítnutí provede přesměrování na další upsell stránku
-    
+
 6.  zobrazení děkovací stránky
 
 Upsellová stránka s tlačítky pro přidání upsellové položky (žluté tlačítko) a odmítnutí nabídky (šedé tlačítko) může vypadat například jako na tomto obrázku.
@@ -94,7 +94,7 @@ Protože odkazy pro přidání a odmítnutí upsellu jsou pro každý prodejní 
 :::tip
 Vřele doporučujeme před spuštěním ostrého provozu celý prodejní proces s využitím upsellu otestovat. Testování je nutné provádět přímo na webu způsobem, jakým nakupuje i zákazník.
 
-  
+
 
 Testování tlačítek z upsellové stránky končí chybou 404.
 :::
@@ -143,11 +143,11 @@ Pokud používáte platební bránu Stripe, je možné aktivovat tzn. "one-click
 
 ![Upsell](/assets/articles/8b3064d2741f2196.png)
 
-  
+
 
 ## Specifika chování upsellových objednávek
 
-  
+
 
 1.  **Pozdržení upsellové objednávky při čekání na výběr zákazníka**
 
@@ -163,13 +163,13 @@ Pokud jsou dva či více nakupujících delší dobu na upsellu, lze ve výjime�
 FAPI čeká na dokončení upsell nabídky a doklad, včetně odečtu množství ze skladu, se dělá až po dokončení průchodu celým upsellem.
 :::
 
-  
+
 
 2.  **Upsellové nákupy a pravidelná fakturace**
 
 Produkty z upsellu se objeví vždy jen v první faktuře, a do druhé a dalších faktur v [pravidelné fakturaci](/article/67-pravidelna-fakturace) se již nedostanou. Na upsell položkách tak je potřeba počítat s tím, že jsou vždy jednorázové a nejde na nich ani používat funkci **nahrazení položky** (vyměnění jedné položky za jinou).
 
-  
+
 
 3.  **Kombinování hmotných a nehmotných produktů**
 
@@ -180,7 +180,7 @@ Při takových kombinacích buď:
 -   obraťte pořadí prodeje, aby byl hmotný produkt v hlavní nabídce a nehmotný produkt v upsellu.
 -   nebo hmotný produkt dejte namísto do upsellu do [miniupsellu](/article/77-miniupsell-order-bump), kde si FAPI automaticky ještě vyžádá od zákazníka dopravu a informace k doručení
 
-  
+
 
 ## Stránka s rekapitulací objednávky po upsellech
 
@@ -188,11 +188,11 @@ Funkci "rekapitulace objednávky" je možné zvolit pouze v případě, že je n
 
 ![Upsell](/assets/articles/bd768e8d40919096.png)
 
-  
+
 
 Po dokončení všech upsellů se zobrazí stránka s rekapitulací objednávky:
 
-  
+
 
 ![Upsell](/assets/articles/33fe8479def209de.png)
 

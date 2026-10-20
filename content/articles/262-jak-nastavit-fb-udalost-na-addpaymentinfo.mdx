@@ -17,7 +17,7 @@ updatedAt: 2026-07-27T14:21:00Z
 ---
 Chcete sledovat, kdy si zákazník v prodejním formuláři **vybere způsob dopravy**? Níže najdete příklad kódu, který tuto interakci zaznamená prostřednictvím vlastní události do analytiky (např. pro Facebook Pixel, Google Analytics 4 apod.).
 
-  
+
 
 ```text
 <script>
@@ -48,7 +48,7 @@ fbEventSent = true;
 </script>
 ```
 
-  
+
 
 ### Kam kód vložit?
 
@@ -58,7 +58,7 @@ fbEventSent = true;
 
 ![Jak nastavit FB událost na AddPaymentInfo](/assets/articles/e0854a1f8cb81cbf.png)
 
-  
+
 
 ### Co kód dělá?
 
@@ -66,7 +66,7 @@ fbEventSent = true;
 -   Ve chvíli, kdy zákazník **poprvé zvolí způsob dopravy**, odešle událost `AddPaymentInfo` .
 -   Pokud zákazník následně změní volbu dopravy, **událost se již znovu nespustí** – dojde k ní pouze při prvním výběru.
 
-  
+
 
 ### Úprava kódu – co doplnit?
 
@@ -74,7 +74,7 @@ Uvnitř skriptu najdete komentář `// doplnit hodnotu podle potřeby` .
 
 Zde nahraďte **číslo 0 konkrétní částkou**, např. `value: 500` .
 
-  
+
 
 ### Jak testovat?
 

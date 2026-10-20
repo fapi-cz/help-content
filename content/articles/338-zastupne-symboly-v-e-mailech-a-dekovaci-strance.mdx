@@ -236,8 +236,8 @@ Najdete i v této samostatné nápovědě (bez děkovací stránky):
 [Zástupné symboly v e-mailových šablonách a upomínkách](/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach)
 :::
 
-  
-  
+
+
 
 Tato část platí pro e-mailové šablony a upomínky.
 
@@ -348,7 +348,7 @@ Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**
 
 -   `{item-<kód_produktu>}...{/item-<kód_produktu>}`        – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
 
-  
+
 
 :::info
 **Příklad:**
@@ -360,7 +360,7 @@ Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**
 
 Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK`       . Číslo `123`        v `{file:123}`        nahraďte ID souboru připojeného k e-mailové šabloně.
 
-  
+
 
 ## Dodavatel
 
@@ -376,7 +376,7 @@ Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem 
 -   `{file:<ID>}`        – zabezpečený odkaz ke stažení souboru šablony se zadaným číselným ID. Místo `<ID>`        vložte číselné ID souboru připojeného k dané šabloně, například `{file:123}`       .
 -   `{<key>}`        – vlastní symbol předaný jako dvojice klíč–hodnota přes endpoint, který vlastní symboly podporuje; `<key>`        nahraďte předaným klíčem.
 
-  
+
 
 :::tip
 Před ostrým odesláním doporučujeme šablonu otestovat na skutečné objednávce.
@@ -499,7 +499,7 @@ Například `{{items.0.name}}`        vypíše název první zakoupené p
 
 -   ` {{item-<kód_produktu>}}...{{/item-<kód_produktu>}}  `    – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
 
-  
+
 
 :::info
 **Příklad:**
@@ -526,7 +526,7 @@ Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem 
 -   `{{ifIssued}}...{{/ifIssued}}`        – pouze pokud je faktura vystavená a nezaplacená
 -   `{{ifCancelled}}...{{/ifCancelled}}`        – pouze pokud je objednávka stornovaná
 
-  
+
 
 Párové bloky vložte na samostatné řádky. Otevírací a zavírací značku ponechte ve stejném formátování. Text mezi nimi vložte do vlastního odstavce.
 
@@ -596,7 +596,7 @@ Stejný princip platí i pro vlastní pole:
 JSON symboly využijete hlavně tehdy, pokud s daty dál pracujete technicky, například ve vlastním kódu na děkovací stránce. Pokud chcete zobrazit zákazníkovi běžný text, použijte raději konkrétní symbol s názvem nebo hodnotou.
 :::
 
-  
+
 
 :::caution
 ## Vlastní externí děkovací stránka
@@ -638,7 +638,7 @@ Pokud editor platformy nepřijme symbol `{{orderStatusPage}}`       přím
 :::caution
 SDK a parametr `path`       jsou nutné i v tomto případě.
 
-  
+
 
 Více podrobný postup je zde:
 
@@ -660,7 +660,7 @@ Vložte HTML element a do něj tento kód:
 
 Kód vytvoří funkční odkaz na přehled objednávky.
 
-  
+
 
 **Konverzky**
 
@@ -683,8 +683,8 @@ Výsledek je kliknutelný odkaz:
 ![Zástupné symboly v e-mailech a děkovací stránce](/assets/articles/bb08744c01617807.png)
 :::
 
-  
-  
+
+
 
 :::danger
 # Nejčastější chyby

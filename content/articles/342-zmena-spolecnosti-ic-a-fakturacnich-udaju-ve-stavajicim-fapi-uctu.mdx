@@ -188,7 +188,7 @@ Výhodou je, že si zachováte například:
 -   e-mailové šablony,
 -   automatizace a další nastavení účtu.
 
-  
+
 
 Je však potřeba jednotlivé části zkontrolovat a podle situace upravit. Samotnou změnou fakturačních údajů se automaticky nezmění všechna související nastavení.
 
@@ -204,20 +204,20 @@ Více najdete v nápovědě:
 [**Změna formy podnikání nebo potřeba dalšího FAPI účtu**](/article/287-zmena-formy-podnikani-a-potreba-dalsiho-fapi-uctu)
 :::
 
-  
+
 
 :::note
 ## Jak je změna rozdělena
 
 Celý postup doporučujeme rozdělit do tří fází:
 
-  
+
 
 ### 1\. Před datem změny
 
 **Určete si konkrétní datum, od kterého má faktury vystavovat nový subjekt.** Pokud během dne probíhá automatické vystavování faktur, stanovte si také přibližný čas změny.
 
-  
+
 
 Ideální je změnu provést:
 
@@ -226,7 +226,7 @@ Ideální je změnu provést:
 -   mimo dobu, kdy se automaticky vystavuje větší množství pravidelných faktur,
 -   v době, kdy můžete změny bezprostředně zkontrolovat a otestovat.
 
-  
+
 
 **Připravte si:**
 
@@ -239,13 +239,13 @@ Ideální je změnu provést:
 -   nové fakturační údaje a informace o režimu DPH,
 -   aktualizované právní a informační texty.
 
-  
+
 
 Před změnou si poznamenejte nebo uložte současné nastavení. Budete tak moci zpětně ověřit, které údaje patřily původnímu subjektu.
 
 Pokud si nejste jistí účetním nebo daňovým postupem, doporučujeme nejprve změnu konzultovat s účetní. FAPI vám pomůže s technickým nastavením, nemůže však rozhodnout, ke kterému subjektu má konkrétní plnění účetně patřit.
 
-  
+
 
 ### 2\. V okamžiku změny (jednotlivé kroky jsou dále popsány blíže)
 
@@ -260,7 +260,7 @@ Postupně upravíte:
 -   bankovní a platební nastavení,
 -   e-maily a další navazující komunikaci.
 
-  
+
 
 ### 3\. Po změně
 
@@ -272,12 +272,12 @@ Provedete:
 -   kontrolu faktur vzniklých v okolí data přechodu,
 -   případnou opravu faktur vystavených pod nesprávným dodavatelem.
 
-  
+
 
 Díky tomuto rozdělení snížíte riziko, že během přechodu vznikne doklad pod nesprávným subjektem nebo bude platba odeslána na nesprávný účet.
 :::
 
-  
+
 
 :::caution
 ## Se správou vám může pomoci AI
@@ -289,15 +289,15 @@ Návody k propojení:
 -   [Jak propojit FAPI s Codexem v ChatGPT](/article/340-jak-propojit-fapi-s-codexem-v-chatgpt)
 -   [Jak propojit FAPI s Claude](/article/341-jak-propojit-fapi-s-claude)
 
-  
+
 
 Rovněž můžete využít **integrovaného FAPILOTa přímo ve vašem FAPI účtu.**
 
-  
+
 
 AI nemá oprávnění k hromadným změnám ve vašem účtu, proto jej vždy veďte jednotlivě, nebo mějte přesné seznamy např. prodejních formulářů, které chcete upravit.
 
-  
+
 
 Nejdříve AI požádejte pouze o kontrolu:
 
@@ -313,12 +313,12 @@ Výsledný seznam zkontrolujte a určete, které konkrétní šablony se mají z
 > 
 > U každé změň sazbu DPH na 21 % a ponech cenu včetně DPH beze změny. Ostatní údaje neměň. Šablony zpracuj jednu po druhé. Po každé změně znovu načti její detail, ověř výsledek a napiš mi, zda byla změna úspěšná.
 
-  
+
 
 **AI nemůže provést neurčitou hromadnou změnu typu „uprav všechny šablony“.** Nejdříve je potřeba připravit seznam konkrétních šablon, uvést jejich ID a přesně popsat požadovanou úpravu. AI potom předá jednotlivé změny do FAPI postupně, šablonu po šabloně.
 :::
 
-  
+
 
 ## Doporučený harmonogram realizace změny, který byste měli provést v DEN, kdy končí původní subjekt a začíná nový.
 
@@ -335,17 +335,17 @@ Ještě před změnou proto kontaktujte provozovatele své platební brány a ov
 -   od jakého okamžiku může nový subjekt přijímat platby,
 -   zda zůstanou zachované uložené platební karty a souhlasy s opakovanými platbami.
 
-  
+
 
 **Uložené karty a souhlasy s automatickým strháváním bývají navázané na původní obchodní účet.** Pokud je poskytovatel nepřevede, zákazníci budou muset provést první platbu přes novou bránu ručně. Tím se vytvoří nové propojení karty pro další automatické platby.
 
 Původní platební bránu neodpojujte dříve, než ověříte přechod všech aktivních pravidelných plateb. Výjimkou může být situace, kdy poskytovatel brány výslovně potvrdí převod na nové IČ včetně zachování uložených karet.
 
-  
+
 
 Pokud poskytovatel umožní převod brány na nové IČ, nechte si výslovně potvrdit, zda se převod týká také uložených karet a oprávnění k opakovanému strhávání.
 
-  
+
 
 Pokud převod možný není, připravte si nový obchodní účet a novou platební bránu. **Po její aktivaci bude potřeba novou bránu připojit k používaným prodejním formulářům v 3. kroku Platba, doprava a fakturace, v sekci Platební brána.**
 
@@ -357,7 +357,7 @@ Pokud převod možný není, připravte si nový obchodní účet a novou plateb
 **Pozor na opakované platby:** Uložené karty a souhlasy zákazníků s opakovaným strháváním jsou vázané na původní obchodní účet platební brány. Do nového napojení se automaticky nepřenesou. Zákazník proto zpravidla musí první další fakturu zaplatit kartou ručně. Tím se jeho karta propojí s novou bránou a další platby již mohou opět probíhat automaticky.
 :::
 
-  
+
 
 :::info
 ## **2\. Přidejte nový bankovní účet**
@@ -375,7 +375,7 @@ Zkontrolujte zejména:
 
 Původní import plateb pro bankovní účet doporučujeme po přechodnou dobu ponechat aktivní kvůli úhradám starších faktur a případným vratkám. O jeho odpojení rozhodněte až poté, co na něj neočekáváte další platby.
 
-  
+
 
 **Podrobný návod pro ZMĚNU BANKOVNÍHO ÚČTU máte zde:**
 
@@ -385,7 +385,7 @@ Nápověda vás povede vás hlavně na nastavení pro: [**Import plateb z banky*
 
 A připomene, ať nezapomenete vždy podle vaší banky, rovněž na nastavení notifikací o příchozích platbách. [**Návod si vyberte podle vaší banky ZDE:**](/search?collectionId=5f62a116cff47e00168f784e&query=p%C5%99%C3%ADchoz%C3%ADch+pla)
 
-  
+
 
 :::info
 ## 3\. Změňte fakturační údaje na dvou místech
@@ -393,7 +393,7 @@ A připomene, ať nezapomenete vždy podle vaší banky, rovněž na nastavení 
 
 Ve FAPI jsou dvě místa pro nastavení fakturačních údajů. Každé slouží k jinému účelu.
 
-  
+
 
 ### Údaje dodavatele na fakturách pro zákazníky
 
@@ -412,7 +412,7 @@ Zkontrolujte především:
 -   kontaktní údaje,
 -   případné údaje o zápisu v obchodním rejstříku.
 
-  
+
 
 ### Údaje odběratele na fakturách od FAPI
 
@@ -422,17 +422,17 @@ Přejděte do:
 
 Zde nastavíte subjekt, kterému FAPI fakturuje používání služby.
 
-  
+
 
 Podrobný postup máme zde:
 
 [**Jak změnit fakturační údaje**](/article/248-zmena-fakturacnich-udaju)
 
-  
+
 
 Pokud potřebujete změnit také fakturační e-mail, tak tuto změnu nelze provést přímo ve vašem FAPI účtu, napište nám kvůli autorizaci z původní e-mailové adresy na [**podpora@fapi.cz**](mailto:podpora@fapi.cz) a my to pro vás rádi zprocesujeme.
 
-  
+
 
 :::info
 ## 4\. Nastavte správný režim DPH
@@ -442,11 +442,11 @@ Nastavení najdete v části:
 
 [**Nastavení → Nastavení fakturace**](https://web.fapi.cz/settings/?projectId=all)
 
-  
+
 
 Další postup závisí na tom, zda se režim DPH oproti původnímu subjektu mění.
 
-  
+
 
 ### Režim DPH se nemění
 
@@ -460,7 +460,7 @@ Pokud jsou původní i nový subjekt ve stejném režimu DPH a používají stej
 
 Sazby není nutné měnit pouze proto, že se změnilo IČ. Zkontrolujte ale, že odpovídají produktům a způsobu prodeje nového subjektu.
 
-  
+
 
 ### Přechod z neplátce na plátce DPH
 
@@ -499,7 +499,7 @@ Nejdříve upravte:
 
 Režim účtu změňte až jako poslední krok. Tím snížíte riziko, že během přechodu vznikne doklad s nesprávným nastavením DPH.
 
-  
+
 
 ### Identifikovaná osoba nebo registrace v jiné zemi
 
@@ -513,20 +513,20 @@ Ověřte s účetní nebo daňovým poradcem zejména:
 -   fakturaci zákazníkům v tuzemsku a zahraničí,
 -   údaje uváděné na dokladech.
 
-  
+
 
 **Související návody:**
 
 -   [**Jak FAPI určuje sazbu DPH**](/article/154-jak-se-na-dokladu-urcuje-sazba-dph)
 -   [**Fakturace do zahraničí**](/article/26-fakturace-do-zahranici)
 
-  
+
 
 :::info
 ## 5\. Zkontrolujte všechny produkty a prodejní formuláře
 :::
 
-  
+
 
 U [**produktů**](https://web.fapi.cz/templates/items?projectId=all) ověřte:
 
@@ -575,7 +575,7 @@ _\>\>\> v 6. kroku Vzhled_
 -   zásady zpracování osobních údajů,
 -   souhlasy zákazníka.
 
-  
+
 
 ### Co změnit
 
@@ -590,7 +590,7 @@ Upravte pouze údaje, které se vztahují k novému subjektu, například:
 -   e-mailové podpisy,
 -   údaje odesílané do externích aplikací.
 
-  
+
 
 Externí propojení kontrolujte zejména tehdy, pokud pracují s:
 
@@ -601,7 +601,7 @@ Externí propojení kontrolujte zejména tehdy, pokud pracují s:
 -   fakturačními údaji,
 -   názvem či kódem produktu.
 
-  
+
 
 Důležité je prověřit ty formuláře jež jsou stále zveřejněné nebo přes ně mohou zákazníci vytvořit novou objednávku.
 
@@ -615,7 +615,7 @@ Tento krok je zásadní. Již existující šablony mohou obsahovat údaje nebo 
 
 Přehled šablon pravidelné fakturace najdete v části **Faktury →** [**Šablony pravidelných faktur**](https://web.fapi.cz/invoice/periodic?projectId=all).
 
-  
+
 
 Přejděte do přehledu pravidelných fakturací a rozdělte šablony podle způsobu úhrady:
 
@@ -624,7 +624,7 @@ Přejděte do přehledu pravidelných fakturací a rozdělte šablony podle způ
 
 [**Jak poznáte zda má klient napojenou kartu pro automatické strhávání**](/article/263-jak-poznate-zda-ma-klient-napojenou-kartu-pro-automaticke-strhavani)
 
-  
+
 
 U každé aktivní šablony zkontrolujte (zde si můžete pomoci AI):
 
@@ -639,7 +639,7 @@ U každé aktivní šablony zkontrolujte (zde si můžete pomoci AI):
 -   napojenou kartu,
 -   prodejní formulář.
 
-  
+
 
 **Připomínáme:**
 
@@ -649,7 +649,7 @@ Při práci s AI nepoužívejte obecné zadání:
 
 Nejdříve si nechte připravit seznam šablon včetně jejich ID. Potom vyberte konkrétní šablony, popište přesnou změnu a nechte je zpracovat jednu po druhé. Po každé změně požadujte nové načtení detailu a ověření výsledku.
 
-  
+
 
 :::danger
 **Připomínka a upozornění:** pokud přecházíte na plátce DPH, je potřeba u každé šablony pravidelné fakturace doplnit sazbu dph. Ta se aktivuje tím, že doplníte datum uskutečnění zdanitelného plnění (DUZP). Následně můžete přímo u položek, v šabloně pravidelné fakturace, nastavit sazby dph.
@@ -665,7 +665,7 @@ V tomto kroku je fajn si pomoci buď Fapilotem nebo jiným AI nástrojem, který
 
 Ověřte, že další doklad obsahuje nový bankovní účet. Staré nezaplacené doklady však musí být vypořádány podle pokynů účetní a údajů původního subjektu.
 
-  
+
 
 ### Šablony hrazené kartou přes původní bránu
 
@@ -683,7 +683,7 @@ Více v nápovědě, která souvisí se změnou platební brány:
 [Jak na změnu platební brány](/article/277-jak-na-zmenu-platebni-brany)
 :::
 
-  
+
 
 :::caution
 ### **TIP: Informování zákazníků**
@@ -701,7 +701,7 @@ Zpráva zákazníkovi by měla obsahovat:
 Pokud se současně mění cena předplatného, zajistěte si prokazatelný souhlas zákazníka s novou částkou.
 :::
 
-  
+
 
 :::info
 ## 7\. Zkontrolujte nezaplacené a přechodové doklady
@@ -716,7 +716,7 @@ Před změnou si vyfiltrujte:
 -   částečně uhrazené doklady,
 -   přeplatky a nespárované platby.
 
-  
+
 
 Zvláštní pozornost věnujte dokladům, které:
 
@@ -725,7 +725,7 @@ Zvláštní pozornost věnujte dokladům, které:
 -   mají být automaticky strženy v blízkosti data změny,
 -   mohou vyžadovat dobropis nebo vrácení platby.
 
-  
+
 
 Pokud by měla pravidelná faktura vzniknout těsně před přechodem, zvažte po dohodě s účetní dočasné posunutí dalšího vystavení nebo pozastavení šablony. Cílem je zabránit tomu, aby doklad vystavil nesprávný subjekt. S případnou opravou vám pak pomůže přímo FAPI podpora, stačí napsat na e-mail [podpora@fapi.cz](mailto:podpora@fapi.cz).
 
@@ -754,7 +754,7 @@ Pokud se mění správce osobních údajů nebo smluvní strana, nechte způsob 
 
 Údaje ve FAPI a na webu by měly být od okamžiku změny vzájemně konzistentní.
 
-  
+
 
 :::info
 ## 9\. Proveďte testovací objednávku
@@ -775,7 +775,7 @@ Ověřte celý průchod:
 
 Testovací fakturu po dokončení označte a zpracujte podle postupu, který používáte se svou účetní.
 
-  
+
 
 :::info
 ## 10\. Po změně vše průběžně kontrolujte
@@ -792,7 +792,7 @@ Během prvních dnů po přechodu doporučujeme kontrolovat:
 
 Původní bankovní účet nebo platební bránu odpojte až ve chvíli, kdy máte potvrzeno, že je přechod dokončený a neočekáváte další platby za původní subjekt.
 
-  
+
 
 ## Shrnutí
 
@@ -806,6 +806,6 @@ Při změně IČ a společnosti je potřeba řešit více než samotnou faktura�
 6.  produkty, formuláře, e-maily a právní texty,
 7.  závěrečné otestování celého prodejního procesu.
 
-  
+
 
 Pokud si nejste jistí daňovým nebo právním posouzením přechodu, doporučujeme plán před provedením změn konzultovat s účetní, daňovým poradcem nebo právníkem. Nastavení FAPI poté upravte podle jimi potvrzeného data a postupu.

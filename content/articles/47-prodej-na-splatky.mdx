@@ -72,7 +72,7 @@ Cena splátek se odvíjí od ceny produktu v nastavení prodejní položky
 
 (nabídka **Prodej - Produkty** a zvolení akce **Upravit**).
 
-  
+
 
 **Cena jednotlivých splátek se vypočítá**
 
@@ -82,7 +82,7 @@ Cena splátek se odvíjí od ceny produktu v nastavení prodejní položky
 
 (**Ceny splátek)** \- Pokud nastavíte cenu pro určitý počet splátek, bude tato cena aplikována pro objednávky s daným a vyšší počtem splátek.
 
-  
+
 
 > Příklad:
 > 
@@ -92,13 +92,13 @@ Cena splátek se odvíjí od ceny produktu v nastavení prodejní položky
 > -   Při prodeji na 3 nebo 4 splátky platí cena 40 Kč
 > -   Při prodeji na 5 a více splátek platí cena 50 Kč
 
-  
+
 
 ![Prodej na splátky](/assets/articles/296ac4e0abfcd20d.png)
 
 Dále je vhodné nastavit tyto možnosti pro všechny měny, ve kterých nabízíte prodej vašeho produktu nebo služby. viz. screenshot výše.
 
-  
+
 
 :::danger
 U nastavení produktu si nezapomeňte rozdělení do splátek povolit.
@@ -109,7 +109,7 @@ U nastavení produktu si nezapomeňte rozdělení do splátek povolit.
 :::caution
 Do pole zadávejte vždy celkovou cenu. Uvedená cena se automaticky rozdělí podle počtu splátek.
 
-  
+
 
 Při rozdělení částky na 3 splátky, je první splátka vždy malinko jiná kvůli zaokrouhlování. Vycházelo by periodické číslo a v takovém případě by nevycházel zpětný součet částky. Pokud to tak je, tak u 3 splátek rozdělujeme částku na 0,334 a 0,333 a 0,333, tím zajistíme, že zpětný součet zase sedí.
 :::
@@ -151,22 +151,22 @@ Pro aktivaci této možnosti stačí pouze zaškrtnutí uvedeného checkboxu.
 Prodej na splátky mírně modifikuje standardní prodejní proces.
 
 -   V objednávkovém formuláři ve Shrnutí objednávky se zobrazuje zatrhávací políčko (checkbox) **Koupit na splátky**, kde si zákazník může vybrat mezi jednorázovou platbou a platbou na splátky.
-    
-    Může si zde také vybrat počet splátek, pokud to klientům umožníte. Automaticky je podle zvoleného počtu splátek přepočítána cena jedné splátky x počet zvolených splátek.
-    
-      
-    
--   ![Prodej na splátky](/assets/articles/80e018462d40af59.png)
-    
-    Zobrazení splátek v prodejním formuláři zákazníkovi.
-    
 
-  
+    Může si zde také vybrat počet splátek, pokud to klientům umožníte. Automaticky je podle zvoleného počtu splátek přepočítána cena jedné splátky x počet zvolených splátek.
+
+
+
+-   ![Prodej na splátky](/assets/articles/80e018462d40af59.png)
+
+    Zobrazení splátek v prodejním formuláři zákazníkovi.
+
+
+
 
 -   Po odeslání objednávky se vystaví a v samostatných e-mailech zákazníkovi zašlou všechny splátkové faktury, pokud nemáte zvolenou možnost **Povolení odesílání splátkových faktur postupně.** V tomto případě dojde také k vystavení všech zálohových faktur, kdy první splátka má standardní splatnost, další faktury mají splatnost posunutou o nastavenou periodu splátek.
-    
+
     Tyto faktury jsou zasílány také postupně klientů podle nastavené periody, a nikoliv všechny současně, i když Vám se současně všechny vystaví.
-    
+
 
 :::caution
 Všechny splátkové faktury v případě nezvolení "Povolení odesílání splátkových faktur postupně" se vystavují okamžitě po odeslání objednávky. První faktura se klientovi zasílá ihned, další splátkové faktury zhruba po 10 minutách.
@@ -201,7 +201,7 @@ Je tedy na vás, **jak si strukturu kurzu nebo členství nastavíte**, aby odpo
 :::danger
 Maximální počet splátek je 99.
 
-  
+
 
 ❗**UPOZORNĚNÍ**     
 
@@ -211,7 +211,7 @@ Každá splátková faktura se počítá jako samostatná objednávka do limitu 
 :::note
 **Chcete mít prodejní formulář JEN na SPLÁTKY** a neumožnit v něm jednorázový prodej?
 
-  
+
 
 K tomu slouží tento checkbox v prodejním formuláři v sekci Splátky **"Povolit pouze prodej na splátky".**
 
@@ -230,7 +230,7 @@ To lze změnit zaškrtnutím políčka u upsellů - "Rozdělit upsell na splátk
 
 Možnost povolit rozdělení upsell produktů na splátky
 
-  
+
 
 :::tip
 Chcete-li fakturu s druhou a další splátkou zaslat zákazníkovi v e-mailu s jiným textem, použijte k tomu šablonu typu _E-mail k vystavenému dokladu_ pro 2. a další splátku (příklad vhodného nastavení je na obrázku níže). Více o e-mailových šablonách se dozvíte v článku [Šablony zpráv](/article/17-sablony-zprav).

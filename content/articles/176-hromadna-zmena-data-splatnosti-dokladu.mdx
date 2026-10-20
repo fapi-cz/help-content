@@ -17,15 +17,15 @@ updatedAt: 2026-07-13T11:07:27Z
 ---
 Funkci využijete v případech, kdy realizujete předobjednávky, nebo pořádáte akce s pevným datem konání, ale přihlášky sbíráte dlouho dopředu. Pomocí jednoduchého scénáře v aplikaci Make automaticky změníte datum splatnosti nového dokladu na pevně stanovené datum.
 
-  
+
 
 Kdykoliv tedy nový doklad vznikne, bude mít sjednoceno datum se všemi ostatními doklady, které pocházejí z přesně definovaného prodejního formuláře, který přes Akce posílá data ke zpracování do Make.
 
-  
+
 
 Pokud se chcete podívat na videotutorial, [mrkněte sem.](https://www.youtube.com/watch?v=3AAr3eqDb0A)
 
-  
+
 
 Co ke zprovoznění potřebujete:
 
@@ -33,7 +33,7 @@ Co ke zprovoznění potřebujete:
 -   [Make.com](http://make.com/) účet
 -   předpřipravenou kopii [tohoto Make scénáře](http://www.make.com/cs/integration/10545-konkretni-datum-splatnosti-pro-faktury?templatePublicId=10545)
 
-  
+
 
 Workflow funguje takto:
 
@@ -65,16 +65,16 @@ V posledním kroku scénáře zadejte datum, na které má Make posunout datum s
 
 ![Hromadná změna data splatnosti dokladu / Pevné datum splatnosti](/assets/articles/70727029c3f6ee70.png)
 
-  
+
 
 Scénář uložte, zapněte testovací spuštění a dokončete nastavení ve FAPI prodejním formuláři. Zde nastavte v kroku 4 akce v tabulce automatizací nový krok.
 
 -   Událost -\> vystavení objednávky
 -   Akce -\> spustit programový skript
 -   do URL adresy vložte adresu z Make scénáře, kterou najdete v prvním kroku
-    
+
     ![Hromadná změna data splatnosti dokladu / Pevné datum splatnosti](/assets/articles/2cac67fe2dbbfcb5.png)
-    
+
 
 Zkopírovanou adresu z Make vložte ve FAPI do sloupce Akce do prostředního řádku:
 

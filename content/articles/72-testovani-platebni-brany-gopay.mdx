@@ -100,7 +100,7 @@ Do zobrazeného formuláře vyplňte všechny požadované údaje - doménu, na
 
 Vyplněné hodnoty uložte stiskem tlačítka **Uložit nastavení**.
 
-  
+
 
 ## Možnosti testování
 
@@ -110,7 +110,7 @@ V testovací režimu si můžete ověřit zpracování těchto události při:
 -   zrušení platby (stav CANCELED),
 -   vypršení časového limitu platby (stav TIMEOUTED).
 
-  
+
 
 Samotný postup testování je stejný jako při běžném testování prodejního procesu ve FAPI. Vytvoříte testovací objednávku, projdete platbou a následně zkontrolujete stav faktury a navazující akce.
 
@@ -128,10 +128,10 @@ Po vytvoření objednávky, na které si proces testujete si můžete odzkoušet
 
 Objednávku tvořte přes prodejní formulář, v kterém jste si nastavili testovací bránu.
 
-  
+
 
 1.  ### Zaplacení objednávky (stav PAID)
-    
+
 
 Po přesměrování na testovací platební bránu GoPay dokončete zaplacení - stiskněte tlačítko **Zaplatit** (na testovacím serveru GoPay se používají fiktivní peníze).
 
@@ -143,10 +143,10 @@ Při platbě platební kartou použijte údaje testovacích platebních karet z�
 
 ![Testovacího profil u platební brány GoPay](/assets/articles/048ecd009c49df55.png)
 
-  
+
 
 2.  ### Zrušení platby (stav CANCELED)
-    
+
 
 Po potvrzení objednávky, jste přesměrování na okno testovací platební brány GoPay, které pak zrušte křížkem v pravém horním rohu nebo vyplňte neplatné údaje platební karty (podle [nápovědy GoPay](https://help.gopay.com/cs/tema/integrace-platebni-brany/technicky-popis-integrace-platebni-brany/provadeni-plateb-v-testovacim-prostredi)).
 
@@ -162,10 +162,10 @@ Více zde: [https://napoveda.fapi.cz/article/102-prehled-objednavky](/article/10
 
 nebo je klient přesměrován na vaši vlastní chybovou stránku.
 
-  
+
 
 3.  ### Vypršení časového limitu platby (stav TIMEOUTED)
-    
+
 
 Po přesměrování na platební bránu GoPay platbu nedokončete a platební okno ponechte bez vyplnění.
 
@@ -175,7 +175,7 @@ Pro stav CREATED, tedy vytvoření žádosti pro platbu je defaultní životnost
 
 Objednávka je i tak vytvořená a klient o ní dostává informaci do svého e-mailu.
 
-  
+
 
 :::tip
 Pokud jste proces testování dokončili, doporučujeme prodejní formulář správně **nastavit na produkční režim platební brány.**

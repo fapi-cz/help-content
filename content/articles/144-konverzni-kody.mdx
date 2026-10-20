@@ -282,7 +282,7 @@ Konverzní kódy slouží k odesílání informací o objednávkách z FAPI do a
 
 FAPI umí načíst data objednávky a pomocí jednoduchého skriptu je předat do zvoleného nástroje jako konverzi.
 
-  
+
 
 Konverzní kódy můžete využít například pro:
 
@@ -318,7 +318,7 @@ Aby se konverze správně odeslala, je potřeba rozlišit tři části:
 
 FAPI konverzní kód nenahrazuje samotný měřicí nástroj. Pokud například na stránce nemáte načtený Meta Pixel, funkce pro odeslání konverze do Meta Pixelu nemá kam data odeslat.
 
-  
+
 
 :::tip
 **FAPI - osobní konzultace k nastavení**
@@ -333,7 +333,7 @@ Pokud používáte současně Meta Pixel a CAPI, věnujte pozornost části Meta
 :::caution
 ## FAPI děkovací stránka nebo vlastní děkovací stránka
 
-  
+
 
 Nastavení se liší podle toho, zda používáte děkovací stránku přímo ve FAPI, nebo vlastní děkovací stránku na svém webu.
 
@@ -343,7 +343,7 @@ Pokud používáte děkovací stránku vytvořenou přímo ve FAPI, konverzní k
 
 **5\. krok Děkovací stránka → Konverzní kódy**
 
-  
+
 
 Do FAPI děkovací stránky **nevkládejte znovu FAPI SDK script**. Ten už je její součástí.
 
@@ -363,7 +363,7 @@ Pokud používáte vlastní děkovací stránku na svém webu, je potřeba splni
 
 ![Konverzní kódy](/assets/articles/3e7b32a2c98b6f52.png)
 
-  
+
 
 **FAPI SDK script pro vlastní děkovací stránku:**
 :::
@@ -375,7 +375,7 @@ Pokud používáte vlastní děkovací stránku na svém webu, je potřeba splni
 ::::caution
 Tento script zajistí načtení informací o objednávce z FAPI do vaší vlastní děkovací stránky. Díky tomu můžete data objednávky předat do analytických nebo reklamních nástrojů.
 
-  
+
 
 :::info
 Skript se nepoužívá pro FAPI děkovací stránky, ale **pouze u vlastních děkovacích stránek.**
@@ -469,7 +469,7 @@ Konverzní kód se obvykle spouští při načtení děkovací stránky.
 
 Pokud se stejná konverzní událost odešle více způsoby nebo vícekrát, může analytický nebo reklamní nástroj započítat jednu objednávku opakovaně.
 
-  
+
 
 K duplicitám může dojít například když:
 
@@ -481,7 +481,7 @@ K duplicitám může dojít například když:
 
 Pokud v reklamním nebo analytickém nástroji vidíte více konverzí, než kolik reálně vzniklo objednávek ve FAPI, zkontrolujte, zda se stejná událost neposílá vícekrát.
 
-  
+
 
 :::caution
 Skript se spojením s unikátním identifikátorem objednávky, zajišťuje stažení informací o objednávce z FAPI do vaší děkovací stránky. 
@@ -491,7 +491,7 @@ Díky tomu můžete konverze zaslat do jakéhokoliv analytického nástroje. 
 Kde získat trackovací kód pro FB pixel: [https://developers.facebook.com/docs/meta-pixel/get-started/](https://developers.facebook.com/docs/meta-pixel/get-started/)
 :::
 
-  
+
 
 ## SmartEmailing webtracking
 
@@ -505,7 +505,7 @@ Pokud používáte vlastní děkovací stránku, FAPI na ni SmartEmailing tracke
 
 Podrobný postup včetně ověření najdete v nápovědě [SmartEmailing webtracking ve FAPI](/article/333-smartemailing-webtracking-ve-fapi).
 
-  
+
 
 ## Meta Pixel a Facebook Conversion API
 
@@ -732,7 +732,7 @@ FAPI_CONVERSION.runConversion(function (fapiOrderData) {
 </script>
 ```
 
-  
+
 
 ## Jaká data jsou dostupná v proměnné fapiOrderData? 
 
@@ -742,7 +742,7 @@ Dostupné parametry a jejich vysvětlivky jsme popsali v API dokumentaci:
 
 V dokumentaci najdete všechny dostupné parametry a vysvětlení, jaké hodnoty obsahují.
 
-  
+
 
 # Jak vložit konverzní kódy do děkovací stránky FAPI?
 
@@ -769,7 +769,7 @@ Konverzní kód na děkovací stránce se spouští při načtení stránky. Pok
 
 To může způsobit, že v analytickém nebo reklamním nástroji uvidíte více konverzí, než kolik reálně vzniklo objednávek ve FAPI.
 
-  
+
 
 Doporučujeme proto zkontrolovat, že stejnou konverzní událost neposíláte více způsoby současně, například přes:
 
@@ -779,7 +779,7 @@ Doporučujeme proto zkontrolovat, že stejnou konverzní událost neposíláte v
 -   FAPI konverzní kód,
 -   Facebook Conversion API.
 
-  
+
 
 Pokud používáte současně Meta Pixel a Facebook Conversion API, je potřeba mít správně nastavenou deduplikaci událostí. Jinak může Meta jednu objednávku započítat vícekrát.
 :::
@@ -796,55 +796,55 @@ Dále při spuštění této funkce vloží informace o objednávce do Google Ta
 
 Po načtení dat objednávky tato funkce také vyvolá event "fapiOrderDataLoaded", kde v detailu eventu pod klíčem "fapiOrderData", jsou uložena data objednávky. Použití je možné pro vlastní zpracování konverzí.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi ve Facebook pixelu. Data nejsou odeslaná do FB Pixelu, pokud na stránce nemáte FB Pixel nainstalovaný.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleFacebookPixelTransactionOnlyPaid(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi ve Facebook pixelu, pouze pokud je objednávka zaplacená. Data nejsou odeslaná, pokud na stránce nemáte FB Pixel nainstalovaný.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleGA4Transaction(fapiOrderData: object)
 
 Tato funkce odešle konverzi do Google Analytics 4 pouze v případě, že je objednávka zaplacená. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleGA4TransactionOnlyPaid(fapiOrderData: object)
 
 Tato funkce odešle konverzi do Google Analytics 4. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleGoogleTagManagerTransaction(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi v Google Tag Manageru. Data nejsou odeslaná do GTM pokud na stránce nemáte GTM nainstalovaný.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleGoogleTagManagerTransactionOnlyPaid(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi ve Google Tag Manageru, pouze pokud je objednávka zaplacená.  Data nejsou odeslaná do GTM pokud na stránce nemáte GTM nainstalovaný.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleGoogleAnalyticsEcommerceTransaction(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi v Google Analytics. Data nejsou odeslaná do Google Analytics pokud na stránce nemáte Google Analytics nainstalovaný.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleGoogleAnalyticsEcommerceTransactionOnlyPaid(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi ve Google Analytics, pouze pokud je objednávka zaplacená. Data nejsou odeslaná do Google Analytics pokud na stránce nemáte Google Analytics nainstalovaný.
 
-  
+
 
 ##### FAPI\_CONVERSION.simpleAffilboxTransaction(fapiOrderData: object, url: string, campaignId: string|int)
 
@@ -861,13 +861,13 @@ Tato funkce vytvoří konverzi v Affilboxu, pouze pokud je objednávka zaplacen�
 
 Tato funkce má stejné fungování jako "simpleAffilboxTransaction".
 
-  
+
 
 ### FAPI\_CONVERSION.simpleCJTransaction(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)
 
 Tato funkce vytvoří konverzi na platformě [https://www.cj.com/](https://www.cj.com/). Do této funkce je potřeba doplnit 3 parametry, enterpriseId, actionTrackerId a cjeventOrder.
 
-  
+
 
 ### FAPI\_CONVERSION.simpleCJTransactionOnlyPaid(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)
 
@@ -875,19 +875,19 @@ Tato funkce vytvoří konverzi na platformě CJ, pouze pokud je objednávka zapl
 
 Tato funkce má stejné fungování jako "simpleCJTransaction".
 
-  
+
 
 ### FAPI\_CONVERSION.simpleSklikTransaction(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi na platformě Sklik.
 
-  
+
 
 ### FAPI\_CONVERSION.simpleSklikTransactionOnlyPaid(fapiOrderData: object)
 
 Tato funkce vytvoří konverzi na platformě Sklik, pouze pokud je objednávka zaplacená. 
 
-  
+
 
 ### FAPI\_CONVERSION.simpleGoogleAdsTransaction(fapiOrderData: object, ADId string)
 
@@ -897,13 +897,13 @@ Tato funkce narozdíl od výše uvedených přijmá 1 argument.
 
 ADId - ID kampaně, které začíná na AW-
 
-  
+
 
 ### FAPI\_CONVERSION.simpleGoogleAdsTransactionOnlyPaid(fapiOrderData: object, ADId string)
 
 Tato funkce odešle konverzi do Google Ads pouze v případě, že je objednávka zaplacená.
 
-  
+
 
 ## Když data v analytickém nástroji nesedí
 
@@ -919,7 +919,7 @@ Pokud v analytickém nebo reklamním nástroji vidíte jiné počty konverzí ne
 -   zda u kombinace Meta Pixelu a Facebook Conversion API funguje deduplikace,
 -   zda používáte správnou funkci podle toho, jestli chcete měřit všechny objednávky, nebo jen zaplacené objednávky.
 
-  
+
 
 ## Shrnutí
 

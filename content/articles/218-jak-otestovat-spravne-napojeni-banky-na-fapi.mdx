@@ -24,18 +24,18 @@ Pro otestování import plateb ve FAPI je nejjednodušší cesta, poslat si něj
 1.  **Odeslání testovací platby:**
     1.  Pošlete si na svůj bankovní účet propojený s FAPI malou testovací platbu, například **1 Kč** či **0,1 EUR**.
     2.  Tato platba nemusí obsahovat variabilní symbol.
-    
+
 2.  **Počkejte až banka zpracuje platbu:**
     1.  Zpracování platby může trvat několik minut či hodin.
     2.  Jakmile vidíte platbu připsanou na váš bankovní účet platba by se měla v řádu minut importovat do FAPI.
     3.  Import plateb ve FAPI se spouští každou hodinu vždy 25 minutu.
-    
+
 3.  **Kontrola upozornění ve FAPI:**
     1.  Ve FAPI se podívejte do zvonečku v pravo nahoře, kde by se měla zobrazit **nespárovaná platba** - **platba nemá variabilní symbol.**
-        
+
         ![Jak otestovat správné napojení banky na FAPI](/assets/articles/d9143e154e0bd3bc.png)
-        
-    
+
+
 4.  **Hotovo:**
     1.  Nyní víte že propojení mezi vaší bankou a FAPI funguje.
     2.  V momentě kdy zákazníci pošlou platbu včetně variabilního symbolu. FAPI jej spáruje se správnou platbu a označí jí jako zaplacenou.

@@ -97,7 +97,7 @@ legacyAnchors:
 ---
 Platební QR kód usnadní zákazníkovi úhradu objednávky bankovním převodem. Po načtení kódu v mobilní bankovní aplikaci se mu předvyplní platební údaje, například bankovní účet, částka, měna a variabilní symbol. Zákazník je nemusí ručně přepisovat, takže platbu provede rychleji a s menším rizikem chyby.
 
-  
+
 
 :::info
 V této nápovědě zjistíte:
@@ -111,28 +111,28 @@ V této nápovědě zjistíte:
 -   jak QR platbu otestovat a vyřešit nejčastější problémy.
 :::
 
-  
+
 
 ## Jak QR platba funguje
 
 Platební QR kód není platební brána ani okamžitá online platba. QR kód pouze předá platební údaje do bankovní aplikace zákazníka.
 
-  
+
 
 Zákazník musí po načtení QR kódu:
 
 1.  zkontrolovat předvyplněné údaje,
 2.  platbu ve své bankovní aplikaci potvrdit.
 
-  
+
 
 Úhrada potom proběhne jako běžný bankovní převod. FAPI označí objednávku jako zaplacenou až po přijetí a spárování platby.
 
-  
+
 
 Pro automatické spárování musí být FAPI napojené na banku a u přijaté platby musí souhlasit variabilní symbol, částka a měna.
 
-  
+
 
 ## Jaký formát platebního QR kódu FAPI vytvoří
 
@@ -150,15 +150,15 @@ Pro automatické spárování musí být FAPI napojené na banku a u přijaté p
 -   země, ve které sídlí prodejce,
 -   prefix IBANu bankovního účtu prodejce.
 
-  
+
 
 Například pokud zákazník uvede fakturační adresu na Slovensku, FAPI vytvoří QR kód ve formátu BySquare. To platí i v případě, že prodejce používá český nebo jiný zahraniční bankovní účet.
 
-  
+
 
 Pokud zákazník uvede jinou zemi než Českou republiku nebo Slovensko, případně jeho zemi nelze určit, FAPI vytvoří QR kód ve formátu SPAYD. Možnost načtení potom závisí na tom, zda zákazníkova bankovní aplikace tento formát podporuje. Zákazník může vždy použít také běžné platební údaje uvedené na faktuře nebo v e-mailu.
 
-  
+
 
 :::danger
 **Důležité:** Formát QR kódu určuje pouze způsob zápisu platebních údajů. Nemění účet příjemce, částku, měnu ani variabilní symbol objednávky.
@@ -180,7 +180,7 @@ Název příjemce může mít nejvýše 35 znaků. Delší název FAPI při vytv
 
 ## Co budete potřebovat
 
-  
+
 
 Před nastavením si připravte:
 
@@ -190,15 +190,15 @@ Před nastavením si připravte:
 -   bankovní účet nastavený pro každou měnu, ve které přijímáte platby,
 -   napojení banky na FAPI, pokud chcete příchozí platby automaticky párovat.
 
-  
+
 
 Pro platební QR kód není bankovní účet omezen pouze na český nebo slovenský IBAN. U zahraničního účtu vyplňte správný IBAN a BIC/SWIFT.
 
-  
+
 
 Pokud používáte jeden účet pro více měn, přidejte jej do FAPI pro každou měnu samostatně. Banka však může platbu v jiné měně před připsáním převést. Připsaná částka nebo měna potom nemusí odpovídat objednávce a platba se nemusí automaticky spárovat.
 
-  
+
 
 Bankovní účet může obsahovat pouze čísla, lomítko, svislou čáru a pomlčku. Mezera není povolený znak.
 
@@ -206,7 +206,7 @@ Bankovní účet může obsahovat pouze čísla, lomítko, svislou čáru a poml
 Postup napojení banky najdete v nápovědě [Import plateb z banky](/article/30-import-plateb-z-banky).
 :::
 
-  
+
 
 ## 1\. Nastavte bankovní účet pro platební QR kód
 
@@ -217,7 +217,7 @@ Postup napojení banky najdete v nápovědě [Import plateb z banky](/article/30
 5.  Pokud vyplňujete název účtu, použijte nejvýše 35 znaků.
 6.  Nastavení **uložte**.
 
-  
+
 
 FAPI vytváří platební QR kód z údajů konkrétní objednávky a nastaveného bankovního účtu. Obsahuje zejména účet příjemce, částku, měnu a variabilní symbol.
 
@@ -227,13 +227,13 @@ Podrobný postup najdete v nápovědě [Nastavení a změna bankovního účtu](
 
 ![Jak nastavit a používat QR kódy ve FAPI](/assets/articles/d2ec26dd8f444dc2.png)
 
-  
+
 
 ## 2\. Nabídněte QR platbu v prodejním formuláři
 
 Tento krok použijte, pokud má zákazník ve formuláři výslovně zvolit možnost **QR platba**.
 
-  
+
 
 1.  Otevřete [**Prodej → Prodejní formuláře**](https://web.fapi.cz/forms/?projectId=all).
 2.  Vyberte formulář, který chcete upravit.
@@ -241,27 +241,27 @@ Tento krok použijte, pokud má zákazník ve formuláři výslovně zvolit mož
 4.  V části **Způsob platby** povolte možnost **QR platba**.
 5.  Změny **uložte**.
 
-  
+
 
 QR platba je ve formuláři samostatná volba. Zákazník však samotnou úhradu provede bankovním převodem podle údajů načtených z QR kódu.
 
-  
+
 
 ![Jak nastavit a používat QR kódy ve FAPI](/assets/articles/69975600132a3788.png)
 
-  
+
 
 :::danger
 **Důležité:** Zapnutí platební metody samo nestačí. QR kód musíte zobrazit také na děkovací stránce, na kterou se zákazník po odeslání objednávky dostane.
 :::
 
-  
+
 
 ## 3\. Zobrazte QR kód na interní děkovací stránce FAPI
 
 Interní děkovací stránka je stránka vytvořená přímo ve FAPI. Pro údaje objednávky používá zástupné symboly se dvěma dvojicemi složených závorek, například `{{number}}` .
 
-  
+
 
 1.  V nastavení prodejního formuláře otevřete krok **5\. Děkovací stránka**.
 2.  Ponechte vypnutou možnost **Použít vlastní děkovací stránku**, aby se použila interní stránka FAPI.
@@ -269,7 +269,7 @@ Interní děkovací stránka je stránka vytvořená přímo ve FAPI. Pro údaje
 4.  Doplňte zákazníkovi částku, měnu a variabilní symbol.
 5.  Formulář **uložte**.
 
-  
+
 
 Můžete použít například tento obsah:
 
@@ -282,32 +282,32 @@ Můžete použít například tento obsah:
 {{/ifQrCode}}
 ```
 
-  
+
 
 Podmíněný blok `{{ifQrCode}}...{{/ifQrCode}}`  zajistí, že se jeho obsah zobrazí pouze u objednávky se zvolenou QR platbou. Úvodní a koncovou značku ponechte každou na samostatném řádku a podmíněné bloky nevkládejte do sebe.
 
 ![Jak nastavit a používat QR kódy ve FAPI](/assets/articles/03e1230c3d5fa8b3.png)
 
-  
+
 
 :::caution
 Přehled dalších symbolů najdete v nápovědě [Zástupné symboly v děkovací stránce](/article/339-zastupne-symboly-v-interni-dekovaci-strance-fapi).
 :::
 
-  
+
 
 ## 4\. Pokud používáte vlastní děkovací stránku
 
 Vlastní děkovací stránka leží mimo FAPI, například na vašem webu. Aby se na ní mohly načíst údaje konkrétní objednávky včetně QR kódu, musí:
 
-  
+
 
 -   používat zabezpečenou adresu `https://` ,
 -   obsahovat FAPI SDK,
 -   zachovat parametr `path` , který FAPI přidá do adresy,
 -   mít v prodejním formuláři zapnuté vložení identifikátoru objednávky do URL děkovací stránky.
 
-  
+
 
 Do patičky vlastní stránky vložte jednou tento skript:
 
@@ -315,17 +315,17 @@ Do patičky vlastní stránky vložte jednou tento skript:
 <script src="https://web.fapi.cz/js/sdk/fapi.js"></script>
 ```
 
-  
+
 
 Na stránce potom můžete použít stejné symboly se dvěma dvojicemi závorek, například `{{qrCodeImage}}` .
 
-  
+
 
 :::danger
 **Pozor:** Parametr `path`  nemažte, nepřejmenovávejte ani nevytvářejte ručně. Odkaz obsahující tento parametr nesdílejte, protože identifikuje konkrétní objednávku.
 :::
 
-  
+
 
 Pokud používáte Konverzky, nelze platební QR kód vložit přímo běžným způsobem. Zákazníkovi místo něj nabídněte odkaz na přehled objednávky pomocí Embed/HTML prvku:
 
@@ -333,11 +333,11 @@ Pokud používáte Konverzky, nelze platební QR kód vložit přímo běžným 
 <p style="text-align: center;"><a href="{{orderStatusPage}}">Přejít k platbě</a></p>
 ```
 
-  
+
 
 Na přehledu objednávky zákazník uvidí dostupné možnosti úhrady a případně také platební QR kód.
 
-  
+
 
 ## 5\. Vložte platební QR kód do e-mailu
 
@@ -347,7 +347,7 @@ V e-mailové šabloně nebo upomínce použijte symbol:
 {qrCode}
 ```
 
-  
+
 
 1.  Otevřete [**Prodej → Šablony zpráv**](https://web.fapi.cz/message-template-sets/?projectId=all) nebo [**Šablony upomínek**](https://web.fapi.cz/reminder-sets/?projectId=all).
 2.  Upravte zprávu, ve které má zákazník dostat platební údaje.
@@ -356,7 +356,7 @@ V e-mailové šabloně nebo upomínce použijte symbol:
 5.  Do zprávy doporučujeme přidat také odkaz `{orderStatusPage}`  na přehled objednávky.
 6.  Šablonu uložte a ověřte skutečnou testovací objednávkou.
 
-  
+
 
 :::danger
 **Pozor na rozdílný zápis:**
@@ -365,52 +365,52 @@ V e-mailové šabloně nebo upomínce použijte symbol:
 -   na děkovací stránku patří `{{qrCodeImage}}`  – dvě dvojice závorek.
 :::
 
-  
+
 
 :::caution
 Podrobný přehled najdete v nápovědě [Zástupné symboly v e-mailových šablonách a upomínkách](/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach).
 :::
 
-  
+
 
 ## 6\. Umožněte zákazníkovi zaplatit objednávku později
 
 Do e-mailu při vystavení objednávky a do upomínek vložte zástupný symbol `{orderStatusPage}` . Po kliknutí se zákazník dostane na přehled své objednávky. U nezaplacené objednávky zde může otevřít možnosti platby a zobrazit platební údaje, případně QR kód.
 
-  
+
 
 :::caution
 Podrobnosti najdete v nápovědě [Přehled objednávky](/article/102-prehled-objednavky).
 :::
 
-  
+
 
 ## Jak funguje automatické spárování QR platby
 
 Platba provedená **načtením QR kódu je bankovní převod**. Aby ji FAPI mohlo automaticky přiřadit k objednávce, musí:
 
-  
+
 
 -   být nastavené napojení FAPI na banku,
 -   souhlasit variabilní symbol,
 -   souhlasit částka,
 -   souhlasit měna.
 
-  
+
 
 Bankovní převody FAPI páruje přibližně jednou za hodinu, obvykle mezi 20. a 40. minutou dané hodiny. Pokud se údaje neshodují, platba zůstane mezi nespárovanými platbami a je potřeba ji vyřešit ručně.
 
-  
+
 
 :::caution
 Podrobnosti najdete v nápovědě [Automatické párování plateb ve FAPI](/article/251-automaticke-parovani-plateb).
 :::
 
-  
+
 
 ## Další druhy QR kódů ve FAPI
 
-  
+
 
 | Druh QR kódu | K čemu slouží | Kde se používá |
 | --- | --- | --- |
@@ -423,26 +423,26 @@ Podrobnosti najdete v nápovědě [Automatické párování plateb ve FAPI](/art
 
 QR kód voucheru neslouží k platbě. Obsahuje kód voucheru nebo vstupenky, který můžete kontrolovat a uplatnit například v aplikaci FAPI Tickets.
 
-  
+
 
 Do e-mailové šablony můžete podle potřeby vložit:
 
-  
+
 
 -   `{voucherQrCodes}`  – samostatný QR kód pro každý voucher,
 -   `{voucherQrCodeAllInOne}`  – jeden QR kód obsahující všechny vouchery z objednávky.
 
-  
+
 
 Více informací najdete v nápovědě [FAPI Tickets](/article/286-fapi-tickets).
 
-  
+
 
 ### QR kód předplatného
 
 Symbol `{subscriptionQrCode}`  v e-mailu nebo `{{subscriptionQrCode}}`  na děkovací stránce vytváří QR kód s identifikátorem předplatného. Neobsahuje platební údaje a neslouží k úhradě objednávky. Použijte jej pouze tehdy, pokud na tento identifikátor navazuje váš vlastní proces.
 
-  
+
 
 ### QR kód pro vrácení platby
 

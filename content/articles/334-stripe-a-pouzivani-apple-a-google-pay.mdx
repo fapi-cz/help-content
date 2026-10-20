@@ -19,7 +19,7 @@ U Stripe jsou Apple Pay i Google Pay z pohledu platební brány variantou **plat
 
 Ve formuláři zákazník vždy nejprve volí možnost **Platba kartou**. Kdy se následně zobrazí Apple Pay nebo Google Pay, záleží na způsobu zadání údajů z karty ve formuláři.
 
-  
+
 
 Další rozlišení je, pokud používáte v prodejním formuláři **přímé zadávání kartou:**
 
@@ -29,7 +29,7 @@ Další rozlišení je, pokud používáte v prodejním formuláři **přímé z
 **1\. Zadání karty nepřímo – zákazník je přesměrován na Stripe**
 :::
 
-  
+
 
 Pokud ve formuláři **nemáte zapnutou** možnost **„Údaje z platební karty zadávat v prodejním formuláři“**, zákazník po volbě platby kartou přejde na platební stránku Stripe.
 
@@ -37,7 +37,7 @@ Právě na této stránce mu Stripe může kromě ručního zadání údajů z k
 
 ![Stripe a používání Apple a Google Pay](/assets/articles/f539c56b28d100bd.png)
 
-  
+
 
 Zákazník Apple Pay nebo Google Pay uvidí pouze tehdy, když současně platí:
 
@@ -49,13 +49,13 @@ Zákazník Apple Pay nebo Google Pay uvidí pouze tehdy, když současně platí
 
 \- Stripe vyhodnotí danou platební metodu pro konkrétní platbu jako dostupnou.
 
-  
+
 
 Apple Pay se typicky nabídne zákazníkovi na zařízení Apple v podporovaném prohlížeči,
 
 Google Pay pak zákazníkovi s aktivní Google Peněženkou v podporovaném prostředí.
 
-  
+
 
 :::caution
 **2\. Zadání karty přímo v prodejním formuláři**
@@ -67,7 +67,7 @@ Pokud ve formuláři zapnete možnost **„Údaje z platební karty zadávat v p
 
 V tomto režimu Stripe ve FAPI **Apple Pay ani Google Pay nenabízí**. Zákazník tedy uvidí pouze pole pro zadání údajů z platební karty.
 
-  
+
 
 Pro přímé zadání karty je potřeba:
 
@@ -77,7 +77,7 @@ Pro přímé zadání karty je potřeba:
 
 3\. v kroku **6\. Zobrazená pole** zapnout sběr údaje **Stát**.
 
-  
+
 
 Bez údaje o státu Stripe přímou platbu kartou ve formuláři neumožní zpracovat.
 
@@ -85,14 +85,14 @@ Bez údaje o státu Stripe přímou platbu kartou ve formuláři neumožní zpra
 
 [Zadání platební karty přímo v prodejním formuláři](/article/282-zadani-udaju-z-karty-primo-v-prodejnim-formulari)
 
-  
+
 
 :::danger
 **Důležité:**
 
 Apple Pay a Google Pay se u Stripe nikdy nezobrazují jako samostatné platební metody přímo v seznamu způsobů platby ve FAPI. V nepřímém režimu je může Stripe nabídnout až po volbě platby kartou. Při přímém zadání karty ve formuláři se nenabízejí.
 
-  
+
 
 Minimální výše platby, kterou platební brána Stripe dokáže zpracovat je **15 Kč**, resp. 0,5 EUR.
 :::

@@ -37,17 +37,17 @@ _Prodejní formulář_ je srdcem celého automatizovaného prodejního procesu v
 
 Prostřednictvím prodejního formuláře umístěného na vaší webové stránce zákazník vyplňuje a odesílá svou objednávku.
 
-  
+
 
 ![Prodejní formulář](/assets/articles/b33bc2b44225ff7f.png)
 
-  
+
 
 ## Správa prodejních formulářů
 
 Všechny operace, které lze s prodejním formulářem provádět, najdete v nabídce **Prodej - Prodejní formuláře**.
 
-  
+
 
 ![Prodejní formulář](/assets/articles/749bdeabab6b73b7.png)
 
@@ -123,24 +123,24 @@ Na druhé záložce nastavte položky, které se budou zákazníkovi nabízet v
 
 ![Prodejní formulář](/assets/articles/65d9cf44d9cbc4a5.png)
 
-  
-  
+
+
 
 V sekci **Pokročilé možnosti** lze nastavit další parametry vztahující se k prodejním položkám.
 
-  
+
 
 Pomocí sekce **Upsell** můžete po odeslání objednávkového formuláře svým zákazníkům nabídnout přidání dalších produktů k již uskutečněné objednávce. Více informací najdete v článku [Upsell](/article/76-upsell).
 
-  
+
 
 Zaškrtnutí parametru **Umožnit výběr více položek** (zobrazuje se pouze tehdy, obsahuje-li prodejní formulář více položek) povolí zákazníkovi vybrat v objednávce více než jednu z nabízených položek. V opačném případě může vybrat pouze jednu položku.
 
-  
+
 
 Pokud je zaškrtnut parametr **Zrušit předvyplnění prvního produktu**, při načtení prodejního formuláře nebude automaticky vybrán první produkt v hlavní sekci. Zákazník si bude muset produkt zvolit sám. V opačném případě se předvybere vždy 1. produkt
 
-  
+
 
 ### 3\. Platby a fakturace
 
@@ -164,13 +164,13 @@ Prodejní formulář vám umožňuje automatizovat i pravidelnou fakturaci. U vo
 
 Na této záložce nastavíte základní parametry automatické komunikace a akce, které se vykonají v různých fázích zpracování objednávky.
 
-  
+
 
 ![Prodejní formulář](/assets/articles/fcc6a1978b2a63b7.png)
 
 Údaje v sekci **Šablony zpráv a upomínek** se týkají nastavení automatické komunikace se zákazníkem. Můžete zde vybrat, jaká sada šablon zpráv a upomínek se bude pro daný prodejní formulář používat, a také to, zda vám na vaši e-mailovou adresu bude chodit zpráva o každé uskutečněné objednávce. Více o šablonách zpráv a upomínek se dozvíte návodech [Šablony zpráv](/article/17-sablony-zprav) a [Upomínky](/article/19-upominky).
 
-  
+
 
 Pro větší přehlednost zobrazujeme ve výpisu i přesný seznam jednotlivých šablon zpráv, které můžete v dané sadě používat. Na každou šablonu se lze ihned prokliknout přes modře zvýrazněný název a začít ji rovnou editovat.
 
@@ -182,7 +182,7 @@ Akce se spouští vždy v návaznosti na určitou událost, která nastane. Udá
 
 ![Prodejní formulář](/assets/articles/7416557a75f58b3e.png)
 
-  
+
 
 #### S jakými událostmi a akcemi FAPI pracuje?
 
@@ -190,43 +190,43 @@ Dostupné události:
 
 -   vytvoření poptávky
     -   spustí se při vyplnění 1. kroku dvoukrokového formuláře
-    
+
 -   vystavení objednávky
     -   spustí se po vystavení objednávky (ručním vytvoření faktury)
     -   při vystavení 2. a další pravidelné faktury
-    
+
 -   zaplacení objednávky
     -   spustí se po zaplacení objednávky nebo ručním označením faktury jako zaplacené
     -   při zaplacení 2. a další pravidelné faktury
-    
+
 -   stornování objednávky
     -   spusti se při stornovanání objednávky, ručním i automatickým stornování faktury
     -   při stornu 2. a další pravidelné faktury
-    
+
 -   objednání položky
     -   spustí se po vystavení objednávky (faktury) v případě že obsahuje zadaný produkt
     -   při vystavení 2. a další pravidelné faktury, která obsahuje zadaný produkt
-    
+
 -   zaplacení položky
     -   spustí se po zaplacené objednávky (faktury) v případě že obsahuje zadaný produkt
     -   při zaplacení 2. a další pravidelné faktury, která obsahuje zadaný produkt
-    
+
 -   stornování položky
     -   spustí se po stornování objednávky (faktury) v případě že obsahuje zadaný produkt
     -   při stornování 2. a další pravidelné faktury, která obsahuje zadaný produkt
-    
+
 -   objednání položky s kódem
     -   spustí se po vystavení objednávky (faktury) v případě že nějaká z položek faktury má stejný kód s tím, který jsme vyplnili v automatizaco
     -   při vystavení 2. a další pravidelné faktury, která obsahuje položku se zadaným kódem
-    
+
 -   zaplacení položky s kódem
     -   spustí se po zaplacení objednávky (faktury) v případě že nějaká z položek faktury má stejný kód s tím, který jsme vyplnili v automatizaci
     -   při zaplacení 2. a další pravidelné faktury, která obsahuje položku se zadaným kódem
-    
+
 -   stornování položky s kódem
     -   spustí se po stornování objednávky (faktury) v případě že nějaká z položek faktury má stejný kód s tím, který jsme vyplnili v automatizaci
     -   při stornování 2. a další pravidelné faktury, která obsahuje položku se zadaným kódem
-    
+
 
 Dostupné akce:
 
@@ -263,7 +263,7 @@ Jak používat akce v souladu s legislativou pro ochranu osobních údajů se 
 
 ## rozdíl mezi FAPI Memberem a Miowebem
 
-  
+
 
 **FAPI Member** umožňuje otevírat jednotlivé úrovně členské sekce **postupně po každé uhrazené splátce**. Např. po první splátce zpřístupní lekci 1, po druhé lekci 2 atd. Vhodné pro kurzy nebo členství s dávkovaným obsahem.
 
@@ -276,7 +276,7 @@ Jak používat akce v souladu s legislativou pro ochranu osobních údajů se 
 
 Zde nastavíte, jaká stránka se zobrazí zákazníkovi po úspěšném odeslání objednávky. Stránku lze vytvořit v jednoduchém editoru buď přímo v aplikaci, nebo můžete vložit odkaz na vlastní stránku.
 
-  
+
 
 ![Prodejní formulář](/assets/articles/fab99f299aba5ff0.png)
 
@@ -285,7 +285,7 @@ Zde nastavíte, jaká stránka se zobrazí zákazníkovi po úspěšném odeslá
 1.  Jako prvně vložte do políčka pixely. Tedy Facebook, Tiktok, Instagram, ... pixely.
 2.  A až poté použijte konverzní kód FAPI.
 
-  
+
 
 ![Prodejní formulář](/assets/articles/b59222adc8ee4234.png)
 
@@ -295,7 +295,7 @@ Při chybě bude automatickyy použita [stránka s přehledem objednávky](/arti
 
 Pokud spolupracujete s affiliate partnery, můžete zde nastavit propojení prodejního formuláře s provizním systémem _Affilbox_. Po uskutečnění nákupu prostřednictvím prodejního formuláře se partnerovi, který zákazníka doporučil, započítá provize z prodeje. [Více o systému Affilbox](https://www.affilbox.cz/)
 
-  
+
 
 ### 6\. Vzhled
 

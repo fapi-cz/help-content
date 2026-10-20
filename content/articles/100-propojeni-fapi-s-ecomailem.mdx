@@ -89,7 +89,7 @@ Automatické přidání, resp. odebrání kontaktních údajů uvedených v obj
 
 Použijte k tomu akci **přidat kontakt do Ecomail**, resp. **odebrat kontakt z Ecomail**.
 
-  
+
 
 Při přidání kontaktu do Ecomail je možné taky vyplnit pole pro štítky. Štítky se řídí pravidly Ecomail.
 
@@ -97,7 +97,7 @@ viz. [https://support.ecomail.cz/cs/articles/2409519-stitky-ke-kontaktum-a-jejic
 
 Musí být bez diakritiky a oddělené čárkou. Víceslovné musí být spojené podtržítkem.
 
-  
+
 
 ![Propojení FAPI s Ecomailem](/assets/articles/06233414044a8822.png)
 
@@ -119,7 +119,7 @@ Do aplikace Ecomail můžete přenášet také údaje vyplněné zákazníkem d
 -   hodnoty vlastních polí (vizte zelený boxík výše)
 -   štítky pro ecomail (pokud jsou vyplněny)
 
-  
+
 
 ## Odesílání dat o objednávce do Ecomailu
 
@@ -149,8 +149,8 @@ U objednávky **na splátky** se data přenesou až po úhradě první splátky.
 Při přenosu údajů z FAPI do Ecomailu API automaticky využívá následující výchozí nastavení:
 
 -   `skip_confirmation: false`  – Tato hodnota znamená, že se při přihlášení kontaktu **odesílá potvrzovací e-mail (tzv. double opt-in)**.
-    
+
     Tento parametr **nelze ve FAPI změnit**, protože ho FAPI vůbec nepodporuje. Pokud si nepřejete, aby byl double opt-in odesílán, musíte jej **vypnout přímo v nastavení konkrétního seznamu v Ecomailu**.
-    
+
 -   `trigger_autoresponders: true`  – Tímto se při přihlášení kontaktu **aktivují nastavené automatizace v Ecomailu** (např. uvítací série, e-maily po nákupu apod.).
 -   `update_existing: true`  – Pokud již kontakt v seznamu existuje, budou jeho údaje **aktualizovány**, nikoli přidány jako nový kontakt.

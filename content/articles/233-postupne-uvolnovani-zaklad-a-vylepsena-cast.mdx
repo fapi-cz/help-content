@@ -47,7 +47,7 @@ Tento návod vám ukáže, jak nastavit členskou sekci tak, aby:
 
 K automatizaci celého procesu potřebujete **FAPI**, **FAPI Member** a **Make**.
 
-  
+
 
 ### **Nastavení členské sekce ve FAPI Member**
 
@@ -57,7 +57,7 @@ Nejprve vytvořte dvě členské sekce:
 
 2️⃣ **Upgrade** – zpřístupní se až po dokončení základní sekce.
 
-  
+
 
 ### **ad)** 1️⃣ **Vytvoření základní členské sekce**
 
@@ -67,10 +67,10 @@ Nejprve vytvořte dvě členské sekce:
     1.  **Úroveň 1 (Týden 1)** – dostupné **ihned** po registraci.
     2.  **Úroveň 2 (Týden 2)** – dostupné **7 dní** po registraci.
     3.  **Úroveň 3 (Týden 3)** – dostupné **14 dní** po registraci.
-    
+
 4.  Uložte nastavení.
 
-  
+
 
 ### **ad)** 2️⃣ **Vytvoření upgrade členské sekce**
 
@@ -79,7 +79,7 @@ Nejprve vytvořte dvě členské sekce:
 3.  Přidejte **jednu úroveň členství (Úroveň 4)**, která se odemkne **21 dní** po registraci.
 4.  Uložte změny.
 
-  
+
 
 ### **Připojení Make pro automatizaci**
 
@@ -91,7 +91,7 @@ Aby upgrade fungoval správně, potřebujete automatizaci přes [**Make (Integro
 2.  Přidejte **Webhook** a vygenerujte **URL adresu**.
 3.  Uložte si tuto URL adresu – budete ji potřebovat ve **FAPI**.
 
-  
+
 
 ### **Propojení s FAPI Member**
 
@@ -100,7 +100,7 @@ Aby upgrade fungoval správně, potřebujete automatizaci přes [**Make (Integro
 3.  Vraťte se do **FAPI Member** a najděte **ID základní členské sekce** (např. **556**) a **ID upgrade členské sekce** (např. **557**).
 4.  Vložte je do Make do proměnných **Base Level ID** a **Upgrade Level ID**.
 
-  
+
 
 ### **Nastavení prodejního formuláře ve FAPI**
 
@@ -112,18 +112,18 @@ Dále je potřeba nastavit prodej základní a upgrade členské sekce.
 2.  Přidejte produkt **Základní členská sekce** (např. za 1 Kč).
 3.  Přidejte produkt **Upgrade členské sekce** (např. za 1 000 Kč).
 
-  
+
 
 ### **Nastavení automatizací pro přidání do členské sekce**
 
 1.  **Základní sekce:**
     1.  Po zaplacení **základního kurzu** se přidá uživatel do **Základní členské sekce** ve FAPI Member.
-    
+
 2.  **Upgrade sekce:**
     1.  Po zaplacení **upgradu** se spustí **Webhook (Spustit programový script)**, který přidá uživatele do **Upgrade členské sekce**.
-    
 
-  
+
+
 
 ### **Testování a aktivace**
 
@@ -142,6 +142,6 @@ Dále je potřeba nastavit prodej základní a upgrade členské sekce.
 
 ✅ **Všechno je automatizované pomocí Make a FAPI Member**.
 
-  
+
 
 Pokud narazíte na problém, napište na **podpora@fapi.cz**.

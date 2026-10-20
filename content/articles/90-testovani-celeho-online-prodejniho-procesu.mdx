@@ -101,7 +101,7 @@ Testování celého prodejního procesu se dá shrnout do několika kroků, kter
 
 Pečlivé otestování vám pomůže odhalit případné chyby ještě před tím, než začne objednávky vytvářet váš zákazník.
 
-  
+
 
 ## 1\. Nastavení testovacího režimu
 
@@ -121,7 +121,7 @@ Pokud budete t**estovací faktury vystavovat ručně,** nezapomeňte při tom zv
 [https://napoveda.fapi.cz/article/16-ciselne-rady](/article/16-ciselne-rady)
 :::
 
-  
+
 
 ## 2\. Kontrola prodejního formuláře na objednávkové stránce
 
@@ -143,7 +143,7 @@ U prodejního formuláře na objednávkové stránce zkontrolujte zejména:
 -   použitou měnu (v závislosti na nastavení se může měnit podle zvoleného státu zákazníka),
 -   nabízené platební metody.
 
-  
+
 
 Pokud ve formuláři používáte i další prvky, zkontrolujte také jejich správné zobrazení a funkčnost, například:
 
@@ -153,7 +153,7 @@ Pokud ve formuláři používáte i další prvky, zkontrolujte také jejich spr
 -   miniupselly,
 -   upselly.
 
-  
+
 
 ## 3\. Vytvoření testovací objednávky
 
@@ -171,7 +171,7 @@ Doporučujeme pro testování použít email, který ještě nemáte v databázi
 Pokud nemáte aktivovanou testovací platební bránu, zvolte platbu **bankovním převodem**. Tu lze při testování nejsnadněji simulovat. Tato platební metoda umožňuje nejjednodušším způsobem simulovat platbu i bez provedení skutečné peněžní transakce.
 :::
 
-  
+
 
 ## 4\. Kontrola děkovací stránky
 
@@ -183,7 +183,7 @@ Zkontrolujte:
 -   zda obsahuje správné informace
 -   zda fungují případné odkazy nebo další instrukce
 
-  
+
 
 ## 5\. Kontrola vystavené faktury
 
@@ -201,7 +201,7 @@ a zkontrolujte, zda byl vystaven doklad podle nastavení prodejního formuláře
 Pokud používáte testovací režim, testovací doklady se **neobjeví na nástěnce ani ve statistikách**.
 :::
 
-  
+
 
 ## 6\. Ověření zaslání e-mailů s doklady
 
@@ -217,7 +217,7 @@ Zkontrolujte tedy, zda:
 Logika a nastavení šablon zpráv jsou podrobně popsány v článku [Šablony zpráv](/article/17-sablony-zprav).
 :::
 
-  
+
 
 ## 7\. Testování platby
 
@@ -231,7 +231,7 @@ Nejjednodušší způsob je použít tlačítko **Označit jako zaplacené** na 
 
 FAPI nerozlišuje způsob úhrady, takže pro testování akcí po zaplacení je tento postup plně dostačující.
 
-  
+
 
 ![Testování celého online prodejního procesu](/assets/articles/834ca244594a8bfe.png)
 
@@ -239,7 +239,7 @@ FAPI nerozlišuje způsob úhrady, takže pro testování akcí po zaplacení je
 Chcete-li otestovat proces platby klasickým bankovním převodem, postupujte podle návodu [Testování importu plateb z banky a jejich párování](/article/89-testovani-importu-plateb-z-banky-a-jejich-parovani).
 :::
 
-  
+
 
 ### Testování přes platební bránu
 
@@ -255,7 +255,7 @@ Návody pro jednotlivé platební brány najdete zde:
 -   [Založení a integrace platební brány Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays),
 -   [Založení a integrace platební brány Stripe](/article/60-zalozeni-a-integrace-platebni-brany-stripe).
 
-  
+
 
 Aby bylo možné platbu přes bránu otestovat, je potřeba mít ji zároveň **nastavenou i v prodejním formuláři**.
 
@@ -263,7 +263,7 @@ Aby bylo možné platbu přes bránu otestovat, je potřeba mít ji zároveň **
 Platební brána ThePay jako jediná nabízí veřejnou testovací platební bránu. Můžete ji použít i bez založení účtu u platební brány. Stačí při založení propojení s platební bránou ve FAPI zvolit _testovací režim_.
 :::
 
-  
+
 
 ## 8\. Testování automatických akcí
 
@@ -278,7 +278,7 @@ Zkontrolujte především:
 -   zda zákazníkovi dorazil správný **e-mail s přístupy** nebo e-mail o **prodloužení přístupu**,
 -   zda se odeslaly i další navazující e-maily, pokud je máte v akcích nastavené.
 
-  
+
 
 Například pokud máte u formuláře nastavenou akci **přidat kontakt do SmartEmailingu**, zkontrolujte, že se e-mailová adresa z objednávky opravdu propsala do správného seznamu. Pokud prodáváte členskou sekci, ověřte také, že se zákazníkovi vytvořil nebo prodloužil přístup a že mu přišel odpovídající e-mail.
 
@@ -292,7 +292,7 @@ Chcete si ověřit, jaké akce se skutečně u dokladu spustily?
 [https://napoveda.fapi.cz/article/283-jak-zjistit-jake-akce-probehly-u-dokladu](/article/283-jak-zjistit-jake-akce-probehly-u-dokladu)
 :::
 
-  
+
 
 ## 9\. Testování dodání produktu
 
@@ -306,11 +306,11 @@ Nejčastější způsoby dodání jsou například:
 -   přidání do e-mailingového nástroje, odkud je navázáno spuštění další akcí,
 -   vytvoření přístupu do členské sekce.
 
-  
+
 
 Podle toho, jak máte doručení nastavené, ověřte, že zákazník po nákupu skutečně obdrží svůj produkt.
 
-  
+
 
 ## 10\. Testování upomínek
 

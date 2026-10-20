@@ -15,7 +15,7 @@ updatedAt: 2026-07-13T10:51:31Z
 ---
 FAPI umožňuje SocialDRM ochranu e-booků. Jedná se o způsob ochrany, který apeluje na nechuť kupujícího sdělovat své osobní údaje. Funkčnost spočívá v tom, že do e-booku vložíme stránku, která obsahuje údaje o kupujícím. 
 
-  
+
 
 Dále se do e-booku vkládá datum koupě a číslo objednávky s odkazem na stavovou stránku objednávky. Tento odkaz je zároveň vložen do průhledných (neviditelných) pixelů v rozích všech stránek e-booku.
 
@@ -27,27 +27,27 @@ Doporučená maximální velikost souboru je 500 MB.
 
 Samotné nastavení ochrany probíhá v úpravě šablony zpráv, kam vkládáte e-book jako soubor ke stažení.
 
-  
+
 
 ![Ochrana e-booku](/assets/articles/d44d9df6ad765882.png)
 
 Po kliknutí na **Přidat soubor** a nahrání PDF souboru na server se zobrazí zaškrtávací tlačítko **Povolit ochranu e-booku**. Je-li toto tlačítko zaškrtnuto, tak se zobrazí další možnosti.
 
-  
+
 
 **Číslo DRM stránky** označuje stránku na kterou jsou vloženy údaje o kupujícím.
 
 Zaškrtávací tlačítko **Použít existující stránku** označuje zda se má použít volná stránka, která v e-booku již existuje. Pokud toto není zaškrtnuté, pak se na pozici zadanou v **Číslo DRM stránky** vloží nová stránka.
 
-  
+
 
 Volba **Pozice na stránce** označuje, kde se mají na stránce nacházet údaje o kupujícím.
 
-  
+
 
 Poté jen stačí do těla zprávy vložit příslušný zástupný symbol \{file:x\}, který bude při zpracování nahrazen odkazem na stažení e-booku.
 
-  
+
 
 Po kliknutí na odkaz ke stažení ebooku zákazníka přesměrujeme na stránku ve FAPI, kde je možné
 

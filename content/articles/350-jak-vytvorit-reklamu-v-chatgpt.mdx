@@ -130,11 +130,11 @@ Reklama v ChatGPT vám umožní oslovit uživatele ve chvíli, kdy se v konverza
 
 V OpenAI Ads Manageru nastavíte, kam má reklama vést, v jakých zemích a zařízeních se může zobrazovat, kolik chcete utratit a v jakém kontextu je vaše nabídka relevantní.
 
-  
+
 
 Po dokončení budete mít připravenou reklamní kampaň, reklamní sestavu a jednu nebo více reklam. Pokud máte ve FAPI nastavené měření konverzí, můžete následně vyhodnocovat také objednávky, které reklama přinesla.
 
-  
+
 
 Reklamy v ChatGPT se mohou zobrazovat uživatelům tarifů Free a Go.
 
@@ -142,7 +142,7 @@ Uživatelům tarifů Plus, Pro, Business, Enterprise a Edu se nezobrazují.
 
 Reklamy se také nezobrazují uživatelům mladším 18 let. Dostupnost i podmínky OpenAI se průběžně mění.
 
-  
+
 
 :::tip
 ## Videonávod
@@ -164,13 +164,13 @@ Připravte si:
 -   nastavený název inzerenta a logo značky v Ads Manageru,
 -   představu o zemích, zařízeních, délce kampaně a rozpočtu.
 
-  
+
 
 :::caution
 Chcete-li optimalizovat kampaň podle objednávek a měřit prodeje ve FAPI, nejprve dokončete postup [Jak nastavit měření konverzí z reklam v ChatGPT ve FAPI](/article/347-jak-nastavit-mereni-konverzi-z-reklam-v-chatgpt-ve-fapi).
 :::
 
-  
+
 
 ## Jak je reklamní účet uspořádaný
 
@@ -180,13 +180,13 @@ V Ads Manageru pracujete se třemi úrovněmi:
 2.  **Reklamní sestava (Ad group)** sdružuje reklamy se stejnou cílovou stránkou, strategií a kontextem.
 3.  **Reklama (Ad)** obsahuje konkrétní nadpis, popis, obrázek a cílovou adresu.
 
-  
+
 
 :::tip
 Jedna kampaň může obsahovat více reklamních sestav a každá sestava může obsahovat více reklam. Díky tomu můžete odděleně testovat různé nabídky, situace zákazníků nebo texty.
 :::
 
-  
+
 
 ## 1\. Vytvořte novou kampaň
 
@@ -202,16 +202,16 @@ V levém menu otevřete Campaigns a vpravo nahoře klikněte na Create.
 
 Do pole **Campaign name** napište jednoznačný interní název. Praktické je uvést nabídku, cílovou skupinu a případně období, například `Online kurz – začátečníci – září 2026`  .
 
-  
+
 
 V poli **Campaign type** zvolte:
 
-  
+
 
 -   **Standard**, pokud vytváříte běžnou reklamu vedoucí na jednu stránku; pro většinu kampaní je to správná volba,
 -   **Product feed**, pouze pokud chcete vytvářet reklamy z připojeného produktového katalogu.
 
-  
+
 
 ![Jak vytvořit reklamu v ChatGPT](/assets/articles/ffc63cabd2b614b7.png)
 
@@ -221,17 +221,17 @@ Vyplňte interní název kampaně a pro běžnou reklamu ponechte typ Standard.
 
 V poli **Objective** vyberte výsledek, podle kterého má OpenAI kampaň doručovat a optimalizovat:
 
-  
+
 
 -   **Views** slouží ke zvýšení viditelnosti reklamy. Platíte za 1 000 zobrazení. V některých účtech se tento cíl může ještě zobrazovat pod starším názvem **Reach**.
 -   **Clicks** pro návštěvy cílové stránky,
 -   **Conversions** pro dokončené akce, například objednávku.
 
-  
+
 
 Pokud prodáváte přes FAPI a máte správně nastavené měření objednávek, zvolte **Conversions** a jako konverzní událost vyberte **Order Created**. Bez funkčního měření konverzí tuto možnost nepoužívejte – Ads Manager by neměl spolehlivá data pro optimalizaci.
 
-  
+
 
 V části **Locations for this campaign** přidejte pouze země, ve kterých můžete nabídku skutečně poskytovat. Pro českou a slovenskou nabídku můžete vybrat **Czechia** a **Slovakia**.
 
@@ -247,15 +247,15 @@ Vyberte cíl podle požadovaného výsledku a nastavte země, ve kterých se mů
 
 V poli **Eligible platforms** vyberte zařízení, na kterých se reklama může zobrazit. Pokud k omezení nemáte konkrétní důvod, ponechte **All platforms**. Cílovou stránku si předem ověřte na počítači i mobilu.
 
-  
+
 
 Do pole **Tracking parameters** můžete vložit parametry, které se po kliknutí doplní k cílové adrese. Pro základní rozpoznání návštěv z ChatGPT můžete použít například:
 
-  
+
 
 `utm_source=chatgpt&utm_medium=paid&utm_campaign=nazev_kampane`  
 
-  
+
 
 Název kampaně napište bez mezer a diakritiky. Ads Manager podporuje také dynamické zástupné hodnoty uvedené přímo pod polem, například ID kampaně, reklamní sestavy nebo reklamy. Jejich přesný zápis zkopírujte z aktuálního rozhraní.
 
@@ -269,7 +269,7 @@ Ads Manager vždy zobrazí minimum platné pro váš účet.
 
 U denního rozpočtu jde o průměr, nikoli pevný denní strop. Útrata může být v jednotlivém dni vyšší, ale OpenAI ji vyrovnává v průběhu týdne. Nastavte také datum zahájení a podle potřeby datum ukončení.
 
-  
+
 
 ![Jak vytvořit reklamu v ChatGPT](/assets/articles/3a4f9a163af54c7f.png)
 
@@ -279,17 +279,17 @@ Zkontrolujte zařízení, doplňte parametry pro rozpoznání návštěv a nasta
 
 Reklamní sestavu pojmenujte podle nabídky nebo situace zákazníka, kterou v ní chcete oslovit. V poli **Default Ad Destination URL** vložte úplnou adresu stránky včetně `https://`  .
 
-  
+
 
 Adresa musí být veřejně dostupná, fungovat na mobilu a odpovídat tomu, co reklama slibuje. Pokud používáte měření konverzí ve FAPI, musí být správně nastavená celá cesta od cílové stránky přes prodejní formulář až po děkovací stránku.
 
-  
+
 
 ### Co znamenají Context hints
 
 **Context hints** jsou stručné nápovědy, v jakých konverzacích, tématech nebo situacích může být vaše nabídka relevantní. Nejde o klasická klíčová slova ani o pravidlo, které zaručí zobrazení u přesné fráze. OpenAI je používá spolu s dalšími signály pro posouzení relevance reklamy.
 
-  
+
 
 Popište hlavně:
 
@@ -298,7 +298,7 @@ Popište hlavně:
 -   jakého výsledku chce dosáhnout,
 -   s jakými tématy nabídka souvisí.
 
-  
+
 
 :::info
 **Příklad:** Začínající podnikatelé, kteří chtějí prodávat vlastní produkt nebo službu online a hledají způsob, jak na web přidat objednávkový formulář, přijímat platby a automaticky vystavovat faktury.
@@ -314,7 +314,7 @@ Vložte cílovou adresu a popište situace, ve kterých je vaše nabídka releva
 
 V reklamní sestavě klikněte na **New Ad**. Ads Manager může některé údaje předvyplnit z cílové stránky. Před uložením je vždy zkontrolujte a upravte.
 
-  
+
 
 Vyplňte:
 
@@ -324,7 +324,7 @@ Vyplňte:
 -   **Destination URL** – cílovou stránku reklamy,
 -   **Ad name** – interní název, podle kterého variantu poznáte.
 
-  
+
 
 Text reklamy musí odpovídat cílové stránce. Neslibujte výsledek, který stránka nebo nabídka nedokáže doložit. Po vyplnění klikněte na **Save**.
 
@@ -334,13 +334,13 @@ Vyplňte obsah reklamy, zkontrolujte cílovou adresu a klikněte na Save.
 
 Pro testování doporučujeme připravit tři až pět variant reklamy. U každé změňte vždy hlavně jednu věc – například nadpis, popis nebo obrázek. Snadněji pak poznáte, co ovlivnilo výsledek.
 
-  
+
 
 ## 7\. Zkontrolujte nastavení
 
 V části **Review → Campaign summary** projděte celou kampaň ještě před odesláním.
 
-  
+
 
 Ověřte zejména:
 
@@ -359,14 +359,14 @@ V Campaign summary zkontrolujte kampaň, reklamní sestavu i náhled reklamy.
 
 Kliknutím na **Publish** kampaň odešlete společnosti OpenAI ke schválení. Reklama se nezačne zobrazovat okamžitě po kliknutí. Musí nejprve projít kontrolou a splnit reklamní zásady.
 
-  
+
 
 Po odeslání se vraťte do **Campaigns** a sledujte sloupec **Status**:
 
 -   **Serving** znamená, že je kampaň aktivní a může se zobrazovat,
 -   **Not serving** znamená, že se momentálně nezobrazuje. Důvodem může být probíhající kontrola, zamítnutí, vypnutá kampaň, budoucí datum zahájení, problém s účtem nebo platbou či jiné omezení.
 
-  
+
 
 Klikněte na kampaň a přečtěte si konkrétní upozornění. Samotný stav **Not serving** bez dalšího detailu neříká, která příčina nastala.
 
@@ -378,7 +378,7 @@ Po odeslání sledujte stav kampaně. Not serving neznamená automaticky chybu; 
 
 V přehledu Ads Manageru se po spuštění začnou zobrazovat data, například počet zobrazení, kliknutí a útrata. Podle cíle kampaně sledujte také cenu za kliknutí, zásah nebo počet a cenu konverzí.
 
-  
+
 
 U kampaně zaměřené na objednávky ověřte měření ještě před navýšením rozpočtu:
 
@@ -401,31 +401,31 @@ Výsledky se v Ads Manageru nemusí zobrazit okamžitě. Podle OpenAI může bý
 
 Otevřete její detail a zkontrolujte schválení reklam, hlavní přepínač kampaně, datum zahájení, rozpočet, fakturační údaje, platební metodu a případné upozornění na porušení zásad.
 
-  
+
 
 ### Nelze vybrat Order Created
 
 Konverzní událost ještě nemusí být vytvořená nebo správně napojená. Nejdříve dokončete [nastavení měření konverzí z reklam v ChatGPT ve FAPI](/article/347-jak-nastavit-mereni-konverzi-z-reklam-v-chatgpt-ve-fapi).
 
-  
+
 
 ### Reklama získává kliknutí, ale Ads Manager neukazuje objednávky
 
 Zkontrolujte cílovou adresu, měřicí parametry, nastavení Pixelu a serverového měření, správnou děkovací stránku a to, zda testovací objednávka skutečně vytvoří událost **Order Created**.
 
-  
+
 
 ### Reklama se zobrazuje v nevhodném kontextu
 
 Zpřesněte **Context hints**. Popište konkrétněji cílovou skupinu, situaci a očekávaný výsledek. Odlišné situace rozdělte do samostatných reklamních sestav.
 
-  
+
 
 ### Cílová stránka se neotevře nebo nefunguje na mobilu
 
 Ověřte úplnou adresu včetně `https://`  , dostupnost stránky bez přihlášení a celý objednávkový proces na mobilním zařízení.
 
-  
+
 
 ## Kontrolní seznam před publikací
 

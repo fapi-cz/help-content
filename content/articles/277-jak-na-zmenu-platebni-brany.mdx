@@ -21,7 +21,7 @@ updatedAt: 2026-07-13T11:43:37Z
 ---
 Změna platební brány není jen technický krok – je to zásah, který má dopad na **veškeré opakované platby vašich klientů**. Proto je důležité k celé věci přistupovat promyšleně.
 
-  
+
 
 ### ❌ Co se stane, když stávající platební bránu ve FAPI **odstraníte**?
 
@@ -29,14 +29,14 @@ Změna platební brány není jen technický krok – je to zásah, který má d
 -   Klienti nebudou mít napojenou kartu a **platby selžou**.
 -   Dochází ke ztrátě napojení mezi původním souhlasem k platbě a novou bránou.
 
-  
+
 
 ### ❌ Co se stane, pokud **změníte** platební bránu (např. z GoPay na Stripe)?
 
 -   Ani v tomto případě nebudou původní platby fungovat – každá platební brána má vlastní proces tokenizace karet.
 -   Souhlasy klientů k opakovanému stržení jsou **vázány na konkrétní platební bránu**, takže do nové brány je potřeba **získat nový souhlas**.
 
-  
+
 
 ## ✅ Doporučený postup změny platební brány
 
@@ -47,7 +47,7 @@ Nejlepší řešení je **průběžná migrace**:
 3.  Upravte **prodejní formuláře** tak, aby používaly **jen novou bránu**.
 4.  Po několika měsících můžete starou bránu **bezpečně odstranit**.
 
-  
+
 
 ### 💬 Komunikace se zákazníky je klíčová
 
@@ -58,14 +58,14 @@ To znamená:
 -   První platba po změně **musí být zaplacena ručně kartou** (ne automaticky),
 -   tím se karta napojí na novou bránu a vše pak funguje automaticky dál.
 
-  
+
 
 📌 **Doporučujeme informovat klienty předem**, ideálně formou:
 
 -   E-mailu nebo SMS zprávy,
 -   Stručného vysvětlení, proč změna probíhá a že je potřeba provést znovu první platbu ručně.
 
-  
+
 
 :::caution
 🔁 Co se stane se stávajícími opakovanými platbami při změně platební brány?
