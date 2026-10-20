@@ -1,7 +1,7 @@
 ---
 title: Jak vložit prodejní formulář FAPI do stránek Solidpixels
 url: /article/182-jak-vlozit-prodejni-formular-fapi-do-stranek-solidpixels
-description: Videonávod jak na vložení prodejního formuláře krok za krokem najdete zde.
+description: Zkopírujte HTML kód prodejního formuláře z FAPI, vložte jej do bloku Kód v Solidpixels a zkontrolujte publikovanou stránku.
 category: Jak vložit prodejní formulář do stránky
 categorySlug: 150-vlozeni-prodejniho-formulare-na-web
 categorySlugs:
@@ -9,10 +9,47 @@ categorySlugs:
 keywords:
   - Jak vložit prodejní formulář FAPI do stránek Solidpixels
   - Jak vložit prodejní formulář do stránky
+  - Solidpixels
+  - HTML kód
+  - blok Kód
 sourceUrl: https://napoveda.fapi.cz/article/182-jak-vlozit-prodejni-formular-fapi-do-stranek-solidpixels
 order: 172
-updatedAt: 2024-07-01T07:40:20Z
+updatedAt: 2026-10-20T13:53:21Z
 ---
-Videonávod jak na vložení prodejního formuláře krok za krokem [najdete zde.](https://www.youtube.com/watch?v=wZLMu0w-uR8)
+Prodejní formulář FAPI vložíte do stránky Solidpixels pomocí bloku **Kód**. Připravte si hotový [prodejní formulář ve FAPI](/article/44-prodejni-formular) a přístup k úpravám svého webu v Solidpixels.
 
-<Video src="https://www.youtube.com/embed/wZLMu0w-uR8" />
+## 1. Zkopírujte kód formuláře z FAPI
+
+1. Ve FAPI otevřete **Prodej → Prodejní formuláře**.
+2. U formuláře, který chcete vložit na web, otevřete **Náhled**.
+3. Zkopírujte celý obsah pole **Kód HTML pro vložení formuláře na web**. Samotný odkaz na formulář není tento vkládací kód.
+
+Podrobnosti najdete v návodu [Vložení prodejního formuláře na web](/article/75-vlozeni-prodejniho-formulare-na-web).
+
+## 2. Vložte kód do Solidpixels
+
+1. V editoru Solidpixels otevřete stránku, na které chcete formulář zobrazit.
+2. Z levé nabídky přetáhněte blok **Kód** na požadované místo stránky.
+3. Klikněte do středu vloženého bloku. Otevře se editor kódu.
+4. Vložte do něj celý HTML kód zkopírovaný z FAPI.
+5. Změny na stránce zveřejněte tlačítkem **Publikovat** vpravo nahoře. Solidpixels změny průběžně ukládá, ale samotné uložení je ještě nezveřejní.
+
+Postup práce s blokem popisuje také oficiální nápověda Solidpixels: [Kód](https://academy.solidpixels.com/blog/blok-kod) a [Tvorba obsahu pomocí bloků](https://academy.solidpixels.com/blog/tvorba-obsahu-pomoci-bloku).
+
+## 3. Zkontrolujte publikovanou stránku
+
+Otevřete veřejnou adresu stránky mimo editor. Zkontrolujte na počítači i telefonu, že se zobrazuje správný formulář a jeho obsah není oříznutý.
+
+Pokud se místo formuláře zobrazuje pouze text kódu nebo odkaz, zkontrolujte, že jste použili blok **Kód** a vložili celý obsah HTML pole z FAPI. Jestliže formulář stále nevidíte, otevřete také jeho samostatný odkaz z náhledu ve FAPI a porovnejte zobrazení.
+
+:::note
+Solidpixels z bezpečnostních důvodů omezuje některé typy JavaScriptového kódu. Pokud je vkládací kód úplný, samostatný formulář funguje a potíž nastává pouze ve stránce, předejte podpoře adresu stránky a popis problému. Neposílejte hesla ani API klíče.
+:::
+
+Zobrazení formuláře ještě neověřuje objednávku, platbu ani doručení produktu. Před spuštěním prodeje pokračujte návodem [Testování celého online prodejního procesu](/article/90-testovani-celeho-online-prodejniho-procesu).
+
+## Videonávod
+
+Původní [videonávod k vložení formuláře do Solidpixels](https://www.youtube.com/watch?v=wZLMu0w-uR8) můžete využít jako doplnění textového postupu.
+
+<Video src="https://www.youtube.com/embed/wZLMu0w-uR8" title="Vložení prodejního formuláře FAPI do Solidpixels" />
