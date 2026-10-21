@@ -15,7 +15,7 @@ keywords:
   - Rozšíření a doplňky
 sourceUrl: https://napoveda.fapi.cz/article/144-konverzni-kody
 order: 27
-updatedAt: 2026-09-10T06:22:21Z
+updatedAt: 2026-10-21T07:36:20Z
 legacyAnchors:
   - id: Jak-sprvn-nastavit-konverzn-kdy-pro-Facebook-i-jin-nstroje--NuCV6
     tag: h2
@@ -358,7 +358,7 @@ Pokud používáte vlastní děkovací stránku na svém webu, je potřeba splni
 -   v prodejním formuláři v kroku **5\. Děkovací stránka** zaškrtnout volbu **Vkládat unikátní identifikátor objednávky do URL děkovací stránky**,
 -   vlastní děkovací stránka musí běžet na **HTTPS**,
 -   na stránce musí být načtené analytické nástroje, do kterých chcete konverze posílat,
--   na vlastní děkovací stránku je potřeba vložit FAPI SDK script,
+-   na vlastní děkovací stránku je potřeba vložit FAPI SDK script **právě jednou**,
 -   konverzní kódy je vhodné vkládat do patičky stránky.
 
 ![Konverzní kódy](/assets/articles/3e7b32a2c98b6f52.png)
@@ -374,6 +374,8 @@ Pokud používáte vlastní děkovací stránku na svém webu, je potřeba splni
 
 ::::caution
 Tento script zajistí načtení informací o objednávce z FAPI do vaší vlastní děkovací stránky. Díky tomu můžete data objednávky předat do analytických nebo reklamních nástrojů.
+
+Pro více měřicích nástrojů ponechte jedno načtení `fapi.js` a jejich volání spojte do společného callbacku podle příkladu níže. SDK samo načte soubor `fapi-source.js`; dvojice `fapi.js` a `fapi-source.js` je běžná, opakovaná vložení stejného `fapi.js` odstraňte.
 
 
 
@@ -538,6 +540,8 @@ FAPI_CONVERSION.simpleFacebookPixelTransactionOnlyPaid(fapiOrderData);
 
 Před nastavením si proto ujasněte, zda chcete v daném nástroji měřit všechny vytvořené objednávky, nebo pouze zaplacené objednávky.
 
+Varianty `OnlyPaid` kontrolují stav platby při spuštění kódu na děkovací stránce. Pozdější úhrada převodem sama tento kód znovu nespustí. Pro měření všech objednávek použijte varianty bez `OnlyPaid`.
+
 ## Jak tyto funkce použít?
 
 ##### Ukázka zaslání dat do FB pixelu:
@@ -606,13 +610,13 @@ document.addEventListener('FapiSdkLoaded', function () {
 <script>
 document.addEventListener('FapiSdkLoaded', function () {
 	FAPI_CONVERSION.runConversion(function (fapiOrderData) {
-		FAPI_CONVERSION.simpleGoogleAdsTransaction(fapiOrderData, 'AW-***');
+		FAPI_CONVERSION.simpleGoogleAdsTransaction(fapiOrderData, 'AW-123456789/KONVERZNI_LABEL');
 	});
 });
 </script>
 ```
 
-Je potřeba správně nastavit kód kampaně "AW-\*\*\*".
+Nahraďte `AW-123456789/KONVERZNI_LABEL` celým cílem konverzní akce z Google Ads: ID konverze a konverzní štítek (label) oddělené lomítkem.
 
 ##### Ukázka zaslání konverzí do Affilboxu:
 
@@ -666,6 +670,8 @@ document.addEventListener('FapiSdkLoaded', function () {
 
 ##### Ukázka zaslání konverzí do Sklik:
 
+Následující příklady slouží pro stávající starší integraci s `rc.js`. Pro nové nasazení použijte [aktuální měření SEM podle nápovědy Skliku](https://napoveda.sklik.cz/merici-skripty/konverzni-kod/). U starší integrace patří do `sklikId` či `id` ID konverze ze Skliku; číslo objednávky patří do `orderId`. Nejprve načtěte měřicí nástroj a volání s `consent: 1` spouštějte až po udělení odpovídajícího souhlasu v cookies liště.
+
 ```text
 <script>
 document.addEventListener('FapiSdkLoaded', function () {
@@ -680,19 +686,42 @@ var zboziId = 123456;/* Id provozovny zbozi.cz*/
 
 ##### Pokud chcete odeslat konverze do více nástrojů, můžete tyto kódy zjednodušit takto:
 
-```text
-<script>
-document.addEventListener('FapiSdkLoaded', function () {
-	FAPI_CONVERSION.runConversion(function (fapiOrderData) {   
-		FAPI_CONVERSION.simpleFacebookPixelTransaction(fapiOrderData);
-		FAPI_CONVERSION.simpleGoogleTagManagerTransaction(fapiOrderData);
-		FAPI_CONVERSION.simpleGoogleAnalyticsEcommerceTransaction(fapiOrderData);
-		FAPI_CONVERSION.simpleGA4Transaction(fapiOrderData);
+Následující příklad měří vytvořené objednávky přímo v **GA4 a Google Ads** na vlastní děkovací stránce. Data objednávky načte jednou a předá je oběma nástrojům.
 
-	});
-});
-</script>
-```
+1. Ve FAPI otevřete prodejní formulář a **5. krok → Děkovací stránka**. Zadejte vlastní děkovací adresu s **HTTPS** a zapněte **Vkládat unikátní identifikátor objednávky do URL děkovací stránky**. Při přesměrování zachovejte parametr `path`, podle kterého SDK načte konkrétní objednávku.
+2. Na webu nejprve načtěte **Google tag** podle [pokynů pro GA4](/article/164-google-analytics-4). Do jeho stávající inicializace doplňte konfiguraci Google Ads; druhou kopii `gtag.js` nevkládejte. Výsledná konfigurace obou cílů má tento tvar:
+
+   ```javascript
+   gtag('config', 'G-XXXXXXXXXX');
+   gtag('config', 'AW-123456789');
+   ```
+
+   Obě ID nahraďte údaji ze svých účtů. Souhlasy s analytickým a reklamním měřením nastavuje a aktualizuje vaše cookies lišta. Konfigurace patří za nastavení výchozích souhlasů a před odesílání konverzí. Podrobnosti najdete v [návodu Google pro použití stávající značky také pro Ads](https://support.google.com/google-ads/answer/7548399?hl=cs).
+3. Do patičky vlastní děkovací stránky vložte **jednou** tento společný blok. Nahraďte jím dosavadní samostatné konverzní bloky pro GA4 a Ads a jejich opakované načítání SDK:
+
+   ```html
+   <script>
+   document.addEventListener('FapiSdkLoaded', () => {
+     FAPI_CONVERSION.runConversion((fapiOrderData) => {
+       FAPI_CONVERSION.simpleGA4Transaction(fapiOrderData);
+       FAPI_CONVERSION.simpleGoogleAdsTransaction(
+         fapiOrderData,
+         'AW-123456789/KONVERZNI_LABEL'
+       );
+     });
+   }, { once: true });
+   </script>
+
+   <script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+   ```
+
+   `AW-123456789/KONVERZNI_LABEL` nahraďte celým cílem vybrané konverzní akce z Google Ads: ID konverze, lomítko a konverzní štítek (label). Nejde o ID kampaně. Samotné `AW-123456789` konkrétní akci neurčuje. Pokud mají produkty různé konverzní akce, použijte na jejich děkovacích stránkách odpovídající label.
+4. Stejnou objednávku odesílejte do každého cíle jednou. Při tomto přímém měření vypněte odpovídající konverzní značky v **Google Tag Manageru (GTM)**, včetně případných pravidel na `purchase` nebo `fapiOrderDataLoaded`. Prověřte také, zda stejný nákup neměří další plugin a zda se tentýž GTM kontejner nevkládá vícekrát. Pokud používáte přímou Ads konverzi i import stejného nákupu z GA4, zvolte v Ads jednu hlavní konverzní akci pro optimalizaci.
+5. Vytvořte testovací objednávku a zkontrolujte děkovací URL s `path`, souhlasy v cookies liště a odeslané události v **GA4 DebugView** a **Google Tag Assistantu**. Ověřte číslo objednávky, hodnotu, měnu a počet započítaných konverzí také po obnovení stránky.
+
+SDK do GA4 předá událost `purchase` s číslem objednávky, hodnotou, měnou a položkami. Do Ads předá `conversion` s cílem `send_to`, hodnotou, měnou a číslem objednávky jako `transaction_id`. Unikátní číslo pomáhá [zabránit opakovanému započítání stejné Ads konverze](https://support.google.com/google-ads/answer/6386790?hl=cs). Nastavení `{ once: true }` omezuje listener na jedno spuštění během načtení stránky; obnovení stránky tím není chráněné.
+
+U **děkovací stránky přímo ve FAPI** vložte konverzní část do pole **Konverzní kód (HTML)** a vynechte poslední řádek načítající `fapi.js`, protože SDK už zajišťuje FAPI.
 
 ##### Dále se dají použít funkce, které pošlou data do analytických nástrojů jen když jsou dané objednávky zaplacené:
 
@@ -812,13 +841,13 @@ Tato funkce vytvoří konverzi ve Facebook pixelu, pouze pokud je objednávka za
 
 ##### FAPI\_CONVERSION.simpleGA4Transaction(fapiOrderData: object)
 
-Tato funkce odešle konverzi do Google Analytics 4 pouze v případě, že je objednávka zaplacená. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
+Tato funkce odešle do Google Analytics 4 vytvořenou objednávku bez ohledu na stav platby. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
 
 
 
 ##### FAPI\_CONVERSION.simpleGA4TransactionOnlyPaid(fapiOrderData: object)
 
-Tato funkce odešle konverzi do Google Analytics 4. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
+Tato funkce odešle konverzi do Google Analytics 4 pouze v případě, že je objednávka zaplacená. Data se neodešlou, pokud na stránce nemáte Google Analytics 4 správně nastavené.
 
 
 
@@ -893,9 +922,9 @@ Tato funkce vytvoří konverzi na platformě Sklik, pouze pokud je objednávka z
 
 Tato funkce vytvoří konverzi v Google Ads. 
 
-Tato funkce narozdíl od výše uvedených přijmá 1 argument.
+Druhý argument `ADId` určuje cílovou konverzní akci Google Ads.
 
-ADId - ID kampaně, které začíná na AW-
+Použijte celý cíl ve formátu `AW-123456789/KONVERZNI_LABEL`, tedy ID konverze a konverzní štítek oddělené lomítkem.
 
 
 
