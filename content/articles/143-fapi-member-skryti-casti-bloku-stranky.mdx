@@ -11,7 +11,7 @@ keywords:
   - FAPI Member
 sourceUrl: https://napoveda.fapi.cz/article/143-fapi-member-skryti-casti-bloku-stranky
 order: 94
-updatedAt: 2026-07-13T10:39:14Z
+updatedAt: 2026-10-20T13:58:35Z
 legacyAnchors:
   - id: Elementor--vypnut-funkce-Element-Caching-HyYTl
     tag: h2
@@ -41,14 +41,38 @@ A právě tady použijete naši funkci částečného skrytí. Tehdy jen část 
 
 Jiné využití této funkce je i v případě, kdy máte více členských sekcí a pro vaše klienty chcete vytvořit přehlednou nástěnku, kde uvidí jaké kurzy mají zakoupené (a přes které se mohou prokliknout přímo na jejich stránky). Také zde můžete zobrazit členské sekce, které klient zakoupené nemá a získat tak další objednávku za nový placený obsah.
 
+## Podmíněné zobrazení v Divi 5
+
+Pro Divi 5 použijte **FAPI Member od verze 2.3.0**. Nastavení je dostupné u prvků Divi 5 a u modulu **FAPI formulář**; nelze je automaticky použít na libovolný modul jiného pluginu.
+
+1. Otevřete nastavení prvku, jehož obsah chcete omezit.
+2. V pokročilých nastaveních otevřete skupinu **FAPI Member**.
+3. V poli **Zobrazení prvku** zvolte **Zobrazit vždy**, **Zobrazit když je členem** nebo **Zobrazit když není členem**.
+4. Pro podmíněné zobrazení vyberte také **Členské sekce/úrovně**. Stačí aktivní členství v jedné z vybraných sekcí nebo úrovní.
+5. Uložte změny prvku i stránky. Na veřejné stránce ověřte výsledek jako nepřihlášený návštěvník, jako člen s příslušným přístupem a jako člen bez něj.
+
+Omezení se vztahuje i na obsah uvnitř prvku a není samostatné pro mobil a počítač.
+
+:::caution
+V Divi 5 se při volbě **Zobrazit když je členem** a prázdném výběru sekcí či úrovní obsah návštěvníkovi nezobrazí. Při volbě **Zobrazit když není členem** se při prázdném výběru zobrazí; tato volba obsah zobrazuje také nepřihlášeným návštěvníkům. Výchozí **Zobrazit vždy** členství neomezuje.
+:::
+
+:::note
+Správci a oprávnění uživatelé v aktivním vizuálním editoru mohou obsah vidět i přes zapnuté omezení. Samotný náhled při úpravách stránky proto není kontrolou přístupu zákazníka.
+:::
+
+Pro vložení formuláře použijte návod [Vložení prodejního formuláře do Divi](/article/157-vlozeni-prodejniho-formulare-do-divi).
+
 ## Jak nastavit skrytí části článku neplatícímu návštěvníkovi?
+
+Následující obrázkový postup ukazuje původní blokový editor, nikoli nové ovládání Divi 5.
 
 Funkci skrývání a zobrazování bloků nalezenete ve vašem wordpressu v editaci stránky nebo příspěvku. Klikněte na blok, který chcete skrýt.
 
 V pravém bočním menu se zobrazí nastavení FAPI Member. Zde si můžete vybrat ze 3 možností:
 
-1.  možnost zobrazí blok pouze pro platící členy, kteří mají přístup k dané členské sekci nebo úrovni.
-2.  možnost zobrazí blok pouze přihlášeným zákazníkům, kteří nemají přístup k dané sekci / úrovni.
+1.  možnost zobrazí blok pouze členům, kteří mají aktivní přístup k vybrané členské sekci nebo úrovni.
+2.  možnost zobrazí blok návštěvníkům bez přístupu k vybrané sekci nebo úrovni, včetně nepřihlášených návštěvníků.
 3.  možnost zobrazí blok všem, bez ohledu na to zda mají nebo nemají přístup k sekci nebo úrovni, nebo zda jsou přihlášení nebo ne (výchozí stav).
 
 Jednotlivé bloky se podle zvoleného typu zobrazení chovají následujícím způsobem:
@@ -110,10 +134,7 @@ Pokud by si stránku zobrazil člen, který má sekci "Placený blog", ale nemá
 
 ### Možnost: "Zobrazit pokud návštěvník je člen sekce/úrovně"
 
-Vyhodnocení této podmínky funguje následovně:
-
--   pokud nebyla zašrktnutá žádná sekce/úrovně automaticky se obsah zobrazí
--   dále pokud byly
+U podmíněného zobrazení vyberte konkrétní sekce či úrovně a výsledek zkontrolujte jako návštěvník s příslušným přístupem i bez něj. Chování při prázdném výběru není stejné pro všechny editory; pro Divi 5 platí pravidla uvedená výše v samostatném postupu.
 
 **Funkce je dostupná pro FAPI Member od verze 1.8.19.**
 
