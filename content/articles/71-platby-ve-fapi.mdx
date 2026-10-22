@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/71-platby-ve-fapi
 order: 12
-updatedAt: 2026-10-05T13:20:06Z
+updatedAt: 2026-10-22T09:12:16Z
 legacyAnchors:
   - id: Jakm-zpsobem-lze-platit-ve-FAPI-FylL4
     tag: h2
@@ -97,7 +97,7 @@ Nedílnou součástí každého prodejního procesu je platba za objednaný pro
 
 Informace o zaplacení se do FAPI dostávají - v závislosti na zvolené platební metodě - dvěma zcela nezávislými cestami:
 
--   z platební brány ([GoPay](https://registration.gopay.com/cs/signup-supplier/fapi), [ThePay](https://registrace.thepay.cz/?d=eyJpYyI6IiIsInRpZCI6IiIsInBpZCI6MTQ3LCJoIjoiYmExMGI1YjI4ZjY0ZGU3MGM2MDY5ZDcxNDI3MTg0MmRlMWMyOTlmNjJjOWViYmY2OWRmZWRjN2RjNmRiNDk4MyJ9), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/), [Stripe](https://stripe.com/), [GP Webpay](https://www.gpwebpay.cz/)), popř. ze služby [Twisto](/article/63-twisto-pay),
+-   z platební brány ([GoPay](https://registration.gopay.com/cs/signup-supplier/fapi), [ThePay](https://registrace.thepay.cz/?d=eyJpYyI6IiIsInRpZCI6IiIsInBpZCI6MTQ3LCJoIjoiYmExMGI1YjI4ZjY0ZGU3MGM2MDY5ZDcxNDI3MTg0MmRlMWMyOTlmNjJjOWViYmY2OWRmZWRjN2RjNmRiNDk4MyJ9), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/), [Stripe](https://stripe.com/), [GP Webpay](https://www.gpwebpay.cz/)),
 -   z propojeného bankovního účtu (pomocí funkce [Import plateb z banky](/article/30-import-plateb-z-banky)).
 
 :::caution
@@ -118,7 +118,6 @@ Následující tabulka přehledně shrnuje, jaké platební metody, jakým kaná
 | Bitcoin | ✔ | \- | ✔ | ✔ |
 | Google Pay | ✔ | \- | ✔ | ✔ <br /> |
 | Apple Pay | ✔ | \- | ✔ | ✔ <br /> |
-| Twisto Pay | ✔ | \- | ✔ | \- <br /> |
 | Click to Pay | ✔ | \- | ✔ | ✔ <br /> |
 | dobírka | \- | ✔ | ✔ | ✔ <br /> |
 | hotovost | \- | ✔ | ✔ | ✔ <br /> |
@@ -126,7 +125,7 @@ Následující tabulka přehledně shrnuje, jaké platební metody, jakým kaná
 ## Online platby
 
 :::danger
-Všechny online platební metody jsou zpracovávány prostřednictvím platební brány (popř. služby Twisto). Pro jejich aktivaci je tedy nutné integrovat do FAPI některou z platebních bran [GoPay](https://registration.gopay.com/cs/signup-supplier/fapi), [ThePay](https://registrace.thepay.cz/?d=eyJpYyI6IiIsInRpZCI6IiIsInBpZCI6MTQ3LCJoIjoiYmExMGI1YjI4ZjY0ZGU3MGM2MDY5ZDcxNDI3MTg0MmRlMWMyOTlmNjJjOWViYmY2OWRmZWRjN2RjNmRiNDk4MyJ9), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/) nebo [Stripe](https://stripe.com/), popř. [propojit FAPI s účtem Twisto](/article/63-twisto-pay). Nabídka konkrétních platebních metod závisí na podpoře a nastavení zvolené platební brány.
+Všechny online platební metody jsou zpracovávány prostřednictvím platební brány. Pro jejich aktivaci je tedy nutné integrovat do FAPI některou z platebních bran [GoPay](https://registration.gopay.com/cs/signup-supplier/fapi), [ThePay](https://registrace.thepay.cz/?d=eyJpYyI6IiIsInRpZCI6IiIsInBpZCI6MTQ3LCJoIjoiYmExMGI1YjI4ZjY0ZGU3MGM2MDY5ZDcxNDI3MTg0MmRlMWMyOTlmNjJjOWViYmY2OWRmZWRjN2RjNmRiNDk4MyJ9), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/) nebo [Stripe](https://stripe.com/). Nabídka konkrétních platebních metod závisí na podpoře a nastavení zvolené platební brány.
 :::
 
 Platební brána umožňuje přijímat platby za zboží a služby okamžitě po vystavení objednávky. Chcete-li svým zákazníkům rozšířit nabídku platebních metod, usnadnit placení a v neposlední řadě také zvýšit pravděpodobnost zaplacení uskutečněných objednávek, integrujte do FAPI platební bránu.
