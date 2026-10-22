@@ -10,14 +10,15 @@ categorySlugs:
   - 7-platby
   - 9-online-prodej
 keywords:
-  - Přehled objednávky, nebo-li přehledová stránka objednávky
+  - Přehled objednávky
+  - nebo-li přehledová stránka objednávky
   - Nastavení
   - Fakturace
   - Platby
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/102-prehled-objednavky
 order: 56
-updatedAt: 2026-09-29T07:11:00Z
+updatedAt: 2026-10-22T16:52:03.687984Z
 legacyAnchors:
   - id: Co-pehledov-strnka-obsahuje-ldP7r
     tag: h3
@@ -34,6 +35,7 @@ legacyAnchors:
     text: Odkaz na přehled objednávky
     occurrence: 0
     headingIndex: 2
+redirects: []
 ---
 Každý váš zákazník má k dispozici **přehledovou stránku objednávky**, která slouží jako centrum všech důležitých informací k jeho nákupu. Stránka je dostupná přes odkaz, který zákazník obdrží e-mailem např. při vystavení objednávky či následné zálohové faktury, nebo po zaplacení
 
@@ -41,29 +43,23 @@ Každý váš zákazník má k dispozici **přehledovou stránku objednávky**
 
 Na této stránce zákazník najde:
 
--   **Detailní informace o objednávce v náhledu dokladu**
+- **Detailní informace o objednávce v náhledu dokladu**
 
-    – název produktu, cena, datum vytvoření, stav platby apod.
+  – název produktu, cena, datum vytvoření, stav platby apod.
+- **Faktury**
 
--   **Faktury**
+  – možnost stáhnout si fakturu i dřívější doklady ve formátu PDF či pro tisk
+- **Možnost zrušení automatického strhávání z karty**
 
-    – možnost stáhnout si fakturu i dřívější doklady ve formátu PDF či pro tisk
+  – má možnost zrušit napojenou kartu
+- **Možnost zrušení předplatného**
 
--   **Možnost zrušení automatického strhávání z karty**
-
-    – má možnost zrušit napojenou kartu
-
--   **Možnost zrušení předplatného**
-
-    – pokud zákazník nechce v předplatném pokračovat, může ho zde kdykoli zrušit jedním kliknutím.
-
--   **Stav objednávky**
+  – pokud zákazník nechce v předplatném pokračovat, může ho zde kdykoli zrušit jedním kliknutím.
+- **Stav objednávky**
 
 – zda je zaplacená nebo může zvolit platební metodu a uhradit
 
 ![Přehled objednávky, nebo-li přehledová stránka objednávky](/assets/articles/4ec4faba578eab57.png)
-
-
 
 ## Platba objednávky
 
@@ -77,7 +73,7 @@ Po stisku tlačítka **Zaplatit...** se zobrazí okno s on-line platebními meto
 
 ## Odkaz na přehled objednávky
 
-Klient se na přehled objednávky dostane přes odkaz, který vložíte do zaslaného e-mailu pomocí zástupného symbolu  **\{orderStatusPage\}** - tlačítko **Vložit zástupný symbol** v editoru zpráv.
+Klient se na přehled objednávky dostane přes odkaz, který vložíte do zaslaného e-mailu pomocí zástupného symbolu  **\{orderStatusPage}** - tlačítko **Vložit zástupný symbol** v editoru zpráv.
 
 ![Přehled objednávky, nebo-li přehledová stránka objednávky](/assets/articles/70c9c6e0ac2dbc6b.png)
 
@@ -85,14 +81,28 @@ Klient se na přehled objednávky dostane přes odkaz, který vložíte do zasla
 
 V transakčním emailu s fakturou pak správné nastavení musí být pro odkaz na platební bránu takto:
 
-
-
 ![Přehled objednávky, nebo-li přehledová stránka objednávky](/assets/articles/43903dbc4275eb87.png)
-
-
 
 :::tip
 Stránka s přehledem objednávky je elegantní způsob, jak klientovi umožnit dodatečnou platbu objednávky on-line.
 
 Proto doporučujeme odkaz na přehled objednávky vložit do [e-mailu, který se posílá při vystavení objednávky](/article/17-sablony-zprav), a do zasílaných [upomínek](/article/19-upominky).
 :::
+
+## Materiály ke stažení
+
+Pokud jsou k zakoupenému produktu [přidané soubory](/article/43-produkty), zákazník je po zaplacení najde na přehledu objednávky v části **Materiály ke stažení**. Zobrazí se pouze soubory zakoupených produktů, a to u zaplacené a nestornované objednávky.
+
+1. Přidejte soubory k produktu v nabídce **PRODEJ – Produkty** a produkt uložte. [Postup přidání souborů](/article/43-produkty) popisuje také volitelnou ochranu PDF.
+2. Zákazníkovi pošlete odkaz na přehled objednávky pomocí zástupného symbolu **\{orderStatusPage}**, jak je popsáno výše.
+3. Po zaplacení zákazník otevře přehled a klikne na název souboru v části **Materiály ke stažení**. U chráněného PDF se nejprve otevře stránka pro stažení e-booku; soubor získá tlačítkem **Stáhnout**.
+
+![Zaplacená objednávka s materiály ke stažení a odkazem na e-book](/assets/releases/2026-10-21/order-downloads.png)
+
+[Zobrazit materiály ke stažení v plném rozlišení](/assets/releases/2026-10-21/order-downloads.png)
+
+:::note
+Pokud už k objednávce existuje konečný doklad, rozhoduje jeho stav. Samotné storno související zálohové faktury materiály neznepřístupní, jestliže konečný doklad zůstává zaplacený a nestornovaný.
+:::
+
+Pokud se část nezobrazuje, zkontrolujte stav rozhodujícího dokladu a soubory u skutečně zakoupeného produktu. Nezaplacená nebo stornovaná objednávka materiály ke stažení nenabízí.
