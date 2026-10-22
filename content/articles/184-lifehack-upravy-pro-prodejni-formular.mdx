@@ -11,7 +11,7 @@ keywords:
   - Rozšíření a doplňky
 sourceUrl: https://napoveda.fapi.cz/article/184-lifehack-upravy-pro-prodejni-formular
 order: 109
-updatedAt: 2026-07-13T10:51:33Z
+updatedAt: 2026-10-22T09:12:16Z
 legacyAnchors:
   - id: Pejmenovn-textu-platebn-metody-Dobrka-BU2ym
     tag: h2
@@ -45,7 +45,7 @@ legacyAnchors:
     headingIndex: 5
   - id: Zobrazit-pouze-platebn-metodu-Twisto-a-vechny-ostatn-skrt-XcW-B
     tag: h2
-    text: 7.Zobrazit pouze platební metodu Twisto a všechny ostatní skrýt
+    text: 7.Twisto – ukončená podpora
     occurrence: 0
     headingIndex: 6
   - id: Skryt-platebnch-metod-dladice-BU7-P
@@ -112,22 +112,6 @@ Kód pro "_**dlaždice**_":
 ```
 
 Skript se vkládá na stránku, ve které je prodejní formulář, u kterého chcete přejmenování Dobírky provést.
-
-Kód pro "**přepínače**":
-
-Ukázka změny názvu platební metody "Twisto" na "Cvičím ihned, platím za 30dní".
-
-```text
-<script>
-    window.onload = function () {
-        let element = document.querySelector('.f-wire-later-twisto');
-        if (element && element.textContent.includes("Twisto")) {
-            let divElement = element.querySelector('div').querySelector('div')
-            divElement.textContent = divElement.textContent.replace("Twisto", "Cvičím ihned, platím za 30dní");
-        }
-    };
-</script>
-```
 
 ## **2.Doplnění dlaždice Bankovní převod o další text**
 
@@ -262,25 +246,9 @@ Skript se vkládá na stránku, ve které je prodejní formulář, u kterého ch
 
 
 
-## 7.Zobrazit pouze platební metodu Twisto a všechny ostatní skrýt
+## 7.Twisto – ukončená podpora
 
-Funguje pro prodejní formulář s platebními metodami jako radio buttony.
-
-```text
-<script>
-    window.onload = function () {
-        let elements = document.querySelectorAll('input[name="payment_type"]');
-
-		for (let i = 0; i < elements.length; i++) {
-			if (elements[i].parentNode.classList.contains('f-wire-later-twisto') || elements[i].parentNode.classList.contains('f-wire-part-twisto')) {
-				continue;
-			}
-
-			elements[i].parentNode.parentNode.style.display = "none";
-		}
-    };
-</script>
-```
+FAPI již nepodporuje propojení s Twisto ani platby přes Twisto. Původní skript pro zobrazení pouze této platební metody již nepoužívejte. Pokud jej máte vložený na stránce s prodejním formulářem, odstraňte jej, aby neskrýval ostatní platební metody.
 
 ## **8.Skrytí platebních metod (dlaždice)**
 
@@ -289,7 +257,7 @@ Pomocí toho scriptu můžeme skrýt jakoukoliv platební metodu z prodejního f
 ```text
 <script>
     window.onload = function () {
-       let selectors = ['.f-wire-later-skippay', '.f-wire-platimpak', '.f-wire-part-skippay', '.f-wire-later-twisto', '.f-wire-twisto'];
+       let selectors = ['.f-wire-later-skippay', '.f-wire-platimpak', '.f-wire-part-skippay'];
 
        for (let i = 0; i < selectors.length; i++) {
           document.querySelectorAll(selectors[i]).forEach(function (element) {
