@@ -15,7 +15,7 @@ keywords:
   - Rozšíření a doplňky
 sourceUrl: https://napoveda.fapi.cz/article/144-konverzni-kody
 order: 27
-updatedAt: 2026-10-21T07:36:20Z
+updatedAt: 2026-10-28T07:42:21.142Z
 legacyAnchors:
   - id: Jak-sprvn-nastavit-konverzn-kdy-pro-Facebook-i-jin-nstroje--NuCV6
     tag: h2
@@ -490,7 +490,7 @@ Skript se spojením s unikátním identifikátorem objednávky, zajišťuje sta�
 
 Díky tomu můžete konverze zaslat do jakéhokoliv analytického nástroje. 
 
-Kde získat trackovací kód pro FB pixel: [https://developers.facebook.com/docs/meta-pixel/get-started/](https://developers.facebook.com/docs/meta-pixel/get-started/)
+Kde získat trackovací kód pro FB pixel: <a href="https://developers.facebook.com/docs/meta-pixel/get-started/" target="_blank" rel="noopener noreferrer">https://developers.facebook.com/docs/meta-pixel/get-started/</a>
 :::
 
 
@@ -670,7 +670,7 @@ document.addEventListener('FapiSdkLoaded', function () {
 
 ##### Ukázka zaslání konverzí do Sklik:
 
-Následující příklady slouží pro stávající starší integraci s `rc.js`. Pro nové nasazení použijte [aktuální měření SEM podle nápovědy Skliku](https://napoveda.sklik.cz/merici-skripty/konverzni-kod/). U starší integrace patří do `sklikId` či `id` ID konverze ze Skliku; číslo objednávky patří do `orderId`. Nejprve načtěte měřicí nástroj a volání s `consent: 1` spouštějte až po udělení odpovídajícího souhlasu v cookies liště.
+Následující příklady slouží pro stávající starší integraci s `rc.js`. Pro nové nasazení použijte <a href="https://napoveda.sklik.cz/merici-skripty/konverzni-kod/" target="_blank" rel="noopener noreferrer">aktuální měření SEM podle nápovědy Skliku</a>. U starší integrace patří do `sklikId` či `id` ID konverze ze Skliku; číslo objednávky patří do `orderId`. Nejprve načtěte měřicí nástroj a volání s `consent: 1` spouštějte až po udělení odpovídajícího souhlasu v cookies liště.
 
 ```text
 <script>
@@ -696,7 +696,7 @@ Následující příklad měří vytvořené objednávky přímo v **GA4 a Googl
    gtag('config', 'AW-123456789');
    ```
 
-   Obě ID nahraďte údaji ze svých účtů. Souhlasy s analytickým a reklamním měřením nastavuje a aktualizuje vaše cookies lišta. Konfigurace patří za nastavení výchozích souhlasů a před odesílání konverzí. Podrobnosti najdete v [návodu Google pro použití stávající značky také pro Ads](https://support.google.com/google-ads/answer/7548399?hl=cs).
+   Obě ID nahraďte údaji ze svých účtů. Souhlasy s analytickým a reklamním měřením nastavuje a aktualizuje vaše cookies lišta. Konfigurace patří za nastavení výchozích souhlasů a před odesílání konverzí. Podrobnosti najdete v <a href="https://support.google.com/google-ads/answer/7548399?hl=cs" target="_blank" rel="noopener noreferrer">návodu Google pro použití stávající značky také pro Ads</a>.
 3. Do patičky vlastní děkovací stránky vložte **jednou** tento společný blok. Nahraďte jím dosavadní samostatné konverzní bloky pro GA4 a Ads a jejich opakované načítání SDK:
 
    ```html
@@ -719,7 +719,7 @@ Následující příklad měří vytvořené objednávky přímo v **GA4 a Googl
 4. Stejnou objednávku odesílejte do každého cíle jednou. Při tomto přímém měření vypněte odpovídající konverzní značky v **Google Tag Manageru (GTM)**, včetně případných pravidel na `purchase` nebo `fapiOrderDataLoaded`. Prověřte také, zda stejný nákup neměří další plugin a zda se tentýž GTM kontejner nevkládá vícekrát. Pokud používáte přímou Ads konverzi i import stejného nákupu z GA4, zvolte v Ads jednu hlavní konverzní akci pro optimalizaci.
 5. Vytvořte testovací objednávku a zkontrolujte děkovací URL s `path`, souhlasy v cookies liště a odeslané události v **GA4 DebugView** a **Google Tag Assistantu**. Ověřte číslo objednávky, hodnotu, měnu a počet započítaných konverzí také po obnovení stránky.
 
-SDK do GA4 předá událost `purchase` s číslem objednávky, hodnotou, měnou a položkami. Do Ads předá `conversion` s cílem `send_to`, hodnotou, měnou a číslem objednávky jako `transaction_id`. Unikátní číslo pomáhá [zabránit opakovanému započítání stejné Ads konverze](https://support.google.com/google-ads/answer/6386790?hl=cs). Nastavení `{ once: true }` omezuje listener na jedno spuštění během načtení stránky; obnovení stránky tím není chráněné.
+SDK do GA4 předá událost `purchase` s číslem objednávky, hodnotou, měnou a položkami. Do Ads předá `conversion` s cílem `send_to`, hodnotou, měnou a číslem objednávky jako `transaction_id`. Unikátní číslo pomáhá <a href="https://support.google.com/google-ads/answer/6386790?hl=cs" target="_blank" rel="noopener noreferrer">zabránit opakovanému započítání stejné Ads konverze</a>. Nastavení `{ once: true }` omezuje listener na jedno spuštění během načtení stránky; obnovení stránky tím není chráněné.
 
 U **děkovací stránky přímo ve FAPI** vložte konverzní část do pole **Konverzní kód (HTML)** a vynechte poslední řádek načítající `fapi.js`, protože SDK už zajišťuje FAPI.
 
@@ -877,7 +877,7 @@ Tato funkce vytvoří konverzi ve Google Analytics, pouze pokud je objednávka z
 
 ##### FAPI\_CONVERSION.simpleAffilboxTransaction(fapiOrderData: object, url: string, campaignId: string|int)
 
-Tato funkce vytvoří konverzi v [Affilboxu](https://www.affilbox.cz/?a_box=cwykpgpe). 
+Tato funkce vytvoří konverzi v <a href="https://www.affilbox.cz/?a_box=cwykpgpe" target="_blank" rel="noopener noreferrer">Affilboxu</a>. 
 
 Tato funkce narozdíl od výše uvedených přijmá 2 argumenty. Url adresu a ID kampaně:
 
@@ -894,7 +894,7 @@ Tato funkce má stejné fungování jako "simpleAffilboxTransaction".
 
 ### FAPI\_CONVERSION.simpleCJTransaction(fapiOrderData: object, enterpriseId, actionTrackerId, cjeventOrder)
 
-Tato funkce vytvoří konverzi na platformě [https://www.cj.com/](https://www.cj.com/). Do této funkce je potřeba doplnit 3 parametry, enterpriseId, actionTrackerId a cjeventOrder.
+Tato funkce vytvoří konverzi na platformě <a href="https://www.cj.com/" target="_blank" rel="noopener noreferrer">https://www.cj.com/</a>. Do této funkce je potřeba doplnit 3 parametry, enterpriseId, actionTrackerId a cjeventOrder.
 
 
 

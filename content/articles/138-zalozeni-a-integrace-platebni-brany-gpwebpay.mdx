@@ -13,7 +13,7 @@ keywords:
   - Nastavení
 sourceUrl: https://napoveda.fapi.cz/article/138-zalozeni-a-integrace-platebni-brany-gpwebpay
 order: 70
-updatedAt: 2026-07-13T10:31:15Z
+updatedAt: 2026-10-28T07:42:21.142Z
 legacyAnchors:
   - id: 2-Vytvoen-propojen-s-GPWebpay-ve-FAPI--KIi6T
     tag: h2
@@ -38,7 +38,7 @@ legacyAnchors:
 ---
 _Platební brána_ je internetové rozhraní pro zpracování online plateb. Umožňuje vašim zákazníkům zaplatit za objednané produkty a služby okamžitě. Kromě zvýšení komfortu pro zákazníka se to pozitivně projevuje také na množství dokončených nákupů.
 
-Následující článek popisuje postup pro integraci platební brány [GP webpay](https://www.gpwebpay.cz/) do FAPI. Více informací o platební bráně najdete na [webových stránkách provozovatele](https://www.gpwebpay.cz/).
+Následující článek popisuje postup pro integraci platební brány <a href="https://www.gpwebpay.cz/" target="_blank" rel="noopener noreferrer">GP webpay</a> do FAPI. Více informací o platební bráně najdete na <a href="https://www.gpwebpay.cz/" target="_blank" rel="noopener noreferrer">webových stránkách provozovatele</a>.
 
 :::caution
 Platební brána není součástí FAPI. Pokud nechcete poskytovat svým zákazníkům možnost platit online, nemusíte ji do FAPI integrovat. Poplatek za používání platební brány je hrazen přímo jejímu provozovateli (společnosti Global payments Europe s.r.o.), a není tedy součástí ceny za licenci FAPI.
@@ -91,9 +91,9 @@ Tato varianta pomáhá se správným nastavením notifikačních URL adres a mů
 
 Stačí vyplnit jeden z následujících kontaktních formulářů a GP Webpay vás následně bude kontaktovat.
 
-[GP Webpay kontaktní formulář pro CZ](https://globalpayments.formstack.com/forms/cz_lead_partner2?Source%20detail=FAPI%201115Business%20s.r.o.&PartnerID=57548)
+<a href="https://globalpayments.formstack.com/forms/cz_lead_partner2?Source%20detail=FAPI%201115Business%20s.r.o.&amp;PartnerID=57548" target="_blank" rel="noopener noreferrer">GP Webpay kontaktní formulář pro CZ</a>
 
-[GP Webpay kontaktní formulář pro SK](https://globalpayments.formstack.com/forms/sk_lead_partner2?Source%20detail=FAPI%20Business&PartnerID=55943)
+<a href="https://globalpayments.formstack.com/forms/sk_lead_partner2?Source%20detail=FAPI%20Business&amp;PartnerID=55943" target="_blank" rel="noopener noreferrer">GP Webpay kontaktní formulář pro SK</a>
 :::
 
 
@@ -102,9 +102,9 @@ Stačí vyplnit jeden z následujících kontaktních formulářů a GP Webpay v
 **1.2 Na stránkách společnosti GP Webpay**.
 :::
 
-Přes tento odkaz [https://www.gpwebpay.cz/objednat/](https://www.gpwebpay.cz/objednat/), kde následně pokračujte ve 4 krocích.
+Přes tento odkaz <a href="https://www.gpwebpay.cz/objednat/" target="_blank" rel="noopener noreferrer">https://www.gpwebpay.cz/objednat/</a>, kde následně pokračujte ve 4 krocích.
 
-**1.2.1 Objednejte si platební bránu** přes některou se spolupracujících [bank](https://www.gpwebpay.cz/objednat/), které ji nabízí.
+**1.2.1 Objednejte si platební bránu** přes některou se spolupracujících <a href="https://www.gpwebpay.cz/objednat/" target="_blank" rel="noopener noreferrer">bank</a>, které ji nabízí.
 
 ![Založení a integrace platební brány GP Webpay ve FAPI](/assets/articles/f6d22fce21345734.png)
 
@@ -205,11 +205,11 @@ Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení
 Vyplňte všechna pole:
 
 -   **Doména**: zvolte doménu, na které budete platební bránu používat (jde o interní pojmenování platební brány ve FAPI, ve tvaru např. fapi.cz)
--   **Číslo obchodníka**: zjistíte v [portálu](https://portal.gpwebpay.com/portal/anon/login.xhtml) platební brány v sekci **E-shopy**
+-   **Číslo obchodníka**: zjistíte v <a href="https://portal.gpwebpay.com/portal/anon/login.xhtml" target="_blank" rel="noopener noreferrer">portálu</a> platební brány v sekci **E-shopy**
 -   **Soukromý klíč**: pokud ještě nemáte, je potřeba si jej nechat vygenerovat viz. **Nastavení platební brány.** Pokud již máte klíč vygenerovaný, stačí ho otevřít v textovém editoru a **celý jeho obsah překopírovat do FAPI**.
 -   **Heslo k soukromému klíči**: zvolíte si při vytváření soukromého klíče (je nutné si je **zapamatovat**).
 -   **Veřejný klíč**: nachází se v sekci **Ke stažení** a slouží k ověření, zda někdo nepodvrhnul odpověď z platební brány, ve staženém ZIP souboru najděte soubor končící na **.pem**, otevřete jej v textovém editoru a vykopírujte do **FAPI** **celý jeho obsah**.
--   **Kód poskytovatele**: zjistíte v [portálu](https://portal.gpwebpay.com/portal/anon/login.xhtml) platební brány v sekci **E-shopy**
+-   **Kód poskytovatele**: zjistíte v <a href="https://portal.gpwebpay.com/portal/anon/login.xhtml" target="_blank" rel="noopener noreferrer">portálu</a> platební brány v sekci **E-shopy**
 
 
 
@@ -248,5 +248,5 @@ Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář j
 :::tip
 Mnoho užitečných návodů o GP Webpay najdete pod tímto odkazem, mimo to GP Webpay má českou podporu:
 
-[https://www.gpwebpay.cz/ke-stazeni/](https://www.gpwebpay.cz/ke-stazeni/)
+<a href="https://www.gpwebpay.cz/ke-stazeni/" target="_blank" rel="noopener noreferrer">https://www.gpwebpay.cz/ke-stazeni/</a>
 :::
