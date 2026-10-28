@@ -1,7 +1,7 @@
 ---
 title: Ochrana videa
 url: /article/242-ochrana-videa
-description: FAPI umožňuje ochranu videí. Funkčnost spočívá v tom, že video se otevře v samostatném přehrávači na stránce, kde je zablokováno stahování videa. Doporučená max
+description: Nastavení přehrávání videa na stránce FAPI, doručení z produktu nebo zprávy a omezení ochrany před stažením a sdílením.
 category: Online prodej
 categorySlug: 9-online-prodej
 categorySlugs:
@@ -11,24 +11,46 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/242-ochrana-videa
 order: 250
-updatedAt: 2026-07-13T12:06:48Z
+updatedAt: 2026-10-28T08:29:30.657199Z
 ---
-FAPI umožňuje ochranu videí. Funkčnost spočívá v tom, že video se otevře v samostatném přehrávači na stránce, kde je zablokováno stahování videa.
+Video můžete zobrazit v přehrávači na stránce FAPI **bez tlačítka pro stažení**. Odkaz na přehrávač lze sdílet; toto nastavení proto není zárukou, že video nelze uložit nebo dále šířit.
 
 :::caution
-Doporučená maximální velikost souboru je 500 MB.
+Doporučená maximální velikost souboru je 500 MB. Před ostrým prodejem ověřte přehrání konkrétního souboru v prohlížeči zákazníka; samotná přípona nezaručuje kompatibilitu jeho kodeku.
 :::
 
-Samotné nastavení ochrany probíhá v úpravě šablony zpráv, kam vkládáte video jako odkaz ke zhlédnutí.
+## Video přidané k produktu
 
-Po kliknutí na **Přidat soubor** a nahrání videa na server se zobrazí zaškrtávací tlačítko **Povolit ochranu videa**.
+1. V nabídce **PRODEJ – [Produkty](https://web.fapi.cz/templates/items?projectId=all)** otevřete u požadovaného produktu **Upravit**.
+2. V poli **Soubory ke stažení** vyberte video. U jeho názvu klikněte na **Nastavení**.
+3. Zapněte **Přehrávání videa v prohlížeči**, klikněte na **Hotovo** a poté na hlavní **Uložit** v nastavení produktu. Samotné **Hotovo** produkt neukládá.
+4. Znovu otevřete produkt a ověřte uloženou volbu u stejného souboru.
 
-Poté jen stačí do těla zprávy vložit příslušný zástupný symbol `{file:x}` , který bude při zpracování nahrazen odkazem na přehrání videa.
+![Volba Přehrávání videa v prohlížeči a potvrzení Hotovo](/assets/release-20261027/video-nastaveni.png)
 
-Po kliknutí na odkaz ke zhlédnutí videa zákazníka přesměrujeme na stránku ve FAPI, kde bude možné video přehrát.
+[Zvětšit nastavení přehrávání videa](/assets/release-20261027/video-nastaveni.png)
+
+Soubory zakoupeného produktu se nabídnou v části **Materiály ke stažení** na [přehledu objednávky](/article/102-prehled-objednavky), pokud je objednávka zaplacená a není stornovaná. Produkt musí být vložený do příslušného prodejního formuláře; podrobnosti najdete v návodu [Produkty](/article/43-produkty).
+
+## Video v šabloně zprávy
+
+1. V nabídce **PRODEJ – [Šablony zpráv](https://web.fapi.cz/message-template-sets/?projectId=all)** otevřete používanou sadu a upravte požadovanou zprávu.
+2. Klikněte na **Přidat soubor**, nahrajte video a zapněte **Přehrávání videa v prohlížeči**.
+3. Do textu zprávy zkopírujte celý zástupný symbol z řádku konkrétního souboru. Má tvar `{file:123}`, kde číslo patří vašemu nahranému souboru; neopisujte ukázkové ID ani znak `x`.
+4. Klikněte na **Uložit** a zprávu znovu otevřete. Zkontrolujte soubor, přehrávání i vložený symbol. Po použití **Změnit soubor** nastavení znovu zkontrolujte.
+
+![Nahrané video a zapnuté přehrávání v prohlížeči v šabloně zprávy](/assets/release-20261027/zprava-prehravani-videa.png)
+
+[Zvětšit volbu přehrávání videa ve zprávě](/assets/release-20261027/zprava-prehravani-videa.png)
 
 :::caution
-Video lze přehrát až po zaplacení objednávky. Pokud by se zákazník dostal na stránku dříve, než je objednávka zaplacená, video se nezobrazí a zákazník uvidí chybovou hlášku.
+**Soubor ve zprávě nemá stejnou kontrolu úhrady jako soubor produktu.** Chcete-li odkaz poslat až po zaplacení, nastavte odpovídající okamžik odeslání zprávy a zkontrolujte sadu přiřazenou formuláři. Samotná volba přehrávání nezajišťuje, že příjemce může video otevřít teprve po úhradě.
 :::
 
-Podporované formáty jsou 'mp4', 'webm', 'ogv', 'mpg', 'mpeg', '3gp', 'mov'.
+Pro samostatný doručovací e-mail pokračujte [návodem k odesílání souborů](/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem).
+
+## Kontrola před prodejem
+
+V testovacím režimu vytvořte objednávku. U produktového souboru zkontrolujte, že nezaplacená objednávka video nenabízí a po simulaci úhrady se odkaz objeví. Pak otevřete skutečný zákaznický odkaz a ověřte přehrání, ne pouze uložení nastavení. U zprávy ověřte také správného příjemce a okamžik odeslání.
+
+FAPI rozpoznává video podle přípon `mp4`, `webm`, `ogv`, `mpg`, `mpeg`, `3gp` a `mov`.

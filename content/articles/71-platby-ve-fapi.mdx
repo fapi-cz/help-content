@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/71-platby-ve-fapi
 order: 12
-updatedAt: 2026-10-28T07:42:21.142Z
+updatedAt: 2026-10-28T11:16:11.506Z
 legacyAnchors:
   - id: Jakm-zpsobem-lze-platit-ve-FAPI-FylL4
     tag: h2
@@ -97,7 +97,7 @@ Nedílnou součástí každého prodejního procesu je platba za objednaný pro
 
 Informace o zaplacení se do FAPI dostávají - v závislosti na zvolené platební metodě - dvěma zcela nezávislými cestami:
 
--   z platební brány (<a href="https://registration.gopay.com/supplier/fapi/1" target="_blank" rel="noopener noreferrer">GoPay</a>, <a href="https://admin.thepay.eu/partner/save-token/SEmv4M8jLoY8L7WUQ4oi" target="_blank" rel="noopener noreferrer">ThePay</a>, <a href="https://www.comgate.cz/?r=H378" target="_blank" rel="noopener noreferrer">Comgate</a>, <a href="https://www.pays.cz/" target="_blank" rel="noopener noreferrer">Pays</a>, <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">Stripe</a>, <a href="https://www.gpwebpay.cz/" target="_blank" rel="noopener noreferrer">GP Webpay</a>),
+-   z platební brány ([GoPay](https://registration.gopay.com/supplier/fapi/1), [ThePay](https://admin.thepay.eu/partner/save-token/SEmv4M8jLoY8L7WUQ4oi), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/), [Stripe](https://stripe.com/), [GP Webpay](https://www.gpwebpay.cz/)),
 -   z propojeného bankovního účtu (pomocí funkce [Import plateb z banky](/article/30-import-plateb-z-banky)).
 
 :::caution
@@ -125,7 +125,7 @@ Následující tabulka přehledně shrnuje, jaké platební metody, jakým kaná
 ## Online platby
 
 :::danger
-Všechny online platební metody jsou zpracovávány prostřednictvím platební brány. Pro jejich aktivaci je tedy nutné integrovat do FAPI některou z platebních bran <a href="https://registration.gopay.com/supplier/fapi/1" target="_blank" rel="noopener noreferrer">GoPay</a>, <a href="https://admin.thepay.eu/partner/save-token/SEmv4M8jLoY8L7WUQ4oi" target="_blank" rel="noopener noreferrer">ThePay</a>, <a href="https://www.comgate.cz/?r=H378" target="_blank" rel="noopener noreferrer">Comgate</a>, <a href="https://www.pays.cz/" target="_blank" rel="noopener noreferrer">Pays</a> nebo <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">Stripe</a>. Nabídka konkrétních platebních metod závisí na podpoře a nastavení zvolené platební brány.
+Všechny online platební metody jsou zpracovávány prostřednictvím platební brány. Pro jejich aktivaci je tedy nutné integrovat do FAPI některou z platebních bran [GoPay](https://registration.gopay.com/supplier/fapi/1), [ThePay](https://admin.thepay.eu/partner/save-token/SEmv4M8jLoY8L7WUQ4oi), [Comgate](https://www.comgate.cz/?r=H378), [Pays](https://www.pays.cz/) nebo [Stripe](https://stripe.com/). Nabídka konkrétních platebních metod závisí na podpoře a nastavení zvolené platební brány.
 :::
 
 Platební brána umožňuje přijímat platby za zboží a služby okamžitě po vystavení objednávky. Chcete-li svým zákazníkům rozšířit nabídku platebních metod, usnadnit placení a v neposlední řadě také zvýšit pravděpodobnost zaplacení uskutečněných objednávek, integrujte do FAPI platební bránu.
@@ -185,11 +185,11 @@ Platební brány GoPay, Stripe a Pays dokáží zprostředkovat vašim zákazn�
 
 
 
-Pro aktivaci této metody na straně GoPay je třeba provést několik kroků pro propojení popsaných v návodu <a href="https://help.gopay.com/cs/tema/caste-dotazy-faqs/dotazy-k-platebni-brane/jak-si-aktivuji-platebni-metodu-paypal" target="_blank" rel="noopener noreferrer">Jak aktivuji platební metodu PayPal?</a> Ve FAPI stačí po ukončené integraci platební brány pouze aktivovat platební metodu (zaškrtnout volbu **PayPal**) v nastavení prodejního formuláře. Více o platební metodě se dozvíte v článku <a href="https://help.gopay.com/cs/tema/mam-platebni-branu/chci-poznat-platebni-metody/platebni-metody/zakladni-informace-o-platebni-metode-paypal" target="_blank" rel="noopener noreferrer">Základní informace o platební metodě PayPal</a>.
+Pro aktivaci této metody na straně GoPay je třeba provést několik kroků pro propojení popsaných v návodu [Jak aktivuji platební metodu PayPal?](https://help.gopay.com/cs/tema/caste-dotazy-faqs/dotazy-k-platebni-brane/jak-si-aktivuji-platebni-metodu-paypal) Ve FAPI stačí po ukončené integraci platební brány pouze aktivovat platební metodu (zaškrtnout volbu **PayPal**) v nastavení prodejního formuláře. Více o platební metodě se dozvíte v článku [Základní informace o platební metodě PayPal](https://help.gopay.com/cs/tema/mam-platebni-branu/chci-poznat-platebni-metody/platebni-metody/zakladni-informace-o-platebni-metode-paypal).
 
 
 
-Bližší informace o platební metodě PayPal v rámci platební brány Pays najdete <a href="https://www.pays.cz/platba-paypalem.asp" target="_blank" rel="noopener noreferrer">zde</a>. Na straně FAPI je třeba pro podporu plateb prostřednictvím PayPal zaškrtnout checkbox **Účet Pays mám propojený s PayPal** v nastavení platební brány (podle nápovědy [Založení a integrace platební brány Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays)) a aktivovat platební metodu v prodejním formuláři.
+Bližší informace o platební metodě PayPal v rámci platební brány Pays najdete [zde](https://www.pays.cz/platba-paypalem.asp). Na straně FAPI je třeba pro podporu plateb prostřednictvím PayPal zaškrtnout checkbox **Účet Pays mám propojený s PayPal** v nastavení platební brány (podle nápovědy [Založení a integrace platební brány Pays](/article/59-zalozeni-a-integrace-platebni-brany-pays)) a aktivovat platební metodu v prodejním formuláři.
 
 
 

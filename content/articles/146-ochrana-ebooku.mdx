@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/146-ochrana-ebooku
 order: 107
-updatedAt: 2026-10-22T16:52:03.687984Z
+updatedAt: 2026-10-28T08:29:30.657199Z
 ---
 FAPI umožňuje SocialDRM ochranu e-booků. Jedná se o způsob ochrany, který apeluje na nechuť kupujícího sdělovat své osobní údaje. Funkčnost spočívá v tom, že do e-booku vložíme stránku, která obsahuje údaje o kupujícím. 
 
@@ -29,17 +29,17 @@ Doporučená maximální velikost souboru je 500 MB.
 
 Tento postup použijte pro PDF v poli **Soubory ke stažení** u produktu. Ochranu můžete zapnout při přidání nového PDF i u již uloženého souboru. Výchozí stav nového souboru je bez ochrany a každé PDF má vlastní nastavení.
 
-1. V nabídce **PRODEJ – Produkty** otevřete **Upravit** u požadovaného produktu.
-2. V poli **Soubory ke stažení** vyberte PDF, nebo najděte již uložené PDF v seznamu souborů. U jeho názvu klikněte na **Ochrana e-booku**.
+1. V nabídce **PRODEJ – [Produkty](https://web.fapi.cz/templates/items?projectId=all)** otevřete **Upravit** u požadovaného produktu.
+2. V poli **Soubory ke stažení** vyberte PDF, nebo najděte již uložené PDF v seznamu souborů. U jeho názvu klikněte na **Nastavení**.
 3. Zaškrtněte **Povolit ochranu Ebooku**.
 4. Vyplňte **Číslo DRM stránky** a zvolte **Pozici na stránce**. Chcete-li údaje vložit na stránku, kterou už PDF obsahuje, zaškrtněte **Použít existující stránku** a vyhraďte na ní prostor. Jinak se na zadanou pozici vloží nová stránka.
 5. Podle potřeby upravte písmo, jeho velikost a barvu. Volitelně zapněte **Přidat ochranu do záhlaví** nebo **Přidat ochranu do zápatí** a vyberte pozici těchto údajů.
 6. Klikněte na **Hotovo**. Pokud dialog upozorní na neplatnou hodnotu, opravte ji. Poté klikněte na hlavní **Uložit** v nastavení produktu: samotné **Hotovo** produkt ani soubor neukládá.
 7. Znovu otevřete produkt a dialog u stejného PDF a zkontrolujte uložené nastavení. Pro změnu ochrany upravte hodnoty; pro vypnutí zrušte **Povolit ochranu Ebooku**. V obou případech potvrďte **Hotovo** a znovu **Uložit**.
 
-![Dialog ochrany PDF se zapnutou ochranou a potvrzením Hotovo](/assets/releases/2026-10-21/pdf-protection.png)
+![Dialog ochrany PDF se zapnutou ochranou a potvrzením Hotovo](/assets/release-20261027/pdf-nastaveni-ochrany.png)
 
-[Zobrazit nastavení ochrany PDF v plném rozlišení](/assets/releases/2026-10-21/pdf-protection.png)
+[Zobrazit nastavení ochrany PDF v plném rozlišení](/assets/release-20261027/pdf-nastaveni-ochrany.png)
 
 Po potvrzení dialogu uložte celý produkt:
 
@@ -47,7 +47,7 @@ Po potvrzení dialogu uložte celý produkt:
 
 [Zobrazit hlavní tlačítko Uložit v plném rozlišení](/assets/releases/2026-10-21/product-save.png)
 
-U jiných formátů než PDF se tlačítko ochrany nenabízí. Soubory produktu se na [přehledu objednávky](/article/102-prehled-objednavky) zpřístupní pro zakoupený produkt až při zaplacené a nestornované objednávce. Uložení nastavení není kontrolou výsledného chráněného PDF.
+Ochrana e-booku je dostupná pro PDF. Videa mají v dialogu **Nastavení** samostatnou volbu přehrávání v prohlížeči. Soubory produktu se na [přehledu objednávky](/article/102-prehled-objednavky) zpřístupní pro zakoupený produkt až při zaplacené a nestornované objednávce. Uložení nastavení není kontrolou výsledného chráněného PDF.
 
 Podrobný postup přidání souborů najdete v návodu [Produkty](/article/43-produkty).
 
@@ -61,7 +61,7 @@ Ochranu můžete nastavit také v úpravě šablony zpráv, kam vkládáte e-boo
 
 ![Ochrana e-booku](/assets/articles/d44d9df6ad765882.png)
 
-Po kliknutí na **Přidat soubor** a nahrání PDF souboru na server se zobrazí zaškrtávací tlačítko **Povolit ochranu e-booku**. Je-li toto tlačítko zaškrtnuto, tak se zobrazí další možnosti.
+Po kliknutí na **Přidat soubor** a nahrání PDF souboru na server se zobrazí zaškrtávací tlačítko **Povolit ochranu Ebooku**. Je-li toto tlačítko zaškrtnuto, tak se zobrazí další možnosti.
 
 
 
@@ -75,7 +75,7 @@ Volba **Pozice na stránce** označuje, kde se mají na stránce nacházet údaj
 
 
 
-Poté jen stačí do těla zprávy vložit příslušný zástupný symbol \{file:x\}, který bude při zpracování nahrazen odkazem na stažení e-booku.
+Do těla zprávy zkopírujte celý zástupný symbol uvedený pod konkrétním nahraným souborem. Obsahuje jeho vlastní číselné ID; znak `x` není funkční ID. Při zpracování zprávy se symbol nahradí odkazem na soubor. Zprávu uložte a znovu otevřete, abyste zkontrolovali soubor i jeho nastavení ochrany.
 
 
 
@@ -84,11 +84,9 @@ Po kliknutí na odkaz ke stažení ebooku zákazníka přesměrujeme na stránku
 e-book stáhnout.
 
 :::caution
-E-book lze stáhnout až po zaplacení objednávky. Pokud by se zákazník dostal na stránku dříve, než je objednávka zaplacená, e-book se nezobrazí a zákazník uvidí chybovou hlášku.
+U chráněného PDF v objednávkové zprávě se vytvoření personalizovaného souboru spustí po zaplacení objednávky. Připravený soubor a pouhé otevření odkazu nejsou totéž: při prvním otevření může být potřeba vyčkat na jeho přípravu. Nepovažujte toto pravidlo za ochranu všech příloh ani za automatické zneplatnění již připraveného souboru při pozdější změně stavu úhrady.
 :::
 
 :::danger
-Ochrana se objeví jen na pdf, která prošli přes prodejní formulář.
-
-Nikoliv na testovacích náhledech z šablon zpráv.
+Náhled šablony zprávy není ověřením personalizovaného PDF pro kupujícího. Výsledek zkontrolujte na testovací objednávce: ověřte stav úhrady, otevřete odkaz, vyčkejte na přípravu a zkontrolujte skutečně stažené PDF.
 :::
