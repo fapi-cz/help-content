@@ -17,7 +17,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem
 order: 233
-updatedAt: 2026-10-15T15:12:55Z
+updatedAt: 2026-10-29T12:03:01.305375Z
 legacyAnchors:
   - id: -Jak-to-nastavit-jWPiH
     tag: h2
@@ -47,16 +47,46 @@ legacyAnchors:
 ---
 Pokud nabízíte e-book (či jiný digitální soubor) jako **doplněk k hlavnímu produktu** – např. jako **miniupsell** nebo **upsell**, může se stát, že jej zákazník **neobjedná vždy**. Proto nechcete e-mail s obsahem odesílat každému, ale **jen těm, kteří si konkrétní produkt skutečně objednali**.
 
-Přesně k tomu slouží **akce vázané na konkrétní položku** v prodejním formuláři.
+**Pro běžné doručení není samostatná akce potřeba.** Soubor přidejte k produktu a do těla běžného e-mailu při zaplacení vložte `{items}` nebo `{itemsList}`. V HTML zprávě zákazník dostane odkazy na soubory zakoupených produktů, včetně vybraného doplňku.
+
+**Doručení v běžném e-mailu při zaplacení**
+
+1. V nabídce **Prodej → [Produkty](https://web.fapi.cz/templates/items?projectId=all)** otevřete produkt, přidejte soubor do pole **Soubory ke stažení** a klikněte na **Uložit**. Podrobnosti a nastavení ochrany najdete v návodu [Produkty](/article/43-produkty).
+
+   Uložený soubor u produktu poznáte podle jeho názvu:
+
+   ![Uložený soubor v poli Soubory ke stažení u produktu](/assets/articles/product-file-saved-20261029.png)
+
+   [Otevřít snímek uloženého souboru v plné velikosti](/assets/articles/product-file-saved-20261029.png)
+
+2. V nabídce **Prodej → [Šablony zpráv](https://web.fapi.cz/message-template-sets/?projectId=all)** otevřete sadu používanou prodejním formulářem a upravte **E-mail při zaplacení objednávky**. Jde o běžnou automatickou zprávu, nikoli o vlastní e-mailovou šablonu.
+
+   ![Typ běžné šablony E-mail při zaplacení objednávky](/assets/articles/paid-template-type-20261029.png)
+
+   [Otevřít snímek typu šablony v plné velikosti](/assets/articles/paid-template-type-20261029.png)
+
+3. Do těla zprávy vložte `{items}` nebo `{itemsList}` a šablonu uložte. První symbol vypíše položky oddělené čárkami, druhý každou na samostatném řádku. Odkazy na produktové soubory se doplní u zakoupených položek po zaplacení; objednávka nesmí být stornovaná. Pokud už šablona jeden z těchto symbolů obsahuje, nemusíte ho vkládat znovu.
+
+   ![Symboly items a itemsList přímo v těle běžné e-mailové šablony](/assets/articles/paid-template-symbols-20261029.png)
+
+   [Otevřít snímek symbolů v plné velikosti](/assets/articles/paid-template-symbols-20261029.png)
+
+4. V testovacím režimu ověřte objednávku s doplňkem i bez něj. Zkontrolujte, že před úhradou nejsou soubory dostupné, a po úhradě ověřte doručený e-mail i otevření správného souboru.
+
+**Jde o odkazy ke stažení, ne o e-mailové přílohy.** Zkontrolujte také, že je povolené odesílání e-mailů zákazníkům a že formulář používá správnou sadu zpráv. Samotný náhled šablony nenahrazuje test objednávky.
+
+**Volitelně: samostatný e-mail**
+
+Další postup použijte, pouze pokud chcete posílat zvláštní zprávu mimo běžný e-mail při zaplacení. Tato varianta používá soubor vložený přímo do vlastní šablony a **akci vázanou na konkrétní položku**.
 
 ## ✉️ Jak to nastavit?
 
 ### 1\. Vytvořte e-mail s e-bookem/pdf
 
--   Přejděte do sekce **Prodej \> Šablony zpráv**.
+-   Přejděte do sekce **Prodej → [Šablony zpráv](https://web.fapi.cz/message-template-sets/?projectId=all)**.
 -   Vyberte Šablonu zpráv, která souvisí s prodejním formulářem, přes který realizujete prodej
 -   V dané sadě vytvořte nový email, který bude mít typ **Vlastní e-mailová šablona**.
--   Připojte e-book (nebo jiný soubor) jako přílohu.
+-   Pomocí **Přidat soubor** nahrajte e-book (nebo jiný soubor) do šablony; do e-mailu se vloží odkaz ke stažení, nikoli příloha.
 
 ![Odesílání e-booků a dalších souborů z FAPI samostatným e-mailem](/assets/articles/8c53d85e558c81fc.png)
 
@@ -76,7 +106,7 @@ Přesně k tomu slouží **akce vázané na konkrétní položku** v prodejním 
 
 ### 2\. Přejděte do prodejního formuláře
 
--   Otevřete **prodejní formulář**, přes který zákazníci objednávají e-book.
+-   V nabídce **Prodej → [Prodejní formuláře](https://web.fapi.cz/forms/?projectId=all)** otevřete formulář, přes který zákazníci objednávají e-book.
 -   Jděte do **kroku č. 4 Akce**
 
 
@@ -85,7 +115,8 @@ Přesně k tomu slouží **akce vázané na konkrétní položku** v prodejním 
 
 -   Najděte níže sekci **Akce a vytvořte novou událost vázanou na položku**
 -   Vyberte akci **odeslat e-mail klientovi** nebo **odeslat e-mail na zadanou adresu**
--   Zvolte vámi vytvořenou e-mailovou šablonu s přílohou.
+-   Pro událost zvolte **Zaplacení položky** a vyberte konkrétní prodávanou položku.
+-   Zvolte vámi vytvořenou e-mailovou šablonu s odkazem na soubor. Nastavení uložte a otestujte objednávku s touto položkou i bez ní.
 
 ![Odesílání e-booků a dalších souborů z FAPI samostatným e-mailem](/assets/articles/d909accdfee4d236.png)
 

@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/82-jak-prodavat-ebook-pres-fapi
 order: 34
-updatedAt: 2026-10-15T15:11:06Z
+updatedAt: 2026-10-29T12:03:01.305375Z
 ---
 Prodej ebooku na internetu patří mezi nejpopulárnější formy on-line podnikání a šíření know-how. Zároveň je to i jedna z typických oblastí, se kterými FAPI pomáhá svým uživatelům. Jak nastavit proces prodeje ebooku ve FAPI si vysvětlíme v tomto článku.
 
@@ -51,17 +51,18 @@ Výhody zaslání ze SmartEmailingu:
 
 Přímo z FAPI se ebook zasílá pomocí šablony zprávy, která se zákazníkovi odesílá po zaplacení objednávky. V sadě šablon přiřazené k danému prodejnímu formuláři je tedy třeba vytvořit, popř. podle vašich potřeb upravit šablonu typu **E-mail při zaplacení objednávky**.
 
-:::caution
-V určitých případech (např. tehdy, když obsahem objednávky může být více různých produktů) je třeba vytvořit pro tento účel šablonu typu **Vlastní e-mailová šablona** a odeslání e-mailu s odkazem na stažení ebooku nastavit pomocí akce v prodejním formuláři.
-:::
+1. Přidejte e-book ke konkrétnímu produktu do pole **Soubory ke stažení** a produkt uložte podle návodu [Produkty](/article/43-produkty).
+2. V nabídce **Prodej → [Šablony zpráv](https://web.fapi.cz/message-template-sets/?projectId=all)** otevřete sadu přiřazenou formuláři a upravte **E-mail při zaplacení objednávky**.
+3. Do těla zprávy vložte `{items}` nebo `{itemsList}` a šablonu uložte. V HTML e-mailu se u zakoupených produktů doplní odkazy na jejich soubory. Jde o **odkazy ke stažení**, nikoli o e-mailové přílohy.
+4. V testovacím režimu ověřte objednávku před úhradou i po ní, doručení zprávy a otevření odkazu na soubor.
 
-Do textu e-mailové šablony vložte odkaz, pomocí kterého si váš zákazník zakoupený ebook stáhne.
+Ani při nabídce více různých produktů nebo volitelného doplňku nemusíte pro tento způsob doručení vytvářet vlastní e-mailovou šablonu ani další akci. Odkazy patří k zakoupeným produktům; nezaplacená nebo stornovaná objednávka je nezpřístupní.
 
-![Jak prodávat e-book přes FAPI](/assets/articles/0500b8354e03dbc5.png)
+Pokud chcete soubor poslat **samostatným e-mailem**, použijte volitelný postup v návodu [Odesílání e-booků a dalších souborů](/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem).
 
-:::tip
-Soubor ke stažení můžete uložit i přímo do FAPI pomocí tlačítka **Přidat soubor**. V tomto případě je třeba do textu šablony vložit zástupný symbol reprezentující odkaz na daný soubor.
-:::
+Další možností je vložit do zprávy vlastní odkaz na e-book. Následující ukázka zachycuje takový odkaz v šabloně při zaplacení:
+
+![Vlastní odkaz na stažení e-booku v šabloně při zaplacení](/assets/articles/0500b8354e03dbc5.png)
 
 Více o tom jak pracovat s šablonami zpráv se dozvíte v návodu [Šablony zpráv](/article/17-sablony-zprav).
 
@@ -82,9 +83,8 @@ Vřele doporučujeme vytvořit ve SmartEmailingu dva seznamy kontaktů pro oddě
 
 ## **Co se stane, když aktualizuji e-book?**
 
-Pokud potřebujete aktualizovat soubor e-booku, záleží na způsobu, jakým změnu provedete:
+Pokud e-book doručujete jako **soubor přidaný k produktu**, spravujete jej u tohoto produktu, nikoli v e-mailové šabloně. Než soubor odeberete nebo změníte způsob doručení, ověřte dopad také na dříve zaplacené testovací objednávce.
 
--   **Nahrazení souboru v šabloně e-mailů** → Pokud v existující šabloně e-mailů pouze **změníte soubor** (přepíšete starý novým), všichni zákazníci – i ti, kteří e-book zakoupili dříve – si budou moci stáhnout **novou verzi** e-booku.
--   **Odstranění a nahrání nového souboru** → Pokud e-book **smažete ze šablony e-mailu a nahrajete ho jako nový soubor**, pak se pro staré objednávky zachová **původní verze** a noví zákazníci dostanou **aktualizovanou verzi**.
+**Odstranění souboru neznamená automatické uchování původní verze pro starší zákazníky.** U odebraného produktového souboru může přestat fungovat i dříve zaslaný odkaz. Pokud potřebujete původní verzi zachovat, neodstraňujte ji bez ověření přístupů.
 
-Díky tomu můžete rozhodnout, zda chcete, aby všichni zákazníci měli přístup k nejnovější verzi, nebo zda má každá objednávka zůstat svázána s konkrétní verzí souboru.
+Soubory vložené přímo do šablony zprávy jsou samostatná možnost. Nezaměňujte jejich správu se soubory produktu.

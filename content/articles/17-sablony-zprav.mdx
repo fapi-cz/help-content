@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/17-sablony-zprav
 order: 3
-updatedAt: 2026-10-14T08:51:17Z
+updatedAt: 2026-10-29T12:03:01.305375Z
 legacyAnchors:
   - id: Jak-funguj-ablony-zprv-cqrkZ
     tag: h2
@@ -393,13 +393,15 @@ Ukázka vložení odkazu na platební bránu (po stisku tlačítka "Odkaz"):
 
 ## **Jak posílat soubory přes šablony zpráv ve FAPI**
 
-**FAPI umožňuje odesílat soubory**, ale **ne jako klasickou e-mailovou přílohu**.
+**Soubory přidané k produktu** se v běžném e-mailu neposílají jako klasické přílohy. U zakoupených položek se doplní **odkazy ke stažení**.
 
-Místo toho se soubor vloží **do e-mailu jako odkaz ke stažení**.
+Odkaz nezvětšuje zprávu o celý obsah produktu. Před zahájením prodeje přesto ověřte doručení e-mailu i otevření správného souboru.
 
-💡 **Tip:** Tento způsob zajistí, že **e-mail nebude blokován kvůli příloze** a zákazník si soubor stáhne kdykoli.
+U souborů přidaných **k produktu** vložte do těla **E-mailu při zaplacení objednávky** v příslušné sadě `{items}` nebo `{itemsList}`. V HTML zprávě se u zakoupených položek doplní odkazy na jejich soubory; objednávka musí být zaplacená a nesmí být stornovaná. Kvůli tomuto doručení není nutná vlastní šablona ani další akce. Nahrání souborů k produktu popisuje návod [Produkty](/article/43-produkty).
 
 ## **Jak přidat soubor do e-mailu?**
+
+Následující možnost přidává soubor **přímo do šablony zprávy**, nikoli k produktu. Hodí se například pro volitelný samostatný e-mail.
 
 1️⃣ **V režimu úpravy šablony zpráv** klikněte na **„Přidat soubor“**.
 
@@ -409,12 +411,12 @@ Místo toho se soubor vloží **do e-mailu jako odkaz ke stažení**.
 
 4️⃣ Při odeslání e-mailu se zástupný symbol **automaticky nahradí odkazem na stažení souboru**.
 
-**5️⃣**Poslední část je nastavení akce v 4. kroku prodejního formuláře Akce a to "odeslat email klientovi".
+Pokud používáte **Vlastní e-mailovou šablonu**, její odeslání nastavte akcí v prodejním formuláři. U šablony typu **E-mail při zaplacení objednávky** další akci na odeslání nenastavujete.
 
 
 
 :::caution
-💡 **Tip:** Tento způsob zajišťuje, že soubor neovlivní doručitelnost e-mailu a zákazník si ho může stáhnout kdykoli.
+💡 **Tip:** Odeslání zprávy a stažení souboru ověřujte zvlášť. U souboru přidaného k produktu závisí dostupnost také na zaplacení objednávky a na tom, že není stornovaná.
 :::
 
 Maximální **datová velikost nahraného souboru je 500 MB.**

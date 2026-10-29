@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/338-zastupne-symboly-v-e-mailech-a-dekovaci-strance
 order: 285
-updatedAt: 2026-10-22T09:12:16Z
+updatedAt: 2026-10-29T12:03:01.305375Z
 legacyAnchors:
   - id: Nejdve-zvolte-kam-chcete-symbol-vloit-0Uy2U
     tag: h2
@@ -329,8 +329,8 @@ Symboly vkládejte ideálně přímo z nabídky **Zástupné symboly** v editoru
 
 ## Produkt
 
--   `{items}`        – názvy zakoupených položek včetně množství, oddělené čárkami
--   `{itemsList}`        – zakoupené položky včetně množství jako HTML seznam
+-   `{items}`        – názvy zakoupených položek včetně množství, oddělené čárkami; v HTML těle e-mailu také odkazy na soubory těchto produktů po zaplacení
+-   `{itemsList}`        – zakoupené položky včetně množství na samostatných řádcích; v HTML těle e-mailu také odkazy na jejich produktové soubory po zaplacení
 -   `{voucherCodes}`        – kódy voucherů
 -   `{voucherQrCodes}`        – samostatné QR kódy voucherů
 -   `{voucherQrCodeAllInOne}`        – jeden QR kód obsahující všechny vouchery
@@ -339,9 +339,11 @@ Symboly vkládejte ideálně přímo z nabídky **Zástupné symboly** v editoru
 -   `{subscriptionId}`        – ID předplatného
 -   `{subscriptionQrCode}`        – QR kód předplatného
 
+Produktové soubory se přes `{items}` a `{itemsList}` zpřístupní jen u zaplacené, nestornované objednávky a zakoupeného produktu s kladným množstvím. Symbol vložte **přímo do těla e-mailu**, nikoli do pole URL odkazu. Odkazy můžete doručit běžným **E-mailem při zaplacení objednávky** bez další akce. Postup najdete v návodu [Odesílání e-booků a dalších souborů](/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem). Nezaměňujte je se soubory vloženými přímo do šablony pomocí `{file:<ID>}` ani se symboly děkovací stránky.
+
 ## Podmíněný obsah
 
-Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte. Kód produktu najdete ve FAPI v kartě Prodej \> Produkty, levý sloupec kód.
+Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte. Kód produktu najdete ve FAPI v nabídce **Prodej → [Produkty](https://web.fapi.cz/templates/items?projectId=all)** v levém sloupci **Kód**.
 
 ![Zástupné symboly v e-mailech a děkovací stránce](/assets/articles/9b00647553fd1740.png)
 
@@ -475,7 +477,7 @@ Index je číslovaný od nuly: první položka používá index `0`       
 
 Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte.
 
-Kód produktu najdete ve FAPI v kartě Prodej \> Produkty, levý sloupec kód.
+Kód produktu najdete ve FAPI v nabídce **Prodej → [Produkty](https://web.fapi.cz/templates/items?projectId=all)** v levém sloupci **Kód**.
 
 ![Zástupné symboly v e-mailech a děkovací stránce](/assets/articles/9b00647553fd1740.png)
 
