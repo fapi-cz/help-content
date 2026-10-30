@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach
 order: 282
-updatedAt: 2026-10-30T08:57:32.216760Z
+updatedAt: 2026-10-30T11:29:29.798Z
 legacyAnchors:
   - id: Nejdve-zvolte-kam-chcete-symbol-vloit-NJ6gB
     tag: h2
@@ -88,6 +88,7 @@ legacyAnchors:
     text: Shrnutí
     occurrence: 0
     headingIndex: 14
+redirects: []
 ---
 Zástupný symbol při odeslání e-mailu nahradí konkrétním údajem z faktury, objednávky, platby, zákazníka nebo produktu. Použijete jej v předmětu i obsahu e-mailové šablony nebo upomínky.
 
@@ -95,131 +96,127 @@ Nastavení sad a pravidla odesílání zpráv popisuje návod <a href="/article/
 
 ## Nejdříve zvolte, kam chcete symbol vložit
 
-| Kde symbol používáte | Syntaxe | Příklad |
-| --- | --- | --- |
+| Kde symbol používáte            | Syntaxe               | Příklad           |
+| ------------------------------- | --------------------- | ----------------- |
 | E-mailová šablona nebo upomínka | jedna dvojice závorek | `{invoiceNumber}` |
-| Interní děkovací stránka FAPI | dvě dvojice závorek | `{{number}}` |
+| Interní děkovací stránka FAPI   | dvě dvojice závorek   | `{{number}}`      |
 
 **Pozor:** Symboly pro e-mail a interní děkovací stránku mezi sebou nezaměňujte. Pro interní děkovací stránku používejte symboly se dvěma dvojicemi závorek.
 
 ## Jak symbol vložit
 
-1.  Otevřete **Prodej → Šablony zpráv** nebo **Šablony upomínek** a upravte příslušnou šablonu.
-2.  Umístěte kurzor do předmětu nebo obsahu e-mailu.
-3.  Klikněte na tlačítko **Zástupné symboly** a zvolte skupinu, ve které hledaný údaj najdete.
+1. Otevřete **Prodej →** <a href="https://web.fapi.cz/message-template-sets/?projectId=all" target="_blank" rel="noopener">**Šablony zpráv**</a> nebo <a href="https://web.fapi.cz/reminder-sets/?projectId=all" rel="noreferrer">**Šablony upomínek**</a> a upravte příslušnou šablonu.
+2. Umístěte kurzor do předmětu nebo obsahu e-mailu.
+3. Klikněte na tlačítko **Zástupné symboly** a zvolte skupinu, ve které hledaný údaj najdete.
 
 ![Zástupné symboly v e-mailových šablonách a upomínkách](/assets/articles/c74106fde5f7a189.png)
 
 **Na výběr máte několik sekcí zástupných symbolů:**
 
--   Faktura,
--   Platba,
--   Zákazník,
--   Produkt,
--   Podmíněný obsah,
--   Dodavatel,
--   Vlastní pole.
+- Faktura,
+- Platba,
+- Zákazník,
+- Produkt,
+- Podmíněný obsah,
+- Dodavatel,
+- Vlastní pole.
 
 ![Zástupné symboly v e-mailových šablonách a upomínkách](/assets/articles/dd6aad09d43615de.png)
 
-4.  Vybraný symbol nechte jako jeden nepřerušený celek. Uvnitř značky nepřidávejte mezeru ani zalomení řádku a neformátujte jen její část.
+1. Vybraný symbol nechte jako jeden nepřerušený celek. Uvnitř značky nepřidávejte mezeru ani zalomení řádku a neformátujte jen její část.
 
 Jednoduchý symbol může být přímo ve větě: `Děkujeme za objednávku č. {invoiceNumber}.`    
 
 **Před použitím u zákazníků proveďte testovací objednávku.** Náhled e-mailu nemusí věrně nasimulovat odkazy na soubory, vouchery ani podmíněný obsah.
 
-
-
 ## Faktura
 
--   `{invoiceNumber}`        – číslo faktury
--   `{variableSymbol}`        – variabilní symbol
--   `{amount}`        – fakturovaná částka včetně měny
--   `{amountWithoutVat}`        – částka bez DPH včetně měny
--   `{createDate}`        – datum vystavení ve formátu d. m. Y
--   `{payDayDate}`        – datum splatnosti ve formátu d. m. Y
--   `{pdf}`        – odkaz ke stažení PDF faktury
--   `{pdfPrinterFriendly}`        – odkaz ke stažení tiskové verze PDF faktury
--   `{project}`        – název projektu
--   `{shipping}`        – způsob dopravy včetně výdejního místa, pokud je dostupné
--   `{packetTrackingLink}`        – odkaz na sledování zásilky
--   `{cancellationReason}`        – důvod storna
--   `{paymentType}`        – lokalizovaný způsob platby
--   `{repaymentNumber}`        – číslo splátky
--   `{countOfRepayments}`        – počet splátek
+- `{invoiceNumber}` – číslo faktury
+- `{variableSymbol}`– variabilní symbol
+- `{amount}` - fakturovaná částka včetně měny
+- `{amountWithoutVat}` – částka bez DPH včetně měny
+- `{createDate}`  – datum vystavení ve formátu d. m. Y
+- `{payDayDate}` – datum splatnosti ve formátu d. m. Y
+- `{pdf}` – odkaz ke stažení PDF faktury
+- `{pdfPrinterFriendly}` – odkaz ke stažení tiskové verze PDF faktury
+- `{project}` – název projektu
+- `{shipping}` - způsob dopravy včetně výdejního místa, pokud je dostupné
+- `{packetTrackingLink}` – odkaz na sledování zásilky
+- `{cancellationReason}` – důvod storna
+- `{paymentType}` – lokalizovaný způsob platby
+- `{repaymentNumber}` – číslo splátky
+- `{countOfRepayments}` – počet splátek
 
 ## Platba
 
--   `{orderStatusPage}`        – přehled objednávky a odkaz na online platbu
--   `{bankAccountName}`        – název bankovního účtu dodavatele
--   `{bankAccount}`        – číslo bankovního účtu dodavatele
--   `{iban}`        – IBAN dodavatele
--   `{swift}`        – BIC/SWIFT dodavatele
--   `{qrCode}`        – obrázek primárního platebního QR kódu
--   `{qrCodes}`        – všechny relevantní formáty platebního QR kódu pro danou platbu; pokud je dostupných více formátů, první je označený jako doporučený
+- `{orderStatusPage}` – přehled objednávky a odkaz na online platbu
+- `{bankAccountName}` – název bankovního účtu dodavatele
+- `{bankAccount}` – číslo bankovního účtu dodavatele
+- `{iban}` – IBAN dodavatele
+- `{swift}` – BIC/SWIFT dodavatele
+- `{qrCode}`  – obrázek primárního platebního QR kódu
+- `{qrCodes}` – všechny relevantní formáty platebního QR kódu pro danou platbu; pokud je dostupných více formátů, první je označený jako doporučený
 
-### Podmíněné bloky platbu v e-mailech
+### Podmíněné bloky pro platbu v e-mailech
 
--   `{ifCash}...{/ifCash}`        – pouze pro platbu v hotovosti
--   `{ifWire}...{/ifWire}`        – pouze pro platbu bankovním převodem
--   `{ifCreditCard}...{/ifCreditCard}`        – pouze pro platbu kartou
--   `{ifCollectOnDelivery}...{/ifCollectOnDelivery}`        – pouze pro dobírku
--   `{ifSms}...{/ifSms}`        – pouze pro platbu SMS
--   `{ifPaypal}...{/ifPaypal}`        – pouze pro platbu přes PayPal
--   `{ifGopay}...{/ifGopay}`        – pouze pro platbu přes GoPay
--   `{ifWireGopay}...{/ifWireGopay}`        – pouze pro bankovní převod přes GoPay
--   `{ifBitcoin}...{/ifBitcoin}`        – pouze pro platbu Bitcoinem
--   `{ifGpay}...{/ifGpay}`        – pouze pro platbu přes Google Pay
--   `{ifBarter}...{/ifBarter}`        – pouze pro barterovou platbu
--   `{ifApplePay}...{/ifApplePay}`        – pouze pro platbu přes Apple Pay
--   `{ifSkippay}...{/ifSkippay}`        – pouze pro platbu přes Skip Pay
--   `{ifQrCode}...{/ifQrCode}`        – pouze pro platbu QR kódem
--   `{ifKlarna}...{/ifKlarna}`        – pouze pro platbu přes Klarna
--   `{ifNotCollectOnDelivery}...{/ifNotCollectOnDelivery}`        – pouze pro platby jiné než dobírka
+- `{ifCash}...{/ifCash}` – pouze pro platbu v hotovosti
+- `{ifWire}...{/ifWire}` – pouze pro platbu bankovním převodem
+- `{ifCreditCard}...{/ifCreditCard}` – pouze pro platbu kartou
+- `{ifCollectOnDelivery}...{/ifCollectOnDelivery}` – pouze pro dobírku
+- `{ifSms}...{/ifSms}` – pouze pro platbu SMS
+- `{ifPaypal}...{/ifPaypal}` – pouze pro platbu přes PayPal
+- `{ifGopay}...{/ifGopay}` – pouze pro platbu přes GoPay
+- `{ifWireGopay}...{/ifWireGopay}` – pouze pro bankovní převod přes GoPay
+- `{ifBitcoin}...{/ifBitcoin}` – pouze pro platbu Bitcoinem
+- `{ifGpay}...{/ifGpay}` – pouze pro platbu přes Google Pay
+- `{ifBarter}...{/ifBarter}` – pouze pro barterovou platbu
+- `{ifApplePay}...{/ifApplePay}` – pouze pro platbu přes Apple Pay
+- `{ifSkippay}...{/ifSkippay}` – pouze pro platbu přes Skip Pay
+- `{ifQrCode}...{/ifQrCode}` – pouze pro platbu QR kódem
+- `{ifKlarna}...{/ifKlarna}` – pouze pro platbu přes Klarna
+- `{ifNotCollectOnDelivery}...{/ifNotCollectOnDelivery}` – pouze pro platby jiné než dobírka
 
 ## Zákazník
 
--   `{vocativeName}`        – jméno zákazníka v 5. pádě
--   `{vocativeSurname}`        – příjmení zákazníka v 5. pádě
--   `{vocativeFullName}`        – celé jméno zákazníka v 5. pádě
--   `{clientFirstName}`        – fakturační jméno zákazníka
--   `{clientLastName}`        – fakturační příjmení zákazníka
--   `{clientName}`        – fakturační jméno zákazníka
--   `{fullName}`        – celé jméno zákazníka
--   `{clientEmail}`        – e-mail zákazníka
--   `{clientPhone}`        – telefon zákazníka
--   `{company}`        – firma zákazníka
--   `{clientIc}`        – IČ zákazníka
--   `{clientDic}`        – DIČ zákazníka
--   `{clientIcDph}`        – slovenské IČ DPH zákazníka
--   `{clientAddress}`        – fakturační adresa zákazníka
--   `{shippingAddress}`        – doručovací adresa zákazníka
--   `{notes}`        – poznámka zákazníka k objednávce
--   `{clientId}`        – ID zákazníka
+- `{vocativeName}` – jméno zákazníka v 5. pádě
+- `{vocativeSurname}` – příjmení zákazníka v 5. pádě
+- `{vocativeFullName}` – celé jméno zákazníka v 5. pádě
+- `{clientFirstName}` – fakturační jméno zákazníka
+- `{clientLastName}` – fakturační příjmení zákazníka
+- `{clientName}` – fakturační jméno zákazníka
+- `{fullName}` – celé jméno zákazníka
+- `{clientEmail}` – e-mail zákazníka
+- `{clientPhone}` – telefon zákazníka
+- `{company}` – firma zákazníka
+- `{clientIc}` – IČ zákazníka
+- `{clientDic}` – DIČ zákazníka
+- `{clientIcDph}` – slovenské IČ DPH zákazníka
+- `{clientAddress}` – fakturační adresa zákazníka
+- `{shippingAddress}` – doručovací adresa zákazníka
+- `{notes}` – poznámka zákazníka k objednávce
+- `{clientId}` – ID zákazníka
 
 ## Produkt
 
--   `{items}`        – názvy zakoupených položek včetně množství, oddělené čárkami; v HTML těle e-mailu také odkazy na soubory těchto produktů po zaplacení
--   `{itemsList}`        – zakoupené položky včetně množství na samostatných řádcích; v HTML těle e-mailu také odkazy na jejich produktové soubory po zaplacení
--   `{voucherCodes}`        – kódy voucherů
--   `{voucherQrCodes}`        – samostatné QR kódy voucherů
--   `{voucherQrCodeAllInOne}`        – jeden QR kód obsahující všechny vouchery
--   `{vouchersList}`        – vouchery jako HTML seznam
--   `{voucherExpirations}`        – data expirace voucherů
--   `{subscriptionId}`        – ID předplatného
--   `{subscriptionQrCode}`        – QR kód předplatného
+- `{items}` – názvy zakoupených položek včetně množství, oddělené čárkami; v HTML těle e-mailu také odkazy na soubory těchto produktů po zaplacení
+- `{itemsList}` – zakoupené položky včetně množství na samostatných řádcích; v HTML těle e-mailu také odkazy na jejich produktové soubory po zaplacení
+- `{voucherCodes}` – kódy voucherů
+- `{voucherQrCodes}` – samostatné QR kódy voucherů
+- `{voucherQrCodeAllInOne}` – jeden QR kód obsahující všechny vouchery
+- `{vouchersList}` – vouchery jako HTML seznam
+- `{voucherExpirations}` – data expirace voucherů
+- `{subscriptionId}` – ID předplatného
+- `{subscriptionQrCode}` – QR kód předplatného
 
 Produktové soubory se přes `{items}` a `{itemsList}` zpřístupní jen u zaplacené, nestornované objednávky a zakoupeného produktu s kladným množstvím. Symbol vložte **přímo do těla e-mailu**, nikoli do pole URL odkazu. Odkazy můžete doručit běžným **E-mailem při zaplacení objednávky** bez další akce. Postup najdete v návodu <a href="/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem" target="_blank" rel="noopener">Odesílání e-booků a dalších souborů</a>. Nezaměňujte je se soubory vloženými přímo do šablony pomocí `{file:<ID>}` ani se symboly děkovací stránky.
 
 ## Podmíněný obsah
 
-Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte. Kód produktu najdete ve FAPI v nabídce **Prodej → <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a>** v levém sloupci **Kód**.
+Místo `<kód_produktu>` vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte. Kód produktu najdete ve FAPI v nabídce **Prodej →** <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a> v levém sloupci **Kód**.
 
 ![Zástupné symboly v e-mailových šablonách a upomínkách](/assets/articles/9b00647553fd1740.png)
 
--   `{item-<kód_produktu>}...{/item-<kód_produktu>}`        – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
-
-
+- `{item-<kód_produktu>}...{/item-<kód_produktu>}`        – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
 
 :::info
 **Příklad:**
@@ -229,25 +226,21 @@ Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**
 {item-EBOOK}<p>Děkujeme za nákup. Odkaz ke stažení e-booku najdete zde: <a href="{file:123}">Stáhnout e-book</a>.</p>{/item-EBOOK}
 ```
 
-Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK`       . Číslo `123`        v `{file:123}`        nahraďte ID souboru připojeného k e-mailové šabloně.
-
-
+Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK` . Číslo `123` v `{file:123}` nahraďte ID souboru připojeného k e-mailové šabloně.
 
 ## Dodavatel
 
--   `{userName}`        – fakturační jméno dodavatele
--   `{userEmail}`        – e-mail dodavatele
--   `{userPhone}`        – telefon dodavatele
--   `{userWeb}`        – web dodavatele
+- `{userName}` – fakturační jméno dodavatele
+- `{userEmail}` – e-mail dodavatele
+- `{userPhone}` – telefon dodavatele
+- `{userWeb}` – web dodavatele
 
 ## Vlastní pole
 
--   `{customFieldsList}`        – vyplněná vlastní pole jako HTML seznam
--   `{customField:<ID>}`        – hodnota vlastního pole faktury se zadaným číselným ID. Místo `<id>`        vložte číselné ID konkrétního vlastního pole, například `{customField:123}`       .
--   `{file:<ID>}`        – zabezpečený odkaz ke stažení souboru šablony se zadaným číselným ID. Místo `<ID>`        vložte číselné ID souboru připojeného k dané šabloně, například `{file:123}`       .
--   `{<key>}`        – vlastní symbol předaný jako dvojice klíč–hodnota přes endpoint, který vlastní symboly podporuje; `<key>`        nahraďte předaným klíčem.
-
-
+- `{customFieldsList}` – vyplněná vlastní pole jako HTML seznam
+- `{customField:<ID>}` – hodnota vlastního pole faktury se zadaným číselným ID. Místo `<id>` vložte číselné ID konkrétního vlastního pole, například `{customField:123}`       .
+- `{file:<ID>}` – zabezpečený odkaz ke stažení souboru šablony se zadaným číselným ID. Místo `<ID>` vložte číselné ID souboru připojeného k dané šabloně, například `{file:123}`       .
+- `{<key>}` – vlastní symbol předaný jako dvojice klíč–hodnota přes endpoint, který vlastní symboly podporuje; `<key>` nahraďte předaným klíčem.
 
 :::tip
 Před ostrým odesláním doporučujeme šablonu otestovat na skutečné objednávce.
@@ -262,10 +255,10 @@ Náhled nemusí vždy věrně nasimulovat odkazy na soubory, vouchery ani podmí
 
 Zkontrolujte, zda:
 
--   používáte správnou syntaxi pro dané místo,
--   symbol není rozdělený mezerou, zalomením řádku nebo formátováním,
--   používáte symbol dostupný pro daný kontext,
--   u vlastní děkovací stránky funguje SDK a parametr `path`       .
+- používáte správnou syntaxi pro dané místo,
+- symbol není rozdělený mezerou, zalomením řádku nebo formátováním,
+- používáte symbol dostupný pro daný kontext,
+- u vlastní děkovací stránky funguje SDK a parametr `path`       .
 
 ## V e-mailu se nezobrazil symbol z děkovací stránky
 
@@ -283,20 +276,20 @@ Na děkovací stránku patří například:
 
 Zkontrolujte, zda:
 
--   stránka běží na HTTPS,
--   je vložený FAPI SDK script,
--   ve formuláři je zapnuté vložení identifikátoru objednávky do URL,
--   v URL zůstal zachovaný parametr `path`       .
+- stránka běží na HTTPS,
+- je vložený FAPI SDK script,
+- ve formuláři je zapnuté vložení identifikátoru objednávky do URL,
+- v URL zůstal zachovaný parametr `path`       .
 :::
 
 ## Shrnutí
 
 Zástupné symboly vždy vybírejte podle toho, kde je chcete použít.
 
-Pro e-mailové šablony a upomínky používejte symboly s jednou dvojicí závorek, například `{invoiceNumber}`       .
+Pro e-mailové šablony a upomínky používejte symboly s jednou dvojicí závorek, například `{invoiceNumber}` .
 
-Pro interní děkovací stránku FAPI používejte symboly se dvěma dvojicemi závorek, například `{{number}}`       .
+Pro interní děkovací stránku FAPI používejte symboly se dvěma dvojicemi závorek, například `{{number}}` .
 
-Pro vlastní externí děkovací stránku je potřeba navíc HTTPS, FAPI SDK script a zachovaný parametr `path`       .
+Pro vlastní externí děkovací stránku je potřeba navíc HTTPS, FAPI SDK script a zachovaný parametr `path` .
 
 Před ostrým použitím doporučujeme vše otestovat na skutečné objednávce.
