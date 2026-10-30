@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/17-sablony-zprav
 order: 3
-updatedAt: 2026-10-30T08:57:31.987642Z
+updatedAt: 2026-10-30T10:18:21.833Z
 legacyAnchors:
   - id: Jak-funguj-ablony-zprv-cqrkZ
     tag: h2
@@ -170,7 +170,7 @@ redirects: []
 
 buď **Jednu sadu šablon pro všechny faktury**,
 
-nebo **Jednu sadu pro první fakturu a jinou pro další pravidelné faktury** (např. u předplatného). Samostatná sada pro další období se používá od druhé pravidelné faktury, ne automaticky od druhé splátky.
+nebo **Jednu sadu pro první fakturu a jinou pro 2. a další pravidelné faktury** (např. u předplatného). Samostatná sada pro další období se používá od druhé pravidelné faktury, ne automaticky od druhé splátky.
 
 <Video src="https://www.youtube.com/embed/sx8553flG24" />
 
@@ -184,11 +184,15 @@ Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv** s 
 2. U šablony zkontrolujte **Typ šablony zpráv**, předmět a text. Chcete-li přikládat doklad, ponechte zaškrtnuté **Odeslat fakturu jako PDF přílohu e-mailu**.
 3. Klikněte na **Uložit**. Sadu potom vyberte v příslušném prodejním formuláři podle následujícího postupu.
 
-💡 **Tip:** Pokud potřebujete různé texty pro různé formuláře, **vytvořte specifické sady** a pojmenujte je podle prodejních formulářů. Snadno si tak udržíte přehled!
+:::tip
+💡 **Tip:** Pokud potřebujete různé texty pro různé formuláře, **vytvořte specifické sady** a pojmenujte je podle prodejních formulářů. Snadno si tak udržíte přehled.
+:::
 
 ![Seznam sad šablon zpráv s možnostmi Upravit a Nová sada šablon zpráv](/assets/articles/23ddd441fdda6a02.png)
 
-:::caution
+
+
+::::info
 ## **Jak FAPI posílá zprávy u objednávek a ručně vystavených faktur?**
 
 ### **1️⃣ Objednávky přes prodejní formulář**
@@ -197,7 +201,7 @@ Zprávy se posílají na základě **sady šablon**, která je přiřazena v **n
 
 📍 V nabídce <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodej → Prodejní formuláře**</a> otevřete požadovaný formulář. Ve **4. kroku Akce** vyberte pole **ŠABLONY ZPRÁV** a nastavení uložte.
 
-<img height="256" width="471" src="/assets/uploads/23a499fe37e5165710901060.webp" alt="Výběr sady šablon zpráv ve čtvrtém kroku Akce prodejního formuláře" />
+<img height="256" width="471" alt="Výběr sady šablon zpráv ve čtvrtém kroku Akce prodejního formuláře" src="/assets/uploads/23a499fe37e5165710901060.webp" />
 
 <a href="/assets/uploads/23a499fe37e5165710901060.webp" target="_blank" rel="noopener">Zobrazit nastavení sady v plné velikosti</a>
 
@@ -207,8 +211,10 @@ Standardně se zprávy posílají podle **Výchozí sady šablon zpráv**.
 
 **Pokud při vystavení faktury vyberete konkrétní prodejní formulář v poli „PRODEJNÍ FORMULÁŘ (PROJEKT)“**, budou se zprávy řídit sadou přiřazenou k tomuto formuláři. Samotný výběr projektu není totéž co výběr formuláře.
 
+:::tip
 💡 **Tip:** Chcete mít jednotnou komunikaci? Doporučujeme při ruční fakturaci **přiřadit fakturu k odpovídajícímu prodejnímu formuláři**, aby se zákazníkům odesílaly správné zprávy.
 :::
+::::
 
 ## Typy šablon zpráv
 
@@ -358,7 +364,7 @@ Přejděte do <a href="https://web.fapi.cz/settings/emails?projectId=all" target
 💡 **Tip:** HTML umožňuje přidat **tučné písmo, barvy, odkazy, obrázky** a další prvky pro atraktivnější vzhled e-mailů.
 :::
 
-<img height="502" width="521" src="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" alt="Editor e-mailové šablony s předmětem, volbou PDF přílohy, formátovací lištou a tlačítkem Zdroj" />
+<img height="502" width="521" alt="Editor e-mailové šablony s předmětem, volbou PDF přílohy, formátovací lištou a tlačítkem Zdroj" src="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" />
 
 <a href="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" target="_blank" rel="noopener">Zobrazit editor e-mailu v plné velikosti</a>
 
@@ -370,7 +376,9 @@ Zástupné symboly doplní do zprávy údaje z konkrétní objednávky nebo dokl
 
 V e-mailu je můžete použít **v předmětu i v těle**, u SMS v textu zprávy. Používejte symboly pro daný kontext; symboly z děkovací stránky nejsou zaměnitelné s e-mailovými.
 
-**Seznam symbolů, jejich význam, podmíněné bloky a příklady použití** najdete v samostatné nápovědě <a href="/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach" target="_blank" rel="noopener">Zástupné symboly v e-mailových šablonách a upomínkách</a>.
+:::caution
+💡 **Seznam symbolů, jejich význam, podmíněné bloky a příklady použití** najdete v samostatné nápovědě <a href="/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach" target="_blank" rel="noopener">Zástupné symboly v e-mailových šablonách a upomínkách</a>.
+:::
 
 ### **Jak vložit zástupný symbol?**
 
@@ -401,7 +409,7 @@ Symbol ponechte jako **jeden nepřerušený celek** bez mezery, zalomení nebo f
 3️⃣ **Převedení části textu na odkaz** ✅ _Doporučený způsob_
 
 - **Označte část textu** a klikněte na tlačítko **„Odkaz“** (ikona řetězu v nástrojové liště).
-- Jako popisek můžete použít **Zaplatit objednávku** a do pole URL vložit `{orderStatusPage}`. V dialogu odkazu zvolte protokol **&lt;jiný&gt;**, jak ukazuje obrázek níže.
+- Jako popisek můžete použít **Zaplatit objednávku** a do pole URL vložit `{orderStatusPage}`. V dialogu odkazu zvolte protokol **\<jiný>**, jak ukazuje obrázek níže.
 - **Výhoda:** Odkaz vypadá **lépe a je přehlednější**.
 
 :::tip
@@ -461,6 +469,5 @@ Celou samostatnou nápovědu k odesílání e-booku máme zde:
 
 Možnosti a omezení popisuje samostatný návod <a href="/article/146-ochrana-ebooku" target="_blank" rel="noopener">**Ochrana e-booku**</a>.
 :::
-
 
 **Na závěr ověřte:** správnou sadu u formuláře, typ zprávy, doplnění symbolů a skutečné doručení. Pokud e-mail obsahuje soubor, otevřete také jeho odkaz a zkontrolujte, že vede na správný dokument.
