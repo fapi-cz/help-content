@@ -13,7 +13,7 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/290-zmeny-v-prodejnim-formulari-a-jejich-dopad-na-pravidelnou-fakturaci
 order: 275
-updatedAt: 2026-10-14T08:34:43Z
+updatedAt: 2026-10-30T12:12:00.650Z
 legacyAnchors:
   - id: -Zmna-ceny-produktu-ldzt_
     tag: h3
@@ -45,20 +45,19 @@ redirects:
 ---
 Pokud používáte v prodejním formuláři **pravidelnou fakturaci**, je důležité vědět, jak se projeví případné změny v nastavení formuláře na nové i stávající zákazníky.
 
-
-
 ### Změna ceny produktu či samotného produktu
 
 Pokud upravíte cenu produktu či produkt v nastavení prodejního formuláře:
 
--   **Nová cena i produkt se použije pouze pro nové objednávky** vytvořené po této změně.
--   **Už založené šablony pravidelné fakturace (u stávajících zákazníků) se nezmění** – ty dál poběží s původní cenou.
+- **Nová cena i produkt se použije pouze pro nové objednávky** vytvořené po této změně.
+- **Už založené šablony pravidelné fakturace (u stávajících zákazníků) se nezmění** – ty dál poběží s původní cenou.
 
 :::danger
 ❗Pokud chcete změnit cenu i u aktivních šablon pravidelné fakturace, je nutné:
 
--   **upravit každou šablonu u klienta ručně**, nebo
--   nás můžete kontaktovat na [podpora@fapi.cz](mailto:podpora@fapi.cz) a požádat o **placenou hromadnou úpravu**.
+- **upravit každou šablonu u klienta ručně**, nebo
+- nás můžete kontaktovat na [podpora@fapi.cz](mailto\:podpora@fapi.cz) a požádat o **placenou hromadnou úpravu**, kdy si účtujeme 1.200 Kč/48 Eur (bez DPH) za hodinu práce programátora, pokud si můžete počkat 72 h.
+  Potřebujete-li prosím váš požadavek zpracovat dříve, tedy do 72 h, pak je cena 3.600 Kč/144 Eur + dph/hod.
 :::
 
 ### Ostatní změny v prodejním formuláři
@@ -67,8 +66,6 @@ Změny jiných nastavení ve formuláři (např. akce po vystavení faktury, př
 
 ✅ To znamená, že pokud změníte např. odesílaný email, nový email bude použit i při příštích fakturacích stávajících zákazníků.
 
-
-
 ### **Změna předstihu vystavené faktury**
 
 Změna předstihu v prodejním formuláři se projeví pouze u nově založených šablon pravidelné fakturace; u stávajících zákazníků je potřeba předstih upravit přímo v jejich již existující šabloně.
@@ -76,20 +73,18 @@ Změna předstihu v prodejním formuláři se projeví pouze u nově založenýc
 :::danger
 ### Pozor u akcí vázané např. na vystavení nebo zaplacení POLOŽKY
 
-Pokud máte v prodejním formuláři nastavené **akce vázané na vystavení nebo zaplacení konkrétní položky** (např. přidání do seznamu, odeslání emailu nebo spuštění skriptu), je naprosto zásadní, aby **název položky zůstal beze změny.**
+U **akcí vázaných na vystavení nebo zaplacení konkrétní položky** rozhoduje shoda **kódu produktu** vybraného v pravidle s kódem položky na faktuře, nikoli shoda názvu.
 
-✅ Akce jsou vázané přesně na text názvu položky – tedy i **malá změna v názvu (např. přidané písmeno, mezera, diakritika)** způsobí, že se akce nespustí v již založených šablonách pravidelné fakturace.
+**Samotné přejmenování produktu při zachování jeho kódu tuto vazbu nemění.** Pokud ale změníte kód produktu a ve stávající šabloně pravidelné fakturace zůstane položka s původním kódem, akce se pro tuto položku nespustí.
 
-To platí i pro položky ve **šablonách pravidelné fakturace u již existujících klientů**. Pokud například změníte název položky v prodejním formuláři, ale klient má ve své šabloně původní název, **akce se na něj již nebudou vztahovat**.
-
-🎯 **Doporučení:** Pokud potřebujete upravit název produktu, zvažte vytvoření nové akce nebo přenastavení stávající tak, aby odpovídala aktuálnímu názvu položky v prodejním formuláři.
+Před změnou kódu proto zkontrolujte položky ve stávajících šablonách i navázaná [automatizační pravidla](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla). Výsledek spuštění můžete ověřit v [historii změn dokladu](/article/283-jak-zjistit-jake-akce-probehly-u-dokladu).
 :::
 
 ### Shrnutí:
 
-| Co měníte? | Projeví se u nových objednávek | Projeví se u stávajících šablon pravidelné fakturace |
-| --- | --- | --- |
-| **Cena produktu** | ✅ Ano | ❌ Ne (nutno upravit ručně) |
-| **Akce, seznamy, emaily, skripty** | ✅ Ano | ✅ Ano |
+| Co měníte?                         | Projeví se u nových objednávek | Projeví se u stávajících šablon pravidelné fakturace |
+| ---------------------------------- | ------------------------------ | ---------------------------------------------------- |
+| **Cena produktu**                  | ✅ Ano                          | ❌ Ne (nutno upravit ručně)                           |
+| **Akce, seznamy, emaily, skripty** | ✅ Ano                          | ✅ Ano                                                |
 
-Máte-li jakékoli otázky nebo potřebujete pomoci s úpravou většího množství šablon, napište nám – rádi vám pomůžeme.
+Máte-li jakékoli otázky nebo potřebujete pomoci s úpravou většího množství šablon, <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">napište nám</a>, rádi vám pomůžeme.
