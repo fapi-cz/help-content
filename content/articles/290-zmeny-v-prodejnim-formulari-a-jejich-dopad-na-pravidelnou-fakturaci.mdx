@@ -13,7 +13,7 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/290-zmeny-v-prodejnim-formulari-a-jejich-dopad-na-pravidelnou-fakturaci
 order: 275
-updatedAt: 2026-10-14T08:34:43Z
+updatedAt: 2026-10-30T08:17:25.307324Z
 legacyAnchors:
   - id: -Zmna-ceny-produktu-ldzt_
     tag: h3
@@ -76,13 +76,11 @@ Změna předstihu v prodejním formuláři se projeví pouze u nově založenýc
 :::danger
 ### Pozor u akcí vázané např. na vystavení nebo zaplacení POLOŽKY
 
-Pokud máte v prodejním formuláři nastavené **akce vázané na vystavení nebo zaplacení konkrétní položky** (např. přidání do seznamu, odeslání emailu nebo spuštění skriptu), je naprosto zásadní, aby **název položky zůstal beze změny.**
+U **akcí vázaných na vystavení nebo zaplacení konkrétní položky** rozhoduje shoda **kódu produktu** vybraného v pravidle s kódem položky na faktuře, nikoli shoda názvu.
 
-✅ Akce jsou vázané přesně na text názvu položky – tedy i **malá změna v názvu (např. přidané písmeno, mezera, diakritika)** způsobí, že se akce nespustí v již založených šablonách pravidelné fakturace.
+**Samotné přejmenování produktu při zachování jeho kódu tuto vazbu nemění.** Pokud ale změníte kód produktu a ve stávající šabloně pravidelné fakturace zůstane položka s původním kódem, akce se pro tuto položku nespustí.
 
-To platí i pro položky ve **šablonách pravidelné fakturace u již existujících klientů**. Pokud například změníte název položky v prodejním formuláři, ale klient má ve své šabloně původní název, **akce se na něj již nebudou vztahovat**.
-
-🎯 **Doporučení:** Pokud potřebujete upravit název produktu, zvažte vytvoření nové akce nebo přenastavení stávající tak, aby odpovídala aktuálnímu názvu položky v prodejním formuláři.
+Před změnou kódu proto zkontrolujte položky ve stávajících šablonách i navázaná [automatizační pravidla](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla). Výsledek spuštění můžete ověřit v [historii změn dokladu](/article/283-jak-zjistit-jake-akce-probehly-u-dokladu).
 :::
 
 ### Shrnutí:
