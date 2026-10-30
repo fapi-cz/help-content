@@ -1,7 +1,7 @@
 ---
 title: Odesílání emailů z FAPI přes Šablony zpráv
 url: /article/17-sablony-zprav
-description: "FAPI za vás dokáže automaticky komunikovat se zákazníky prostřednictvím e-mailů nebo SMS. Tyto zprávy můžete využít pro: ✅ Zasílání faktur a dokladů ✅ Upozorněn"
+description: Jak upravit sady e-mailových a SMS šablon, přiřadit je formuláři a použít zástupné symboly, odkazy i soubory.
 category: Nastavení
 categorySlug: 5-nastaveni
 categorySlugs:
@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/17-sablony-zprav
 order: 3
-updatedAt: 2026-10-30T08:15:27.794Z
+updatedAt: 2026-10-30T08:57:31.987642Z
 legacyAnchors:
   - id: Jak-funguj-ablony-zprv-cqrkZ
     tag: h2
@@ -150,6 +150,16 @@ redirects: []
 
 ✅ **Doručení digitálních produktů**
 
+**Obsah**
+
+- [Nastavení a přiřazení sady](#Nastaven-ablon-zprv-MRg1K)
+- [Typy zpráv a jejich odesílání](#Typy-ablon-zprv--kzhlZ)
+- [Nastavení SMS](#Jak-nastavit-odesln-SMS-ve-FAPI-_3VHn)
+- [Formátování e-mailů](#Formtovn-zprv-ve-FAPI-TenDk)
+- [Zástupné symboly](#Jak-funguj-zstupn-symboly-_2Lvt)
+- [Odkazy v e-mailu](#Vkldn-odkaz-do-zprv-ve-FAPI-qIZzM)
+- [Soubory ke stažení](#Jak-poslat-soubory-pes-ablony-zprv-ve-FAPI-9QMtF)
+
 ## **Jak fungují šablony zpráv?**
 
 🔹 Každá zpráva vychází z **předem nastavené šablony**, kterou si můžete upravit podle svých potřeb.
@@ -160,19 +170,23 @@ redirects: []
 
 buď **Jednu sadu šablon pro všechny faktury**,
 
-nebo **Jednu sadu pro první fakturu a jinou pro pravidelné faktury** (např. u předplatného).
+nebo **Jednu sadu pro první fakturu a jinou pro další pravidelné faktury** (např. u předplatného). Samostatná sada pro další období se používá od druhé pravidelné faktury, ne automaticky od druhé splátky.
 
 <Video src="https://www.youtube.com/embed/sx8553flG24" />
 
 ## **Nastavení šablon zpráv**
 
-**Najdete je v nabídce:** [**PRODEJ → Šablony zpráv**](https://web.fapi.cz/message-template-sets/?projectId=all)
+**Najdete je v nabídce:** <a href="https://web.fapi.cz/message-template-sets/?projectId=all" target="_blank" rel="noopener">**PRODEJ → Šablony zpráv**</a>
 
-Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv**, která obsahuje univerzální texty pro každý typ emailu. Doporučujeme je však přizpůsobit **vaší značce a stylu komunikace**.
+Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv** s připravenými texty. Doporučujeme je přizpůsobit **vaší značce a stylu komunikace**.
+
+1. Otevřete sadu a u požadované zprávy zvolte **Upravit**. Pro novou sadu použijte **Nová sada šablon zpráv**.
+2. U šablony zkontrolujte **Typ šablony zpráv**, předmět a text. Chcete-li přikládat doklad, ponechte zaškrtnuté **Odeslat fakturu jako PDF přílohu e-mailu**.
+3. Klikněte na **Uložit**. Sadu potom vyberte v příslušném prodejním formuláři podle následujícího postupu.
 
 💡 **Tip:** Pokud potřebujete různé texty pro různé formuláře, **vytvořte specifické sady** a pojmenujte je podle prodejních formulářů. Snadno si tak udržíte přehled!
 
-![Odesílání emailů z FAPI přes Šablony zpráv](/assets/articles/23ddd441fdda6a02.png)
+![Seznam sad šablon zpráv s možnostmi Upravit a Nová sada šablon zpráv](/assets/articles/23ddd441fdda6a02.png)
 
 :::caution
 ## **Jak FAPI posílá zprávy u objednávek a ručně vystavených faktur?**
@@ -181,15 +195,17 @@ Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv**, k
 
 Zprávy se posílají na základě **sady šablon**, která je přiřazena v **nastavení prodejního formuláře**.
 
-📍 **Najdete ji v:** **Prodejní formulář → 4. krok Akce → pole „ŠABLONY ZPRÁV“**.
+📍 V nabídce <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodej → Prodejní formuláře**</a> otevřete požadovaný formulář. Ve **4. kroku Akce** vyberte pole **ŠABLONY ZPRÁV** a nastavení uložte.
 
-<img height="256" width="471" src="/assets/uploads/23a499fe37e5165710901060.webp" />
+<img height="256" width="471" src="/assets/uploads/23a499fe37e5165710901060.webp" alt="Výběr sady šablon zpráv ve čtvrtém kroku Akce prodejního formuláře" />
+
+<a href="/assets/uploads/23a499fe37e5165710901060.webp" target="_blank" rel="noopener">Zobrazit nastavení sady v plné velikosti</a>
 
 ### **2️⃣ Ručně vystavené faktury**
 
 Standardně se zprávy posílají podle **Výchozí sady šablon zpráv**.
 
-**Pokud při vystavení faktury vyberete prodejní formulář v poli „PRODEJNÍ FORMULÁŘ (PROJEKT)“**, budou se zprávy řídit sadou šablon přiřazenou k tomuto formuláři.
+**Pokud při vystavení faktury vyberete konkrétní prodejní formulář v poli „PRODEJNÍ FORMULÁŘ (PROJEKT)“**, budou se zprávy řídit sadou přiřazenou k tomuto formuláři. Samotný výběr projektu není totéž co výběr formuláře.
 
 💡 **Tip:** Chcete mít jednotnou komunikaci? Doporučujeme při ruční fakturaci **přiřadit fakturu k odpovídajícímu prodejnímu formuláři**, aby se zákazníkům odesílaly správné zprávy.
 :::
@@ -238,13 +254,13 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 ### **Hlavní pravidla pro typy šablon:**
 
-✔ **Tzv. transakční emaily** mají **pevně dané použití**, které odpovídá jejich názvu. **Odesílají se automaticky, jejich odeslání není potřeba nastavovat.**
+✔ **Transakční e-maily** mají **pevně dané použití**, které odpovídá jejich typu. **Další vlastní akci pro ně nenastavujete.** V použité sadě ale musí existovat odpovídající šablona a odesílání klientovi nesmí být vypnuté. U SMS je navíc potřeba propojená brána a povolené odesílání, viz [nastavení SMS](#Jak-nastavit-odesln-SMS-ve-FAPI-_3VHn).
 
 - E-mail při vystavení objednávky
 - E-mail při zaplacení objednávky
 - E-mail k vystavenému dokladu
 
-✔ **Tzv. vlastní šablony** lze použít **pouze přes** [**AKCE**](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla) **definované v prodejním formuláři**.
+✔ Pro **automatické odesílání vlastních šablon** nastavte <a href="/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla" target="_blank" rel="noopener">**akci v prodejním formuláři**</a>.
 
 💡 **Tip:** Pokud potřebujete posílat **specifické zprávy**, nastavte akce v **prodejním formuláři** a přiřaďte k nim vlastní šablony.
 :::
@@ -253,9 +269,9 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 ## **1️⃣ E-mail/SMS při vystavení objednávky**
 
-📩 Odesílá se automaticky **hned po odeslání objednávkového formuláře**, resp. při potvrzení objednávky v prodejním formuláři.
+📩 Používá se **při vystavení objednávky**. Samotné odeslání formuláře ještě není potvrzením doručení zprávy zákazníkovi.
 
-📎 Příloha e-mailu závisí na nastavení prodejního formuláře:
+📎 Pokud je v e-mailové šabloně zapnuté **Odeslat fakturu jako PDF přílohu e-mailu**, přiložený doklad závisí na nastavení prodejního formuláře:
 
 - **Zálohová faktura** (pokud je aktivní volba _Vystavovat zálohové faktury_).
 - **Faktura/daňový doklad** (pokud zálohové faktury nejsou aktivní).
@@ -265,7 +281,7 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 📩 Odesílá se **po úspěšné úhradě objednávky** (automaticky nebo při ručním označení jako zaplacené).
 
-📎 Příloha e-mailu: **Faktura/daňový doklad**.
+📎 V e-mailu lze přiložit **fakturu/daňový doklad**, pokud je v šabloně zapnuté **Odeslat fakturu jako PDF přílohu e-mailu**. SMS PDF přílohu nemá.
 
 :::tip
 💡 **Tip:** Tato šablona je ideální pro zasílání **odkazu na digitální produkt** (např. e-book).
@@ -275,7 +291,7 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 📩 Odesílá se **při vystavení konkrétního typu dokladu**.
 
-📎 Připojený dokument závisí na typu dokladu:
+📎 Typ dokladu vybíráte v šabloně. PDF se k e-mailu přiloží, pokud je zapnutá volba **Odeslat fakturu jako PDF přílohu e-mailu**:
 
 - **Zálohová faktura** (včetně pro 1. splátku)
 - **Daňový doklad** (včetně pro 1. splátku)
@@ -285,7 +301,7 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 - **Opravný daňový doklad**
 
 :::danger
-💡 **Tip a upozornění** Hodí se například při prodeji na **splátky** nebo pokud vystavujete další doklady během prodejního procesu. **U splátek se rovněž odešle email při vystavení objednávky.**
+💡 **Tip a upozornění** Hodí se například při prodeji na **splátky** nebo pokud vystavujete další doklady během prodejního procesu. **U splátek mohou být při vystavení objednávky použity oba typy zpráv:** k objednávce i k příslušnému dokladu. Zkontrolujte obsah sady, aby se texty zbytečně neopakovaly.
 :::
 
 ## **4️⃣ Vlastní e-mailová/SMS šablona**
@@ -321,9 +337,9 @@ Propojte FAPI s jednou z podporovaných služeb:
 
 ### **2️⃣ Povolení odesílání SMS**
 
-Přejděte do [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/settings/emails?projectId=all) a **povolte odesílání zpráv**.
+Přejděte do <a href="https://web.fapi.cz/settings/emails?projectId=all" target="_blank" rel="noopener">**Nastavení → Notifikace a reporty**</a>, zaškrtněte **Posílat SMS s fakturou klientovi (aktivuje odesílání SMS klientům)** a změnu uložte.
 
-📖 **Více informací najdete v článku:** [Posílání SMS zpráv z FAPI](/article/49-posilani-sms-zprav-z-fapi).
+📖 **Více informací najdete v článku:** <a href="/article/49-posilani-sms-zprav-z-fapi" target="_blank" rel="noopener">Posílání SMS zpráv z FAPI</a>.
 
 💡 **Tip:** Nezapomeňte si ověřit **ceny a podmínky SMS služby**, kterou si vyberete.
 :::
@@ -336,45 +352,37 @@ Přejděte do [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/sett
 
 ✔ Použijte **formátovací nástroje** v nástrojové liště editoru zpráv.
 
-✔ **Přepněte do režimu HTML** (tlačítko **Zdroj**) a upravte vzhled e-mailu přímo pomocí **HTML kódu**.
+✔ Pro úpravu HTML použijte tlačítko **Zdroj** (v anglickém editoru **Source**). Tento režim se týká e-mailů, ne SMS.
 
 :::tip
 💡 **Tip:** HTML umožňuje přidat **tučné písmo, barvy, odkazy, obrázky** a další prvky pro atraktivnější vzhled e-mailů.
 :::
 
-<img height="502" width="521" src="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" />
+<img height="502" width="521" src="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" alt="Editor e-mailové šablony s předmětem, volbou PDF přílohy, formátovací lištou a tlačítkem Zdroj" />
+
+<a href="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" target="_blank" rel="noopener">Zobrazit editor e-mailu v plné velikosti</a>
 
 **Zástupné symboly pro personalizaci zpráv ve FAPI**
 
-📩 **Zástupné symboly** umožňují personalizovat e-maily a SMS pomocí **automaticky doplňovaných údajů**, jako jsou:
-
-✔ **Číslo faktury**
-
-✔ **Variabilní symbol**
-
-✔ **Datum splatnosti**
-
-✔ **Fakturovaná částka**
-
-✔ … a další informace
+Zástupné symboly doplní do zprávy údaje z konkrétní objednávky nebo dokladu, například číslo faktury, variabilní symbol, splatnost či částku.
 
 ## **Jak fungují zástupné symboly?**
 
-🔹 V každé odeslané zprávě se **zástupný symbol automaticky nahradí konkrétní hodnotou**.
+V e-mailu je můžete použít **v předmětu i v těle**, u SMS v textu zprávy. Používejte symboly pro daný kontext; symboly z děkovací stránky nejsou zaměnitelné s e-mailovými.
 
-🔹 Lze je použít **v předmětu i v těle zprávy**.
+**Seznam symbolů, jejich význam, podmíněné bloky a příklady použití** najdete v samostatné nápovědě <a href="/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach" target="_blank" rel="noopener">Zástupné symboly v e-mailových šablonách a upomínkách</a>.
 
 ### **Jak vložit zástupný symbol?**
 
-1️⃣ Klikněte na **„Vložit zástupný symbol“** v nástrojové liště editoru zpráv.
+1. V textu zprávy umístěte kurzor na požadované místo a klikněte na **Vložit zástupný symbol** v nástrojové liště editoru.
+2. Vyberte záložku podle hledaného údaje a klikněte na požadovaný symbol.
+3. Pro použití v předmětu e-mailu zapište nebo zkopírujte přesnou značku včetně závorek, například `{invoiceNumber}`. Ikona výběru symbolů patří k editoru těla zprávy.
 
-2️⃣ Vyberte správnou záložku pro snadnější orientaci.
+Symbol ponechte jako **jeden nepřerušený celek** bez mezery, zalomení nebo formátování jen části značky. Uložte šablonu a před použitím u zákazníků výsledek otestujte.
 
-3️⃣ Klikněte na požadovaný symbol a vloží se do textu.
+![Přehled skupin v dialogu Zástupné symboly: Faktura, Platba, Zákazník, Produkt, Podmíněný obsah, Dodavatel a Vlastní pole](/assets/articles/message-template-symbol-groups-20261030.png)
 
-💡 **Tip:** Zástupné symboly vám šetří čas a zajišťují, že zákazník obdrží správné informace bez nutnosti ručního doplňování.
-
-![Odesílání emailů z FAPI přes Šablony zpráv](/assets/articles/c14c9c4acbc8c2fc.png)
+<a href="/assets/articles/message-template-symbol-groups-20261030.png" target="_blank" rel="noopener">Zobrazit přehled symbolů v plné velikosti</a>
 
 ## Vkládání odkazů do zpráv ve FAPI
 
@@ -387,36 +395,30 @@ Přejděte do [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/sett
 
 2️⃣ **Vložení zástupného symbolu**
 
-- Například `{pdf}`   vloží odkaz na **stažení faktury**.
+- Například `{pdf}` se nahradí **URL pro stažení faktury**. Samotná značka ještě neurčuje popisek odkazu.
 - Hodí se pro **automatické generování odkazů**.
 
 3️⃣ **Převedení části textu na odkaz** ✅ _Doporučený způsob_
 
 - **Označte část textu** a klikněte na tlačítko **„Odkaz“** (ikona řetězu v nástrojové liště).
-- Například: [**Zaplatit objednávku**](https://www.platebni-brana.cz/)
+- Jako popisek můžete použít **Zaplatit objednávku** a do pole URL vložit `{orderStatusPage}`. V dialogu odkazu zvolte protokol **&lt;jiný&gt;**, jak ukazuje obrázek níže.
 - **Výhoda:** Odkaz vypadá **lépe a je přehlednější**.
 
 :::tip
-💡 **Tip:** Pro odkazy na platební brány nebo stažení souborů **vždy používejte možnost převedení textu na odkaz** – zlepšuje čitelnost a profesionální vzhled e-mailu.
+💡 **Tip:** U symbolů, které vracejí URL, například `{pdf}` nebo `{orderStatusPage}`, použijte pro přehledný e-mail vlastní popisek odkazu. Naopak `{items}` a `{itemsList}` v HTML těle vytvoří odkazy na zakoupené produktové soubory samy; nevkládejte je do pole URL ani je neobalujte dalším odkazem.
 :::
 
-Ukázka vložení odkazu na platební bránu (po stisku tlačítka "Odkaz"):
+Ukázka odkazu na **přehled objednávky a online platbu** se symbolem `{orderStatusPage}` (po stisku tlačítka **Odkaz**):
 
-![Odesílání emailů z FAPI přes Šablony zpráv](/assets/articles/c4f18f0dfe8f42d4.png)
+![Dialog Odkaz: popisek zaplatit online, protokol jiný a URL se symbolem orderStatusPage](/assets/articles/c4f18f0dfe8f42d4.png)
 
 ## Používání emoji
 
 **Emoji můžete používat** jak v **předmětu**, tak v **těle zprávy**.
 
-✔ Podporujeme **emoji verze 1.0** a **Unicode 1.1**.
+Emoji vložte do požadovaného místa stejně jako běžný text. **Po uložení zkontrolujte náhled a zobrazení ve své e-mailové schránce**, protože vzhled může záviset na zařízení a e-mailovém klientovi. Používejte je střídmě, aby zpráva zůstala přehledná.
 
-✔ Po vložení emoji se **okamžitě zobrazí na místě kurzoru**.
-
-:::caution
-💡 **Tip:** Emoji mohou **zvýšit otevřenost e-mailů** a zpříjemnit komunikaci, ale používejte je **s mírou**, aby zpráva zůstala profesionální.
-:::
-
-![Odesílání emailů z FAPI přes Šablony zpráv](/assets/articles/ee4a54dcfe3cb074.png)
+![Ukázka emoji v předmětu e-mailové šablony](/assets/articles/ee4a54dcfe3cb074.png)
 
 ## **Jak posílat soubory přes šablony zpráv ve FAPI**
 
@@ -424,7 +426,7 @@ Ukázka vložení odkazu na platební bránu (po stisku tlačítka "Odkaz"):
 
 Odkaz nezvětšuje zprávu o celý obsah produktu. Před zahájením prodeje přesto ověřte doručení e-mailu i otevření správného souboru.
 
-U souborů přidaných **k produktu** vložte do těla **E-mailu při zaplacení objednávky** v příslušné sadě `{items}` nebo `{itemsList}`. V HTML zprávě se u zakoupených položek doplní odkazy na jejich soubory; objednávka musí být zaplacená a nesmí být stornovaná. Kvůli tomuto doručení není nutná vlastní šablona ani další akce. Nahrání souborů k produktu popisuje návod [Produkty](/article/43-produkty).
+U souborů přidaných **k produktu** vložte do těla **E-mailu při zaplacení objednávky** v příslušné sadě `{items}` nebo `{itemsList}`. V HTML zprávě se u zakoupených položek doplní odkazy na jejich soubory; objednávka musí být zaplacená a nesmí být stornovaná. Kvůli tomuto doručení není nutná vlastní šablona ani další akce. Nahrání souborů k produktu popisuje návod <a href="/article/43-produkty" target="_blank" rel="noopener">Produkty</a>.
 
 ## **Jak přidat soubor do e-mailu?**
 
@@ -434,11 +436,11 @@ Následující možnost přidává soubor **přímo do šablony zprávy**, nikol
 
 2️⃣ **Vyberte soubor** a **uložte ho** do aplikace.
 
-3️⃣ Pod uloženým souborem se zobrazí **zástupný symbol** – ten **vložíte do e-mailové šablony**.
+3️⃣ Pod uloženým souborem se zobrazí **zástupný symbol** ve tvaru `{file:ID}`. Pro popisný odkaz použijte tuto přesnou značku jako URL odkazu, například s textem **Stáhnout soubor**.
 
-4️⃣ Při odeslání e-mailu se zástupný symbol **automaticky nahradí odkazem na stažení souboru**.
+4️⃣ Šablonu uložte. Při odeslání e-mailu se symbol nahradí **URL pro stažení souboru**. Tento soubor není automaticky vázaný na zaplacení stejným způsobem jako soubor přidaný k produktu.
 
-Pokud používáte **Vlastní e-mailovou šablonu**, její odeslání nastavte akcí v prodejním formuláři. U šablony typu **E-mail při zaplacení objednávky** další akci na odeslání nenastavujete.
+Pro **automatické odesílání vlastní e-mailové šablony** nastavte akci v prodejním formuláři. U šablony typu **E-mail při zaplacení objednávky** další akci na odeslání nenastavujete.
 
 :::caution
 💡 **Tip:** Odeslání zprávy a stažení souboru ověřujte zvlášť. U souboru přidaného k produktu závisí dostupnost také na zaplacení objednávky a na tom, že není stornovaná.
@@ -449,7 +451,7 @@ Maximální **datová velikost nahraného souboru je 500 MB.**
 :::caution
 Celou samostatnou nápovědu k odesílání e-booku máme zde:
 
-[Odesílání e-booku a dalších souborů z FAPI samostatným e-mailem](/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem)
+<a href="/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem" target="_blank" rel="noopener">Odesílání e-booku a dalších souborů z FAPI samostatným e-mailem</a>
 :::
 
 :::tip
@@ -457,7 +459,8 @@ Celou samostatnou nápovědu k odesílání e-booku máme zde:
 
 **Chcete svůj e-book ochránit před neoprávněným šířením?**
 
-Více informací a praktické tipy najdete zde: [**\[Ochrana e-booku\]**](/article/146-ochrana-ebooku)
-
-💡 **Tip:** Správná ochrana pomůže **zabránit zneužití** a zároveň **zachovat pohodlný přístup pro zákazníky**. [Najdete zde](/article/146-ochrana-ebooku)
+Možnosti a omezení popisuje samostatný návod <a href="/article/146-ochrana-ebooku" target="_blank" rel="noopener">**Ochrana e-booku**</a>.
 :::
+
+
+**Na závěr ověřte:** správnou sadu u formuláře, typ zprávy, doplnění symbolů a skutečné doručení. Pokud e-mail obsahuje soubor, otevřete také jeho odkaz a zkontrolujte, že vede na správný dokument.

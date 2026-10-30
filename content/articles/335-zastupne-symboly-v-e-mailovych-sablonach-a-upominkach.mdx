@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach
 order: 282
-updatedAt: 2026-10-29T12:03:01.305375Z
+updatedAt: 2026-10-30T08:57:32.216760Z
 legacyAnchors:
   - id: Nejdve-zvolte-kam-chcete-symbol-vloit-NJ6gB
     tag: h2
@@ -90,6 +90,8 @@ legacyAnchors:
     headingIndex: 14
 ---
 Zástupný symbol při odeslání e-mailu nahradí konkrétním údajem z faktury, objednávky, platby, zákazníka nebo produktu. Použijete jej v předmětu i obsahu e-mailové šablony nebo upomínky.
+
+Nastavení sad a pravidla odesílání zpráv popisuje návod <a href="/article/17-sablony-zprav" target="_blank" rel="noopener">Odesílání e-mailů z FAPI přes šablony zpráv</a>.
 
 ## Nejdříve zvolte, kam chcete symbol vložit
 
@@ -207,11 +209,11 @@ Jednoduchý symbol může být přímo ve větě: `Děkujeme za objednávku č. 
 -   `{subscriptionId}`        – ID předplatného
 -   `{subscriptionQrCode}`        – QR kód předplatného
 
-Produktové soubory se přes `{items}` a `{itemsList}` zpřístupní jen u zaplacené, nestornované objednávky a zakoupeného produktu s kladným množstvím. Symbol vložte **přímo do těla e-mailu**, nikoli do pole URL odkazu. Odkazy můžete doručit běžným **E-mailem při zaplacení objednávky** bez další akce. Postup najdete v návodu [Odesílání e-booků a dalších souborů](/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem). Nezaměňujte je se soubory vloženými přímo do šablony pomocí `{file:<ID>}` ani se symboly děkovací stránky.
+Produktové soubory se přes `{items}` a `{itemsList}` zpřístupní jen u zaplacené, nestornované objednávky a zakoupeného produktu s kladným množstvím. Symbol vložte **přímo do těla e-mailu**, nikoli do pole URL odkazu. Odkazy můžete doručit běžným **E-mailem při zaplacení objednávky** bez další akce. Postup najdete v návodu <a href="/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem" target="_blank" rel="noopener">Odesílání e-booků a dalších souborů</a>. Nezaměňujte je se soubory vloženými přímo do šablony pomocí `{file:<ID>}` ani se symboly děkovací stránky.
 
 ## Podmíněný obsah
 
-Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte. Kód produktu najdete ve FAPI v nabídce **Prodej → [Produkty](https://web.fapi.cz/templates/items?projectId=all)** v levém sloupci **Kód**.
+Místo `<kód_produktu>`        vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte. Kód produktu najdete ve FAPI v nabídce **Prodej → <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a>** v levém sloupci **Kód**.
 
 ![Zástupné symboly v e-mailových šablonách a upomínkách](/assets/articles/9b00647553fd1740.png)
 
