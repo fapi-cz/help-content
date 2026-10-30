@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/17-sablony-zprav
 order: 3
-updatedAt: 2026-10-29T12:03:01.305375Z
+updatedAt: 2026-10-30T08:15:27.794Z
 legacyAnchors:
   - id: Jak-funguj-ablony-zprv-cqrkZ
     tag: h2
@@ -140,6 +140,7 @@ legacyAnchors:
     text: "Další užitečné téma: Ochrana e-booku"
     occurrence: 0
     headingIndex: 24
+redirects: []
 ---
 **FAPI** za vás dokáže **automaticky komunikovat** se zákazníky prostřednictvím **e-mailů nebo SMS**. Tyto zprávy můžete využít pro:
 
@@ -161,19 +162,15 @@ buď **Jednu sadu šablon pro všechny faktury**,
 
 nebo **Jednu sadu pro první fakturu a jinou pro pravidelné faktury** (např. u předplatného).
 
-
-
 <Video src="https://www.youtube.com/embed/sx8553flG24" />
 
 ## **Nastavení šablon zpráv**
 
 **Najdete je v nabídce:** [**PRODEJ → Šablony zpráv**](https://web.fapi.cz/message-template-sets/?projectId=all)
 
-Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv**, které obsahují univerzální texty. Doporučujeme je však přizpůsobit **vaší značce a stylu komunikace**.
+Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv**, která obsahuje univerzální texty pro každý typ emailu. Doporučujeme je však přizpůsobit **vaší značce a stylu komunikace**.
 
 💡 **Tip:** Pokud potřebujete různé texty pro různé formuláře, **vytvořte specifické sady** a pojmenujte je podle prodejních formulářů. Snadno si tak udržíte přehled!
-
-
 
 ![Odesílání emailů z FAPI přes Šablony zpráv](/assets/articles/23ddd441fdda6a02.png)
 
@@ -184,7 +181,9 @@ Při úvodním nastavení můžete použít **Výchozí sadu šablon zpráv**, k
 
 Zprávy se posílají na základě **sady šablon**, která je přiřazena v **nastavení prodejního formuláře**.
 
-📍 **Najdete ji v:** **Prodejní formulář → záložka Akce → pole „ŠABLONY ZPRÁV“**.
+📍 **Najdete ji v:** **Prodejní formulář → 4. krok Akce → pole „ŠABLONY ZPRÁV“**.
+
+<img height="256" width="471" src="/assets/uploads/23a499fe37e5165710901060.webp" />
 
 ### **2️⃣ Ručně vystavené faktury**
 
@@ -199,20 +198,40 @@ Standardně se zprávy posílají podle **Výchozí sady šablon zpráv**.
 
 V sadě šablon lze použít následující typy šablon:
 
--   E-mail při vystavení objednávky
--   E-mail při zaplacení objednávky
--   E-mail k vystavenému dokladu
--   E-mail při automatickém stržení platby z karty
--   E-mail při stornování objednávky
--   Vlastní e-mailová šablona
--   SMS při vystavení objednávky
--   SMS při zaplacení objednávky
--   SMS k vystavenému dokladu
--   SMS při automatickém stržení platby z karty
--   SMS při stornování objednávky
--   Vlastní SMS šablona
+- E-mail při vystavení objednávky
+- E-mail při zaplacení objednávky
+- E-mail k vystavenému dokladu
+  - Daňový doklad (a pro 1. splátku)
+  - Zálohová faktura ( pro 1. splátku)
+  - Daňový doklad pro 2. a další splátku (pouze pro splátky)
+  - Zálohová faktura pro 2. a další splátku (pouze pro splátky)
+  - Doklad o přijetí platby
+  - Opravný daňový doklad
+- E-mail při automatickém stržení platby z karty
+  - Při vystavení faktury před automatickým stržením
+  - Při úspěšném stržení platby z karty
+  - Při neúspěšném stržení platby z karty
+  - Při přesunutí pokusu o stržení na další den
+- E-mail při stornování objednávky
+- Vlastní e-mailová šablona
+- SMS při vystavení objednávky
+- SMS při zaplacení objednávky
+- SMS k vystavenému dokladu
+  - Daňový doklad (a pro 1. splátku)
+  - Zálohová faktura ( pro 1. splátku)
+  - Daňový doklad pro 2. a další splátku (pouze pro splátky)
+  - Zálohová faktura pro 2. a další splátku (pouze pro splátky)
+  - Doklad o přijetí platby
+  - Opravný daňový doklad
+- SMS při automatickém stržení platby z karty
+  - Při vystavení faktury před automatickým stržením
+  - Při úspěšném stržení platby z karty
+  - Při neúspěšném stržení platby z karty
+  - Při přesunutí pokusu o stržení na další den
+- SMS při stornování objednávky
+- Vlastní SMS šablona
 
-:::caution
+:::info
 ## **Typy šablon a jejich použití ve FAPI**
 
 Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kdy a za jakých podmínek** se e-mail odešle.
@@ -221,9 +240,9 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 ✔ **Tzv. transakční emaily** mají **pevně dané použití**, které odpovídá jejich názvu. **Odesílají se automaticky, jejich odeslání není potřeba nastavovat.**
 
--   E-mail při vystavení objednávky
--   E-mail při zaplacení objednávky
--   E-mail k vystavenému dokladu
+- E-mail při vystavení objednávky
+- E-mail při zaplacení objednávky
+- E-mail k vystavenému dokladu
 
 ✔ **Tzv. vlastní šablony** lze použít **pouze přes** [**AKCE**](/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla) **definované v prodejním formuláři**.
 
@@ -234,12 +253,13 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 ## **1️⃣ E-mail/SMS při vystavení objednávky**
 
-📩 Odesílá se automaticky **hned po odeslání objednávkového formuláře**.
+📩 Odesílá se automaticky **hned po odeslání objednávkového formuláře**, resp. při potvrzení objednávky v prodejním formuláři.
 
 📎 Příloha e-mailu závisí na nastavení prodejního formuláře:
 
--   **Zálohová faktura** (pokud je aktivní volba _Vystavovat zálohové faktury_).
--   **Faktura/daňový doklad** (pokud zálohové faktury nejsou aktivní).
+- **Zálohová faktura** (pokud je aktivní volba _Vystavovat zálohové faktury_).
+- **Faktura/daňový doklad** (pokud zálohové faktury nejsou aktivní).
+- **Zjednodušený daňový doklad** (podle sběru údajů o klientovi).
 
 ## **2️⃣ E-mail/SMS při zaplacení objednávky**
 
@@ -247,7 +267,9 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 📎 Příloha e-mailu: **Faktura/daňový doklad**.
 
+:::tip
 💡 **Tip:** Tato šablona je ideální pro zasílání **odkazu na digitální produkt** (např. e-book).
+:::
 
 ## **3️⃣ E-mail/SMS k vystavenému dokladu**
 
@@ -255,12 +277,12 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 📎 Připojený dokument závisí na typu dokladu:
 
--   **Zálohová faktura** (včetně pro 1. splátku)
--   **Daňový doklad** (včetně pro 1. splátku)
--   **Zálohová faktura** pro 2. a další splátky
--   **Daňový doklad** pro 2. a další splátky
--   **Doklad o přijetí platby**
--   **Opravný daňový doklad**
+- **Zálohová faktura** (včetně pro 1. splátku)
+- **Daňový doklad** (včetně pro 1. splátku)
+- **Zálohová faktura** pro 2. a další splátky
+- **Daňový doklad** pro 2. a další splátky
+- **Doklad o přijetí platby**
+- **Opravný daňový doklad**
 
 :::danger
 💡 **Tip a upozornění** Hodí se například při prodeji na **splátky** nebo pokud vystavujete další doklady během prodejního procesu. **U splátek se rovněž odešle email při vystavení objednávky.**
@@ -272,8 +294,9 @@ Typ šablony určuje, **jakým způsobem s ní FAPI pracuje**, především **kd
 
 📍 Možné využití:
 
--   **Odeslání odkazu na digitální produkt po zaplacení**.
--   **Výzva expedičnímu oddělení k odeslání fyzického produktu**.
+- Odeslání odkazu na digitální produkt po zaplacení.
+- Výzva expedičnímu oddělení k odeslání fyzického produktu.
+- Vlastní upozornění na podporu
 
 ## **5️⃣ SMS šablony**
 
@@ -288,13 +311,13 @@ Chcete posílat SMS zprávy z FAPI? Nejprve je potřeba nastavit propojení se s
 
 ### **1️⃣ Nastavení propojení se SMS službou**
 
-Přejděte do **Nastavení → Propojení aplikací**.
+Přejděte do <a href="https://web.fapi.cz/settings/connections?projectId=all" target="_blank" rel="noopener">**Nastavení → Propojení aplikací**</a>.
 
 Propojte FAPI s jednou z podporovaných služeb:
 
--   **GoSMS**
--   **BulkGate**
--   **SMSbrána.cz**
+- **GoSMS**
+- [**BulkGate**](https://portal.bulkgate.com/join/55302)
+- **SMSbrána.cz**
 
 ### **2️⃣ Povolení odesílání SMS**
 
@@ -315,7 +338,11 @@ Přejděte do [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/sett
 
 ✔ **Přepněte do režimu HTML** (tlačítko **Zdroj**) a upravte vzhled e-mailu přímo pomocí **HTML kódu**.
 
+:::tip
 💡 **Tip:** HTML umožňuje přidat **tučné písmo, barvy, odkazy, obrázky** a další prvky pro atraktivnější vzhled e-mailů.
+:::
+
+<img height="502" width="521" src="/assets/uploads/cf17bc38c0c8650d7cf666e7.webp" />
 
 **Zástupné symboly pro personalizaci zpráv ve FAPI**
 
@@ -355,21 +382,21 @@ Přejděte do [**Nastavení → Notifikace a reporty**](https://web.fapi.cz/sett
 
 1️⃣ **Přímé vypsání URL adresy**
 
--   Například: `https://www.seznam.cz`  
--   Nevýhoda: **Dlouhé odkazy mohou působit neesteticky.**
+- Například: [`https://www.seznam.cz`](https://www.seznam.cz)  
+- Nevýhoda: **Dlouhé odkazy mohou působit neesteticky.**
 
 2️⃣ **Vložení zástupného symbolu**
 
--   Například `{pdf}`   vloží odkaz na **stažení faktury**.
--   Hodí se pro **automatické generování odkazů**.
+- Například `{pdf}`   vloží odkaz na **stažení faktury**.
+- Hodí se pro **automatické generování odkazů**.
 
 3️⃣ **Převedení části textu na odkaz** ✅ _Doporučený způsob_
 
--   **Označte část textu** a klikněte na tlačítko **„Odkaz“** (ikona řetězu v nástrojové liště).
--   Například: [**Zaplatit objednávku**](https://www.platebni-brana.cz/)
--   **Výhoda:** Odkaz vypadá **lépe a je přehlednější**.
+- **Označte část textu** a klikněte na tlačítko **„Odkaz“** (ikona řetězu v nástrojové liště).
+- Například: [**Zaplatit objednávku**](https://www.platebni-brana.cz/)
+- **Výhoda:** Odkaz vypadá **lépe a je přehlednější**.
 
-:::caution
+:::tip
 💡 **Tip:** Pro odkazy na platební brány nebo stažení souborů **vždy používejte možnost převedení textu na odkaz** – zlepšuje čitelnost a profesionální vzhled e-mailu.
 :::
 
@@ -412,8 +439,6 @@ Následující možnost přidává soubor **přímo do šablony zprávy**, nikol
 4️⃣ Při odeslání e-mailu se zástupný symbol **automaticky nahradí odkazem na stažení souboru**.
 
 Pokud používáte **Vlastní e-mailovou šablonu**, její odeslání nastavte akcí v prodejním formuláři. U šablony typu **E-mail při zaplacení objednávky** další akci na odeslání nenastavujete.
-
-
 
 :::caution
 💡 **Tip:** Odeslání zprávy a stažení souboru ověřujte zvlášť. U souboru přidaného k produktu závisí dostupnost také na zaplacení objednávky a na tom, že není stornovaná.
