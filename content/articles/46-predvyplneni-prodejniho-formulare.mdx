@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/46-predvyplneni-prodejniho-formulare
 order: 53
-updatedAt: 2026-10-30T07:22:31Z
+updatedAt: 2026-10-30T10:53:31.119Z
 legacyAnchors:
   - id: Jak-daje-lze-pedvyplnit-AsyKv
     tag: h2
@@ -38,12 +38,11 @@ legacyAnchors:
     text: Zrušení předvyplnění prvního produktu
     occurrence: 0
     headingIndex: 4
+redirects: []
 ---
 V určitých případech může být užitečné automaticky předvyplnit vybraná pole prodejního formuláře FAPI na webové stránce konkrétními údaji klienta.
 
-Jednou z možností jsou parametry v URL adrese stránky s prodejním formulářem. Vkládejte je do adresy stránky, ne do URL vkládaného skriptu. Pro vlastní JavaScript můžete použít také [programové předvyplnění](#Programov-vyplnn-prodejnho-formule-3XsdG).
-
-
+Jednou z možností jsou parametry v URL adrese stránky s prodejním formulářem. Vkládejte je do adresy stránky, ne do URL vkládaného skriptu. Pro vlastní JavaScript můžete použít také programové předvyplnění.
 
 **Celý videonávod máte k dispozici zde:**
 
@@ -57,23 +56,23 @@ Výsledek předvyplnění ověřujte na stránce s vloženým formulářem, ne p
 
 Pro předvyplnění prodejního formuláře je možné použít následující parametry:
 
--   **fapi-form-name=** (Jméno)
--   **fapi-form-surname=** (Příjmení)
--   **fapi-form-email=** (E-mailová adresa)
--   **fapi-form-mobil**\= (Mobil)
--   **fapi-form-street**\= (Ulice)
--   **fapi-form-city=** (Město)
--   **fapi-form-postcode=** (PSČ)
--   **fapi-form-state=** (Stát)
--   **fapi-form-company**\= (Firma)
--   **fapi-form-ic**\= (IČ)
--   **fapi-form-dic=** (DIČ)
--   **fapi-form-notes=** (Poznámka)
--   **fapi-form-discountCode=** (Slevový kód)
--   **fapi-form-customField-\{id\}** (Vlastní pole)
--   **fapi-form-item-\{product\_code\}=1** (předvybrání /=1/ nebo vypnutí /=0/ označení produktu) 
--   **fapi-form-item-count-\{product\_code\}=10** (Nastavení počet produktů k zakoupení, pouze v případě že se ve formuláři dá počet zakoupených produktů měnit) 
--   **fapi-form-repayment=1** (předvybrání /=1/ nebo vypnutí /=0/ splátek)
+- **fapi-form-name\=** (Jméno)
+- **fapi-form-surname\=** (Příjmení)
+- **fapi-form-email\=** (E-mailová adresa)
+- **fapi-form-mobil**\= (Mobil)
+- **fapi-form-street**\= (Ulice)
+- **fapi-form-city\=** (Město)
+- **fapi-form-postcode\=** (PSČ)
+- **fapi-form-state\=** (Stát)
+- **fapi-form-company**\= (Firma)
+- **fapi-form-ic**\= (IČ)
+- **fapi-form-dic\=** (DIČ)
+- **fapi-form-notes\=** (Poznámka)
+- **fapi-form-discountCode\=** (Slevový kód)
+- **fapi-form-customField-\{id}** (Vlastní pole)
+- **fapi-form-item-\{product_code}\=1** (předvybrání /\=1/ nebo vypnutí /\=0/ označení produktu) 
+- **fapi-form-item-count-\{product_code}\=10** (Nastavení počet produktů k zakoupení, pouze v případě že se ve formuláři dá počet zakoupených produktů měnit) 
+- **fapi-form-repayment\=1** (předvybrání /\=1/ nebo vypnutí /\=0/ splátek)
 
 :::caution
 Předvyplněný slevový kód se automaticky aktivuje, takže v objednávkovém formuláři se zobrazuje cena se započtením slevy.
@@ -97,7 +96,7 @@ Parametry se připojují na konec URL adresy pomocí znaku "?". Pokud je v ad
 
 ## Příklady použití
 
-Předvyplnění e-mailové adresy, jména a příjmení klienta a poznámky (Jan Malý, jan.maly@seznam.cz, VIP):
+Předvyplnění e-mailové adresy, jména a příjmení klienta a poznámky (Jan Malý, [jan.maly@seznam.cz](mailto\:jan.maly@seznam.cz), VIP):
 
 ```text
 ?fapi-form-email=jan.maly@seznam.cz&fapi-form-name=Jan&fapi-form-surname=Malý&fapi-form-notes=VIP
