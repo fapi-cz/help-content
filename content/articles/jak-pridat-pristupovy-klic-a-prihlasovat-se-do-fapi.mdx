@@ -1,0 +1,120 @@
+---
+title: Jak přidat přístupový klíč a přihlašovat se do FAPI
+url: /article/jak-pridat-pristupovy-klic-a-prihlasovat-se-do-fapi
+description: Přidejte si ve FAPI přístupový klíč a přihlašujte se otiskem prstu, obličejem nebo PINem zařízení. Postup přidání, přihlášení, odebrání i řešení potíží.
+category: Nastavení
+categorySlug: 5-nastaveni
+categorySlugs:
+  - 5-nastaveni
+keywords:
+  - přístupový klíč
+  - passkey
+  - přihlášení bez hesla
+  - otisk prstu
+  - PIN
+  - přihlášení
+order: 308
+updatedAt: 2026-10-30T10:41:52.130Z
+redirects: []
+---
+Přístupový klíč (passkey) vám umožní přihlásit se do FAPI **otiskem prstu, rozpoznáním obličeje nebo PINem zařízení**, bez zadávání hesla do FAPI při každém přihlášení. Nejprve si klíč přidáte ke svému přihlášení a při další návštěvě zvolíte **Použít přístupový klíč**.
+
+Přístupový klíč pro přihlášení není API klíč pro propojení aplikací. Pokud hledáte ten, pokračujte návodem [Jak získat API klíč](/article/128-jak-ziskat-api-klic).
+
+**V návodu najdete:**
+
+- [Co potřebujete předem](#nez-zacnete)
+- [Jak přidat přístupový klíč](#pridani-klice)
+- [Jak se klíčem přihlásit](#prihlaseni-klicem)
+- [Správu a odebrání klíče](#sprava-klicu)
+- [Co dělat, když přihlášení nefunguje](#potize)
+
+<h2 id="nez-zacnete">Než začnete</h2>
+
+Připravte si:
+
+- Přístup do svého účtu FAPI a **současné heslo do FAPI**. To je potřeba pro potvrzení přidání i odebrání klíče. Pokud se zatím přihlašujete jen přes externí službu a heslo nemáte, nejprve si ho nastavte v **Můj účet →** [Přihlášení a heslo](https://web.fapi.cz/account-settings/).
+- Zařízení a prohlížeč s podporou přístupových klíčů. FAPI otevírejte přes zabezpečenou adresu [**https://web.fapi.cz**.](https://web.fapi.cz.)
+- Možnost potvrdit svou totožnost způsobem, který zařízení nabídne — například otiskem prstu, obličejem nebo PINem. Biometrie není jediná možnost.
+
+:::caution
+Klíč přidávejte pouze na zařízení, kterému důvěřujete. Každý, kdo může zařízení nebo úložiště klíče odemknout, může použít i uložený přístupový klíč. Heslo do FAPI ani PIN zařízení nikomu neposílejte.
+:::
+
+<h2 id="pridani-klice">Jak přidat přístupový klíč</h2>
+
+1. Přihlaste se do FAPI dosavadním způsobem.
+2. Vpravo nahoře otevřete **Můj účet** a přejděte na [Přihlášení a heslo](https://web.fapi.cz/account-settings/).
+3. V části **Přístupové klíče** klikněte na [Spravovat přístupové klíče](https://web.fapi.cz/passkey/).
+
+![Sekce Přístupové klíče v nastavení přihlášení s vyznačeným tlačítkem Spravovat přístupové klíče.](/assets/passkeys/passkey-sprava.png)
+
+1. Do pole **Název přístupového klíče** napište vlastní označení, podle kterého klíč později poznáte, například „Pracovní notebook“. Název může mít nejvýše 100 znaků.
+2. Do pole **Současné heslo** zadejte své heslo do FAPI — nikoli PIN zařízení.
+3. Klikněte na **Přidat přístupový klíč**.
+
+![Formulář pro přidání klíče s vyznačeným názvem, současným heslem a tlačítkem Přidat přístupový klíč.](/assets/passkeys/passkey-pridani.png)
+
+[Zobrazit formulář v plném rozlišení](/assets/passkeys/passkey-pridani.png)
+
+1. Dokončete vytvoření klíče v dialogu prohlížeče nebo zařízení. Pokud vám nabídne více míst uložení, vyberte, kam chcete klíč uložit, a potvrďte vytvoření způsobem, který zařízení nabídne. Podoba dialogu a dostupné možnosti se liší podle zařízení, prohlížeče a správce klíčů.
+2. Po dokončení zkontrolujte, že je klíč uvedený v přehledu ve FAPI pod zvoleným názvem. Dokud se jím poprvé nepřihlásíte, u posledního přihlášení uvidíte **Zatím nepoužit**.
+
+:::note
+Klíče patří k vašemu přihlášení a fungují pro všechny účty FAPI, které s ním máte propojené. Pro každý propojený účet proto nemusíte vytvářet další klíč.
+:::
+
+<h2 id="prihlaseni-klicem">Jak se přihlásit přístupovým klíčem</h2>
+
+1. Na zařízení, kde máte klíč dostupný, otevřete [přihlášení do FAPI](https://web.fapi.cz/sign/in).
+2. Klikněte na **Použít přístupový klíč**. E-mailovou adresu ani heslo do FAPI předem vyplňovat nemusíte.
+
+![Přihlašovací formulář FAPI s vyznačeným tlačítkem Použít přístupový klíč pod běžným přihlášením heslem.](/assets/passkeys/passkey-prihlaseni.png)
+
+[Zobrazit přihlášení v plném rozlišení](/assets/passkeys/passkey-prihlaseni.png)
+
+1. V nabídce prohlížeče nebo zařízení vyberte svůj klíč pro FAPI. Pokud je nabídnuto více přihlášení, zvolte to, které chcete použít.
+2. Potvrďte přihlášení například otiskem prstu, obličejem nebo PINem zařízení. Po úspěšném ověření se otevře FAPI.
+3. V **Můj účet → Přihlášení a heslo →** [Spravovat přístupové klíče](https://web.fapi.cz/passkey/) můžete zkontrolovat údaj **Poslední přihlášení** u použitého klíče.
+
+**Přihlášení heslem zůstává dostupné.** Když klíč nemáte po ruce, použijte na stejné přihlašovací stránce pole **E-mailová adresa**, **Heslo** a tlačítko **Přihlásit se**.
+
+<h2 id="sprava-klicu">Správa a odebrání přístupových klíčů</h2>
+
+Ve [správě přístupových klíčů](https://web.fapi.cz/passkey/) najdete u každého klíče **Název**, datum **Vytvořeno** a **Poslední přihlášení**. Další klíč přidáte stejným postupem jako první, například pro jiné zařízení nebo úložiště.
+
+Pokud jste zařízení ztratili nebo klíč už nechcete používat:
+
+1. Přihlaste se do FAPI heslem nebo jiným dostupným klíčem.
+2. Otevřete **Můj účet → Přihlášení a heslo →** [Spravovat přístupové klíče](https://web.fapi.cz/passkey/).
+3. V části **Odebrat přístupový klíč** vyberte v poli **Klíč k odebrání** příslušný klíč.
+4. Zadejte **Současné heslo** do FAPI a klikněte na **Odebrat přístupový klíč**.
+5. Zkontrolujte potvrzení **Přístupový klíč byl odebrán.** a to, že klíč už v přehledu není.
+
+:::caution
+Odebráním zrušíte přístup tohoto klíče do FAPI i ze zařízení, do kterých se synchronizoval. Přihlášení heslem zůstane dostupné. Odebrání ve FAPI nemaže uloženou položku ze správce klíčů vašeho zařízení.
+:::
+
+<h2 id="potize">Když přidání nebo přihlášení nefunguje</h2>
+
+### Tlačítko pro přístupový klíč se nezobrazuje
+
+Zkontrolujte, že jste na [**https://web.fapi.cz**](https://web.fapi.cz) a používáte prohlížeč s podporou přístupových klíčů. V nepodporovaném prostředí FAPI tlačítko pro přihlášení klíčem nezobrazí; ve správě klíčů ukáže upozornění na potřebný prohlížeč a zabezpečené připojení. Pro přihlášení můžete použít heslo.
+
+### Dialog jste zavřeli nebo vypršela jeho platnost
+
+Spusťte přidání nebo přihlášení znovu a dokončete potvrzení v dialogu zařízení. Při přidávání znovu zadejte současné heslo do FAPI.
+
+### FAPI hlásí, že na zařízení už klíč máte
+
+Pro přihlášení použijte existující klíč. Pokud chcete přidat další, použijte jiné zařízení nebo úložiště klíčů, které vám prohlížeč nabídne.
+
+### Na jiném zařízení svůj klíč nevidím
+
+Dostupnost klíče na dalším zařízení závisí na zvoleném úložišti, jeho synchronizaci a nabídce prohlížeče. Přihlaste se heslem a podle potřeby přidejte další klíč přímo na tomto zařízení.
+
+### Nemám klíč ani si nepamatuji heslo
+
+Na [přihlašovací stránce](https://web.fapi.cz/sign/in) použijte "**Zapomenuté heslo?"**. Pokud se přesto do účtu nedostanete, <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">kontaktujte podporu FAPI</a> a popište, ve kterém kroku postup končí. Neposílejte heslo, PIN ani snímek obsahující tajné údaje.
+
+Po úspěšném přidání klíč uvidíte v přehledu a při příštím přihlášení ho vyberete přes **Použít přístupový klíč**. Heslo do FAPI si ponechte jako záložní způsob přístupu.
