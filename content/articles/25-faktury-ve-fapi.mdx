@@ -13,7 +13,7 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/25-faktury-ve-fapi
 order: 16
-updatedAt: 2026-07-13T09:39:41Z
+updatedAt: 2026-10-31T08:18:35Z
 ---
 Jednou z klíčových funkcí FAPI je vystavování prodejních dokladů - _faktur_. Tak jako prodejní proces může mít mnoho různých podob, může se výrazně lišit i typ, obsah a vzhled vystavovaných faktur.
 
@@ -49,9 +49,21 @@ Pro neplátce DPH nemá vystavování dokladů o přijetí platby žádný prak
 
 Ve FAPI se doklad o přijetí platby vystavuje automaticky ihned po zaplacení objednávky - platbě prostřednictvím platební brány nebo stažení údajů o platbě pomocí importu plateb z banky.
 
-Vystavování dokladů o přijetí platby se aktivuje pro celý účet FAPI pomocí volby **Vystavovat doklady o přijetí platby** v nabídce **Nastavení - Nastavení fakturace**.
+U objednávek z prodejního formuláře nastavujete vystavování dokladů o přijetí platby **v každém formuláři zvlášť**, nikoli jednou pro celý účet.
 
-![Doklady / Faktury ve FAPI](/assets/articles/37b40acadba1bc32.png)
+1. V nabídce **Prodej → [Prodejní formuláře](https://web.fapi.cz/forms/?projectId=all)** klikněte u příslušného formuláře na **Upravit**.
+2. Otevřete **3. krok – Platba, doprava a fakturace** a sekci **Nastavení fakturace**.
+3. Při zapnuté volbě **Vystavovat zálohové faktury** můžete zaškrtnout **Vystavovat doklady o přijetí platby**. Pokud je vystavovat nechcete, zaškrtnutí zrušte.
+
+![V nastavení fakturace je zapnuté vystavování zálohových faktur a vypnuté vystavování dokladů o přijetí platby](/assets/articles/form-payment-confirmation-setting-20261031.png)
+
+[Zobrazit detail nastavení v plném rozlišení](/assets/articles/form-payment-confirmation-setting-20261031.png)
+
+4. Klikněte na **Uložit formulář**. Po opětovném otevření formuláře zkontrolujte uloženou volbu.
+
+![Tlačítko Uložit formulář pro potvrzení změny nastavení](/assets/articles/form-save-setting-20261031.png)
+
+Pokud chcete po přijetí platby odložit vystavení vyúčtovací faktury, navazuje návod [Odložené vystavení vyúčtovací faktury](/article/69-odlozene-vystaveni-vyuctovaci-faktury).
 
 ### Faktura/daňový doklad
 
