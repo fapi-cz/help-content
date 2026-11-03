@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/338-zastupne-symboly-v-e-mailech-a-dekovaci-strance
 order: 285
-updatedAt: 2026-11-03T13:19:06.965Z
+updatedAt: 2026-11-03T14:07:37.986Z
 legacyAnchors:
   - id: Nejdve-zvolte-kam-chcete-symbol-vloit-0Uy2U
     tag: h2
@@ -442,7 +442,7 @@ FAPI zde objednávku zná automaticky. Nepřidávejte proto SDK script ani ident
 - `{qrCodePath}}` – identifikátor platebního QR kódu
 - `{{qrCodeUrl}}` – URL platebního QR kódu
 
-### Podmíněné bloky platbu v děkovací stránce
+### Podmíněné bloky pro platbu v děkovací stránce
 
 - `{{ifCash}}...{{/ifCash}}` – pouze pro platbu v hotovosti
 - `{{ifWire}}...{{/ifWire}}` – pouze pro platbu bankovním převodem
@@ -485,7 +485,7 @@ Index je číslovaný od nuly: první položka používá index `0` , druhá in
 
 Místo `<kód_produktu>` vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte.
 
-Kód produktu najdete ve FAPI v nabídce **Prodej →** [Produkty](https://web.fapi.cz/templates/items?projectId=all) v levém sloupci **Kód**.
+Kód produktu najdete ve FAPI v nabídce **Prodej →** <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a> v levém sloupci **Kód**.
 
 ![Zástupné symboly v e-mailech a děkovací stránce](/assets/articles/9b00647553fd1740.png)
 
@@ -609,7 +609,7 @@ JSON symboly využijete hlavně tehdy, pokud s daty dál pracujete technicky, na
 
 Vlastní externí děkovací stránka není interní děkovací stránka FAPI.
 
-Pokud používáte vlastní děkovací stránku přes `thanks_url`      , musí být splněné podmínky pro načtení dat objednávky. Bez nich se zástupné symboly nenahradí.
+Pokud používáte vlastní děkovací stránku přes `thanks_url` , musí být splněné podmínky pro načtení dat objednávky. Bez nich se zástupné symboly nenahradí.
 
 ## Co je potřeba
 
