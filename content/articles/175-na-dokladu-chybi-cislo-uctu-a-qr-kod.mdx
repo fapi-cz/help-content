@@ -1,7 +1,7 @@
 ---
 title: Na dokladu chybí číslo účtu a/nebo QR kód
 url: /article/175-na-dokladu-chybi-cislo-uctu-a-qr-kod
-description: "Na doklady FAPI tiskne automaticky platební údaje, pokud je máte v nastavení uvedené. Na fakturu se tisknou: číslo účtu IBAN SWIFT QR kód Pro každou měnu, ve kt"
+description: Zkontrolujte bankovní údaje pro měnu dokladu a podmínky vytvoření QR kódu. U starší faktury ověřte údaje uložené přímo na dokladu.
 category: Často kladené dotazy (FAQ)
 categorySlug: 105-casto-kladene-dotazy-faq
 categorySlugs:
@@ -13,54 +13,49 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/175-na-dokladu-chybi-cislo-uctu-a-qr-kod
 order: 124
-updatedAt: 2026-07-13T10:59:50Z
+updatedAt: 2026-11-03T14:43:45.019Z
+redirects: []
 ---
-Na doklady FAPI tiskne automaticky platební údaje, pokud je máte v nastavení uvedené. Na fakturu se tisknou:
+Bankovní údaje ověřte pro **měnu konkrétního dokladu**. Na faktuře se mohou zobrazit:
 
--   číslo účtu
--   IBAN
--   SWIFT
--   QR kód
+- číslo účtu
+- IBAN
+- SWIFT
+- QR kód, pokud je pro daný doklad dostupný vhodný formát
 
-Pro každou měnu, ve které prodáváte, je potřeba mít tyto údaje uvedené v Nastavení \> [Způsoby platby](https://web.fapi.cz/settings/importers?projectId=all). Pokud prodáváte v měně CZK a EUR, je potřeba mít vyplněné účty pro obě měny:
+Pro každou měnu, ve které prodáváte, nastavte bankovní účet v Nastavení > <a href="https://web.fapi.cz/settings/importers?projectId=all" target="_blank" rel="noopener">Způsoby platby</a>. Pokud prodáváte v měně CZK a EUR, je potřeba mít vyplněné účty pro obě měny:
 
-![Na dokladu chybí číslo účtu a/nebo QR kód](/assets/articles/f37cfa10d5c9f250.png)
+![Způsoby platby: výběr měny a bankovní údaje](/assets/articles/qr-bank-settings-20261101.png)
+
+<a href="/assets/articles/qr-bank-settings-20261101.png" target="_blank" rel="noopener">Zobrazit bankovní nastavení v plném rozlišení</a>.
 
 Účty pro jednotlivé měny mohou být stejné, nebo se mohou lišit.
 
-
-
-Přidání nové měny a údajů o daném bankovním účtu provedete kliknutím na zelené tlačítko Přidat.
-
-![Na dokladu chybí číslo účtu a/nebo QR kód](/assets/articles/40da32dfb8e2d849.png)
+Pro další měnu použijte tlačítko **Přidat**, vyplňte její bankovní údaje a nastavení **uložte**. Podrobný postup najdete v nápovědě <a href="/article/280-jak-na-zmenu-bankovniho-uctu" target="_blank" rel="noopener">Nastavení a změna bankovního účtu</a>.
 
 :::danger
 **POZOR:** Pokud používáte jeden účet (vedený např. v měně CZK) pro příjem cizích měn, mějte prosím na paměti, že nebude správně fungovat párování plateb, které jsou v jiné měně, než ve které je vedený daný bankovní účet.
 
-
-
 Většina bank totiž před připsáním platby provede měnovou konverzi (převod cizí měny na měnu účtu) a tím se změní jak měna, tak částka připsané platby.
 
-Přijatá platba ve výpise pak nebude odpovídat částce a měně ve FAPI faktuře a platbu najdete jako nevyřešenou v [seznamu plateb k vyřešení zde.](https://web.fapi.cz/payment/unresolved?projectId=all)
+Přijatá platba ve výpise pak nebude odpovídat částce a měně ve FAPI faktuře a platbu najdete jako nevyřešenou v <a href="https://web.fapi.cz/payment/unresolved?projectId=all" target="_blank" rel="noopener">seznamu plateb k vyřešení zde.</a>
 :::
-
-
 
 ## Na faktuře chybí QR kód
 
+1. Zkontrolujte platný **IBAN** v <a href="https://web.fapi.cz/settings/importers?projectId=all" target="_blank" rel="noopener">Nastavení → Způsoby platby</a>. U SEPA QR kódu musí být vyplněný také **Název účtu**. BIC/SWIFT je pro SEPA účet mimo Evropský hospodářský prostor (EHP) povinný; u účtu v EHP může chybět, ale vyplněná hodnota musí být platná.
+2. Ověřte <a href="/article/351-jak-nastavit-a-pouzivat-qr-kody-ve-fapi" target="_blank" rel="noopener">podmínky formátu platebního QR kódu</a>. Pro jinou než českou nebo slovenskou zemi FAPI nevytváří náhradní český SPAYD. SEPA varianta vyžaduje způsobilou platbu v EUR.
 
+Pokud vhodný QR kód nelze vytvořit, zákazník může platbu zadat ručně podle bankovních údajů na dokladu. Samotné vyplnění IBAN a SWIFT tedy zobrazení QR kódu nezaručuje.
 
-QR kódy FAPI generuje z údajů IBAN a SWIFT, které musíte mít vyplněny u daného účtu ve [Způsobech platby.](https://web.fapi.cz/settings/importers?projectId=all) Po dopsání obou údajů začne FAPI do nových dokladů tisknout QR kód.
+U starší faktury zkontrolujte **údaje uložené přímo na dokladu**, nejen dnešní nastavení účtu. Samotné stažení dříve uloženého PDF nemusí vyvolat jeho nové vygenerování.
 
+1. V přehledu <a href="https://web.fapi.cz/invoice/?projectId=all" target="_blank" rel="noopener">Faktury</a> otevřete konkrétní doklad a zvolte **Upravit**.
+2. Ověřte pole **Název účtu**, **Bankovní účet**, **IBAN** a **BIC/SWIFT**. Pokud je některý údaj chybný, opravte přímo jej.
+3. Klikněte na **Uložit fakturu**, znovu otevřete **PDF** a zkontrolujte platební údaje i QR kód.
 
+![Bankovní údaje uložené přímo na upravované faktuře](/assets/articles/qr-invoice-bank-fields-20261101.png)
 
-Pokud se ani po doplnění IBAN a SWIFT QR kód negeneruje, ověřte zda máte v [Nastavení fakturace](https://web.fapi.cz/settings/?projectId=all) zaškrtnutou možnost "Tisknout QR kód na faktuře".
+<a href="/assets/articles/qr-invoice-bank-fields-20261101.png" target="_blank" rel="noopener">Zobrazit bankovní pole dokladu v plném rozlišení</a>.
 
-
-
-Pro dotisknutí QR kódu nebo doplnění platebních údajů na staré, již dříve vygenerované faktury, je potřeba změnit vygenerovaný PDF výtisk faktury:
-
-1.  jděte do detailu daného dokladu, vyberte možnost UPRAVIT.
-2.  Změňte některý z údajů, který se tiskne na fakturu - datum vystavení, název položky apod. & změnu uložte.
-3.  PDF dané faktury se přegeneruje a doplní se nově zadané údaje o bankovním účtu a QR kódu.
-4.  Pokud potřebujete změněné údaje vrátit (datum posunout zpět na původní), zopakujte bod 2.
+Datum vystavení ani jiné správné údaje neměňte jen kvůli obnovení PDF. Další možnosti a omezení popisuje návod <a href="/article/311-jak-upravit-vystavenou-fakturu-ve-fapi" target="_blank" rel="noopener">Jak upravit vystavenou fakturu ve FAPI</a>.
