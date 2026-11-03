@@ -19,7 +19,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/59-zalozeni-a-integrace-platebni-brany-pays
 order: 24
-updatedAt: 2026-07-13T09:52:57Z
+updatedAt: 2026-11-03T08:20:07.751Z
 legacyAnchors:
   - id: 1-Zaloen-tu-ThePay-u1qV2
     tag: h2
@@ -154,7 +154,7 @@ Zároveň na svůj email, na které máte FAPI registrováno obdržíte email s 
 ![Založení a integrace platební brány Pays ve FAPI](/assets/articles/abb0f8e75cdc78fa.png)
 
 :::caution
-Účet platební brány Pays je funkční a všechny platební metody jsou dostupné hned po založení účtu. Smluvní formality vyřešíte s platební bránou Pays až po založení účtu.
+Úspěšné založení účtu a předvyplnění přístupových údajů ve FAPI nezaměňujte za ověření připravenosti k přijímání plateb. Před spuštěním prodeje si přímo u Pays ověřte aktivaci účtu a dostupnost požadovaných platebních metod.
 :::
 
 
@@ -229,7 +229,11 @@ Změny provedené v nastavení prodejního formuláře uložte tlačítkem **Ul
 
 ![Založení a integrace platební brány Pays ve FAPI](/assets/articles/b421dcfa3013840d.png)
 
-Pokud jste úspěšně došli až sem, gratulujeme! Váš prodejní formulář je nyní propojen s platební bránou Pays a vaši zákazníci vám mohou začít platit online.
+Po uložení má prodejní formulář přiřazené propojení s Pays. Před ostrým prodejem ještě ověřte, že máte u Pays povolené přijímání plateb a požadované platební metody.
+
+:::note
+Propojení Pays ve FAPI nepodporuje automatické strhávání z karty. Pro tento způsob úhrady předplatného vyberte jiné podporované řešení podle návodu [Opakované platby](/article/73-opakovane-platby).
+:::
 
 
 
