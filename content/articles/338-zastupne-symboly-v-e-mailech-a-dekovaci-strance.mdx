@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/338-zastupne-symboly-v-e-mailech-a-dekovaci-strance
 order: 285
-updatedAt: 2026-10-30T11:47:49.829Z
+updatedAt: 2026-11-03T07:30:13Z
 legacyAnchors:
   - id: Nejdve-zvolte-kam-chcete-symbol-vloit-0Uy2U
     tag: h2
@@ -176,6 +176,8 @@ Můžete je použít například v e-mailových šablonách, upomínkách nebo n
 | E-mailová šablona nebo upomínka  | jedna dvojice závorek `{ }`       | `{invoiceNumber}`       |
 | Interní děkovací stránka FAPI    | dvě dvojice závorek `{{ }}`       | `{{number}}`            |
 | Vlastní externí děkovací stránka | dvě dvojice závorek `{{ }}`       | `{{number}}`            |
+
+Výjimkou jsou **produktové podmínky**: i na děkovací stránce používají jednu dvojici závorek, například `{item-EBOOK}...{/item-EBOOK}`.
 
 **Pozor:**
 
@@ -442,7 +444,21 @@ FAPI zde objednávku zná automaticky. Nepřidávejte proto SDK script ani ident
 
 ### Podmíněné bloky platbu v děkovací stránce
 
+- `{{ifCash}}...{{/ifCash}}` – pouze pro platbu v hotovosti
+- `{{ifWire}}...{{/ifWire}}` – pouze pro platbu bankovním převodem
+- `{{ifCreditCard}}...{{/ifCreditCard}}` – pouze pro platbu kartou
 - `{{ifCollectOnDelivery}}...{{/ifCollectOnDelivery}}` – pouze pro dobírku
+- `{{ifSms}}...{{/ifSms}}` – pouze pro platbu SMS
+- `{{ifPaypal}}...{{/ifPaypal}}` – pouze pro platbu přes PayPal
+- `{{ifGopay}}...{{/ifGopay}}` – pouze pro platbu přes GoPay
+- `{{ifWireGopay}}...{{/ifWireGopay}}` – pouze pro bankovní převod přes GoPay
+- `{{ifBitcoin}}...{{/ifBitcoin}}` – pouze pro platbu Bitcoinem
+- `{{ifGpay}}...{{/ifGpay}}` – pouze pro platbu přes Google Pay
+- `{{ifBarter}}...{{/ifBarter}}` – pouze pro barterovou platbu
+- `{{ifApplePay}}...{{/ifApplePay}}` – pouze pro platbu přes Apple Pay
+- `{{ifSkippay}}...{{/ifSkippay}}` – pouze pro platbu přes Skip Pay
+- `{{ifQrCode}}...{{/ifQrCode}}` – pouze pro platbu QR kódem
+- `{{ifKlarna}}...{{/ifKlarna}}` – pouze pro platbu přes Klarna
 - `{{ifNotCollectOnDelivery}}...{{/ifNotCollectOnDelivery}}` – pouze pro platby jiné než dobírka
 
 ## Zákazník
@@ -490,16 +506,18 @@ Například `{{items.0.name}}` vypíše název první zakoupené položky.
 
 ### Podmíněný obsah
 
-- `{{item-<kód_produktu>}}...{{/item-<kód_produktu>}} `– obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
+- `{item-<kód_produktu>}...{/item-<kód_produktu>}` – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem. Produktové bloky mají jednu dvojici závorek; stavové a platební bloky na děkovací stránce mají dvě.
 
 :::info
 **Příklad:**
 :::
 
-Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK` . Číslo `123` v `{file:123}` nahraďte ID souboru připojeného k e-mailové šabloně.
+Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK`. Vložte do něj text určený pro tento produkt.
 
 ```text
-{{item-EBOOK}}<p>Děkujeme za nákup. Odkaz ke stažení e-booku najdete zde: <a href="{file:123}">Stáhnout e-book</a>.</p>{{/item-EBOOK}}
+{item-EBOOK}
+<p>Děkujeme za nákup e-booku.</p>
+{/item-EBOOK}
 ```
 
 ## Ostatní

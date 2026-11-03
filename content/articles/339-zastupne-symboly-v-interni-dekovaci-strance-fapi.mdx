@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/339-zastupne-symboly-v-interni-dekovaci-strance-fapi
 order: 256
-updatedAt: 2026-10-22T09:12:16Z
+updatedAt: 2026-11-03T07:30:13Z
 legacyAnchors:
   - id: Nejdve-zvolte-kam-chcete-symbol-vloit-I2Jdo
     tag: h2
@@ -40,7 +40,7 @@ legacyAnchors:
     headingIndex: 4
   - id: Podmnn-bloky-platbu-v-e-mailech-NKysM
     tag: h3
-    text: Podmíněné bloky platbu v e-mailech
+    text: Přehled platebních bloků
     occurrence: 0
     headingIndex: 5
   - id: Zkaznk-Lq8rK
@@ -118,6 +118,8 @@ Tato nápověda je pro obsah děkovací stránky FAPI v poli `thanks_content`  
 | Interní děkovací stránka FAPI | dvě dvojice závorek | `{{number}}` |
 | E-mailová šablona nebo upomínka | jedna dvojice závorek | `{invoiceNumber}` |
 
+Výjimkou jsou **produktové podmínky**: i na děkovací stránce používají jednu dvojici závorek, například `{item-EBOOK}...{/item-EBOOK}`.
+
 **Pozor:** Interní děkovací stránka není e-mail. Symboly mezi těmito místy nezaměňujte; e-mailový postup popisuje článek [Zástupné symboly v e-mailových šablonách a upomínkách](/article/335-zastupne-symboly-v-e-mailovych-sablonach-a-upominkach).
 
 :::caution
@@ -179,17 +181,17 @@ FAPI zde objednávku zná automaticky. Nepřidávejte proto SDK script ani ident
 
 ### Podmíněné bloky platbu v děkovací stránce
 
--   ### Podmíněné bloky platbu v e-mailech
+### Přehled platebních bloků
 
--   `{{ifCash}}...` `{{/ifCash}}`         – pouze pro platbu v hotovosti
--   `{{` `ifWire}}...{/ifWire}}`         – pouze pro platbu bankovním převodem
--   `{{` `ifCreditCard}}...{/ifCreditCard}}`         – pouze pro platbu kartou
+-   `{{ifCash}}...{{/ifCash}}` – pouze pro platbu v hotovosti
+-   `{{ifWire}}...{{/ifWire}}` – pouze pro platbu bankovním převodem
+-   `{{ifCreditCard}}...{{/ifCreditCard}}` – pouze pro platbu kartou
 -   `{{ifCollectOnDelivery}}...{{/ifCollectOnDelivery}}`         – pouze pro dobírku
 -   `{{ifSms}}...{{/ifSms}}`         – pouze pro platbu SMS
 -   `{{ifPaypal}}...{{/ifPaypal}}`         – pouze pro platbu přes PayPal
 -   `{{ifGopay}}...{{/ifGopay}}`         – pouze pro platbu přes GoPay
 -   `{{ifWireGopay}}...{{/ifWireGopay}}`         – pouze pro bankovní převod přes GoPay
--   `{{ifBitcoin}}...{/ifBitcoin}}`         – pouze pro platbu Bitcoinem
+-   `{{ifBitcoin}}...{{/ifBitcoin}}` – pouze pro platbu Bitcoinem
 -   `{{ifGpay}}...{{/ifGpay}}`         – pouze pro platbu přes Google Pay
 -   `{{ifBarter}}...{{/ifBarter}}`         – pouze pro barterovou platbu
 -   `{{ifApplePay}}...{{/ifApplePay}}`         – pouze pro platbu přes Apple Pay
@@ -222,7 +224,7 @@ Index je číslovaný od nuly: první položka používá index `0`       
 
 Místo `<kód_produktu>`         vložte **kód produktu, nikoli jeho ID**. Velikost písmen se nerozlišuje a bloky nevnořujte.
 
-Kód produktu najdete ve FAPI v kartě Prodej \> Produkty, levý sloupec kód.
+Kód produktu najdete ve FAPI v nabídce **Prodej →** [Produkty](https://web.fapi.cz/templates/items?projectId=all) v levém sloupci **Kód**.
 
 ![Zástupné symboly v děkovací stránce](/assets/articles/9b00647553fd1740.png)
 
@@ -243,7 +245,7 @@ Například `{{items.0.name}}`         vypíše název první zakoupené
 
 ### Podmíněný obsah
 
--   ` {{item-<kód_produktu>}}...{{/item-<kód_produktu>}}  `     – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem.
+-   `{item-<kód_produktu>}...{/item-<kód_produktu>}` – obsah se zobrazí pouze tehdy, když objednávka obsahuje produkt s daným kódem. Produktové bloky mají jednu dvojici závorek; stavové a platební bloky na děkovací stránce mají dvě.
 
 
 
@@ -251,10 +253,12 @@ Například `{{items.0.name}}`         vypíše název první zakoupené
 **Příklad:**
 :::
 
-Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK`        . Číslo `123`         v `{file:123}`         nahraďte ID souboru připojeného k e-mailové šabloně.
+Blok se zobrazí jen kupujícímu, jehož objednávka obsahuje produkt s kódem `EBOOK`. Vložte do něj text určený pro tento produkt.
 
 ```text
-{{item-EBOOK}}<p>Děkujeme za nákup. Odkaz ke stažení e-booku najdete zde: <a href="{file:123}">Stáhnout e-book</a>.</p>{{/item-EBOOK}}
+{item-EBOOK}
+<p>Děkujeme za nákup e-booku.</p>
+{/item-EBOOK}
 ```
 
 ## Ostatní
