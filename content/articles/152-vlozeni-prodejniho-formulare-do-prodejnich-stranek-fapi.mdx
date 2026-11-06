@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/152-vlozeni-prodejniho-formulare-do-prodejnich-stranek-fapi
 order: 93
-updatedAt: 2026-11-03T11:28:12.090Z
+updatedAt: 2026-11-06T07:18:37Z
 legacyAnchors:
   - id: Kdy-vyut-prodejn-strnky-ve-FAPI-xmSPY
     tag: h2
@@ -48,7 +48,7 @@ Chcete prodávat prostřednictvím FAPI, ale zatím nemáte vlastní web, domén
 
 Na prodejní stránku můžete přidat informace o své nabídce a vložit do ní vytvořený prodejní formulář. Zákazník tak na jednom místě získá potřebné informace a může rovnou dokončit objednávku.
 
-Prodejní stránky najdete ve FAPI v nabídce [**Prodej → Stránky**](https://web.fapi.cz/pages/?projectId=all).
+Prodejní stránky najdete ve FAPI v nabídce **Prodej → <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky</a>**.
 
 :::caution
 ### Jaké jsou výhody prodejních stránek ve FAPI
@@ -61,11 +61,11 @@ Prodejní stránky najdete ve FAPI v nabídce [**Prodej → Stránky**](https://
 
 ### Nevýhodou je:
 
-- nemožnost napojení platební brány, jelikož ta většinou vyžaduje umístění prodejního formuláře na vlastní doméně. Stránka vytvořená ve FAPI je na doméně page.fapi.cz.
+- stránky původního editoru používají adresu na doméně page.fapi.cz. Připojení vlastní domény popsané níže je určené pro AI editor, nikoli pro tento původní editor.
 - omezenější grafické možnosti oproti přímo builderům na tvorbu stránek.
 :::
 
-V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních stránek**. Pokud potřebujete stránek více, kontaktujte naši podporu na [podpora@fapi.cz](mailto\:podpora@fapi.cz). Počet stránek vám můžeme podle vašich potřeb individuálně navýšit.
+V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních stránek**. Pokud potřebujete stránek více, kontaktujte naši podporu na <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">podpora@fapi.cz</a>. Počet stránek vám můžeme podle vašich potřeb individuálně navýšit.
 
 :::tip
 **Zde je videonávod pro vložení prodejního formuláře do stránky ve FAPI:**
@@ -75,12 +75,12 @@ V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních s
 
 ## Co budeme potřebovat
 
-1. [Vytvořený prodejní formulář.](/article/44-prodejni-formular)
+1. <a href="/article/44-prodejni-formular" target="_blank" rel="noopener">Vytvořený prodejní formulář.</a>
 2. Vytvořenou prodejní stránku.
 
 ## Jak vložit prodejní formulář do stránek FAPI
 
-1. Přejdeme do karty [Prodej > Stránky](https://web.fapi.cz/pages/?projectId=all) - **vybereme prodejní stránku, kterou chceme upravovat**
+1. Přejdeme do karty **Prodej → <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky</a>** - **vybereme prodejní stránku, kterou chceme upravovat**
 
 ![Jak vložit prodejní formulář do prodejní stránky ve FAPI](/assets/articles/b1235e66bbe8d23d.png)
 
@@ -114,11 +114,10 @@ V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních s
 :::info
 ## Sloupce a časté otázky v AI editoru stránek
 
-Tato funkce je zatím dostupná jen na vyžádání, aktuálně testujeme její beta verzi. Pokud máte zájem, napište nám na [podpora@fapi.cz](mailto\:podpora@fapi.cz).
+Tato funkce je zatím dostupná jen na vyžádání, aktuálně testujeme její beta verzi. Pokud máte zájem, <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">napište nám na podpora@fapi.cz</a>.
 
-Pokud máte v účtu zpřístupněný **AI editor stránek**, najdete ho v nabídce Prodej → [Stránky](https://web.fapi.cz/pages/?projectId=all). Jde o jiný editor než výše popsaný postup přes Widgets.
+Pokud máte v účtu zpřístupněný **AI editor stránek**, najdete ho v nabídce Prodej → <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky</a>. Jde o jiný editor než výše popsaný postup přes Widgets.
 
-![](/assets/uploads/16485662ae107011af55a045.webp)
 
 V bloku **Sekce** lze vybrat **Počet sloupců**: 1, 2 nebo 3. Sloupce mají stejnou šířku; na mobilu se obsah řadí pod sebe. Při snížení počtu sloupců se obsah z rušených sloupců přesune do posledního zbývajícího sloupce.
 
@@ -136,4 +135,22 @@ V AI editoru můžete upravit barvy, velikost i tvar tlačítek, aby odpovídaly
 
 
 
-##
+## Vlastní doména pro AI stránky
+
+Pokud máte zpřístupněný AI editor stránek, můžete pro jeho stránky připojit vlastní doménu nebo subdoménu. Doména se připojuje k účtu FAPI; cesty jednotlivých stránek za doménou zůstávají zachované. Tato možnost se nevztahuje na výše popsaný původní editor přes Widgets.
+
+:::caution
+Změna DNS přesměruje celý zadaný název domény. Pokud na něm už běží web, použijte pro AI stránky volnou doménu nebo subdoménu. Připojení domény samo o sobě neznamená schválení platební brány.
+:::
+
+1. Otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a> → <a href="https://web.fapi.cz/page-domains/" target="_blank" rel="noopener">Propojit doménu</a>**.
+2. Do pole **Doména** zadejte název bez `https://`, cesty nebo portu a klikněte na **Připojit doménu**.
+
+![Správa vlastních domén pro AI stránky s označeným polem Doména a tlačítkem Připojit doménu.](/assets/ai-pages/ai-page-domains.webp)
+
+<a href="/assets/ai-pages/ai-page-domains.webp" target="_blank" rel="noopener">Zobrazit připojení domény v plné velikosti</a>
+
+3. Ve správě DNS své domény nastavte přesně směrovací a ověřovací TXT záznamy zobrazené ve FAPI. Neaktivované propojení se po 2 dnech od přidání začne odpojovat, proto záznamy nastavte v této lhůtě.
+4. Ve **<a href="https://web.fapi.cz/page-domains/" target="_blank" rel="noopener">Vlastních doménách pro AI stránky</a>** sledujte stav. FAPI po ověření DNS automaticky připravuje HTTPS; dokončení označuje stav **Aktivní – HTTPS připravené**.
+
+Připravené HTTPS ještě neznamená zveřejněný obsah. Stránku je potřeba samostatně zveřejnit v AI editoru tlačítkem **Zveřejnit stránku** a potom otevřít její veřejný odkaz a zkontrolovat obsah i vložený formulář.
