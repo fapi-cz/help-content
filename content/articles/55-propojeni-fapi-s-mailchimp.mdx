@@ -15,11 +15,13 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/55-propojeni-fapi-s-mailchimp
 order: 104
-updatedAt: 2026-07-13T10:51:28Z
+updatedAt: 2026-11-06T07:18:37Z
 ---
 Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete např. pro rozesílku e-mailových kampaní nebo pokročilou komunikaci se svými zákazníky.
 
 V tomto článku si ukážeme, jak propojit FAPI s aplikací _Mailchimp._
+
+V jednom účtu FAPI můžete mít více propojení s Mailchimp. U každé automatické akce pak vyberete konkrétní propojení a jeho cílovou skupinu kontaktů (**Audience**).
 
 ## Nastavení propojení FAPI s Mailchimp
 
@@ -27,42 +29,45 @@ Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do
 
 ### Získání API klíče z aplikace Mailchimp
 
-V aplikaci Mailchimp přejděte v nastavení účtu do nabídky **Account**.
-
-![Propojení FAPI s Mailchimp](/assets/articles/59f9746a9b40d98c.png)
+V aplikaci Mailchimp otevřete nabídku svého profilu a zvolte **Profile**.
 
 Na následující stránce zvolte v nabídce **Extras** položku **API keys**.
 
 ![Propojení FAPI s Mailchimp](/assets/articles/3383b1228ab536d6.png)
 
-Zde vytvořte nový API klíč pomocí tlačítka **Create A Key**. Vytvořený API klíč poslouží pro přístup do vašeho účtu Mailchimp z FAPI.
+Klikněte na **Create A Key**, pojmenujte klíč podle propojení s FAPI a potvrďte **Generate Key**. Vytvořený API klíč poslouží pro přístup do vašeho účtu Mailchimp z FAPI.
 
 ![Propojení FAPI s Mailchimp](/assets/articles/43b0f8d9b20253bf.png)
 
-Po vytvoření API klíče si jej zkopírujte z pole **API key**. V následujícím kroku budete zkopírovaný API klíč potřebovat pro nastavení propojení ve FAPI.
+Hned po vytvoření použijte **Copy Key to Clipboard** a klíč bezpečně uložte. Celý klíč se zobrazí jen jednou; později jej ze seznamu znovu nezkopírujete. Podrobný postup najdete v [nápovědě Mailchimp k API klíčům](https://mailchimp.com/help/about-api-keys/).
 
-![Propojení FAPI s Mailchimp](/assets/articles/3c705b00c2657871.png)
+:::caution
+API klíč chraňte stejně jako heslo. Neposílejte ho e-mailem ani ho nezveřejňujte na snímcích obrazovky.
+:::
 
 ### Vložení API klíče do FAPI
 
-Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky Mailchimp a na následující stránce vyplňte API klíč zkopírovaný z aplikace Mailchimp.
+1. Ve FAPI otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>** a u položky **Mailchimp** klikněte na **Připojit**.
+2. Volitelně vyplňte **Název propojení**. Zvolte název, podle kterého později poznáte připojený účet.
+3. Do pole **API klíč** vložte klíč vytvořený v příslušném účtu Mailchimp a klikněte na **Uložit**.
 
-![Propojení FAPI s Mailchimp](/assets/articles/174993d892c2d731.png)
+![Formulář Mailchimp s označenými poli Název propojení a API klíč a tlačítkem Uložit.](/assets/multi-connections/mailchimp-connection.webp)
 
-Zadané údaje uložte stiskem tlačítka **Uložit**.
+<a href="/assets/multi-connections/mailchimp-connection.webp" target="_blank" rel="noopener">Zobrazit formulář propojení s Mailchimp v plné velikosti</a>
 
-Po uložení se zobrazí informační hláška a u propojení s aplikací Mailchimp se objeví stav **Připojeno**.
+Po uložení v **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>** zkontrolujte příslušné propojení a stav **Připojeno**. Další účet Mailchimp přidejte jako další propojení ve stejném přehledu.
 
 ## Zápis a odebrání kontaktních údajů do/z Mailchimp
 
-Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybrané skupiny kontaktů (_Audience_) aplikace Mailchimp nastavíte v prodejním formuláři na záložce **Akce**.
+1. Otevřete **Prodej → <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a>**, vyberte formulář a přejděte na záložku **Akce**.
+2. Vyberte událost, při které se má kontakt přidat nebo odebrat, a akci **přidat kontakt do MailChimp**, případně **odebrat kontakt z MailChimp**.
+3. Vyberte konkrétní propojení s Mailchimp a následně skupinu kontaktů (**Audience**) z tohoto propojení. Při změně propojení znovu zkontrolujte cílovou Audience.
+4. Uložte formulář a znovu jej otevřete. Ověřte, že akce používá správné propojení i Audience.
 
-Použijte k tomu akci **přidat kontakt do Mailchimp**, resp. **odebrat kontakt z Mailchimp**.
-
-![Propojení FAPI s Mailchimp](/assets/articles/d4bf26dda7f2564a.png)
+Než formulář použijete pro zákazníky, vyzkoušejte nastavenou událost s vlastním testovacím kontaktem a zkontrolujte výsledek ve správné Audience v Mailchimp. Samotné propojení účtů ještě nenastavuje automatickou akci.
 
 :::tip
-Do aplikace Mailchimp můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+Do aplikace Mailchimp můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku <a href="/article/80-vlastni-pole" target="_blank" rel="noopener">Vlastní pole</a>.
 :::
 
 
