@@ -15,13 +15,13 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/53-propojeni-fapi-s-brevo
 order: 102
-updatedAt: 2026-07-13T10:51:26Z
+updatedAt: 2026-11-06T07:18:37Z
 redirects:
   - /article/53-propojeni-fapi-se-sendinblue
 ---
 Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete pro rozesílku e-mailových kampaní.
 
-V tomto článku si ukážeme, jak propojit FAPI s aplikací _Sendinblue_.
+V tomto článku si ukážeme, jak propojit FAPI s aplikací **Brevo**, dříve Sendinblue. V jednom účtu FAPI můžete mít více propojení s Brevo. U automatické akce potom vyberete konkrétní propojení a jeho seznam kontaktů.
 
 ## Nastavení propojení FAPI s Brevo (Sendinblue)
 
@@ -35,64 +35,43 @@ V aplikaci Brevo přejděte v nastavení účtu do nabídky **SMTP & API**. N
 
 ![Propojení FAPI s Brevo / Sendinblue](/assets/articles/077ae8b483fd2ace.png)
 
-Zkopírujte API klíč z pole **API KEY** (doporučujeme použít API klíč verze v3).
+Na kartě **API keys** klikněte na **Generate a new API key**, klíč pojmenujte a potvrďte **Generate**. Klíč hned zkopírujte a bezpečně uložte — zobrazí se jen jednou. Podrobný postup najdete v [oficiálním návodu Brevo k API klíčům](https://developers.brevo.com/docs/api-key-authentication).
 
-Popřípadě si vytvořte a poté zkopírujte nový API klíč pomocí tlačítka **CREATE A NEW API KEY**.
-
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/028fe22b988663d5.png)
+:::caution
+API klíč chraňte stejně jako heslo. Neposílejte ho e-mailem ani ho nezveřejňujte na snímcích obrazovky.
+:::
 
 ### Vložení API klíče do FAPI
 
-Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **Brevo** a na následující stránce vyplňte přístupové údaje do aplikace Brevo.
+1. Ve FAPI otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>** a u položky **Brevo (Sendinblue)** klikněte na **Připojit**.
+2. Volitelně vyplňte **Název propojení**, podle kterého poznáte připojený účet.
+3. Do pole **Uživatelské jméno** vyplňte jméno, pod kterým se přihlašujete do příslušného účtu Brevo. Do pole **API klíč** vložte klíč vytvořený v tomto účtu.
+4. Klikněte na **Uložit**.
 
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/ab575f85837817c8.png)
+![Formulář Brevo s označenými poli Název propojení, Uživatelské jméno a API klíč a tlačítkem Uložit.](/assets/multi-connections/brevo-connection.webp)
 
--   **UŽIVATELSKÉ JMÉNO** - vyplňte své uživatelské jméno, pod kterým se přihlašujete do Brevo.
--   **API KLÍČ** - vyplňte API klíč, zkopírovaný v předchozím kroku z nastavení aplikace Brevo.
+<a href="/assets/multi-connections/brevo-connection.webp" target="_blank" rel="noopener">Zobrazit formulář propojení s Brevo v plné velikosti</a>
 
-Zadané údaje uložte stiskem tlačítka **Uložit nastavení**.
-
-Po uložení se zobrazí informační hláška a u propojení se Brevo se objeví stav **Připojeno**.
+Po uložení v **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>** zkontrolujte příslušné propojení a stav **Připojeno**. Další účet Brevo přidejte jako další propojení ve stejném přehledu.
 
 ## Zápis a odebrání kontaktních údajů do/z Brevo (Sendinblue)
 
-Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybraného seznamu Brevo nastavíte v prodejním formuláři na záložce **Akce**.
+1. Otevřete **Prodej → <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a>**, vyberte formulář a přejděte na záložku **Akce**.
+2. Vyberte událost a akci **přidat kontakt do Brevo**, případně **odebrat kontakt z Brevo**.
+3. Vyberte konkrétní propojení a následně seznam kontaktů z tohoto propojení. Při změně propojení znovu zkontrolujte cílový seznam.
+4. Uložte formulář a znovu jej otevřete. Ověřte, že akce používá správné propojení i seznam.
 
-Použijte k tomu akci **přidat kontakt do Brevo**, resp. **odebrat kontakt ze Brevo**.
-
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/1c11c095c2fced1c.png)
+Než formulář použijete pro zákazníky, vyzkoušejte nastavenou událost s vlastním testovacím kontaktem a zkontrolujte výsledek ve správném seznamu v Brevo. Samotné propojení účtů ještě nenastavuje automatickou akci.
 
 :::tip
-Do aplikace Brevo můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+Do aplikace Brevo můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku <a href="/article/80-vlastni-pole" target="_blank" rel="noopener">Vlastní pole</a>.
 :::
 
-## **Filtrování dotazů dle IP adress**
+## Filtrování požadavků podle IP adres
 
-Pro filtrování dotazů dle IP adres v aplikaci Brevo zvolte **SECURITY** z nabídky pod Vašim profilem.
+Pokud v Brevo používáte omezení API podle IP adres, může být požadavek odmítnutý i se správným API klíčem. Postup správy povolených adres a volby autorizace popisuje [oficiální návod Brevo k zabezpečení podle IP adres](https://developers.brevo.com/docs/ip-security).
 
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/e4e5a33dd9f4de69.png)
-
-Dále na kartě **Security** pokračujte volbou **Authorized IPs**.
-
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/06eb450b5cb0a3ad.png)
-
-Zapněte obě volby kontroly adres níže.
-
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/de0d40d5328ab322.png)
-
-Pod volbami kontrol najdete seznam spravovaných adres, případně si přidejte nové.
-
-V ukázce níže můžete vidět adresy FAPI pro přidání.
-
-IP adresy
-
-178.238.37.32
-
-18.158.192.220
-
-83.167.243.140
-
-![Propojení FAPI s Brevo / Sendinblue](/assets/articles/a786c9b1135d7bc4.png)
+Před zapnutím blokování neznámých IP adres musí být povolené adresy serverů, ze kterých FAPI požadavky odesílá. Aktuální adresy pro nastavení si <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">ověřte u podpory FAPI</a>.
 
 ## Jaké údaje se přenáší do Brevo (Sendinblue)?
 
