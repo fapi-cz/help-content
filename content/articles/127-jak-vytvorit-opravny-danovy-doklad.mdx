@@ -11,9 +11,9 @@ keywords:
   - Často kladené dotazy (FAQ)
 sourceUrl: https://napoveda.fapi.cz/article/127-jak-vytvorit-opravny-danovy-doklad
 order: 71
-updatedAt: 2026-07-13T10:31:16Z
+updatedAt: 2026-11-07T07:22:22Z
 ---
-Opravný daňový doklad (ODD, dobropis) vytvoříte ve FAPI tak, že si rozkliknete danou fakturu, ke které potřebuje opravný doklad vytvořit a zde najdete tlačítko Vytvořit opravný daňový doklad.
+Opravný daňový doklad (ODD, dobropis) vytvoříte v přehledu <a href="https://web.fapi.cz/invoice/?projectId=all" target="_blank" rel="noopener">Faktury</a>: otevřete danou fakturu a klikněte na **Vytvořit opravný daňový doklad**.
 
 :::caution
 Opravné daňové doklady, lze tvořit k dokladům, které byly uhrazeny nebo vystaveným daňovým dokladům.
@@ -27,20 +27,32 @@ Tlačítko se nachází tedy pouze v detailu daňových dokladů/konečných fak
 
 V nově vytvořeném ODD už jen vyplníte důvod opravy a doklad vystavíte.
 
-![Jak vytvořit opravný daňový doklad (dobropis)?](/assets/articles/b45fecf59f641c68.png)
+![Tlačítko Vytvořit opravný daňový doklad v detailu faktury](/assets/credit-notes/create-credit-note.webp)
+
+<a href="/assets/credit-notes/create-credit-note.webp" target="_blank" rel="noopener">Zvětšit snímek tlačítka pro vytvoření dobropisu</a>
 
 :::caution
 Daňový doklad/faktura musí být ve stavu vystavená nebo zaplacená. Ke stornovanému dokladu nelze vystavit dobropis.
 :::
 
-:::danger
-K dokladům jde tvořit pouze 1 opravný daňový doklad. Fapi neumožňuje vytvářet více opravných daňových dokladů k jednomu původnímu dokladu.
+## Jak vytvořit další částečný dobropis
 
+Tlačítkem v původní faktuře vytvoříte první opravný doklad. Potřebujete-li další částečnou opravu, pokračujte přes kopii již vystaveného dobropisu:
 
+1. Otevřete předchozí opravný doklad a klikněte na **Vytvořit kopii**.
 
-Pokud jich potřebujete více, doporučujeme opravný daňový doklad upravit na finální částku.
-:::
+   ![Tlačítko Vytvořit kopii v detailu opravného dokladu](/assets/credit-notes/copy-credit-note.webp)
+
+   <a href="/assets/credit-notes/copy-credit-note.webp" target="_blank" rel="noopener">Zvětšit snímek vytvoření kopie dobropisu</a>
+
+2. Vyplňte **Důvod opravy** a upravte položky a jejich **Množství** pouze podle této nové opravy. Již dobropisované položky znovu neodečítejte.
+3. Zkontrolujte **Cenu za položku**. Kopie dobropisu ji předvyplní s opačným znaménkem. Pokud nyní vracíte další část ceny, nastavte ji opět se **záporným znaménkem**. Například při vrácení jednoho dalšího kusu za 10 EUR zadejte cenu −10 a množství 1.
+4. Zkontrolujte částky a doklad vystavte. Chcete-li jej zatím uložit bez e-mailu zákazníkovi, rozbalte šipku vedle **Vystavit fakturu a odeslat e-mailem** a zvolte **Pouze vystavit fakturu a nezasílat**.
+
+   ![Záporná cena, množství a volba Pouze vystavit fakturu a nezasílat v kopii dobropisu](/assets/credit-notes/copy-negative-price-and-save.webp)
+
+   <a href="/assets/credit-notes/copy-negative-price-and-save.webp" target="_blank" rel="noopener">Zvětšit snímek ceny a vystavení bez e-mailu</a>
 
 Následně můžete klientovi doklad odeslat pomocí tlačítka Odeslat doklad e-mailem.
 
-Zaplacenou částku už vracíte zpět danému klientovi sami. Jak na to najdete v [naší nápovědě zde](/article/147-jak-na-vraceni-penez-klientovi).
+Zaplacenou částku už vracíte zpět danému klientovi sami. Postup najdete v návodu <a href="/article/147-jak-na-vraceni-penez-klientovi" target="_blank" rel="noopener">Refundace peněz zákazníkům</a>.
