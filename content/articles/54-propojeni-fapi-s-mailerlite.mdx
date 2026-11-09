@@ -15,11 +15,13 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/54-propojeni-fapi-s-mailerlite
 order: 84
-updatedAt: 2026-07-13T10:35:50Z
+updatedAt: 2026-11-09T15:39:42.888406Z
 ---
 Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s nástroji pro e-mailový marketing. Díky tomu můžete kontaktní údaje zákazníka vyplněné v objednávce přenést do externí aplikace, kde je využijete pro rozesílku e-mailových kampaní.
 
 V tomto článku si ukážeme, jak propojit FAPI s aplikací [MailerLite](https://www.mailerlite.com/a/5fnwsx81eefc).
+
+V jednom účtu FAPI můžete mít více samostatně pojmenovaných propojení s MailerLite. U automatické akce pak vyberete konkrétní propojení a cílovou skupinu kontaktů (**Group**) z tohoto propojení.
 
 ## Nastavení propojení FAPI s MailerLite
 
@@ -47,11 +49,13 @@ Zde zkopírujte (pomocí tlačítka **Copy**) API klíč, který následně pou�
 
 ### Vložení API klíče do FAPI
 
-Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **MailerLite** a na následující stránce vyplňte API klíč a již do nové verze zkopírovaný Token z aplikace MailerLite.
+Ve FAPI otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>** a pro nové propojení klikněte u položky **MailerLite** na **Připojit**. Volitelně vyplňte **Název propojení**, vložte příslušný **API klíč** nebo token a vyberte používanou verzi propojení. Existující propojení upravíte tlačítkem **Upravit** u jeho řádku.
 
-![Propojení FAPI s MailerLite](/assets/articles/c1a573eb0f0af6b1.png)
+![Formulář MailerLite s názvem propojení, API klíčem, volbou verze a tlačítkem Uložit](/assets/multi-connections/mailerlite-connection-20261109.webp)
 
-Zadané údaje uložte stiskem tlačítka **Uložit**.
+<a href="/assets/multi-connections/mailerlite-connection-20261109.webp" target="_blank" rel="noopener">Zobrazit formulář v plné velikosti</a>
+
+Zadané údaje uložte tlačítkem **Uložit**. Další propojení přidáte ve stejném přehledu pomocí **Připojit**; původní propojení kvůli tomu nepřepisujte.
 
 Po uložení se zobrazí informační hláška a u propojení s MailerLite se objeví stav **Připojeno**.
 
@@ -61,10 +65,12 @@ Automatické přidání, resp. odebrání kontaktních údajů uvedených v obj
 
 Použijte k tomu akci **přidat kontakt do MailerLite**, resp. **odebrat kontakt z MailerLite**.
 
+V nastavení akce nejprve vyberte konkrétní propojení a následně cílovou skupinu kontaktů (**Group**) z tohoto propojení. Při změně propojení znovu zkontrolujte vybranou skupinu.
+
 ![Propojení FAPI s MailerLite](/assets/articles/56a7ec7db9dea085.png)
 
 :::tip
-Do aplikace MailerLite můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+Do aplikace MailerLite můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku <a href="/article/80-vlastni-pole" target="_blank" rel="noopener">Vlastní pole</a>.
 :::
 
 
@@ -85,6 +91,4 @@ Do aplikace MailerLite můžete přenášet také údaje vyplněné zákazníke
 
 
 
-:::caution
-Standardně lze napojit pouze jeden MailerLite účet. Pokud ale potřebujete napojit další, můžete to obejít pomocí [integrace přes Make](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat).
-:::
+
