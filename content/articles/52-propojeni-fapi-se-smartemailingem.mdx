@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/52-propojeni-fapi-se-smartemailingem
 order: 45
-updatedAt: 2026-07-13T10:11:51Z
+updatedAt: 2026-11-09T15:39:42.888406Z
 legacyAnchors:
   - id: Odesln-dat-o-objednvce-do-SmartEmailingu-UbyzC
     tag: h2
@@ -27,13 +27,17 @@ Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s ná
 
 V tomto článku si ukážeme, jak propojit FAPI s aplikací [SmartEmailing](https://www.smartemailing.cz/?a_box=21gse).
 
+V jednom účtu FAPI můžete mít více samostatně pojmenovaných propojení se SmartEmailingem. U automatické akce pak vyberete konkrétní propojení a jeho cílový seznam kontaktů.
+
 ## Nastavení propojení FAPI se SmartEmailingem
 
 Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do ovládané aplikace (SmartEmailing) pomocí speciálního přístupového údaje, tzv. _API klíče_. Proto je nutné nejprve obě aplikace propojit.
 
-Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky **SmartEmailing** a na následující stránce vyplňte přístupové údaje do aplikace SmartEmailing.
+Ve FAPI otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>**. Pro nové propojení klikněte u položky **SmartEmailing** na **Připojit**. Volitelně vyplňte **Název propojení**, podle kterého připojený účet později poznáte, a přístupové údaje popsané níže. Existující propojení upravíte tlačítkem **Upravit** u jeho řádku.
 
-![Propojení FAPI se SmartEmailingem](/assets/articles/b4c981aa38c67d51.png)
+![Formulář SmartEmailing s poli Název propojení, Uživatelské jméno, API klíč a tlačítkem Uložit](/assets/multi-connections/smartemailing-connection-20261109.webp)
+
+<a href="/assets/multi-connections/smartemailing-connection-20261109.webp" target="_blank" rel="noopener">Zobrazit formulář v plné velikosti</a>
 
 -   **UŽIVATELSKÉ JMÉNO** - vyplňte své uživatelské jméno, pod kterým se přihlašujete do SmartEmailingu.
 -   **API KLÍČ** - vyplňte API klíč, který vygenerujete v aplikaci SmartEmailing v nabídce **Můj účet - API klíče**.
@@ -42,7 +46,7 @@ Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko
 Z bezpečnostních důvodů se API klíč zobrazí pouze bezprostředně po vygenerování. Při pozdější návštěvě stránky **Můj účet - API klíče** již API klíč v čitelné podobě nelze získat.
 :::
 
-Zadané údaje uložte stiskem tlačítka **Uložit nastavení**.
+Zadané údaje uložte tlačítkem **Uložit**. Další propojení přidáte ve stejném přehledu pomocí **Připojit**; původní propojení kvůli tomu nepřepisujte.
 
 Po uložení se zobrazí informační hláška a u propojení se SmartEmailingem se objeví stav **Připojeno**.
 
@@ -52,10 +56,12 @@ Automatické přidání, resp. odebrání kontaktních údajů uvedených v obj
 
 Použijte k tomu akci **přidat kontakt do SmartEmailingu**, resp. **odebrat kontakt ze SmartEmailingu**.
 
+V nastavení akce vyberte konkrétní propojení a potom cílový seznam kontaktů z tohoto propojení. Při změně propojení znovu zkontrolujte zvolený seznam.
+
 ![Propojení FAPI se SmartEmailingem](/assets/articles/ef48de5d3a20ad18.png)
 
 :::tip
-Do aplikace SmartEmailing můžete přenášet také údaje vyplněné zákazníkem do  _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+Do aplikace SmartEmailing můžete přenášet také údaje vyplněné zákazníkem do  _vlastních polí_ objednávkového formuláře. Více informací najdete v článku <a href="/article/80-vlastni-pole" target="_blank" rel="noopener">Vlastní pole</a>.
 :::
 
 
@@ -79,7 +85,7 @@ Do aplikace SmartEmailing můžete přenášet také údaje vyplněné zákazn�
 
 ## Odesílání dat o objednávce do SmartEmailingu
 
-Odesílání dat o objednávce je nutno nejprve povolit v nastavení propojení se [SmartEmailingem](https://web.fapi.cz/settings/update-smartemailing-connection?projectId=all) (Nastavení \> Propojení aplikací \> Smartemailing \> upravit). 
+Odesílání dat o objednávce je nutno nejprve povolit v nastavení propojení se [SmartEmailingem](https://web.fapi.cz/settings/connections) (Nastavení \> Propojení aplikací \> Smartemailing \> upravit). 
 
 ![Propojení FAPI se SmartEmailingem](/assets/articles/d95385d1c1979ea7.png)
 
@@ -107,6 +113,6 @@ U objednávky **na splátky** se data přenesou až po úhradě první splátky.
 
 ## Synchronizace starších dat
 
-Pro nahrání starších dat z objednávek FAPI je v Nastavení \> Propojení aplikací \> Smartemailing k dispozici funkce **synchronizace objednávek**. Spustíte ji kliknutím na šipku dolů a kliknutím na řádek [Synchronizovat objednávky](https://web.fapi.cz/settings/synchronize-invoices-data-to-smartemailing?projectId=all).
+Pro nahrání starších objednávek otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>**, vyberte příslušné propojení SmartEmailingu a v jeho nabídce zvolte **Synchronizovat objednávky**. U tohoto propojení musí být zapnuté odesílání dat o objednávkách. Synchronizace se vztahuje ke zvolenému propojení.
 
 ![Propojení FAPI se SmartEmailingem](/assets/articles/0c885528b80aeeb4.png)
