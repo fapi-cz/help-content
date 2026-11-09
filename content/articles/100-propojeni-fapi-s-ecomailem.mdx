@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/100-propojeni-fapi-s-ecomailem
 order: 62
-updatedAt: 2026-10-28T11:16:11.506Z
+updatedAt: 2026-11-09T15:39:42.888406Z
 legacyAnchors:
   - id: Nastaven-propojen-FAPI-s-Ecomailem-mRb87
     tag: h2
@@ -57,6 +57,8 @@ Velmi užitečnou vlastností FAPI je schopnost propojení a spolupráce s ná
 
 [V tomto článku si ukážeme, jak propojit FAPI s aplikací Ecomail](https://ecomail.cz?fpr=jiri-0d563d).
 
+V jednom účtu FAPI můžete mít více samostatně pojmenovaných propojení s Ecomailem. U automatické akce pak vyberete konkrétní propojení a jeho cílový seznam kontaktů.
+
 ## Nastavení propojení FAPI s Ecomailem
 
 Při spolupráci dvou aplikací se ovládající aplikace (FAPI) přihlašuje do ovládané aplikace ([Ecomail](https://ecomail.cz?fpr=jiri-0d563d)) pomocí speciálního přístupového údaje, tzv. _API klíče_. Proto je nutné nejprve obě aplikace propojit.
@@ -75,11 +77,13 @@ Zobrazený API klíč si zkopírujte. Poslouží pro přístup do vašeho účt
 
 ### Vložení API klíče do FAPI
 
-Ve FAPI v nabídce **Nastavení - Propojení aplikací** stiskněte tlačítko **Upravit** u položky Ecomail a na následující stránce vyplňte API klíč zkopírovaný z aplikace Ecomail.
+Ve FAPI otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>** a pro nové propojení klikněte u položky **Ecomail** na **Připojit**. Volitelně vyplňte **Název propojení**, podle kterého připojený účet později poznáte, a vložte jeho **API klíč**. Existující propojení upravíte tlačítkem **Upravit** u jeho řádku.
 
-![Propojení FAPI s Ecomailem](/assets/articles/5e6040db3a10e4b9.png)
+![Formulář Ecomail s názvem propojení, API klíčem a tlačítkem Uložit](/assets/multi-connections/ecomail-connection-20261109.webp)
 
-Zadané údaje uložte stiskem tlačítka **Uložit**.
+<a href="/assets/multi-connections/ecomail-connection-20261109.webp" target="_blank" rel="noopener">Zobrazit formulář v plné velikosti</a>
+
+Zadané údaje uložte tlačítkem **Uložit**. Další propojení přidáte ve stejném přehledu pomocí **Připojit**; původní propojení kvůli tomu nepřepisujte.
 
 Po uložení se zobrazí informační hláška a u propojení s aplikací Ecomail se objeví stav **Připojeno**.
 
@@ -88,6 +92,8 @@ Po uložení se zobrazí informační hláška a u propojení s aplikací Eco
 Automatické přidání, resp. odebrání kontaktních údajů uvedených v objednávce do/z vybraného seznamu kontaktů Ecomailu nastavíte v prodejním formuláři na záložce **Akce**.
 
 Použijte k tomu akci **přidat kontakt do Ecomail**, resp. **odebrat kontakt z Ecomail**.
+
+V nastavení akce vyberte konkrétní propojení a potom cílový seznam kontaktů z tohoto propojení. Při změně propojení znovu zkontrolujte vybraný seznam.
 
 
 
@@ -102,7 +108,7 @@ Musí být bez diakritiky a oddělené čárkou. Víceslovné musí být spojen�
 ![Propojení FAPI s Ecomailem](/assets/articles/06233414044a8822.png)
 
 :::tip
-Do aplikace Ecomail můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku [Vlastní pole](/article/80-vlastni-pole).
+Do aplikace Ecomail můžete přenášet také údaje vyplněné zákazníkem do _vlastních polí_ objednávkového formuláře. Více informací najdete v článku <a href="/article/80-vlastni-pole" target="_blank" rel="noopener">Vlastní pole</a>.
 :::
 
 ## Jaké položky se do Ecomail přenáší?
@@ -123,7 +129,7 @@ Do aplikace Ecomail můžete přenášet také údaje vyplněné zákazníkem d
 
 ## Odesílání dat o objednávce do Ecomailu
 
-Odesílání dat o objednávce je nutno nejprve povolit v nastavení propojení se [Ecomailem](https://web.fapi.cz/settings/update-ecomail-connection?projectId=all) (Nastavení \> Propojení aplikací \> Ecomail \> Upravit). 
+Odesílání dat o objednávce je nutno nejprve povolit v nastavení propojení se [Ecomailem](https://web.fapi.cz/settings/connections) (Nastavení \> Propojení aplikací \> Ecomail \> Upravit). 
 
 ![Propojení FAPI s Ecomailem](/assets/articles/1430707c93c037a4.png)
 
