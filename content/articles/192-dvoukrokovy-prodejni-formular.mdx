@@ -13,73 +13,204 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/192-dvoukrokovy-prodejni-formular
 order: 134
-updatedAt: 2026-07-13T10:59:56Z
+updatedAt: 2026-11-10T08:45:47.486Z
+redirects: []
 ---
-Ve výchozím stavu jsou prodejní formuláře ve FAPI nastavené jako jednostránkové. Volitelně si jde v nastavení vzhledu formuláře (Krok 6 Vzhled) zapnout i dvoukrokové zobrazení:
+Dvoukrokový prodejní formulář rozdělí objednávku na dvě kratší části. V prvním kroku zákazník vyplní své kontaktní údaje a ve druhém vybere produkt, dopravu a způsob platby a dokončí objednávku.
 
-![Dvoukrokový prodejní formulář](/assets/articles/e028dde35258f87c.png)
+Toto rozdělení může zákazníkovi usnadnit orientaci ve formuláři.  Pokud nastavíte příslušnou akci a potřebný souhlas, můžete kontakt předat do e-mailingového nástroje a reagovat také na situaci, kdy zákazník vyplní první krok, ale objednávku nedokončí.
 
-Změna zobrazení je vratná - jde ji zapnout nebo vypnout kdykoliv, a to na všech prodejních formulářích, i dříve vytvořených. Jedinou podmínkou je, aby byl vzhled formuláře nastaven na nový. Tzv. "původní vzhled" formuláře dvoukrokové nastavení prodeje nepodporuje.
+V této nápovědě se dozvíte:
 
-
-
-## **V čem je rozdíl oproti jednokrokovému vzhledu?**
-
-Průchod prodejním formulářem bude nově rozdělený na dva kroky:
-
-1.  vyplnění kontaktních údajů (minimálně @ adresa, volitelně pak jméno&příjmení či telefon)
-2.  výběr položek, dopravy, způsobů platby, případně ostatních volitelných prvků a odeslání objednávky
+- jak dvoukrokový formulář zapnout,
+- jaké údaje zákazník vyplňuje v jednotlivých krocích,
+- kdy ve FAPI vznikne objednávka,
+- co znamená událost vytvoření poptávky,
+- jak předat kontakt do e-mailingového nástroje,
+- jak upravit text tlačítka v prvním kroku.
 
 
 
-Informace vyplněné zákazníky mezi 1. a 2. krokem si FAPI automaticky samo přenese.
+:::tip
+**Celý postup najdete také ve videonávodu:**
+
+<Video src="https://youtu.be/PXC_9d4Yzw0" title="Videonávod" />
 
 
-
-**První krok objednávky** se nově omezí jen na sběr konktaktu (pole telefon i jméno a příjmení lze vypnout):
-
-![Dvoukrokový prodejní formulář](/assets/articles/6f677e19e7ca4115.png)
-
-Ihned po průchodu prvním krokem vzniká tzv. poptávka. Na ni lze nově v každém prodejním formuláři, kde se používá dvoukrokové nastavení, zpracovávat novou událost (krok 4 Akce), která reaguje na vytvoření poptávky (tj. na odeslání prvního kroku formuláře):
-
-![Dvoukrokový prodejní formulář](/assets/articles/af259048ad4c11ff.png)
-
-
-
-**Druhý krok** ve formuláři už je stejný jako běžný formulář. Stejně se pak chovají i miniupselly, upselly či pravidelná fakturace.
-
-
-
-:::caution
-Nedokončením druhého kroku objednávky nevzniká ve FAPI žádná objednávka. Údaje o potenciálních nakupujících z prvního kroku FAPI neshromažďuje.
 :::
 
-Pokud chcete sbírat údaje o potenciálních zákaznících, kteří projdou jen prvním krokem, je potřeba je požádat už v prvním kroku o souhlas. Na to je v kroku 6 Vzhled samostatné nové nastavení souhlasů pro první krok formuláře:
+## Jak dvoukrokový formulář funguje
 
-![Dvoukrokový prodejní formulář](/assets/articles/b72a1f08e747cce5.png)
+Ve výchozím nastavení se celý prodejní formulář zobrazuje na jedné stránce. Po zapnutí dvoukrokového zobrazení se formulář rozdělí následovně:
 
-S takto nastaveným souhlasem pak můžete i u neregistrovaných nakupujících z webu používat sesbírané emailové adresy a použít je pomocí mailingových nástrojů na oslovení s obchodním sdělením.
+1. ### První krok – kontaktní údaje
+
+Zákazník vyplní e-mailovou adresu. Podle nastavení formuláře může vyplnit také:
+
+- jméno a příjmení,
+- telefon,
+- souhlas se zpracováním údajů nebo zasíláním obchodních sdělení.
+
+1. ### Druhý krok – dokončení objednávky
+
+Zákazník pokračuje k výběru:
+
+- objednávaných položek,
+- dopravy,
+- způsobu platby,
+- případných doplňkových nabídek.
+
+Ve druhém kroku objednávku odešle. Údaje z prvního kroku FAPI automaticky přenese do druhého, takže je zákazník nemusí vyplňovat znovu.
+
+## Co budete potřebovat
+
+Před nastavením zkontrolujte, že:
+
+- máte vytvořený prodejní formulář,
+- máte jasno, které kontaktní údaje chcete v prvním kroku požadovat,
+- máte připravené znění případného souhlasu,
+- máte propojený e-mailingový nástroj, pokud chcete pracovat i s kontakty zákazníků, kteří objednávku nedokončí.
+
+
+
+## 1. Zapněte dvoukrokové zobrazení
+
+1. Ve FAPI otevřete <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodej → Prodejní formuláře**</a>.
+2. Vyberte formulář, který chcete upravit.
+3. Otevřete krok **6 Vzhled**.
+4. Zapněte dvoukrokové zobrazení formuláře.
+5. Nastavení uložte.
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6aede2adc40ad73e8762c208/file-xWZYkvf9Gv.png)
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/65ccd1d81409b478491f5f2a/file-BmHfzX4JaW.png)
+
+Změna je vratná. Dvoukrokové zobrazení můžete kdykoliv zapnout nebo vypnout, a to i u dříve vytvořeného formuláře, pokud používá nový vzhled.
+
+## 2. Nastavte pole prvního kroku
+
+V kroku **6 Vzhled** vyberte, které údaje má zákazník v první části formuláře vyplnit.
+
+E-mailová adresa je základním kontaktním údajem. Pole pro jméno, příjmení a telefon můžete podle potřeby zobrazit nebo skrýt.
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/65ccd4291409b478491f5f2d/file-yS1mQJeoPA.png)
+
+Vyberte, které kontaktní údaje má zákazník vyplnit před pokračováním k objednávce.
+
+Po odeslání prvního kroku se zákazník přesune do druhé části formuláře. Vyplněné údaje se přenesou automaticky.
+
+
+
+:::info
+## Kdy vznikne objednávka
+
+Objednávka ve FAPI vznikne až ve chvíli, kdy zákazník dokončí a odešle také druhý krok.
+
+Pokud zákazník vyplní pouze první krok a dále nepokračuje:
+
+- ve FAPI nevznikne objednávka,
+- nevystaví se faktura,
+- kontakt se neuloží do přehledu klientů ani objednávek,
+- v administraci FAPI nenajdete samostatný záznam této rozpracované objednávky.
+
+## Co znamená vytvoření poptávky
+
+Po odeslání prvního kroku FAPI vyvolá událost **Vytvoření poptávky**.
+
+V tomto případě pojem **poptávka** neznamená uloženou objednávku ani záznam, který byste našli v administraci FAPI. Jde o technickou událost, na kterou může navazovat nastavená akce,  například předání kontaktu do podporovaného e-mailingového nástroje.
+
+Díky tomu můžete pracovat také s kontaktem zákazníka, který vyplnil první krok, ale objednávku nedokončil.
+:::
+
+## 3. Nastavte akci po vytvoření poptávky
+
+Pokud chcete kontakt z prvního kroku předat do e-mailingového nástroje:
+
+1. V nastavení prodejního formuláře otevřete krok **4 Akce**.
+2. Přidejte novou akci.
+3. Jako spouštěcí událost vyberte **Vytvoření poptávky**.
+4. Nastavte předání kontaktu do požadovaného e-mailingového nástroje.
+5. Vyberte správný seznam nebo skupinu kontaktů.
+6. Nastavení uložte.
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/65ccd6642cb21c6ca90d97fb/file-UYyxSJiY6I.png)
+
+Událost Vytvoření poptávky nastane po odeslání prvního kroku formuláře.
 
 :::danger
-Pozor: FAPI samo o sobě v prvním kroku žádné osobní údaje o zákaznících neukládá. To se děje až po dokončení celé objednávky.
+**Důležité:** Pokud žádnou návaznou akci nenastavíte, FAPI údaje z nedokončeného prvního kroku nikam neuloží. Kontakt zákazníka proto později ve FAPI nedohledáte.
+:::
 
-Zájemce, kteří dokončí pouze první krok dvoukrokové objednávky tak ve FAPI nikde nenajdete. Jejich poptávky si je potřeba sbírat přes mailingové nástroje, postupem z videonávodu níže.
+## 4. Nastavte potřebný souhlas
+
+Pokud chcete zákazníkům, kteří objednávku nedokončili, posílat obchodní sdělení, nastavte v prvním kroku odpovídající souhlas.
+
+Nastavení souhlasů najdete v kroku **6 Vzhled** v části určené pro první krok formuláře.
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/65ccd7422cb21c6ca90d97fc/file-fTXEiS7YI7.png)
+
+Souhlas zobrazte už v prvním kroku, protože zákazník nemusí pokračovat k dokončení objednávky.
+
+Samotné přidání souhlasu ještě nezajistí uložení kontaktu. Současně musíte v kroku **4 Akce** nastavit jeho předání do e-mailingového nástroje.
+
+Text souhlasu musí odpovídat tomu, jak chcete kontakt dále používat. Zákazník by měl vědět, kdo jeho údaje získá, za jakým účelem a jak může svůj souhlas odvolat.
+
+## 5. Upravte text tlačítka
+
+V kroku **6 Vzhled** můžete změnit text tlačítka, kterým zákazník přechází z první části formuláře do druhé.
+
+Použijte text, ze kterého je zřejmé, že objednávka ještě není dokončená. Vhodné jsou například varianty:
+
+- **Pokračovat k objednávce**
+- **Pokračovat k platbě**
+- **Vybrat způsob platby**
+- **Pokračovat**
+
+Nevhodný je například text **Objednat** nebo **Dokončit objednávku**, protože po kliknutí na tlačítko objednávka ještě nevznikne.
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/65ccd4ca1515e26e4a2f4d71/file-Qi3wHnDxaR.png)
+
+**Zvolte text, který zákazníkovi jasně řekne, že pokračuje do dalšího kroku.**
+
+V textu tlačítka můžete použít také [emoji](https://emojipedia.org/). Používejte je střídmě, aby tlačítko zůstalo srozumitelné.
+
+![](https://d33v4339jhl8k0.cloudfront.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/65ccd5421515e26e4a2f4d73/file-sMUtxMZyQp.png)
+
+
+
+:::info
+## Co se ve druhém kroku nemění
+
+Druhý krok funguje stejně jako běžný prodejní formulář. Beze změny můžete používat například:
+
+- miniupsell,
+- upsell,
+- pravidelnou fakturaci,
+- dopravu,
+- platební metody,
+- další pole a nastavení objednávky.
+
+Rozdíl spočívá především v tom, že kontaktní údaje zákazník vyplní už v samostatném prvním kroku.
 :::
 
 
 
-## Pojmenování tlačítek
+## Jak nastavení vyzkoušet
 
-Spolu s novým krokem před hlavní objednávkou je k dispozici nové tlačítko pro přejmenování tlačítka v prvním kroku. Najdete ho také v kroku 6 Vzhled:
+Po uložení otevřete prodejní formulář jako zákazník a proveďte dva testy.
 
-![Dvoukrokový prodejní formulář](/assets/articles/4f8e163c4759802e.png)
+### Test dokončené objednávky
 
-V textu lze používat [emoji](https://emojipedia.org/).
+1. Vyplňte první krok.
+2. Pokračujte do druhého kroku.
+3. Dokončete testovací objednávku.
+4. Ověřte, že objednávka vznikla ve FAPI a obsahuje správné kontaktní údaje.
 
-![Dvoukrokový prodejní formulář](/assets/articles/3a12784614d9d159.png)
+### Test nedokončeného formuláře
 
+1. Vyplňte pouze první krok.
+2. Do druhého kroku přejděte, ale objednávku nedokončujte.
+3. Pokud máte nastavenou akci **Vytvoření poptávky**, zkontrolujte předání kontaktu do e-mailingového nástroje.
+4. Ověřte, že ve FAPI nevznikla objednávka ani faktura.
 
-
-Podrobný videonávod najdete k nové funkci zde:
-
-<Video src="https://www.youtube.com/embed/PXC_9d4Yzw0" />
+Při testování použijte vlastní e-mailovou adresu a respektujte nastavení souhlasů.
