@@ -1,7 +1,7 @@
 ---
 title: "E-Invoice: testovací propojení s eFaktúrou a odesílání přes Peppol"
 url: /article/e-invoice-propojeni-s-efakturou-a-odesilani-faktur-pres-peppol
-description: Jak v testovacím režimu připojit eFaktúru k FAPI, vyzkoušet odeslání faktury v EUR a zkontrolovat stav v sandboxu Peppol.
+description: Jak připravit údaje plátců DPH, připojit eFaktúru a v sandboxu odeslat XML vytvořené ve FAPI přes Peppol.
 category: Fakturace
 categorySlug: 6-fakturace
 categorySlugs:
@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-05T13:56:55.835Z
+updatedAt: 2026-11-10T09:03:22.000Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -56,9 +56,9 @@ legacyAnchors:
 **Před použitím musí funkci ve vašem účtu povolit administrátor FAPI.** O povolení <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">napište na podporu FAPI</a>. Samotné povolení ještě neznamená dokončené propojení s eFaktúrou.
 :::
 
-E-Invoice propojuje FAPI se službou **eFaktúra**. Z detailu faktury můžete vyzkoušet ruční odeslání přes síť **Peppol** a zkontrolovat aktuální stav. Testujte v účtu určeném pro testování; kvůli testu nepřepisujte údaje používané pro své skutečné faktury.
+E-Invoice propojuje FAPI se službou **eFaktúra** pro přenos přes síť **Peppol**. **XML faktury vytváří přímo FAPI** ve formátu UBL. Před odesláním proběhne kontrola údajů, XML a dostupnosti příjemce v Peppolu; eFaktúra zajišťuje navazující přenos. XML nemusíte ručně vytvářet ani nahrávat do jiné aplikace.
 
-V této testovací verzi je odesílání určené pro **dodavatele se slovenskou adresou a běžné faktury v EUR**. Nejde o odeslání PDF e-mailem.
+Tento návod vás provede testem **běžné faktury v EUR mezi dvěma slovenskými plátci DPH**, s vyplněným DIČ i IČ DPH na obou stranách. Nejde o odeslání PDF e-mailem. Testujte v účtu určeném pro testování; kvůli testu nepřepisujte údaje používané pro své skutečné faktury.
 
 **V návodu najdete:**
 
@@ -74,24 +74,38 @@ V této testovací verzi je odesílání určené pro **dodavatele se slovenskou
 Připravte si:
 
 - Povolenou funkci E-Invoice v účtu FAPI.
-- Úplné firemní údaje v **Nastavení → <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>**: název firmy, IČO, DIČ a adresu včetně země. Pokud používáte IČ DPH, zkontrolujte i tento údaj.
+- Úplné firemní údaje v **Nastavení → <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>**: název firmy, IČO, **DIČ i IČ DPH**, ulici, město, PSČ a stát **Slovenská republika**. Údaje uložte tlačítkem **Uložit fakturační údaje**.
+- Vlastní účet nastavený jako **Plátce DPH** v **Nastavení → <a href="https://web.fapi.cz/settings/" target="_blank" rel="noopener">Nastavení fakturace</a> → Nastavení DPH**. Zkontrolujte vyplněné **DIČ** a **IČ DPH** a změny uložte tlačítkem **Uložit nastavení**.
+- V přehledu **<a href="https://web.fapi.cz/client/" target="_blank" rel="noopener">Klienti</a>** otevřete detail odběratele a zvolte **Upravit**. Připravte název firmy, IČO, **DIČ i IČ DPH**, úplnou slovenskou adresu a zaškrtněte **Plátce DPH**. Změny potvrďte tlačítkem **Uložit**.
 - Pro aktivaci v sandboxu použijte **testovací token `a1b2c3`**. Je to veřejná testovací hodnota, nikoli skutečný token od Finanční správy. Skutečné ověřovací tokeny ani přístupové údaje do testu nezadávejte a neposílejte je e-mailem či na snímcích obrazovky.
 - Fakturu a odběratele odpovídající [současným omezením](#soucasna-omezeni).
+
+**Nastavení dodavatele:**
+
+![Nastavení fakturace s vybraným režimem Plátce DPH a vyplněnými poli DIČ a IČ DPH](/assets/e-invoice/e-invoice-dph.png)
+
+<a href="/assets/e-invoice/e-invoice-dph.png" target="_blank" rel="noopener">Zobrazit nastavení DPH v plné velikosti</a>
+
+**Údaje odběratele:**
+
+![Úprava klienta s vyplněným DIČ a IČ DPH, zaškrtnutým Plátce DPH, úplnou adresou a označeným tlačítkem Uložit](/assets/e-invoice/e-invoice-odberatel.png)
+
+<a href="/assets/e-invoice/e-invoice-odberatel.png" target="_blank" rel="noopener">Zobrazit údaje odběratele v plné velikosti</a>
 
 ## 1. Připojte eFaktúru
 
 1. Otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>**.
-2. V řádku **eFaktúra** zvolte **Připojit**. Pokud řádek nevidíte, nejprve si nechte funkci povolit administrátorem FAPI.
+2. V řádku **eFaktúra** zvolte **Připojit**, u již založeného propojení **Upravit**. Pokud řádek nevidíte, nejprve si nechte funkci povolit administrátorem FAPI.
 
    ![Řádek eFaktúra s označeným tlačítkem Připojit](/assets/e-invoice/e-invoice-radek.png)
 
    <a href="/assets/e-invoice/e-invoice-radek.png" target="_blank" rel="noopener">Zobrazit řádek propojení v plné velikosti</a>
 
 3. Na stránce **Propojení se službou eFaktúra** zkontrolujte zobrazené firemní údaje. Jejich opravy proveďte v **Nastavení → <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>**.
-4. Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Text formuláře zmiňuje token od Finanční správy, pro současný sandbox ale použijte uvedenou testovací hodnotu.
+4. Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Při obnově deaktivovaného propojení použijte **Znovu připojit**. Text formuláře zmiňuje token od Finanční správy, pro současný sandbox ale použijte uvedenou testovací hodnotu.
 5. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání.
 
-![Připojovací formulář eFaktúry s označeným polem Ověřovací token a tlačítkem Připojit a aktivovat](/assets/e-invoice/e-invoice-pripojeni.png)
+![Obnova propojení eFaktúry s vyplněnými firemními údaji, prázdným polem Ověřovací token a označeným tlačítkem Znovu připojit](/assets/e-invoice/e-invoice-pripojeni.png)
 
 <a href="/assets/e-invoice/e-invoice-pripojeni.png" target="_blank" rel="noopener">Zobrazit připojovací formulář v plné velikosti</a>
 
@@ -100,9 +114,9 @@ Pokud už formulář zobrazuje **ID organizace**, použije se tato organizace. P
 ## 2. Odešlete fakturu
 
 1. Otevřete **<a href="https://web.fapi.cz/invoice/" target="_blank" rel="noopener">Faktury</a>** a detail konkrétní vystavené běžné faktury v EUR se slovenským dodavatelem. Postup jejího vytvoření najdete v návodu <a href="https://napoveda1.fapi.cz/article/299-jak-vystavit-fakturu-rucne-ve-fapi" target="_blank" rel="noopener">Jak vystavit fakturu ručně ve FAPI</a>.
-2. Zkontrolujte údaje dodavatele a odběratele. Dodavatel na faktuře musí odpovídat firmě připojené k eFaktúře.
+2. Zkontrolujte údaje uložené **přímo na faktuře**: u obou stran název, IČO, DIČ, IČ DPH a úplnou adresu; u položek název, množství, cenu a sazbu DPH. Dodavatel na faktuře musí odpovídat firmě připojené k eFaktúře. Změna účtu nebo klienta sama neopraví údaje na již vystaveném dokladu.
 3. V části **eFaktúra** klikněte na **Odeslat přes eFaktúru** a potvrďte požadavek. V současném sandboxu jde o testovací odeslání, ne o ostré doručení odběrateli.
-4. Pokud FAPI vypíše chybu, opravte uvedené údaje nebo nepodporovaný parametr faktury. Aktuální omezení najdete níže.
+4. FAPI vytvoří XML a nechá je před odesláním zkontrolovat včetně příjemce. Při chybě se XML neodešle; opravte konkrétní uvedené údaje nebo nepodporovaný parametr faktury. Údaje se při odesílání automaticky neopravují. Aktuální omezení najdete níže.
 5. Po zpracování požadavku zkontrolujte stav přímo v detailu faktury. Samotné potvrzení požadavku ještě nedokládá odeslání do sítě.
 
 ![Detail testovací faktury s označeným tlačítkem Odeslat přes eFaktúru](/assets/e-invoice/e-invoice-odeslat.png)
@@ -115,7 +129,7 @@ Pokud místo odesílání vidíte **Pro odeslání faktury nejprve připojte eFa
 
 V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Rozlišujte hlavně tyto výsledky:
 
-- **Doklad vytvořen, zatím neodesláno** — doklad už vznikl u poskytovatele, ale ještě není odeslaný.
+- **Doklad vytvořen, zatím neodesláno** — uložený přenos ještě není odeslaný; tento stav se může zobrazit i u dříve vytvořených dokladů.
 - **Zařazeno k odeslání** nebo **Probíhá odesílání** — odeslání ještě není dokončené.
 - **Odeslání odloženo, eFaktúra ho automaticky zopakuje** — požadavek zůstává u eFaktúry k dalšímu pokusu.
 - **Odesláno do sítě Peppol** — služba hlásí dokončené odeslání. V tomto testování jde o sandbox, nikoli produkční síť. Stav sám nepotvrzuje přijetí ani zaúčtování odběratelem.
@@ -130,20 +144,23 @@ V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Roz
 Před prvním odesláním zkontrolujte zejména:
 
 - **Doklad:** musí jít o vystavenou, očíslovanou a nestornovanou běžnou fakturu v EUR. Samostatnou zálohovou fakturu ani splátkovou fakturu takto neodešlete.
-- **Dodavatel:** úplná slovenská adresa a DIČ nebo IČ DPH; jeho identifikační údaje musí odpovídat připojené organizaci.
-- **Odběratel:** název, úplná adresa a DIČ nebo slovenské IČ DPH. Samotné IČO nestačí pro určení jeho Peppol adresy. U vyplněného IČO se kontroluje osm číslic; IČ DPH je nyní podporované ve formátu SK a deset číslic. DIČ musí obsahovat deset číslic nebo kód země a osm až deset číslic.
-- **Položky:** alespoň jedna položka, vyplněný název, kladné množství a nezáporná cena. Podporované sazby DPH jsou 0, 5, 19 a 23 %. Záporné položky, včetně záporných slev nebo zaokrouhlení, odeslání zablokují.
+- **Dodavatel pro tento postup:** plátce DPH, úplná slovenská adresa, IČO, DIČ a IČ DPH. Jeho identifikační údaje musí odpovídat připojené organizaci.
+- **Odběratel pro tento postup:** slovenský plátce DPH s názvem, úplnou adresou, IČO, DIČ a IČ DPH. **DIČ zadávejte jako deset číslic, IČ DPH jako SK a stejných deset číslic.** U IČO se kontroluje osm číslic. Samotné IČO nestačí pro určení Peppol adresy; příjemce musí být v příslušné síti dostupný.
+- **Položky a součty:** alespoň jedna položka s názvem a kladným množstvím. Podporované sazby DPH jsou 0, 5, 19 a 23 %. Celková částka musí být kladná a součty položek i DPH musí odpovídat faktuře. Kontrolou musí projít celé výsledné XML, nejen jednotlivá pole.
 - **Daňové režimy:** odesílání v režimu přenesené daňové povinnosti, osvobození od DPH a položek v OSS zatím není podporované.
-- **Platba:** podporovaný je bankovní převod, hotovost, platba kartou včetně Apple Pay, Google Pay a Click to Pay a vybrané online platby přes PayPal a GoPay. Jiné způsoby mohou být odmítnuté.
+- **Platba:** podporovaný je bankovní převod, hotovost, platba kartou včetně Apple Pay, Google Pay a Click to Pay a vybrané online platby přes PayPal a GoPay. Pro bankovní převod musí být přímo na faktuře vyplněný platný IBAN dodavatele; vyplněný BIC musí být také platný. Jiné způsoby platby mohou být odmítnuté.
+- **Data:** datum splatnosti nesmí předcházet datu vystavení.
 - **Navázaná záloha:** musí být uhrazená, nestornovaná, ve stejné měně a bez splátkové vazby. Její kladná částka nesmí převýšit částku konečné faktury. Vyúčtování přes doklad k přijaté platbě zatím není podporované.
 
-I při splnění těchto podmínek může eFaktúra požadavek odmítnout při své další kontrole. Řiďte se konkrétní zobrazenou chybou.
+I při splnění těchto podmínek může kontrola XML nebo příjemce požadavek odmítnout. Řiďte se konkrétní zobrazenou chybou.
 
 ## Když se připojení nebo odeslání nedaří
 
 - **eFaktúra chybí v seznamu propojení:** ověřte povolení funkce administrátorem FAPI.
 - **Aktivace nebyla dokončena:** otevřete úpravu propojení, zkontrolujte uloženou organizaci a dokončete aktivaci testovacím tokenem pro sandbox.
 - **Dodavatel neodpovídá připojené organizaci:** porovnejte dodavatele uloženého přímo na faktuře s firmou připojenou k eFaktúře. Změna údajů účtu sama neopraví dodavatele na již vystaveném dokladu.
+- **Chybí údaj nebo kontrola XML našla chybu:** opravte uvedené pole přímo na faktuře. Například hlášení **V adrese odběratele chybí ulice.** znamená, že je potřeba doplnit ulici odběratele; samotné město a PSČ nestačí.
+- **Příjemce nebyl nalezen nebo kontrola není dostupná:** ověřte DIČ odběratele a jeho dostupnost v příslušném prostředí Peppol. Při nedostupnosti kontroly odeslání neproběhne; nepovažujte jej za dokončené.
 - **Nepodařilo se komunikovat s eFaktúrou:** zkontrolujte nejprve aktuální stav faktury. Požadavek mohl být u poskytovatele zpracovaný i při přerušené komunikaci.
 
 Pokud potřebujete pomoci, <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">napište na podporu FAPI</a> a uveďte číslo faktury a přesné znění chyby. Ověřovací token ani přístupové údaje neposílejte.
