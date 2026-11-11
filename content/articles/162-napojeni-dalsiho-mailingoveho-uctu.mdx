@@ -1,7 +1,7 @@
 ---
 title: Napojení dalšího Smartemailing nebo Ecomail účtu
 url: /article/162-napojeni-dalsiho-mailingoveho-uctu
-description: Pokud potřebujete v jednom FAPI účtu používat více různých Smartemailing účtů, tak je potřeba využít službu Integromat (Make). Návod funguje i pro Ecomail. Bude
+description: Další účet SmartEmailingu nebo Ecomailu připojíte přímo ve FAPI. Make je volitelnou cestou pro vlastní automatizaci.
 category: Rozšíření a doplňky
 categorySlug: 11-rozsireni-a-doplnky
 categorySlugs:
@@ -11,24 +11,30 @@ keywords:
   - Rozšíření a doplňky
 sourceUrl: https://napoveda.fapi.cz/article/162-napojeni-dalsiho-mailingoveho-uctu
 order: 155
-updatedAt: 2026-10-28T11:16:11.506Z
+updatedAt: 2026-11-11T08:14:13.328763Z
 ---
-Pokud potřebujete v jednom FAPI účtu používat více různých Smartemailing účtů, tak je potřeba využít službu Integromat (Make). Návod funguje i pro Ecomail.
+Další účet **SmartEmailingu nebo Ecomailu můžete připojit přímo ve FAPI**. V jednom účtu FAPI lze mít více samostatně pojmenovaných propojení.
+
+Postup přidání propojení a výběru cílového seznamu najdete v návodech <a href="/article/52-propojeni-fapi-se-smartemailingem" target="_blank" rel="noopener">Propojení FAPI se SmartEmailingem</a> a <a href="/article/100-propojeni-fapi-s-ecomailem" target="_blank" rel="noopener">Propojení FAPI s Ecomailem</a>. Jen kvůli dalšímu účtu tedy Make nepotřebujete.
+
+## Volitelně: přenos kontaktů přes Make
+
+Následující postup použijte, pokud chcete přenos kontaktů řešit vlastní automatizací přes **Make**, dříve Integromat.
 
 Budete potřebovat:
 
--   funkční [Integromat (Make)](https://eu1.make.com/user/affiliate) účet
+-   funkční [Make](https://www.make.com/en/register?pc=fapimake) účet
 -   funkční prodejní FAPI formulář
 -   funkční Smartemailing nebo [Ecomail](https://ecomail.cz?fpr=jiri-0d563d) účet
 
 Začneme v Integromatu. Pokud jste v Integromatu poprvé, tak nemáte vytvořená napojení na FAPI a Smartemailing (nebo [Ecomail](https://ecomail.cz?fpr=jiri-0d563d)).
 
--   Jak napojit FAPI do Integromatu [popisujeme tady](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat).
+-   Jak napojit FAPI do Integromatu <a href="/article/87-propojeni-aplikaci-pomoci-sluzby-integromat" target="_blank" rel="noopener">popisujeme tady</a>.
 -   Jak napojit Smartemailing [najdete tady](https://napoveda.smartemailing.cz/article/966-integrace-s-integromatem).
 -   Jak napojit Ecomail [najdete tady](https://support.ecomail.cz/cs/articles/3725544-integromat-make).
 
-:::danger
-Přes [Integromat / Make](https://eu1.make.com/user/affiliate) nejde používat přenos podrobností objednávky do Smartemailingu. Tato možnost je dostupná výhradně pro hlavní napojení na Smartemailing přímo z FAPI \> Nastavení \> Propojení aplikací \> Smartemailing.
+:::note
+Odesílání dat o objednávce ze FAPI do SmartEmailingu se nastavuje u konkrétního přímého propojení. Postup najdete v části <a href="/article/52-propojeni-fapi-se-smartemailingem#odesilani-dat-o-objednavce-do-smartemailingu" target="_blank" rel="noopener">Odesílání dat o objednávce do SmartEmailingu</a>.
 :::
 
 V Integromatu jděte do Scénáře \> + Vytvořit nový scénář
