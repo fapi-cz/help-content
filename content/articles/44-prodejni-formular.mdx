@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/44-prodejni-formular
 order: 5
-updatedAt: 2026-11-03T15:13:59.162Z
+updatedAt: 2026-11-12T07:24:00Z
 legacyAnchors:
   - id: 2-Poloky-a-ceny-LBcZB
     tag: h3
@@ -269,7 +269,9 @@ Pokud spolupracujete s affiliate partnery, můžete zde nastavit propojení prod
 
 Na poslední záložce nastavíte, jak se objednávkový formulář bude zobrazovat zákazníkům na vaší webové stránce a jaké údaje bude obsahovat.
 
-![Prodejní formulář](/assets/articles/b0c6d02bc9540bd0.png)
+![Záložka Vzhled v nastavení prodejního formuláře: jazyky a zobrazená pole.](/assets/forms/custom-css/appearance-overview.webp)
+
+<a href="/assets/forms/custom-css/appearance-overview.webp" target="_blank" rel="noopener">Zobrazit záložku Vzhled v plné velikosti</a>
 
 Kromě přítomnosti jednotlivých polí v objednávkovém formuláři zde můžete nastavit i způsob zobrazení cen (ceny mohou být uvedené včetně DPH, nebo zvlášť základ a částka DPH).
 
@@ -307,7 +309,30 @@ Zpracování osobních údajů a obchodní podmínky upravují sekce **Obchodní
 
 Chcete-li, aby zákazník před odesláním objednávky potvrdil svůj souhlas s obchodními podmínkami, zaškrtněte volbu **Požadovat souhlas s obchodními podmínkami** a uveďte adresu odkazu na obchodní podmínky.
 
-Vzhled objednávkového formuláře můžete přizpůsobit vlastnímu vkusu či svým webovým stránkám buď pomocí interního editoru vzhledu (sekce  **Úprava vzhledu**), nebo pomocí vlastních CSS stylů - volba **Použít vlastní soubor s CSS styly** (šablonu s některými třídami si můžete pro inspiraci stáhnout [zde](https://gist.github.com/fsArti24/ce1832c8b77ca4df2678de0a25909827)).
+V sekci **Úprava vzhledu** můžete nastavit barvy, písma a další vlastnosti formuláře. Pro vlastní úpravy pomocí kaskádových stylů (CSS) zapněte **Použít vlastní CSS styly**.
+
+1. V nabídce **Prodej →** <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a> otevřete u svého formuláře **Upravit** a přejděte na záložku **Vzhled**.
+2. V sekci **Úprava vzhledu** zapněte **Použít vlastní CSS styly**. Do pole **Vlastní CSS styly** vložte CSS pravidla; **URL adresa CSS souboru** může zůstat prázdná. Pokud už máte vlastní CSS soubor na webu, můžete místo vloženého kódu zadat jeho URL.
+
+![Zapnuté vlastní CSS s polem pro vložená pravidla a volitelnou URL externího souboru.](/assets/forms/custom-css/custom-css-fields.webp)
+
+<a href="/assets/forms/custom-css/custom-css-fields.webp" target="_blank" rel="noopener">Zobrazit nastavení vlastních CSS v plné velikosti</a>
+
+Například toto pravidlo změní pozadí nadpisů jednotlivých částí formuláře:
+
+```css
+.fapi-order-form .fapi-container-header {
+  background: #7000ff !important;
+}
+```
+
+3. Klikněte na **Uložit formulář**. V náhledu ověřte výsledek a zkontrolujte také stránku, na které máte formulář vložený.
+
+![Tlačítko Uložit formulář na konci nastavení.](/assets/forms/custom-css/save-form.webp)
+
+Vlastní pravidla začínejte selektorem `.fapi-order-form`, aby cílila na prodejní formulář. Do CSS pole nevkládejte skripty ani jiné HTML. Po vypnutí volby **Použít vlastní CSS styly** se vložený kód ani externí CSS soubor nepoužijí; uložený kód zůstane zachovaný pro další zapnutí.
+
+Další příklady tříd najdete v <a href="https://gist.github.com/fsArti24/ce1832c8b77ca4df2678de0a25909827" target="_blank" rel="noopener">ukázce CSS pro formulář</a>.
 
 :::danger
 Pro správné zobrazení české diakritiky v prodejním formuláři je třeba nastavit znakovou sadu webové stránky na kódování UTF-8.
