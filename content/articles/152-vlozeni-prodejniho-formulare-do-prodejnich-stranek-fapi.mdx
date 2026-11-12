@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/152-vlozeni-prodejniho-formulare-do-prodejnich-stranek-fapi
 order: 93
-updatedAt: 2026-11-10T08:14:23.260Z
+updatedAt: 2026-11-12T07:24:00Z
 legacyAnchors:
   - id: Kdy-vyut-prodejn-strnky-ve-FAPI-xmSPY
     tag: h2
@@ -48,7 +48,7 @@ Chcete prodávat prostřednictvím FAPI, ale zatím nemáte vlastní web, domén
 
 Na prodejní stránku můžete přidat informace o své nabídce a vložit do ní vytvořený prodejní formulář. Zákazník tak na jednom místě získá potřebné informace a může rovnou dokončit objednávku.
 
-Prodejní stránky najdete ve FAPI v nabídce **Prodej →** <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky</a>.
+Prodejní stránky najdete ve FAPI v nabídce **Prodej →** <a href="https://web.fapi.cz/funnels/?projectId=all" target="_blank" rel="noopener">Funnely</a>. Funnel sdružuje stránky a jejich společné nastavení, například doménu, základní cestu nebo titulek. Novou stránku vytváříte uvnitř funnelu; dříve vytvořené stránky zůstávají dostupné přes **Zobrazit původní prodejní stránky**.
 
 :::caution
 ### Jaké jsou výhody prodejních stránek ve FAPI
@@ -68,7 +68,7 @@ Prodejní stránky najdete ve FAPI v nabídce **Prodej →** <a href="https://we
 V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních stránek**. Pokud potřebujete stránek více, kontaktujte naši podporu na <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">podpora@fapi.cz</a>. Počet stránek vám můžeme podle vašich potřeb individuálně navýšit.
 
 :::tip
-**Zde je videonávod pro vložení prodejního formuláře do stránky ve FAPI:**
+**Videonávod k vložení formuláře do již existující stránky v původním editoru přes Widgets:**
 
 <Video src="https://www.youtube.com/embed/PL_cklVJUME" />
 :::
@@ -76,13 +76,59 @@ V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních s
 ## Co budeme potřebovat
 
 1. <a href="/article/44-prodejni-formular" target="_blank" rel="noopener">Vytvořený prodejní formulář.</a>
-2. Vytvořenou prodejní stránku.
+2. Pro úpravu původní stránky také již existující stránku. Novou stránku vytvoříte níže uvedeným postupem ve funnelu.
+
+## Jak vložit formulář do nové stránky ve funnelu
+
+Připravte si <a href="/article/44-prodejni-formular" target="_blank" rel="noopener">prodejní formulář</a>, který chcete na stránce nabízet.
+
+1. Otevřete **Prodej →** <a href="https://web.fapi.cz/funnels/?projectId=all" target="_blank" rel="noopener">Funnely</a> a klikněte na **Vytvořit funnel**.
+
+![Přehled funnelů s tlačítkem Vytvořit funnel a vstupem k původním prodejním stránkám.](/assets/ai-pages/funnels-overview.webp)
+
+<a href="/assets/ai-pages/funnels-overview.webp" target="_blank" rel="noopener">Zobrazit přehled funnelů v plné velikosti</a>
+
+2. Vyplňte **Interní název** a **Základní cestu**. V poli **Doména nebo subdoména** můžete ponechat **Výchozí adresa FAPI**. Další společné údaje nastavte podle potřeby a klikněte dole na **Uložit funnel**.
+
+![Základní nastavení funnelu: interní název, výběr domény a základní cesta.](/assets/ai-pages/funnel-basic-settings.webp)
+
+<a href="/assets/ai-pages/funnel-basic-settings.webp" target="_blank" rel="noopener">Zobrazit nastavení funnelu v plné velikosti</a>
+
+![Tlačítko Uložit funnel na konci společného nastavení.](/assets/ai-pages/save-funnel.webp)
+
+3. V otevřeném funnelu klikněte na **Vytvořit stránku**, vyplňte **Název stránky** a potvrďte **Vytvořit stránku**. Otevře se **AI editor stránek**.
+
+![Vytvoření stránky ve funnelu: název stránky a potvrzovací tlačítko.](/assets/ai-pages/create-funnel-page.webp)
+
+<a href="/assets/ai-pages/create-funnel-page.webp" target="_blank" rel="noopener">Zobrazit vytvoření stránky v plné velikosti</a>
+
+4. V části **Objednávka** klikněte na blok **Vyberte prodejní formulář.** V pravém panelu **Prodejní formulář** vyberte svůj formulář. Texty a další obsah stránky upravte podle své nabídky.
+
+![Výběr prodejního formuláře v pravém panelu editoru stránky.](/assets/ai-pages/funnel-form-selection.webp)
+
+<a href="/assets/ai-pages/funnel-form-selection.webp" target="_blank" rel="noopener">Zobrazit výběr formuláře v plné velikosti</a>
+
+5. Klikněte na **Uložit koncept**. Až budete chtít stránku zpřístupnit návštěvníkům, klikněte na **Zveřejnit stránku**. Samotné uložení konceptu stránku nezveřejní.
+
+![Ovládání pro uložení konceptu a zveřejnění stránky.](/assets/ai-pages/funnel-save-publish.webp)
+
+<a href="/assets/ai-pages/funnel-save-publish.webp" target="_blank" rel="noopener">Zobrazit uložení a zveřejnění v plné velikosti</a>
+
+6. Vraťte se do přehledu stránek funnelu, otevřete **Veřejnou adresu** a ověřte obsah stránky i vložený formulář.
+
+:::caution
+Nenastavené údaje stránky se dědí z funnelu. Změna společného nastavení funnelu se projeví i na jeho zveřejněných stránkách. Změna domény nebo základní cesty mění jejich veřejné adresy; přesměrování ze starých adres se nevytváří.
+:::
 
 ## Jak vložit prodejní formulář do stránek FAPI
 
-1. Přejdeme do karty **Prodej →** <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky</a> - **vybereme prodejní stránku, kterou chceme upravovat**
+Následující postup je určený pro již existující stránky v původním editoru přes **Widgets**.
 
-![Jak vložit prodejní formulář do prodejní stránky ve FAPI](/assets/articles/b1235e66bbe8d23d.png)
+1. Otevřete **Prodej →** <a href="https://web.fapi.cz/funnels/?projectId=all" target="_blank" rel="noopener">Funnely</a> **→** <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Zobrazit původní prodejní stránky</a>. U vybrané stránky klikněte na **Upravit**.
+
+![Vstup k původním prodejním stránkám z přehledu funnelů.](/assets/ai-pages/original-pages-entry.webp)
+
+<a href="/assets/ai-pages/original-pages-entry.webp" target="_blank" rel="noopener">Zobrazit vstup k původním stránkám v plné velikosti</a>
 
 1. Přes zelené plus dáme **Přidat řádku**
 
@@ -112,9 +158,7 @@ V jednom FAPI účtu můžete mít standardně vytvořeno až **10 prodejních s
 :::info
 ## Sloupce a časté otázky v AI editoru stránek
 
-Tato funkce je zatím dostupná jen na vyžádání, aktuálně testujeme její beta verzi. Pokud máte zájem, napište nám na [podpora@fapi.cz](mailto\:podpora@fapi.cz).
-
-Pokud máte v účtu zpřístupněný **AI editor stránek**, najdete ho v nabídce Prodej → <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky</a>. Jde o jiný editor než výše popsaný postup přes Widgets.
+**AI editor stránek** otevřete ze stránky ve funnelu v nabídce **Prodej →** <a href="https://web.fapi.cz/funnels/?projectId=all" target="_blank" rel="noopener">Funnely</a>. Jde o jiný editor než výše popsaný postup přes Widgets.
 
 V bloku **Sekce** lze vybrat **Počet sloupců**: 1, 2 nebo 3. Sloupce mají stejnou šířku; na mobilu se obsah řadí pod sebe. Při snížení počtu sloupců se obsah z rušených sloupců přesune do posledního zbývajícího sloupce.
 
@@ -132,7 +176,7 @@ V AI editoru můžete upravit barvy, velikost i tvar tlačítek, aby odpovídaly
 
 ## Vlastní doména pro AI stránky
 
-Pokud máte zpřístupněný AI editor stránek, můžete pro jeho stránky připojit vlastní doménu nebo subdoménu. Doména se připojuje k účtu FAPI; cesty jednotlivých stránek za doménou zůstávají zachované. Tato možnost se nevztahuje na výše popsaný původní editor přes Widgets.
+Pro stránky ve funnelu můžete připojit vlastní doménu nebo subdoménu. Po připojení ji vyberte v **Nastavení funnelu** v poli **Doména nebo subdoména**. Veřejná adresa stránky vychází z domény, základní cesty funnelu a cesty stránky. Tato možnost se nevztahuje na výše popsaný původní editor přes Widgets.
 
 :::caution
 Změna DNS přesměruje celý zadaný název domény. Pokud na něm už běží web, použijte pro AI stránky volnou doménu nebo subdoménu. Připojení domény samo o sobě neznamená schválení platební brány.
