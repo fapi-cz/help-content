@@ -1,0 +1,130 @@
+---
+title: "Jak vložit prodejní formulář do WordPressu"
+url: "/article/355-jak-vlozit-prodejni-formular-do-wordpressu"
+description: "FAPI prodejní formulář můžete vložit přímo do stránky vytvořené ve WordPressu pomocí HTML kódu. Formulář se potom zákazníkům zobrazí jako součást vašeho webu a objednávku mohou vyplnit, aniž by přecházeli na jinou stránku."
+category: "Jak vložit prodejní formulář do stránky"
+categorySlug: "150-vlozeni-prodejniho-formulare-na-web"
+categorySlugs: ["150-vlozeni-prodejniho-formulare-na-web"]
+keywords: ["Jak vložit prodejní formulář do WordPressu", "WordPress", "HTML", "Prodejní formulář"]
+sourceUrl: "https://napoveda.fapi.cz/article/355-jak-vlozit-prodejni-formular-do-wordpressu"
+order: 355
+updatedAt: "2026-11-12T08:31:38.457634Z"
+legacyAnchors: [{"id": "Co-budete-potebovat-3KFiV", "tag": "h2", "text": "Co budete potřebovat", "occurrence": 0, "headingIndex": 0}, {"id": "1-Zkoprujte-HTML-kd-formule-ve-FAPI-UNJUR", "tag": "h2", "text": "1. Zkopírujte HTML kód formuláře ve FAPI", "occurrence": 0, "headingIndex": 1}, {"id": "2-Otevete-strnku-ve-WordPressu-Qc2Ie", "tag": "h2", "text": "2. Otevřete stránku ve WordPressu", "occurrence": 0, "headingIndex": 2}, {"id": "3-Pidejte-prvek-pro-HTML-kd-gJDlT", "tag": "h2", "text": "3. Přidejte prvek pro HTML kód", "occurrence": 0, "headingIndex": 3}, {"id": "4-Vlote-kd-prodejnho-formule-Wxk46", "tag": "h2", "text": "4. Vložte kód prodejního formuláře", "occurrence": 0, "headingIndex": 4}, {"id": "5-Ulote-a-publikujte-strnku-9Kczp", "tag": "h2", "text": "5. Uložte a publikujte stránku", "occurrence": 0, "headingIndex": 5}, {"id": "6-Zkontrolujte-formul-jako-zkaznk-7t-58", "tag": "h2", "text": "6. Zkontrolujte formulář jako zákazník", "occurrence": 0, "headingIndex": 6}, {"id": "Nejastj-problmy-X0iwX", "tag": "h2", "text": "Nejčastější problémy", "occurrence": 0, "headingIndex": 7}, {"id": "Na-strnce-se-zobrazuje-HTML-kd-msto-formule-zTnT_", "tag": "h3", "text": "Na stránce se zobrazuje HTML kód místo formuláře", "occurrence": 0, "headingIndex": 8}, {"id": "Formul-se-nezobrazuje-W14nt", "tag": "h3", "text": "Formulář se nezobrazuje", "occurrence": 0, "headingIndex": 9}, {"id": "Formul-se-zobrazuje-v-editoru-ale-ne-na-veejn-strnce-S4Ebd", "tag": "h3", "text": "Formulář se zobrazuje v editoru, ale ne na veřejné stránce", "occurrence": 0, "headingIndex": 10}, {"id": "Formul-je-na-mobilu-pli-zk-nebo-oznut-XDtRH", "tag": "h3", "text": "Formulář je na mobilu příliš úzký nebo oříznutý", "occurrence": 0, "headingIndex": 11}]
+---
+FAPI prodejní formulář můžete vložit přímo do stránky vytvořené ve WordPressu pomocí HTML kódu. Formulář se potom zákazníkům zobrazí jako součást vašeho webu a objednávku mohou vyplnit, aniž by přecházeli na jinou stránku.
+
+K vložení použijete HTML kód vygenerovaný ve FAPI. Tento kód vložíte do prvku nebo bloku určeného pro vlastní HTML ve WordPressu.
+
+:::info
+**Co je HTML kód:** Jde o krátký technický zápis, který propojí stránku ve WordPressu s vaším prodejním formulářem ve FAPI. Kód není potřeba upravovat. Stačí jej celý zkopírovat a vložit na požadované místo.
+:::
+
+## Co budete potřebovat
+
+Před zahájením si připravte:
+
+- vytvořený prodejní formulář ve FAPI,
+- přístup do administrace svého webu ve WordPressu,
+- HTML kód prodejního formuláře z FAPI.
+
+:::caution
+Váš účet ve WordPressu musí umožňovat vložení značky `<script>`. Bez potřebného oprávnění může WordPress při uložení kód odstranit; podrobnosti najdete v <a href="https://wordpress.org/documentation/article/custom-html/" target="_blank" rel="noopener">návodu k bloku Vlastní HTML</a>. Pokud používáte službu WordPress.com, je pro tento kód potřeba placený plán s aktivovanými hostingovými funkcemi, jak uvádí <a href="https://wordpress.com/support/wordpress-editor/blocks/custom-html-block/" target="_blank" rel="noopener">nápověda WordPress.com</a>.
+:::
+
+Názvy tlačítek se mohou lišit podle toho, jaký editor nebo page builder ve WordPressu používáte. Prvek, do kterého se kód vkládá, se obvykle jmenuje **HTML**, **Vlastní HTML**, **Custom HTML** nebo **HTML kód**.
+
+## 1. Zkopírujte HTML kód formuláře ve FAPI
+
+Otevřete ve FAPI záložku <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodej > Prodejní formuláře</a> a vyberte prodejní formulář, který chcete na web vložit, a zkopírujte jeho HTML kód.
+
+![Jak vložit prodejní formulář do WordPressu](/assets/articles/babb66de72726f02.png)
+
+:::danger
+**Důležité:** Zkopírujte celý vygenerovaný kód. Neodstraňujte z něj jednotlivé řádky ani znaky, jinak se formulář nemusí správně zobrazit nebo fungovat.
+:::
+
+## 2. Otevřete stránku ve WordPressu
+
+1. Přihlaste se do administrace svého webu ve WordPressu.
+2. V levé nabídce otevřete **Stránky**.
+
+![Jak vložit prodejní formulář do WordPressu](/assets/articles/8b45dc7e01c085fc.png)
+
+3. Vyhledejte stránku, na které chcete formulář zobrazit.
+4. Klikněte na **Upravit** nebo na tlačítko pro otevření používaného vizuálního editoru.
+
+Pokud stránka ještě neexistuje, vytvořte nejprve novou stránku.
+
+## 3. Přidejte prvek pro HTML kód
+
+Na stránce přejděte na místo, kde se má prodejní formulář zobrazovat.
+
+1. Klikněte na tlačítko pro přidání nového prvku, například **+ Přidat prvek**, **+ Vložit element** nebo **+ Přidat blok**.
+2. Do vyhledávání napište `HTML`  .
+3. Vyberte prvek **HTML**, **Vlastní HTML** nebo obdobně pojmenovaný prvek.
+
+![Jak vložit prodejní formulář do WordPressu](/assets/articles/b0d01710ee935d2c.png)
+
+:::danger
+**Pozor:** Kód nevkládejte do běžného textového pole. WordPress by jej mohl zobrazit návštěvníkům jako text namísto prodejního formuláře.
+:::
+
+![Jak vložit prodejní formulář do WordPressu](/assets/articles/0b54897774ee8d76.png)
+
+## 4. Vložte kód prodejního formuláře
+
+1. Přesuňte HTML prvek na požadované místo stránky.
+2. Klikněte do pole pro HTML kód a Upravit HTML.
+3. Vložte celý kód zkopírovaný z FAPI.
+4. Zkontrolujte, že se vložil celý a nebyla odstraněna jeho část.
+
+![Jak vložit prodejní formulář do WordPressu](/assets/articles/d58dfcc5bcedd621.png)
+
+![Jak vložit prodejní formulář do WordPressu](/assets/articles/e3220baa7d2c87a1.png)
+
+Pokud editor nabízí náhled, formulář se může zobrazit už během úprav. Některé editory však vložený kód spustí až na uložené nebo publikované stránce.
+
+## 5. Uložte a publikujte stránku
+
+Klikněte na **Aktualizovat**, pokud upravujete existující stránku, nebo na **Publikovat**, pokud vytváříte novou.
+
+Poté otevřete veřejnou stránku svého webu, nikoli pouze náhled v editoru.
+
+## 6. Zkontrolujte formulář jako zákazník
+
+Na publikované stránce ověřte, že:
+
+- se formulář skutečně zobrazuje,
+- není oříznutý ani příliš úzký,
+- obsahuje správný produkt a cenu,
+- fungují všechna povinná pole,
+- lze vybrat požadovanou platbu a dopravu,
+- správně se zobrazuje také na mobilním telefonu.
+
+Nakonec proveďte testovací objednávku. Ověřte, že objednávka vznikla ve FAPI a zákazník se po jejím odeslání dostal na správnou děkovací stránku.
+
+## Nejčastější problémy
+
+### Na stránce se zobrazuje HTML kód místo formuláře
+
+Kód byl pravděpodobně vložen do běžného textového prvku. Odstraňte jej a vložte do prvku **HTML** nebo **Vlastní HTML**.
+
+### Formulář se nezobrazuje
+
+Zkontrolujte, zda:
+
+- jste z FAPI zkopírovali celý kód,
+- jste stránku uložili nebo publikovali,
+- kontrolujete veřejnou stránku, nikoli jen editor,
+- optimalizační nebo bezpečnostní plugin neblokuje externí skripty,
+- jste kód při vkládání ručně neupravili.
+
+Po změnách stránku znovu načtěte. Pokud web používá mezipaměť, může být potřeba ji vymazat.
+
+### Formulář se zobrazuje v editoru, ale ne na veřejné stránce
+
+Aktualizujte stránku a vymažte mezipaměť webu. Pokud problém přetrvává, zkontrolujte nastavení bezpečnostních a optimalizačních pluginů.
+
+### Formulář je na mobilu příliš úzký nebo oříznutý
+
+Zkontrolujte nastavení sloupce nebo sekce, ve které je HTML prvek umístěný. Prvek by měl mít dostatečnou šířku a neměl by být vložený do příliš úzkého postranního sloupce.
