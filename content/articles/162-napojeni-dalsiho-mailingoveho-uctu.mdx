@@ -1,7 +1,7 @@
 ---
 title: Napojení dalšího Smartemailing nebo Ecomail účtu
 url: /article/162-napojeni-dalsiho-mailingoveho-uctu
-description: Pokud potřebujete v jednom FAPI účtu používat více různých Smartemailing účtů, tak je potřeba využít službu Integromat (Make). Návod funguje i pro Ecomail. Bude
+description: Další účet SmartEmailingu nebo Ecomailu připojíte přímo ve FAPI. Make je volitelnou cestou pro vlastní automatizaci.
 category: Rozšíření a doplňky
 categorySlug: 11-rozsireni-a-doplnky
 categorySlugs:
@@ -11,27 +11,34 @@ keywords:
   - Rozšíření a doplňky
 sourceUrl: https://napoveda.fapi.cz/article/162-napojeni-dalsiho-mailingoveho-uctu
 order: 155
-updatedAt: 2026-10-28T11:16:11.506Z
+updatedAt: 2026-11-12T14:28:54.623Z
+redirects: []
 ---
-Pokud potřebujete v jednom FAPI účtu používat více různých Smartemailing účtů, tak je potřeba využít službu Integromat (Make). Návod funguje i pro Ecomail.
+Další účet **SmartEmailingu nebo Ecomailu můžete připojit přímo ve FAPI**. V jednom účtu FAPI lze mít více samostatně pojmenovaných propojení.
+
+Postup přidání propojení a výběru cílového seznamu najdete v návodech <a href="/article/52-propojeni-fapi-se-smartemailingem" target="_blank" rel="noopener">Propojení FAPI se SmartEmailingem</a> a <a href="/article/100-propojeni-fapi-s-ecomailem" target="_blank" rel="noopener">Propojení FAPI s Ecomailem</a>. Jen kvůli dalšímu účtu tedy Make nepotřebujete.
+
+## Volitelně: přenos kontaktů přes <a href="https://napoveda1.fapi.cz/article/87-propojeni-aplikaci-pomoci-sluzby-integromat" target="_blank" rel="noopener">MAKE</a>
+
+Následující postup použijte, pokud chcete přenos kontaktů řešit vlastní automatizací přes **Make**, (dříve Integromat).
 
 Budete potřebovat:
 
--   funkční [Integromat (Make)](https://eu1.make.com/user/affiliate) účet
--   funkční prodejní FAPI formulář
--   funkční Smartemailing nebo [Ecomail](https://ecomail.cz?fpr=jiri-0d563d) účet
+- funkční [Make](https://www.make.com/en/register?pc=fapimake) účet
+- funkční prodejní FAPI formulář
+- funkční [SmartEmailing](https://www.smartemailing.cz/?a_box=21gse) nebo [Ecomail](https://ecomail.cz?fpr=jiri-0d563d) účet
 
-Začneme v Integromatu. Pokud jste v Integromatu poprvé, tak nemáte vytvořená napojení na FAPI a Smartemailing (nebo [Ecomail](https://ecomail.cz?fpr=jiri-0d563d)).
+Začneme v Make Pokud jste v Make, tak nemáte vytvořená napojení na FAPI a Smartemailing (nebo [Ecomail](https://ecomail.cz?fpr=jiri-0d563d)).
 
--   Jak napojit FAPI do Integromatu [popisujeme tady](/article/87-propojeni-aplikaci-pomoci-sluzby-integromat).
--   Jak napojit Smartemailing [najdete tady](https://napoveda.smartemailing.cz/article/966-integrace-s-integromatem).
--   Jak napojit Ecomail [najdete tady](https://support.ecomail.cz/cs/articles/3725544-integromat-make).
+- Jak napojit FAPI do Make <a href="/article/87-propojeni-aplikaci-pomoci-sluzby-integromat" target="_blank" rel="noopener">popisujeme tady</a>.
+- Jak napojit Smartemailing [najdete tady](https://napoveda.smartemailing.cz/article/966-integrace-s-integromatem).
+- Jak napojit Ecomail [najdete tady](https://support.ecomail.cz/cs/articles/3725544-integromat-make).
 
-:::danger
-Přes [Integromat / Make](https://eu1.make.com/user/affiliate) nejde používat přenos podrobností objednávky do Smartemailingu. Tato možnost je dostupná výhradně pro hlavní napojení na Smartemailing přímo z FAPI \> Nastavení \> Propojení aplikací \> Smartemailing.
+:::note
+Odesílání dat o objednávce ze FAPI do SmartEmailingu se nastavuje u konkrétního přímého propojení. Postup najdete v části <a href="/article/52-propojeni-fapi-se-smartemailingem#odesilani-dat-o-objednavce-do-smartemailingu" target="_blank" rel="noopener">Odesílání dat o objednávce do SmartEmailingu</a>.
 :::
 
-V Integromatu jděte do Scénáře \> + Vytvořit nový scénář
+V Make jděte do Scénáře > + Vytvořit nový scénář
 
 ![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/ba108e349a1d3b63.png)
 
@@ -47,13 +54,11 @@ Po uložení se vygeneruje dlouhá URL adresa. Tu si zkopírujte do schránky po
 
 ![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/b7d95b59383b857d.png)
 
-Přejděte do FAPI prodejního formuláře, do režimu úprav (Prodej \> prodejní formuláře \> Upravit). V kroku 4 akce do tabulky ve spodní části stránky založte novou akci. Co přesně bude špouštěčem akce je na vás, na výběr je vystavení, zaplacení nebo storno objednávky, nebo konkrétní položky. V ukázce níže jsme vybrali jako spouštěcí trigger **vystavení objednávky**. Jako AKCI vyberte **spustit programový script** a do řádku pod tím vložte zkopírovanou **URL adresu hooku** z předchozího kroku z Integromatu.
-
-![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/1260e687f82e3083.png)
+Přejděte do FAPI prodejního formuláře, do režimu úprav (Prodej > prodejní formuláře > Upravit). V kroku 4 akce do tabulky ve spodní části stránky založte novou akci. Co přesně bude špouštěčem akce je na vás, na výběr je vystavení, zaplacení nebo storno objednávky, nebo konkrétní položky. V ukázce níže jsme vybrali jako spouštěcí trigger **vystavení objednávky**. Jako AKCI vyberte **spustit programový script** a do řádku pod tím vložte zkopírovanou **URL adresu hooku** z předchozího kroku z Make.
 
 Úpravu FAPI formuláře nezapomeňte uložit zeleným tlačítkem vespod stránky.
 
-**Vraťte se do Integromatu** a za první modul Sledovat notifikace vložte další modul – Získání dat faktury. Klikněte na ikonu plus u prvního modulu, v nové šedé ikonce klikněte na název FAPI.
+**Vraťte se do Make** a za první modul Sledovat notifikace vložte další modul – Získání dat faktury. Klikněte na ikonu plus u prvního modulu, v nové šedé ikonce klikněte na název FAPI.
 
 ![Napojení dalšího Smartemailing nebo Ecomail účtu](/assets/articles/d6c79394484b1f47.png)
 
@@ -63,6 +68,6 @@ Klikněte na řádek Získat data faktury.
 
 Další část už se bude lišit podle toho, zda používáte Smartemailing nebo Ecomail.
 
-Za druhý modul ZÍSKAT DATA FAKTURY přidejte v Integromatu nový modul Smartemailingu, nebo Ecomailu. Vyberte možnost **Create subscriber** a vyberte podrobnosti o tom, do kterého seznamu má import uživatele proběhnout.
+Za druhý modul ZÍSKAT DATA FAKTURY přidejte v Make nový modul Smartemailingu, nebo Ecomailu. Vyberte možnost **Create subscriber** a vyberte podrobnosti o tom, do kterého seznamu má import uživatele proběhnout.
 
 Scénář uložte a vyzkoušejte na zkušební objednávce. Ve SE / ecomailu byste měli vidět nově přidaný kontakt a ve FAPI, v detailu dokladu, novou akci - spuštění webhooku.
