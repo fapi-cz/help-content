@@ -13,7 +13,7 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/16-ciselne-rady
 order: 19
-updatedAt: 2026-07-13T09:39:45Z
+updatedAt: 2026-11-12T08:30:20Z
 legacyAnchors:
   - id: Nastaven-selnch-ad--PNy13
     tag: h2
@@ -62,15 +62,17 @@ Jaký formát číselné řady je nejvhodnější právě pro vás, doporučujem
 Jestliže potřebujete číslování dokladů změnit (nespokojíte se s výchozím nastavením), je třeba provést tyto kroky:
 
 1.  nastavit číselné řady,
-2.  přiřadit zvolenou sadu číselných řad příslušnému prodejnímu formuláři v 3. kroku Platba, doprava, fakturace, sekce Nastavení fakturace (popř. vybrat sadu číselných řad při ručním vystavení faktury).
+2.  přiřadit zvolenou sadu číselných řad příslušnému prodejnímu formuláři (viz [Přiřazení sady číselných řad prodejnímu formuláři](#Piazen-sady-selnch-ad-prodejnmu-formuli-C0IlL)), popř. vybrat sadu číselných řad při ručním vystavení faktury.
 
 ![Číselné řady](/assets/articles/23625f0465b4112a.png)
 
 ## Nastavení číselných řad
 
-Nastavení číselných řad naleznete v nabídce [Nastavení - Číselné řady](https://web.fapi.cz/series/?projectId=all).
+Nastavení číselných řad naleznete v nabídce <a href="https://web.fapi.cz/series/?projectId=all" target="_blank" rel="noopener">Nastavení - Číselné řady</a>.
 
 Zde můžete vytvářet nové číselné řady (tlačítko **Nová sada číselných řad**), popř. upravovat již existující (tlačítko **Upravit**).
+
+Pokud změníte nastavení číselné řady, čísla již vystavených dokladů zůstanou beze změny. Upravené nastavení se použije až při přidělení čísla novému dokladu.
 
 :::tip
 Pokud potřebujete používat více číselných řad, doporučujeme pro každý účel vytvořit samostatnou sadu s výstižným pojmenováním. (Výchozí sadu číselných řad není možné přejmenovat.)
@@ -150,7 +152,7 @@ Pokud dojde k selhání automatického navýšení, ať už z důvodu dosažení
 
 ## Přiřazení sady číselných řad prodejnímu formuláři
 
-Každému prodejnímu formuláři lze přiřadit libovolnou existující sadu číselných řad, a to výběrem požadované sady v poli **SADA ČÍSELNÝCH ŘAD** na záložce **Platby a fakturace** v nastavení prodejního formuláře. Všechny doklady vystavené prostřednictvím tohoto prodejního formuláře se pak budou číslovat podle zvolené sady číselných řad.
+V nabídce <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodej – Prodejní formuláře</a> otevřete příslušný formulář tlačítkem **Upravit**. Sadu vyberte v poli **SADA ČÍSELNÝCH ŘAD** ve 3. kroku **Platba, doprava a fakturace**, v sekci **Nastavení fakturace**. Všechny doklady vystavené prostřednictvím tohoto prodejního formuláře se pak budou číslovat podle zvolené sady číselných řad.
 
 ![Číselné řady](/assets/articles/0193e36c1e41855d.png)
 
@@ -158,7 +160,7 @@ V poli **SADA PRO ZAHRANIČNÍ FAKTURY** můžete zvolit, jaká sada číselný
 
 ## Číselná řada při ruční fakturaci
 
-Číselnou řadu u ručně vystavované faktury vyberete v poli **SADA ČÍSELNÝCH ŘAD** ve formuláři pro ruční vystavení faktury (nabídka **Faktury - Přehled faktur -** tlačítko **Vystavit fakturu**).
+Číselnou řadu u ručně vystavované faktury vyberete v poli **SADA ČÍSELNÝCH ŘAD** ve formuláři pro ruční vystavení faktury (nabídka **Faktury - Přehled faktur -** tlačítko <a href="https://web.fapi.cz/invoice/create?projectId=all" target="_blank" rel="noopener">Vystavit fakturu</a>).
 
 :::tip
 Při testování doporučujeme u prodejního formuláře, popř. při ruční fakturaci, nastavit *Testovací* sadu číselných řad, která je určena právě pro tento účel. Při tomto nastavení testovací doklady nenaruší kontinuitu "ostré" číselné řady, a je tak možné je po ukončení testování bez problémů smazat. Doklady vystavené v testovací číselné řadě se navíc nezapočítávají do limitu tarifu.
@@ -170,11 +172,11 @@ Při testování doporučujeme u prodejního formuláře, popř. při ruční fa
 
 ## Testovací sada číselných řad
 
-Zvláštní postavení mezi sadami číselných řad má _testovací_ sada, která slouží pro [ověření správného nastavení a kontrolu prodejního procesu](/article/90-testovani-celeho-online-prodejniho-procesu). Má tyto specifické vlastnosti:
+Zvláštní postavení mezi sadami číselných řad má _testovací_ sada, která slouží pro <a href="/article/90-testovani-celeho-online-prodejniho-procesu" target="_blank" rel="noopener">ověření správného nastavení a kontrolu prodejního procesu</a>. Má tyto specifické vlastnosti:
 
 -   není možné ji přejmenovat,
 -   má pevný formát číselných řad (umožňuje vystavit až 99 dokladů pro každý typ dokladu),
--   ve [vystavených dokladech](/article/25-faktury-ve-fapi) se na pozadí zobrazuje vodoznak "TEST",
+-   ve <a href="/article/25-faktury-ve-fapi" target="_blank" rel="noopener">vystavených dokladech</a> se na pozadí zobrazuje vodoznak "TEST",
 -   objednávky vystavené v testovací číselné řadě se nezobrazují na nástěnce, v e-mailových reportech a ve statistikách,
 -   objednávky vystavené v testovací číselné řadě se nezapočítávají do limitu tarifu FAPI,
 -   číselná řada se automaticky nerozšiřuje při jejím vyčerpání.
