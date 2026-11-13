@@ -107,7 +107,9 @@ Ve FAPI v nabídce **Nastavení → <a href="https://web.fapi.cz/settings/conn
 
 Na následující stránce vyplňte údaje nezbytné pro vytvoření propojení se službou Stripe.
 
-![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/c50f0520fa435873.png)
+![Nové propojení Stripe ve FAPI s poli Doména, Publishable key, Secret key a tlačítkem Uložit](/assets/stripe/connection-fields-20261113.webp)
+
+<a href="/assets/stripe/connection-fields-20261113.webp" target="_blank" rel="noopener">Zobrazit formulář propojení Stripe v plné velikosti</a>
 
 -   **DOMÉNA** - webová doména, na které budete platební bránu Stripe používat (jde pouze o interní pojmenování propojení ve FAPI, např. ve tvaru fapi.cz),
 -   **PUBLISHABLE KEY** - veřejný klíč z účtu Stripe,
@@ -133,14 +135,6 @@ Při uložení se na pozadí automaticky vytvoří a na obou stranách uloží
 
 Veřejný (_publishable_) i tajný (_secret_) klíč najdete ve svém účtu Stripe na stránce **[API keys](https://dashboard.stripe.com/apikeys)** v sekci **Standard keys**. Zkontrolujte, že máte otevřený správný účet a požadovaný testovací nebo produkční režim.
 
-![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/23db50fc200e855f.png)
-
-![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/e9fb7f75e7838d30.png)
-
-
-
-![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/8f5bc02cd2bd04f9.png)
-
 :::caution
 Produkční tajný klíč, který jste vytvořili ručně, Stripe zobrazí **pouze při vytvoření**. Bezpečně si jej uložte; později jej nelze znovu odhalit. Možnosti vytvoření a zobrazení dalších typů klíčů popisuje [oficiální návod Stripe k API klíčům](https://docs.stripe.com/keys). Tajný klíč nikomu neposílejte ani jej nezveřejňujte ve snímcích obrazovky.
 :::
@@ -157,11 +151,7 @@ Nakonec už jen zbývá propojenou platební bránu přidat do prodejního formu
 
 V nabídce **Prodej → <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a>** vyberte formulář, u kterého chcete nabídnout online platby zprostředkované pomocí platební brány Stripe, a stiskněte tlačítko **Upravit prodejní formulář.**
 
-![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/aa8bda03be354320.png)
-
 Na záložce **3\.** **Platba, doprava a fakturace** v úpravě prodejního formuláře vyberte v sekci **Platební brána** příslušné propojení s platební bránou Stripe.
-
-![Založení a integrace platební brány Stripe ve FAPI](/assets/articles/90650e379d4ff918.png)
 
 Změny provedené v nastavení prodejního formuláře uložte tlačítkem **Uložit formulář**.
 
