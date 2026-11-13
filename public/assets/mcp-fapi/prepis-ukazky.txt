@@ -1,0 +1,33 @@
+Jak připravit prodej e-booku pomocí FAPI MCP
+
+00:00 · Z osnovy je e-book
+
+Máte osnovu na hodinový workshop? Můžete z ní udělat e-book a prodávat ho i mezi termíny. Ukážu vám, jak připravit prodej e-booku První workshop bez stresu s pomocí FAPI a AI.
+
+00:13 · Co uvidí zákazník
+
+Čtenář přijde na prodejní stránku, vyplní objednávkový formulář a uvidí potvrzení. Soubor se zpřístupní až po zaplacení. Teď si ukážeme, jak takový prodej připravit.
+
+00:26 · Nejdřív ověřím účet
+
+V desktopovém ChatGPT otevřu Codex a připojím plugin FAPI. V prohlížeči zkontroluju účet, který propojuju, a potvrdím přístup. Pak se přes plugin zeptám, se kterým účtem pracuje. Tím zatím nic ve FAPI neměním.
+
+00:44 · Zadám konkrétní prodej
+
+Zadám, ať v připojeném účtu FAPI připraví prodej e-booku za dvě stě devadesát korun. Chci prodejní stránku, formulář a stránku s potvrzením objednávky. Stránky si nechám v konceptu, abych si je před zveřejněním mohla projít.
+
+01:01 · Prohlédnu prodejní stránku
+
+V náhledu si zkontroluju, že je hned vidět, co e-book obsahuje a komu pomůže. Tlačítko vede k objednávkovému formuláři. V nastavení ještě zkontroluju titulek a popis, které stránku vystihují.
+
+01:16 · Projdu formulář a potvrzení
+
+U formuláře si zkontroluju, že kupující vidí správný produkt a konečnou cenu. Po odeslání se kupující dozví, že jsme objednávku přijali. Možnost stáhnout e-book se zpřístupní až po zaplacení.
+
+01:31 · PDF přidám k produktu
+
+PDF je potřeba nahrát přímo k produktu v administraci FAPI. Po zaplacení ho zákazník najde v přehledu objednávky. Odkaz může dostat také v potvrzovacím e-mailu po zaplacení, pokud ho obsahuje použitá šablona.
+
+01:47 · Zkuste to s vlastním e-bookem
+
+Tady končím u náhledu. Před zveřejněním si sami ověřte platbu a doručení testovací objednávkou. V nápovědě FAPI najdete postup podle svého asistenta i zadání, které si upravíte pro vlastní e-book.
