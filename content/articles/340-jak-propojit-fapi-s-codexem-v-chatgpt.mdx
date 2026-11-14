@@ -1,7 +1,7 @@
 ---
 title: Jak propojit FAPI s Codexem v ChatGPT
 url: /article/340-jak-propojit-fapi-s-codexem-v-chatgpt
-description: Propojení FAPI s Codexem v ChatGPT vám umožní pracovat s vybranými daty a funkcemi FAPI přímo přes AI asistenta. Můžete si tak nechat pomoci například s vystavo
+description: Nainstalujte plugin FAPI do Codexu, autorizujte správný účet a ověřte spojení. Na ukázce zjistíte, jak s AI připravit prodej e-booku.
 category: AI
 categorySlug: 321-ai
 categorySlugs:
@@ -10,18 +10,18 @@ categorySlugs:
   - 10-propojeni-s-externimi-systemy
   - 11-rozsireni-a-doplnky
 keywords:
-  - Jak propojit FAPI s Codexem v ChatGPT
-  - AI
-  - Online prodej
-  - Propojení s jinými systémy
-  - Rozšíření a doplňky
+  - FAPI MCP
+  - FAPI plugin pro Codex
+  - propojení FAPI s ChatGPT
+  - OAuth FAPI
+  - prodej e-booku s AI
 sourceUrl: https://napoveda.fapi.cz/article/340-jak-propojit-fapi-s-codexem-v-chatgpt
 order: 215
-updatedAt: 2026-08-12T14:09:12Z
+updatedAt: 2026-11-13T10:42:33Z
 legacyAnchors:
   - id: Dleit-propojen-nefunguje-pes-webov-rozhran-ChatGPT-pokFj
     tag: h2
-    text: "Důležité: propojení nefunguje přes webové rozhraní ChatGPT"
+    text: Propojení přes Codex v desktopové aplikaci
     occurrence: 0
     headingIndex: 0
   - id: Videonpovda-1onEn
@@ -90,32 +90,22 @@ legacyAnchors:
     occurrence: 0
     headingIndex: 13
 ---
-Propojení FAPI s Codexem v ChatGPT vám umožní pracovat s vybranými daty a funkcemi FAPI přímo přes AI asistenta.
+Připojte svůj účet FAPI k Codexu pomocí pluginu FAPI. Po autorizaci si můžete nechat vyhledat produkt a jeho cenu nebo zadat přípravu prodejního formuláře.
 
-Můžete si tak nechat pomoci například s vystavováním faktur, úpravou faktur, vytvářením produktů, prodejních formulářů, slevových kódů, automatizací nebo se získáváním dat a statistik z FAPI.
+:::note
+## Propojení přes Codex v desktopové aplikaci
 
-:::danger
-## Důležité: propojení nefunguje přes webové rozhraní ChatGPT
+Pro instalaci pluginu FAPI podle tohoto návodu otevřete **desktopovou aplikaci ChatGPT** a přejděte do **Codexu**. Plugin pak můžete vyvolat v prostředí **Work**.
 
-Pro nastavení a používání propojení s FAPI je potřeba mít **nainstalovanou desktopovou aplikaci ChatGPT**.
-
-Propojení neprovádějte přes běžné webové rozhraní ChatGPT v prohlížeči. Pro práci s Codexem a pluginem FAPI použijte aplikaci ChatGPT nainstalovanou přímo v počítači.
+ChatGPT na webu nabízí samostatnou možnost přidat vlastní MCP server. Podle OpenAI je dostupná v pracovních prostorech **Business, Enterprise a Edu** a závisí na jejich oprávněních. [Vlastní MCP servery v ChatGPT](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt)
 :::
 
 :::tip
 ## Videonápověda
 
-Postup najdete také v této videonápovědě.
+Video ukazuje přidání pluginu FAPI a autorizaci účtu. Při ověřování propojení použijte prostředí **Work**.
 
-Ve videu chybí tyto informace:
-
-Nutné mít **nainstalovanou desktopovou aplikaci ChatGPT**.
-
-Pak pracovat **v prostředí Work.**
-
-Doplněno vše v textu níže.
-
-<Video src="https://www.youtube.com/embed/1w2pS-GVQ-o" />
+<Video src="https://www.youtube.com/embed/1w2pS-GVQ-o" title="Jak připojit plugin FAPI v Codexu" />
 :::
 
 ## Co budete potřebovat
@@ -144,7 +134,7 @@ Než začnete propojení nastavovat, otevřete si FAPI a přihlaste se do účtu
 
 To je důležité hlavně v případě, že máte ve FAPI více účtů. Codex se bude při autorizaci propojovat s účtem, ve kterém jste ve FAPI právě přihlášení.
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/c614b66c270feb66.png)
+![Výběr správného účtu ve FAPI](/assets/articles/c614b66c270feb66.png)
 
 ## 2\. Otevřete desktopovou aplikaci ChatGPT, a najděte Pluginy
 
@@ -152,21 +142,18 @@ Spusťte desktopovou aplikaci ChatGPT v počítači.
 
 V aplikaci přejděte do části @ **Pluginy.**
 
-:::danger
-Připomínáme, že propojení je potřeba nastavovat v desktopové aplikaci ChatGPT, ne ve webovém rozhraní v prohlížeči.
-:::
 
 Pluginy najdete buď v levém panelu v hlavním menu.
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/8123f318074ef4a9.png)
+![Odkaz Pluginy v levém panelu desktopové aplikace ChatGPT](/assets/articles/8123f318074ef4a9.png)
 
 Nebo přes Nastavení v profilu,
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/3106b675cc433f26.png)
+![Otevření Nastavení z profilu v desktopové aplikaci ChatGPT](/assets/articles/3106b675cc433f26.png)
 
 pak v části Integrace vyberete @ **Pluginy**.
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/ae79c45966b0ff29.png)
+![Položka Pluginy v nastavení Integrace](/assets/articles/ae79c45966b0ff29.png)
 
 ## 3\. Přidání FAPI pluginu přes marketplace/tržiště
 
@@ -176,7 +163,7 @@ Poté klikněte na:
 
 **Přidat → Přidat marketplace**
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/428d116153fa7308.png)
+![Přidání marketplace v části Pluginy](/assets/articles/428d116153fa7308.png)
 
 Do pole pro Přidat tržiště/ Add marketplace vložte adresu:
 
@@ -188,7 +175,7 @@ Potvrďte přidání marketplace.
 
 Následně se vám potvrdí, že byl plugin přidán a takto se vám zobrazí:
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/4a539c11ed61ad79.png)
+![FAPI marketplace po přidání do Codexu](/assets/articles/4a539c11ed61ad79.png)
 
 Codex si následně načte dostupné aplikace z FAPI marketplace. V nabídce vyberte aplikaci **FAPI** a **klikněte na instalaci.**
 
@@ -198,13 +185,13 @@ Codex si následně načte dostupné aplikace z FAPI marketplace. V nabídce vyb
 
 Po instalaci pluginu se zobrazí autorizace propojení s FAPI.
 
-Potvrďte propojení aplikace s aktuálně přihlášeným účtem FAPI.
+Na autorizační stránce zkontrolujte položku **Připojovaný FAPI účet** a klikněte na **Připojit aplikaci**.
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/923901fc3cc885d8.png)
+![Autorizační obrazovka pro propojení Codexu s účtem FAPI](/assets/articles/923901fc3cc885d8.png)
 
 Po úspěšné autorizaci se zobrazí potvrzení, že je propojení dokončené. Okno můžete zavřít a vrátit se zpět do Codexu.
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/11dd3d2293cd4541.png)
+![Potvrzení dokončeného propojení účtu FAPI s Codexem](/assets/articles/11dd3d2293cd4541.png)
 
 ## 5\. Restartujte ChatGPT/Codex
 
@@ -214,27 +201,21 @@ Codex si tím nové propojení správně načte. Pokud se po instalaci pluginu z
 
 Také přímo repozitář FAPI pluginu uvádí, že po instalaci nebo aktualizaci pluginu je vhodné hostitelskou aplikaci restartovat, aby se načetla uložená verze pluginu. [GitHub](https://github.com/fapi-cz/fapi-ai-plugin)
 
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/d46e9b45fc417f21.png)
+![Desktopová aplikace ChatGPT v kroku restartu](/assets/articles/d46e9b45fc417f21.png)
 
 ## 6\. Ověřte, že má Codex přístup k FAPI
 
-Po restartu se Codexu zeptejte například:
+V prostředí **Work** vyberte **@fapi**. V dotazu doplňte název účtu a produktu, který už ve FAPI máte.
 
-> Máš přístup do mého účtu FAPI?
+```text
+V účtu FAPI [název účtu] najdi produkt [název produktu] a vypiš jeho název a cenu. Použij nástroje FAPI pouze ke čtení.
+```
 
-Nebo můžete položit konkrétnější dotaz, například:
+Název a cenu porovnejte s údaji v části **Prodej → Produkty** ve FAPI. Pokud se liší, ověřte připojený účet.
 
-> Kolik faktur jsem vystavil v roce 2025?
+![Výběr pluginu FAPI při zadávání úkolu v prostředí Work](/assets/articles/38fa786c95beb362.png)
 
-Pokud je propojení nastavené správně, Codex by měl umět pracovat s daty z připojeného účtu FAPI podle dostupných oprávnění.
-
-:::tip
-**TIP pro správné fungování**
-
-Komunikujte pak své dotazy přes prostředí **Work** a volání pluginu **@fapi**
-
-![Jak propojit FAPI s Codexem v ChatGPT](/assets/articles/38fa786c95beb362.png)
-:::
+Jakmile dotaz vrátí správné údaje, vyzkoušejte [přípravu prodeje e-booku přes FAPI MCP](/article/320-co-je-mcp).
 
 :::caution
 ## Připojení dalšího FAPI účtu
@@ -266,11 +247,6 @@ Poté propojení uložte a ověřte. Při ověření se propojení naváže na a
 Po přidání dalšího účtu opět doporučujeme ChatGPT/Codex restartovat.
 :::
 
-:::info
-Zde ještě vysvětlíme, **co to MCP servery jsou:**
-
-[MCP servery ve FAPI](/article/320-co-je-mcp)
-:::
 
 ## Příklad využití: kopírování prodejního formuláře mezi účty
 
@@ -296,7 +272,7 @@ Codex vám může výrazně urychlit práci, ale u důležitých změn je vhodn�
 
 Pokud Codex po instalaci pluginu nevidí váš FAPI účet nebo neumí pracovat s FAPI daty:
 
--   zkontrolujte, že používáte desktopovou aplikaci ChatGPT, ne webové rozhraní,
+-   při instalaci pluginu podle tohoto návodu zkontrolujte, že jste v Codexu v desktopové aplikaci ChatGPT,
 -   ověřte, že jste ve FAPI přihlášení do správného účtu,
 -   restartujte aplikaci ChatGPT,
 -   zkontrolujte, že je plugin FAPI v Codexu nainstalovaný a autorizovaný,
@@ -306,7 +282,7 @@ Repozitář FAPI pluginu také uvádí, že není vhodné přidávat statický t
 
 ## Shrnutí
 
-Pro propojení FAPI s Codexem v ChatGPT je nutné použít **desktopovou aplikaci ChatGPT**. Přes webové rozhraní ChatGPT propojení nefunguje.
+Plugin FAPI nainstalujete v Codexu v **desktopové aplikaci ChatGPT**.
 
 Základní postup:
 
