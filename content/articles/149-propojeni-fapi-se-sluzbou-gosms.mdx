@@ -13,19 +13,24 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/149-propojeni-fapi-se-sluzbou-gosms
 order: 188
-updatedAt: 2026-07-13T11:21:24Z
+updatedAt: 2026-11-16T07:12:52Z
 ---
-GoSMS je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu Posílání SMS zpráv z FAPI). V tomto článku si popíšeme jak službu GoSMS integrovat do FAPI.
+GoSMS je jednou z externích služeb pro <a href="/article/49-posilani-sms-zprav-z-fapi" target="_blank" rel="noopener">posílání SMS zpráv z FAPI</a>. Ke službě můžete vytvořit více propojení a rozlišit je vlastním názvem.
 
 K integraci je nejdřívě nutné si zřídit účet [GoSMS](https://www.gosms.eu/).
 
-# Propojení FAPI se službou GoSMS
+## Propojení FAPI se službou GoSMS
 
 Máte-li aktivovaný účet služby GoSMS, můžete nastavit propojení s FAPI.
 
-V nabídce Nastavení \> **Propojení aplikací** stiskněte tlačítko **Upravit** u služby GoSMS. Do následně zobrazeného formuláře vyplňte Klient ID, Klient Secret a ID komunikačního kanálů.
+1. Ve FAPI otevřete Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a> a u služby **GoSMS** klikněte na **Připojit**.
+2. Do pole **Název propojení** můžete zadat vlastní označení, podle kterého propojení poznáte.
+3. Vyplňte **Klient ID**, **Klient Secret** a **ID komunikačního kanálu** ze svého účtu GoSMS. Kde údaje najdete, ukazují následující snímky.
+4. Klikněte na **Uložit**. FAPI před uložením ověří přístupové údaje.
 
-![Propojení FAPI se službou GoSMS](/assets/articles/173d2dc1bf75637f.png)  
+![Formulář propojení GoSMS s názvem, přístupovými údaji a tlačítkem Uložit](/assets/articles/173d2dc1bf75637f.png)
+
+<a href="/assets/articles/173d2dc1bf75637f.png" target="_blank" rel="noopener">Zobrazit formulář GoSMS v plném rozlišení</a>
 
 Údaje k vyplnění najdete ve svém účte GoSMS.
 
@@ -39,4 +44,6 @@ ID komunikačního kanálu naleznete na konci stránky API. 
 
 ![Propojení FAPI se službou GoSMS](/assets/articles/db4be08ee1599d79.png)
 
-Po vyplnění všech údajů klikněte ve FAPI na tlačítko uložit.
+Pro další propojení použijte znovu **Připojit** u služby GoSMS v Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>. Existující propojení upravíte tlačítkem **Upravit** na jeho řádku.
+
+Název propojení se zobrazuje také v poli **Propojení** při nastavení <a href="/article/49-posilani-sms-zprav-z-fapi" target="_blank" rel="noopener">akce pro odeslání SMS</a>. Nabídka GoSMS obsahuje propojení, u kterých kontrola spojení prošla úspěšně.
