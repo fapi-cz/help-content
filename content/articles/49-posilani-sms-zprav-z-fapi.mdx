@@ -13,7 +13,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/49-posilani-sms-zprav-z-fapi
 order: 97
-updatedAt: 2026-07-13T10:39:17Z
+updatedAt: 2026-11-16T07:12:52Z
 ---
 Chcete se svými zákazníky komunikovat v průběhu prodejního procesu také formou SMS zpráv? FAPI vám tuto možnost poskytuje.
 
@@ -25,19 +25,21 @@ SMS zprávy můžete ve FAPI využít ke těmto účelům:
 
 Předpokladem pro používání SMS zpráv ve FAPI je aktivace služby pro zasílání SMS. V současnosti FAPI umožňuje propojení s externími službami se srovnatelnými funkcemi. Je pouze na vás, jakou z těchto služeb si vyberete. Více o nastavení služeb:
 
--   [SMSbrána.cz](/article/50-jak-si-aktivovat-sluzbu-smsbrana-cz)
--   [GoSMS](/article/149-propojeni-fapi-se-sluzbou-gosms)
--   [BulkGate](/article/125-jak-si-aktivovat-sluzbu-bulkgate)
+-   <a href="/article/50-jak-si-aktivovat-sluzbu-smsbrana-cz" target="_blank" rel="noopener">SMSbrána.cz</a>
+-   <a href="/article/149-propojeni-fapi-se-sluzbou-gosms" target="_blank" rel="noopener">GoSMS</a>
+-   <a href="/article/125-jak-si-aktivovat-sluzbu-bulkgate" target="_blank" rel="noopener">BulkGate</a>
 
 ## SMS zprávy pro šablony zpráv
 
-Pod sekcí **Prodej - Šablony zpráv** můžete nastavit odesílání SMS na tel. číslo klienta. Více naleznete v sekci [Šablony zpráv](/article/17-sablony-zprav).
+Pod sekcí Prodej → <a href="https://web.fapi.cz/message-template-sets/" target="_blank" rel="noopener">Šablony zpráv</a> můžete nastavit odesílání SMS na tel. číslo klienta. Více naleznete v návodu <a href="/article/17-sablony-zprav" target="_blank" rel="noopener">Šablony zpráv</a>.
 
 ![Posílání SMS zpráv z FAPI](/assets/articles/1a3a604c0f78fa9e.png)
 
 ## SMS zprávy jako akce v prodejním formuláři
 
 Chcete-li svým zákazníkům posílat SMS zprávy při vystavení, zaplacení či stornování objednávky, resp. konkrétního produktu, vytvořte akci typu **odeslat SMS klientovi** v nastavení prodejního formuláře. Obsah posílané zprávy nadefinujte v přiřazené sadě šablon zpráv (jako šablonu typu **Vlastní SMS šablona**). Okamžik, kdy se má SMS zpráva poslat, definujte pomocí události (např. při zaplacení objednávky).
+
+Používáte-li více propojení jedné SMS služby, vyberte v akci v poli **Propojení** konkrétní pojmenované propojení. Více propojení lze vytvořit u <a href="/article/149-propojeni-fapi-se-sluzbou-gosms" target="_blank" rel="noopener">GoSMS</a>, <a href="/article/125-jak-si-aktivovat-sluzbu-bulkgate" target="_blank" rel="noopener">BulkGate</a> i <a href="/article/50-jak-si-aktivovat-sluzbu-smsbrana-cz" target="_blank" rel="noopener">SMSBrána.cz</a>. Nabídka obsahuje propojení, u kterých kontrola spojení prošla úspěšně. Pokud požadované propojení chybí, zkontrolujte jeho údaje v Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>.
 
 ![Posílání SMS zpráv z FAPI](/assets/articles/50008e099e13852b.png)
 
