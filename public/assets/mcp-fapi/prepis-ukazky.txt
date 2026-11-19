@@ -1,0 +1,45 @@
+Jak připravit prodej e-booku pomocí FAPI MCP
+
+Časovaný přepis českého komentáře k videoukázce.
+
+00:04 · Hotová prodejní stránka
+
+Prodáváte e-book a potřebujete pro něj stránku? Takhle může vypadat prodej ve FAPI.
+
+Nahoře je jasná nabídka, níž ukázka obsahu a u tipu pro lektory potkáte kočku v cylindru.
+
+00:19 · Zadání v Codexu
+
+Ukážu vám, jak podobnou stránku zadat. Otevřu Codex, ve kterém mám připojené FAPI přes MCP.
+
+Zadání píšu tak, jak bych ho předala kolegovi. Nejdřív řeknu, co prodávám, kolik to stojí a ve kterém účtu má pracovat.
+
+V našem případě je to e-book První workshop bez stresu za 290 Kč. Produkt i objednávkový formulář už mám připravené.
+
+Pak popíšu, co má zákazník na stránce vidět. Nahoře chci obálku a krátké vysvětlení, komu e-book pomůže. Pod tím ukázku obsahu.
+
+Ke konkrétnímu tipu pro lektory přidám kočku s cylindrem. Určím i barvy a řeknu, kam má vést nákupní tlačítko.
+
+Nakonec chci stránku nechat v konceptu a dostat odkaz do editoru. A zadání odešlu.
+
+01:16 · Příprava konceptu
+
+Codex přes MCP najde potřebné podklady a připraví stránku v konceptu.
+
+01:26 · Odkaz do editoru
+
+V odpovědi vidím, co se připravilo, a mám tu odkaz přímo do editoru FAPI.
+
+01:34 · Úprava nadpisu
+
+Stejný koncept najdu i ve FAPI mezi stránkami funnelu. V editoru hned vidím, jak spolu fungují text, obálka a tlačítko.
+
+Zkusím ještě upravit hlavní nadpis. Označím ho a zadám nové znění: Připravte svůj první workshop bez stresu.
+
+Teď přepnu do náhledu a zkontroluju, jak změna působí na celé stránce.
+
+02:00 · Návštěvnický náhled
+
+Takhle stránku uvidí zákazník. Hned ví, co kupuje, a tlačítko ho dovede k objednávce.
+
+Jak propojit svého asistenta s FAPI přes MCP, najdete krok za krokem v nápovědě.
