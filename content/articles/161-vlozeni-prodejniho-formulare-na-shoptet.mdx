@@ -1,5 +1,5 @@
 ---
-title: "Jak vložit prodejní formulář FAPI na Shoptet"
+title: Jak vložit prodejní formulář FAPI na Shoptet
 url: /article/161-vlozeni-prodejniho-formulare-na-shoptet
 description: Pokud používáte Shoptet a s funkcemi eshopu jste spokojení, stále vám možná chybí propracovaná automatizace, nebo funkce pro snadný prodej elektronických produk
 category: Jak vložit prodejní formulář do stránky
@@ -13,58 +13,279 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/161-vlozeni-prodejniho-formulare-na-shoptet
 order: 67
-updatedAt: "2026-11-13T07:28:21Z"
+updatedAt: 2026-11-20T15:02:35.643Z
+redirects: []
 ---
-Pokud používáte Shoptet a s funkcemi eshopu jste spokojení, stále vám možná chybí propracovaná automatizace, nebo funkce pro snadný prodej elektronických produktů. Dobrá zpráva je, že tady vám snadno pomůže FAPI.
+Pokud provozujete e-shop na Shoptetu, můžete na jeho stránku vložit také prodejní formulář vytvořený ve FAPI. Zákazník tak zůstane na vašem webu, ale objednávku odešle prostřednictvím FAPI.
+
+Toto řešení můžete využít například pro:
+
+- prodej e-booků a dalších elektronických produktů,
+- prodej kurzů, členství nebo konzultací,
+- pravidelnou fakturaci,
+- automatické vystavení a odeslání dokladů,
+- navazující automatizace ve FAPI,
+- nabídku miniupsellu nebo upsellu.
+
+:::danger
+**Důležité:** FAPI formulář vložený do Shoptetu není propojený s běžným nákupním košíkem Shoptetu. Objednávky vytvořené prostřednictvím tohoto formuláře najdete ve FAPI, nikoli mezi objednávkami Shoptetu.
+:::
+
+##
+
+:::tip
+## **Vložení prodejního formuláře do stránky v Shoptetu**
+
+Zde najdete celý videonávod:
+
+<Video src="https://youtu.be/bky9bPLAANU" title="Videonávod" />
 
 
-Do Shoptet článků jde jednoduše vkládat prodejní formuláře FAPI. Ukážeme si krok za krokem, jak na to.
+:::
 
-Budeme potřebovat:
+## Jak vložení funguje
 
--   hotový prodejní FAPI formulář - tady [najdete jak na to](/article/44-prodejni-formular)
--   dále jeho údaje pro vložení na web (najdete je ve FAPI přes Prodej \> Prodejní formuláře \> Náhled \> Kód HTML pro vložení formuláře na web)
--   shoptetí eshop s dostupnou a viditelnou částí Články (V Shoptetu je to položka Vzhled a obsah \> Články \> Přidat článek)
+Ve FAPI získáte HTML kód svého prodejního formuláře. Tento kód vložíte do zdrojového kódu článku v Shoptetu.
 
-##   
+:::info
+**HTML kód** je technický zápis, který zajistí načtení formuláře z FAPI. Není potřeba jej upravovat. Stačí jej celý zkopírovat a vložit na správné místo.
+:::
 
-### Obrázkový postup krok za krokem
+V editoru Shoptetu se po vložení nemusí zobrazit náhled formuláře. Formulář se obvykle zobrazí až na uložené stránce.
 
-Otevřete v Shoptetu nový článek:
+## Co budete potřebovat
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/0fdcfc0e42feeff1.png)
+Před zahájením si připravte:
 
-V něm vyplňte název a URL. Pak klikněte na Nástroje \> Zdrojový kód
+- aktivní účet ve FAPI,
+- <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">hotový prodejní formulář</a>,
+- přístup do administrace svého [Shoptetu](https://www.shoptet.cz/),
+- rubriku, do které nový článek zařadíte,
+- HTML kód prodejního formuláře z FAPI.
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/30ef00569ec5d4b0.png)
+Pokud formulář ještě nemáte, postupujte podle nápovědy [Jak vytvořit prodejní formulář](https://napoveda.fapi.cz/article/44-prodejni-formular).
 
-Do zdrojového kódu článku v shoptetu vložte zkopírovaný script z prodejního fomuláře FAPI:
+## 1. Zkopírujte HTML kód formuláře ve FAPI
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/d8621b44efd30081.png)
+1. Přihlaste se do FAPI.
+2. Otevřete <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodej → Prodejní formuláře**</a>.
+3. U požadovaného formuláře otevřete jeho náhled nebo možnosti vložení.
+4. Vyhledejte část **Kód HTML pro vložení formuláře na web**.
+5. Zkopírujte celý zobrazený kód.
 
-a klikněte na OK.
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af70d54891caba459de54f4/file-TDABWgZMRx.png)
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/81b6c96e400ce054.png)
+**Důležité:** Použijte kód konkrétního formuláře, který chcete na Shoptetu zobrazit. Pokud máte ve FAPI více formulářů, před kopírováním zkontrolujte jejich název.
 
-Po uložení scriptu v Shoptet článku nemusí být vůbec nic vidět, ale toho se nelekejte. Klikněte v Shoptetu na ULOŽIT.
+## 2. Vytvořte nový článek v Shoptetu
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/3d212963ea417bf4.png)Hned po uložení se objeví nové tlačítko Zobrazit. Klikněte na něj a dostanete se do náhledu nové stránky s prodejním formulářem:
+1. Přihlaste se do administrace Shoptetu.
+2. Otevřete **Vzhled a obsah → Články**.
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/54880523b398224f.png)
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af70d8f2d5ae27705594a80/file-wqHan2gz88.png)
 
-Klikněte na něj, dostanete se na shoptetí stránku s článkem. Pokud jste všechno udělali správně, uvidíte FAPI prodejní formulář:
+1. Klikněte na **Přidat článek**.
+2. Vyberte rubriku, do které chcete článek zařadit.
 
-![Vložení prodejního formuláře na Shoptet](/assets/articles/97538771010446c9.png)
+Shoptet požaduje, aby byl článek zařazený do rubriky.
 
-### Tipy a triky
+Pokud chcete vytvořit samostatnou stránku bez zařazení do rubriky, můžete místo článku pracovat v části **Vzhled a obsah → Stránky**. Ovládání se však může od níže uvedeného postupu mírně lišit. [Shoptet: Články a rubriky](https://podpora.shoptet.cz/clanky-a-rubriky/)
 
--   Před i za prodejní formulář můžete do shoptetího článku přidávat další obsah. Texty, obrázky nebo multimédia. Klidně z něj můžete udělat samostatnou prodejní stránku, kde bude podrobné představení vaší služby nebo produktu, a samotný formulář bude až na samém konci.
--   **Pokud máte na doméně Shoptet eshopu autorizovanou platební bránu, tak tady pozor** – ta ve FAPI formuláři nebude správně fungovat. Musíte se spokojit buď jen s bankovními převody, nebo pro FAPI formulář použít jinou instanci platební brány. Ta sice bude stále pro stejnou doménu jakou máte u Shoptetu, ale bude obsahovat jiné reference a adresy. O tento "duplikát" je nutné požádat na platební bráně, případně můžete pro Shoptet mít jednoho poskytovatele (např. [Comgate](https://www.comgate.cz/?r=H378)) a pro FAPI formuláře na Shoptetu používat Stripe.
--   Shoptet bohužel neumožňuje synchronizovat objednávky 😭. Čísla objednávek v Shoptetu a ve FAPI se nikdy nebudou doplňovat (nemohou používat stejnou číselnou řadu). Myslete na to dopředu a použijte takové číslování dokladů, u kterého nehrozí, že by dva doklady (shoptetí a FAPI doklad) měly stejné číslo.
--   Na Shoptetu bude fungovat i upsell. Pokud ho chcete používat, ujistěte se, že upsellová stránka (ta, kam zákazníka posíláte po odeslání první části objednávky), obsahuje upsellový skript:  
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af710c96ed09152ec86e473/file-Y9RQB2QsYc.png)
 
-    ```text
-    <script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
-    ```
+## 3. Vyplňte základní údaje článku
 
-    Před zveřejněním prodeje si také určitě otestujte, že je vše v pořádku a funkční.
+Vyplňte zejména:
+
+- **Název** – například název produktu nebo stránky,
+- **URL adresu** – adresu, na které bude stránka dostupná,
+- **Rubriku** – umístění článku na webu,
+- případně nastavení viditelnosti.
+
+Pokud URL adresu nevyplníte, Shoptet ji může vytvořit automaticky podle názvu článku.
+
+Příklad:
+
+- Název: `Objednávka online kurzu`    
+- URL: `objednavka-online-kurzu`    
+
+Před formulář můžete později doplnit také nadpis, popis produktu, obrázky nebo další prodejní obsah.
+
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af7112c003e0d9ec9bb251d/file-ixdHbLHa4k.png)
+
+## 4. Otevřete zdrojový kód článku
+
+V editoru obsahu otevřete nabídku **Nástroje** a vyberte **Zdrojový kód**.
+
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af712242d5ae27705594a9d/file-R4NkdKa2NO.png)
+
+:::info
+**Co je zdrojový kód:** Jde o zobrazení obsahu stránky ve formátu HTML. Právě sem můžete vložit kód prodejního formuláře tak, aby jej Shoptet nezobrazil pouze jako obyčejný text.
+:::
+
+## 5. Vložte kód prodejního formuláře
+
+1. Klikněte do okna se zdrojovým kódem.
+2. Umístěte kurzor na místo, kde se má formulář zobrazit.
+3. Vložte celý HTML kód zkopírovaný z FAPI.
+4. Klikněte na **OK**.
+
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af7136df03edfb731f2dda8/file-Ijr9E04q1E.png)
+
+Pokud je článek zatím prázdný, můžete kód vložit jako jeho jediný obsah. Jestliže už článek obsahuje text nebo obrázky, dávejte pozor, abyste existující kód omylem neodstranili.
+
+:::danger
+**Důležité:** Kód neupravujte a nevkládejte jej do běžného textového režimu. V takovém případě by se mohl zobrazit jako text nebo by formulář nemusel fungovat.
+:::
+
+## 6. Uložte článek
+
+Po potvrzení zdrojového kódu se vraťte do editoru článku.
+
+V samotném editoru nemusí být formulář vidět. To ještě neznamená, že je vložený nesprávně.
+
+Klikněte na **Uložit**.
+
+_I když formulář v editoru nevidíte, článek uložte a zkontrolujte jeho veřejné zobrazení._
+
+Po prvním uložení se zpřístupní tlačítko **Zobrazit**, kterým otevřete článek na e-shopu. Stejný postup popisuje také aktuální dokumentace Shoptetu. [Shoptet: Články a rubriky](https://podpora.shoptet.cz/clanky-a-rubriky/)
+
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af713ed6ed09152ec86e47e/file-F1j7hyEWvy.png)
+
+## 7. Zkontrolujte formulář na veřejné stránce
+
+Klikněte na **Zobrazit** a otevřete uložený článek.
+
+Na veřejné stránce by se měl zobrazit FAPI prodejní formulář.
+
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6af7142a891caba459de550a/file-sOUZMALPxa.png)
+
+Zkontrolujte zejména:
+
+- název prodávaného produktu,
+- cenu a měnu,
+- sazbu DPH, pokud ji používáte,
+- dostupné platební metody,
+- dopravu, pokud ji produkt vyžaduje,
+- povinná pole a souhlasy,
+- zobrazení na počítači i mobilním telefonu.
+
+## 8. Proveďte testovací objednávku
+
+Před zveřejněním stránky proveďte celý nákup jako zákazník.
+
+1. Vyplňte formulář vlastními testovacími údaji.
+2. Odešlete objednávku.
+3. Zkontrolujte děkovací stránku.
+4. Ve FAPI ověřte, že objednávka skutečně vznikla.
+5. Zkontrolujte vystavený doklad a odeslané e-maily.
+6. Pokud používáte online platbu, proveďte také bezpečný test platební metody.
+7. Ověřte případné navazující automatizace, členství, e-mailing nebo doručení produktu.
+
+:::tip
+Podrobný postup testování můžete propojit s nápovědou:
+
+<a href="https://napoveda1.fapi.cz/article/90-testovani-celeho-online-prodejniho-procesu" target="_blank" rel="noopener">Testování celého online prodejního procesu</a>
+:::
+
+:::note
+## **Kde najdete objednávky**
+
+&#xA;Objednávka odeslaná prostřednictvím vloženého FAPI formuláře vznikne ve FAPI.
+
+**To znamená, že:**
+
+- objednávku najdete ve FAPI,
+- doklady vystavuje FAPI podle nastavení formuláře,
+- používají se e-maily a automatizace nastavené ve FAPI,
+- objednávka se automaticky nevytvoří v administraci Shoptetu,
+- objednávky FAPI a Shoptetu nemají společnou číselnou řadu.
+:::
+
+:::danger
+Doporučujeme nastavit číslování dokladů tak, aby bylo možné doklady z obou systémů snadno rozlišit a nemohla vzniknout dvě stejná čísla.
+:::
+
+## Platby kartou a platební brána
+
+Platební brána používaná v běžném nákupním procesu Shoptetu se automaticky nepřenese do vloženého FAPI formuláře. Platební metody pro tento formulář nastavujete ve FAPI.
+
+Pokud chcete ve FAPI formuláři přijímat platby kartou:
+
+1. zkontrolujte, kterou platební bránu máte propojenou s FAPI,
+2. ověřte u jejího poskytovatele, zda lze stejné obchodní nastavení použít také pro transakce vytvářené přes FAPI,
+3. pokud je potřeba samostatný projekt, obchodní místo nebo druhé napojení, vyžádejte si je u poskytovatele brány,
+4. před spuštěním proveďte skutečnou testovací platbu.
+
+:::danger
+**Důležité:** Nestačí, že platební brána funguje v košíku Shoptetu. FAPI formulář používá vlastní platební nastavení ve FAPI.
+:::
+
+Pokud si podmínkami nejste jistí, obraťte se před spuštěním na poskytovatele platební brány a sdělte mu, že platby budou vznikat prostřednictvím FAPI formuláře vloženého na doméně Shoptetu.
+
+## Jak na stránku doplnit další obsah
+
+Před formulář i za něj můžete přidat například:
+
+- nadpis a představení produktu,
+- obrázky,
+- video,
+- seznam výhod,
+- reference zákazníků,
+- odpovědi na časté otázky,
+- informace o ceně a garanci.
+
+Díky tomu může článek fungovat jako samostatná prodejní stránka. Samotný formulář doporučujeme umístit až za informace, které zákazník potřebuje k rozhodnutí.
+
+## Upsell na stránce v Shoptetu
+
+Upsell může fungovat také při prodeji přes formulář vložený v Shoptetu. Je však potřeba rozlišit, kde je upsellová stránka vytvořená.
+
+Pokud používáte upsellovou stránku mimo FAPI a vkládáte ji do Shoptetu, může být nutné na ni vložit FAPI SDK:
+
+```
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
+```
+
+SDK je skript, který umožňuje upsellové stránce komunikovat s původní objednávkou ve FAPI.
+
+:::danger
+**Důležité:** Skript nevkládejte automaticky na všechny stránky. Použijte jej pouze podle konkrétního způsobu nastavení upsellu.
+
+<a href="https://napoveda1.fapi.cz/article/76-upsell" target="_blank" rel="noopener">Upsell</a>
+:::
+
+## Nejčastější problémy
+
+### Formulář se v editoru Shoptetu nezobrazuje
+
+To může být v pořádku. Uložte článek a zkontrolujte jeho veřejnou verzi pomocí tlačítka **Zobrazit**.
+
+### Na stránce se zobrazuje kód místo formuláře
+
+Kód byl pravděpodobně vložený do běžného textového editoru. Otevřete **Nástroje → Zdrojový kód** a vložte jej tam.
+
+### Formulář se nezobrazuje ani na veřejné stránce
+
+Zkontrolujte, zda:
+
+- jste z FAPI zkopírovali celý kód,
+- jste článek uložili,
+- je článek viditelný pro návštěvníky,
+- jste kód při vkládání neupravili,
+- stránku neblokuje vlastní skript, bezpečnostní nastavení nebo jiné rozšíření,
+- kontrolujete správnou URL adresu.
+
+Stránku znovu načtěte, případně ji vyzkoušejte v anonymním okně.
+
+### Formulář je příliš úzký nebo oříznutý
+
+Zkontrolujte rozložení a šířku obsahu v použité šabloně Shoptetu. Formulář by neměl být umístěný v úzkém sloupci. Vyzkoušejte také zobrazení na mobilním telefonu.
+
+### Objednávka není v Shoptetu
+
+To je očekávané chování. Objednávka vytvořená přes FAPI formulář se ukládá do FAPI a automaticky se nepřenáší mezi objednávky Shoptetu.
+
+### Platba kartou nefunguje
+
+Zkontrolujte propojení platební brány přímo ve FAPI. Skutečnost, že brána funguje v běžném košíku Shoptetu, nepotvrzuje její správné nastavení pro FAPI formulář.
