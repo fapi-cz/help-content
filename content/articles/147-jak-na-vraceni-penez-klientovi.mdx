@@ -13,7 +13,7 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/147-jak-na-vraceni-penez-klientovi
 order: 41
-updatedAt: 2026-07-13T09:52:55Z
+updatedAt: 2026-11-13T07:16:33.862274Z
 ---
 Dostali jste se do situace, kdy si váš zákazník sice objednal a zaplatil vícero položek, ale některou nebo všechny chce vrátit?
 
@@ -23,7 +23,7 @@ Nebo si u vás objednal službu, která mu nevyhovuje a chce vrátit peníze naz
 
 Ve FAPI tyhle případy jednoduše zvládnete. Obecný postup je:
 
--   nejprve klientovi vystavíme opravný daňový doklad (dobropis),
+-   nejprve klientovi vystavíme <a href="/article/127-jak-vytvorit-opravny-danovy-doklad" target="_blank" rel="noopener">opravný daňový doklad (dobropis)</a>,
 -   klientovi jej zašleme a vyžádáme si odsouhlasení vystaveného dobropisu,
 -   požádáme o informace, kam chce vracenou částku zaslat (obvykle to je tentýž způsob, jakým původně platit),
 -   zašlete peníze zpět klientovi.
@@ -32,11 +32,13 @@ Ve FAPI tyhle případy jednoduše zvládnete. Obecný postup je:
 
 ## Vystavení opravného daňového dokladu
 
-Ve FAPI jděte do Faktury \> [Přehled faktur](https://web.fapi.cz/invoice/?projectId=all) \> najděte konkrétní objednávku, ke které chce klient vrátit peníze. 
+Ve FAPI jděte do Faktury \> <a href="https://web.fapi.cz/invoice/?projectId=all" target="_blank" rel="noopener">Přehled faktur</a> a najděte konkrétní objednávku, ke které chce klient vrátit peníze.
 
 Klikněte na modře zvýrazněné a podtržené číslo daného dokladu a otevřete si detail dokladu. V něm najdete klikací tlačítko **Vytvořit opravný daňový doklad**.
 
-![Refundace peněz zákazníkům](/assets/articles/b440ccd3508c8509.png)
+![Tlačítko Vytvořit opravný daňový doklad v detailu faktury.](/assets/refunds/privacy-2026-11/create-credit-note.webp)
+
+<a href="/assets/refunds/privacy-2026-11/create-credit-note.webp" target="_blank" rel="noopener">Zobrazit tlačítko pro vytvoření opravného dokladu v plné velikosti</a>
 
 Po kliknutí se objeví nové okno, ve kterém si upravíte podle vašich potřeb náležitosti opravného daňového dokladu (dále už jen ODD). Nezapomeňte doplnit důvod vystavení ODD a doklad vystavte kliknutím na zelené tlačítko ULOŽIT vespod stránky.
 
@@ -50,7 +52,9 @@ Případně jej můžete odeslat ručně vytvořením zcela nové zprávy před 
 
 
 
-![Refundace peněz zákazníkům](/assets/articles/a79a252ab46cbe7f.png)
+![Tlačítko Odeslat doklad e-mailem v detailu dokladu.](/assets/refunds/privacy-2026-11/send-document.webp)
+
+<a href="/assets/refunds/privacy-2026-11/send-document.webp" target="_blank" rel="noopener">Zobrazit tlačítko pro odeslání dokladu v plné velikosti</a>
 
 Potom můžete buď vyčkat na odpověd zákazníka se souhlasem o vystavení ODD, případně na informace o tom kam vyplatit související refundaci, nebo můžete rovnou přejit k dalšímu kroku.
 
@@ -66,8 +70,8 @@ Pokud platba proběhla skrze platební bránu, vracíte peníze refundací v pla
 
 Ve FAPI jsou dostupné dvě zrychlující možnosti jak vrátit peníze zákazníkovi. Obě jsou dostupné v nabídce té konkrétní platby, kterou budete vracet. K platbě se dostanete dvěma možnými způsoby:
 
-1.  přes Faktury \> Přehled faktur \> detail dokladu \> řádek **Číslo platby** \> kliknout na modře zvýrazněné číslo platby spojené s daným dokladem.
-2.  přes Platby \> Přehled plateb \> filtr podle zadaných parametrů
+1.  V nabídce Faktury \> <a href="https://web.fapi.cz/invoice/?projectId=all" target="_blank" rel="noopener">Přehled faktur</a> otevřete detail dokladu. V řádku **Číslo platby** klikněte na modře zvýrazněné číslo platby spojené s daným dokladem.
+2.  přes Platby \> <a href="https://web.fapi.cz/payment/?projectId=all" target="_blank" rel="noopener">Přehled plateb</a> \> filtr podle zadaných parametrů
 
 
 
@@ -106,12 +110,16 @@ U plateb zprostředkovaných jinými branami nabídku tlačítek pro refundaci n
 
 -   Podobný proces jako u plateb kartou, ale peníze nazpět musíte odeslat zákazníkovi sami.
 -   Pokud máme k dispozici potřebná data, zobrazíme během vytváření refundace ve FAPI QR kód pro snadné načtení údajů v internetovém či mobilním bankovnictví.
--   QR kód se automaticky aktualizuje, pokud změníte částku nebo text důvod refundace. Aktualizování QR kódu probíhá s prodlevou cca 1 vteřiny. Pokud chcete aktualizaci provést ručně, klikněte na tlačítko AKTUALIZOVAT QR KÓD.
+-   QR kód se automaticky aktualizuje, pokud změníte částku nebo text důvodu refundace. Aktualizování QR kódu probíhá s prodlevou cca 1 vteřiny. Pro ruční aktualizaci klikněte na tlačítko s ikonou obnovení **Aktualizovat QR kód** vedle nadpisu **QR platba**.
 
-![Refundace peněz zákazníkům](/assets/articles/1efff638aa7ceedf.png)
+![Řádek Akce v detailu bankovní platby s tlačítkem Vrátit platbu.](/assets/refunds/privacy-2026-11/bank-refund-action.webp)
+
+<a href="/assets/refunds/privacy-2026-11/bank-refund-action.webp" target="_blank" rel="noopener">Zobrazit tlačítko pro vrácení bankovní platby v plné velikosti</a>
 
 :::danger
 Vždy pečlivě zkontrolujte všechny zadané údaje ještě před odesláním platby. Za správnost údajů neneseme odpovědnost.
 :::
 
-![Refundace peněz zákazníkům](/assets/articles/e36a8d076ba93597.png)
+![Dialog vrácení bankovní platby s tlačítkem pro aktualizaci QR kódu a potvrzením vrácení peněz.](/assets/refunds/privacy-2026-11/bank-refund-dialog.webp)
+
+<a href="/assets/refunds/privacy-2026-11/bank-refund-dialog.webp" target="_blank" rel="noopener">Zobrazit dialog vrácení bankovní platby v plné velikosti</a>
