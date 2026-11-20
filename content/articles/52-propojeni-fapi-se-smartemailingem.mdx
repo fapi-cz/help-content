@@ -15,7 +15,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/52-propojeni-fapi-se-smartemailingem
 order: 45
-updatedAt: 2026-11-10T07:14:55.577426Z
+updatedAt: 2026-11-13T08:17:36Z
 legacyAnchors:
   - id: Odesln-dat-o-objednvce-do-SmartEmailingu-UbyzC
     tag: h2
@@ -87,6 +87,12 @@ Odesílání dat o objednávce musí být povolené u konkrétního propojení. 
 
 Zaškrtněte **Odesílat data o objednávce do SmartEmailingu.** a změnu potvrďte tlačítkem **Uložit**.
 
+:::caution
+Tato volba platí pro **celý účet FAPI**, ne pouze pro vybraný <a href="/article/132-projekty" target="_blank" rel="noopener">projekt</a> nebo prodejní formulář. Máte-li více propojení se SmartEmailingem, automatická objednávková data se předávají každému propojení, u kterého je odesílání zapnuté.
+
+Výběr propojení v <a href="#zapis-a-odebrani-kontaktnich-udaju-do-ze-smartemailingu">akci pro přidání nebo odebrání kontaktu</a> řídí práci se seznamem kontaktů, nikoli tento samostatný přenos objednávkových dat. Pokud do nového propojení objednávková data posílat nechcete, uvedenou volbu před uložením vypněte.
+:::
+
 ![Volba Odesílat data o objednávce do SmartEmailingu a tlačítko Uložit](/assets/multi-connections/smartemailing-order-data-20261110.png)
 
 <a href="/assets/multi-connections/smartemailing-order-data-20261110.png" target="_blank" rel="noopener">Zobrazit nastavení odesílání objednávek v plné velikosti</a>
@@ -116,5 +122,7 @@ U objednávky **na splátky** se data přenesou až po úhradě první splátky.
 ## Synchronizace starších dat
 
 Pro nahrání starších objednávek otevřete **Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>**, vyberte příslušné propojení SmartEmailingu a v jeho nabídce zvolte **Synchronizovat objednávky**. U tohoto propojení musí být zapnuté odesílání dat o objednávkách. Synchronizace se vztahuje ke zvolenému propojení.
+
+Do zvoleného propojení se vybírají **netestovací objednávky celého účtu FAPI**. Ani tuto synchronizaci neomezuje aktuálně vybraný projekt nebo propojení zvolené v akcích prodejního formuláře.
 
 ![Propojení FAPI se SmartEmailingem](/assets/articles/0c885528b80aeeb4.png)
