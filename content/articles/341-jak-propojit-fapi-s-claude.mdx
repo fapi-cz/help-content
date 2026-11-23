@@ -17,7 +17,7 @@ keywords:
   - prodej e-booku s AI
 sourceUrl: https://napoveda.fapi.cz/article/341-jak-propojit-fapi-s-claude
 order: 211
-updatedAt: 2026-11-13T10:42:33Z
+updatedAt: 2026-11-23T15:32:47.593Z
 legacyAnchors:
   - id: Jak-propojen-funguje-aslow
     tag: h2
@@ -64,10 +64,9 @@ legacyAnchors:
     text: Kontrola po dokončení
     occurrence: 0
     headingIndex: 8
+redirects: []
 ---
 Propojte svůj účet FAPI s desktopovou aplikací Claude a nechte si pomoci s rutinními úkoly, nastavením i vyhodnocováním dat.
-
-
 
 **Co propojení umí**
 
@@ -80,25 +79,23 @@ Po propojení může Claude prostřednictvím FAPI konektoru načítat údaje z 
 :::note
 **Příklady funkcí, které Claude zvládne:**
 
--   vyhledat faktury, objednávky, produkty nebo prodejní formuláře a shrnout jejich údaje,
--   vytvořit nebo upravit produkt, cenu, DPH a další produktové nastavení,
--   připravit prodejní formulář včetně produktů, polí, plateb a navazujících kroků,
--   vytvořit e-mailové šablony a komunikaci po objednání nebo zaplacení,
--   pracovat se slevovými kódy a přiřazovat je k prodejním formulářům,
--   pomoci s automatizacemi a návaznostmi v prodejním procesu,
--   získat přehledy a odpovědi z dat FAPI bez ručního procházení administrace,
--   přenést vybrané nastavení, například prodejní formulář, mezi dvěma FAPI účty.
+- vyhledat faktury, objednávky, produkty nebo prodejní formuláře a shrnout jejich údaje,
+- vytvořit nebo upravit produkt, cenu, DPH a další produktové nastavení,
+- připravit prodejní formulář včetně produktů, polí, plateb a navazujících kroků,
+- vytvořit e-mailové šablony a komunikaci po objednání nebo zaplacení,
+- pracovat se slevovými kódy a přiřazovat je k prodejním formulářům,
+- pomoci s automatizacemi a návaznostmi v prodejním procesu,
+- získat přehledy a odpovědi z dat FAPI bez ručního procházení administrace,
+- přenést vybrané nastavení, například prodejní formulář, mezi dvěma FAPI účty.
 :::
-
-
 
 **Hlavní přínosy**
 
--   Úspora času - běžné úkoly zadáte přirozenou větou místo opakovaného proklikávání administrace.
--   Méně rutinní práce - Claude může připravit související objekty a nastavení v logickém pořadí.
--   Rychlejší orientace v datech - na konkrétní otázku získáte souhrnnou odpověď.
--   Snadnější opakování nastavení - jasně popsané zadání lze použít znovu nebo upravit pro další produkt.
--   Práce s více účty - jednotlivé FAPI účty můžete připojit samostatnými konektory.
+- Úspora času - běžné úkoly zadáte přirozenou větou místo opakovaného proklikávání administrace.
+- Méně rutinní práce - Claude může připravit související objekty a nastavení v logickém pořadí.
+- Rychlejší orientace v datech - na konkrétní otázku získáte souhrnnou odpověď.
+- Snadnější opakování nastavení - jasně popsané zadání lze použít znovu nebo upravit pro další produkt.
+- Práce s více účty - jednotlivé FAPI účty můžete připojit samostatnými konektory.
 
 :::caution
 Změny, které Claude navrhne nebo provede, vždy zkontrolujte.
@@ -136,9 +133,7 @@ V Claude musí být **dostupné sekce Plugins a Connectors**. Pokud je nevidíte
 **Důležité:** Při autorizaci se připojí FAPI účet, ve kterém jste právě přihlášení v prohlížeči. Přepnutí účtu až po autorizaci již propojení nezmění.
 :::
 
-
-
-## **1\. V Claude přidejte marketplace**
+## **1. V Claude přidejte marketplace**
 
 Otevřete desktopovou aplikaci [Claude](https://claude.ai/login) a v levém dolním rohu klikněte na svůj účet a otevřete **Settings.**
 
@@ -166,7 +161,7 @@ Klikněte na Sync.
 
 Zkontrolujte adresu repozitáře a zapnutou synchronizaci, potom klikněte na Sync.
 
-## **2\. Nainstalujte a aktivujte FAPI plugin**
+## **2. Nainstalujte a aktivujte FAPI plugin**
 
 Po synchronizaci se zobrazí **plugin FAPI.**
 
@@ -186,7 +181,7 @@ V detailu pluginu najdete dostupné dovednosti a záložku Connectors.
 **Proč je plugin potřeba:** Bez pluginu Claude nezná doporučené postupy a souvislosti jednotlivých částí FAPI. Plugin sám ale ještě nepřipojuje váš účet - k tomu slouží konektor.
 :::
 
-## **3\. Přidejte konektor FAPI**
+## **3. Přidejte konektor FAPI**
 
 V detailu pluginu otevřete záložku **Connectors.**
 
@@ -194,7 +189,7 @@ U konektoru FAPI klikněte na **Install.**
 
 Otevře se okno **Add custom connector.**
 
-Zkontrolujte název **FAPI** a adresu `https://mcp.fapi.cz/mcp`.
+Zkontrolujte název **FAPI** a adresu [`https://mcp.fapi.cz/mcp`.](https://mcp.fapi.cz/mcp.)
 
 Klikněte na **Add.**
 
@@ -206,7 +201,7 @@ Klikněte na **Add.**
 
 Po přidání se konektor FAPI zobrazí v záložce Connectors pluginu.
 
-## **4\. Propojte Claude se svým FAPI účtem**
+## **4. Propojte Claude se svým FAPI účtem**
 
 U přidaného konektoru klikněte na **Connect.**
 
@@ -216,13 +211,11 @@ V části **Připojovaný FAPI účet** zkontrolujte název účtu a požadovan�
 
 Po úspěšném propojení můžete stránku zavřít a vrátit se do Claude.
 
-
-
 ![Autorizace Claude na stránce FAPI s tlačítkem Připojit aplikaci](/assets/articles/7f5091a3782743b4.jpg)
 
 Na autorizační stránce FAPI klikněte na Připojit aplikaci. Tím povolíte Claude přístup k právě přihlášenému účtu.
 
-## **5\. Ověřte, že propojení funguje**
+## **5. Ověřte, že propojení funguje**
 
 V konverzaci s aktivním konektorem FAPI doplňte do dotazu název účtu a produktu, který už máte ve FAPI.
 
@@ -241,22 +234,17 @@ Jakmile dotaz vrátí správné údaje, vyzkoušejte [přípravu prodeje e-booku
 
 Mějte vždy odsouhlaseno:
 
--   název FAPI účtu, ve kterém má pracovat,
--   co má najít, vytvořit nebo upravit,
--   cenu, měnu, DPH, splatnost a další rozhodující hodnoty,
--   co se nemá měnit,
--   zda má nejprve pouze připravit návrh,
--   jaký souhrn, ID nebo odkaz má po dokončení vrátit.
+- název FAPI účtu, ve kterém má pracovat,
+- co má najít, vytvořit nebo upravit,
+- cenu, měnu, DPH, splatnost a další rozhodující hodnoty,
+- co se nemá měnit,
+- zda má nejprve pouze připravit návrh,
+- jaký souhrn, ID nebo odkaz má po dokončení vrátit.
 
 _„V účtu Moje firma připrav návrh produktu Online kurz za 2 490 Kč včetně DPH. Zatím nic nevytvářej. Nejdříve mi vypiš všechny hodnoty ke kontrole.“_
 
-
-
 **Doporučený postup:** Nechte si nejprve zobrazit plán. Zkontrolujte jej, potvrďte jednotlivé změny a po dokončení ověřte výsledek přímo ve FAPI.
 :::
-
-
-
 
 ## **Jak propojit další FAPI účet**
 
@@ -276,11 +264,9 @@ Další konektor přidejte přímo v Settings → Connectors.
 
 Stejnou adresu konektoru nelze přidat podruhé beze změny. Proto za adresu připojte jedinečný parametr acc:
 
-Příklad adresy je `https://mcp.fapi.cz/mcp?acc=fapidev`.
+Příklad adresy je [`https://mcp.fapi.cz/mcp?acc=fapidev`.](https://mcp.fapi.cz/mcp?acc=fapidev.)
 
 Za znak `?` napište `acc=` a vlastní krátké označení účtu.
-
-
 
 Použijte pouze malá písmena bez mezer a diakritiky, například fapidev nebo firma2.
 
@@ -288,7 +274,7 @@ Hodnota slouží k rozlišení konektorů. Pro každý další účet musí být
 
 ![Adresa dalšího konektoru s rozlišovacím parametrem acc](/assets/articles/9508052cd4240ef1.png)
 
-U dalšího účtu použijte jedinečnou adresu s parametrem ?acc=... a klikněte na Add.
+U dalšího účtu použijte jedinečnou adresu s parametrem ?acc\=... a klikněte na Add.
 
 Klikněte na **Add** a poté u nového konektoru na **Connect.**
 
@@ -297,8 +283,6 @@ V otevřené autorizační stránce FAPI klikněte na **Připojit aplikaci.**
 Po návratu do Claude **ověřte, že jsou oba konektory připojené.**
 
 Zeptejte se například: „Máš přístup do účtu FAPI DEV?“
-
-
 
 :::note
 **Příklad: duplikace prodejního formuláře do jiného účtu**
@@ -315,8 +299,6 @@ Potvrďte změny až po kontrole produktů, cen, DPH, e-mailů a automatizací.
 
 Po dokončení si nechte vypsat nová ID a odkazy a výsledek otevřete ve FAPI.
 
-
-
 **Příklad zadání:** _„Potřebuji duplikovat prodejní formulář z účtu Jirka z FAPI do účtu FAPI DEV. ID formuláře je 93150. Nejdříve vypiš plán a vyžádej si potvrzení před každou změnou.“_
 
 **Co zkontrolovat v cílovém účtu:** produkt a cenu, sazbu DPH, měnu, obsah formuláře, platební metody, e-mailové sady, automatizace, děkovací stránku a případné napojení na další služby.
@@ -332,7 +314,7 @@ Claude při provádění úkolu používá nástroje připojených FAPI účtů.
 
 **Připojil se nesprávný FAPI účet.** Konektor odpojte. V prohlížeči se přepněte do správného FAPI účtu a autorizaci spusťte znovu.
 
-**Claude hlásí, že adresa konektoru již existuje.** Pro další účet přidejte jedinečný parametr, například `https://mcp.fapi.cz/mcp?acc=firma2`.
+**Claude hlásí, že adresa konektoru již existuje.** Pro další účet přidejte jedinečný parametr, například [`https://mcp.fapi.cz/mcp?acc=firma2`.](https://mcp.fapi.cz/mcp?acc=firma2.)
 
 **Claude neví, který účet má použít.** Konektory pojmenujte jednoznačně a v každém zadání napište přesný název účtu.
 
@@ -342,13 +324,11 @@ Claude při provádění úkolu používá nástroje připojených FAPI účtů.
 
 ## **Kontrola po dokončení**
 
--   Plugin FAPI je nainstalovaný a aktivní.
--   Konektor je připojený ke správnému FAPI účtu.
--   Čtecí test vrací údaje z očekávaného účtu.
--   U více účtů má každý konektor vlastní název a parametr acc.
--   Před změnami si nechávám zobrazit plán a po dokončení vše kontroluji ve FAPI.
-
-
+- Plugin FAPI je nainstalovaný a aktivní.
+- Konektor je připojený ke správnému FAPI účtu.
+- Čtecí test vrací údaje z očekávaného účtu.
+- U více účtů má každý konektor vlastní název a parametr acc.
+- Před změnami si nechávám zobrazit plán a po dokončení vše kontroluji ve FAPI.
 
 :::caution
 **Poznámka k rozhraní:** Claude se průběžně vyvíjí, proto se názvy nebo umístění tlačítek mohou mírně změnit. Logika postupu zůstává stejná: přidat marketplace → nainstalovat plugin → přidat konektor → autorizovat správný FAPI účet → ověřit spojení.
