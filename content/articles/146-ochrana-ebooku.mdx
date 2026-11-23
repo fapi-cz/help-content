@@ -11,11 +11,10 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/146-ochrana-ebooku
 order: 107
-updatedAt: 2026-10-28T08:29:30.657199Z
+updatedAt: 2026-11-23T10:04:38.123Z
+redirects: []
 ---
 FAPI umožňuje SocialDRM ochranu e-booků. Jedná se o způsob ochrany, který apeluje na nechuť kupujícího sdělovat své osobní údaje. Funkčnost spočívá v tom, že do e-booku vložíme stránku, která obsahuje údaje o kupujícím. 
-
-
 
 Dále se do e-booku vkládá datum koupě a číslo objednávky s odkazem na stavovou stránku objednávky. Tento odkaz je zároveň vložen do průhledných (neviditelných) pixelů v rozích všech stránek e-booku.
 
@@ -29,7 +28,7 @@ Doporučená maximální velikost souboru je 500 MB.
 
 Tento postup použijte pro PDF v poli **Soubory ke stažení** u produktu. Ochranu můžete zapnout při přidání nového PDF i u již uloženého souboru. Výchozí stav nového souboru je bez ochrany a každé PDF má vlastní nastavení.
 
-1. V nabídce **PRODEJ – [Produkty](https://web.fapi.cz/templates/items?projectId=all)** otevřete **Upravit** u požadovaného produktu.
+1. V nabídce **PRODEJ –** [Produkty](https://web.fapi.cz/templates/items?projectId=all) otevřete **Upravit** u požadovaného produktu.
 2. V poli **Soubory ke stažení** vyberte PDF, nebo najděte již uložené PDF v seznamu souborů. U jeho názvu klikněte na **Nastavení**.
 3. Zaškrtněte **Povolit ochranu Ebooku**.
 4. Vyplňte **Číslo DRM stránky** a zvolte **Pozici na stránce**. Chcete-li údaje vložit na stránku, kterou už PDF obsahuje, zaškrtněte **Použít existující stránku** a vyhraďte na ní prostor. Jinak se na zadanou pozici vloží nová stránka.
@@ -57,27 +56,17 @@ Jde o samostatnou možnost doručení. Nastavení ochrany souboru u produktu nen
 
 Ochranu můžete nastavit také v úpravě šablony zpráv, kam vkládáte e-book jako soubor ke stažení.
 
-
-
 ![Ochrana e-booku](/assets/articles/d44d9df6ad765882.png)
 
 Po kliknutí na **Přidat soubor** a nahrání PDF souboru na server se zobrazí zaškrtávací tlačítko **Povolit ochranu Ebooku**. Je-li toto tlačítko zaškrtnuto, tak se zobrazí další možnosti.
-
-
 
 **Číslo DRM stránky** označuje stránku na kterou jsou vloženy údaje o kupujícím.
 
 Zaškrtávací tlačítko **Použít existující stránku** označuje zda se má použít volná stránka, která v e-booku již existuje. Pokud toto není zaškrtnuté, pak se na pozici zadanou v **Číslo DRM stránky** vloží nová stránka.
 
-
-
 Volba **Pozice na stránce** označuje, kde se mají na stránce nacházet údaje o kupujícím.
 
-
-
 Do těla zprávy zkopírujte celý zástupný symbol uvedený pod konkrétním nahraným souborem. Obsahuje jeho vlastní číselné ID; znak `x` není funkční ID. Při zpracování zprávy se symbol nahradí odkazem na soubor. Zprávu uložte a znovu otevřete, abyste zkontrolovali soubor i jeho nastavení ochrany.
-
-
 
 Po kliknutí na odkaz ke stažení ebooku zákazníka přesměrujeme na stránku ve FAPI, kde je možné
 
@@ -89,4 +78,6 @@ U chráněného PDF v objednávkové zprávě se vytvoření personalizovaného 
 
 :::danger
 Náhled šablony zprávy není ověřením personalizovaného PDF pro kupujícího. Výsledek zkontrolujte na testovací objednávce: ověřte stav úhrady, otevřete odkaz, vyčkejte na přípravu a zkontrolujte skutečně stažené PDF.
+
+Při aktivní ochraně nejsou funkční prokliky na odkazy v samotném e-booku.
 :::
