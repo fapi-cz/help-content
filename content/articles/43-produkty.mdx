@@ -15,7 +15,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/43-produkty
 order: 37
-updatedAt: 2026-10-30T11:51:01.938Z
+updatedAt: 2026-11-23T14:15:26.768Z
 legacyAnchors:
   - id: Nastaven-produktu-20Qz-
     tag: h2
@@ -43,17 +43,23 @@ redirects:
 _Produkty_ prodávané prostřednictvím FAPI představují samostatné objekty, které se vkládají do prodejních formulářů. Pro automatizovaný prodej pomocí prodejního formuláře je třeba všechny vlastnosti prodávaného produktu předem nastavit.
 
 :::caution
-Jako _produkt_ označujeme cokoli, co lze pomocí FAPI prodávat. Může tedy jít jak o digitální produkty (ebooky, videa, online kurzy, aplikace apod.), tak služby (koučink, konzultace, výuka jazyků, masáže apod.), živé či online akce (školení, semináře, webináře apod.), nebo fyzické věci (knihy nebo jiné zboží).
+Jako _produkt_ označujeme cokoli, co lze pomocí FAPI prodávat. Může tedy jít jak o digitální produkty (e-booky, videa, online kurzy, aplikace apod.), tak služby (koučink, konzultace, výuka jazyků, masáže apod.), živé či online akce (školení, semináře, webináře apod.), nebo fyzické věci (knihy nebo jiné zboží).
 :::
 
 S produkty je možné pracovat na dvou místech:
 
-- v přehledu produktů (nabídka **PRODEJ –** [Produkty](https://web.fapi.cz/templates/items?projectId=all)),
+- v přehledu produktů (nabídka **PRODEJ –** <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a>),
 - v nastavení prodejního formuláře.
 
 ## Nastavení produktu
 
-Nabídka **PRODEJ –** [Produkty](https://web.fapi.cz/templates/items?projectId=all) poskytuje přehled všech produktů a nástroje pro jejich správu. Můžete zde produkty vytvářet, upravovat, duplikovat či mazat, a to pomocí příslušných tlačítek.
+Nabídka **PRODEJ –** <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a> poskytuje přehled všech produktů a nástroje pro jejich správu. Můžete zde produkty vytvářet, upravovat, duplikovat či mazat, a to pomocí příslušných tlačítek.
+
+:::caution
+**Smazání produktu platí pro všechny formuláře.** Tlačítko **Smazat** v přehledu produktů odstraní produkt i jeho zařazení ve všech prodejních formulářích. Smažou se také <a href="/article/163-akce-v-prodejnim-formulari-automatizacni-pravidla" target="_blank" rel="noopener">automatizační pravidla</a>, která mají tento produkt vybraný jako podmínku události.
+
+Chcete-li produkt přestat nabízet jen v jednom formuláři, **odeberte jej z tohoto formuláře, nemažte jej z přehledu produktů.**
+:::
 
 :::tip
 Zobrazené produkty je možné filtrovat a řadit podle různých kritérií (kliknutím na záhlaví příslušného sloupce).
@@ -67,15 +73,17 @@ Při vytváření, úpravě či duplikaci produktu se otevře jeho detail, kde j
 
 :::caution
 Zobrazená pole a jejich popisky se mohou lišit v závislosti na nastavení parametrů fakturace v účtu FAPI.
+
+![](/assets/uploads/955b8b9bb0a30f4eb389a428.webp)
 :::
 
 **Název** - je viditelný zákazníkům, a to jak v prodejním formuláři, tak na faktuře
 
-**Popis** - popis se z obrazuje ve vystavené faktuře (nezobrazuje se v prodejním formuláři)
+**Popis** **na faktuře**- popis se z obrazuje ve vystavené faktuře (nezobrazuje se v prodejním formuláři)
 
-**Veřejný popis** - se zobrazuje i v náhledu prodejního formuláře
+**Popis v prodejním formuláři je** - veřejný popis se zobrazuje i v náhledu prodejního formuláře
 
-**Obrázek** - volitelná možnost pro náhledový obrázek v prodejním formuláři. Zobrazení funguje pouze pro hlavní položky a miniupselly. Podporované formáty JPG, JPEG, PNG, AVIF a WEBP.
+**Obrázek** - volitelná možnost pro náhledový obrázek v prodejním formuláři. Zobrazení funguje pouze pro hlavní položky a <a href="https://napoveda1.fapi.cz/editor/?q=mini&article=77-miniupsell-order-bump&proposal=63#Produkty-v-prodejnm-formuli-QZ8gD" target="_blank" rel="noopener">miniupselly</a>. Podporované formáty JPG, JPEG, PNG, AVIF a WEBP.
 
 **Měna** - výběr měny, pro kterou se nastavují dané ceny
 
@@ -95,27 +103,33 @@ Zobrazená pole a jejich popisky se mohou lišit v závislosti na nastavení 
 
 **Minimální množství na objednávku** - zadáním čísla nastavíte, kolik minimálně kusů může zákazník v prodejním formuláři nakoupit na objednávku. Příklad, pokud zadáte hodnotu 3, zákazník bude muset koupit minimálně 3 kusy tohoto produktu.
 
+:::danger
 _Funkce nefunguje při ruční fakturaci nebo při vytváření objednávek skrze API._
+:::
 
 **Maximální množství na objednávku** - zadáním čísla nastavíte, kolik maximálně kusů může zákazník v prodejním formuláři nakoupit. Příklad, pokud zadáte hodnotu 3, zákazník bude moci koupit maximálně 3 kusy tohoto produktu na objednávku.
 
+:::danger
 _Funkce nefunguje při ruční fakturaci nebo při vytváření objednávek skrze API._
+:::
 
 **Omezit dostupné množství** - zatržítko pro volitelné omezení maximálního počtu položek, které lze pořídit.
 
 **Typ produktu** - je jedna z nejdůležitějších části nastavení. Podle typu produktu se totiž ve FAPI řídí různé účetní náležitosti. FAPI disponuje několika typy produktů:
 
-- **zboží** - jedná se o jakékoliv fyzické zboží: oblečení, elektronika, nábytek, atd. Typ produktu je zde důležitý kvůli [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss). Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrál alespoň jeden fyzický produkt.
+![](/assets/uploads/312b56c7ea014db802ae1082.webp)
+
+- **zboží** - jedná se o jakékoliv fyzické zboží: oblečení, elektronika, nábytek, atd. Typ produktu je zde důležitý kvůli <a href="/article/101-prodej-zbozi-na-dalku-a-rezim-oss" target="_blank" rel="noopener">režimu OSS</a>. Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
 - **potraviny a výživové doplňky** -
 - **služba** - do služeb patří konzultace a workshopy. Ve FAPI tento produkt nemá žádný zvláštní daňový režim. 
-- **jiná elektronicky poskytovaná služba** - sem spadají služby jako například FAPI, členské sekce, online konzultace, webináře atp. Opět je typ produktu důležitý pro [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).
-- **e-book -** sem spadají všechny publikace, které jsou klientovi zaslané elektronicky. Typ produktu je zde důležitý kvůli [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss). 
-- **kniha -** sem spadají všechny publikace v tištěné knihy. Opět je typ produktu důležitý pro [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).  Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
-- **elektronický časopis, noviny a jiné periodika** - sem spadají všechny publikace, které jsou klientovi zaslané elektronicky, vyjma e-booku. Typ produktu je zde důležitý kvůli [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss). 
-- **tištěný časopis, noviny a jiné periodika** - sem spadají všechny publikace v tištěné publikace kromě knihy. Opět je typ produktu důležitý pro [režimu OSS](/article/101-prodej-zbozi-na-dalku-a-rezim-oss).  Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
+- **jiná elektronicky poskytovaná služba** - sem spadají služby jako například FAPI, členské sekce, online konzultace, webináře atp. Opět je typ produktu důležitý pro <a href="/article/101-prodej-zbozi-na-dalku-a-rezim-oss" target="_blank" rel="noopener">režimu OSS</a>.
+- **e-book -** sem spadají všechny publikace, které jsou klientovi zaslané elektronicky. Typ produktu je zde důležitý kvůli <a href="/article/101-prodej-zbozi-na-dalku-a-rezim-oss" target="_blank" rel="noopener">režimu OSS</a>. 
+- **kniha -** sem spadají všechny publikace v tištěné knihy. Opět je typ produktu důležitý pro <a href="/article/101-prodej-zbozi-na-dalku-a-rezim-oss" target="_blank" rel="noopener">režimu OSS</a>.  Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
+- **elektronický časopis, noviny a jiné periodika** - sem spadají všechny publikace, které jsou klientovi zaslané elektronicky, vyjma e-booku. Typ produktu je zde důležitý kvůli <a href="/article/101-prodej-zbozi-na-dalku-a-rezim-oss" target="_blank" rel="noopener">režimu OSS</a>. 
+- **tištěný časopis, noviny a jiné periodika** - sem spadají všechny publikace v tištěné publikace kromě knihy. Opět je typ produktu důležitý pro <a href="/article/101-prodej-zbozi-na-dalku-a-rezim-oss" target="_blank" rel="noopener">režimu OSS</a>.  Dále tento typ ovlivňuje zobrazení způsobu dopravy v prodejním formuláři, zobrazí se tehdy, pokud je vybrán alespoň jeden fyzický produkt.
 - **živá akce** - platí pro všechny offline akce. Zde je pak vždy důležité místo konaní akce.
 
-**Prodávat jako voucher** - produkt bude prodáván jako voucher (více o [Voucherech](/article/94-vouchery))
+**Prodávat jako voucher** - produkt bude prodáván jako voucher (více o <a href="/article/94-vouchery" target="_blank" rel="noopener">Voucherech</a>)
 
 **Neuplatňovat slevové kódy** - na produkt nebude uplatněn slevový kód s procentní slevou. Pevná sleva uplatněna bude!
 
@@ -125,35 +139,46 @@ _Funkce nefunguje při ruční fakturaci nebo při vytváření objednávek skrz
 
 **Soubory ke stažení u produktu**
 
-K produktu můžete přidat například e-book a pracovní list. Zákazník najde soubory zakoupeného produktu na [přehledu objednávky](/article/102-prehled-objednavky) v části **Materiály ke stažení**, pokud je objednávka zaplacená a není stornovaná.
+K produktu můžete přidat například e-book a pracovní list. Zákazník najde soubory zakoupeného produktu na <a href="/article/102-prehled-objednavky" target="_blank" rel="noopener">přehledu objednávky</a> v části **Materiály ke stažení**, pokud je objednávka zaplacená a není stornovaná.
 
-1. V nabídce **PRODEJ –** [Produkty](https://web.fapi.cz/templates/items?projectId=all) otevřete u požadovaného produktu **Upravit**.
+1. V nabídce **PRODEJ –** <a href="https://web.fapi.cz/templates/items?projectId=all" target="_blank" rel="noopener">Produkty</a> otevřete u požadovaného produktu **Upravit**.
 2. V poli **Soubory ke stažení** vyberte soubor nebo více souborů najednou. Zkontrolujte jejich názvy v seznamu. Další vybrané soubory se přidají k dosavadním; nepotřebný soubor odeberete tlačítkem **Odebrat** u jeho názvu.
-3. Chcete-li chránit konkrétní PDF údaji o kupujícím, klikněte u tohoto souboru na **Nastavení**. Zapněte **Povolit ochranu Ebooku**, nastavte umístění údajů a klikněte na **Hotovo**. Podrobnosti najdete v návodu [Ochrana e-booku](/article/146-ochrana-ebooku). Ochrana e-booku se nastavuje pro každé PDF zvlášť. U videa má dialog **Nastavení** samostatnou volbu **Přehrávání videa v prohlížeči**.
+3. Chcete-li chránit konkrétní PDF údaji o kupujícím, klikněte u tohoto souboru na **Nastavení**. Zapněte **Povolit ochranu E-booku**, nastavte umístění údajů a klikněte na **Hotovo**. Podrobnosti najdete v návodu <a href="/article/146-ochrana-ebooku" target="_blank" rel="noopener">Ochrana e-booku</a>. Ochrana e-booku se nastavuje pro každé PDF zvlášť. U videa má dialog **Nastavení** samostatnou volbu **Přehrávání videa v prohlížeči**.
 4. Klikněte na hlavní tlačítko **Uložit** v nastavení produktu. **Hotovo** pouze uzavírá dialog ochrany, produkt neukládá.
 5. Znovu otevřete produkt a zkontrolujte seznam uložených souborů; u chráněného PDF také jeho nastavení ochrany.
 
 ![Soubory produktu: video a PDF, u PDF zvýrazněné tlačítko Nastavení](/assets/release-20261027/produkt-soubory-nastaveni.png)
 
-[Zobrazit uložené produktové soubory v plném rozlišení](/assets/release-20261027/produkt-soubory-nastaveni.png)
+<a href="/assets/release-20261027/produkt-soubory-nastaveni.png" target="_blank" rel="noopener">Zobrazit uložené produktové soubory v plném rozlišení</a>
 
 ![Hlavní tlačítko Uložit v nastavení produktu](/assets/releases/2026-10-21/product-save.png)
 
-[Zobrazit hlavní tlačítko Uložit v plném rozlišení](/assets/releases/2026-10-21/product-save.png)
+<a href="/assets/releases/2026-10-21/product-save.png" target="_blank" rel="noopener">Zobrazit hlavní tlačítko Uložit v plném rozlišení</a>
 
 Produkt musí být vložený do prodejního formuláře podle následujícího oddílu. Samotné přidání souboru není ověřením jeho doručení zákazníkovi.
 
 :::note
-**Soubory produktu můžete doručit i běžným e-mailem při zaplacení objednávky.** Do těla této zprávy vložte `{items}` nebo `{itemsList}`. V HTML e-mailu se u zakoupených položek doplní odkazy na jejich soubory, pokud je objednávka zaplacená a není stornovaná. Soubor se neposílá jako e-mailová příloha. Další akci pro odeslání e-mailu kvůli tomu nastavovat nemusíte. Postup pro zprávu i volitelný samostatný e-mail najdete v návodu [Odesílání e-booků a dalších souborů](/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem).
+**Soubory produktu můžete doručit i běžným e-mailem při zaplacení objednávky.** Do těla této zprávy vložte `{items}` nebo `{itemsList}`. V HTML e-mailu se u zakoupených položek doplní odkazy na jejich soubory, pokud je objednávka zaplacená a není stornovaná. Soubor se neposílá jako e-mailová příloha. Další akci pro odeslání e-mailu kvůli tomu nastavovat nemusíte. Postup pro zprávu i volitelný samostatný e-mail najdete v návodu <a href="/article/303-odesilani-e-booku-a-dalsich-souboru-z-fapi-samostatnym-e-mailem" target="_blank" rel="noopener">Odesílání e-booků a dalších souborů</a>.
 :::
 
 ## Produkty v prodejním formuláři
 
-Vytvořený produkt vložíte do prodejního formuláře v jeho nastavení (tlačítko **Upravit** u příslušného formuláře v nabídce **PRODEJ –** [Prodejní formuláře](https://web.fapi.cz/forms/?projectId=all)), a to na záložce **Položky a ceny**.
+Vytvořený produkt vložíte do prodejního formuláře v jeho nastavení (tlačítko **Upravit** u příslušného formuláře v nabídce **PRODEJ –** <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a>), a to na záložce **Položky a ceny**.
 
-![Produkty](/assets/articles/fe8583b0e272fe13.png)
+Zde je možné vkládat již vytvořené produkty do prodejního formuláře (výběrem ze seznamu, popř. pomocí tlačítka **Přidat položku**).
 
-Zde je možné vkládat již vytvořené produkty do prodejního formuláře (výběrem ze seznamu, popř. pomocí tlačítka **Přidat položku**) a odebírat produkty z prodejního formuláře (tlačítko **Smazat**).
+Pokud chcete produkt odebrat pouze z tohoto formuláře:
+
+1. U příslušné položky klikněte na **Odebrat**. Produkt tím nemažete z přehledu produktů ani z ostatních formulářů.
+
+   ![Záložka Položky a ceny s vyznačeným tlačítkem Odebrat u produktu](/assets/docs-gap-20261117/produkt-odebrat-z-formulare.png)
+
+   <a href="/assets/docs-gap-20261117/produkt-odebrat-z-formulare.png" target="_blank" rel="noopener">Zobrazit tlačítko Odebrat v plném rozlišení</a>
+2. Dole klikněte na **Uložit formulář**. Poté jej přes nabídku **PRODEJ –** <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a> znovu otevřete a na záložce **Položky a ceny** zkontrolujte, že už v něm odebraný produkt není.
+
+   ![Hlavní tlačítko Uložit formulář](/assets/docs-gap-20261117/formular-ulozit.png)
+
+   <a href="/assets/docs-gap-20261117/formular-ulozit.png" target="_blank" rel="noopener">Zobrazit tlačítko Uložit formulář v plném rozlišení</a>
 
 Lze ale také přímo upravovat vlastnosti stávajících produktů (tlačítko **Upravit**) a vytvářet nové produkty položky (tlačítko **Vytvořit**).
 
@@ -204,4 +229,6 @@ Pro účetní systém Pohoda jde povolit rozšířená nastavení, kde každému
 - kód střediska
 - kód skladu a skladové položky
 
-Zapnutí těchto položek je potřeba aktivovat v Nastavení > [Nastavení fakturace](https://web.fapi.cz/settings/?projectId=all) > Rozšířené nastavení produktu.
+Zapnutí těchto položek je potřeba aktivovat v Nastavení > <a href="https://web.fapi.cz/settings/?projectId=all" target="_blank" rel="noopener">Nastavení fakturace</a> > Rozšířené nastavení produktu.
+
+![](/assets/uploads/e3f7157400870d6158f6fdf3.webp)
