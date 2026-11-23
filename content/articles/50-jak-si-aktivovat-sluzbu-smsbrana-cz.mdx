@@ -13,24 +13,21 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/50-jak-si-aktivovat-sluzbu-smsbrana-cz
 order: 89
-updatedAt: 2026-07-13T10:39:14Z
+updatedAt: 2026-11-23T09:57:53.260Z
+redirects: []
 ---
-_SMSbrána.cz_ je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu [Posílání SMS zpráv z FAPI](/article/49-posilani-sms-zprav-z-fapi)). V tomto článku si popíšeme, jak službu SMSbrána.cz integrovat do FAPI.
+_SMSbrána.cz_ je jednou ze tří z externích služeb, kterou je možné využít k posílání SMS zpráv z FAPI (více informací najdete v návodu <a href="/article/49-posilani-sms-zprav-z-fapi" target="_blank" rel="noopener">Posílání SMS zpráv z FAPI</a>). V tomto článku si popíšeme, jak službu SMSbrána.cz integrovat do FAPI.
 
-Ke zprovoznění služby je nejprve třeba se zaregistrovat na stránkách [SMSbrana.cz](http://www.smsbrana.cz/) a aktivovat si tarif dle svého výběru. Dále je nutné propojit FAPI s účtem služby SMSbrána.cz. Oba kroky si popíšeme podrobněji v následujícím textu.
-
-
+Ke zprovoznění služby je nejprve třeba se zaregistrovat na stránkách [SMSbrana.cz](https://www.smsbrana.cz/) a aktivovat si tarif dle svého výběru. Dále je nutné propojit FAPI s účtem služby SMSbrána.cz. Oba kroky si popíšeme podrobněji v následujícím textu.
 
 ## Registrace do služby SMSbrána.cz
 
-1.  Na stránce SMSbrana.cz klikněte na tlačítko **Registrovat** ([https://www.smsbrana.cz/registration](https://www.smsbrana.cz/registration)) a vyplňte všechny přihlašovací a fakturační údaje. Faktury budou automaticky generovány a doručovány na zvolenou e-mailovou adresu.
+1. Na stránce SMSbrana.cz klikněte na tlačítko **Registrovat** ([https://www.smsbrana.cz/registration](https://www.smsbrana.cz/registration)) a vyplňte všechny přihlašovací a fakturační údaje. Faktury budou automaticky generovány a doručovány na zvolenou e-mailovou adresu.
 
+Přihlášení do portálu pak je z této adresy: [https://portal.smsbrana.cz/login.html?requestId\=eg664](https://portal.smsbrana.cz/login.html?requestId=eg664)
 
-
-Přihlášení do portálu pak je z této adresy: [https://portal.smsbrana.cz/login.html?requestId=eg664](https://portal.smsbrana.cz/login.html?requestId=eg664)
-
-2.  Do své e-mailové schránky dostanete e-mail, ve kterém potvrdíte aktivaci kliknutím na uvedený link, a můžete se přihlásit.
-3.  Dobijte si kredit kliknutím na tlačítko **Koupit kredity** ([http://www.smsbrana.cz/dobit-kredit.html](http://www.smsbrana.cz/dobit-kredit.html)). K dispozici je 20 platebních metod včetně platby kartou, zálohové faktury nebo platby převodem.
+1. Do své e-mailové schránky dostanete e-mail, ve kterém potvrdíte aktivaci kliknutím na uvedený link, a můžete se přihlásit.
+2. Dobijte si kredit kliknutím na tlačítko **Koupit kredity** ([http://www.smsbrana.cz/dobit-kredit.html](http://www.smsbrana.cz/dobit-kredit.html)). K dispozici je 20 platebních metod včetně platby kartou, zálohové faktury nebo platby převodem.
 
 ## Propojení FAPI se službou SMSbrána.cz
 
@@ -41,8 +38,6 @@ Jak na to?
 API pak po přihlášení najdete v levém panelu
 
 ![Jak si aktivovat službu SMSbrána.cz](/assets/articles/ea92bdbcd7e73b71.png)
-
-
 
 Dále po vás bude vyžadováno Aktivace účtu
 
@@ -58,12 +53,21 @@ Vyberte Aktivní a uložte.
 
 ![Jak si aktivovat službu SMSbrána.cz](/assets/articles/ec554c533363e7d7.png)
 
+1. Ve FAPI otevřete Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a> a u služby **SMSBrána.cz** klikněte na **Připojit**.
+2. Do pole **Název propojení** můžete zadat vlastní označení. Pomůže vám odlišit více propojení stejné služby.
+3. Vyplňte **Uživatelské jméno** a **Heslo** pro SMS Connect. Nejde o přihlašovací údaje do webového portálu; podrobnosti jsou v upozornění níže.
+4. Klikněte na **Uložit**. FAPI před uložením zkontroluje přístupové údaje.
 
+![Formulář propojení SMSBrána.cz s názvem, uživatelským jménem, heslem a uložením](/assets/articles/6e638147821e7a7f.png)
 
-Ve Fapi nabídce **Nastavení - Propojení aplikací** u služby [SMSbrána.cz](http://xn--smsbrna-lwa.cz/) stiskněte tlačítko **Upravit**. Do zobrazeného formuláře vyplňte uživatelské jméno a heslo ke službě SMSbrána.cz.
+<a href="/assets/articles/6e638147821e7a7f.png" target="_blank" rel="noopener">Zobrazit formulář SMSBrána.cz v plném rozlišení</a>
 
-![Jak si aktivovat službu SMSbrána.cz](/assets/articles/6e638147821e7a7f.png)
+### **Možnost více propojení SMSbrána účtů v jednom FAPI účtu**
+
+Pro další propojení použijte znovu **Připojit** u služby SMSBrána.cz v Nastavení → <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>. Existující propojení upravíte tlačítkem **Upravit** na jeho řádku.
+
+Název propojení se zobrazuje také v poli **Propojení** při nastavení <a href="/article/49-posilani-sms-zprav-z-fapi" target="_blank" rel="noopener">akce pro odeslání SMS</a>. Nabídka SMSBrána.cz obsahuje propojení, u kterých kontrola spojení prošla úspěšně.
 
 :::danger
-Pro přihlášení ke službě SMSbrána.cz z FAPI se používají jiné přihlašovací údaje než pro přihlášení na webu [www.smsbrana.cz](http://www.smsbrana.cz/). Uživatelské jméno (login) a heslo najdete po přihlášení do účtu na stránce **Nastavení účtu - s API sms connect** ([https://portal.smsbrana.cz/nastaveni-sluzeb/sms-connect.html](https://portal.smsbrana.cz/nastaveni-sluzeb/sms-connect.html)). Zde musí být zaškrtnut parametr **aktivní** a typ přihlášení musí být nastaven na **Pokročilé přihlášení**. Všechna ostatní nastavení na této stránce doporučujeme ponechat na výchozích hodnotách.
+Pro přihlášení ke službě SMSbrána.cz z FAPI se používají jiné přihlašovací údaje než pro přihlášení na webu [www.smsbrana.cz](https://www.smsbrana.cz/). Uživatelské jméno (login) a heslo najdete po přihlášení do účtu na stránce **Nastavení účtu - s API sms connect** ([https://portal.smsbrana.cz/nastaveni-sluzeb/sms-connect.html](https://portal.smsbrana.cz/nastaveni-sluzeb/sms-connect.html)). Zde musí být zaškrtnut parametr **aktivní** a typ přihlášení musí být nastaven na **Pokročilé přihlášení**. Všechna ostatní nastavení na této stránce doporučujeme ponechat na výchozích hodnotách.
 :::
