@@ -11,7 +11,7 @@ keywords:
   - Rozšíření a doplňky
 sourceUrl: https://napoveda.fapi.cz/article/184-lifehack-upravy-pro-prodejni-formular
 order: 109
-updatedAt: 2026-11-04T08:06:49.858Z
+updatedAt: 2026-11-24T07:14:39.895Z
 legacyAnchors:
   - id: Pejmenovn-textu-platebn-metody-Dobrka-BU2ym
     tag: h2
@@ -45,7 +45,7 @@ legacyAnchors:
     headingIndex: 5
   - id: Zobrazit-pouze-platebn-metodu-Twisto-a-vechny-ostatn-skrt-XcW-B
     tag: h2
-    text: 7.Twisto – ukončená podpora
+    text: 7.Twisto přes GoPay a původní skript
     occurrence: 0
     headingIndex: 6
   - id: Skryt-platebnch-metod-dladice-BU7-P
@@ -134,13 +134,15 @@ Výchozí text Bankovní převod se nahradí novým textem mezi posledními uvoz
 
 ## 3.Zvětšení písma chybových hlášek v prodejním formuláři
 
-Kód se vkládá do stránky, ve které je prodejní formulář u kterého chcete provést změnu. Upravuje specificky pouze velikost červených textů chybových hlášek.
+Kód vložte do stránky s prodejním formulářem. Zvětší text chybových hlášek včetně hlášek u povinných voleb.
 
 Hodnotu 1.5em můžete přepsat na jiné číslo, např. 2em nebo 1.2 em.
 
 ```text
 <style>
-  .f-text-red-600 {
+.f-text-red-600,
+.fapi-form-error-message,
+form.fapi-required-choice-validation .fapi-required-choice-error {
   font-size: 1.5em !important;
 }
 </style>
@@ -150,37 +152,31 @@ Hodnotu 1.5em můžete přepsat na jiné číslo, např. 2em nebo 1.2 em.
 
 ## 4.Změna textu chybové hlášky u nezaškrtnutých obchodních podmínek
 
-Text si lze libovolně přepsat na jiný. Script se vkládá na stránku, ve které je prodejní formulář, u kterého chceme docílit změny.
+Tato ukázka nahrazuje slovenskou hlášku „Musíte sa oboznámiť s obchodnými podmienkami.“ vlastním textem. Text v proměnné `replacementText` si upravte podle potřeby. Povinnost udělit souhlas tím nezměníte. Skript vložte na stránku s prodejním formulářem.
 
 ```text
 <script>
-  // Vytvoření instance MutationObserver
-let observer = new MutationObserver((mutationsList, observer) => {
-    // Projděte všechny mutace, které byly zaznamenány
-    for(let mutation of mutationsList) {
-        // Pokud byla přidána nová uzlová hodnota (textContent)
-        if(mutation.type === 'childList') {
-            let spanElement = document.querySelector('.f-text-red-600.f-text-xs.f-mt-1 span');
+(() => {
+  const originalText = 'Musíte sa oboznámiť s obchodnými podmienkami.';
+  const replacementText = 'Je potrebné oboznámiť sa s obchodnými podmienkami.';
+  const selector = [
+    '.fapi-form-terms-errors span',
+    '.fapi-form-terms .fapi-form-error-message:not(.fapi-required-choice-error)',
+    '[data-fapi-required-choice="terms"] .fapi-required-choice-error > span:last-child',
+  ].join(', ');
 
-            // Zkontrolujte, zda existuje element <span> a zda obsahuje v jednoduchých uvozovkách definovaný text, který chceme přepsat
+  function replaceTermsError() {
+    document.querySelectorAll(selector).forEach((element) => {
+      if (element.textContent.trim() === originalText) {
+        element.textContent = replacementText;
+      }
+    });
+  }
 
-            if(spanElement && spanElement.textContent.trim() === 'Musíte sa oboznámiť s obchodnými podmienkami.') {
-
-//následující text v jednoduchých uvozovkách nahrazuje původní text
-
-                spanElement.textContent = 'Je potrebné oboznámiť sa s obchodnými podmienkami.';
-                // ukončení sledování mutací, jakmile je text aktualizován
-                observer.disconnect();
-            }
-        }
-    }
-});
-
-// Nastavení konfigurace observeru
-let config = { childList: true, subtree: true };
-
-// Spuštění observeru na celém dokumentu
-observer.observe(document, config);
+  const observer = new MutationObserver(replaceTermsError);
+  observer.observe(document, { childList: true, subtree: true, characterData: true });
+  replaceTermsError();
+})();
 </script>
 ```
 
@@ -246,9 +242,11 @@ Skript se vkládá na stránku, ve které je prodejní formulář, u kterého ch
 
 
 
-## 7.Twisto – ukončená podpora
+## 7.Twisto přes GoPay a původní skript
 
-FAPI již nepodporuje propojení s Twisto ani platby přes Twisto. Původní skript pro zobrazení pouze této platební metody již nepoužívejte. Pokud jej máte vložený na stránce s prodejním formulářem, odstraňte jej, aby neskrýval ostatní platební metody.
+Přímé propojení FAPI s Twisto není podporované. Twisto můžete nabídnout prostřednictvím platební brány GoPay, pokud je tato metoda dostupná ve vašem připojení GoPay. Nabídka je určená pro platby v CZK z České republiky. Ve formuláři musí být povolená platební brána GoPay i bankovní převod. Propojení brány popisuje <a href="/article/56-zalozeni-a-integrace-platebni-brany-gopay" target="_blank" rel="noopener">návod k GoPay</a>.
+
+Původní skript pro zobrazení pouze Twisto již nepoužívejte. Pokud jej máte vložený na stránce s prodejním formulářem, odstraňte jej, aby neskrýval ostatní platební metody.
 
 ## **8.Skrytí platebních metod (dlaždice)**
 
