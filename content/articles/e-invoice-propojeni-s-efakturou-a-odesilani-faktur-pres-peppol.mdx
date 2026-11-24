@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-24T12:52:02.653Z
+updatedAt: 2026-11-24T12:55:26.093Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -84,10 +84,6 @@ Připravte si:
 
 - Úplné firemní údaje v **Nastavení →** <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>: název firmy, IČO, **DIČ i IČ DPH**, ulici, město, PSČ a stát **Slovenská republika**. Údaje uložte tlačítkem **Uložit fakturační údaje**.
 - Vlastní účet nastavený jako **Plátce DPH** v **Nastavení →** <a href="https://web.fapi.cz/settings/" target="_blank" rel="noopener">Nastavení fakturace</a> **→ Nastavení DPH**. Zkontrolujte vyplněné **DIČ** a **IČ DPH** a změny uložte tlačítkem **Uložit nastavení**.
-  :::tip
-  ty klienty níže musí doplňovat ručně??
-  :::
-- V přehledu <a href="https://web.fapi.cz/client/" target="_blank" rel="noopener">Klienti</a> otevřete detail odběratele a zvolte **Upravit**. Připravte název firmy, IČO, **DIČ i IČ DPH**, úplnou slovenskou adresu a zaškrtněte **Plátce DPH**. Změny potvrďte tlačítkem **Uložit**.
 - Pro aktivaci v sandboxu použijte **testovací token `a1b2c3`**. Je to veřejná testovací hodnota, nikoli skutečný token od Finanční správy. Skutečné ověřovací tokeny ani přístupové údaje do testu nezadávejte a neposílejte je e-mailem či na snímcích obrazovky.
 - Fakturu a odběratele odpovídající [současným omezením](#soucasna-omezeni).
 
@@ -203,7 +199,7 @@ jaké náklady jim k tomu plynou navíc ve fapi? budeme jitm to rozúčtovávat 
 
 Před prvním odesláním zkontrolujte zejména:
 
-- **Doklad:** musí jít o vystavenou, očíslovanou a nestornovanou běžnou fakturu v EUR. Samostatnou zálohovou fakturu ani splátkovou fakturu takto neodešlete.
+- **Doklad:** musí jít o vystavenou, očíslovanou a nestornovanou běžnou fakturu v EUR. Samostatnou zálohovou fakturu takto neodešlete.
 - **Dodavatel pro tento postup:** plátce DPH, úplná slovenská adresa, IČO, DIČ a IČ DPH. Jeho identifikační údaje musí odpovídat připojené organizaci.
 - **Odběratel pro tento postup:** slovenský plátce DPH s názvem, úplnou adresou, IČO, DIČ a IČ DPH. **DIČ zadávejte jako deset číslic, IČ DPH jako SK a stejných deset číslic.** U IČO se kontroluje osm číslic. Samotné IČO nestačí pro určení Peppol adresy; příjemce musí být v příslušné síti dostupný.
 - **Položky a součty:** alespoň jedna položka s názvem a kladným množstvím. Podporované sazby DPH jsou 0, 5, 19 a 23 %. Celková částka musí být kladná a součty položek i DPH musí odpovídat faktuře. Kontrolou musí projít celé výsledné XML, nejen jednotlivá pole.
@@ -216,9 +212,7 @@ I při splnění těchto podmínek může kontrola XML nebo příjemce požadave
 
 ## Když se připojení nebo odeslání nedaří
 
-- **eFaktúra chybí v seznamu propojení:** ověřte povolení funkce administrátorem FAPI.
 - **Aktivace nebyla dokončena:** otevřete úpravu propojení, zkontrolujte uloženou organizaci a dokončete aktivaci testovacím tokenem pro sandbox.
-- **Dodavatel neodpovídá připojené organizaci:** porovnejte dodavatele uloženého přímo na faktuře s firmou připojenou k eFaktúře. Změna údajů účtu sama neopraví dodavatele na již vystaveném dokladu.
 - **Chybí údaj nebo kontrola XML našla chybu:** opravte uvedené pole přímo na faktuře. Například hlášení **V adrese odběratele chybí ulice.** znamená, že je potřeba doplnit ulici odběratele; samotné město a PSČ nestačí.
 - **Příjemce nebyl nalezen nebo kontrola není dostupná:** ověřte DIČ odběratele a jeho dostupnost v příslušném prostředí Peppol. Při nedostupnosti kontroly odeslání neproběhne; nepovažujte jej za dokončené.
 - **Nepodařilo se komunikovat s eFaktúrou:** zkontrolujte nejprve aktuální stav faktury. Požadavek mohl být u poskytovatele zpracovaný i při přerušené komunikaci.
