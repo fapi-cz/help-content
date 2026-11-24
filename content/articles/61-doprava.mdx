@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/61-doprava
 order: 58
-updatedAt: 2026-07-13T10:31:04Z
+updatedAt: 2026-11-24T08:13:28Z
 legacyAnchors:
   - id: Vytvoen-zpsobu-dopravy-HhwsD
     tag: h2
@@ -52,7 +52,7 @@ Způsoby dopravy, které chcete svým zákazníkům poskytnout, je potřeba ve 
 
 ## Vytvoření způsobu dopravy
 
-Poskytované způsoby dopravy vytvoříte pomocí tlačítka **Nový způsob dopravy** v nabídce **Prodej - Doprava**.
+Poskytované způsoby dopravy vytvoříte pomocí tlačítka **Nový způsob dopravy** v nabídce <a href="https://web.fapi.cz/shipping-methods/?projectId=all" target="_blank" rel="noopener">**Prodej - Doprava**</a>.
 
 ![Doprava](/assets/articles/7f20cb18e943c3f4.jpg)
 
@@ -61,9 +61,11 @@ U každého způsobu dopravy je třeba zvolit jeho _typ_. V současnosti můž
 -   **Zásilkovna** - doručení pomocí služby Zásilkovna, a to buď prostřednictvím výdejních míst Zásilkovny, nebo pomocí externích dopravců. Je potřeba specifikovat, pro jaké státy (ve fakturační, resp. doručovací adrese) se má způsob dopravy nabízet.
 
     :::danger
-    Pro využití Zásilkovny je potřeba nejprve oba systémy propojit. Postupujte podle návodu [Propojení FAPI se službou Zásilkovna](/article/62-propojeni-fapi-se-sluzbou-zasilkovna).
+    Pro využití Zásilkovny je potřeba nejprve oba systémy propojit. Postupujte podle návodu <a href="/article/62-propojeni-fapi-se-sluzbou-zasilkovna" target="_blank" rel="noopener">Propojení FAPI se službou Zásilkovna</a>.
     :::
 
+-   **GLS** - doprava prostřednictvím služby GLS. Nastavení propojení a dopravy najdete v návodu <a href="/article/252-gls" target="_blank" rel="noopener">Propojení s přepravní službou GLS</a>.
+-   **Balíkovna** - doprava prostřednictvím Balíkovny. Nejprve nastavte <a href="/article/260-jak-propojit-fapi-s-balikovnou" target="_blank" rel="noopener">propojení FAPI s Balíkovnou</a>.
 -   **Osobní odběr** - vyzvednutí objednávky na výdejním místě obchodníka, např. na kamenné prodejně. U osobního odběru je nutné specifikovat adresu výdejního místa. Adresy výdejních míst se zákazníkovi zobrazí k výběru v objednávkovém formuláři.
 -   **Vlastní typ dopravy** - pomocí vlastního typu dopravy je možné zákazníkovi v objednávce nabídnout libovolný typ dopravy, který ve FAPI není implementován. I zde je nutné zadat, v jakých státech je daný způsob dopravy dostupný.
 
@@ -72,7 +74,9 @@ U každého způsobu dopravy je třeba zvolit jeho _typ_. V současnosti můž
     :::
 
 
-U všech typů dopravy je dále možné zadat:
+Typy **Zásilkovna** a **Balíkovna** se v nabídce zobrazí až po nastavení příslušného propojení.
+
+U všech typů dopravy je dále možné zadat:
 
 -   název, pod kterým se daný způsob dopravy bude zobrazovat v prodejním formuláři (pole **NÁZEV**),
 -   popis, pomocí kterého je možné zákazníkovi poskytnout více informací o daném způsobu dopravy (pole **POPIS**),
