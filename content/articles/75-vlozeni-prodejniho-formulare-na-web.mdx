@@ -1,5 +1,5 @@
 ---
-title: "Jak vložit prodejní formulář FAPI na web"
+title: Vložení prodejního formuláře na web pomocí html kódu
 url: /article/75-vlozeni-prodejniho-formulare-na-web
 description: Jak vložit prodejní formulář do webu (webnode, wp/html) Pro to, abyste mohli přijímat objednávky on-line, je třeba vytvořený prodejní formulář umístit na vaši p
 category: Jak vložit prodejní formulář do stránky
@@ -17,7 +17,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/75-vlozeni-prodejniho-formulare-na-web
 order: 17
-updatedAt: "2026-11-13T07:28:21Z"
+updatedAt: 2026-11-25T10:32:45.728Z
 legacyAnchors:
   - id: Jak-vloit-prodejn-formul-do-webu-DyIUq
     tag: h2
@@ -46,35 +46,136 @@ legacyAnchors:
     headingIndex: 3
 redirects: []
 ---
-## Jak vložit prodejní formulář do webu (webnode/html)
+Chcete-li přijímat objednávky prostřednictvím svého webu, vložte do vámi vybrané webové stránky prodejní formulář vytvořený ve FAPI.
 
-Pro to, abyste mohli přijímat objednávky on-line, je třeba vytvořený prodejní formulář umístit na vaši prodejní webovou stránku. Jak vložit prodejní formulář do stránek pro různé editory se můžete dozvědět v následujících nápovědách:
+FAPI vám ke každému prodejnímu formuláři vygeneruje vlastní HTML kód. Tento kód následně vložíte do prvku určeného pro vlastní HTML v administraci svého webu.
 
-## Vložení prodejního formuláře do zdrojového kódu webové stránky
+Konkrétní postup se liší podle toho, v jakém editoru nebo systému máte web vytvořený.
 
-Druhým způsobem jak umístit prodejní formulář FAPI na webovou stránku je vložit kód reprezentující prodejní formulář do zdrojového kódu webové stránky. Takto je možné prodejní formulář vložit do jakékoli webové stránky, u které máte možnost upravovat její zdrojový kód. Nejste tedy nijak limitováni konkrétním technickým řešením, na němž je váš web postaven.
+:::info
+## **Co je HTML kód**
 
-1. Ve FAPI v seznamu <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">prodejních formulářů</a> klikněte na tlačítko **Náhled** u formuláře, který chcete umístit na web. (Stejná náhledová stránka se vám zobrazí také bezprostředně po uložení prodejního formuláře.)
+HTML kód je technický zápis, pomocí kterého se prodejní formulář načte a zobrazí na vaší stránce.
 
-   ![Vložení prodejního formuláře na web](/assets/articles/6b01f9411c6e7bc3.png)
-2. Na náhledové stránce zkopírujte kód prodejního formuláře z pole **Kód HTML pro vložení formuláře na web** a vložte jej do zdrojového kódu webové stránky na místo, kde se má prodejní formulář zobrazovat.
+Kód nemusíte upravovat. Stačí jej celý zkopírovat z FAPI a vložit do správného prvku v editoru webu.
 
-   ![Vložení prodejního formuláře na web](/assets/articles/07cc1532f362b4c7.png)
+Prvek pro vložení kódu může být v různých editorech označený například jako:
 
-## Vložení prodejního formuláře do stránek Webnode
+- **HTML**,
+- **Vlastní HTML**,
+- **Custom HTML**,
+- **HTML kód**,
+- **Embed**,
+- **Kód**,
+- **HTML & Javascript**.
 
-1\. Zkopírujte si HTML kód prodejního formuláře (viz sekce výše).
+Pokud si nejste jistí, kam kód vložit, vyhledejte v nápovědě svého editoru postup pro vložení vlastního HTML kódu nebo externího widgetu.
+:::
 
-2\. Přihlaste se do svého editoru Webnode.
 
-3\. Vyberte svůj web a stránku, do níž chcete prodejní formulář vložit.
 
-4\. Vyberte místo a pomocí ikonky **+** přidejte obsah typu HTML:
+## 1. Zkopírujte HTML kód ve FAPI
 
-![Vložení prodejního formuláře na web](/assets/articles/2045360cbd973b42.png)
+1. Přihlaste se do FAPI.
+2. Otevřete <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodej → Prodejní formuláře.**</a>
+3. Vyhledejte formulář, který chcete vložit na web.
+4. Klikněte na **Náhled**.
 
-5\. Vložte HTML kód prodejního formuláře:
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6b06b53b8909dcd59df7690f/file-wdbV0l6rIp.png)
 
-![Vložení prodejního formuláře na web](/assets/articles/dfddae7891d922ed.png)
+U požadovaného prodejního formuláře klikněte na Náhled.
 
-6\. Stiskněte OK a stránku publikujte.
+Na náhledové stránce vyhledejte pole **Kód HTML pro vložení formuláře na web** a zkopírujte celý zobrazený kód.
+
+![](https://s3.amazonaws.com/helpscout.net/docs/assets/5f22320d2c7d3a10cbab8a47/images/6b06b5815960fdec44da18ed/file-5XAGYXjmCO.png)
+
+Zkopírujte celý HTML kód formuláře.
+
+:::danger
+**Důležité:** Kód neupravujte ani z něj neodstraňujte jednotlivé části. Neúplný nebo změněný kód může způsobit, že se formulář nezobrazí nebo nebude správně fungovat.
+:::
+
+Pokud máte ve FAPI více formulářů, před kopírováním zkontrolujte, že jste otevřeli správný formulář.
+
+## 2. Otevřete administraci svého webu
+
+Přihlaste se do administrace systému, ve kterém máte vytvořené webové stránky.
+
+Otevřete stránku, na které se má prodejní formulář zobrazovat, a přejděte do její úpravy.
+
+Pro další postup potřebujete znát základní ovládání svého editoru, zejména:
+
+- jak otevřít stránku k úpravě,
+- jak přidat nový prvek nebo obsahový blok,
+- jak vložit vlastní HTML kód,
+- jak změny uložit a publikovat.
+
+## 3. Přidejte prvek pro vlastní HTML
+
+Na stránce vyberte místo, kde chcete formulář zobrazit.
+
+Přidejte nový prvek nebo obsahový blok a vyhledejte možnost určenou pro vlastní HTML kód.
+
+:::danger
+**Důležité:** Kód nevkládejte do běžného textového pole. Editor by jej mohl zobrazit návštěvníkům jako text namísto skutečného formuláře.
+
+Kód formuláře zpravidla nevkládejte ani do hlavičky webu. Použijte HTML prvek přímo v obsahu konkrétní stránky na místě, kde se má formulář zobrazit.
+:::
+
+## 4. Vložte kód formuláře
+
+1. Otevřete přidaný HTML prvek.
+2. Vložte celý kód zkopírovaný z FAPI.
+3. Vložení potvrďte.
+4. Stránku uložte a publikujte.
+
+V některých editorech se formulář během úprav nezobrazí. Může být vidět pouze vložený kód, zástupný symbol nebo prázdné místo. Výsledek proto vždy zkontrolujte na publikované stránce.
+
+## 5. Zkontrolujte formulář na webu
+
+Otevřete publikovanou stránku jako běžný návštěvník. Doporučujeme použít anonymní okno prohlížeče.
+
+Zkontrolujte, že:
+
+- se formulář zobrazuje,
+- jde o správný prodejní formulář,
+- odpovídá produkt, cena a měna,
+- fungují všechna pole a tlačítka,
+- jsou dostupné správné platební metody,
+- formulář není oříznutý,
+- správně se zobrazuje také na mobilním telefonu.
+
+Před spuštěním prodeje proveďte testovací objednávku a ověřte, že vznikla ve FAPI.
+
+:::caution
+## Postupy pro konkrétní editory
+
+Umístění HTML prvku se v jednotlivých editorech liší. Pokud používáte některý z následujících systémů, pokračujte příslušnou nápovědou:
+
+- <a href="https://napoveda.fapi.cz/article/152-jak-vlozit-prodejni-formular-fapi-do-prodejni-stranky-ve-fapi" target="_blank" rel="noopener">Vložení prodejního formuláře do prodejní stránky ve FAPI</a>
+- <a href="https://napoveda.fapi.cz/article/355-jak-vlozit-prodejni-formular-do-wordpressu" target="_blank" rel="noopener">Vložení prodejního formuláře do WordPressu</a>
+- <a href="https://napoveda.fapi.cz/article/315-jak-vlozit-prodejni-formular-fapi-do-konverzek" target="_blank" rel="noopener">Vložení prodejního formuláře do Konverzek</a>
+- <a href="https://napoveda.fapi.cz/article/170-vlozeni-prodejniho-formulare-na-mioweb" target="_blank" rel="noopener">Vložení prodejního formuláře do MioWebu</a>
+- <a href="https://napoveda.fapi.cz/article/157-vlozeni-prodejniho-formulare-do-divi" target="_blank" rel="noopener">Vložení prodejního formuláře do DIVI</a>
+- <a href="https://napoveda.fapi.cz/article/161-jak-vlozit-prodejni-formular-fapi-na-shoptet" target="_blank" rel="noopener">Vložení prodejního formuláře do Shoptetu</a>
+- <a href="https://napoveda.fapi.cz/article/356-jak-vlozit-prodejni-formular-na-webnode" target="_blank" rel="noopener">Vložení prodejního formuláře do Webnode</a>
+- <a href="https://napoveda.fapi.cz/article/178-vlozeni-prodejniho-formulare-na-websnadno" target="_blank" rel="noopener">Vložení prodejního formuláře do Websnadno</a>
+- <a href="https://napoveda.fapi.cz/article/182-jak-vlozit-prodejni-formular-fapi-do-stranek-solidpixels" target="_blank" rel="noopener">Vložení prodejního formuláře do Solidpixels</a>
+- <a href="https://napoveda.fapi.cz/article/329-jak-vlozit-prodejni-formular-fapi-do-canvy" target="_blank" rel="noopener">Vložení prodejního formuláře do Canvy</a>
+- [<u>Jak vložit prodejní formulář FAPI do stránek ve Wixu</u>](https://napoveda.fapi.cz/article/151-jak-vlozit-prodejni-formular-do-stranek-wixu)
+- [Jak vložit prodejní formulář do stránek Masterpages](https://napoveda.fapi.cz/article/212-jak-vlozit-prodejni-formular-do-stranek-masterpages)
+
+Pokud pro používaný editor samostatnou nápovědu nemáme, postupujte podle jeho dokumentace pro vložení vlastního HTML kódu.
+:::
+
+## Když se formulář nezobrazuje
+
+Zkontrolujte, zda:
+
+- jste z FAPI zkopírovali celý kód,
+- jste použili prvek určený pro vlastní HTML,
+- jste kód ručně neupravili,
+- jste stránku uložili a publikovali,
+- kontrolujete správnou veřejnou stránku.
+
+Některé editory umožňují používat vlastní HTML pouze v placeném tarifu. Pokud HTML prvek nenajdete, ověřte možnosti svého tarifu v nápovědě poskytovatele webu.
