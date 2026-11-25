@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-24T14:09:40.851Z
+updatedAt: 2026-11-25T14:01:07.476Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -67,6 +67,8 @@ Tento návod vás provede testem **běžné faktury v EUR mezi dvěma slovenský
 
 :::tip
 **(Jak to bude pro platby vytvořené v CZK na sk???) - zjistíme**
+
+**-> tohle řešíme, ale bude to možné, zatím umíme jenom faktury v EUR**
 :::
 
 **V návodu najdete:**
@@ -133,14 +135,18 @@ Testovací token `a1b2c3` používaný v sandboxu slouží pouze k otestování 
 :::tip
 doplnit>&#x20;
 
-- zda FAPI zajišťuje archivaci,
-- kdo předává požadované údaje Finanční správě,
-- zda FAPI ukáže pouze odeslání, nebo také doručení příjemci.
+- zda FAPI zajišťuje archivaci, -> Ne, nejvíce co mě napadá můžeme později udělat to aby se to XML dalo někde stáhnout nebo export
+- kdo předává požadované údaje Finanční správě, -> Peppol
+- zda FAPI ukáže pouze odeslání, nebo také doručení příjemci. -> Pouze správné odeslání, doručení už je na Peppolu
 - Potřebujeme vysvětlit:
-- zda je eFaktúra.sk certifikovaný digitální pošťák, nebo zprostředkovatel,
-- zda lze FAPI použít s eDoklado, Seyfor, QASIDA/PEPPOL, DOKLADO nebo jinou službou,
+- zda je eFaktúra.sk certifikovaný digitální pošťák, nebo zprostředkovatel, -> eFaktúra.sk je certifikovaný digitální pošťák, my můžeme vystupovat jako **zprostředkovatel pod eFaktúrou**. ale to jsme zatím neřešili, potom zákazník může na portálu FS vybírat přímo FAPI pod jejich poskytovatelem.
+- zda lze FAPI použít s eDoklado, Seyfor, QASIDA/PEPPOL, DOKLADO nebo jinou službou, -> No ano pokud my odešleme cokolov přes Peppol ostatní poštáři to musí umět přijmout
 
 úplně chybí jak klient získá produkční token a jak bude probíhat ostrý provoz
+
+-> u FS si musí vybrat efakturu a přes vertifikační token co získají si musí propojit FAPI (ofiko ještě pracujeme na tom rozdělení testovacího a produkčního režimu)
+
+potom muže přes detail zatím ručně posílat fatury do Peppolu, automatiké odesílání máme taky v plánu
 :::
 
 :::info
@@ -195,6 +201,10 @@ V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Roz
 
 :::tip
 jaké náklady jim k tomu plynou navíc ve fapi? budeme jitm to rozúčtovávat a vystavat další faktury? jaký je ceník? nebo si to řeší v rámci registrace na sk finanční správě
+
+-> tohle se musí pořešit obecně, zatím nevím, ale hádám že uděléme něco jako vystavování doplatkové faktury na konci měsíce nebo tak za usage a podle toho kolik odelslali faktur
+
+momentálně v efaktuře je 0,055 € / tx
 :::
 
 ## Současná omezení
