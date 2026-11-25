@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-25T14:01:07.476Z
+updatedAt: 2026-11-25T14:53:25.573Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -130,21 +130,18 @@ Testovací token `a1b2c3` používaný v sandboxu slouží pouze k otestování 
 
 **FAPI má přímou integraci na digitálního epoštára** [**eFaktúra.sk**](https://efaktura.sk/)**, která zajistí pouze odesílání veškerých dokladů vystavených ve FAPI. Přijímání dokladů je potřeba zajistit vlastní cestou.**
 
+eFaktúra.sk je certifikovaný digitální pošťák, FAPI tak vystupuje jako **zprostředkovatel pod službou eFaktúry**.
+
 ![](/assets/uploads/ff4cf7a72341e4593b78e05d.webp)
 
 :::tip
 doplnit>&#x20;
 
-- zda FAPI zajišťuje archivaci, -> Ne, nejvíce co mě napadá můžeme později udělat to aby se to XML dalo někde stáhnout nebo export
-- kdo předává požadované údaje Finanční správě, -> Peppol
-- zda FAPI ukáže pouze odeslání, nebo také doručení příjemci. -> Pouze správné odeslání, doručení už je na Peppolu
-- Potřebujeme vysvětlit:
-- zda je eFaktúra.sk certifikovaný digitální pošťák, nebo zprostředkovatel, -> eFaktúra.sk je certifikovaný digitální pošťák, my můžeme vystupovat jako **zprostředkovatel pod eFaktúrou**. ale to jsme zatím neřešili, potom zákazník může na portálu FS vybírat přímo FAPI pod jejich poskytovatelem.
-- zda lze FAPI použít s eDoklado, Seyfor, QASIDA/PEPPOL, DOKLADO nebo jinou službou, -> No ano pokud my odešleme cokolov přes Peppol ostatní poštáři to musí umět přijmout
 
-úplně chybí jak klient získá produkční token a jak bude probíhat ostrý provoz
 
--> u FS si musí vybrat efakturu a přes vertifikační token co získají si musí propojit FAPI (ofiko ještě pracujeme na tom rozdělení testovacího a produkčního režimu)
+- zda lze FAPI použít s eDoklado, Seyfor, QASIDA/PEPPOL, DOKLADO nebo jinou službou, -> No ano pokud my odešleme cokolov přes Peppol ostatní poštáři to musí umět přijmout **>>> je k tomu potřeba další integrace???**
+
+
 
 potom muže přes detail zatím ručně posílat fatury do Peppolu, automatiké odesílání máme taky v plánu
 :::
@@ -161,8 +158,13 @@ potom muže přes detail zatím ručně posílat fatury do Peppolu, automatiké 
 
    <a href="/assets/e-invoice/e-invoice-radek.png" target="_blank" rel="noopener">Zobrazit řádek propojení v plné velikosti</a>
 3. Na stránce **Propojení se službou eFaktúra** zkontrolujte zobrazené firemní údaje. Jejich opravy proveďte v **Nastavení →** <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>.
-4. Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Při obnově deaktivovaného propojení použijte **Znovu připojit**. Text formuláře zmiňuje token od Finanční správy, pro současný sandbox ale použijte uvedenou testovací hodnotu.
-5. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání. **(dotaz > co musí být tedy za hlášku, aby poznali že v pořádku připojeno: Připojeno???)**
+4. Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Při obnově deaktivovaného propojení použijte **Znovu připojit**.&#x20;
+
+Text formuláře zmiňuje token od Finanční správy, pro současný sandbox ale použijte uvedenou testovací hodnotu.
+
+Produkční režim má svůj vlastní verifikační token, který po získání z finanční správy zadávají do FAPI
+
+1. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání. **(dotaz > co musí být tedy za hlášku, aby poznali že v pořádku připojeno: Připojeno???)**
 
 ![Obnova propojení eFaktúry s vyplněnými firemními údaji, prázdným polem Ověřovací token a označeným tlačítkem Znovu připojit](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-pripojeni.png)
 
@@ -176,7 +178,9 @@ Pokud už formulář zobrazuje **ID organizace**, použije se tato organizace. P
 2. Zkontrolujte údaje uložené **přímo na faktuře**: u obou stran název, IČO, DIČ, IČ DPH a úplnou adresu; u položek název, množství, cenu a sazbu DPH. Dodavatel na faktuře musí odpovídat firmě připojené k eFaktúře. Změna účtu nebo klienta sama neopraví údaje na již vystaveném dokladu.
 3. V části **eFaktúra** klikněte na **Odeslat přes eFaktúru** a potvrďte požadavek. V současném sandboxu jde o testovací odeslání, ne o ostré doručení odběrateli.
 4. FAPI vytvoří XML a nechá je před odesláním zkontrolovat včetně příjemce. Při chybě se XML neodešle; opravte konkrétní uvedené údaje nebo nepodporovaný parametr faktury. Údaje se při odesílání automaticky neopravují. Aktuální omezení najdete níže.
-5. Po zpracování požadavku zkontrolujte stav přímo v detailu faktury. Samotné potvrzení požadavku ještě nedokládá odeslání do sítě.
+5. **Peppol** předává požadované údaje přímo na Finanční správu.
+6. FAPI zaznamená pouze odeslání. Doručení je již na službě Peppolu.
+7. Po zpracování požadavku zkontrolujte stav přímo v detailu faktury. Samotné potvrzení požadavku ještě nedokládá odeslání do sítě.
 
 ![Detail testovací faktury s označeným tlačítkem Odeslat přes eFaktúru](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-odeslat.png)
 
@@ -218,6 +222,8 @@ Před prvním odesláním zkontrolujte zejména:
 - **Daňové režimy:** odesílání v režimu přenesené daňové povinnosti, osvobození od DPH a položek v OSS zatím není podporované.
 - **Platba:** podporovaný je bankovní převod, hotovost, platba kartou včetně Apple Pay, Google Pay a Click to Pay a vybrané online platby přes PayPal a GoPay. Pro bankovní převod musí být přímo na faktuře vyplněný platný IBAN dodavatele; vyplněný BIC musí být také platný. Jiné způsoby platby mohou být odmítnuté.
 - **Data:** datum splatnosti nesmí předcházet datu vystavení.
+- **Archivace dokladů:** aktuálně není archivace součástí. Do budoucna plánujeme přidat možnost stažení či exportu souboru XML.
+- **Odesílání dokladů:** přes detail faktury lze zatím odesílat doklady pouze ručně do Peppolu. Automatiké odesílání máme v plánu.
 - **Navázaná záloha:** musí být uhrazená, nestornovaná, ve stejné měně a bez splátkové vazby. Její kladná částka nesmí převýšit částku konečné faktury. Vyúčtování přes doklad k přijaté platbě zatím není podporované.
 
 I při splnění těchto podmínek může kontrola XML nebo příjemce požadavek odmítnout. Řiďte se konkrétní zobrazenou chybou.
