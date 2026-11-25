@@ -13,7 +13,8 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/68-doplnkove-prodejni-polozky
 order: 52
-updatedAt: 2026-07-13T10:11:58Z
+updatedAt: 2026-11-25T08:57:33.181Z
+redirects: []
 ---
 _Doplňkové prodejní položky_ představují vybrané prodejní položky zobrazené v samostatné části prodejního formuláře, přičemž vlastnosti této skupiny položek je možné nastavit odlišně od hlavní skupiny položek.
 
@@ -25,11 +26,13 @@ Do prodejního formuláře je možné vložit více skupin položek. Pro zachov�
 
 ## Nastavení doplňkových prodejních položek
 
-Funkci doplňkových prodejních položek najdete v kroku na záložce **Položky a ceny** v nastavení prodejního formuláře.
+V nabídce **Prodej →** <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodejní formuláře**</a> otevřete formulář tlačítkem **Upravit** a přejděte na záložku **Položky a ceny**.
 
-![Doplňkové prodejní položky](/assets/articles/2441872df70ffc16.png)
+![Skupina doplňkových položek s volbou pro odebrání a tlačítkem Přidat skupinu položek](/assets/articles/doplnkove-polozky-skupina-20261125.png)
 
-Skupinu doplňkových prodejních položek vytvoříte pomocí tlačítka **Přidat skupinu položek**. Tlačítkem **Smazat skupinu položek** již vytvořenou skupinu odstraníte.
+<a href="/assets/articles/doplnkove-polozky-skupina-20261125.png" target="_blank" rel="noopener">Zobrazit nastavení skupiny v plném rozlišení</a>
+
+Skupinu doplňkových prodejních položek vytvoříte pomocí tlačítka **Přidat skupinu položek**. První skupinu odstraníte tlačítkem **Odebrat doplňkové položky**, další skupiny tlačítkem **Odebrat skupinu položek**.
 
 U skupiny položek je třeba vyplnit její název (pole **NADPIS SKUPINY POLOŽEK**), kterým je posléze v prodejním formuláři pojmenována sekce s doplňkovými prodejními položkami.
 
@@ -44,3 +47,42 @@ Je-li parametr **Umožnit výběr více položek** aktivní, dají se jednotliv�
 V prodejním (objednávkovém) formuláři na webové stránce se doplňkové prodejní položky zobrazují v samostatné sekci.
 
 ![Doplňkové prodejní položky](/assets/articles/628fa984a28114c2.png)
+
+## Doplňky před dokončením objednávky
+
+Chcete zákazníkovi nabídnout další produkt těsně před odesláním objednávky? Použijte samostatnou sekci **Doplňky před dokončením**. Zobrazuje se nad objednávkovým tlačítkem a nastavuje se odděleně od skupin doplňkových položek popsaných výše.
+
+1. V nabídce **Prodej →** <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">**Prodejní formuláře**</a> klikněte u formuláře na **Upravit**. Na záložce **Položky a ceny** najděte **Doplňky před dokončením**.
+2. Klikněte na **Přidat sekci doplňků**, ponechte zaškrtnuté **Zobrazovat sekci** a vyplňte **Nadpis sekce**.
+3. Tlačítkem **Přidat nabídku** vložte nabídku a v poli **Produkt** vyberte připravený <a href="/article/43-produkty" target="_blank" rel="noopener">produkt</a>. Název, veřejný popis, cenu a případný obrázek doplněk přebírá z produktu.
+4. V poli **Zobrazení** zvolte:
+
+- **Jednoduché checkboxy**,&#x20;
+
+<img height="148" width="569" src="/assets/uploads/4b74317fe8071db782aa3cbe.webp" />
+
+- **Tlačítka Přidat**,&#x20;
+
+<img height="209" width="581" src="/assets/uploads/20e7a98435d06865eaf610d7.webp" />
+
+- **Dlaždice,**
+
+![](/assets/uploads/9afc2568a057f59f42714817.webp)
+
+- **Volby v řádku**.&#x20;
+
+![](/assets/uploads/b20061375cca70779d1ac5ff.webp)
+
+Další nabídku přidáte stejným tlačítkem; další sekci pomocí **Přidat sekci doplňků**.
+
+![Nastavení sekce Doplňky před dokončením s tlačítky pro přidání nabídky a sekce](/assets/articles/doplnky-pred-dokoncenim-20261125.png)
+
+<a href="/assets/articles/doplnky-pred-dokoncenim-20261125.png" target="_blank" rel="noopener">Zobrazit nastavení doplňků v plném rozlišení</a>
+
+- **Umožnit výběr více položek** dovolí vybrat více nabídek v sekci. Po vypnutí lze vybrat nejvýše jednu.
+- **Povinná sekce** vyžaduje, aby zákazník před odesláním prodejního formuláře vybral alespoň jednu nabídku. Pro volitelný doplněk ji ponechte vypnutou; zákazník pak může objednávku dokončit i bez něj.
+
+1. Přejděte na záložku **Vzhled** a klikněte na **Uložit formulář**.
+2. V náhledu zkontrolujte sekci nad objednávkovým tlačítkem. Vyberte doplněk a ověřte změnu celkové ceny. U volitelné sekce vyzkoušejte i zrušení výběru; u povinné sekce ověřte upozornění při pokusu o odeslání bez doplňku.
+
+Celý nákup si před spuštěním prodeje projděte v <a href="/article/66-testovaci-rezim-prodejniho-formulare" target="_blank" rel="noopener">testovacím režimu formuláře</a>.
