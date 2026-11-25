@@ -13,7 +13,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/61-doprava
 order: 58
-updatedAt: 2026-11-24T08:13:28Z
+updatedAt: 2026-11-25T06:03:05.867Z
 legacyAnchors:
   - id: Vytvoen-zpsobu-dopravy-HhwsD
     tag: h2
@@ -45,6 +45,7 @@ legacyAnchors:
     text: "Jak se určuje sazba DPH:"
     occurrence: 0
     headingIndex: 5
+redirects: []
 ---
 Pokud prodáváte fyzické produkty, potřebujete řešit také způsob, jakým objednávku zákazníkovi doručíte. K tomu můžete využít _způsoby dopravy_, které se zobrazí zákazníkům v objednávkovém formuláři.
 
@@ -58,33 +59,29 @@ Poskytované způsoby dopravy vytvoříte pomocí tlačítka **Nový způsob dop
 
 U každého způsobu dopravy je třeba zvolit jeho _typ_. V současnosti můžete vybírat z těchto typů:
 
--   **Zásilkovna** - doručení pomocí služby Zásilkovna, a to buď prostřednictvím výdejních míst Zásilkovny, nebo pomocí externích dopravců. Je potřeba specifikovat, pro jaké státy (ve fakturační, resp. doručovací adrese) se má způsob dopravy nabízet.
-
-    :::danger
-    Pro využití Zásilkovny je potřeba nejprve oba systémy propojit. Postupujte podle návodu <a href="/article/62-propojeni-fapi-se-sluzbou-zasilkovna" target="_blank" rel="noopener">Propojení FAPI se službou Zásilkovna</a>.
-    :::
-
--   **GLS** - doprava prostřednictvím služby GLS. Nastavení propojení a dopravy najdete v návodu <a href="/article/252-gls" target="_blank" rel="noopener">Propojení s přepravní službou GLS</a>.
--   **Balíkovna** - doprava prostřednictvím Balíkovny. Nejprve nastavte <a href="/article/260-jak-propojit-fapi-s-balikovnou" target="_blank" rel="noopener">propojení FAPI s Balíkovnou</a>.
--   **Osobní odběr** - vyzvednutí objednávky na výdejním místě obchodníka, např. na kamenné prodejně. U osobního odběru je nutné specifikovat adresu výdejního místa. Adresy výdejních míst se zákazníkovi zobrazí k výběru v objednávkovém formuláři.
--   **Vlastní typ dopravy** - pomocí vlastního typu dopravy je možné zákazníkovi v objednávce nabídnout libovolný typ dopravy, který ve FAPI není implementován. I zde je nutné zadat, v jakých státech je daný způsob dopravy dostupný.
-
-    :::danger
-    U vlastního typu dopravy je třeba proces doručení objednávky zajistit mimo FAPI.
-    :::
-
+- **Zásilkovna** - doručení pomocí služby Zásilkovna, a to buď prostřednictvím výdejních míst Zásilkovny, nebo pomocí externích dopravců. Je potřeba specifikovat, pro jaké státy (ve fakturační, resp. doručovací adrese) se má způsob dopravy nabízet.
+  :::danger
+  Pro využití Zásilkovny je potřeba nejprve oba systémy propojit. Postupujte podle návodu <a href="/article/62-propojeni-fapi-se-sluzbou-zasilkovna" target="_blank" rel="noopener">Propojení FAPI se službou Zásilkovna</a>.
+  :::
+- **GLS** - doprava prostřednictvím služby GLS. Nastavení propojení a dopravy najdete v návodu <a href="/article/252-gls" target="_blank" rel="noopener">Propojení s přepravní službou GLS</a>.
+- **Balíkovna** - doprava prostřednictvím Balíkovny. Nejprve nastavte <a href="/article/260-jak-propojit-fapi-s-balikovnou" target="_blank" rel="noopener">propojení FAPI s Balíkovnou</a>.
+- **Osobní odběr** - vyzvednutí objednávky na výdejním místě obchodníka, např. na kamenné prodejně. U osobního odběru je nutné specifikovat adresu výdejního místa. Adresy výdejních míst se zákazníkovi zobrazí k výběru v objednávkovém formuláři.
+- **Vlastní typ dopravy** - pomocí vlastního typu dopravy je možné zákazníkovi v objednávce nabídnout libovolný typ dopravy, který ve FAPI není implementován. I zde je nutné zadat, v jakých státech je daný způsob dopravy dostupný.
+  :::danger
+  U vlastního typu dopravy je třeba proces doručení objednávky zajistit mimo FAPI.
+  :::
 
 Typy **Zásilkovna** a **Balíkovna** se v nabídce zobrazí až po nastavení příslušného propojení.
 
 U všech typů dopravy je dále možné zadat:
 
--   název, pod kterým se daný způsob dopravy bude zobrazovat v prodejním formuláři (pole **NÁZEV**),
--   popis, pomocí kterého je možné zákazníkovi poskytnout více informací o daném způsobu dopravy (pole **POPIS**),
--   cenu v libovolné podporované měně (pole **CENA** a **MĚNA**), a to zvlášť pro každý stát, resp. výdejní místo.
--   celkovou cenu objednávky, od které bude doprava zdarma. (pole **DOPRAVA ZDARMA OD** a **MĚNA**), také zvlášť pro každý stát, resp. výdejní místo.
+- název, pod kterým se daný způsob dopravy bude zobrazovat v prodejním formuláři (pole **NÁZEV**),
+- popis, pomocí kterého je možné zákazníkovi poskytnout více informací o daném způsobu dopravy (pole **POPIS**),
+- cenu v libovolné podporované měně (pole **CENA** a **MĚNA**), a to zvlášť pro každý stát, resp. výdejní místo.
+- celkovou cenu objednávky, od které bude doprava zdarma. (pole **DOPRAVA ZDARMA OD** a **MĚNA**), také zvlášť pro každý stát, resp. výdejní místo.
 
 :::caution
-Dopravu zdarma lze nastavit jen v novém prodejním formuláři (Krok 6 Vzhled \> Vzhled formuláře \> Nový vzhled)
+Ano, je možné i nastavit dopravu zdarma od určité ceny.
 :::
 
 :::caution
@@ -97,8 +94,8 @@ Po uložení nového způsobu dopravy nelze jeho typ již upravovat.
 
 Pokud chcete přestat používat nabídku dopravy zdarma, stačí u dané dopravy vymazat:
 
--   hodnotu košíku pro dopravu zdarma (nechat pole prázdné)
--   vypnout měnu - přepnout na položku "-měna-"
+- hodnotu košíku pro dopravu zdarma (nechat pole prázdné)
+- vypnout měnu - přepnout na položku "-měna-"
 
 a tuto novou úpravu dopravy uložit.
 
@@ -106,11 +103,11 @@ a tuto novou úpravu dopravy uložit.
 
 Účetní kódy - obdobně jako u produktů se dá k dopravě nastavit
 
--   účetní kód
--   kód předkontace
--   kód střediska
--   kód skladu
--   kód skladové položky
+- účetní kód
+- kód předkontace
+- kód střediska
+- kód skladu
+- kód skladové položky
 
 ## Nastavení dopravy v prodejním formuláři
 
@@ -135,9 +132,9 @@ Doprava se ve FAPI považuje za **vedlejší náklad k objednávce** (tzv. dopl�
 
 ### Jak se určuje sazba DPH:
 
--   Pokud je v objednávce **jeden produkt**, použije se jeho sazba DPH i na dopravu.
--   Pokud je v objednávce **více produktů s různou sazbou DPH**, použije se sazba DPH podle produktu s **nejvyšší cenou**.
--   Pokud jsou v objednávce **produkty s různou sazbou DPH o stejné ceně**, pak se bere vyšší sazba DPH.
+- Pokud je v objednávce **jeden produkt**, použije se jeho sazba DPH i na dopravu.
+- Pokud je v objednávce **více produktů s různou sazbou DPH**, použije se sazba DPH podle produktu s **nejvyšší cenou**.
+- Pokud jsou v objednávce **produkty s různou sazbou DPH o stejné ceně**, pak se bere vyšší sazba DPH.
 
 Tím je zajištěno, že doprava odpovídá hlavnímu plnění v objednávce.
 :::
