@@ -19,7 +19,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/268-jak-nastavit-downsell
 order: 191
-updatedAt: 2026-07-13T11:43:38Z
+updatedAt: 2026-11-24T08:13:28Z
 legacyAnchors:
   - id: 1-Vytvoen-prodejnho-formule-wndxY
     tag: h2
@@ -53,7 +53,7 @@ Tento návod vás krok za krokem provede nastavením **upsell** a **downsell** n
 
 ## 1\. Vytvoření prodejního formuláře
 
-1.  V administraci FAPI přejděte na **Prodejní formuláře** a klikněte na **Nový prodejní formulář**.
+1.  V administraci FAPI přejděte na <a href="https://web.fapi.cz/forms/?projectId=all" target="_blank" rel="noopener">Prodejní formuláře</a> a klikněte na **Nový prodejní formulář**.
 2.  Přidejte **hlavní produkt**, který budete prodávat.
     -   Nastavte cenu a typ produktu (např. „Jiná elektronicky poskytovaná služba“ nebo „Služba“).
 
@@ -71,7 +71,7 @@ Tento návod vás krok za krokem provede nastavením **upsell** a **downsell** n
 
 ## 3\. Vytvoření upsell a downsell stránek
 
-1.  Otevřete **Stránky ve FAPI (nebo stránky na vašem webbuilderu)** a vytvořte novou stránku pro **upsell**:
+1.  Otevřete <a href="https://web.fapi.cz/pages/?projectId=all" target="_blank" rel="noopener">Stránky ve FAPI</a> (nebo stránky na vašem webbuilderu) a vytvořte novou stránku pro **upsell**:
     -   Název: `Upsell – název nabídky`
     -   Přidejte obsah: nadpis, popis produktu, benefity, případně obrázky nebo video.
     -   Přidejte **dvě tlačítka**:
@@ -111,10 +111,10 @@ Tento návod vás krok za krokem provede nastavením **upsell** a **downsell** n
 -   Pokud používáte **WordPress, MioWeb nebo jiný web**, vložte na upsell i downsell stránku tento skript:
 
 ```text
-<script src="https://web.fapi.cz/js/fapi-upsell.js"></script>
+<script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
 ```
 
--   Pro WordPress doporučujeme použít [oficiální plugin FAPI](/article/265-jak-nasadit-do-cisteho-wp-fapi-script-pro-trackovani-konverzi-a-affiliate-program), který skript vloží plošně na všechny stránky.
+-   Pro WordPress doporučujeme použít <a href="/article/265-jak-nasadit-do-cisteho-wp-fapi-script-pro-trackovani-konverzi-a-affiliate-program" target="_blank" rel="noopener">plugin pro vložení skriptů FAPI</a>, který skript vloží plošně na všechny stránky.
 
 ## **6\. Testování**
 
@@ -124,7 +124,7 @@ Tento návod vás krok za krokem provede nastavením **upsell** a **downsell** n
     -   Ověřte chování při **odmítnutí všech nabídek**.
 
 2.  Po zaplacení se na děkovací stránce zobrazí jen ty produkty, které byly skutečně přidány.
-3.  Pokud kontrola ve FAPI u odkazů ukazuje varování, je to v pořádku – odkazy mohou být na jiné stránce než ta, kterou FAPI kontroluje.
+3.  Spusťte <a href="/article/214-overeni-spravneho-vlozeni-upsell-skriptu" target="_blank" rel="noopener">kontrolu správného vložení upsell skriptů a odkazů</a>. Varování neignorujte: zkontrolujte skript a odkazy na stránce, které se hlášení týká. Kontrola jednotlivé stránky nenahrazuje test celého průchodu upsellem i downsellem.
 
 ## **7\. Shrnutí procesu**
 
