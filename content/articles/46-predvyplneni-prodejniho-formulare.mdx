@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/46-predvyplneni-prodejniho-formulare
 order: 53
-updatedAt: 2026-10-30T10:53:31.119Z
+updatedAt: 2026-11-26T08:15:25.557Z
 legacyAnchors:
   - id: Jak-daje-lze-pedvyplnit-AsyKv
     tag: h2
@@ -127,7 +127,7 @@ Parametr **fapi-form-customField** je potřeba vždy doplnit o ID konkrétního
 Pokud máte zákaznické údaje k dispozici ve svém webu, můžete je předat formuláři metodou `prefillCustomer`. Není potřeba měnit jednotlivá HTML pole ani ručně vyvolávat jejich události. S úpravou JavaScriptu vám může pomoci správce webu.
 
 1. Na stránku vložte následující kód **před kód prodejního formuláře**. Ukázkové údaje nahraďte údaji, které chcete předvyplnit.
-2. Za něj vložte běžný [HTML kód prodejního formuláře](/article/75-vlozeni-prodejniho-formulare-na-web).
+2. Za něj vložte běžný <a href="/article/75-vlozeni-prodejniho-formulare-na-web" target="_blank" rel="noopener">HTML kód prodejního formuláře</a>.
 3. Stránku uložte, otevřete ji mimo editor a zkontrolujte vyplněná pole. Zákazník může údaje před objednáním upravit.
 
 ```html
@@ -152,10 +152,46 @@ Pokud chcete po objednávce nabídnout další nákup bez opakovaného zadáván
 <script src="https://form.fapi.cz/js/sdk/fapi.js"></script>
 ```
 
-Nejprve připravte [vlastní děkovací stránku](/article/338-zastupne-symboly-v-e-mailech-a-dekovaci-strance#Vlastn-extern-dkovac-strnka-WNtpu) s HTTPS, SDK a předáním identifikátoru objednávky do URL. Na stránku musí přijít parametr `path` původní objednávky. Správce webu zajistí, aby byly požadované formuláře připojené před zpracováním dat v SDK. To je předvyplní **jednou**, včetně více instancí stejného formuláře. Později přidaný formulář se automaticky nedoplní. Samotný vkládací kód formuláře údaje předchozí objednávky nenačítá.
+Nejprve připravte <a href="/article/338-zastupne-symboly-v-e-mailech-a-dekovaci-strance#Vlastn-extern-dkovac-strnka-WNtpu" target="_blank" rel="noopener">vlastní děkovací stránku</a> s HTTPS, SDK a předáním identifikátoru objednávky do URL. Na stránku musí přijít parametr `path` původní objednávky. Správce webu zajistí, aby byly požadované formuláře připojené před zpracováním dat v SDK. To je předvyplní **jednou**, včetně více instancí stejného formuláře. Později přidaný formulář se automaticky nedoplní. Samotný vkládací kód formuláře údaje předchozí objednávky nenačítá.
 
 Přebírají se kontaktní a fakturační údaje; samostatná doručovací adresa jen tehdy, pokud ji předchozí objednávka má a nový formulář ji povoluje. Produkty, způsob platby, poznámka a souhlasy patří k nové objednávce a tímto přenosem se nevyplní. Odkaz s parametrem `path` nesdílejte veřejně, protože zpřístupňuje údaje objednávky.
 
 ## Zrušení předvyplnění prvního produktu
 
-Otevřete nastavení svého formuláře: [Prodejní formuláře](https://web.fapi.cz/forms/) → **2. Položky a ceny**. Zapněte **Vypnout předvyplnění prvního produktu** a formulář uložte.
+Otevřete nastavení svého formuláře: <a href="https://web.fapi.cz/forms/" target="_blank" rel="noopener">Prodejní formuláře</a> → **2. Položky a ceny**. Zapněte **Vypnout předvyplnění prvního produktu** a formulář uložte.
+
+## Vlastní technické údaje bez viditelného pole
+
+Pokud chcete s objednávkou uložit například označení varianty nabídky, použijte `setCustomTracking`. Údaj se uloží k objednávce do `tracking.custom`. Metoda nevytváří viditelné <a href="/article/80-vlastni-pole" target="_blank" rel="noopener">vlastní pole</a> ve formuláři ani hodnotu v `custom_fields` faktury. Úpravu JavaScriptu svěřte správci webu.
+
+1. Na stránku s vloženým formulářem přidejte následující kód **před vkládací kód formuláře**. Ukázkový klíč a hodnotu nahraďte svými technickými údaji:
+
+   ```html
+   <script>
+     document.addEventListener('fapiFormMounted', function (event) {
+       event.detail.api.setCustomTracking({
+         campaign_variant: 'varianta-a'
+       });
+     });
+   </script>
+   ```
+
+   Ukázka nastaví údaje každému formuláři připojenému na stránce. Pro jeden konkrétní formulář přidejte do obsluhy události podmínku podle `event.detail.formPath`.
+2. Stránku uložte a otevřete mimo editor. Po připojení formuláře lze nastavené hodnoty zkontrolovat metodou `getCustomTracking()` na jeho API. Údaje nastavte znovu při každém načtení stránky, vždy před odesláním objednávky.
+3. Vytvořte <a href="/article/90-testovani-celeho-online-prodejniho-procesu" target="_blank" rel="noopener">testovací objednávku</a>. Pro načtení uložených údajů použijte **na serveru autentizované** <a href="/article/84-ovladani-fapi-pres-api-rozhrani" target="_blank" rel="noopener">API FAPI</a>, konkrétně seznam objednávek:
+
+   ```text
+   GET https://api.fapi.cz/orders?invoice=ID_FAKTURY
+   ```
+
+   `ID_FAKTURY` nahraďte interním ID faktury přímo přiřazené objednávce, ne jejím číslem ani ID objednávky. Ve vráceném poli `orders` vyberte odpovídající objednávku a zkontrolujte `tracking.custom.campaign_variant`. V ukázce má hodnotu `varianta-a`.
+
+:::caution
+Podporované vstupní hodnoty jsou text (`string`), číslo (`number`), `boolean` a `null`. Nepředávejte vnořené objekty ani pole. Další volání `setCustomTracking` doplňuje nebo přepisuje jednotlivé klíče; pro čtení slouží `getCustomTracking()`.
+
+Klíče `browser`, `facebook`, `chatgpt_ads`, `tiktok`, `pinterest`, `ga4`, `fapi`, `microsoft`, `utm` a `custom` jsou rezervované a `setCustomTracking` je nepřijme jako vlastní klíč.
+
+Nejde o bezpečné úložiště tajných údajů: data předává JavaScript v prohlížeči. Nevkládejte sem hesla, přístupové tokeny ani API klíče. API klíč pro serverové načtení objednávky nedávejte do kódu veřejné stránky.
+:::
+
+Pro tato technická data čtěte **objednávku (`orders`)**, nikoli jen fakturu (`invoices`). Odpověď API s fakturou a jejím `custom_fields` je jiný datový výstup. Filtr `invoice` vyhledává přímou vazbu objednávky na dané ID dokladu; navazující doklad se automaticky nepřevádí na původní objednávku.
