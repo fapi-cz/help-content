@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-25T15:14:06.049Z
+updatedAt: 2026-11-26T08:53:51.401Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -64,12 +64,6 @@ Tato nápověda vás provede připojením služby a testovacím odesláním podp
 E-Invoice propojuje FAPI se službou **eFaktúra** pro přenos přes síť **Peppol**. **XML faktury vytváří přímo FAPI** ve formátu UBL. Před odesláním proběhne kontrola údajů, XML a dostupnosti příjemce v Peppolu. EFaktúra zajišťuje navazující přenos. XML nemusíte ručně vytvářet ani nahrávat do jiné aplikace.
 
 Tento návod vás provede testem **běžné faktury v EUR mezi dvěma slovenskými plátci DPH (toto se ale týká i neplátců DPH, kteří fakturují jiné firmě, také klidně neplátci DPH)**, s vyplněným DIČ i IČ DPH na obou stranách. Nejde o odeslání PDF e-mailem. Testujte v účtu určeném pro testování, kvůli testu nepřepisujte údaje používané pro své skutečné faktury.
-
-:::tip
-**(Jak to bude pro platby vytvořené v CZK na sk???) - zjistíme**
-
-**-> tohle řešíme, ale bude to možné, zatím umíme jenom faktury v EUR**
-:::
 
 **V návodu najdete:**
 
@@ -132,15 +126,9 @@ Testovací token `a1b2c3` používaný v sandboxu slouží pouze k otestování 
 
 eFaktúra.sk je certifikovaný digitální pošťák, FAPI tak vystupuje jako **zprostředkovatel pod službou eFaktúry**.
 
-![](/assets/uploads/ff4cf7a72341e4593b78e05d.webp)
 
-:::tip
-doplnit>&#x20;
 
-- zda lze FAPI použít s eDoklado, Seyfor, QASIDA/PEPPOL, DOKLADO nebo jinou službou, -> No ano pokud my odešleme cokolov přes Peppol ostatní poštáři to musí umět přijmout **>>> je k tomu potřeba další integrace???**
-:::
-
-::::info
+:::info
 ### Co je potřeba vyřídit ve FAPI
 
 Tento popis odpovídá připojení pro testovácí/sand box režim. Připojení produkčního režimu je obdobné, jen má své vlastní ověřovací údaje, které je potřeba rozlišit.
@@ -160,10 +148,7 @@ Text formuláře zmiňuje token od Finanční správy, pro současný sandbox al
 
 Produkční režim má svůj vlastní verifikační token, který po získání z finanční správy zadávají do FAPI
 
-1. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání.&#x20;
-   :::tip
-   /**(dotaz > co musí být tedy za hlášku, aby poznali že v pořádku připojeno: Připojeno???)**
-   :::
+1. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání. Stav Připojeno je požadovaný výsledek.
 
 ![Obnova propojení eFaktúry s vyplněnými firemními údaji, prázdným polem Ověřovací token a označeným tlačítkem Znovu připojit](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-pripojeni.png)
 
@@ -200,16 +185,14 @@ V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Roz
 ![Detail testovací faktury se stavem Odesláno do sítě Peppol a označeným tlačítkem Obnovit stav](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-stav.png)
 
 <a href="/assets/e-invoice/e-invoice-stav.png" target="_blank" rel="noopener">Zobrazit kontrolu stavu v plné velikosti</a>
-::::
+:::
 
 :::tip
-**dopnit**
-
 ## Jaké náklady se službou efaktury souvisí?
 
-Doplatkové faktury na konci měsíce nebo tak za usage a podle toho kolik odelslali faktur
+Zatím uvažujeme o řešení vystavování doplatkových faktury na konci měsíce, podle skutečného stavu odeslaných faktur.&#x20;
 
-momentálně v efaktuře je 0,055 € / tx
+Aktuální ceník je podle efaktura.sk je 0,055 € / tx
 :::
 
 ## Současná omezení
@@ -219,6 +202,7 @@ Před prvním odesláním zkontrolujte zejména:
 - **Doklad:** musí jít o vystavenou, očíslovanou a nestornovanou běžnou fakturu v EUR. Samostatnou zálohovou fakturu takto neodešlete.
 - **Dodavatel pro tento postup:** plátce DPH, úplná slovenská adresa, IČO, DIČ a IČ DPH. Jeho identifikační údaje musí odpovídat připojené organizaci.
 - **Odběratel pro tento postup:** slovenský plátce DPH s názvem, úplnou adresou, IČO, DIČ a IČ DPH. **DIČ zadávejte jako deset číslic, IČ DPH jako SK a stejných deset číslic.** U IČO se kontroluje osm číslic. Samotné IČO nestačí pro určení Peppol adresy; příjemce musí být v příslušné síti dostupný.
+- **Měna:** zatím umí FAPI odesílat pouze faktury v EUR. Plánujeme postupně doimplentovat všechny měny.
 - **Položky a součty:** alespoň jedna položka s názvem a kladným množstvím. Podporované sazby DPH jsou 0, 5, 19 a 23 %. Celková částka musí být kladná a součty položek i DPH musí odpovídat faktuře. Kontrolou musí projít celé výsledné XML, nejen jednotlivá pole.
 - **Daňové režimy:** odesílání v režimu přenesené daňové povinnosti, osvobození od DPH a položek v OSS zatím není podporované.
 - **Platba:** podporovaný je bankovní převod, hotovost, platba kartou včetně Apple Pay, Google Pay a Click to Pay a vybrané online platby přes PayPal a GoPay. Pro bankovní převod musí být přímo na faktuře vyplněný platný IBAN dodavatele; vyplněný BIC musí být také platný. Jiné způsoby platby mohou být odmítnuté.
@@ -226,6 +210,7 @@ Před prvním odesláním zkontrolujte zejména:
 - **Archivace dokladů:** aktuálně není archivace součástí. Do budoucna plánujeme přidat možnost stažení či exportu souboru XML.
 - **Odesílání dokladů:** přes detail faktury lze zatím odesílat doklady pouze ručně do Peppolu. Automatiké odesílání máme v plánu.
 - **Navázaná záloha:** musí být uhrazená, nestornovaná, ve stejné měně a bez splátkové vazby. Její kladná částka nesmí převýšit částku konečné faktury. Vyúčtování přes doklad k přijaté platbě zatím není podporované.
+- **Jiní epoštári:** FAPI zatím nelze použít s jinými poštári jako eDoklado, Seyfor, QASIDA/PEPPOL, DOKLADO či jinou službou. Postupně, je můžeme dle preferencí přidávat. Zatím chceme mít hotovou kompletně jednu službu.
 
 I při splnění těchto podmínek může kontrola XML nebo příjemce požadavek odmítnout. Řiďte se konkrétní zobrazenou chybou.
 
