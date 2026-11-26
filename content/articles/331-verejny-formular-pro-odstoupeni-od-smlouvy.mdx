@@ -11,7 +11,7 @@ keywords:
   - Online prodej
 sourceUrl: https://napoveda.fapi.cz/article/331-verejny-formular-pro-odstoupeni-od-smlouvy
 order: 229
-updatedAt: 2026-07-17T11:47:46Z
+updatedAt: 2026-11-26T13:47:19.055Z
 legacyAnchors:
   - id: Kde-najdete-veejn-odkaz-61mM5
     tag: h2
@@ -53,6 +53,7 @@ legacyAnchors:
     text: Související článek
     occurrence: 0
     headingIndex: 7
+redirects: []
 ---
 Ve FAPI jsme vám zpřístupnili veřejný odkaz na formulář pro odstoupení od smlouvy. Zákazník přes něj vyhledá svou objednávku a odešle žádost o odstoupení.
 
@@ -64,10 +65,10 @@ Nastavení lhůty a povolení odstoupení ve FAPI jsou technická nastavení for
 
 ## Kde najdete veřejný odkaz
 
-1.  Ve FAPI otevřete **Nastavení → Nastavení fakturace**.
-2.  Na stránce přejděte do sekce **Odstoupení od smlouvy**.
-3.  U položky **Veřejný odkaz na formulář** najdete adresu formuláře.
-4.  Kliknutím na ikonu kopírování vedle odkazu jej zkopírujete do schránky.
+1. Ve FAPI otevřete **Nastavení → Nastavení fakturace**.
+2. Na stránce přejděte do sekce **Odstoupení od smlouvy**.
+3. U položky **Veřejný odkaz na formulář** najdete adresu formuláře.
+4. Kliknutím na ikonu kopírování vedle odkazu jej zkopírujete do schránky.
 
 :::caution
 Odkaz je veřejný, ale zákazník se přes něj nedostane k libovolné objednávce. FAPI při vyhledání ověří údaje zadané zákazníkem.
@@ -81,9 +82,9 @@ Veřejný odkaz vložte na stránku, kde zákazníci hledají informace o odstou
 
 Použijte srozumitelný text odkazu, například:
 
--   **Odstoupení od smlouvy**
--   **Chci odstoupit od smlouvy**
--   **Formulář pro odstoupení od smlouvy**
+- **Odstoupení od smlouvy**
+- **Chci odstoupit od smlouvy**
+- **Formulář pro odstoupení od smlouvy**
 
 Příklad odkazu na webu:
 
@@ -99,9 +100,9 @@ Nahraďte `VÁŠ_VEŘEJNÝ_ODKAZ`   adresou z nastavení FAPI. Odkaz nekopíru
 
 Zákazník otevře váš veřejný odkaz a nejdříve vyhledá objednávku. Vyplní:
 
--   **E-mail** použitý v objednávce,
--   **Variabilní symbol nebo číslo objednávky**,
--   **Jméno a příjmení**, pouze pokud je zadal už v objednávce. Pokud tyto údaje v objednávce nebyly, zákazník je do formuláře nevyplňuje.
+- **E-mail** použitý v objednávce,
+- **Variabilní symbol nebo číslo objednávky**,
+- **Jméno a příjmení**, pouze pokud je zadal už v objednávce. Pokud tyto údaje v objednávce nebyly, zákazník je do formuláře nevyplňuje.
 
 FAPI údaje porovná s objednávkou. Když objednávku nenajde nebo údaje neodpovídají, zákazník ji přes formulář neotevře.
 
@@ -115,11 +116,11 @@ Výchozí jazyk zobrazení je podle nastavení prohlížeče.
 
 Pokud je odstoupení u objednávky dostupné, zákazník:
 
-1.  vybere jednu nebo více položek, od kterých chce odstoupit, nebo použije volbu **Odstoupit od celé objednávky**;
-2.  u vybraných položek upraví počet kusů, pokud odstupuje jen od části množství;
-3.  doplní bankovní účet, pokud šlo o platbu v hotovosti nebo na dobírku – v tomto případě je účet povinný;
-4.  může přidat poznámku;
-5.  klikne na **Odeslat žádost**.
+1. vybere jednu nebo více položek, od kterých chce odstoupit, nebo použije volbu **Odstoupit od celé objednávky**;
+2. u vybraných položek upraví počet kusů, pokud odstupuje jen od části množství;
+3. doplní bankovní účet, pokud šlo o platbu v hotovosti nebo na dobírku – v tomto případě je účet povinný;
+4. může přidat poznámku;
+5. klikne na **Odeslat žádost**.
 
 Do výběru se nezahrnuje doprava, sleva, zaokrouhlení ani poplatky za platbu. Formulář nabídne jen položky, od kterých je podle nastavení a stavu objednávky možné odstoupit.
 
@@ -127,12 +128,12 @@ Do výběru se nezahrnuje doprava, sleva, zaokrouhlení ani poplatky za platbu. 
 
 Formulář nemusí žádost umožnit, například když:
 
--   objednávka není zaplacená,
--   na prodejním formuláři není odstoupení povoleno,
--   uplynula nastavená lhůta,
--   od všech způsobilých položek už bylo odstoupeno,
--   jde o firemní objednávku s IČO a odstoupení pro firmy nemáte povolené,
--   zákazník zadal údaje, podle kterých nelze objednávku ověřit.
+- objednávka není zaplacená,
+- na prodejním formuláři není odstoupení povoleno,
+- uplynula nastavená lhůta,
+- od všech způsobilých položek už bylo odstoupeno,
+- jde o firemní objednávku s IČO a odstoupení pro firmy nemáte povolené,
+- zákazník zadal údaje, podle kterých nelze objednávku ověřit.
 
 ## Jak zákazník žádost dokončí
 
@@ -148,11 +149,14 @@ Po úspěšném odeslání se zobrazí potvrzení **Žádost byla odeslána**.
 
 Po úspěšném odeslání FAPI:
 
-1.  uloží žádost o odstoupení včetně vybraných položek, počtu kusů, poznámky a případně účtu pro vrácení peněz;
-2.  zaznamená událost u faktury jako **„Zákazník odstupuje od smlouvy.“**;
-3.  vytvoří upozornění ve FAPI;
-4.  pošle zákazníkovi e-mail **Potvrzení přijetí odstoupení od smlouvy**;
-5.  pošle vám e-mail **Nové odstoupení od smlouvy** na adresu určenou v nastavení.
+1. uloží žádost o odstoupení včetně vybraných položek, počtu kusů, poznámky a případně účtu pro vrácení peněz;
+2. zaznamená událost u faktury jako **„Zákazník odstupuje od smlouvy.“**;
+3. vytvoří upozornění ve FAPI;
+4. pošle zákazníkovi e-mail **Potvrzení přijetí odstoupení od smlouvy**;
+
+![](/assets/uploads/ad190afeff69d484c51b8366.webp)
+
+1. pošle vám e-mail **Nové odstoupení od smlouvy** na adresu určenou v nastavení.
 
 Zákazníkovi se po odeslání zobrazí potvrzení, že žádost byla zaznamenána a další zpracování proběhne na vaší straně.
 
@@ -160,4 +164,4 @@ Poté žádost zkontrolujte a vyřiďte ji podle svých obchodních podmínek. F
 
 ## Související článek
 
--   [Odstoupení od smlouvy](/article/324-tlacitko-odstoupeni-od-smlouvy) – nastavení produktů a prodejního formuláře, lhůta pro odstoupení, e-mailová upozornění a navazující zpracování.
+- [Odstoupení od smlouvy](/article/324-tlacitko-odstoupeni-od-smlouvy) – nastavení produktů a prodejního formuláře, lhůta pro odstoupení, e-mailová upozornění a navazující zpracování.
