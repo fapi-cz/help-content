@@ -13,7 +13,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/29-nastaveni-dph-pro-ucetni-program-pohoda
 order: 57
-updatedAt: 2026-10-14T10:52:13Z
+updatedAt: 2026-11-26T07:33:24Z
 legacyAnchors:
   - id: Omezen-ve-vyuit-pednastavench-daj-pro-export-do-POHODY-21Yiv
     tag: h3
@@ -27,9 +27,11 @@ Používáte-li pro účetní zpracování faktur z FAPI systém _Pohoda_, je po
 Uvedené nastavení se týká pouze plátců DPH, resp. identifikovaných osob.
 :::
 
-V nabídce [**Nastavení \> Nastavení fakturace**](https://web.fapi.cz/settings/?projectId=all) zvolte v sekci **NASTAVENÍ DPH** u parametru **ZPŮSOB VÝPOČTU REKAPITULACE DPH** režim pro systém Pohoda (jako na obrázku). Provedenou změnu uložte stiskem tlačítka **Uložit nastavení**.
+V nabídce <a href="https://web.fapi.cz/settings/?projectId=all" target="_blank" rel="noopener">**Nastavení > Nastavení fakturace**</a> zvolte v sekci **NASTAVENÍ DPH** u parametru **ZPŮSOB VÝPOČTU REKAPITULACE DPH** režim pro systém Pohoda (jako na obrázku). Provedenou změnu uložte stiskem tlačítka **Uložit nastavení**.
 
-![Nastavení DPH pro účetní program Pohoda](/assets/articles/ceaeac6b940e3e27.png)
+![Volba výpočtu rekapitulace DPH pro Pohodu](/assets/releases/2026-11-25/pohoda-vat-calculation.webp)
+
+<a href="/assets/releases/2026-11-25/pohoda-vat-calculation.webp" target="_blank" rel="noopener">Zobrazit nastavení rekapitulace DPH v plné velikosti</a>
 
 :::caution
 Uživatelé účetního programu _Money_ nemusí v nastavení FAPI nic upravovat, volba pro jejich systém je ve výchozím stavu přednastavena.
@@ -37,7 +39,7 @@ Uživatelé účetního programu _Money_ nemusí v nastavení FAPI nic upravova
 
 ### Omezení ve využití přednastavených údajů pro export do POHODY
 
-FAPI aktuálně při exportu do účetního programu POHODA pracuje **pouze s následujícími předdefinovanými údaji**, které ovlivňují daňové zařazení dokladu. Jiné hodnoty či kombinace nejsou systémem podporovány:
+Při exportu do **české POHODY** používá FAPI následující předdefinované údaje pro členění DPH:
 
 -   **UNost** – pro nulovou sazbu DPH (např. neplátci nebo osvobozená plnění)
 -   **UDA4** – pro plnění nad 10 000 Kč, kdy je potřeba uvést DIČ
@@ -49,10 +51,16 @@ FAPI aktuálně při exportu do účetního programu POHODA pracuje **pouze s n�
 
 Pokud vaše fakturační logika vyžaduje použití jiných údajů nebo složitější kombinace sazeb a režimů, doporučujeme tyto doklady upravit přímo v účetním programu POHODA po importu.
 
+**Slovenská POHODA používá jiné členění DPH a kontrolního výkazu DPH.** Výše uvedený český seznam na ni nepřenášejte. Pokud do exportu zahrnete členění DPH, FAPI je doplňuje podle dokladu a typu plnění. Výsledek po importu zkontrolujte se svou účetní.
+
+:::caution
+Doklady o přijetí platby se do <a href="/article/85-export-faktur" target="_blank" rel="noopener">XML exportu pro POHODU</a> nezahrnují. U slovenského vyúčtování navázaného na zdaněnou zálohu FAPI automatické členění DPH a kontrolního výkazu nedoplní. V POHODĚ ověřte zaevidování přijaté platby a členění vyúčtování doplňte ručně podle rozdílu mezi vyúčtováním a zdaněnou zálohou.
+:::
+
 
 
 :::caution
 Můžete využít i přímého propojení s účetním programem POHODA
 
-[Propojení FAPI s účetním systémem POHODA](/article/352-propojeni-fapi-s-ucetnim-systemem-pohoda)
+<a href="/article/352-propojeni-fapi-s-ucetnim-systemem-pohoda" target="_blank" rel="noopener">Propojení FAPI s účetním systémem POHODA</a>
 :::
