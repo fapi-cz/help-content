@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-26T11:21:35.249Z
+updatedAt: 2026-11-26T13:09:13.307Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -129,22 +129,24 @@ eFaktúra.sk je certifikovaný digitální pošťák, FAPI tak vystupuje jako **
 :::info
 ### Co je potřeba vyřídit ve FAPI
 
-Tento popis odpovídá připojení pro testovácí/sand box režim. Připojení produkčního režimu je obdobné, jen má své vlastní ověřovací údaje, které je potřeba rozlišit.
+Tento popis odpovídá připojení pro testovací/sand box režim. Připojení produkčního režimu je obdobné, jen má své vlastní ověřovací údaje, které je potřeba rozlišit.
 
 ## 1. Připojte eFaktúru
 
 1. Otevřete **Nastavení →** <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>.
-2. V řádku **eFaktúra** zvolte <a href="https://web.fapi.cz/settings/update-e-invoice-connection?projectId=all" target="_blank" rel="noopener">**Připojit**</a>, u již založeného propojení **Upravit**. Pokud řádek nevidíte, nejprve si nechte funkci povolit administrátorem FAPI.
+2. V řádku **Peppol** zvolte <a href="https://web.fapi.cz/settings/update-e-invoice-connection?projectId=all" target="_blank" rel="noopener">**Připojit**</a>, u již založeného propojení **Upravit**. Pokud řádek nevidíte, nejprve si nechte funkci povolit administrátorem FAPI.
 
-   ![Řádek eFaktúra s označeným tlačítkem Připojit](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-radek.png)
+   ![](/assets/uploads/14176893b9f47ffe099f6565.webp)
 
    <a href="/assets/e-invoice/e-invoice-radek.png" target="_blank" rel="noopener">Zobrazit řádek propojení v plné velikosti</a>
 3. Na stránce **Propojení se službou eFaktúra** zkontrolujte zobrazené firemní údaje. Jejich opravy proveďte v **Nastavení →** <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>.
-4. Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Při obnově deaktivovaného propojení použijte **Znovu připojit**.&#x20;
+4. Vyberte si, zda si založíte nejprve testovací/sandbox režim, nebo chcete rovnou produkční.
 
-Text formuláře zmiňuje token od Finanční správy, pro současný sandbox ale použijte uvedenou testovací hodnotu.
+![](/assets/uploads/6d7f703882aed0317ab041ee.webp)
 
-Produkční režim má svůj vlastní verifikační token, který po získání z finanční správy zadávají do FAPI
+**Testovací -** Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Při obnově deaktivovaného propojení použijte **Znovu připojit**.&#x20;
+
+**Produkční -** Produkční režim má svůj vlastní verifikační token, který po získání z finanční správy zadávají do FAPI
 
 1. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání. Stav **Připojeno** je požadovaný výsledek.
 
@@ -191,6 +193,10 @@ V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Roz
 Zatím uvažujeme o řešení vystavování doplatkových faktury na konci měsíce, podle skutečného stavu odeslaných faktur.&#x20;
 
 Aktuální ceník podle efaktura.sk činí **0,055 € za odeslanou fakturu,** včetně případného opravného daňového dokladu.&#x20;
+
+Daňový doklad >> 0,055 €
+
+Daňový doklad + Opravný daňový doklad >> 0,055 €
 :::
 
 ## Současná omezení
