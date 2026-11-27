@@ -13,7 +13,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/85-export-faktur
 order: 48
-updatedAt: 2026-11-03T12:56:53.847Z
+updatedAt: 2026-11-27T08:15:17Z
 legacyAnchors:
   - id: Jak-exportovat-faktury-sw1Hm
     tag: h2
@@ -53,7 +53,7 @@ Typický a nejčastější případ použití exportu faktur je jejich přenos d
 
 ## Jak exportovat faktury
 
-Všechny volby potřebné pro vytvoření souboru s vybranými fakturami najdete v nabídce **Faktury - Export faktur**.
+Všechny volby potřebné pro vytvoření souboru s vybranými fakturami najdete v nabídce <a href="https://web.fapi.cz/invoice/export?projectId=all" target="_blank" rel="noopener">**Faktury - Export faktur**</a>.
 
 ![Export faktur](/assets/articles/97f7ebe496c69a47.png)
 
@@ -97,7 +97,7 @@ FAPI v současné době podporuje tyto formáty:
   :::
 - **Pohoda** - nativní formát oblíbeného účetního systému Pohoda z produkce společnosti Stormware. Tento formát podporuje řadu dalších nastavení reprezentovaných doplňujícími volbami (zobrazí se po výběru formátu Pohoda). V <a href="https://web.fapi.cz/settings/?projectId=all" target="_blank" rel="noopener">Nastavení > Nastavení fakturace</a> pak lze dále upřesnit, zda používáte českou nebo slovenskou verzi Pohody (nastavení mění způsob zápisu kurzu cizích měn).&#xA;
   :::danger
-  **Doklady o přijetí platby se do tohoto XML exportu nezahrnují, ani když je vyberete ve filtru typů dokladů.** Stejné omezení platí i pro [přímé propojení s POHODOU](/article/352-propojeni-fapi-s-ucetnim-systemem-pohoda).
+  **Doklady o přijetí platby se do tohoto XML exportu nezahrnují, ani když je vyberete ve filtru typů dokladů.** Stejné omezení platí i pro <a href="/article/352-propojeni-fapi-s-ucetnim-systemem-pohoda" target="_blank" rel="noopener">přímé propojení s POHODOU</a>.
   :::
 - **Money S3** - nativní formát účetního systému Money S3 z produkce společnosti Cígler Software.
 - **Money S4** - nativní formát účetního systému Money S4 z produkce společnosti Cígler Software.
@@ -107,6 +107,14 @@ FAPI v současné době podporuje tyto formáty:
 - **MRPK** - formát pro účetnictví MRP.
 - **CSV-ISklad** - formát určený pro export do systému ISklad. Export obsahuje pouze produkty, nezahrnuje dopravu, dobírku, korekce ani zaokrouhlení.
 - **ABRA Flexi -** XML formát
+
+:::caution
+Chcete-li při exportu do PDF zachovat vložený ISDOC, zvolte **každá faktura v samostatném souboru**. Společné PDF při volbě „všechny faktury v jednom souboru (vhodné pro tisk)“ vložený ISDOC jednotlivých dokladů nezachovává. Podmínky jeho vytvoření najdete v článku <a href="/article/91-tiskova-verze-faktury" target="_blank" rel="noopener">Tisková verze faktury</a>.
+:::
+
+![Export do PDF s vybranou volbou „každá faktura v samostatném souboru“](/assets/articles/pdf-isdoc-export-20261127.png)
+
+<a href="/assets/articles/pdf-isdoc-export-20261127.png" target="_blank" rel="noopener">Otevřít snímek v plném rozlišení v nové kartě</a>
 
 :::tip
 Při exportu lze volitelně <a href="/article/70-zamykani-dokladu" target="_blank" rel="noopener">zamknout</a> všechny faktury zařazené do exportovaného souboru (volba **Zamknout exportované doklady**), aby ve FAPI nemohlo dojít k jejich následné úpravě. Při přenosu faktur do účetního systému se tak zajistí konzistentní stav ve FAPI a v účetním systému.

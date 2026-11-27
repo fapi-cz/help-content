@@ -11,9 +11,17 @@ keywords:
   - Fakturace
 sourceUrl: https://napoveda.fapi.cz/article/91-tiskova-verze-faktury
 order: 118
-updatedAt: 2026-07-13T10:51:36Z
+updatedAt: 2026-11-27T08:15:17Z
 ---
 FAPI vystavuje a posílá faktury ve formátu PDF. Výměna prodejních dokladů v elektronické podobě šetří nejen náklady, ale také životní prostředí.
+
+:::info
+Nově vygenerovaná jednotlivá PDF faktur s alespoň jednou položkou automaticky obsahují vložený soubor **invoice.isdoc** se strukturovanými údaji ve formátu ISDOC pro elektronickou fakturaci. Údaje lze využít pro přenos do kompatibilního účetního softwaru. Platí to pro standardní i tiskovou verzi PDF.
+
+Starší PDF uložená v mezipaměti se tímto souborem automaticky zpětně nedoplňují; rozhodující je nové vygenerování PDF, nikoli jeho opětovné stažení.
+
+Při <a href="/article/85-export-faktur" target="_blank" rel="noopener">exportu faktur do PDF</a> zvolte samostatný soubor pro každou fakturu. Sloučený export pro tisk nezachovává vložený ISDOC jednotlivých dokladů.
+:::
 
 Pokud přesto potřebujete faktury tisknout, doporučujeme využít _tiskovou verzi faktury_. Jde o specifickou šablonu faktury bez barevných ploch (obsahem a rozvržením se tisková verze nijak neliší od standardní faktury). Díky absenci podbarvení tak při tisku ušetříte náplň tiskárny.
 
@@ -25,7 +33,7 @@ S tiskovou verzí faktury se ve FAPI setkáte na několika místech:
 
     ![Tisková verze faktury](/assets/articles/9e15b5c2f8f08e3c.png)
 
--   **v exportu faktur** - při [exportu do formátu PDF](/article/85-export-faktur) můžete zvolit, zda se má pro export použít tisková verze faktury (volba je nastavena jako výchozí),
+-   **v exportu faktur** - při <a href="/article/85-export-faktur" target="_blank" rel="noopener">exportu do formátu PDF</a> můžete zvolit, zda se má pro export použít tisková verze faktury (volba je nastavena jako výchozí),
 
     ![Tisková verze faktury](/assets/articles/fc26275734b81487.png)
 
