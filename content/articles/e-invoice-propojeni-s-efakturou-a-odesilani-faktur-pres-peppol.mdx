@@ -15,7 +15,7 @@ keywords:
   - Peppol
   - Slovensko
 order: 309
-updatedAt: 2026-11-26T13:09:13.307Z
+updatedAt: 2026-11-27T07:33:10Z
 legacyAnchors:
   - id: nez-zacnete
     tag: h2
@@ -26,27 +26,27 @@ legacyAnchors:
     tag: h2
     text: 1. Připojte eFaktúru
     occurrence: 0
-    headingIndex: 1
+    headingIndex: 3
   - id: odeslani
     tag: h2
     text: 2. Odešlete fakturu
     occurrence: 0
-    headingIndex: 2
+    headingIndex: 4
   - id: kontrola-stavu
     tag: h2
     text: 3. Zkontrolujte stav odeslání
     occurrence: 0
-    headingIndex: 3
+    headingIndex: 5
   - id: soucasna-omezeni
     tag: h2
     text: Současná omezení
     occurrence: 0
-    headingIndex: 4
+    headingIndex: 7
   - id: potize
     tag: h2
     text: Když se připojení nebo odeslání nedaří
     occurrence: 0
-    headingIndex: 5
+    headingIndex: 8
 redirects: []
 ---
 Od **1. ledna 2027** se na Slovensku zavádí povinná elektronická fakturace pro zákonem stanovené tuzemské transakce mezi podnikateli a organizacemi. Slovenští plátci DPH budou muset eFaktury vystavovat, odesílat a přijímat. Na jejich přijímání musí být připravené také firmy a podnikatelé, kteří nejsou plátci DPH. **Běžných faktur vystavených spotřebitelům se tato povinnost netýká.**
@@ -122,59 +122,61 @@ Pokud používáte propojení FAPI se službou eFaktúra, před ostrým spuště
 Testovací token `a1b2c3` používaný v sandboxu slouží pouze k otestování propojení ve FAPI. **Nenahrazuje výběr digitálního pošťáka, smlouvu s poskytovatelem ani produkční aktivaci na portálu Finanční správy.**
 :::
 
-**FAPI má přímou integraci na digitálního epoštára** [**eFaktúra.sk**](https://efaktura.sk/)**, která zajistí pouze odesílání veškerých dokladů vystavených ve FAPI. Přijímání dokladů je potřeba zajistit vlastní cestou.**
+**FAPI má přímou integraci na digitálního epoštára** [**eFaktúra.sk**](https://efaktura.sk/)**, která slouží k odesílání podporovaných faktur vystavených ve FAPI. Přijímání dokladů je potřeba zajistit vlastní cestou.**
 
 eFaktúra.sk je certifikovaný digitální pošťák, FAPI tak vystupuje jako **zprostředkovatel pod službou eFaktúry**.
 
 :::info
 ### Co je potřeba vyřídit ve FAPI
 
-Tento popis odpovídá připojení pro testovací/sand box režim. Připojení produkčního režimu je obdobné, jen má své vlastní ověřovací údaje, které je potřeba rozlišit.
+Tento popis odpovídá připojení pro testovací režim (sandbox). Produkční prostředí rozlišujte podle volby **Režim** a vlastního ověřovacího tokenu.
 
 ## 1. Připojte eFaktúru
 
 1. Otevřete **Nastavení →** <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>.
-2. V řádku **Peppol** zvolte <a href="https://web.fapi.cz/settings/update-e-invoice-connection?projectId=all" target="_blank" rel="noopener">**Připojit**</a>, u již založeného propojení **Upravit**. Pokud řádek nevidíte, nejprve si nechte funkci povolit administrátorem FAPI.
+2. V řádku **Peppol** zvolte <a href="https://web.fapi.cz/settings/update-e-invoice-connection?projectId=all" target="_blank" rel="noopener">**Připojit**</a>, u již založeného propojení **Upravit**. Pokud řádek nevidíte, zkontrolujte, že v **Nastavení →** <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a> máte jako zemi uvedenou **Slovenskou republiku**.
 
-   ![](/assets/uploads/14176893b9f47ffe099f6565.webp)
+   ![Řádek Peppol s tlačítkem Připojit v přehledu propojení aplikací](/assets/uploads/14176893b9f47ffe099f6565.webp)
 
-   <a href="/assets/e-invoice/e-invoice-radek.png" target="_blank" rel="noopener">Zobrazit řádek propojení v plné velikosti</a>
+   <a href="/assets/uploads/14176893b9f47ffe099f6565.webp" target="_blank" rel="noopener">Zobrazit řádek propojení v plné velikosti</a>
 3. Na stránce **Propojení se službou eFaktúra** zkontrolujte zobrazené firemní údaje. Jejich opravy proveďte v **Nastavení →** <a href="https://web.fapi.cz/settings/basic-information" target="_blank" rel="noopener">Fakturační údaje</a>.
-4. Vyberte si, zda si založíte nejprve testovací/sandbox režim, nebo chcete rovnou produkční.
+4. V poli **Režim** vyberte pro tento test **Sandbox (testovací)**.
 
-![](/assets/uploads/6d7f703882aed0317ab041ee.webp)
+![Formulář propojení s eFaktúrou s označeným polem Režim a vybranou možností Sandbox (testovací)](/assets/releases/2026-11-27/peppol-rezim.png)
 
-**Testovací -** Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Připojit a aktivovat**. Při obnově deaktivovaného propojení použijte **Znovu připojit**.&#x20;
+<a href="/assets/releases/2026-11-27/peppol-rezim.png" target="_blank" rel="noopener">Zobrazit výběr režimu v plné velikosti</a>
 
-**Produkční -** Produkční režim má svůj vlastní verifikační token, který po získání z finanční správy zadávají do FAPI
+**Testovací režim –** Do pole **Ověřovací token** zadejte testovací hodnotu `a1b2c3` a klikněte na **Uložit propojení**. Stejný postup použijte při opětovné aktivaci sandboxového propojení.
 
-1. Po uložení zkontrolujte propojení a jeho **Stav Peppol**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání. Stav **Připojeno** je požadovaný výsledek.
+![Formulář propojení s eFaktúrou s prázdným polem Ověřovací token a označeným tlačítkem Uložit propojení](/assets/releases/2026-11-27/peppol-ulozit.png)
 
-![Obnova propojení eFaktúry s vyplněnými firemními údaji, prázdným polem Ověřovací token a označeným tlačítkem Znovu připojit](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-pripojeni.png)
+<a href="/assets/releases/2026-11-27/peppol-ulozit.png" target="_blank" rel="noopener">Zobrazit připojovací formulář v plné velikosti</a>
 
-<a href="/assets/e-invoice/e-invoice-pripojeni.png" target="_blank" rel="noopener">Zobrazit připojovací formulář v plné velikosti</a>
+5. Po uložení se vraťte do **Nastavení →** <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">Propojení aplikací</a>. Pro tento test zkontrolujte v řádku **Peppol** označení **Sandbox (testovací) · Aktivní** a stav **Připojeno**. Pole **Stav Peppol** na úpravě propojení zobrazuje při aktivním propojení hodnotu **active**. Hlášení **Aktivace zatím nebyla dokončena** neznamená aktivní propojení pro odesílání.
 
-Pokud už formulář zobrazuje **ID organizace**, použije se tato organizace. Při opakované aktivaci v sandboxu můžete znovu použít testovací token; není potřeba zakládat další organizaci.
+Pokud už formulář zobrazuje **ID organizace**, použije se tato organizace jen při zachování stejného režimu. Při opakované aktivaci v sandboxu můžete znovu použít testovací token. Změna režimu vyžaduje novou aktivaci s tokenem pro příslušné prostředí. Samotný výběr jiného režimu bez uložení uložené propojení nezmění.
+
+**Produkce –** Jde o ostré prostředí, které vyžaduje vlastní ověřovací token z portálu Finanční správy. Pro něj zvolte v poli **Režim** možnost **Produkce**, zadejte odpovídající token a použijte **Uložit propojení**. Testovací token sem nepatří.
 
 ## 2. Odešlete fakturu
 
 1. Otevřete <a href="https://web.fapi.cz/invoice/" target="_blank" rel="noopener">Faktury</a> a detail konkrétní vystavené běžné faktury v EUR se slovenským dodavatelem. Postup jejího vytvoření najdete v návodu <a href="https://napoveda1.fapi.cz/article/299-jak-vystavit-fakturu-rucne-ve-fapi" target="_blank" rel="noopener">Jak vystavit fakturu ručně ve FAPI</a>.
 2. Zkontrolujte údaje uložené **přímo na faktuře**: u obou stran název, IČO, DIČ, IČ DPH a úplnou adresu; u položek název, množství, cenu a sazbu DPH. Dodavatel na faktuře musí odpovídat firmě připojené k eFaktúře. Změna účtu nebo klienta sama neopraví údaje na již vystaveném dokladu.
-3. V části **eFaktúra** klikněte na **Odeslat přes eFaktúru** a potvrďte požadavek. V současném sandboxu jde o testovací odeslání, ne o ostré doručení odběrateli.
+3. V řádku **Peppol** před testem ověřte označení **Sandbox (testovací)**. Prostředí určuje uložený **Režim** propojení, nikoli označení faktury **Testovací**. Pak klikněte na **Odeslat přes Peppol** a potvrďte požadavek. V sandboxu jde o testovací odeslání, ne o ostré doručení odběrateli.
 4. FAPI vytvoří XML a nechá je před odesláním zkontrolovat včetně příjemce. Při chybě se XML neodešle; opravte konkrétní uvedené údaje nebo nepodporovaný parametr faktury. Údaje se při odesílání automaticky neopravují. Aktuální omezení najdete níže.
-5. **Peppol** předává požadované údaje přímo na Finanční správu.
-6. FAPI zaznamená pouze odeslání. Doručení je již na službě Peppolu.
-7. Po zpracování požadavku zkontrolujte stav přímo v detailu faktury. Samotné potvrzení požadavku ještě nedokládá odeslání do sítě.
+5. V **Historii změn** faktury se po přijetí požadavku objeví záznam **Požadavek na odeslání přes Peppol byl přijat.**
+6. Při změně stavu přenosu najdete v **Historii změn** záznam **Stav přenosu přes Peppol byl změněn.**
+7. Po zpracování požadavku znovu otevřete detail faktury nebo obnovte jeho stránku a zkontrolujte stav v řádku **Peppol**. Samotné potvrzení požadavku ještě nedokládá odeslání do sítě.
 
-![Detail testovací faktury s označeným tlačítkem Odeslat přes eFaktúru](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-odeslat.png)
+![Detail faktury s řádkem Peppol, označením Sandbox (testovací) a tlačítkem Odeslat přes Peppol](/assets/releases/2026-11-27/peppol-odeslat.png)
 
-<a href="/assets/e-invoice/e-invoice-odeslat.png" target="_blank" rel="noopener">Zobrazit detail odeslání v plné velikosti</a>
+<a href="/assets/releases/2026-11-27/peppol-odeslat.png" target="_blank" rel="noopener">Zobrazit detail odeslání v plné velikosti</a>
 
-Pokud místo odesílání vidíte **Pro odeslání faktury nejprve připojte eFaktúru**, zvolte **Nastavit propojení** a dokončete připojení.
+Pokud místo odesílání vidíte **Pro odeslání faktury nejprve připojte eFaktúru**, zvolte <a href="https://web.fapi.cz/settings/connections" target="_blank" rel="noopener">**Nastavit propojení**</a> a dokončete připojení.
 
 ## 3. Zkontrolujte stav odeslání
 
-V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Rozlišujte hlavně tyto výsledky:
+Znovu otevřete detail faktury nebo obnovte jeho stránku. U dosud nedokončeného přenosu FAPI při načtení detailu ověří aktuální stav u poskytovatele. V řádku **Peppol** zkontrolujte také **Sandbox (testovací)**. Rozlišujte hlavně tyto výsledky:
 
 - **Doklad vytvořen, zatím neodesláno** — uložený přenos ještě není odeslaný; tento stav se může zobrazit i u dříve vytvořených dokladů.
 - **Zařazeno k odeslání** nebo **Probíhá odesílání** — odeslání ještě není dokončené.
@@ -182,9 +184,9 @@ V detailu faktury použijte **Obnovit stav**, pokud je tlačítko dostupné. Roz
 - **Odesláno do sítě Peppol** — služba hlásí dokončené odeslání. V tomto testování jde o sandbox, nikoli produkční síť. Stav sám nepotvrzuje přijetí ani zaúčtování odběratelem.
 - **Odeslání selhalo** — zkontrolujte zobrazenou chybu a podle ní další postup.
 
-![Detail testovací faktury se stavem Odesláno do sítě Peppol a označeným tlačítkem Obnovit stav](https://napoveda1.fapi.cz/assets/e-invoice/e-invoice-stav.png)
+![Detail faktury se stavem Odesláno do sítě Peppol a označením Sandbox (testovací)](/assets/releases/2026-11-27/peppol-stav.png)
 
-<a href="/assets/e-invoice/e-invoice-stav.png" target="_blank" rel="noopener">Zobrazit kontrolu stavu v plné velikosti</a>
+<a href="/assets/releases/2026-11-27/peppol-stav.png" target="_blank" rel="noopener">Zobrazit kontrolu stavu v plné velikosti</a>
 :::
 
 :::tip
@@ -220,11 +222,11 @@ I při splnění těchto podmínek může kontrola XML nebo příjemce požadave
 
 ## Když se připojení nebo odeslání nedaří
 
-- **Aktivace nebyla dokončena:** otevřete úpravu propojení, zkontrolujte uloženou organizaci a dokončete aktivaci testovacím tokenem pro sandbox.
+- **Aktivace nebyla dokončena:** otevřete <a href="https://web.fapi.cz/settings/update-e-invoice-connection?projectId=all" target="_blank" rel="noopener">úpravu propojení</a>, zkontrolujte **Režim: Sandbox (testovací)** i uloženou organizaci, zadejte testovací token a potvrďte **Uložit propojení**.
 - **Chybí údaj nebo kontrola XML našla chybu:** opravte uvedené pole přímo na faktuře. Například hlášení **V adrese odběratele chybí ulice.** znamená, že je potřeba doplnit ulici odběratele; samotné město a PSČ nestačí.
 - **Příjemce nebyl nalezen nebo kontrola není dostupná:** ověřte DIČ odběratele a jeho dostupnost v příslušném prostředí Peppol. Při nedostupnosti kontroly odeslání neproběhne; nepovažujte jej za dokončené.
 - **Nepodařilo se komunikovat s eFaktúrou:** zkontrolujte nejprve aktuální stav faktury. Požadavek mohl být u poskytovatele zpracovaný i při přerušené komunikaci.
 
 Pokud potřebujete pomoci, <a href="mailto:podpora@fapi.cz" target="_blank" rel="noopener">napište na podporu FAPI</a> a uveďte číslo faktury a přesné znění chyby. Ověřovací token ani přístupové údaje neposílejte.
 
-**Úspěšný test:** propojení je aktivní a u podporované testovací faktury po obnovení vidíte stav **Odesláno do sítě Peppol**.&#x20;
+**Úspěšný test:** propojení je aktivní v režimu **Sandbox (testovací)** a po znovuotevření detailu faktury nebo obnovení jeho stránky vidíte v řádku **Peppol** stav **Odesláno do sítě Peppol** a označení **Sandbox (testovací)**. Stav sám nepotvrzuje přijetí ani zaúčtování odběratelem.
