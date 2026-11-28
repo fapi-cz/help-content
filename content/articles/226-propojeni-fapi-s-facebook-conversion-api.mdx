@@ -11,7 +11,7 @@ keywords:
   - Propojení s jinými systémy
 sourceUrl: https://napoveda.fapi.cz/article/226-propojeni-fapi-s-facebook-conversion-api
 order: 122
-updatedAt: 2026-07-13T10:55:04Z
+updatedAt: 2026-11-28T08:08:38Z
 legacyAnchors:
   - id: Co-budete-potebovat-Jmj62
     tag: h2
@@ -58,7 +58,17 @@ V tomto článku si ukážeme, jak správně propojit FAPI s Facebookem krok za 
 
 Conversion API je serverové měření (odesílá se „ze serveru“), ale i tak doporučujeme mít na webu nasazený Meta Pixel. Pixel totiž na webu sbírá identifikátory (např. FBP/FBC), které pomáhají Metě lépe párovat návštěvy a konverze, měření i optimalizace kampaní pak obvykle fungují lépe.
 
-Pokud používáte vlastní děkovací stránku mimo FAPI, nezapomeňte na ni vložit [konverzní kódy](/article/144-konverzni-kody) (Meta Pixel / události). CAPI samo o sobě nenahradí Pixel na vašem webu.
+Pokud používáte vlastní děkovací stránku mimo FAPI, nezapomeňte na ni vložit <a href="/article/144-konverzni-kody" target="_blank" rel="noopener">konverzní kódy</a> (Meta Pixel / události). CAPI samo o sobě nenahradí Pixel na vašem webu.
+:::
+
+:::caution
+**Propojení je společné pro celý účet**
+
+Vestavěné propojení Facebook CAPI používá jedno **Pixel ID pro celý účet FAPI**. Nelze v něm nastavit jiný pixel pro každý <a href="/article/132-projekty" target="_blank" rel="noopener">projekt</a> ani omezit odesílání na vybrané prodejní formuláře. Zařazení formuláře do projektu toto serverové odesílání neodděluje.
+
+Pokud v propojení změníte Pixel ID, měníte cíl serverového odesílání pro celý účet, nikoli pouze pro právě vybraný projekt.
+
+<a href="/article/144-konverzni-kody" target="_blank" rel="noopener">Konverzní kódy</a> a Meta Pixel na webu nebo děkovací stránce slouží k měření v prohlížeči. Jejich nastavením nezměníte cílové Pixel ID vestavěného serverového propojení CAPI.
 :::
 
 ## Co budete potřebovat
@@ -80,7 +90,7 @@ Pro propojení budete potřebovat dva přístupové údaje z Facebook Business M
 
 🎥 Podívejte se na [videonávod pro získání Pixel ID](https://youtu.be/TYAJEzelBwo)
 
-[Jak vložit META pixel do stránky](/article/221-jak-vlozit-meta-pixel-facebook-pixel-do-stranky)
+<a href="/article/221-jak-vlozit-meta-pixel-facebook-pixel-do-stranky" target="_blank" rel="noopener">Jak vložit META pixel do stránky</a>
 
 :::danger
 Než budete pokračovat dále, ujistěte se prosím, že máte k dispozici oba přístupové údaje – Pixel ID a Access Token. Bez nich nelze propojení úspěšně dokončit.
@@ -88,14 +98,18 @@ Než budete pokračovat dále, ujistěte se prosím, že máte k dispozici oba p
 
 ## Propojení s Facebook CAPI ve FAPI
 
-1\. Přihlaste se do FAPI a přejděte do sekce Nastavení \> Propojení aplikací.
+1\. Přihlaste se do FAPI a přejděte do sekce Nastavení \> <a href="https://web.fapi.cz/settings/connections?projectId=all" target="_blank" rel="noopener">Propojení aplikací</a>.
 
-2\. Najděte položku **Facebook Conversion API** a klikněte na tlačítko **Připojit**.
+2\. Najděte položku **Facebook CAPI** a klikněte na tlačítko **Připojit**.
 
 3\. Do zobrazeného formuláře zadejte:
 
 -   **Pixel ID** – ten jste získali ve Správci událostí.
 -   **Access Token** – který jste si vygenerovali v nastavení Pixela.
+
+![Nastavení Facebook CAPI: Pixel ID, Access Token a tlačítko Uložit](/assets/articles/facebook-capi-fields-20261128.png)
+
+<a href="/assets/articles/facebook-capi-fields-20261128.png" target="_blank" rel="noopener">Otevřít snímek nastavení CAPI v plném rozlišení</a>
 
 4\. Uložte nastavení.
 
